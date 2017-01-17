@@ -1,0 +1,32 @@
+/// HIDE AN ELEMENT
+/// Extend this to hide an element
+/// @example
+///     @extend %visuallyhidden;
+
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+/// Pixels to Ems Function
+/// @example
+///     font-size: em(24);
+
+@function em($pixels, $context: $browser-context) {
+      @return #{$pixels/$context}em;
+}
+
+/// Responsive Mixin
+/// @example
+///     @include mobilefirst($bp-small) { content here }
+@mixin mobilefirst($res) {
+  @media screen and (min-width: $res) {
+    @content;
+  }
+}

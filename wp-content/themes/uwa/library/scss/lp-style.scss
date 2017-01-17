@@ -1,0 +1,30 @@
+/*********************
+IMPORTING
+*********************/
+
+@import "base/normalize";
+@import "base/variables";
+@import "base/mixins";
+@import "base/typography";
+@import "base/grid";
+@import "base/base";
+@import "modules/accordion";
+@import "modules/buttons";
+@import "modules/clearfix";
+@import "modules/forms";
+@import "modules/links";
+@import "modules/media";
+@import "partials/header";
+@import "partials/nav";
+@import "partials/footer";
+
+/********************
+LAYOUT & GRID STYLES
+*********************/
+
+.wrap {
+	width: 90%;
+	max-width: 1440px;
+	margin: 0 auto;
+}
+

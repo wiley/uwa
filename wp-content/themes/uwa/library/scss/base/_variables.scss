@@ -1,0 +1,22 @@
+/// Browser Context
+/// This is needed for the px to em's mixin
+$browser-context: 16; // Default
+
+/// Responsive Variables
+/// Breakpoint Small
+$bp-sm: 481px;
+/// Breakpoint Medium
+$bp-med: 768px;
+/// Breakpoint Large
+$bp-lg: 1040px;
+
+////
+/// @group colors
+////
+
+/// Text Color
+$text-color:        #666;
+/// Link Color
+$link-color:        crimson;
+///Link Hover
+$link-hover:        darken($link-color, 15%);
