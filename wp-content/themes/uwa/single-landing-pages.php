@@ -1,26 +1,45 @@
 <?php get_header( 'lp' ); ?>
 
-			<div class="content">
+		<?php
 
-				<div class="wrap cf">
+		// check if the repeater field has rows of data
+		if( have_rows('row') ):
 
-						<main class="main-content cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-              <h1><?php the_title(); ?></h1>
-						</main>
+						// loop through the rows of data
+				while ( have_rows('row') ) : the_row();
 
-            <div class="sidebar cf" role="complementary">
+				// vars
+				$column1 = get_sub_field('column_1_content');
+				$column2 = get_sub_field('column_2_content');
+		?>
 
-							<div class="sidebar-well">
-									<h3>Request My Info Packet</h3>
-									<div class="step-form">
-											<script src="http://requestforms.learninghouse.com/form/show/west-virginia-state-university/multi-step/686/3496/online.wvstateu.edu:thank-you:request_id" type="text/javascript"></script>
-									</div>
-							</div>
+						<section class="<?php the_sub_field('section_class'); ?>">
 
-            </div>
+						<?php if(get_sub_field('columns') == "1") { ?>
+								<div class="wrap">
+										<?php echo $column1; ?>
+								</div>
+						<?php } ?>
 
-				</div>
+						<?php if(get_sub_field('columns') == "2") { ?>
+										<div class="left-col">
+												<div class="wrap">
+														<?php echo $column1; ?>
+												</div>
+										</div>
+										<div class="right-col">
+												<div class="wrap">
+														<?php echo $column2; ?>
+												</div>
+										</div>
+						<?php } ?>
 
-			</div>
+						</section>
+
+		<?php endwhile;
+
+		endif;
+
+		?>
 
 <?php get_footer( 'lp' ); ?>

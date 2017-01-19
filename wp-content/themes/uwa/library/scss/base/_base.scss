@@ -27,4 +27,13 @@ body {
 	margin: 1.5em 0;
 }
 
-
+.bg {
+	&_red {
+		background: $red;
+		color: white;
+	}
+	&_red_dark {
+		background: $red_dark;
+		color: white;
+	}
+}

@@ -14,9 +14,24 @@ $bp-lg: 1040px;
 /// @group colors
 ////
 
+/// UWA Red
+$red:								#A81D32;
+/// UWA Dark Red
+$red_dark:					#510915;
+/// UMA Black
+$black:							#11181F;
+/// UWA Gray
+$gray:							#939598;
+/// UWA Light Gray
+$gray_light:				#E9E9EA;
+/// UWA Gold
+$gold:							#C9BF79;
+
 /// Text Color
-$text-color:        #666;
+$text-color:        $black;
 /// Link Color
-$link-color:        crimson;
+$link-color:        $red;
 ///Link Hover
 $link-hover:        darken($link-color, 15%);
+
+

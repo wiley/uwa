@@ -47,3 +47,23 @@ img,
 	}
 
 }
+
+
+/**** Responsive BG Images For sections with Srcset ****/
+
+.section-bg {
+	position: relative;
+	overflow: hidden;
+}
+
+.section-bg__img {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		min-width: 100%;
+		min-height: 100%; /* This bit centers the image. */
+		left: 50%;
+		transform: translateX(-50%);
+		overflow-x: hidden;
+}

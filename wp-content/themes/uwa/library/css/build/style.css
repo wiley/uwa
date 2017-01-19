@@ -374,7 +374,8 @@ H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   text-rendering: optimizelegibility;
-  font-weight: 500; }
+  font-weight: bold;
+  text-transform: uppercase; }
   h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
     text-decoration: none; }
 
@@ -416,7 +417,7 @@ h3, .h3 {
       line-height: 1.25; } }
 
 h4, .h4 {
-  color: crimson;
+  color: #A81D32;
   font-size: 1.125em;
   line-height: 1.11111111; }
   @media screen and (min-width: 768px) {
@@ -428,10 +429,10 @@ h5, .h5 {
   line-height: 1.25;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: crimson; }
+  color: #A81D32; }
 
 h6, .h6 {
-  color: crimson; }
+  color: #A81D32; }
 
 blockquote {
   font-size: 1em;
@@ -466,6 +467,37 @@ figure, figcaption {
     border-style: solid;
     border-width: 0 30px 30px 0;
     border-color: transparent gray transparent transparent; }
+
+/******************************************************************
+TEXT STYLE CLASSES
+******************************************************************/
+.text_red {
+  color: #A81D32; }
+
+.text_white {
+  color: white; }
+
+.text_uppercase {
+  text-transform: uppercase; }
+
+.decorative {
+  position: relative;
+  padding-top: 1em; }
+  .decorative:before {
+    content: "";
+    width: 5em;
+    height: .25em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #A81D32; }
+  .decorative_gold:before {
+    background: #C9BF79; }
+  .decorative_white:before {
+    background: white; }
+  .decorative_red_dark:before {
+    background: #510915; }
 
 /******************************************************************
 SUSY GRID // For any questions go to http://susydocs.oddbird.net/en/latest/
@@ -513,7 +545,7 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 1.5;
-  color: #666;
+  color: #11181F;
   background-color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -522,11 +554,19 @@ body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif; }
 
 .border {
-  border: 2px solid crimson;
+  border: 2px solid #A81D32;
   padding: .5em 1em; }
 
 .content {
   margin: 1.5em 0; }
+
+.bg_red {
+  background: #A81D32;
+  color: white; }
+
+.bg_red_dark {
+  background: #510915;
+  color: white; }
 
 /*********************
 IMPORTING MODULES
@@ -585,12 +625,12 @@ Button Styles
   border: 0;
   cursor: pointer;
   transition: background-color 0.14s ease-in-out;
-  background: crimson; }
+  background: #A81D32; }
   .button:hover, .button:focus {
     color: white;
     text-decoration: none;
     outline: none;
-    background: #960e29; }
+    background: #67121f; }
   .button:active {
     top: 1px; }
 
@@ -623,7 +663,7 @@ textarea,
   line-height: 1em;
   margin-bottom: 14px;
   font-size: 1em;
-  color: #666;
+  color: #11181F;
   border-color: #676666;
   border-width: 2px;
   border-style: solid;
@@ -720,13 +760,13 @@ textarea {
   border: 0;
   cursor: pointer;
   transition: background-color 0.14s ease-in-out;
-  background: crimson;
+  background: #A81D32;
   width: 100%; }
   .requestinfo input[type="submit"]:hover, .requestinfo input[type="submit"]:focus {
     color: white;
     text-decoration: none;
     outline: none;
-    background: #960e29; }
+    background: #67121f; }
   .requestinfo input[type="submit"]:active {
     top: 1px; }
 
@@ -756,11 +796,11 @@ legend,
 LINK STYLES
 *********************/
 a, a:visited {
-  color: crimson;
+  color: #A81D32;
   /* on hover */
   /* mobile tap color */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #960e29; }
+    color: #67121f; }
   a:link, a:visited:link {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
 
@@ -803,6 +843,23 @@ img,
     display: block;
     clear: both; } }
 
+/**** Responsive BG Images For sections with Srcset ****/
+.section-bg {
+  position: relative;
+  overflow: hidden; }
+
+.section-bg__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  /* This bit centers the image. */
+  left: 50%;
+  transform: translateX(-50%);
+  overflow-x: hidden; }
+
 /******************************************************************
 READING PROGRESS INDICATOR STYLES
 http://codepen.io/pankajparashar/pen/towxF
@@ -817,17 +874,17 @@ progress {
   appearance: none;
   background-color: transparent;
   border: none;
-  color: crimson;
+  color: #A81D32;
   z-index: 999; }
 
 progress::-webkit-progress-bar {
   background-color: transparent; }
 
 progress::-webkit-progress-value {
-  background-color: crimson; }
+  background-color: #A81D32; }
 
 progress::-moz-progress-bar {
-  background-color: crimson; }
+  background-color: #A81D32; }
 
 /*********************
 SIDEBARS & ASIDES
@@ -1025,7 +1082,7 @@ NAVIGATION STYLES
       @media screen and (min-width: 768px) {
         .nav li ul.sub-menu,
         .nav li ul.children {
-          background: crimson;
+          background: #A81D32;
           margin-top: 0;
           position: absolute;
           visibility: hidden;
@@ -1088,16 +1145,16 @@ PAGE NAVI STYLES
     padding: 0.75em;
     min-width: 1em;
     display: block;
-    color: crimson; }
+    color: #A81D32; }
     .pagination a:hover, .pagination a:focus, .pagination span:hover, .pagination span:focus {
-      background-color: crimson;
+      background-color: #A81D32;
       color: white; }
   .pagination .current {
     cursor: default;
-    color: #666; }
+    color: #11181F; }
     .pagination .current:hover, .pagination .current:focus {
       background-color: white;
-      color: #666; }
+      color: #11181F; }
 
 /* end .bones_page_navi */
 /* fallback previous & next links */

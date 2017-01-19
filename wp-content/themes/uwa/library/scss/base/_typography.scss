@@ -18,7 +18,8 @@ H1, H2, H3, H4, H5 STYLES
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	text-rendering: optimizelegibility;
-	font-weight: 500;
+	font-weight: bold;
+	text-transform: uppercase;
 
 	a {
 		text-decoration: none;
@@ -26,7 +27,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 }
 
 h1, .h1 {
-  font-size: em(32); 
+  font-size: em(32);
   line-height: 1.25;
 
     @include mobilefirst($bp-med) {
@@ -120,7 +121,7 @@ figure, figcaption {
    background: gray;
    position: relative;
    border-radius: .5em;
-    
+
     &:before {
         position: absolute;
         top: 99.8%;
@@ -133,3 +134,36 @@ figure, figcaption {
         border-color: transparent gray transparent transparent;
     }
 }
+
+
+/******************************************************************
+TEXT STYLE CLASSES
+******************************************************************/
+
+.text {
+	&_red { color: $red; }
+	&_white { color: white; }
+	&_uppercase { text-transform: uppercase; }
+}
+
+.decorative {
+	position: relative;
+	padding-top: 1em;
+
+	&:before {
+		content: "";
+		width: 5em;
+		height: .25em;
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: $red;
+	}
+
+	&_gold:before { background: $gold; }
+	&_white:before { background: white; }
+	&_red_dark:before { background: $red_dark; }
+
+}
+

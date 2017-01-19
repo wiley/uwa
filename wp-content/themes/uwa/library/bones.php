@@ -96,7 +96,6 @@ function bones_gallery_style($css) {
 	return preg_replace( "!<style type='text/css'>(.*?)</style>!s", '', $css );
 }
 
-
 /*********************
 SCRIPTS & ENQUEUEING
 *********************/
