@@ -33,7 +33,7 @@
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-		<style><?php include 'library/css/build/minified/lp-critical.css'; ?></style>
+		<style><?php /* include 'library/css/build/minified/lp-critical.css'; */ ?></style>
 
 		<?php wp_head(); ?>
 
@@ -47,22 +47,24 @@
 
 		<div class="container">
 
-		<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader" style="background-image: url(<?php the_field('banner_image'); ?>);">
+			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
+				<div class="banner" style="background-image: url(<?php the_field('banner_image'); ?>);">
 
-				<div class="mobile-nav">
-				<a class="mobile-nav__link" href="tel:<?php the_field('phone_number', 'option'); ?>"><span><img src="/wp-content/themes/uwa/library/images/icon-phone.svg"></span> <?php the_field('phone_number', 'option'); ?></a>
-					<a class="mobile-nav__link" href="#form"><span>Request Info</a>
+					<div class="mobile-nav">
+						<a class="mobile-nav__link" href="tel:<?php the_field('phone_number', 'option'); ?>"><span><img src="/wp-content/themes/uwa/library/images/icon-phone.svg"></span> <?php the_field('phone_number', 'option'); ?></a>
+						<a class="mobile-nav__link" href="#form"><span>Request Info</a>
+					</div>
+
+					<div class="wrap cf">
+
+						<h1 class="logo header__logo" itemscope itemtype="http://schema.org/Organization"><img src="<?php the_field('logo', 'option'); ?>" alt="UWA Online"></h1>
+						<h2><?php the_field('banner_heading'); ?></h2>
+
+					</div>
+
 				</div>
 
-				<div class="wrap cf">
-
-				<h1 class="logo header__logo" itemscope itemtype="http://schema.org/Organization"><img src="<?php the_field('logo', 'option'); ?>" alt="UWA Online"></h1>
-
-				<h2><?php the_field('banner_heading'); ?></h2>
-
-
-
-				</div>
+			<?php the_field('form_script'); ?>
 
 			</header>

@@ -2,14 +2,22 @@
 Typography Styles
 ******************************************************************/
 
-// @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic);
+@font-face {
+	font-family: 'Trade Gothic LT Std';
+	src: url('../../../fonts/TradeGothicLTStd-Bd2.eot');
+	src: url('../../../fonts/TradeGothicLTStd-Bd2.eot?#iefix') format('embedded-opentype'),
+		url('../../../fonts/TradeGothicLTStd-Bd2.woff') format('woff'),
+		url('../../../fonts/TradeGothicLTStd-Bd2.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
 
 /// Sans Serif
 /// @group Fonts
 $sans-serif:        'Open Sans', Helvetica, Arial, sans-serif;
-/// Serif
+/// Condensed
 /// @group Fonts
-$serif:             'Georgia', Cambria, Times New Roman, Times, serif;
+$condensed:					'Trade Gothic LT Std', Arial, sans-serif;
 
 
 /******************************************************************
@@ -20,6 +28,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	text-rendering: optimizelegibility;
 	font-weight: bold;
 	text-transform: uppercase;
+	font-family: $condensed;
 
 	a {
 		text-decoration: none;
@@ -27,7 +36,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 }
 
 h1, .h1 {
-  font-size: em(32);
+  font-size: em(36);
   line-height: 1.25;
 
     @include mobilefirst($bp-med) {
@@ -42,39 +51,39 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  font-size: em(26);
+  font-size: em(31);
   line-height: 1.15384615;
   margin-bottom: .375em;
 
     @include mobilefirst($bp-med) {
-        font-size: em(32);
+        font-size: em(36);
         line-height: 1.25;
     }
 
     @include mobilefirst($bp-lg) {
-        font-size: em(36);
+        font-size: em(40);
         line-height: 1.25;
     }
 }
 
 h3, .h3 {
-  font-size: em(22);
+  font-size: em(26);
   line-height: 1.13636364;
 
     @include mobilefirst($bp-med) {
-        font-size: em(24);
+        font-size: em(28);
         line-height: 1.25;
     }
 
     @include mobilefirst($bp-lg) {
-        font-size: em(28);
+        font-size: em(30);
         line-height: 1.25;
     }
 }
 
 h4, .h4 {
   color: $link-color;
-  font-size: em(18);
+  font-size: em(20);
   line-height: 1.11111111;
 
     @include mobilefirst($bp-med) {
@@ -94,6 +103,11 @@ h6, .h6 {
     color: $link-color;
 }
 
+
+p {
+	margin-top: 0;
+	margin-bottom: 1.5em;
+}
 
 blockquote {
   font-size: em(16);
@@ -152,7 +166,7 @@ TEXT STYLE CLASSES
 
 	&:before {
 		content: "";
-		width: 5em;
+		width: 3em;
 		height: .25em;
 		display: block;
 		position: absolute;

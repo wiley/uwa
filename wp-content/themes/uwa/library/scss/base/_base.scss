@@ -2,6 +2,14 @@
 GENERAL STYLES
 *********************/
 
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 100%;
@@ -37,3 +45,7 @@ body {
 		color: white;
 	}
 }
+
+.show { display: block; }
+.hidden { display: none; }
+.pull-right { float: right; }

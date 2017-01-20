@@ -32,6 +32,12 @@ section {
 	padding: 1em 0;
 }
 
+
+@include mobilefirst($bp-med) {
+	.left-col { @include span(6 of 12); }
+	.right-col { @include span(6 of 12 last); }
+}
+
 /********************
 MOBILE NAV
 *********************/
@@ -43,9 +49,11 @@ MOBILE NAV
 	width: 100vw;
 	display: flex;
 	z-index: 999;
+
+	@include mobilefirst($bp-med) { display: none; }
 }
 
-.mobile-nav__link {
+a.mobile-nav__link {
 	flex: 1;
 	padding: 1em 0;
 	text-align: center;
@@ -65,20 +73,36 @@ HEADER STYLES
 *********************/
 
 .header {
+	background: $red_dark;
+	position: relative;
+	margin-top: em(58);
+
+	@include mobilefirst($bp-med) {
+		margin-top: 0;
+	}
+}
+
+.banner {
 	background-size: cover;
 	background-position: center top;
 	position: relative;
+	height: 280px;
+
+	@include mobilefirst($bp-sm) { 	height: 380px; }
+	@include mobilefirst(768px) { 	height: 480px; }
+
+	.wrap { height: 100%; }
 
 	&:before {
 		position: absolute;
 		bottom: 0;
 		left: 0;
 		width: 100%;
-		height: 100%;
+		height: 70%;
 		content: "";
 		display: block;
 		background: rgba(0,0,0,.8);
-		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.33) 29%, rgba(15,6,5,0.64) 100%);
+		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.33) 50%, rgba(15,6,5,0.64) 100%);
 	}
 
 	h2 {
@@ -86,6 +110,22 @@ HEADER STYLES
 		text-transform: uppercase;
 		font-weight: bold;
 		text-align: center;
+		font-size: em(25);
+		position: absolute;
+		bottom: 1rem;
+		left: 5%;
+		width: 90%;
+
+		@include mobilefirst($bp-sm) {
+			font-size: em(33);
+		}
+
+		@include mobilefirst($bp-med) {
+			@include span(8);
+			left: 0;
+			text-align: left;
+			font-size: em(40);
+		}
 	}
 
 	.wrap {
@@ -96,6 +136,23 @@ HEADER STYLES
 
 .header__logo {
 	max-width: 90px;
+
+	@include mobilefirst($bp-med) {
+		max-width: 130px; // Make logo bigger
+	}
+}
+
+
+#step-form {
+
+	@include mobilefirst($bp-med) {
+		position: absolute;
+		right :1rem;
+		top: 1rem;
+		@include span(4);
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
 /********************
@@ -115,17 +172,72 @@ BENEFITS
 
 .benefits {
 
-	ul { padding-left: 0; }
+	ul {
+		padding-left: 0;
+
+		@include mobilefirst($bp-med) {
+			display: flex;
+			flex-wrap: wrap;
+			padding-top: 1em;
+		}
+	}
 
 	li {
 		list-style: none;
 		margin-bottom: 1.5rem;
+
+		@include mobilefirst($bp-med) {
+			flex: 1;
+			min-width: 50%;
+			padding-left: em(24);
+			padding-right: 3rem;
+			position: relative;
+			z-index: 1;
+
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: em(-12);
+				width: em(48);
+				height: em(48);
+				background: darken($red, 10%);
+				display: block;
+				z-index: -1;
+			}
+		}
 
 		strong {
 			text-transform: uppercase;
 			display: block;
 			margin-bottom: .5em;
 		}
+	}
+}
+
+/********************
+ONLINE DEGREES
+*********************/
+
+.online-degrees a {
+	display: block;
+	background: $red_dark;
+	padding: 1em .5em;
+	color: white;
+	text-transform: uppercase;
+	text-decoration: none;
+	margin-bottom: .5em;
+	font-weight: bold;
+	position: relative;
+
+	&:after {
+		content: url(/wp-content/themes/uwa/library/images/icon-plus.svg);
+		position: absolute;
+		right: 1em;
+		height: 28px;
+		width: 28px;
+    top: 50%;
+    transform: translateY(-50%);
 	}
 }
 
@@ -137,6 +249,11 @@ ABOUT US
 	position: relative;
 	padding-top: 160px;
 
+	@include mobilefirst($bp-med) {
+		padding-top: 0;
+		padding-left: 40%;
+	}
+
 	&:before {
 		content: "";
 		height: 160px;
@@ -147,6 +264,11 @@ ABOUT US
 		position: absolute;
 		top: 0;
 		left: 0;
+
+		@include mobilefirst($bp-med) {
+			width: 40%;
+			height: 100%;
+		}
 	}
 }
 

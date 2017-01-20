@@ -366,20 +366,28 @@ textarea {
 /******************************************************************
 Typography Styles
 ******************************************************************/
+@font-face {
+  font-family: 'Trade Gothic LT Std';
+  src: url("../../../fonts/TradeGothicLTStd-Bd2.eot");
+  src: url("../../../fonts/TradeGothicLTStd-Bd2.eot?#iefix") format("embedded-opentype"), url("../../../fonts/TradeGothicLTStd-Bd2.woff") format("woff"), url("../../../fonts/TradeGothicLTStd-Bd2.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   text-rendering: optimizelegibility;
   font-weight: bold;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  font-family: "Trade Gothic LT Std", Arial, sans-serif; }
   h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
     text-decoration: none; }
 
 h1, .h1 {
-  font-size: 2em;
+  font-size: 2.25em;
   line-height: 1.25; }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 900px) {
     h1, .h1 {
       font-size: 2.5em;
       line-height: 1.125; } }
@@ -389,35 +397,35 @@ h1, .h1 {
       line-height: 1.05; } }
 
 h2, .h2 {
-  font-size: 1.625em;
+  font-size: 1.9375em;
   line-height: 1.15384615;
   margin-bottom: .375em; }
-  @media screen and (min-width: 768px) {
-    h2, .h2 {
-      font-size: 2em;
-      line-height: 1.25; } }
-  @media screen and (min-width: 1040px) {
+  @media screen and (min-width: 900px) {
     h2, .h2 {
       font-size: 2.25em;
       line-height: 1.25; } }
+  @media screen and (min-width: 1040px) {
+    h2, .h2 {
+      font-size: 2.5em;
+      line-height: 1.25; } }
 
 h3, .h3 {
-  font-size: 1.375em;
+  font-size: 1.625em;
   line-height: 1.13636364; }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 900px) {
     h3, .h3 {
-      font-size: 1.5em;
+      font-size: 1.75em;
       line-height: 1.25; } }
   @media screen and (min-width: 1040px) {
     h3, .h3 {
-      font-size: 1.75em;
+      font-size: 1.875em;
       line-height: 1.25; } }
 
 h4, .h4 {
   color: #A81D32;
-  font-size: 1.125em;
+  font-size: 1.25em;
   line-height: 1.11111111; }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 900px) {
     h4, .h4 {
       line-height: 1.222222222; } }
 
@@ -431,13 +439,17 @@ h5, .h5 {
 h6, .h6 {
   color: #A81D32; }
 
+p {
+  margin-top: 0;
+  margin-bottom: 1.5em; }
+
 blockquote {
   font-size: 1em;
   line-height: 1.25;
   /* 25px / 20px */
   border-left: 4px solid gray;
   padding-left: 1em; }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 900px) {
     blockquote {
       font-size: 1.5em;
       line-height: 1.45833333; } }
@@ -482,7 +494,7 @@ TEXT STYLE CLASSES
   padding-top: 1em; }
   .decorative:before {
     content: "";
-    width: 5em;
+    width: 3em;
     height: .25em;
     display: block;
     position: absolute;
@@ -538,6 +550,13 @@ SUSY GRID // For any questions go to http://susydocs.oddbird.net/en/latest/
 /*********************
 GENERAL STYLES
 *********************/
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
 body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 100%;
@@ -564,6 +583,15 @@ body {
 .bg_red_dark {
   background: #510915;
   color: white; }
+
+.show {
+  display: block; }
+
+.hidden {
+  display: none; }
+
+.pull-right {
+  float: right; }
 
 /*********************
 ACCORDION STYLES
@@ -605,27 +633,55 @@ ACCORDION STYLES
 /******************************************************************
 Button Styles
 ******************************************************************/
-.button {
+.button, .btn {
   display: inline-block;
   position: relative;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "Trade Gothic LT Std", Arial, sans-serif;
+  letter-spacing: 2px;
   text-decoration: none;
   color: white !important;
   font-size: 1em;
   line-height: 34px;
   font-weight: normal;
   padding: .5em 1em;
-  border-radius: 4px;
   border: 0;
   cursor: pointer;
   transition: background-color 0.14s ease-in-out;
-  background: #A81D32; }
-  .button:hover, .button:focus {
+  background: #A81D32;
+  text-transform: uppercase;
+  border-bottom: 6px solid #510e18; }
+  .button:hover, .button:focus, .btn:hover, .btn:focus {
     color: white;
     text-decoration: none;
     outline: none;
     background: #67121f; }
-  .button:active {
+  .button:active, .btn:active {
+    top: 1px; }
+
+.button_gold {
+  display: inline-block;
+  position: relative;
+  font-family: "Trade Gothic LT Std", Arial, sans-serif;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: white !important;
+  font-size: 1em;
+  line-height: 34px;
+  font-weight: normal;
+  padding: .5em 1em;
+  border: 0;
+  cursor: pointer;
+  transition: background-color 0.14s ease-in-out;
+  background: #C9BF79;
+  text-transform: uppercase;
+  border-bottom: 6px solid #9d913f;
+  color: #11181F !important; }
+  .button_gold:hover, .button_gold:focus {
+    color: white;
+    text-decoration: none;
+    outline: none;
+    background: #afa247; }
+  .button_gold:active {
     top: 1px; }
 
 .button_sm {
@@ -658,15 +714,10 @@ textarea,
   margin-bottom: 14px;
   font-size: 1em;
   color: #11181F;
-  border-color: #676666;
-  border-width: 2px;
-  border-style: solid;
-  border-spacing: inherit;
-  border-radius: 3px;
   vertical-align: middle;
   box-shadow: none;
   width: 100%;
-  background-color: gray;
+  background-color: white;
   transition: background-color 0.24s ease-in-out;
   padding: .5em;
   box-sizing: border-box; }
@@ -743,18 +794,20 @@ textarea {
 .requestinfo input[type="submit"] {
   display: inline-block;
   position: relative;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "Trade Gothic LT Std", Arial, sans-serif;
+  letter-spacing: 2px;
   text-decoration: none;
   color: white !important;
   font-size: 1em;
   line-height: 34px;
   font-weight: normal;
   padding: .5em 1em;
-  border-radius: 4px;
   border: 0;
   cursor: pointer;
   transition: background-color 0.14s ease-in-out;
   background: #A81D32;
+  text-transform: uppercase;
+  border-bottom: 6px solid #510e18;
   width: 100%; }
   .requestinfo input[type="submit"]:hover, .requestinfo input[type="submit"]:focus {
     color: white;
@@ -772,7 +825,9 @@ select {
   background-position: 97.5% center; }
 
 fieldset {
-  border: none; }
+  border: none;
+  padding-left: 5%;
+  padding-right: 5%; }
 
 legend,
 .formError,
@@ -785,6 +840,82 @@ legend,
 
 .elp_hidden {
   display: none; }
+
+/*********************
+STEP FORM STYLES
+*********************/
+#step-form {
+  background: #A81D32;
+  color: white;
+  overflow: hidden;
+  padding-bottom: 1em; }
+
+.step-form__header {
+  background: #510915;
+  padding: .5em 5%;
+  position: relative;
+  padding-bottom: 1.875em; }
+  .step-form__header:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0px 35px 50vw;
+    border-color: transparent transparent #a81d32 transparent; }
+  .step-form__header:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 50vw 35px 0;
+    border-color: transparent transparent #a81d32 transparent; }
+
+.step-form__heading {
+  margin-bottom: .2em;
+  font-size: 1.8em; }
+
+.btn {
+  display: inline-block;
+  position: relative;
+  font-family: "Trade Gothic LT Std", Arial, sans-serif;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: white !important;
+  font-size: 1em;
+  line-height: 34px;
+  font-weight: normal;
+  padding: .5em 1em;
+  border: 0;
+  cursor: pointer;
+  transition: background-color 0.14s ease-in-out;
+  background: #C9BF79;
+  text-transform: uppercase;
+  border-bottom: 6px solid #9d913f;
+  color: #11181F !important; }
+  .btn:hover, .btn:focus {
+    color: white;
+    text-decoration: none;
+    outline: none;
+    background: #afa247; }
+  .btn:active {
+    top: 1px; }
+
+.next.btn {
+  position: relative; }
+  .next.btn:before {
+    content: "Step 1 of 2";
+    text-transform: uppercase;
+    color: #DDA8B0;
+    font-family: "Trade Gothic LT Std", Arial, sans-serif;
+    position: absolute;
+    right: 120%;
+    width: 125px; }
 
 /*********************
 LINK STYLES
@@ -859,14 +990,14 @@ HEADER STYLES
 *********************/
 .header__logo {
   margin: 0.75em 0; }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 900px) {
     .header__logo {
       float: left; } }
 
 .header__nav {
   visibility: hidden;
   height: 0; }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 900px) {
     .header__nav .nav {
       float: right;
       visibility: visible;
@@ -884,14 +1015,14 @@ NAVIGATION STYLES
   padding: 0;
   list-style: none;
   /* end .menu li */ }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 900px) {
     .nav {
       border: 0; }
       .nav ul {
         margin-top: 0; } }
   .nav li {
     list-style: none; }
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 900px) {
       .nav li {
         float: left;
         position: relative; }
@@ -902,7 +1033,7 @@ NAVIGATION STYLES
       display: block;
       text-decoration: none;
       padding: 0.75em; }
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: 900px) {
         .nav li a {
           border-bottom: 0; }
           .nav li a:hover, .nav li a:focus {
@@ -911,7 +1042,7 @@ NAVIGATION STYLES
     .nav li ul.children {
       padding: 0;
       display: none; }
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: 900px) {
         .nav li ul.sub-menu,
         .nav li ul.children {
           background: #A81D32;
@@ -922,7 +1053,7 @@ NAVIGATION STYLES
       .nav li ul.sub-menu li a,
       .nav li ul.children li a {
         padding-left: 30px; }
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: 900px) {
           .nav li ul.sub-menu li a,
           .nav li ul.children li a {
             color: white;
@@ -930,7 +1061,7 @@ NAVIGATION STYLES
             border-right: 0;
             display: block;
             width: 180px; } }
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: 900px) {
         .nav li ul.sub-menu li ul,
         .nav li ul.children li ul {
           top: 0;
@@ -940,7 +1071,7 @@ NAVIGATION STYLES
 
 /* end .nav */
 /**** 768 UP ****/
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 900px) {
   .js__menu-trigger {
     display: none; } }
 
@@ -1008,6 +1139,24 @@ LAYOUT & GRID STYLES
 section {
   padding: 1em 0; }
 
+@media screen and (min-width: 900px) {
+  .left-col {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    padding-left: 1.3888888889%;
+    padding-right: 1.3888888889%; }
+  .right-col {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+    float: right;
+    padding-left: 1.3888888889%;
+    padding-right: 1.3888888889%; } }
+
 /********************
 MOBILE NAV
 *********************/
@@ -1018,15 +1167,18 @@ MOBILE NAV
   width: 100vw;
   display: flex;
   z-index: 999; }
+  @media screen and (min-width: 900px) {
+    .mobile-nav {
+      display: none; } }
 
-.mobile-nav__link {
+a.mobile-nav__link {
   flex: 1;
   padding: 1em 0;
   text-align: center;
   background-color: #510915;
   color: white;
   text-decoration: none; }
-  .mobile-nav__link img {
+  a.mobile-nav__link img {
     vertical-align: middle; }
 
 .mobile-nav__link:last-child {
@@ -1036,30 +1188,85 @@ MOBILE NAV
 HEADER STYLES
 *********************/
 .header {
+  background: #510915;
+  position: relative;
+  margin-top: 3.625em; }
+  @media screen and (min-width: 900px) {
+    .header {
+      margin-top: 0; } }
+
+.banner {
   background-size: cover;
   background-position: center top;
-  position: relative; }
-  .header:before {
+  position: relative;
+  height: 280px; }
+  @media screen and (min-width: 481px) {
+    .banner {
+      height: 380px; } }
+  @media screen and (min-width: 768px) {
+    .banner {
+      height: 480px; } }
+  .banner .wrap {
+    height: 100%; }
+  .banner:before {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 70%;
     content: "";
     display: block;
     background: rgba(0, 0, 0, 0.8);
-    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.33) 29%, rgba(15, 6, 5, 0.64) 100%); }
-  .header h2 {
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.33) 50%, rgba(15, 6, 5, 0.64) 100%); }
+  .banner h2 {
     color: white;
     text-transform: uppercase;
     font-weight: bold;
-    text-align: center; }
-  .header .wrap {
+    text-align: center;
+    font-size: 1.5625em;
+    position: absolute;
+    bottom: 1rem;
+    left: 5%;
+    width: 90%; }
+    @media screen and (min-width: 481px) {
+      .banner h2 {
+        font-size: 2.0625em; } }
+    @media screen and (min-width: 900px) {
+      .banner h2 {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 66.6666666667%;
+        float: left;
+        padding-left: 1.3888888889%;
+        padding-right: 1.3888888889%;
+        left: 0;
+        text-align: left;
+        font-size: 2.5em; } }
+  .banner .wrap {
     position: relative;
     z-index: 99; }
 
 .header__logo {
   max-width: 90px; }
+  @media screen and (min-width: 900px) {
+    .header__logo {
+      max-width: 130px; } }
+
+@media screen and (min-width: 900px) {
+  #step-form {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 33.3333333333%;
+    float: left;
+    padding-left: 1.3888888889%;
+    padding-right: 1.3888888889%;
+    padding-left: 0;
+    padding-right: 0; } }
 
 /********************
 ACCREDITATION
@@ -1075,14 +1282,59 @@ BENEFITS
 *********************/
 .benefits ul {
   padding-left: 0; }
+  @media screen and (min-width: 900px) {
+    .benefits ul {
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 1em; } }
 
 .benefits li {
   list-style: none;
   margin-bottom: 1.5rem; }
+  @media screen and (min-width: 900px) {
+    .benefits li {
+      flex: 1;
+      min-width: 50%;
+      padding-left: 1.5em;
+      padding-right: 3rem;
+      position: relative;
+      z-index: 1; }
+      .benefits li:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -0.75em;
+        width: 3em;
+        height: 3em;
+        background: #7d1525;
+        display: block;
+        z-index: -1; } }
   .benefits li strong {
     text-transform: uppercase;
     display: block;
     margin-bottom: .5em; }
+
+/********************
+ONLINE DEGREES
+*********************/
+.online-degrees a {
+  display: block;
+  background: #510915;
+  padding: 1em .5em;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-bottom: .5em;
+  font-weight: bold;
+  position: relative; }
+  .online-degrees a:after {
+    content: url(/wp-content/themes/uwa/library/images/icon-plus.svg);
+    position: absolute;
+    right: 1em;
+    height: 28px;
+    width: 28px;
+    top: 50%;
+    transform: translateY(-50%); }
 
 /********************
 ABOUT US
@@ -1090,6 +1342,10 @@ ABOUT US
 .about-us {
   position: relative;
   padding-top: 160px; }
+  @media screen and (min-width: 900px) {
+    .about-us {
+      padding-top: 0;
+      padding-left: 40%; } }
   .about-us:before {
     content: "";
     height: 160px;
@@ -1100,6 +1356,10 @@ ABOUT US
     position: absolute;
     top: 0;
     left: 0; }
+    @media screen and (min-width: 900px) {
+      .about-us:before {
+        width: 40%;
+        height: 100%; } }
 
 /********************
 FOOTER STYLES

@@ -10,18 +10,20 @@ Button Styles
 @mixin button($btn-color: $link-color) {
   display: inline-block;
   position: relative;
-  font-family: $sans-serif;
+  font-family: $condensed;
+	letter-spacing: 2px;
   text-decoration: none;
   color: white !important;
   font-size: 1em;
   line-height: 34px;
   font-weight: normal;
   padding: .5em 1em;
-  border-radius: 4px;
   border: 0;
   cursor: pointer;
   transition: background-color 0.14s ease-in-out;
   background: $btn-color;
+	text-transform: uppercase;
+	border-bottom: 6px solid darken($btn-color, 20%);
 
   // hovering on the btn
   &:hover, &:focus {
@@ -39,8 +41,13 @@ Button Styles
 } // end .button
 
 // Regular Button
-.button {
-  @include button($link-color);
+.button, .btn {
+  @include button();
+}
+
+.button_gold {
+	@include button($gold);
+	color: $black !important;
 }
 
 // Small Button
