@@ -53,5 +53,20 @@ jQuery(document).ready(function($) {
         $('.header__nav').toggleClass('visible');
     });
 
+		// Modal Stuff
+		$('.js-modal').on('click', function(e) {
+			var modalWindow = $(this).data( "modal" );
+
+			e.preventDefault();
+			$('#'+modalWindow).toggleClass( "open" );
+			$('body').toggleClass("no-scroll");
+		 });
+
+		$('.js-modal__close').on('click', function(e) {
+			e.preventDefault();
+			$('.modal.open').removeClass('open');
+			$('body').toggleClass("no-scroll");
+		});
+
 
 }); /* end of as page load scripts */

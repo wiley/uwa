@@ -56,15 +56,13 @@
 						<a class="mobile-nav__link" href="#form"><span>Request Info</a>
 					</div>
 
-					<div class="wrap cf">
-
 						<h1 class="logo header__logo" itemscope itemtype="http://schema.org/Organization"><img src="<?php the_field('logo', 'option'); ?>" alt="UWA Online"></h1>
 						<h2><?php the_field('banner_heading'); ?></h2>
 
-					</div>
-
 				</div>
 
-			<?php the_field('form_script'); ?>
+				<a class="tel-link" href="tel:<?php the_field('phone_number', 'option'); ?>"><img src="/wp-content/themes/uwa/library/images/icon-phone.svg"><span> Speak to an advisor now</span> <?php the_field('phone_number', 'option'); ?></a>
+
+				<?php the_field('form_script'); ?>
 
 			</header>

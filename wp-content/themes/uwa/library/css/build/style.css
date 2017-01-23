@@ -498,7 +498,7 @@ TEXT STYLE CLASSES
   .decorative:before {
     content: "";
     width: 3em;
-    height: .25em;
+    height: 7px;
     display: block;
     position: absolute;
     top: 0;
@@ -568,6 +568,14 @@ body {
   background-color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+  @media screen and (min-width: 1040px) {
+    body {
+      font-size: 112.5%; } }
+  @media screen and (min-width: 1600px) {
+    body {
+      font-size: 125%; } }
+  body.no-scroll {
+    overflow: hidden; }
 
 .fonts-loaded body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif; }
@@ -718,6 +726,7 @@ textarea,
   display: block;
   line-height: 1em;
   margin-bottom: 14px;
+  margin-top: .5em;
   font-size: 1em;
   color: #11181F;
   vertical-align: middle;
@@ -726,7 +735,9 @@ textarea,
   background-color: white;
   transition: background-color 0.24s ease-in-out;
   padding: .5em;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  border-radius: 0px;
+  border: none; }
   input[type]:focus, input[type]:active,
   select:focus,
   select:active,
@@ -734,8 +745,8 @@ textarea,
   textarea:active,
   .field:focus,
   .field:active {
-    background-color: #8a8a8a;
-    outline: none; }
+    outline: none;
+    border: 2px solid #C9BF79; }
   input[type].error, input[type].is-invalid,
   select.error,
   select.is-invalid,
@@ -811,15 +822,16 @@ textarea {
   border: 0;
   cursor: pointer;
   transition: background-color 0.14s ease-in-out;
-  background: #A81D32;
+  background: #C9BF79;
   text-transform: uppercase;
-  border-bottom: 6px solid #510e18;
+  border-bottom: 6px solid #9d913f;
+  color: #11181F !important;
   width: 100%; }
   .requestinfo input[type="submit"]:hover, .requestinfo input[type="submit"]:focus {
     color: white;
     text-decoration: none;
     outline: none;
-    background: #67121f; }
+    background: #afa247; }
   .requestinfo input[type="submit"]:active {
     top: 1px; }
 
@@ -847,6 +859,9 @@ legend,
 .elp_hidden {
   display: none; }
 
+.req {
+  text-decoration: none !important; }
+
 /*********************
 STEP FORM STYLES
 *********************/
@@ -855,12 +870,14 @@ STEP FORM STYLES
   color: white;
   overflow: hidden;
   padding-bottom: 1em; }
+  #step-form p {
+    margin: 0; }
 
 .step-form__header {
   background: #510915;
   padding: .5em 5%;
   position: relative;
-  padding-bottom: 1.875em; }
+  padding-bottom: 4em; }
   .step-form__header:before {
     content: "";
     position: absolute;
@@ -884,6 +901,7 @@ STEP FORM STYLES
 
 .step-form__heading {
   margin-bottom: .2em;
+  margin-top: .5em;
   font-size: 1.8em; }
 
 .btn {
@@ -915,6 +933,7 @@ STEP FORM STYLES
 .next.btn {
   position: relative; }
   .next.btn:before {
+    font-size: 1rem;
     content: "Step 1 of 2";
     text-transform: uppercase;
     color: #DDA8B0;

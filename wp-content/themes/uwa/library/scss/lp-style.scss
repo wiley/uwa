@@ -14,9 +14,7 @@ IMPORTING
 @import "modules/forms";
 @import "modules/links";
 @import "modules/media";
-@import "partials/header";
-@import "partials/nav";
-@import "partials/footer";
+@import "modules/modal";
 
 /********************
 LAYOUT & GRID STYLES
@@ -30,6 +28,10 @@ LAYOUT & GRID STYLES
 
 section {
 	padding: 1em 0;
+
+	@include mobilefirst($bp-med) {
+		padding: 2em 0;
+	}
 }
 
 
@@ -82,14 +84,46 @@ HEADER STYLES
 	}
 }
 
+.tel-link {
+	display: none;
+
+	@include mobilefirst($bp-med) {
+		display: block;
+		position: absolute;
+    right: 1rem;
+    top: 1rem;
+    width: 33.3333333333%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+		z-index: 100;
+
+		span {
+			display: none;
+
+			@include mobilefirst($bp-xl) {
+				display: inline;
+			}
+		}
+
+		img {
+			vertical-align: middle;
+			width: em(35);
+			height: em(35);
+		}
+	}
+}
+
 .banner {
 	background-size: cover;
-	background-position: center top;
+	background-position: 30% top;
 	position: relative;
 	height: 280px;
 
 	@include mobilefirst($bp-sm) { 	height: 380px; }
-	@include mobilefirst(768px) { 	height: 480px; }
+	@include mobilefirst($bp-med) { 	height: 500px; }
+	@include mobilefirst($bp-xl) { 	height: 580px; }
 
 	.wrap { height: 100%; }
 
@@ -116,44 +150,54 @@ HEADER STYLES
 		left: 5%;
 		width: 90%;
 
-		@include mobilefirst($bp-sm) {
-			font-size: em(33);
-		}
+		@include mobilefirst($bp-sm) { font-size: em(33); }
 
 		@include mobilefirst($bp-med) {
 			@include span(8);
 			left: 0;
 			text-align: left;
-			font-size: em(40);
+			font-size: em(39);
 		}
+
+		@include mobilefirst($bp-xl) { font-size: em(46); }
+
 	}
 
-	.wrap {
-		position: relative;
-		z-index: 99;
-	}
 }
 
 .header__logo {
 	max-width: 90px;
+	position: relative;
+	top: 1rem;
+	left: 1rem;
+	margin: 0;
 
 	@include mobilefirst($bp-med) {
 		max-width: 130px; // Make logo bigger
+		top: 2rem;
+		left: 1.3888888889%;
 	}
 }
 
 
 #step-form {
 
+	z-index: 100;
+
 	@include mobilefirst($bp-med) {
 		position: absolute;
 		right :1rem;
-		top: 1rem;
+		top: 4rem;
 		@include span(4);
 		padding-left: 0;
 		padding-right: 0;
 	}
+
+	@include mobilefirst($bp-xl) {
+		top: 5rem;
+	}
 }
+
 
 /********************
 ACCREDITATION
@@ -172,6 +216,11 @@ BENEFITS
 
 .benefits {
 
+	h3 {
+		margin-top: 0;
+		color: white;
+	}
+
 	ul {
 		padding-left: 0;
 
@@ -179,6 +228,10 @@ BENEFITS
 			display: flex;
 			flex-wrap: wrap;
 			padding-top: 1em;
+		}
+
+		@include mobilefirst($bp-xl) {
+			padding-top: 4em;
 		}
 	}
 
@@ -207,6 +260,18 @@ BENEFITS
 			}
 		}
 
+		@include mobilefirst($bp-xl) {
+			min-width: 25%;
+			padding-left: em(40);
+
+			&:before {
+				width: em(80);
+				height: em(80);
+				top: em(-40);
+			}
+		}
+
+
 		strong {
 			text-transform: uppercase;
 			display: block;
@@ -230,6 +295,8 @@ ONLINE DEGREES
 	font-weight: bold;
 	position: relative;
 
+	&:hover { color: white; }
+
 	&:after {
 		content: url(/wp-content/themes/uwa/library/images/icon-plus.svg);
 		position: absolute;
@@ -246,28 +313,40 @@ ABOUT US
 *********************/
 
 .about-us {
-	position: relative;
-	padding-top: 160px;
+	padding-top: 0;
 
 	@include mobilefirst($bp-med) {
-		padding-top: 0;
-		padding-left: 40%;
+		overflow: hidden;
+		position: relative;
+		padding-top: 1em;
+
+		&__content {
+			width: 60%;
+			float: right;
+		}
 	}
 
-	&:before {
-		content: "";
-		height: 160px;
-		width: 100%;
-		background: url(/wp-content/uploads/2017/01/about-bg.jpg);
-		background-size: cover;
-		background-position: center;
+}
+
+.about-us__bg {
+
+	@include mobilefirst($bp-med) {
 		position: absolute;
 		top: 0;
 		left: 0;
+		width: 38%;
+		height: 100%;
 
-		@include mobilefirst($bp-med) {
-			width: 40%;
+		.about-us_bg-img {
+			max-width: none;
+			width: auto;
 			height: 100%;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			min-width: 100%;
+			min-height: 100%; /* This bit centers the image. */
 		}
 	}
 }
@@ -281,6 +360,10 @@ FOOTER STYLES
 	color: white;
 	padding: 1em 0;
 	text-align: center;
+
+	@include mobilefirst($bp-med) {
+		padding: 2em 0;
+	}
 
 	a { color: $gold; }
 }

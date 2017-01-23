@@ -14,6 +14,7 @@ textarea,
   display: block;
   line-height: 1em;
   margin-bottom: 14px;
+	margin-top: .5em;
   font-size: 1em;
   color: $text-color;
   vertical-align: middle;
@@ -23,12 +24,14 @@ textarea,
   transition: background-color 0.24s ease-in-out;
   padding: .5em;
   box-sizing: border-box;
+	border-radius: 0px;
+	border: none;
 
   // a focused input (or hovered on)
   &:focus,
   &:active {
-    background-color: lighten(gray, 4%);
     outline: none;
+		border: 2px solid $gold;
   } // end hover or focus
 
   // error notification
@@ -85,7 +88,8 @@ textarea {
 
 // submit button
 .requestinfo input[type="submit"] { // class added to override styling above
-  @include button();
+  @include button($gold);
+	color: $black !important;
   width: 100%;
 }
 
@@ -116,7 +120,7 @@ legend,
 }
 
 .elp_hidden { display: none; }
-
+.req { text-decoration: none !important; }
 
 /*********************
 STEP FORM STYLES
@@ -127,13 +131,15 @@ STEP FORM STYLES
 	color: white;
 	overflow: hidden;
 	padding-bottom: 1em;
+
+	p { margin: 0; }
 }
 
 .step-form__header {
 	background: $red_dark;
 	padding: .5em 5%;
 	position: relative;
-	padding-bottom: em(30);
+	padding-bottom: em(64);
 
 	&:before {
 		content: "";
@@ -162,6 +168,7 @@ STEP FORM STYLES
 
 .step-form__heading {
 	margin-bottom: .2em;
+	margin-top: .5em;
 	font-size: 1.8em;
 }
 
@@ -174,6 +181,7 @@ STEP FORM STYLES
 	position: relative;
 
 	&:before {
+		font-size: 1rem;
 		content: "Step 1 of 2";
 		text-transform: uppercase;
 		color: #DDA8B0;

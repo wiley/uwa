@@ -8,7 +8,6 @@ module.exports = {
             ],
         },
         options: {
-            watchTask: true,
 						proxy: "uwa.loc"
         }
     }
