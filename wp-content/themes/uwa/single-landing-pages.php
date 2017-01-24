@@ -51,7 +51,7 @@
 				$modalContent = get_sub_field('modal_content'); ?>
 
 					<div id="<?php echo $modalId; ?>" class="modal">
-						<a href="#" class="js-modal__close js-modal__close_overlay">Close</a>
+						<a href="#" class="js-modal__close js-modal__close_overlay"></a>
 						<div class="modal__content">
 							<a href="#" class="js-modal__close">&times; Close</a>
 							<?php echo $modalContent; ?>

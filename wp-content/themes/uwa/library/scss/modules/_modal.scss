@@ -14,7 +14,7 @@ MODAL STYLING
 	transform: translate(-50%, -50%) scale(0);
 
 	&__content {
-		width: 100%;
+		width: 90vw;
 		max-width: 600px;
 		height: auto;
 		max-height: 90vh;
@@ -53,6 +53,9 @@ MODAL STYLING
 			transform: translate(-50%,-50%) scale(1);
 		}
 	}
+
+	h4 {	margin-bottom: .2em;}
+	ul { margin-top: 0; }
 
 }
 

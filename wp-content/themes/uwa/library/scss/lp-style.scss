@@ -87,6 +87,10 @@ HEADER STYLES
 .tel-link {
 	display: none;
 
+	&:hover,
+	&:visited,
+	&:active { color: white; }
+
 	@include mobilefirst($bp-med) {
 		display: block;
 		position: absolute;
@@ -186,7 +190,7 @@ HEADER STYLES
 
 	@include mobilefirst($bp-med) {
 		position: absolute;
-		right :1rem;
+		right: 2rem;
 		top: 4rem;
 		@include span(4);
 		padding-left: 0;
@@ -198,6 +202,9 @@ HEADER STYLES
 	}
 }
 
+
+
+.requestinfo { background: $red; }
 
 /********************
 ACCREDITATION
@@ -365,7 +372,9 @@ FOOTER STYLES
 		padding: 2em 0;
 	}
 
-	a { color: $gold; }
+	a,
+	a:hover,
+	a:visited { color: $gold; }
 }
 
 .footer__copyright { font-size: .8em; }

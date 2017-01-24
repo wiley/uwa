@@ -856,6 +856,12 @@ legend,
 .req {
   text-decoration: none !important; }
 
+/**** Half width fields ****/
+.field_half {
+  width: 48%;
+  float: left;
+  margin-right: 2%; }
+
 /*********************
 STEP FORM STYLES
 *********************/
@@ -924,9 +930,11 @@ STEP FORM STYLES
   .btn:active {
     top: 1px; }
 
-.next.btn {
+.next {
   position: relative; }
-  .next.btn:before {
+  .next:hover {
+    cursor: pointer; }
+  .next:before {
     font-size: 1rem;
     content: "Step 1 of 2";
     text-transform: uppercase;
@@ -935,6 +943,19 @@ STEP FORM STYLES
     position: absolute;
     right: 120%;
     width: 125px; }
+
+/** Overlay for 2nd Step **/
+.prev-overlay {
+  display: none; }
+  .prev-overlay.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 100; }
 
 /*********************
 LINK STYLES
@@ -1018,7 +1039,7 @@ MODAL STYLING
   left: 50vw;
   transform: translate(-50%, -50%) scale(0); }
   .modal__content {
-    width: 100%;
+    width: 90vw;
     max-width: 600px;
     height: auto;
     max-height: 90vh;
@@ -1072,6 +1093,10 @@ MODAL STYLING
       visibility: visible;
       opacity: 1;
       transform: translate(-50%, -50%) scale(1); }
+  .modal h4 {
+    margin-bottom: .2em; }
+  .modal ul {
+    margin-top: 0; }
 
 .js-modal__close_overlay {
   position: fixed;
@@ -1153,6 +1178,8 @@ HEADER STYLES
 
 .tel-link {
   display: none; }
+  .tel-link:hover, .tel-link:visited, .tel-link:active {
+    color: white; }
   @media screen and (min-width: 900px) {
     .tel-link {
       display: block;
@@ -1248,7 +1275,7 @@ HEADER STYLES
   @media screen and (min-width: 900px) {
     #step-form {
       position: absolute;
-      right: 1rem;
+      right: 2rem;
       top: 4rem;
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
@@ -1262,6 +1289,9 @@ HEADER STYLES
   @media screen and (min-width: 1200px) {
     #step-form {
       top: 5rem; } }
+
+.requestinfo {
+  background: #A81D32; }
 
 /********************
 ACCREDITATION
@@ -1392,7 +1422,9 @@ FOOTER STYLES
   @media screen and (min-width: 900px) {
     .footer {
       padding: 2em 0; } }
-  .footer a {
+  .footer a,
+  .footer a:hover,
+  .footer a:visited {
     color: #C9BF79; }
 
 .footer__copyright {

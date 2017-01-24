@@ -7,3 +7,10 @@ PAGE SPECIFIC STYLES
 .post-header__title {
 	margin: 0;
 }
+
+
+/**** PAGE TEMPLATE FULL WIDTH ****/
+
+.page-template-page-full .main-content {
+	@include mobilefirst($bp-med) { @include span(12); } // Make full width instead of 8 columns
+}

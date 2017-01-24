@@ -122,6 +122,15 @@ legend,
 .elp_hidden { display: none; }
 .req { text-decoration: none !important; }
 
+
+/**** Half width fields ****/
+
+.field_half {
+	width: 48%;
+	float: left;
+	margin-right: 2%;
+}
+
 /*********************
 STEP FORM STYLES
 *********************/
@@ -177,8 +186,10 @@ STEP FORM STYLES
 	color: $black !important;
 }
 
-.next.btn {
+.next {
 	position: relative;
+
+	&:hover { cursor: pointer; }
 
 	&:before {
 		font-size: 1rem;
@@ -190,4 +201,22 @@ STEP FORM STYLES
     right: 120%;
     width: 125px;
 	}
+}
+
+/** Overlay for 2nd Step **/
+
+.prev-overlay {
+	display: none;
+
+	&.active {
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,.8);
+		z-index: 100;
+	}
+
 }
