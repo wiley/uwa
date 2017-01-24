@@ -606,11 +606,13 @@ ACCORDION STYLES
 *********************/
 .accord.active .accord__header:before {
   -webkit-transform: translateY(-50%) rotate(45deg);
+      -ms-transform: translateY(-50%) rotate(45deg);
           transform: translateY(-50%) rotate(45deg); }
 
 .accord.active .accord__content {
   visibility: visible;
   -webkit-transform: scale(1);
+      -ms-transform: scale(1);
           transform: scale(1);
   height: auto;
   opacity: 1; }
@@ -619,8 +621,10 @@ ACCORDION STYLES
   visibility: hidden;
   padding: .5em;
   -webkit-transform: scale(0);
+      -ms-transform: scale(0);
           transform: scale(0);
   -webkit-transform-origin: 50% 0;
+      -ms-transform-origin: 50% 0;
           transform-origin: 50% 0;
   transition: all .2s ease-in-out;
   opacity: 0;
@@ -638,10 +642,12 @@ ACCORDION STYLES
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
             transform: translateY(-50%);
     right: 1em;
     transition: .2s all ease-in-out;
     -webkit-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
             transform-origin: 50% 50%; }
 
 /******************************************************************
@@ -1029,6 +1035,7 @@ img,
   /* This bit centers the image. */
   left: 50%;
   -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
           transform: translateX(-50%);
   overflow-x: hidden; }
 

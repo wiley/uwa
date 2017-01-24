@@ -202,8 +202,6 @@ HEADER STYLES
 	}
 }
 
-
-
 .requestinfo { background: $red; }
 
 /********************
@@ -214,7 +212,11 @@ ACCREDITATION
 	display: flex;
 	align-items: center;
 
-	div { padding: .5em; }
+	div {
+		float: left;
+		flex: 1 1 auto;
+		padding: .5em;
+	}
 }
 
 /********************
@@ -239,6 +241,7 @@ BENEFITS
 
 		@include mobilefirst($bp-xl) {
 			padding-top: 4em;
+			flex-wrap: nowrap;
 		}
 	}
 
@@ -247,7 +250,9 @@ BENEFITS
 		margin-bottom: 1.5rem;
 
 		@include mobilefirst($bp-med) {
-			flex: 1;
+			width: 50%;
+			float: left;
+			flex: 1 1 50%;
 			min-width: 50%;
 			padding-left: em(24);
 			padding-right: 3rem;
@@ -268,8 +273,10 @@ BENEFITS
 		}
 
 		@include mobilefirst($bp-xl) {
+			width: 25%;
 			min-width: 25%;
 			padding-left: em(40);
+			flex: 1 1 25%;
 
 			&:before {
 				width: em(80);
@@ -378,3 +385,17 @@ FOOTER STYLES
 }
 
 .footer__copyright { font-size: .8em; }
+
+/********************
+IE STYLES
+*********************/
+
+.lt-ie10 {
+	.banner:before { display: none; } // Remove Gradient
+	.online-degrees a:after { top: 28%; } // Vertically align icon
+}
+
+.lt-ie9 {
+	.header { margin-top: 0; }
+	.mobile-nav { display: none; }
+}

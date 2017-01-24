@@ -58,7 +58,7 @@ jQuery(document).ready(function($) {
 			var modalWindow = $(this).data( "modal" );
 
 			e.preventDefault();
-			$('#'+modalWindow).toggleClass( "open" );
+			$('#'+modalWindow).toggleClass( 'open' );
 			$('body').toggleClass("no-scroll");
 		 });
 

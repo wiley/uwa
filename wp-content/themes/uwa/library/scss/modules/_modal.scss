@@ -5,7 +5,7 @@ MODAL STYLING
 .modal {
 	visibility: hidden;
 	opacity: 0;
-	transition: .4s all ease-in-out;
+	transition: .25s all ease-in-out;
 	width: 0;
 	height: 0;
 	position: fixed;
@@ -23,8 +23,8 @@ MODAL STYLING
 		position: relative;
 		top: 50%;
 		left: 50%;
-		transition: .3s all ease-in-out;
-		transition-delay: .2s;
+		transition: .125s all ease-in-out;
+		transition-delay: .125s;
 		transform: translate(-50%,-50%) scale(0);
 		opacity: 0;
 		visibility: hidden;
@@ -65,6 +65,7 @@ MODAL STYLING
 	right: 0;
 	left: 0;
 	bottom: 0;
+	background: black;
 	background: rgba(0,0,0,.8);
 }
 
