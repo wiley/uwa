@@ -6,7 +6,6 @@ IMPORTING
  * 1. Change the default font family in all browsers (opinionated).
   * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
    */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 html {
   font-family: sans-serif;
   /* 1 */
