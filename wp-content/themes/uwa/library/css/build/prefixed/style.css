@@ -9,6 +9,7 @@ IMPORTING BASE
  * 1. Change the default font family in all browsers (opinionated).
   * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
    */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 html {
   font-family: sans-serif;
   /* 1 */
@@ -511,6 +512,9 @@ TEXT STYLE CLASSES
   .decorative_red_dark:before {
     background: #510915; }
 
+.first {
+  margin-top: 0; }
+
 /******************************************************************
 SUSY GRID // For any questions go to http://susydocs.oddbird.net/en/latest/
 ******************************************************************/
@@ -555,7 +559,7 @@ html {
   box-sizing: inherit; }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 1.5;
   color: #11181F;
@@ -570,9 +574,6 @@ body {
       font-size: 125%; } }
   body.no-scroll {
     overflow: hidden; }
-
-.fonts-loaded body {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif; }
 
 .border {
   border: 2px solid #A81D32;
@@ -890,26 +891,21 @@ STEP FORM STYLES
   padding: .5em 5%;
   position: relative;
   padding-bottom: 4em; }
-  .step-form__header:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 0px 35px 50vw;
-    border-color: transparent transparent #a81d32 transparent; }
-  .step-form__header:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 50vw 35px 0;
-    border-color: transparent transparent #a81d32 transparent; }
+
+.arrow-right,
+.arrow-left {
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  height: 3em; }
+
+.arrow-right {
+  right: 0;
+  background: linear-gradient(to right bottom, transparent 50%, #A81D32 50%) center center/100% 100%; }
+
+.arrow-left {
+  left: 0;
+  background: linear-gradient(to left bottom, transparent 50%, #A81D32 50%) center center/100% 100%; }
 
 .step-form__heading {
   margin-bottom: .2em;

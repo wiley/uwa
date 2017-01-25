@@ -214,7 +214,6 @@ ACCREDITATION
 
 	div {
 		float: left;
-		flex: 1 1 auto;
 		padding: .5em;
 	}
 }
@@ -225,8 +224,11 @@ BENEFITS
 
 .benefits {
 
+	h2 { margin-bottom: 1em; }
+
 	h3 {
 		margin-top: 0;
+		margin-bottom: .25em;
 		color: white;
 	}
 
@@ -247,7 +249,7 @@ BENEFITS
 
 	li {
 		list-style: none;
-		margin-bottom: 1.5rem;
+		margin-bottom: 2rem;
 
 		@include mobilefirst($bp-med) {
 			width: 50%;

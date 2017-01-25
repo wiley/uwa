@@ -149,30 +149,24 @@ STEP FORM STYLES
 	padding: .5em 5%;
 	position: relative;
 	padding-bottom: em(64);
+}
 
-	&:before {
-		content: "";
-		position: absolute;
-		bottom: 0;
-		right: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 0px 35px 50vw;
-    border-color: transparent transparent #a81d32 transparent;
-	}
+.arrow-right,
+.arrow-left {
+	position:absolute;
+	bottom: 0;
+	width: 50%;
+	height: 3em;
+}
 
-	&:after {
-		content: "";
-		position: absolute;
-		bottom: 0;
-		left: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 50vw 35px 0;
-    border-color: transparent transparent #a81d32 transparent;
-	}
+.arrow-right {
+	right: 0;
+	background: linear-gradient(to right bottom, rgba(0, 0, 0, 0) 50%, $red 50%) center center / 100% 100%,;
+}
+
+.arrow-left {
+	left: 0;
+	background: linear-gradient(to left bottom, rgba(0, 0, 0, 0) 50%, $red 50%) center center / 100% 100%,;
 }
 
 .step-form__heading {

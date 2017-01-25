@@ -26,7 +26,7 @@
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-		<style><?php /* include 'library/css/build/minified/lp-critical.css'; */ ?></style>
+		<style><?php include 'library/css/build/minified/lp-critical.css';  ?></style>
 
 		<?php wp_head(); ?>
 
@@ -45,8 +45,8 @@
 				<div class="banner" style="background-image: url(<?php the_field('banner_image'); ?>);">
 
 					<div class="mobile-nav">
-						<a class="mobile-nav__link" href="tel:8449003037"><span><img src="/wp-content/themes/uwa/library/images/icon-phone.svg" role="presentation" alt=""></span> <?php the_field('phone_number', 'option'); ?></a>
-						<a class="mobile-nav__link" href="#form"><span>Request Info</span></a>
+						<a class="mobile-nav__link" href="tel:<?php echo str_replace(' ', '', get_field('phone_number', 'option')); ?>"><span><img src="/wp-content/themes/uwa/library/images/icon-phone.svg" role="presentation" alt=""></span> <?php the_field('phone_number', 'option'); ?></a>
+						<a class="mobile-nav__link scroll" href="#step-form"><span>Request Info</span></a>
 					</div>
 
 						<h1 class="logo header__logo" itemscope itemtype="http://schema.org/Organization"><img src="<?php the_field('logo', 'option'); ?>" alt="UWA Online"></h1>
@@ -54,7 +54,7 @@
 
 				</div>
 
-				<a class="tel-link" href="tel:8449003037"><img src="/wp-content/themes/uwa/library/images/icon-phone.svg" role="presentation" alt=""><span> Speak to an advisor now</span> <?php the_field('phone_number', 'option'); ?></a>
+				<a class="tel-link" href="tel:<?php echo str_replace(' ', '', get_field('phone_number', 'option')); ?>"><img src="/wp-content/themes/uwa/library/images/icon-phone.svg" role="presentation" alt=""><span> Speak to an advisor now</span> <?php the_field('phone_number', 'option'); ?></a>
 
 				<?php the_field('form_script'); ?>
 

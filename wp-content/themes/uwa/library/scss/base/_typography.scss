@@ -2,6 +2,8 @@
 Typography Styles
 ******************************************************************/
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 @font-face {
 	font-family: 'Trade Gothic LT Std';
 	src: url('../../../fonts/TradeGothicLTStd-Bd2.eot');
@@ -178,6 +180,6 @@ TEXT STYLE CLASSES
 	&_gold:before { background: $gold; }
 	&_white:before { background: white; }
 	&_red_dark:before { background: $red_dark; }
-
 }
 
+.first { margin-top: 0; }
