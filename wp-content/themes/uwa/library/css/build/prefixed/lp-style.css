@@ -1275,6 +1275,7 @@ HEADER STYLES
       top: 2rem;
       left: 1.3888888889%; } }
 
+/**** Form Styling in the banner ****/
 #step-form {
   z-index: 100; }
   @media screen and (min-width: 900px) {

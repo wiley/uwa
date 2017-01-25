@@ -183,13 +183,13 @@ HEADER STYLES
 	}
 }
 
+/**** Form Styling in the banner ****/
 
 #step-form {
-
 	z-index: 100;
 
 	@include mobilefirst($bp-med) {
-		position: absolute;
+		position: absolute; // move form on bigger screen sizes
 		right: 2rem;
 		top: 4rem;
 		@include span(4);
@@ -387,6 +387,7 @@ FOOTER STYLES
 }
 
 .footer__copyright { font-size: .8em; }
+
 
 /********************
 IE STYLES
