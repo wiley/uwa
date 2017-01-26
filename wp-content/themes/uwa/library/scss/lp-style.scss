@@ -161,6 +161,7 @@ HEADER STYLES
 			left: 0;
 			text-align: left;
 			font-size: em(39);
+			padding-right: 8%;
 		}
 
 		@include mobilefirst($bp-xl) { font-size: em(46); }
@@ -186,7 +187,6 @@ HEADER STYLES
 /**** Form Styling in the banner ****/
 
 #step-form {
-	z-index: 100;
 
 	@include mobilefirst($bp-med) {
 		position: absolute; // move form on bigger screen sizes
