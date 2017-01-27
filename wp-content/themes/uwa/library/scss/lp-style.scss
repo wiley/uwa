@@ -89,7 +89,9 @@ HEADER STYLES
 
 	&:hover,
 	&:visited,
-	&:active { color: white; }
+	&:activei,
+	&:focus { color: white; }
+
 
 	@include mobilefirst($bp-med) {
 		display: block;
