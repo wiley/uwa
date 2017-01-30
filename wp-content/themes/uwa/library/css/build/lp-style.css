@@ -747,7 +747,7 @@ textarea,
   textarea.is-invalid,
   .field.error,
   .field.is-invalid {
-    color: #510915;
+    color: #A81D32;
     background-color: white;
     background-position: 99% center;
     background-repeat: no-repeat;
@@ -1097,6 +1097,9 @@ MODAL STYLING
   background: black;
   background: rgba(0, 0, 0, 0.8); }
 
+*:focus {
+  outline: 6px dotted pink; }
+
 /********************
 LAYOUT & GRID STYLES
 *********************/
@@ -1169,8 +1172,8 @@ HEADER STYLES
 
 .tel-link {
   display: none; }
-  .tel-link:hover, .tel-link:visited, .tel-link:activei, .tel-link:focus {
-    color: white; }
+  .tel-link:hover, .tel-link:visited, .tel-link:active, .tel-link:focus {
+    color: white !important; }
   @media screen and (min-width: 900px) {
     .tel-link {
       display: block;

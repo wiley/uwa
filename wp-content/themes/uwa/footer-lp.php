@@ -1,4 +1,4 @@
-			<footer class="footer cf" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+		<footer class="footer cf" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 
 				<div class="wrap cf">
 
@@ -10,6 +10,27 @@
 			</footer>
 
 		</div>
+
+		<?php
+		if( have_rows('modal') ):
+
+				while ( have_rows('modal') ) : the_row();
+
+				$modalId = get_sub_field('modal_id');
+				$modalContent = get_sub_field('modal_content'); ?>
+
+					<div id="<?php echo $modalId; ?>" class="modal" aria-hidden="true" role="dialog" aria-labbeledby="modal__header">
+						<a href="#" class="js-modal__close js-modal__close_overlay"></a>
+						<div class="modal__content">
+							<a href="#" class="js-modal__close">&times; Close</a>
+							<?php echo $modalContent; ?>
+						</div>
+					</div>
+				<?php endwhile; ?>
+		<?php endif; ?>
+
+
+
 
 		<?php // all js scripts are loaded in library/bones.php ?>
 		<?php wp_footer(); ?>

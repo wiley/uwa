@@ -42,22 +42,4 @@
 
 		?>
 
-		<?php
-		if( have_rows('modal') ):
-
-				while ( have_rows('modal') ) : the_row();
-
-				$modalId = get_sub_field('modal_id');
-				$modalContent = get_sub_field('modal_content'); ?>
-
-					<div id="<?php echo $modalId; ?>" class="modal">
-						<a href="#" class="js-modal__close js-modal__close_overlay"></a>
-						<div class="modal__content">
-							<a href="#" class="js-modal__close">&times; Close</a>
-							<?php echo $modalContent; ?>
-						</div>
-					</div>
-				<?php endwhile; ?>
-		<?php endif; ?>
-
 <?php get_footer( 'lp' ); ?>

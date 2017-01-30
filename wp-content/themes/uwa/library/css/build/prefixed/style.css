@@ -759,7 +759,7 @@ textarea,
   textarea.is-invalid,
   .field.error,
   .field.is-invalid {
-    color: #510915;
+    color: #A81D32;
     background-color: white;
     background-position: 99% center;
     background-repeat: no-repeat;

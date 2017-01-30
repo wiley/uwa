@@ -16,6 +16,8 @@ IMPORTING
 @import "modules/media";
 @import "modules/modal";
 
+*:focus { outline: 6px dotted pink; }
+
 /********************
 LAYOUT & GRID STYLES
 *********************/
@@ -89,8 +91,8 @@ HEADER STYLES
 
 	&:hover,
 	&:visited,
-	&:activei,
-	&:focus { color: white; }
+	&:active,
+	&:focus { color: white !important; }
 
 
 	@include mobilefirst($bp-med) {
