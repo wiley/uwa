@@ -1,5 +1,7 @@
 <?php get_header(); ?>
-<h1>STAGING</h1>
+
+<h1>MASTER</h1>
+<h1>MASTER</h1>
 			<div class="content">
 
 				<div class="wrap cf">
