@@ -1364,6 +1364,29 @@ LAYOUT & GRID STYLES
 /*************************
 HOMEPAGE SPECIFIC STYLES
 *************************/
+body.home {
+  height: 100vh;
+  overflow: hidden; }
+
+.home .header {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0); }
+
+.home .logo img {
+  width: 500px; }
+
+.home .footer {
+  position: absolute;
+  bottom: 0;
+  padding: 3em;
+  width: 100%;
+  text-align: center;
+  font-weight: 700; }
+
 /*************************
 PAGE SPECIFIC STYLES
 *************************/
@@ -1422,6 +1445,62 @@ POST STYLES
 .tags {
   margin: 0; }
 
+.page-id-121 .header {
+  background: #11181f;
+  height: 220px;
+  overflow: hidden; }
+  .page-id-121 .header .wrap {
+    position: relative; }
+  .page-id-121 .header img {
+    width: 120px; }
+    @media (min-width: 768px) {
+      .page-id-121 .header img {
+        width: initial; } }
+
+.page-id-121 .title {
+  position: absolute;
+  color: #fff;
+  right: 0;
+  z-index: 999;
+  margin: -150px 0;
+  font-size: 2.5em; }
+  @media (min-width: 768px) {
+    .page-id-121 .title {
+      font-size: 3em; } }
+  .page-id-121 .title__wrap {
+    position: relative; }
+
+.page-id-121 .content {
+  background-image: url(/wp-content/uploads/2017/01/about-us-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  height: calc(100vh - 300px);
+  background-position: bottom;
+  position: relative; }
+  .page-id-121 .content:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right, #383838, #1a1e17);
+    opacity: .7; }
+  .page-id-121 .content > .wrap {
+    position: relative; }
+
+.page-id-121 .footer {
+  height: 100px;
+  background: #a81d32;
+  color: white;
+  padding: 1em 0 0 0;
+  font-weight: 700; }
+
+.page-id-121 .main-content {
+  color: white;
+  margin-top: 3em; }
+
 /*********************
 PRINT
 *********************/
@@ -1470,3 +1549,26 @@ Print Stylesheet
   .respond-form,
   nav {
     display: none; } }
+
+html > *:focus {
+  background-color: gray; }
+
+/* ACCESSIBILITY */
+.sr-only {
+  position: absolute;
+  display: block;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden; }
+
+input.btn {
+  max-width: 87%;
+  display: block; }
+
+.next.btn {
+  margin: 0 30px; }
+
+.block2 .next {
+  margin: 0 30px; }

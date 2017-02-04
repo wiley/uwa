@@ -1021,7 +1021,6 @@ img,
 MODAL STYLING
 ******************************************************************/
 .modal {
-  visibility: hidden;
   opacity: 0;
   transition: .25s all ease-in-out;
   width: 0;
@@ -1043,7 +1042,6 @@ MODAL STYLING
     transition-delay: .125s;
     transform: translate(-50%, -50%) scale(0);
     opacity: 0;
-    visibility: hidden;
     padding: 2rem; }
     .modal__content .js-modal__close {
       display: inline-block;
@@ -1080,7 +1078,6 @@ MODAL STYLING
     width: 100vw;
     height: 100vh; }
     .modal.open .modal__content {
-      visibility: visible;
       opacity: 1;
       transform: translate(-50%, -50%) scale(1); }
   .modal h4 {
@@ -1088,17 +1085,8 @@ MODAL STYLING
   .modal ul {
     margin-top: 0; }
 
-.js-modal__close_overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: black;
-  background: rgba(0, 0, 0, 0.8); }
-
 *:focus {
-  outline: 6px dotted pink; }
+  outline: 6px dotted pink !important; }
 
 /********************
 LAYOUT & GRID STYLES
@@ -1449,3 +1437,25 @@ IE STYLES
 
 .lt-ie9 .mobile-nav {
   display: none; }
+
+/* ACCESSIBILITY */
+.sr-only {
+  position: absolute;
+  display: block;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden; }
+
+input.btn {
+  max-width: 87%;
+  display: block !important; }
+
+.next.btn {
+  margin: 0 30px; }
+
+.block2 .next {
+  margin: 0 30px; }
+  .block2 .next:before {
+    display: none !important; }

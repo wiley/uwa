@@ -54,23 +54,26 @@ jQuery(document).ready(function($) {
     });
 
 		// Modal Stuff
-		$('.js-modal').on('click', function(e) {
-			var modalWindow = $(this).data( "modal" ); // get target modal
-
-			e.preventDefault();
-			$('#'+modalWindow).toggleClass( 'open' ).attr("aria-hidden","false"); // toggle class
-			$('body').toggleClass("no-scroll"); // set body to no scroll
-			$(".container").attr("tabindex","-1"); // change tab index of main content
-			var modalHeading = $('.modal.open h3').text();
-			modalHeading.focus();
-
-		 });
-
-		$('.js-modal__close').on('click', function(e) {
-			e.preventDefault();
-			$('.modal.open').removeClass('open');
-			$('body').toggleClass("no-scroll");
-		});
+		// $('.js-modal').on('click', function(e) {
+		// 	var modalWindow = $(this).data( "modal" ); // get target modal
+    //
+		// 	e.preventDefault();
+		// 	$('#'+modalWindow).toggleClass( 'open' ).attr("aria-hidden","false"); // toggle class
+		// 	$('body').toggleClass("no-scroll"); // set body to no scroll
+		// 	$(".container").attr("tabindex","-1"); // change tab index of main content
+		// 	// var modalHeading = $('.modal.open h3').text();
+    //   var modalHeading = $('.modal.open h3');
+    //   modalHeading = modalHeading[0];
+		// 	// modalHeading.focus();
+    //
+    //
+		//  });
+    //
+		// $('.js-modal__close').on('click', function(e) {
+		// 	e.preventDefault();
+		// 	$('.modal.open').removeClass('open');
+		// 	$('body').toggleClass("no-scroll");
+		// });
 
 
 		// Smooth Scroll Links
@@ -88,6 +91,7 @@ jQuery(document).ready(function($) {
 				}
 			});
 		});
+
 
 
 }); /* end of as page load scripts */

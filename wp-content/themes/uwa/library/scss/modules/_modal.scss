@@ -3,7 +3,7 @@ MODAL STYLING
 ******************************************************************/
 
 .modal {
-	visibility: hidden;
+	// visibility: hidden;
 	opacity: 0;
 	transition: .25s all ease-in-out;
 	width: 0;
@@ -26,7 +26,7 @@ MODAL STYLING
 		transition-delay: .125s;
 		transform: translate(-50%,-50%) scale(0);
 		opacity: 0;
-		visibility: hidden;
+		// visibility: hidden;
 		padding: 2rem;
 
 		.js-modal__close {
@@ -46,7 +46,7 @@ MODAL STYLING
     height: 100vh;
 
 		.modal__content {
-			visibility: visible;
+			// visibility: visible;
 			opacity: 1;
 			transform: translate(-50%,-50%) scale(1);
 		}
@@ -58,13 +58,11 @@ MODAL STYLING
 }
 
 .js-modal__close_overlay {
-	position: fixed;
-	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0;
-	background: black;
-	background: rgba(0,0,0,.8);
+	// position: fixed;
+	// top: 0;
+	// right: 0;
+	// left: 0;
+	// bottom: 0;
+	// background: black;
+	// background: rgba(0,0,0,.8);
 }
-
-

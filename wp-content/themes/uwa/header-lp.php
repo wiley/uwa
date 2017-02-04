@@ -26,7 +26,9 @@
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-		<style><?php include 'library/css/build/minified/lp-critical.css';  ?></style>
+		<style>
+		/*<?php include 'library/css/build/minified/lp-critical.css';  ?>*/
+		</style>
 
 		<?php wp_head(); ?>
 
@@ -56,7 +58,7 @@
 				<div class="banner" style="background-image: url(<?php the_field('banner_image'); ?>);">
 
 					<div class="mobile-nav">
-						<a class="mobile-nav__link" href="tel:<?php echo str_replace(' ', '', get_field('phone_number', 'option')); ?>"><span><img src="/wp-content/themes/uwa/library/images/icon-phone.svg" role="presentation" alt=""></span> <?php the_field('phone_number', 'option'); ?></a>
+						<a role="button" class="mobile-nav__link" href="tel:<?php echo str_replace(' ', '', get_field('phone_number', 'option')); ?>"><span><img src="/wp-content/themes/uwa/library/images/icon-phone.svg" role="presentation" alt=""></span> <?php the_field('phone_number', 'option'); ?></a>
 						<a class="mobile-nav__link scroll" href="#step-form"><span>Request Info</span></a>
 					</div>
 

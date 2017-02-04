@@ -19,10 +19,10 @@
 				$modalId = get_sub_field('modal_id');
 				$modalContent = get_sub_field('modal_content'); ?>
 
-					<div id="<?php echo $modalId; ?>" class="modal" aria-hidden="true" role="dialog" aria-labbeledby="modal__header">
+					<div id="js-modal-<?php echo $modalId; ?>" class="modal" aria-hidden="true" role="dialog" aria-labbeledby="js-modal-<?php echo $modalId; ?>__header">
 						<a href="#" class="js-modal__close js-modal__close_overlay"></a>
-						<div class="modal__content">
-							<a href="#" class="js-modal__close">&times; Close</a>
+						<div class="modal__content" role="document" tabindex="0">
+							<a role="button" aria-label="Close Modal Window" href="#" class="js-modal__close">&times; Close</a>
 							<?php echo $modalContent; ?>
 						</div>
 					</div>
@@ -34,6 +34,12 @@
 
 		<?php // all js scripts are loaded in library/bones.php ?>
 		<?php wp_footer(); ?>
+
+        <!-- <script type='text/javascript' id="__bs_script__">
+            //<![CDATA[
+            document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.10.1.js'><\/script>".replace("HOST", location.hostname));
+            //]]>
+        </script> -->
 
 				<script type="text/javascript">
 					WebFontConfig = {
@@ -48,6 +54,56 @@
 						s.parentNode.insertBefore(wf, s);
 					})();
 				</script>
+
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+
+	(function () {
+		var modalToggle = $('.js-modal');
+		var closeButton = $('.js-modal__close');
+
+		var modalWindowID = '';
+		var modalWindow  = '';
+
+		// var closeButton = '';
+
+
+		function openModal (e) {
+			e.preventDefault();
+			modalWindowID = '#' + $(this).data( "modal" ); // get target modal
+			modalWindow = $(modalWindowID);
+			var modalContent = $(modalWindowID).find('.modal__content');
+
+			modalWindow.addClass('open').attr("aria-hidden","false");
+				console.log(modalContent);
+			modalContent.focus();
+			closeButton.click(closeModal);
+		}
+
+		function closeModal () {
+			modalWindow.removeClass('open');
+			modalFirstFocus = '';
+			modalLastItem = '';
+			modalClose = '';
+			modalWindow = '';
+			modalContent = '';
+			modalWindowID = '';
+		}
+
+		modalToggle.click(openModal);
+
+
+
+
+
+	})();
+
+}); /* end of as page load scripts */
+
+</script>
+
+
 
 	</body>
 
