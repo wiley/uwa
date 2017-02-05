@@ -151,4 +151,11 @@ function enqueue_scripts() {
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
 
 
+// function attributes_shortcode( $attr, $content = null ) {
+//     return $content . 'aria-label="My test"';
+// }
+// add_shortcode('attr', 'attributes_shortcode');
+
+
+
 /* DON'T DELETE THIS CLOSING TAG */ ?>

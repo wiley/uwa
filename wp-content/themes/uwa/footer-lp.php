@@ -21,10 +21,12 @@
 
 					<div id="js-modal-<?php echo $modalId; ?>" class="modal" aria-hidden="true" role="dialog" aria-labbeledby="js-modal-<?php echo $modalId; ?>__header">
 						<a href="#" class="js-modal__close js-modal__close_overlay"></a>
+						<div class="focusguard-top" tabindex="0">FOCUS TOP</div>
 						<div class="modal__content" role="document" tabindex="0">
-							<a role="button" aria-label="Close Modal Window" href="#" class="js-modal__close">&times; Close</a>
+							<a role="button" tabindex="0" aria-label="Close Modal Window" href="#" class="js-modal__close">&times; Close</a>
 							<?php echo $modalContent; ?>
 						</div>
+						<div class="focusguard-bottom" tabindex="0">FOCUS BOTTOM</div>
 					</div>
 				<?php endwhile; ?>
 		<?php endif; ?>
@@ -56,41 +58,64 @@ jQuery(document).ready(function($) {
 
 	(function () {
 		var modalToggle = $('.js-modal');
-		var closeButton = $('.js-modal__close');
-
+		var closeButton = '';
+		var focusGuardTop = '';
+		var focusGuardBottom = '';
 		var modalWindowID = '';
 		var modalWindow  = '';
 
-		// var closeButton = '';
-
+		function escapeListener () {
+		  $(document).on('keyup',function(event) {
+		      if (event.keyCode == 27) {
+		        closeModal();
+		      }
+		  });
+		}
 
 		function openModal (e) {
 			e.preventDefault();
 			modalWindowID = '#' + $(this).data( "modal" ); // get target modal
 			modalWindow = $(modalWindowID);
 			var modalContent = $(modalWindowID).find('.modal__content');
+			focusGuardTop = $(modalWindowID).find('.focusguard-top');
+			focusGuardBottom = $(modalWindowID).find('.focusguard-bottom');
+			closeButton = $(modalWindowID).find('.js-modal__close');
+
 
 			modalWindow.addClass('open').attr("aria-hidden","false");
-				console.log(modalContent);
 			modalContent.focus();
+			escapeListener();
+
+			focusGuardBottom.on('focus', function() {
+				modalContent.focus();
+			})
+
+			focusGuardTop.on('focus', function() {
+		    closeButton.focus();
+		  })
+
 			closeButton.click(closeModal);
+
 		}
 
 		function closeModal () {
-			modalWindow.removeClass('open');
+			$('.modal.open')
+				.removeClass('open');
+
+			// $('.modal').hasClass('open').removeClass('open');
+			// modalWindow
 			modalFirstFocus = '';
 			modalLastItem = '';
 			modalClose = '';
 			modalWindow = '';
 			modalContent = '';
 			modalWindowID = '';
+			focusGuardTop = '';
+			focusGuardBottom = '';
+			closeButton = '';
 		}
 
 		modalToggle.click(openModal);
-
-
-
-
 
 	})();
 
