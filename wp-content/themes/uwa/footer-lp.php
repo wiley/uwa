@@ -20,10 +20,10 @@
 				$modalContent = get_sub_field('modal_content'); ?>
 
 					<div id="js-modal-<?php echo $modalId; ?>" class="modal" aria-hidden="true" role="dialog" aria-labbeledby="js-modal-<?php echo $modalId; ?>__header">
-						<a href="#" class="js-modal__close js-modal__close_overlay"></a>
+						<a href="#" class="js-modal__close js-modal__close_overlay" aria-hidden="true"></a>
 						<div class="focusguard-top" tabindex="0">FOCUS TOP</div>
 						<div class="modal__content" role="document" tabindex="0">
-							<a role="button" tabindex="0" aria-label="Close Modal Window" href="#" class="js-modal__close">&times; Close</a>
+							<span role="button" tabindex="0" aria-label="Close Modal Window" href="#" class="js-modal__close">&times; Close</span>
 							<?php echo $modalContent; ?>
 						</div>
 						<div class="focusguard-bottom" tabindex="0">FOCUS BOTTOM</div>
