@@ -20,13 +20,12 @@
 				$modalContent = get_sub_field('modal_content'); ?>
 
 					<div id="js-modal-<?php echo $modalId; ?>" class="modal" aria-hidden="true" role="dialog" aria-labbeledby="js-modal-<?php echo $modalId; ?>__header">
-						<a href="#" class="js-modal__close js-modal__close_overlay" aria-hidden="true"></a>
-						<div class="focusguard-top" tabindex="0">FOCUS TOP</div>
+						<div class="focusguard-top" tabindex="0"></div>
 						<div class="modal__content" role="document" tabindex="0">
-							<span role="button" tabindex="0" aria-label="Close Modal Window" href="#" class="js-modal__close">&times; Close</span>
+							<button aria-label="Close Modal Window" class="js-modal__close">&times; Close</button>
 							<?php echo $modalContent; ?>
 						</div>
-						<div class="focusguard-bottom" tabindex="0">FOCUS BOTTOM</div>
+						<div class="focusguard-bottom" tabindex="0"></div>
 					</div>
 				<?php endwhile; ?>
 		<?php endif; ?>
@@ -57,12 +56,37 @@
 jQuery(document).ready(function($) {
 
 	(function () {
+		function escapeListener () {
+		  $(document).on('keyup',function(event) {
+		      if (event.keyCode == 27) {
+		        // $('.prev-overlay').toggleClass('active');
+		      }
+		  });
+		}
+
+		$('#item_id').on('blur', function() {
+			console.log('blurred');
+			// $('.block1 .formError').remove()
+			// $(document).on('keydown',function(event) {
+		  //     if (event.keyCode == 9) {
+		  //       event.preventDefault();
+			// 			console.log('Worked!');
+		  //     }
+		  // });
+		})
+
+
+	})();
+
+
+	(function () {
 		var modalToggle = $('.js-modal');
 		var closeButton = '';
 		var focusGuardTop = '';
 		var focusGuardBottom = '';
 		var modalWindowID = '';
 		var modalWindow  = '';
+		var lastToggleClicked = '';
 
 		function escapeListener () {
 		  $(document).on('keyup',function(event) {
@@ -72,8 +96,18 @@ jQuery(document).ready(function($) {
 		  });
 		}
 
+		function clickToCloseModal() {
+			$(window).click(function(event) {
+				if (event.target == modalWindow[0]) {
+					closeModal();
+				}
+			});
+		}
+
 		function openModal (e) {
 			e.preventDefault();
+			lastToggleClicked = $(this)[0];
+			console.log(lastToggleClicked);
 			modalWindowID = '#' + $(this).data( "modal" ); // get target modal
 			modalWindow = $(modalWindowID);
 			var modalContent = $(modalWindowID).find('.modal__content');
@@ -95,15 +129,18 @@ jQuery(document).ready(function($) {
 		  })
 
 			closeButton.click(closeModal);
-
 		}
 
-		function closeModal () {
-			$('.modal.open')
-				.removeClass('open');
 
-			// $('.modal').hasClass('open').removeClass('open');
-			// modalWindow
+
+		function closeModal () {
+			$('.modal.open').removeClass('open');
+			console.log(lastToggleClicked[0]);
+			lastToggleClicked.focus();
+			resetVars();
+		}
+
+		function resetVars() {
 			modalFirstFocus = '';
 			modalLastItem = '';
 			modalClose = '';
@@ -113,8 +150,10 @@ jQuery(document).ready(function($) {
 			focusGuardTop = '';
 			focusGuardBottom = '';
 			closeButton = '';
+			// lastToggleClicked = '';
 		}
 
+		clickToCloseModal();
 		modalToggle.click(openModal);
 
 	})();

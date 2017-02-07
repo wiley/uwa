@@ -34,6 +34,7 @@ MODAL STYLING
 			position: absolute;
 			top: 0;
 			right: 0;
+			margin: 6px;
 		}
 	}
 
@@ -44,6 +45,8 @@ MODAL STYLING
     display: block;
     width: 100vw;
     height: 100vh;
+		background: black;
+    background: rgba(0,0,0,.8);
 
 		.modal__content {
 			// visibility: visible;

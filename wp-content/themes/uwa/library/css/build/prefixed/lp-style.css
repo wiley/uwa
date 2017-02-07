@@ -1072,7 +1072,8 @@ MODAL STYLING
       border-bottom: 6px solid #510e18;
       position: absolute;
       top: 0;
-      right: 0; }
+      right: 0;
+      margin: 6px; }
       .modal__content .js-modal__close:hover, .modal__content .js-modal__close:focus {
         color: white;
         text-decoration: none;
@@ -1086,7 +1087,9 @@ MODAL STYLING
     z-index: 9999;
     display: block;
     width: 100vw;
-    height: 100vh; }
+    height: 100vh;
+    background: black;
+    background: rgba(0, 0, 0, 0.8); }
     .modal.open .modal__content {
       opacity: 1;
       -webkit-transform: translate(-50%, -50%) scale(1);
@@ -1483,3 +1486,16 @@ input.btn {
   margin: 0 30px; }
   .block2 .next:before {
     display: none !important; }
+
+.requestinfo .legal-text {
+  width: 85% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-top: 1em; }
+
+.requestinfo fieldset {
+  padding-bottom: 0; }
+
+.requestinfo input[type=submit] {
+  margin-left: auto;
+  margin-right: auto; }

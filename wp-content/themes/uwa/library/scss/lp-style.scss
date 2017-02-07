@@ -435,3 +435,46 @@ input.btn {
     display: none !important;
   }
 }
+
+.requestinfo {
+
+	.legal-text {
+		width: 85% !important;
+		margin-left: auto !important;
+		margin-right: auto !important;
+		padding-top: 1em;
+	}
+
+	fieldset {
+		padding-bottom: 0;
+
+		// &.name {
+		// 	.field_half:nth-of-type(1) {
+		// 		margin-left: 0;
+		// 		margin-right: 3%
+		// 	}
+		//
+		// 	.field_half:nth-of-type(2) {
+		// 		margin-left: 3%;
+		// 		margin-right: 0;
+		// 	}
+		// }
+		//
+		// &.contact-info {
+		// 	.field_half:nth-of-type(1) {
+		// 		margin-left: 0;
+		// 		margin-right: 3%
+		// 	}
+		//
+		// 	.field_half:nth-of-type(2) {
+		// 		margin-left: 3%;
+		// 		margin-right: 0;
+		// 	}
+		// }
+	}
+
+	input[type=submit] {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
