@@ -139,8 +139,6 @@ jQuery(document).ready(function($) {
 			closeButton.click(closeModal);
 		}
 
-
-
 		function closeModal () {
 			$('.modal.open').removeClass('open');
 			console.log(lastToggleClicked[0]);
@@ -166,11 +164,10 @@ jQuery(document).ready(function($) {
 		modalToggle.click(openModal);
 
 
-		// FORM TESTING
+		// FORM
 		var fname = $('#first_name');
 		var lname = $('#last_name');
-		// $('#firstNameError').html('Please fill in your name');
-		// $('#firstNameError').attr('aria-hidden', 'false');
+
 
 		fname.on('blur', function() {
 			// alert('fired');
