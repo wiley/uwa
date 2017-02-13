@@ -1089,7 +1089,7 @@ MODAL STYLING
     margin-top: 0; }
 
 *:focus {
-  outline: 6px dotted pink !important; }
+  outline: 4px dotted #C9BF79 !important; }
 
 /********************
 LAYOUT & GRID STYLES
@@ -1442,6 +1442,19 @@ IE STYLES
   display: none; }
 
 /* ACCESSIBILITY */
+.ariaValidationResponse {
+  transition: .28s; }
+
+#firstNameError, #lastNameError {
+  display: none;
+  background: #151515;
+  padding: 5px 5px 5px 10px;
+  border-radius: 3px;
+  margin-top: -7px; }
+
+#firstNameError.error, #lastNameError.error {
+  display: block; }
+
 .sr-only {
   position: absolute;
   display: block;
@@ -1475,3 +1488,9 @@ input.btn {
 .requestinfo input[type=submit] {
   margin-left: auto;
   margin-right: auto; }
+
+.online-degrees a {
+  transition: .2s ease; }
+  .online-degrees a:focus {
+    color: white !important;
+    font-size: 110%; }

@@ -1,10 +1,11 @@
+
 		<footer class="footer cf" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 
 				<div class="wrap cf">
 
 					<img src="/wp-content/uploads/2017/01/footer__uwa-logo.svg" alt="UWA Online Logo">
 					<p class="footer__copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>. <a href="/privacy-policy/" target="_blank">Privacy Policy</a></p>
-
+  				<div class="focusguard-bottom" tabindex="0" aria-hidden="true"></div>
 				</div>
 
 			</footer>
@@ -87,6 +88,7 @@ jQuery(document).ready(function($) {
 		var modalWindowID = '';
 		var modalWindow  = '';
 		var lastToggleClicked = '';
+		var footerFocusGuardBottom = $('.footer').find('.focusguard-bottom');
 
 		function escapeListener () {
 		  $(document).on('keyup',function(event) {
@@ -94,6 +96,12 @@ jQuery(document).ready(function($) {
 		        closeModal();
 		      }
 		  });
+		}
+
+		function returnTabbingToTop () {
+			footerFocusGuardBottom.on('focus', function() {
+				$('.header .tel-link').focus();
+			});
 		}
 
 		function clickToCloseModal() {
@@ -153,8 +161,69 @@ jQuery(document).ready(function($) {
 			// lastToggleClicked = '';
 		}
 
+		returnTabbingToTop();
 		clickToCloseModal();
 		modalToggle.click(openModal);
+
+
+		// FORM TESTING
+		var fname = $('#first_name');
+		var lname = $('#last_name');
+		// $('#firstNameError').html('Please fill in your name');
+		// $('#firstNameError').attr('aria-hidden', 'false');
+
+		fname.on('blur', function() {
+			// alert('fired');
+			if ( $(this).hasClass('error') ) {
+				$('#firstNameError')
+					.html('Please fill in this required field')
+					.addClass('error')
+					.attr('aria-hidden', 'false');
+			} else {
+				$('#firstNameError')
+					.html('Field is now valid')
+					.attr('aria-hidden', 'true');
+					setTimeout(function(){
+						$('#firstNameError').removeClass('error');
+					}, 1500);
+			}
+		});
+
+
+		lname.on('blur', function() {
+			// alert('fired');
+			if ( $(this).hasClass('error') ) {
+				$('#lastNameError')
+					.html('Please fill in required field')
+					.addClass('error')
+					.attr('aria-hidden', 'false');
+			} else {
+				$('#lastNameError')
+					.html('Field is now valid')
+					.attr('aria-hidden', 'true');
+					setTimeout(function(){
+						$('#lastNameError').removeClass('error');
+					}, 1500);
+			}
+		});
+
+		function nameValidationCheck(field) {
+			if ( field.hasClass('error') ) {
+				field
+					.html('Please fill in required field')
+					.addClass('error')
+					.attr('aria-hidden', 'false');
+			} else {
+				field
+					.html('Field is now valid')
+					.attr('aria-hidden', 'true')
+					.removeClass('error');
+			}
+		}
+
+
+		// lname.on('blur', nameValidationCheck($(this)));
+
 
 	})();
 

@@ -67,7 +67,7 @@
 
 				</div>
 
-				<a class="tel-link" href="tel:<?php echo str_replace(' ', '', get_field('phone_number', 'option')); ?>"><img src="/wp-content/themes/uwa/library/images/icon-phone.svg" role="presentation" alt=""><span> Speak to an advisor now</span> <?php the_field('phone_number', 'option'); ?></a>
+				<a role="button" aria-label="Click to speak to an advisor now" class="tel-link" href="tel:<?php echo str_replace(' ', '', get_field('phone_number', 'option')); ?>"><img src="/wp-content/themes/uwa/library/images/icon-phone.svg" role="presentation" alt=""><span id="speakNowText" class="sr-only"> Speak to an advisor now</span> <?php the_field('phone_number', 'option'); ?></a>
 
 				<?php the_field('form_script'); ?>
 

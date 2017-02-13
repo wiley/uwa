@@ -364,7 +364,7 @@ function emailChangeHandler(event){
 
 	// tlh
 	if (!$('#emailError').length){
-		$(tClassName).after('<div class="FormError" id="emailError" role="alert" aria-live="assertive"></div>');
+		$(tClassName).after('<div class="FormError" id="emailError" role="alert" aria-live="polite"></div>');
     	}
 
 	$(parentForm).attr('state','proccess');
@@ -376,7 +376,7 @@ function emailChangeHandler(event){
 	{
 		submitBtn = $(parentForm).find("button[type='submit']");
 	}
-	submitBtn.attr('disabled', 'true');
+	// submitBtn.attr('disabled', 'true');
 	if(checkEmailSyntax(email))
 	{
 		var spellCheck = checkDomainSpell(email);
@@ -536,7 +536,7 @@ function formButtonCheckHandler(tooltip,submitBtn,parentForm)
 				{
 					if(submitBtn.length > 0)
 					{
-						submitBtn.attr('disabled', 'true');
+						// submitBtn.attr('disabled', 'true');
 					}
 
 					$(parentForm).attr('state','proccess');
@@ -571,11 +571,11 @@ console.log(tooltip);
 	{
 		submitBtn = $(parentForm).find("button[type='submit']");
 	}
-	submitBtn.attr('disabled', 'true');
+	// submitBtn.attr('disabled', 'true');
 	tClassName = tooltip;
 
 	if (!$('#phoneError').length){
-		$(tClassName).after('<div class="FormError" id="phoneError" role="alert" aria-live="assertive"></div>');
+		$(tClassName).after('<div class="FormError" id="phoneError" role="alert" aria-live="polite"></div>');
     	}
 
 	if(phoneType == undefined)
