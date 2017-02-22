@@ -81,6 +81,7 @@ jQuery(document).ready(function($) {
 
 
 	(function () {
+		var body = $('body');
 		var modalToggle = $('.js-modal');
 		var closeButton = '';
 		var focusGuardTop = '';
@@ -123,7 +124,7 @@ jQuery(document).ready(function($) {
 			focusGuardBottom = $(modalWindowID).find('.focusguard-bottom');
 			closeButton = $(modalWindowID).find('.js-modal__close');
 
-
+			// body.toggleClass('no-scroll');
 			modalWindow.addClass('open').attr("aria-hidden","false");
 			modalContent.focus();
 			escapeListener();
@@ -141,8 +142,10 @@ jQuery(document).ready(function($) {
 
 		function closeModal () {
 			$('.modal.open').removeClass('open');
+			// body.toggleClass('no-scroll');
 			console.log(lastToggleClicked[0]);
 			lastToggleClicked.focus();
+
 			resetVars();
 		}
 

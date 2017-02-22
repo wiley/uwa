@@ -1,4 +1,4 @@
- input, select{ overflow: visible; }
+button, input, select{ overflow: visible; }
  legend{ box-sizing: border-box; padding: 0px; }
 .decorative::before{ content: ''; }
 html{ font-family: sans-serif; box-sizing: border-box; }
@@ -8,12 +8,12 @@ a{ background-color: transparent; }
 abbr[title]{ border-bottom-style: none; text-decoration: underline; }
 h1{ margin: 0.67em 0px; }
 img{ border-style: none; }
- input, select{ font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; }
- select{ text-transform: none; }
- [type="submit"]{ cursor: pointer; }
- [type="submit"]{ -webkit-appearance: button; }
+button, input, select{ font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; }
+button, select{ text-transform: none; }
+ [type="submit"], button{ cursor: pointer; }
+ [type="submit"], button{ -webkit-appearance: button; }
 fieldset{ margin: 0px 2px; padding: 0.35em 0.625em 0.75em; }
-.first, .modal ul, p{ margin-top: 0px; }
+.first, p{ margin-top: 0px; }
 legend{ color: inherit; max-width: 100%; white-space: normal; }
  h4{ color: rgb(168, 29, 50); }
 #step-form{ overflow: hidden; }
@@ -67,7 +67,6 @@ body{ font-size: 125%; }
 .cf::after, .cf::before{ content: ''; display: table; }
 .cf::after{ clear: both; }
  input[type], select{ display: block; line-height: 1em; margin-bottom: 14px; margin-top: 0.5em; font-size: 1em; color: rgb(17, 24, 31); vertical-align: middle; box-shadow: none; width: 100%; background-color: rgb(255, 255, 255); transition: background-color 0.24s ease-in-out; -webkit-transition: background-color 0.24s ease-in-out; padding: 0.5em; box-sizing: border-box; border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; border: none; }
-.modal, .modal__content{ opacity: 0; visibility: hidden; }
 .btn, .modal__content .js-modal__close, .requestinfo input[type="submit"]{ font-family: 'Trade Gothic LT Std', Arial, sans-serif; letter-spacing: 2px; line-height: 34px; font-weight: 400; cursor: pointer; text-transform: uppercase; }
 .requestinfo input[type="submit"]{ display: inline-block; position: relative; text-decoration: none; font-size: 1em; padding: 0.5em 1em; border-width: 0px 0px 6px; transition: background-color 0.14s ease-in-out; -webkit-transition: background-color 0.14s ease-in-out; background-color: rgb(201, 191, 121); border-bottom-style: solid; border-bottom-color: rgb(157, 145, 63); width: 100%; color: rgb(17, 24, 31) !important; background-position: initial initial; background-repeat: initial initial; }
 .elp_hidden, legend{ display: none; }
@@ -75,7 +74,7 @@ select{ -webkit-appearance: none; background-image: url(data:image/png;base64,iV
 fieldset{ border: none; padding-left: 5%; padding-right: 5%; }
 .req{ text-decoration: none !important; }
 .field_half{ width: 48%; float: left; margin-right: 2%; }
-#step-form{ background-color: rgb(168, 29, 50); color: rgb(255, 255, 255); padding-bottom: 1em; background-position: initial initial; background-repeat: initial initial; }
+#step-form{ background-color: rgb(168, 29, 50); color: rgb(255, 255, 255); padding-bottom: 1em; position: relative; z-index: 999; background-position: initial initial; background-repeat: initial initial; }
 #step-form p{ margin: 0px; }
 .step-form__header{ background-color: rgb(81, 9, 21); padding: 0.5em 5% 4em; position: relative; background-position: initial initial; background-repeat: initial initial; }
 .arrow-left, .arrow-right{ position: absolute; bottom: 0px; width: 50%; height: 3em; }
@@ -89,11 +88,11 @@ fieldset{ border: none; padding-left: 5%; padding-right: 5%; }
 a{ color: rgb(168, 29, 50); }
 a:link{ -webkit-tap-highlight-color: rgba(0, 0, 0, 0.298039); }
  img{ max-width: 100%; height: auto; }
-.modal{ transition: all 0.25s ease-in-out; -webkit-transition: all 0.25s ease-in-out; width: 0px; height: 0px; position: fixed; top: 0px; left: 0px; }
-.modal__content{ width: 90vw; max-width: 600px; height: auto; max-height: 90vh; background-color: rgb(255, 255, 255); overflow-y: scroll; position: relative; top: 50%; left: 50%; transition: all 0.125s ease-in-out 0.125s; -webkit-transition: all 0.125s ease-in-out 0.125s; -webkit-transform: translate(-50%, -50%) scale(0); padding: 2rem; background-position: initial initial; background-repeat: initial initial; }
-.modal__content .js-modal__close{ display: inline-block; text-decoration: none; font-size: 1em; padding: 0.5em 1em; border-width: 0px 0px 6px; transition: background-color 0.14s ease-in-out; -webkit-transition: background-color 0.14s ease-in-out; background-color: rgb(168, 29, 50); border-bottom-style: solid; border-bottom-color: rgb(81, 14, 24); position: absolute; top: 0px; right: 0px; color: rgb(255, 255, 255) !important; background-position: initial initial; background-repeat: initial initial; }
+.modal{ opacity: 0; transition: all 0.25s ease-in-out; -webkit-transition: all 0.25s ease-in-out; width: 0px; height: 0px; position: fixed; top: 0px; left: 0px; }
+.modal__content{ width: 90vw; max-width: 600px; height: auto; max-height: 90vh; background-color: rgb(255, 255, 255); overflow-y: scroll; position: relative; top: 50%; left: 50%; transition: all 0.125s ease-in-out 0.125s; -webkit-transition: all 0.125s ease-in-out 0.125s; -webkit-transform: translate(-50%, -50%) scale(0); opacity: 0; padding: 2rem; background-position: initial initial; background-repeat: initial initial; }
+.modal__content .js-modal__close{ display: inline-block; text-decoration: none; font-size: 1em; padding: 0.5em 1em; border-width: 0px 0px 6px; transition: background-color 0.14s ease-in-out; -webkit-transition: background-color 0.14s ease-in-out; background-color: rgb(168, 29, 50); border-bottom-style: solid; border-bottom-color: rgb(81, 14, 24); position: absolute; top: 0px; right: 0px; margin: 6px; color: rgb(255, 255, 255) !important; background-position: initial initial; background-repeat: initial initial; }
 .modal h4{ margin-bottom: 0.2em; }
-.js-modal__close_overlay{ position: fixed; top: 0px; right: 0px; left: 0px; bottom: 0px; background-color: rgba(0, 0, 0, 0.8); background-position: initial initial; background-repeat: initial initial; }
+.modal ul{ margin-top: 0px; }
 .wrap{ width: 90%; max-width: 1440px; margin: 0px auto; }
 section{ padding: 1em 0px; }
 @media screen and (min-width: 900px){
@@ -134,10 +133,9 @@ a.mobile-nav__link img{ vertical-align: middle; }
 .banner h2{ font-size: 2.0625em; }
 }
 @media screen and (min-width: 900px){
-.banner h2{ box-sizing: border-box; width: 66.6666666667%; float: left; padding-left: 1.3888888889%; padding-right: 1.3888888889%; left: 0px; text-align: left; font-size: 2.4375em; }
+.banner h2{ box-sizing: border-box; width: 66.6666666667%; float: left; padding-left: 1.3888888889%; left: 0px; text-align: left; font-size: 2.4375em; padding-right: 8%; }
 }
 .header__logo{ max-width: 90px; position: relative; top: 1rem; left: 1rem; margin: 0px; }
-#step-form{ z-index: 100; }
 @media screen and (min-width: 900px){
 .header__logo{ max-width: 130px; top: 2rem; left: 1.3888888889%; }
 #step-form{ position: absolute; right: 2rem; top: 4rem; box-sizing: border-box; width: 33.3333333333%; float: left; padding-left: 0px; padding-right: 0px; }
@@ -151,3 +149,14 @@ a.mobile-nav__link img{ vertical-align: middle; }
  .online-degrees a{ background-color: rgb(81, 9, 21); color: rgb(255, 255, 255); background-position: initial initial; background-repeat: initial initial; }
 .online-degrees a{ padding: 1em 0.5em; text-decoration: none; font-weight: 700; position: relative; }
 .online-degrees a::after{ content: url(/wp-content/themes/uwa/library/images/icon-plus.svg); position: absolute; right: 1em; height: 28px; width: 28px; top: 50%; -webkit-transform: translateY(-50%); }
+.ariaValidationResponse{ transition: 0.28s; -webkit-transition: 0.28s; }
+#firstNameError, #lastNameError{ display: none; background-color: rgb(21, 21, 21); padding: 5px 5px 5px 10px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; margin-top: -7px; background-position: initial initial; background-repeat: initial initial; }
+ .sr-only{ display: block; }
+.sr-only{ position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+input.btn{ max-width: 87%; display: block !important; }
+.block2 .next, .next.btn{ margin: 0px 30px; }
+.block2 .next::before{ display: none !important; }
+.requestinfo .legal-text{ padding-top: 1em; width: 85% !important; margin-left: auto !important; margin-right: auto !important; }
+.requestinfo fieldset{ padding-bottom: 0px; }
+.requestinfo input[type="submit"]{ margin-left: auto; margin-right: auto; }
+.online-degrees a{ transition: 0.2s ease; -webkit-transition: 0.2s ease; }

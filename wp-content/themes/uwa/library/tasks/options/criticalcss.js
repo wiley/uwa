@@ -1,7 +1,7 @@
 module.exports = {
     custom: {
         options: {
-            url: "http://uwa.loc/my/online-degree",
+            url: "http://uwa.dev/my/online-degree",
             width: 1200,
             height: 900,
             outputfile: "css/build/lp-critical.css",
@@ -12,7 +12,7 @@ module.exports = {
     },
     home: {
         options: {
-            url: "http://uwa.loc/",
+            url: "http://uwa.dev/",
             width: 1200,
             height: 900,
             outputfile: "css/build/home-critical.css",
@@ -23,7 +23,7 @@ module.exports = {
     },
     interior: {
         options: {
-            url: "http://uwa.loc/online-programs",
+            url: "http://uwa.dev/online-programs",
             width: 1200,
             height: 900,
             outputfile: "css/build/interior-critical.css",
