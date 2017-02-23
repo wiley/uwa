@@ -58,13 +58,19 @@
 
 				<div class="banner" style="background-image: url(<?php the_field('banner_image'); ?>);">
 
-					<div class="mobile-nav">
-						<a role="button" class="mobile-nav__link" href="tel:<?php echo str_replace(' ', '', get_field('phone_number', 'option')); ?>"><span><img src="/wp-content/themes/uwa/library/images/icon-phone.svg" role="presentation" alt=""></span> <?php the_field('phone_number', 'option'); ?></a>
-						<a class="mobile-nav__link scroll" href="#step-form"><span>Request Info</span></a>
-					</div>
+					<div class="wrap">
 
-						<h1 class="logo header__logo" itemscope itemtype="http://schema.org/Organization"><img src="<?php the_field('logo', 'option'); ?>" alt="UWA Online"></h1>
-						<h2><?php the_field('banner_heading'); ?></h2>
+						<div class="mobile-nav">
+							<a role="button" class="mobile-nav__link" href="tel:<?php echo str_replace(' ', '', get_field('phone_number', 'option')); ?>"><span><img src="/wp-content/themes/uwa/library/images/icon-phone.svg" role="presentation" alt=""></span> <?php the_field('phone_number', 'option'); ?></a>
+							<a class="mobile-nav__link scroll" href="#step-form"><span>Request Info</span></a>
+						</div>
+
+							<h1 class="logo header__logo" itemscope itemtype="http://schema.org/Organization"><img src="<?php the_field('logo', 'option'); ?>" alt="UWA Online"></h1>
+							<div class="banner__text">
+								<h2><?php the_field('banner_heading'); ?></h2>
+							</div>
+
+					</div>
 
 				</div>
 

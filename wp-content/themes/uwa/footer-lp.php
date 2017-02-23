@@ -31,7 +31,9 @@
 				<?php endwhile; ?>
 		<?php endif; ?>
 
-
+		<?php if ( get_field('custom_js') ): ?>
+			<script><?php the_field('custom_js'); ?></script>
+		<?php endif; ?>
 
 
 		<?php // all js scripts are loaded in library/bones.php ?>

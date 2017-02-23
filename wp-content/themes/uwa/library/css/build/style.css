@@ -486,6 +486,9 @@ TEXT STYLE CLASSES
 .text_red {
   color: #A81D32; }
 
+.text_red_dark {
+  color: #510915; }
+
 .text_white {
   color: white; }
 
@@ -494,7 +497,8 @@ TEXT STYLE CLASSES
 
 .decorative {
   position: relative;
-  padding-top: 1em; }
+  padding-top: 1em;
+  margin-top: 0; }
   .decorative:before {
     content: "";
     width: 3em;
@@ -1157,7 +1161,10 @@ Table Styles
 ******************************************************************/
 table {
   width: 100%;
-  margin-bottom: 1.5em; }
+  margin-bottom: 1.5em;
+  background: white;
+  box-shadow: 0 23px 65px -25px rgba(51, 51, 51, 0.5);
+  border-collapse: collapse; }
   table caption {
     margin: 0 0 7px;
     font-size: 0.75em;
@@ -1170,17 +1177,16 @@ td {
   padding: 10px 20px;
   text-align: left; }
 
-tr:nth-child(even) {
-  background: #eee; }
-
-tr:nth-child(even) {
-  background-color: lightgray; }
+tr:nth-child(odd) {
+  background-color: #eeead4; }
 
 td {
   color: #666; }
 
 th {
-  background-color: lightgray; }
+  background-color: #A81D32;
+  color: white;
+  text-transform: uppercase; }
 
 /*********************
 IMPORTING PARTIALS

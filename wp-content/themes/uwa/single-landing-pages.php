@@ -22,16 +22,14 @@
 						<?php } ?>
 
 						<?php if(get_sub_field('columns') == "2") { ?>
+									<div class="wrap">
 										<div class="left-col">
-												<div class="wrap">
-														<?php echo $column1; ?>
-												</div>
+											<?php echo $column1; ?>
 										</div>
 										<div class="right-col">
-												<div class="wrap">
-														<?php echo $column2; ?>
-												</div>
+											<?php echo $column2; ?>
 										</div>
+									</div>
 						<?php } ?>
 
 						</section>

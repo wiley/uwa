@@ -6,7 +6,8 @@ a{ background-color: transparent; }
 img{ border-style: none; }
  input{ font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; }
  p{ margin-top: 0px; }
-.h1, h2{ text-rendering: optimizelegibility; font-weight: 700; text-transform: uppercase; font-family: 'Trade Gothic LT Std', Arial, sans-serif; }
+ body.home{ overflow: hidden; }
+.h1{ text-rendering: optimizelegibility; font-weight: 700; text-transform: uppercase; font-family: 'Trade Gothic LT Std', Arial, sans-serif; }
 .h1 a{ text-decoration: none; }
 .h1{ font-size: 2.25em; line-height: 1.25; }
 @media screen and (min-width: 900px){
@@ -15,14 +16,7 @@ img{ border-style: none; }
 @media screen and (min-width: 1040px){
 .h1{ font-size: 3em; line-height: 1.05; }
 }
- h2{ font-size: 1.9375em; line-height: 1.15384615; margin-bottom: 0.375em; }
-@media screen and (min-width: 900px){
- h2{ font-size: 2.25em; line-height: 1.25; }
-}
-@media screen and (min-width: 1040px){
- h2{ font-size: 2.5em; line-height: 1.25; }
-}
-p{ margin-bottom: 1.5em; }
+ p{ margin-bottom: 1.5em; }
 .wrap{ margin-left: auto; margin-right: auto; }
 .wrap::after{ content: ' '; display: block; clear: both; }
 *{ box-sizing: inherit; }
@@ -45,18 +39,22 @@ a:link{ -webkit-tap-highlight-color: rgba(0, 0, 0, 0.298039); }
 .header__logo{ float: left; }
 }
 .header__logo{ margin: 0.75em 0px; }
+.home .footer, .home .header{ position: absolute; text-align: center; }
 .wrap{ width: 90%; max-width: 1440px; margin: 0px auto; }
 @media screen and (min-width: 900px){
 .main-content{ box-sizing: border-box; padding-left: 1.3888888889%; padding-right: 1.3888888889%; }
 .main-content{ width: 66.6666666667%; float: left; }
 }
+body.home{ height: 100vh; }
+.home .header{ left: 50%; top: 50%; -webkit-transform: translate3d(-50%, -50%, 0px); }
+.home .logo img{ width: 500px; }
+.home .footer{ bottom: 0px; padding: 3em; width: 100%; font-weight: 700; }
 @media print{
  img{ page-break-inside: avoid; }
 *{ color: rgb(0, 0, 0) !important; text-shadow: none !important; -webkit-filter: none !important; filter: none !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
 a{ text-decoration: underline; color: rgb(68, 68, 68) !important; }
 a::after{ content: ' (', attr(href), ')'; }
 img{ max-width: 100% !important; }
-h2, p{ orphans: 3; widows: 3; }
-h2{ page-break-after: avoid; }
+ p{ orphans: 3; widows: 3; }
  nav{ display: none; }
 }

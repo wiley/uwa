@@ -156,6 +156,7 @@ TEXT STYLE CLASSES
 
 .text {
 	&_red { color: $red; }
+	&_red_dark { color: $red_dark; }
 	&_white { color: white; }
 	&_uppercase { text-transform: uppercase; }
 }
@@ -163,6 +164,7 @@ TEXT STYLE CLASSES
 .decorative {
 	position: relative;
 	padding-top: 1em;
+	margin-top: 0;
 
 	&:before {
 		content: "";
