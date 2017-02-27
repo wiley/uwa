@@ -43,9 +43,14 @@ section {
 	}
 }
 
+.right-col { padding-top: 2rem; }
+
 @include mobilefirst($bp-med) {
 	.left-col { padding-right: 3%; }
-	.right-col { padding-left: 3%; }
+	.right-col {
+		padding-left: 3%;
+		padding-top: 0;
+	}
 }
 
 
@@ -222,6 +227,10 @@ HEADER STYLES
 /**** Form Styling in the banner ****/
 
 #step-form {
+
+	select {
+		padding-right: 40px;
+	}
 
 	@include mobilefirst($bp-med) {
 		position: absolute; // move form on bigger screen sizes
@@ -473,6 +482,12 @@ ABOUT US
 
 	p:last-of-type { margin-bottom: 0; }
 
+	&__content {
+		padding-top: 2rem;
+
+		@include mobilefirst($bp-med) { padding-top: 0;  }
+	}
+
 }
 
 .about-us__bg {
@@ -633,7 +648,8 @@ input.btn {
 
 /*** Page Specific ***/
 
-.postid-143 {
+.postid-143,
+.postid-144 {
 	.tel-link {
 		color: $red_dark;
 

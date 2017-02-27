@@ -1161,11 +1161,15 @@ section {
   section h2:first-of-type {
     margin-top: 0; } }
 
+.right-col {
+  padding-top: 2rem; }
+
 @media screen and (min-width: 900px) {
   .left-col {
     padding-right: 3%; }
   .right-col {
-    padding-left: 3%; } }
+    padding-left: 3%;
+    padding-top: 0; } }
 
 /********************
 MOBILE NAV
@@ -1316,6 +1320,9 @@ HEADER STYLES
       left: 1.3888888889%; } }
 
 /**** Form Styling in the banner ****/
+#step-form select {
+  padding-right: 40px; }
+
 @media screen and (min-width: 900px) {
   #step-form {
     position: absolute;
@@ -1524,6 +1531,11 @@ ABOUT US
         float: right; } }
   .about-us p:last-of-type {
     margin-bottom: 0; }
+  .about-us__content {
+    padding-top: 2rem; }
+    @media screen and (min-width: 900px) {
+      .about-us__content {
+        padding-top: 0; } }
 
 @media screen and (min-width: 900px) {
   .about-us__bg {
@@ -1633,7 +1645,10 @@ input.btn {
     font-size: 110%; }
 
 /*** Page Specific ***/
-.postid-143 .tel-link {
+.postid-143 .tel-link,
+.postid-144 .tel-link {
   color: #510915; }
-  .postid-143 .tel-link:focus, .postid-143 .tel-link:hover {
+  .postid-143 .tel-link:focus, .postid-143 .tel-link:hover,
+  .postid-144 .tel-link:focus,
+  .postid-144 .tel-link:hover {
     color: #A81D32 !important; }
