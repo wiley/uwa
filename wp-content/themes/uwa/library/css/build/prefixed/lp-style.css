@@ -1222,7 +1222,8 @@ HEADER STYLES
       margin-top: 0; } }
 
 .tel-link {
-  display: none; }
+  display: none;
+  text-shadow: 0 0 6px black; }
   .tel-link:hover, .tel-link:visited, .tel-link:active, .tel-link:focus {
     color: white !important; }
   @media screen and (min-width: 900px) {
@@ -1675,12 +1676,3 @@ input.btn {
   .online-degrees a:focus {
     color: white !important;
     font-size: 110%; }
-
-/*** Page Specific ***/
-.postid-143 .tel-link,
-.postid-144 .tel-link {
-  color: #510915; }
-  .postid-143 .tel-link:focus, .postid-143 .tel-link:hover,
-  .postid-144 .tel-link:focus,
-  .postid-144 .tel-link:hover {
-    color: #A81D32 !important; }
