@@ -1087,6 +1087,8 @@ MODAL STYLING
     .modal.open .modal__content {
       opacity: 1;
       transform: translate(-50%, -50%) scale(1); }
+  .modal h3 {
+    display: inline-block; }
   .modal h4 {
     margin-bottom: .2em; }
   .modal ul {
