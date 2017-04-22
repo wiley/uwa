@@ -1,0 +1,53 @@
+/*********************
+GENERAL STYLES
+*********************/
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+	font-family: $sans-serif;
+	font-size: 100%;
+	line-height: 1.5;
+	color: $text-color;
+	background-color: white;
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+	@include mobilefirst($bp-lg) { font-size: 112.5%; }
+	@include mobilefirst(1600px) { font-size: 125%; }
+
+	&.no-scroll {
+		overflow: hidden;
+	}
+}
+
+// Styled box with a border
+.border {
+    border: 2px solid $link-color;
+    padding: .5em 1em;
+}
+
+.content {
+	margin: 1.5em 0;
+}
+
+.bg {
+	&_red {
+		background: $red;
+		color: white;
+	}
+	&_red_dark {
+		background: $red_dark;
+		color: white;
+	}
+}
+
+.show { display: block; }
+.hidden { display: none; }
+.pull-right { float: right; }

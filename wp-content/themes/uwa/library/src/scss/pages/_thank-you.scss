@@ -1,0 +1,115 @@
+.page-id-121 {
+  position: relative;
+  background-image: url(/wp-content/uploads/2017/02/UWA-FALL-2016-GALLERY-UWA-SPRING-2016-GALLERY-0130.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  height: 100vh;
+  background-position: bottom;
+  position: relative;
+  color: white;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right,#383838,#1a1e17);
+    opacity: .7;
+  }
+
+  .header {
+    position: relative;
+  }
+
+  .content {
+    position: relative;
+    color: white;
+  }
+
+  .footer {
+    position: relative;
+    z-index: 9;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    a {
+      color: white;
+    }
+  }
+  // background: blue !important;
+//   .header {
+//     background: #11181f;
+//     height: 220px;
+//     overflow: hidden;
+//
+//     & .wrap {
+//       position: relative;
+//     }
+//
+//     img {
+//       width: 120px;
+//
+//       @include susy-breakpoint(768px) {
+//           width: initial;
+//       }
+//     }
+//   }
+//
+//   .title {
+//     position: absolute;
+//     color: #fff;
+//     right: 0;
+//     z-index: 999;
+//     // margin: -130px 0px;
+//     margin: -150px 0;
+//     font-size: 2.5em;
+//
+//     @include susy-breakpoint(768px) {
+//             font-size: 3em;
+//     }
+//     &__wrap {
+//       position: relative;
+//     }
+//   }
+  // .content {
+  //   background-image: url(/wp-content/uploads/2017/01/about-us-bg.jpg);
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  //   margin: 0;
+  //   height: calc(100vh - 300px);
+  //   background-position: bottom;
+  //   position: relative;
+  //
+  //   &:before {
+  //     content: '';
+  //     position: absolute;
+  //     top: 0;
+  //     right: 0;
+  //     bottom: 0;
+  //     left: 0;
+  //     background-image: linear-gradient(to bottom right,#383838,#1a1e17);
+  //     opacity: .7;
+  //   }
+
+  //   & > .wrap {
+  //     position: relative;
+  //   }
+  // }
+//
+//   .footer {
+//     height: 100px;
+//     background: #a81d32;
+//     color: white;
+//     padding: 1em 0 0 0;
+//     font-weight: 700;
+//   }
+//
+//   .main-content {
+//     color: white;
+//     margin-top: 3em;
+//   }
+}

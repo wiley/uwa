@@ -1,0 +1,42 @@
+/******************************************************************
+Table Styles
+******************************************************************/
+
+table {
+	width: 100%;
+	margin-bottom: 1.5em;
+	background: white;
+	box-shadow: 0 23px 65px -25px rgba(51,51,51,.5);
+	border-collapse: collapse;
+
+	caption {
+		margin: 0 0 7px;
+		font-size: 0.75em;
+		color: gray;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+}
+
+th,
+td {
+    padding: 10px 20px;
+    text-align: left;
+}
+
+tr {
+
+	&:nth-child(odd) {
+		background-color: lighten($gold, 25%);
+	}
+}
+
+td {
+	color: #666;
+}
+
+th {
+	background-color: $red;
+	color: white;
+	text-transform: uppercase;
+}

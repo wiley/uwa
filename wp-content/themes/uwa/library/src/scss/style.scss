@@ -9,8 +9,12 @@ Main Stylesheet
 }
 
 .page {
-  // background-image: url('~assets/blog-headshot.jpg');
+
+  background: url('/wp-content/themes/uwa/library/images/blog-headshot.jpg');
 }
+// library/src/images/blog-headshot.jpg
+// /Users/droyer/Local Sites/uwa/app/public/wp-content/themes/uwa/library/src/images/blog-headshot.jpg
+// background: url('../img/example.jpg');
 // library/assets/blog-headshot.jpg
 // library/scss/style.scss
 /*********************

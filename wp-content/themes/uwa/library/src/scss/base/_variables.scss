@@ -1,0 +1,39 @@
+/// Browser Context
+/// This is needed for the px to em's mixin
+$browser-context: 16; // Default
+
+/// Responsive Variables
+/// Breakpoint Small
+$bp-sm: 481px;
+/// Breakpoint Medium
+$bp-med: 900px;
+/// Breakpoint Large
+$bp-lg: 1040px;
+/// Breakpoint X-Large
+$bp-xl: 1200px;
+
+////
+/// @group colors
+////
+
+/// UWA Red
+$red:								#A81D32;
+/// UWA Dark Red
+$red_dark:					#510915;
+/// UMA Black
+$black:							#11181F;
+/// UWA Gray
+$gray:							#939598;
+/// UWA Light Gray
+$gray_light:				#E9E9EA;
+/// UWA Gold
+$gold:							#C9BF79;
+
+/// Text Color
+$text-color:        $black;
+/// Link Color
+$link-color:        $red;
+///Link Hover
+$link-hover:        darken($link-color, 15%);
+
+

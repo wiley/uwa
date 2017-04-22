@@ -39,7 +39,12 @@
                             });
         </script>
 
-
+<script type="text/javascript">
+// $('.js__menu-trigger').on('click', function(e) {
+// 		e.preventDefault();
+// 		$('.header__nav').toggleClass('visible');
+// });
+</script>
 
 	</body>
 

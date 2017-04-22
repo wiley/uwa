@@ -41,10 +41,48 @@
     <?php if ( is_front_page() ) { ?> <style><?php include 'library/css/build/minified/home-critical.css'; ?></style><?php } ?>
 		<?php if ( ! is_front_page() ) { ?><style><?php include 'library/css/build/minified/interior-critical.css'; ?></style><?php } */ ?>
 
-		<script>!function(a){"use strict";var b=function(b,c,d){function j(a){return e.body?a():void setTimeout(function(){j(a)})}function l(){f.addEventListener&&f.removeEventListener("load",l),f.media=d||"all"}var g,e=a.document,f=e.createElement("link");if(c)g=c;else{var h=(e.body||e.getElementsByTagName("head")[0]).childNodes;g=h[h.length-1]}var i=e.styleSheets;f.rel="stylesheet",f.href=b,f.media="only x",j(function(){g.parentNode.insertBefore(f,c?g:g.nextSibling)});var k=function(a){for(var b=f.href,c=i.length;c--;)if(i[c].href===b)return a();setTimeout(function(){k(a)})};return f.addEventListener&&f.addEventListener("load",l),f.onloadcssdefined=k,k(l),f};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);</script>
-		<script>loadCSS( "/wp-content/themes/uwa/library/css/build/minified/style.css" );</script>
-		<noscript><link rel="stylesheet" href="/wp-content/themes/uwa/library/css/build/minified/style.css"></noscript>
+		<!-- <script>
+		    ! function(a) {
+		        "use strict";
+		        var b = function(b, c, d) {
+		            function j(a) {
+		                return e.body ? a() : void setTimeout(function() {
+		                    j(a)
+		                })
+		            }
 
+		            function l() {
+		                f.addEventListener && f.removeEventListener("load", l), f.media = d || "all"
+		            }
+		            var g, e = a.document,
+		                f = e.createElement("link");
+		            if (c) g = c;
+		            else {
+		                var h = (e.body || e.getElementsByTagName("head")[0]).childNodes;
+		                g = h[h.length - 1]
+		            }
+		            var i = e.styleSheets;
+		            f.rel = "stylesheet", f.href = b, f.media = "only x", j(function() {
+		                g.parentNode.insertBefore(f, c ? g : g.nextSibling)
+		            });
+		            var k = function(a) {
+		                for (var b = f.href, c = i.length; c--;)
+		                    if (i[c].href === b) return a();
+		                setTimeout(function() {
+		                    k(a)
+		                })
+		            };
+		            return f.addEventListener && f.addEventListener("load", l), f.onloadcssdefined = k, k(l), f
+		        };
+		        "undefined" != typeof exports ? exports.loadCSS = b : a.loadCSS = b
+		    }("undefined" != typeof global ? global : this);
+		</script>
+		<script>
+		    loadCSS("/wp-content/themes/uwa/library/css/build/minified/style.css");
+		</script>
+		<noscript><link rel="stylesheet" href="/wp-content/themes/uwa/library/css/build/minified/style.css"></noscript> -->
+
+<link rel="stylesheet" href="/wp-content/themes/uwa/library/css/build/minified/style.css">
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
@@ -60,7 +98,7 @@
 		<!-- End Google Tag Manager -->
 
 		<?php // If is blog page show the progress bar ?>
-		<?php if ( is_singular( 'post' ) ) { ?><progress value="0"></progress><?php } ?>
+		<?php if ( is_singular( 'p</ost' ) ) { ?><progress value="0"></progress><?php } ?>
 
 		<div id="container" class="container">
 
@@ -68,29 +106,31 @@
 
 				<div class="wrap cf">
 
-					<p class="logo header__logo h1" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><img src="/wp-content/uploads/2017/01/uwa-logo.svg" alt="The University of West Alabama Logo"></a></p>
+					<div class="main-nav">
+						<a class="logo" href="<?php echo home_url(); ?>" rel="nofollow"><img  src="/wp-content/uploads/2017/01/uwa-logo.svg" alt="The University of West Alabama Logo"></a>
 
-					<?php /* <a class="button header__button js__menu-trigger" href="#">Menu</a> */ ?>
+						<button class="main-nav__trigger button header__button js__menu-trigger" href="#">Menu</button>
+						<nav class="main header__nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 
-					<?php /* <nav class="header__nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-						<?php wp_nav_menu(array(
-    					         'container' => false,														// remove nav container
-    					         'container_class' => 'header__menu header__menu-secondary cf',		// class of container (should you choose to use it)
-    					         'menu' => __( 'Secondary Menu', 'bonestheme' ),  // nav name
-    					         'menu_class' => 'nav secondary-nav cf',					// adding custom nav class
-    					         'theme_location' => 'secondary',                 // where it's located in the theme
-											 'depth' => 0																			// limit the depth of the nav
-						)); ?>
-						<?php wp_nav_menu(array(
-    					         'container' => false,                           // remove nav container
-    					         'container_class' => 'header__menu cf',         // class of container (should you choose to use it)
-    					         'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
-    					         'menu_class' => 'nav top-nav cf',               // adding custom nav class
-    					         'theme_location' => 'main-nav',                 // where it's located in the theme
-        			         'depth' => 0			                               // limit the depth of the nav
-						)); ?>
+							<?php wp_nav_menu(array(
+												 'container' => false,                           // remove nav container
+												 'container_class' => 'header__menu cf',         // class of container (should you choose to use it)
+												 'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
+												 'menu_class' => 'nav top-nav cf',               // adding custom nav class
+												 'theme_location' => 'main-nav',                 // where it's located in the theme
+												 'depth' => 0			                               // limit the depth of the nav
+							)); ?>
 
-		</nav><?php */ ?>
+					</nav>
+					</div>
+
+
+
+
+
+
+
+		<?php  ?>
 
 				</div>
 
