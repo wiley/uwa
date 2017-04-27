@@ -326,7 +326,7 @@ add_shortcode( 'privacy', 'privacy_policy' );
 
 /****************************************************************************
 This is where we include the custom theme setting for Maintenance Alerts
-*****************************************************************************/
+*****************************************************************************
 
 // Add Settins Page
 add_action( 'admin_menu', 'mnt_add_admin_menu' );
@@ -407,6 +407,6 @@ if (is_array($options) && $options['mnt_checkbox_field_0'] == '1') {
           return $message;
       }
     }
-  }
+  }  */
 
 ?>

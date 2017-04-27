@@ -7,6 +7,8 @@ require_once( 'library/bones.php' );
 LAUNCH BONES
 Let's get everything up and running.
 *********************/
+// MAINTENANCE MODE CUSTOM SETTING
+require_once( 'library/maintenance.php' );
 
 function bones_ahoy() {
 
