@@ -1653,6 +1653,9 @@ input.btn {
   background: #510915;
   width: 100%; }
 
+.inner-cta {
+  width: 100%; }
+
 .inner-cta h3 {
   text-align: center;
   color: #ffffff;
@@ -1663,6 +1666,10 @@ input.btn {
   text-decoration: none;
   color: #C9BF79; }
 
-@media all and (min-width: 800px) {
+@media all and (min-width: 700px) {
   .inner-cta {
-    width: 80%; } }
+    width: 85%; } }
+
+@media all and (min-width: 1000px) {
+  .inner-cta {
+    width: 60%; } }
