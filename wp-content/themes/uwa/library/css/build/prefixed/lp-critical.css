@@ -101,7 +101,7 @@ section{ padding: 2em 0px; }
 .left-col{ float: left; }
 .right-col{ float: right; }
 }
-.mobile-nav{ position: fixed; top: 0px; left: 0px; width: 100vw; display: -webkit-flex; z-index: 999; }
+.mobile-nav{ position: fixed; top: 0px; left: 0px; width: 100vw; z-index: 999; }
 a.mobile-nav__link{ -webkit-flex: 1 1 0px; padding: 1em 0px; text-align: center; background-color: rgb(81, 9, 21); color: rgb(255, 255, 255); text-decoration: none; }
 a.mobile-nav__link img{ vertical-align: middle; }
 .mobile-nav__link:last-child{ background-color: rgb(168, 29, 50); background-position: initial initial; background-repeat: initial initial; }

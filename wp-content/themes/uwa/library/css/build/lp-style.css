@@ -1646,3 +1646,23 @@ input.btn {
   .online-degrees a:focus {
     color: white !important;
     font-size: 110%; }
+
+/* CTA FOR TEACHER CONNECT LP */
+.connect-cta {
+  color: #ffffff;
+  background: #510915;
+  width: 100%; }
+
+.inner-cta h3 {
+  text-align: center;
+  color: #ffffff;
+  border-bottom: 2px solid #C9BF79; }
+
+.inner-cta a {
+  text-align: center;
+  text-decoration: none;
+  color: #C9BF79; }
+
+@media all and (min-width: 800px) {
+  .inner-cta {
+    width: 80%; } }
