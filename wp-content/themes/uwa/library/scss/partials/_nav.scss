@@ -21,7 +21,7 @@ NAVIGATION STYLES
 					float: left;
 					position: relative;
 
-					&:hover > ul.sub-menu {
+					&:hover, &:focus > ul.sub-menu {
 						top: auto;
 						visibility: visible;
 					}
@@ -170,5 +170,3 @@ PAGE NAVI STYLES
 		}
 
 	} /* end .wp-prev-next */
-
-

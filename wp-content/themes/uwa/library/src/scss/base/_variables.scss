@@ -24,11 +24,16 @@ $red_dark:					#510915;
 $black:							#11181F;
 /// UWA Gray
 $gray:							#939598;
+/// UWA Dark Gray
+$gray_dark:				  #4a4a4a;
 /// UWA Light Gray
 $gray_light:				#E9E9EA;
 /// UWA Gold
 $gold:							#C9BF79;
 
+$tan:               #f5f1e5;
+
+$tan_dark:          #ede6cf;
 /// Text Color
 $text-color:        $black;
 /// Link Color
@@ -36,4 +41,9 @@ $link-color:        $red;
 ///Link Hover
 $link-hover:        darken($link-color, 15%);
 
+// Images Folder Path
+$images: '/wp-content/themes/uwa/library/images';
+$icons: '/wp-content/themes/uwa/library/images/icons';
 
+// Example
+// url(#{$images}/home-banner.jpg)

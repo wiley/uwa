@@ -19,8 +19,8 @@ body {
 	-webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-	@include mobilefirst($bp-lg) { font-size: 112.5%; }
-	@include mobilefirst(1600px) { font-size: 125%; }
+	// @include mobilefirst($bp-lg) { font-size: 112.5%; }
+	// @include mobilefirst(1600px) { font-size: 125%; }
 
 	&.no-scroll {
 		overflow: hidden;

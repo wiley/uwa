@@ -7,13 +7,13 @@ Button Styles
 ///     @include buton($color);
 /// @param {variable} $btn-color [$link-color] - Background Button Color
 
-@mixin button($btn-color: $link-color) {
+@mixin button($btn-color: $link-color, $text-color: #fff !important) {
   display: inline-block;
   position: relative;
   font-family: $condensed;
 	letter-spacing: 2px;
   text-decoration: none;
-  color: white !important;
+  color: $text-color;
   font-size: 1em;
   line-height: 34px;
   font-weight: normal;
@@ -55,5 +55,3 @@ Button Styles
 	font-size: .9em;
 	padding: .3em .8em;
 }
-
-

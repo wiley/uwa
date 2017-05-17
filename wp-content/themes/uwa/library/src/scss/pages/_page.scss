@@ -1,24 +1,113 @@
 /*************************
 PAGE SPECIFIC STYLES
 *************************/
-
-.single-header__title,
 .page-header__title,
-.post-header__title {
+.post-header__title,
+.single-header__title {
 	margin: 0;
 }
-
-
 /**** PAGE TEMPLATE FULL WIDTH ****/
-
 .page-template-page-full .main-content {
-	@include mobilefirst($bp-med) { @include span(12); } // Make full width instead of 8 columns
+	@include mobilefirst($bp-med) {
+		 @include span(12);
+	}
+	// Make full width instead of 8 columns
 }
 
-article {
-	background: red !important;
-}
+article {}
 
 .page {
-	// background: gray;
+	.intro {
+		max-width: 800px;
+		margin: -3.5em 1em 1em;
+		position: relative;
+		background: white;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+
+		p {
+			padding: 0 2em;
+			text-align: left;
+			margin-top: 1em;
+			margin-bottom: 1em;
+		}
+
+		.btn {
+			transition: text-shadow 0.3s;
+
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+				// font-weight: 600;
+				// text-shadow: 0 0 0.65px #11181F, 0 0 0.65px #11181F;
+			}
+		}
+
+		.subpagesNav {
+			list-style-type: none;
+			display: flex;
+			justify-content: center;
+			padding-left: 0;
+			margin: 0.5em;
+			text-decoration: none;
+
+			& li {
+				margin: 0 1em;
+					border-top: 5px solid transparent;
+				&.current_page_item {
+					border-top: 5px solid white;
+				}
+				a {
+					color: white;
+					padding: 0.5em;
+					text-decoration: none;
+					display: inline-block;
+					padding: 1em;
+
+					&:hover, &:focus {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+
+
+
+		&__breadcrumbs {
+			background-color: #A81D32;
+			color: white;
+			padding: 1em.5em;
+			text-align: center;
+			font-size: 0.8em;
+			font-weight: 600;
+			PADDING: 0;
+			// TEMPORARY FIX
+
+			a {
+				color: white;
+			}
+		}
+
+		&__headline {
+			padding: 0 1em;
+			text-align: left;
+			font-size: 2em;
+			font-weight: 300;
+			padding: 0 1em !important;
+		}
+
+		&__text {
+			padding: 0.5em 2em;
+		}
+	}
+
+	.waiting {
+		background: $tan;
+	}
+}
+.waiting {
+	background: $tan !important;
+	padding: 2em 0;
+	text-align: center;
 }

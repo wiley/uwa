@@ -1,0 +1,251 @@
+.tax-degree_vertical {
+	.intro {
+		max-width: 800px;
+		margin: -3.5em 1em 1em;
+		position: relative;
+		background: white;
+		margin-left: auto;
+		margin-right: auto;
+
+		&__breadcrumbs {
+			background-color: #A81D32;
+			color: white;
+			padding: 1em.5em;
+			text-align: center;
+			font-size: 0.8em;
+			font-weight: 600;
+
+			a {
+				color: white;
+			}
+		}
+
+		&__headline {
+			padding: 0 1em;
+		}
+
+		&__text {
+			padding: 0.5em 2em;
+		}
+
+		&__link {
+			background-color: #11181F;
+			color: white;
+			font-weight: 600;
+			text-transform: uppercase;
+			display: block;
+			text-align: center;
+			padding: 0.5em;
+			text-decoration: none;
+
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+			}
+
+			svg {
+				width: 20px;
+				background: #C8BF79;
+				height: 20px;
+				fill: white;
+				color: #C8BF79;
+				margin-left: 10px;
+				vertical-align: middle;
+				margin-bottom: 3px;
+				padding: 3px;
+			}
+		}
+	}
+
+	.mainDegrees {
+		background: $tan;
+		padding: 5em 0 10em;
+		margin-top: -5em;
+
+		.wrap {
+			 max-width: 1100px;
+		}
+		&__headline {
+			text-align: center;
+			text-align: center;
+			max-width: 800px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		&__text {
+			text-align: center;
+			text-align: center;
+			max-width: 800px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	.cardLink {
+		display: inline-block;
+		position: relative;
+
+		&:before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 70%;
+			display: block;
+			background: linear-gradient(to bottom, transparent 0, rgba(0, 0, 0, 0.78) 50%, rgba(15, 6, 5, 0.64) 100%);
+		}
+
+		img {
+			max-height: 400px;
+		}
+
+		&__text {
+			position: absolute;
+			bottom: 0;
+			padding: 1em 1em 0;
+		}
+
+		&__heading {
+			border-bottom: 5px solid white;
+			padding-bottom: 0.5em;
+			color: white;
+		}
+
+		&__cta {
+			text-align: right;
+			color: #C8BF79;
+			font-size: 1.2em;
+			font-weight: 600;
+		}
+	}
+
+	.flexTestWrapper {
+		position: absolute;
+		bottom: 0;
+		width: 200%;
+		display: flex;
+		top: 0;
+		transition: all 0.3s ease;
+		text-align: left;
+	}
+
+	.cardLink {
+		overflow: hidden;
+
+		&:focus,
+		&:hover {
+			.flexTestWrapper {
+				transform: translateX(-50%);
+			}
+
+			.cardLink__cta {
+				// background: #C8BF79;
+				color: black !important;
+				padding: 0 0.25em;
+				font-size: 1em !important;
+
+				svg {
+					fill: black;
+				}
+			}
+		}
+
+		&__info {
+			flex-basis: 50%;
+			color: white;
+			padding: 1em;
+			background: rgba(46, 46, 46, 0.6);
+		}
+
+		&__text {
+			flex-basis: 50%;
+			position: relative;
+			padding: 0;
+			align-self: flex-end;
+			padding-bottom: 3em;
+		}
+
+		&__heading {
+			border: none;
+			padding: 0 0 0 0.5em;
+			margin-right: 0;
+		}
+
+		&__cta {
+			position: absolute;
+			bottom: 0;
+			right: 1em;
+			padding: 0 0.25em;
+			font-size: 1em !important;
+			transition: all 0.3s ease;
+
+			svg {
+				width: 15px;
+				background: #C8BF79;
+				vertical-align: middle;
+				height: 15px;
+				padding: 2px;
+				fill: white;
+				color: #C8BF79;
+			}
+
+			&-background {
+				position: absolute;
+				right: 1em;
+				bottom: 24px;
+				background: #C8BF79;
+				width: 140px;
+				height: 1.5em;
+			}
+		}
+	}
+
+	.mastersDegrees {
+		text-align: center;
+
+		.narrow {
+			max-width: 1000px;
+			background: white;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: -5em;
+			padding: 0.5em 3em;
+		}
+	}
+
+	.owl {
+		&-nav.disabled {
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+		}
+
+		&-prev {
+			position: absolute;
+			background-image: url("/wp-content/themes/uwa/library/images/triangles.svg");
+			background-size: contain;
+			height: inherit;
+			width: 200px;
+			background-repeat: no-repeat;
+			height: 100%;
+			transform: rotate(90deg);
+			right: calc(100% + 80px);
+		}
+		&-next {
+			position: absolute;
+			background-image: url("/wp-content/themes/uwa/library/images/triangles.svg");
+			background-size: contain;
+			height: inherit;
+			width: 200px;
+			background-repeat: no-repeat;
+			height: 100%;
+			transform: rotate(270deg);
+			left: calc(100% + 80px);
+		}
+	}
+
+}

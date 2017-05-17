@@ -2,6 +2,7 @@
 
 // LOAD BONES CORE (if you remove this, the theme will break)
 require_once( 'library/bones.php' );
+// require_once( 'aria-walker.php' );
 
 /*********************
 LAUNCH BONES
@@ -150,6 +151,32 @@ function enqueue_scripts() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
 
+
+function custom_taxonomies_terms_slugs(){
+  // get post by post id
+  $post = get_post();
+
+  // get post type by post
+  $post_type = $post->post_type;
+
+  // get post type taxonomies
+  $taxonomies = get_object_taxonomies( $post_type, 'objects' );
+
+  $out = array();
+  foreach ( $taxonomies as $taxonomy_slug => $taxonomy ){
+
+    // get the terms related to post
+    $terms = get_the_terms( $post->ID, $taxonomy_slug );
+
+    if ( !empty( $terms ) ) {
+      foreach ( $terms as $term ) {
+        $out[] = $term->slug . ' ';
+      }
+    }
+  }
+
+  return implode('', $out );
+}
 
 
 // function attributes_shortcode( $attr, $content = null ) {

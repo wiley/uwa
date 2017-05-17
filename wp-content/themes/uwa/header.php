@@ -82,7 +82,8 @@
 		</script>
 		<noscript><link rel="stylesheet" href="/wp-content/themes/uwa/library/css/build/minified/style.css"></noscript> -->
 
-<link rel="stylesheet" href="/wp-content/themes/uwa/library/css/build/minified/style.css">
+		<link rel="stylesheet" href="/wp-content/themes/uwa/library/css/build/minified/style.css">
+		<link rel="stylesheet" href="/wp-content/themes/uwa/library/src/owl/assets/owl.carousel.min.css" />
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
@@ -98,40 +99,76 @@
 		<!-- End Google Tag Manager -->
 
 		<?php // If is blog page show the progress bar ?>
-		<?php if ( is_singular( 'p</ost' ) ) { ?><progress value="0"></progress><?php } ?>
+		<?php if ( is_singular( 'post' ) ) { ?><progress value="0"></progress><?php } ?>
 
 		<div id="container" class="container">
 
 			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
-				<div class="wrap cf">
+				<div class="wrap secondary-nav__wrapper">
+					<?php wp_nav_menu(array(
+										 'container' => false,                           // remove nav container
+										 'container_class' => 'cf',         // class of container (should you choose to use it)
+										 'menu' => __( 'Secondary Menu', 'bonestheme' ),  // nav name
+										 'menu_class' => 'nav secondary-nav cf',               // adding custom nav class
+										 'theme_location' => 'secondary',                 // where it's located in the theme
+										 'depth' => 0			                               // limit the depth of the nav
+					)); ?>
+				</div>
 
-					<div class="main-nav">
+			<div class="wrap main-nav__wrap cf">
+
+				<div class="main-nav">
+
 						<a class="logo" href="<?php echo home_url(); ?>" rel="nofollow"><img  src="/wp-content/uploads/2017/01/uwa-logo.svg" alt="The University of West Alabama Logo"></a>
 
-						<button class="main-nav__trigger button header__button js__menu-trigger" href="#">Menu</button>
-						<nav class="main header__nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+						<button class="main-nav__trigger button header__button js__menu-trigger" href="#">
+							<?php include ('library/images/menu-button.svg'); ?>
+						</button>
+						<nav class="main header__nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label='Main Menu'>
 
-							<?php wp_nav_menu(array(
-												 'container' => false,                           // remove nav container
-												 'container_class' => 'header__menu cf',         // class of container (should you choose to use it)
-												 'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
-												 'menu_class' => 'nav top-nav cf',               // adding custom nav class
-												 'theme_location' => 'main-nav',                 // where it's located in the theme
-												 'depth' => 0			                               // limit the depth of the nav
-							)); ?>
+						  <?php wp_nav_menu(array(
+						             'container' => false,                           // remove nav container
+						             'container_class' => 'header__menu cf',         // class of container (should you choose to use it)
+						             'menu' => __( 'The Main Menu', 'bonestheme' ),  // nav name
+						             'menu_class' => 'nav top-nav cf',
+												  // 'walker'         => new Aria_Walker_Nav_Menu(),               // adding custom nav class
+						             'theme_location' => 'main-nav',                // where it's located in the theme
+												 'items_wrap'     => '<ul id="%1$s" class="%2$s" role="menubar">%3$s</ul>',
+						             'depth' => 0			                               // limit the depth of the nav
+						  )); ?>
 
-					</nav>
+						</nav>
+
+
+					</div>
+				</div>
+
+					<div class="banner">
+						<div class="wrap">
+							<?php if (get_field('banner_headline') && get_field('banner_headline')): ?>
+								<h1 class="banner__heading"><?php the_field('banner_headline'); ?></h1>
+							<?php endif; ?>
+
+							<?php if (get_field('banner_button_link') && get_field('banner_button_text')): ?>
+								<a href="<?php the_field('banner_button_link'); ?>" class="btn-red banner__link"><?php the_field('banner_button_text'); ?></a>
+							<?php endif; ?>
+
+
+						</div>
 					</div>
 
-
-
-
-
+					<div class="datesBox">
+						<h5 class="datesBox__heading"><span>Important Dates</span></h5>
+						<p class="datesBox__text">Register by <span class="datesBox__date"><?php the_field('register_by', 'option'); ?></span> to start by <span class="datesBox__date"><?php the_field('start_by', 'option'); ?></span></p>
+						<a class="datesBox__cta btn__hollow" href="#">Apply Now</a>
+						<a class="datesBox__cta btn__hollow" href="/request-info">Request Info</a>
+					</div>
 
 
 		<?php  ?>
 
-				</div>
+
 
 			</header>
+			<?php include ('includes/megamenu.php'); ?>

@@ -2,15 +2,15 @@
 Typography Styles
 ******************************************************************/
 
-// @font-face {
-// 	font-family: 'Trade Gothic LT Std';
-// 	src: url('../../../fonts/TradeGothicLTStd-Bd2.eot');
-// 	src: url('../../../fonts/TradeGothicLTStd-Bd2.eot?#iefix') format('embedded-opentype'),
-// 		url('../../../fonts/TradeGothicLTStd-Bd2.woff') format('woff'),
-// 		url('../../../fonts/TradeGothicLTStd-Bd2.ttf') format('truetype');
-// 	font-weight: bold;
-// 	font-style: normal;
-// }
+@font-face {
+	font-family: 'Trade Gothic LT Std';
+	src: url('../fonts/TradeGothicLTStd-Bd2.eot');
+	src: url('../fonts/TradeGothicLTStd-Bd2.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/TradeGothicLTStd-Bd2.woff') format('woff'),
+		url('../fonts/TradeGothicLTStd-Bd2.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
 
 /// Sans Serif
 /// @group Fonts

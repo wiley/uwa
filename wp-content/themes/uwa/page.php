@@ -1,5 +1,13 @@
 <?php get_header(); ?>
-
+<?php
+	global $post;
+	$args = array(
+			'post_parent' => $post->ID,
+			'post_type' => 'page'
+	);
+	$subpages = new WP_query($args);
+	// var_dump($subpages);
+?>
 			<div class="content">
 
 				<div class="wrap cf">
@@ -31,7 +39,7 @@
 
 						</main>
 
-			
+
 
 				</div>
 

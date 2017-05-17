@@ -2,33 +2,17 @@
 Main Stylesheet
 ******************************************************************/
 @import "~susy/sass/susy";
-@custom-selector :--headings h1, h2, h3, h4, h5, h6;
-
-:--headings {
-  color: red;
-}
-
-.page {
-
-  background: url('/wp-content/themes/uwa/library/images/blog-headshot.jpg');
-}
-// library/src/images/blog-headshot.jpg
-// /Users/droyer/Local Sites/uwa/app/public/wp-content/themes/uwa/library/src/images/blog-headshot.jpg
-// background: url('../img/example.jpg');
-// library/assets/blog-headshot.jpg
-// library/scss/style.scss
 /*********************
 IMPORTING BASE
 // *********************/
 // @import "~susy/sass/susy";
 // // @import "susy";
-// @import "base/normalize";
+@import "base/normalize";
 @import "base/variables";
 @import "base/mixins";
 @import "base/typography";
 @import "base/grid";
-@import "base/base";
-// //
+@import "base/base"; // //
 // // /*********************
 // // IMPORTING MODULES
 // // *********************/
@@ -43,15 +27,15 @@ IMPORTING BASE
 @import "modules/sidebar";
 @import "modules/social";
 @import "modules/tables";
-//
+@import "modules/overlayForm";
+@import "modules/megamenu"; //
 // // /*********************
 // // IMPORTING PARTIALS
 // // *********************/
 // //
-@import "partials/header";
 @import "partials/nav";
-@import "partials/footer";
-// //
+@import "partials/header";
+@import "partials/footer"; // //
 // // /*********************
 // // IMPORTING PAGES
 // // *********************/
@@ -59,53 +43,82 @@ IMPORTING BASE
 @import "pages/layout";
 @import "pages/home";
 @import "pages/page";
+@import "pages/single-degrees";
 @import "pages/post";
 @import "pages/thank-you";
-
+@import "pages/verticals";
 /*********************
 PRINT
 *********************/
-@media print { @import "partials/print"; }
+@media print {
+	 @import"partials/print";
+}
 
 html > * {
-  &:focus {
-    background-color: gray;
-  }
+	&:focus {
+		background-color: gray;
+	}
 }
-
 /* ACCESSIBILITY */
-.sr-only
-{position:absolute;
-display: block;
-left:-10000px;
-top:auto;
-width:1px;
-height:1px;
-overflow:hidden;}
+.sr-only {
+	position: absolute;
+	display: block;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
 
 input.btn {
-  max-width: 87%;
-  display: block;
+	max-width: 87%;
+	display: block;
 }
+
 .next.btn {
-  margin: 0 30px;
+	margin: 0 30px;
 }
 
 .block2 .next {
-
-  margin: 0 30px;
+	margin: 0 30px;
 }
 
-h1 {
-  background: brown !important;
+html {
+	margin-top: 0 !important;
 }
-
-.flexTest {
-  display: flex;
-    justify-content: flex-end;
-}
-
 
 #wpadminbar {
-  display: none;
+	display: none;
+}
+
+body {
+	margin: 0 !important;
+	// background: blue;
+}
+// button.main-nav__trigger.button.header__button.js__menu-trigger {
+// 	background: white;
+// 	border: none;
+// 	padding: 5px 10px 0;
+// 	height: 40px;
+// }
+
+// .nav li.activeFocus > ul.sub-menu {
+// 	top: auto;
+// 	visibility: visible;
+// 	display: block;
+// }
+
+.sub-menu__toggle {
+	background: url("/wp-content/themes/uwa/library/images/arrow-down.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 75%;
+	padding: 8px 12px;
+	position: absolute;
+	left: calc(100% - 10px);
+	top: 40%;
+	transform: translateY(-50%);
+	vertical-align: initial;
+	right: -16px;
+	border: 2px solid rgba(71, 71, 71, 0.78);
 }

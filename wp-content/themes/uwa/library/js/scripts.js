@@ -1,8 +1,10 @@
 /*
  * Put all your regular jQuery in here.
 */
+import $ from 'jquery'
+window.$ = window.jQuery = $
 jQuery(document).ready(function($) {
-alert('hi')
+  alert('hi');
     $('.accordion .accord').on("click", function(){
         if($(this).hasClass('active')){
            $(this).removeClass('active');
@@ -48,10 +50,11 @@ alert('hi')
     });
 
     // Mobile Nav Trigger
-    $('.js__menu-trigger').on('click', function(e) {
-				e.preventDefault();
-        $('.header__nav').toggleClass('visible');
-    });
+    // $('.js__menu-trigger').on('click', function(e) {
+		// 		e.preventDefault();
+    //
+    //     $('.header__nav').toggleClass('visible');
+    // });
 
 		// Modal Stuff
 		// $('.js-modal').on('click', function(e) {

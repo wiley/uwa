@@ -32,6 +32,17 @@ body.home {
     text-align: center;
     font-weight: 700;
   }
+  .card {
+    background: red;
+  }
+  .journeyCards {
+    display: flex;
+    justify-content: space-around;
+    .card {
+      background: red;
+    }
+  }
+
 }
 
 

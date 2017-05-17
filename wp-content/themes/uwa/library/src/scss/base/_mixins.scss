@@ -14,6 +14,10 @@
   position: absolute;
 }
 
+%tc {
+  text-align: center;
+}
+
 /// Pixels to Ems Function
 /// @example
 ///     font-size: em(24);
@@ -30,3 +34,115 @@
     @content;
   }
 }
+
+@mixin decorative($color) {
+  position: relative;
+	padding-top: 1em;
+	margin-top: 0;
+  @content;
+	&:before {
+		content: "";
+		width: 3em;
+		height: 7px;
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: $color;
+	}
+}
+
+// .decorative {
+// 	position: relative;
+// 	padding-top: 1em;
+// 	margin-top: 0;
+//
+// 	&:before {
+// 		content: "";
+// 		width: 3em;
+// 		height: 7px;
+// 		display: block;
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		background: $red;
+// 	}
+//
+// 	&_gold:before { background: $gold; }
+// 	&_white:before { background: white; }
+// 	&_red_dark:before { background: $red_dark; }
+// }
+
+%flexCards {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+
+%flexCard {
+
+  background: $red;
+  margin: 0.5em;
+  padding: 0.5em 1em;
+  color: white;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding-bottom: 2em;
+  padding-top: 0;
+  flex-basis: 100%;
+  @include susy-breakpoint($bp-med) {
+    display: flex;
+    flex: 1 1 30%;
+    margin: 1em;
+  }
+}
+
+
+%flexCardLink {
+  padding: 0.25em 1em;
+  align-self: flex-end;
+  font-size: .8em;
+  font-weight: 600;
+  color: $gray_dark !important;
+}
+
+
+// .card {
+//   background: $red;
+//   margin: 0.5em;
+//   padding: 0.5em 1em;
+//   color: white;
+//   display: flex;
+//   flex-flow: row wrap;
+//   justify-content: center;
+//   padding: 1em 2em;
+//   flex-basis: 100%;
+//   @include susy-breakpoint($bp-med) {
+//     flex: 1 1 30%;
+//     margin: 1em;
+//   }
+//
+//   &__heading {
+//     color: white;
+//   }
+//
+//   &__text {
+//     @include decorative($gold);
+//
+//     &:before {
+//       position: relative;
+//       text-align: center;
+//       margin-left: auto;
+//       margin-right: auto;
+//       width: 7em;
+//       height: 5px;
+//       top: -1.5em;
+//     }
+//   }
+//
+//   &__link {
+//     padding: 0.25em 1em;
+//     align-self: flex-end;
+//   }
+// }

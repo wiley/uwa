@@ -1,0 +1,54 @@
+.nav-degrees {
+	&:focus,
+	&:hover {
+		.degrees-menu {
+			// height: 325px;
+			// visibility: visible;
+			// transition: height 0.4s ease;
+			// display: flex;
+		}
+	}
+}
+
+.degrees-menu {
+	height: 325px;
+	display: none;
+	position: absolute;
+	top: 100%;
+	background: #A81D32;
+	width: initial;
+	min-width: 550px;
+	padding-left: 0;
+	left: -120%;
+	padding-top: 1em;
+	padding-bottom: 1em;
+  z-index: 999;
+	// visibility: hidden;
+	// height: 0;
+	transition: height 0.4s ease;
+	// &:hover, &:focus {
+	//   height: 300px;
+	//   visibility: visible;
+	//
+	// }
+	&__submenu {
+		flex-basis: 50%;
+		padding-left: 0;
+
+		li {
+			margin: 0 1em !important;
+			width: 100%;
+			color: white !important;
+			padding-bottom: 0 !important;
+
+			&.label {
+				font-style: italic;
+				font-weight: 300;
+			}
+
+			a {
+				color: white !important;
+			}
+		}
+	}
+}

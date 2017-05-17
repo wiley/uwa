@@ -12,6 +12,7 @@ let options = {
  | file for your application, as well as bundling up your JS files.
  |
  */
+// mix.setPublicPath('path/to/public');
 
 mix.js('src/js/scripts.js', 'js/build/production.min.js')
    .sass('src/scss/style.scss', 'css/build/minified/')
@@ -39,9 +40,12 @@ mix.browserSync({
     proxy: 'uwa.loc',
     host: 'uwa.loc',
     notify: false,
-    files: ["./css/build/minified/*.css"]
+    files: ["./css/build/minified/*.css", "./js/build/production.min.js"]
 })
 
+// mix.autoload({
+//    jquery: ['$', 'window.jQuery']
+// });
 // mix.combine(files, destination);
 // mix.babel(files, destination); <-- Identical to mix.combine(), but also includes Babel compilation.
 // mix.copy(from, to);

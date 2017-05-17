@@ -1,0 +1,101 @@
+.footer {
+	background: $red;
+	color: white;
+	padding: 1em;
+	a {
+		color: white;
+		text-decoration: none;
+		font-weight: 600;
+
+		&:focus,
+		&:hover {
+			text-decoration: underline;
+			text-shadow: 0 0 0.65px #fff, 0 0 0.65px #fff;
+			color: white;
+			transition: text-shadow .3s;
+		}
+	}
+	svg {
+		max-width: 300px;
+	}
+
+	&__heading {
+		color: $gold;
+		flex-basis: 100%;
+		font-size: 1em;
+		margin-top: 0;
+		@include decorative($gold);
+
+		&:before {
+			right: 0;
+			width: 100%;
+			bottom: -50%;
+			top: initial;
+			height: 5px;
+		}
+	}
+
+	&__subheading {
+		margin: 0;
+		color: white;
+		font-style: italic;
+		font-weight: 400;
+	}
+
+	ul {
+		list-style-type: none;
+		padding-left: 0;
+		font-size: 0.9em;
+
+		li {
+			margin: 0.5em 0;
+
+			a {
+				color: white;
+				text-decoration: none;
+				font-weight: 600;
+
+				&:focus,
+				&:hover {
+					text-decoration: underline;
+					text-shadow: 0 0 0.65px #fff, 0 0 0.65px #fff;
+					color: white;
+					transition: text-shadow .3s;
+				}
+			}
+		}
+	}
+
+	.flexWrapper {
+		display: flex;
+		justify-content: space-around;
+		flex-flow: row wrap;
+
+		& > .flexItem {
+			padding: 0.5em 1em;
+			flex-basis: 100%;
+			@include susy-breakpoint($bp-med) {
+				flex-basis: initial;
+
+				&.info {
+					flex: 1 1 15%;
+				}
+				&.resources {
+					flex: 1 1 20%;
+				}
+				&.degrees {
+					flex: 1 1 25%;
+				}
+			}
+		}
+	}
+
+	.degrees {
+		display: flex;
+		flex-flow: row wrap;
+
+		& > .flexItem {
+			flex-basis: 50%;
+		}
+	}
+}
