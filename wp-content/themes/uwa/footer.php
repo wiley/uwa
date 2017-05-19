@@ -108,10 +108,25 @@
 </style>
 
 <script src="/wp-content/themes/uwa/library/src/owl/owl.carousel.min.js"></script>
-<script src="/wp-content/themes/uwa/library/src/owl/accessibility.js"></script>
+<!-- <script src="/wp-content/themes/uwa/library/src/owl/accessibility.js"></script> -->
 <script type="text/javascript">
-
-// 
+// $('.owl-carousel').owlCarousel({
+// 	loop: true,
+// 	margin: 30,
+// 	nav: true,
+// 	responsive: {
+// 		0: {
+// 			items: 1,
+// 			// nav: true
+// 		},
+// 		900: {
+// 			items: 3
+// 			// nav: false
+// 		}
+// 	}
+// 	// onInitialized: owlSetup
+// });
+//
 </script>
 	</body>
 
