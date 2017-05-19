@@ -40,6 +40,9 @@ NAVIGATION STYLES
 		right: 1.5em;
 		background: #A81D32;
 
+		&:focus {
+			outline: 5px auto rgb(59, 153, 252);
+		}
 		svg {
 			width: 25px;
 			height: 30px;
@@ -241,4 +244,8 @@ PAGE NAVI STYLES
 			background-color: black;
 		}
 	}
+}
+
+.header .main-nav__trigger:focus {
+  outline: -webkit-focus-ring-color auto 5px;
 }

@@ -8,13 +8,8 @@ import $ from 'jquery';
 window.$ = window.jQuery = $;
 import './components/megaMenu'
 import './components/submenus'
-//
-$('.js__menu-trigger').on('click', function(e) {
-    e.preventDefault();
+import './components/carousel'
 
-    $('body').toggleClass('mobileNav--active')
-    $('.mobileNav').toggleClass('visible');
-});
 
 // import 'imports?jQuery=jquery!owl.carousel';
 
@@ -69,13 +64,7 @@ jQuery(document).ready(function($) {
     });
 
     // Mobile Nav Trigger
-    $('.js__menu-trigger').on('click', function(e) {
-				e.preventDefault();
 
-        $('body').toggleClass('mobileNav--active')
-        $('.mobileNav').toggleClass('visible');
-        $('.mobileNav__nav').find('a').first().focus();
-    });
 
 		// Modal Stuff
 		// $('.js-modal').on('click', function(e) {
@@ -120,6 +109,15 @@ jQuery(document).ready(function($) {
 
 }); /* end of as page load scripts */
 
+(function( $ ) {
+  $('.js__menu-trigger').on('click', function(e) {
+      e.preventDefault();
+
+      $('body').toggleClass('mobileNav--active')
+      $('.mobileNav').toggleClass('visible');
+      $('.mobileNav__nav').find('a').first().focus();
+  });
+})( jQuery );
 
 (function( $ ) {
   var Buttons = $('.infoTabs__buttons button'),

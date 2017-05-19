@@ -9,7 +9,7 @@ window.$ = window.jQuery = $;
 
   NavDegreesItem
     .addClass('menu-item-has-children')
-    .attr('tabindex', 0);
+    // .attr('tabindex', 0);
 
   NavDegreesLink.after(content);
   const MegaMenu = $('nav.main:not(.mobileNav__nav) .degrees-menu');
@@ -17,7 +17,6 @@ window.$ = window.jQuery = $;
 	MegaMenu
     .attr('id', 'megamenu')
     .attr('aria-hidden', true)
-    .attr('aria-labelledby', true)
     .attr('aria-expanded', false);
 
 	NavDegreesLink

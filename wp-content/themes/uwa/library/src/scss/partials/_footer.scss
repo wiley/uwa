@@ -24,6 +24,8 @@
 		flex-basis: 100%;
 		font-size: 1em;
 		margin-top: 0;
+		color: #d6cd91;	// Overriding $gold because of color contrast
+
 		@include decorative($gold);
 
 		&:before {

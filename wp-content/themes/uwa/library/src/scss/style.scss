@@ -27,6 +27,7 @@ IMPORTING BASE
 @import "modules/sidebar";
 @import "modules/social";
 @import "modules/tables";
+@import "modules/carousel";
 @import "modules/overlayForm";
 @import "modules/megamenu"; //
 // // /*********************
@@ -101,7 +102,6 @@ body {
 // 	padding: 5px 10px 0;
 // 	height: 40px;
 // }
-
 // .nav li.activeFocus > ul.sub-menu {
 // 	top: auto;
 // 	visibility: visible;
@@ -120,5 +120,22 @@ body {
 	transform: translateY(-50%);
 	vertical-align: initial;
 	right: -16px;
-	border: 2px solid rgba(71, 71, 71, 0.78);
+	transition: 0.25s ease;
+	border: 2px solid transparent;
+	&:focus,
+	&:hover {
+		border: 2px solid rgba(71, 71, 71, 0.78);
+	}
+}
+
+.degrees-menu {
+	transition: none;
+	padding: 1em !important;
+
+	&__submenu {
+		width: 46%;
+		display: inline-block;
+		vertical-align: top;
+		margin: 1%;
+	}
 }
