@@ -10,7 +10,7 @@
 	MenuLinksWithChildren.after(ButtonHTML)
 
 	Submenus.attr({
-		'aria-hidden': 'true'
+		'aria-hidden': true
 	})
 
 	const Buttons = $('.sub-menu__toggle')
@@ -30,10 +30,11 @@
 	function toggleSubmenuState(CurrentSubmenu) {
 		let currentSubmenuButton = CurrentSubmenu.closest('.menu-item-has-children').find('.sub-menu__toggle'),
 				newAriaHiddenState = CurrentSubmenu.attr('aria-hidden') === 'true' ? false : true
-				newAriaHiddenState = CurrentSubmenu.attr('aria-hidden') === 'true' ? false : true
+				// newAriaHiddenState = CurrentSubmenu.attr('aria-hidden') === 'true' ? false : true
+				console.log(newAriaHiddenState);
 				newAriaExandedState = currentSubmenuButton.attr('aria-expanded') === 'false' ? true : false
 
-		CurrentSubmenu.attr('aria-hidden', newAriaExandedState)
+		CurrentSubmenu.attr('aria-hidden', newAriaHiddenState)
 		currentSubmenuButton.attr('aria-expanded', newAriaExandedState)
 	}
 
