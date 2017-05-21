@@ -16,8 +16,6 @@ window.$ = window.jQuery = $;
 
 	MegaMenu
     .attr('id', 'megamenu')
-    // .attr('aria-hidden', true)
-    // .attr('aria-expanded', false);
 
 	NavDegreesLink
     .attr('id', 'NavDegreesLink')
