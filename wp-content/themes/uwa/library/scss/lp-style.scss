@@ -670,3 +670,12 @@ input.btn {
 @media all and (min-width: 1000px) {
 	.inner-cta {width: 60%;}
 }
+
+@media all and (max-width: 480px) {
+	.postid-199 .banner {
+		background-image: url("/wp-content/uploads/2017/05/UWAOnline-mobile.jpg") !important;
+	}
+	.postid-149 .banner {
+		background-image: url("/wp-content/uploads/2017/05/mobile_ed-lp-uwa.jpg") !important;
+	}
+}
