@@ -1205,7 +1205,8 @@ HEADER STYLES
 *********************/
 .header {
   background: #510915;
-  position: relative; }
+  position: relative;
+  margin-top: 3.625em; }
   @media screen and (min-width: 900px) {
     .header {
       margin-top: 0; } }
