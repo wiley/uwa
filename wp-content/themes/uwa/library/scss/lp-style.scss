@@ -92,7 +92,7 @@ HEADER STYLES
 .header {
 	background: $red_dark;
 	position: relative;
-	margin-top: em(58);
+//	margin-top: em(58);
 
 	@include mobilefirst($bp-med) {
 		margin-top: 0;
