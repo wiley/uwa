@@ -1679,3 +1679,6 @@ input.btn {
     background-image: url("/wp-content/uploads/2017/05/UWAOnline-mobile.jpg") !important; }
   .postid-149 .banner {
     background-image: url("/wp-content/uploads/2017/03/mobile_ed-lp-uwa.jpg") !important; } }
+
+#js-modal-connect-calendar .modal__content {
+  max-width: 900px; }
