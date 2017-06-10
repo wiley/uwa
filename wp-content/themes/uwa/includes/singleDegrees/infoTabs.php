@@ -8,11 +8,11 @@
       <button id="transfer" role="tab" aria-selected="false" aria-controls="content-transfer">Transfer Credit Policy</button>
     </div>
     <div class="infoTabs__contentWrapper">
-      <?php include ('courseDetails.php'); ?>
-      <?php include ('concentrations.php'); ?>
-      <?php include ('admission.php'); ?>
-      <?php include ('tuition.php'); ?>
-      <?php include ('transfer.php'); ?>
+      <?php include ('infoTabs/courseDetails.php'); ?>
+      <?php include ('infoTabs/concentrations.php'); ?>
+      <?php include ('infoTabs/admission.php'); ?>
+      <?php include ('infoTabs/tuition.php'); ?>
+      <?php include ('infoTabs/transfer.php'); ?>
     </div>
   </div>
 </div>
