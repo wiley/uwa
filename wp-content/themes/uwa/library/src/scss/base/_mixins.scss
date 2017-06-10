@@ -4,42 +4,45 @@
 ///     @extend %visuallyhidden;
 
 %visuallyhidden {
-  margin: -1px;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip: rect(0, 0, 0, 0);
-  position: absolute;
+	margin: -1px;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	clip: rect(0, 0, 0, 0);
+	position: absolute;
 }
 
 %tc {
-  text-align: center;
+	text-align: center;
 }
 
+%smallWidthContainer {
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
 /// Pixels to Ems Function
 /// @example
 ///     font-size: em(24);
-
 @function em($pixels, $context: $browser-context) {
-      @return #{$pixels/$context}em;
+	 @return #{$pixels/$context}em;
 }
-
 /// Responsive Mixin
 /// @example
 ///     @include mobilefirst($bp-small) { content here }
 @mixin mobilefirst($res) {
-  @media screen and (min-width: $res) {
-    @content;
-  }
+	 @media screen and (min-width: $res){
+		@content;
+	}
 }
-
 @mixin decorative($color) {
-  position: relative;
+	position: relative;
 	padding-top: 1em;
 	margin-top: 0;
-  @content;
+	@content;
+
 	&:before {
 		content: "";
 		width: 3em;
@@ -51,7 +54,6 @@
 		background: $color;
 	}
 }
-
 // .decorative {
 // 	position: relative;
 // 	padding-top: 1em;
@@ -74,40 +76,36 @@
 // }
 
 %flexCards {
-  display: flex;
-  justify-content: space-around;
-  flex-flow: row wrap;
+	display: flex;
+	justify-content: space-around;
+	flex-flow: row wrap;
 }
 
 %flexCard {
-
-  background: $red;
-  margin: 0.5em;
-  padding: 0.5em 1em;
-  color: white;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  padding-bottom: 2em;
-  padding-top: 0;
-  flex-basis: 100%;
-  @include susy-breakpoint($bp-med) {
-    display: flex;
-    flex: 1 1 30%;
-    margin: 1em;
-  }
+	background: $red;
+	margin: 0.5em;
+	padding: 0.5em 1em;
+	color: white;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	padding-bottom: 2em;
+	padding-top: 0;
+	flex-basis: 100%;
+	@include susy-breakpoint($bp-med) {
+		display: flex;
+		flex: 1 1 30%;
+		margin: 1em;
+	}
 }
-
 
 %flexCardLink {
-  padding: 0.25em 1em;
-  align-self: flex-end;
-  font-size: .8em;
-  font-weight: 600;
-  color: $gray_dark !important;
+	padding: 0.25em 1em;
+	align-self: flex-end;
+	font-size: 0.8em;
+	font-weight: 600;
+	color: $gray_dark !important;
 }
-
-
 // .card {
 //   background: $red;
 //   margin: 0.5em;

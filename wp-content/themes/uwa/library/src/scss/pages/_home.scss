@@ -156,11 +156,13 @@ HOMEPAGE SPECIFIC STYLES
 		&__heading {
 			color: $red;
 		}
+
 		&__text {
 			max-width: 500px;
 			margin-left: auto;
 			margin-right: auto;
 		}
+
 		&__extraText {
 			background: white;
 			max-width: 900px;
@@ -176,16 +178,23 @@ HOMEPAGE SPECIFIC STYLES
 
 		.journeyCards {
 			@extend %flexCards;
-
+			justify-content: center;
 			.card {
 				@extend %flexCard;
+				padding: 0 2em 2em;
+				margin: 1em .75em;
+				max-width: 300px;
 
+				@include susy-breakpoint($bp-med) {
+				    margin: 1em 1.5em;
+				}
 				&__heading {
 					color: white;
 					flex-basis: 100%;
 				}
 
 				&__text {
+					text-align: left;
 					@include decorative($gold);
 
 					&:before {
@@ -210,7 +219,7 @@ HOMEPAGE SPECIFIC STYLES
 		.section-heading {
 			color: $gray_dark;
 			@include susy-breakpoint($bp-med) {
-			    padding-top: 1em;
+				padding-top: 1em;
 			}
 		}
 
@@ -222,6 +231,8 @@ HOMEPAGE SPECIFIC STYLES
 
 		.card {
 			padding: 0;
+			color: $gray_dark;
+			// text-transform: capitalize;
 			@include susy-breakpoint($bp-med) {
 				flex-basis: 32%;
 				padding: 1em;
@@ -239,6 +250,7 @@ HOMEPAGE SPECIFIC STYLES
 							width: 100px;
 						}
 					}
+
 				}
 			}
 
@@ -251,7 +263,8 @@ HOMEPAGE SPECIFIC STYLES
 			}
 
 			&__heading {
-				color: $black;
+				color: $gray_dark;
+				text-transform: capitalize;
 				@include susy-media(0 900px) {
 					margin-bottom: 0.25em;
 				}
@@ -259,13 +272,19 @@ HOMEPAGE SPECIFIC STYLES
 
 			&__text {
 				padding: 0 1em;
+				max-width: 500px;
 			}
 		}
 	}
 
 	.affording {
 		position: relative;
-
+		&__heading {
+			color: $red;
+		}
+		p {
+			@extend %smallWidthContainer;
+		}
 		.wrap {
 			width: 100%;
 			@include susy-breakpoint($bp-med) {
@@ -448,7 +467,7 @@ HOMEPAGE SPECIFIC STYLES
 
 	.tanBackground {
 		position: relative;
-		padding-bottom: 4em;
+		padding-bottom: 2.5em;
 		margin-bottom: 5em;
 
 		&:after {
@@ -472,24 +491,58 @@ HOMEPAGE SPECIFIC STYLES
 	}
 
 	.accreditations {
-
 		&__title {
-
+			font-size: 1.5em;
+			display: none;
+			text-transform: capitalize;
 			@include susy-breakpoint($bp-med) {
-			   @include decorative($gold);
+				display: block;
+				@include decorative($gold);
 
-				 &:before {
-					 left: 50%;
-					 width: 500px;
-					 transform: translateX(-50%);
-				 }
+				&:before {
+					left: 50%;
+					width: 620px;
+					transform: translateX(-50%);
+				}
+				padding-top: 2.5em;
 			}
-
 		}
-		img {
-			width: auto;
-			margin: 1em;
-			height: 120px;
+
+		&__logos {
+			display: flex;
+			flex-flow: row wrap;
+			align-items: center;
+			justify-content: center;
+			@media(max-width: $bp-med - 1) {
+				 @include decorative($gold);
+
+				&:before {
+					left: 50%;
+					width: 100px;
+					transform: translateX(-50%);
+				}
+
+				img {
+					width: auto;
+			    height: 20vw;
+			    max-height: 90px;
+					margin-bottom: .5em;
+				}
+			}
+			@include susy-breakpoint($bp-med) {
+				img {
+					height: 25vw;
+					max-height: 120px;
+				}
+			}
+		}
+
+		&__logoWrapper {
+			flex: 0 1 auto;
+			margin: 1em 0.5em;
+			@include susy-breakpoint($bp-med) {
+				margin: 1em;
+			}
 		}
 	}
 }
