@@ -3,17 +3,19 @@
 !.gitignore
 !wp-content/
 
+
 # Ignore everything in the "wp-content" directory, except the "plugins" and "themes" directories.
 wp-content/*
-wp-content/plugins/
-!wp-content/themes/uwa
-!wp-content/themes/uwa/*
+!wp-content/plugins/
+!wp-content/themes/
 !sassdoc
 !style-guide
 !readme.md
 !robots.txt
 !humans.txt
 
+node_modules/
+bower_components/
 *~
 .DS_Store
 .svn
