@@ -10,7 +10,7 @@
     <div class="infoTabs__contentWrapper">
       <?php include ('infoTabs/courseDetails.php'); ?>
       <?php include ('infoTabs/concentrations.php'); ?>
-      <?php include ('admission.php'); ?>
+      <?php include ('infoTabs/admission.php'); ?>
       <?php include ('infoTabs/tuition.php'); ?>
       <?php include ('infoTabs/transfer.php'); ?>
     </div>
