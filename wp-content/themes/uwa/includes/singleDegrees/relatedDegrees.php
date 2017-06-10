@@ -21,7 +21,11 @@ if( $posts ): ?>
   						    <div class="cardLinkWrapper item">
   						      <a href="<?php echo $link; ?>" class="cardLink ">
 
-  						      <img class="cardLink__image" src="<?php the_field('program_image'); ?>" alt="Program Image">
+										<?php if (get_field('program_image')): ?>
+	  						      <img class="cardLink__image" src="<?php the_field('program_image'); ?>" alt="Program Image">
+										<?php else: ?>
+											<img src="https://placehold.it/400x400" alt="">
+										<?php endif; ?>
 
   						      <div class="flexTestWrapper">
   						        <div class="cardLink__text">

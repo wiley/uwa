@@ -203,7 +203,7 @@
 		position: relative;
 		z-index: 9999;
 		padding: 3em;
-
+		background: white !important;
 		&:before {
 			content: '';
 			background-image: url("/wp-content/themes/uwa/library/images/triangles.svg");
@@ -302,11 +302,13 @@
 		&__flexWrapper {
 			display: flex;
 			flex-flow: row wrap;
-			justify-content: space-between;
+			justify-content: center;
 
 			.cardLinkWrapper.item {
 				margin: 1em;
 				flex: 1 1 29%;
+				flex: 0 0 300px;
+				margin: 1em 10px;
 			}
 		}
 

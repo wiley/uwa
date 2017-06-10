@@ -58,6 +58,173 @@
 <script type="text/javascript">
 jQuery(document).ready(function($) {
 
+	// (function() {
+	//
+	// 	var block1 = $('.block1'),
+	// 			block2 = $('.block2'),
+	// 			nextButton = block1.find('.next'),
+	// 			previousButton = block2.find('.next'),
+	// 			fieldsForBlock1 = block1.find('input, select'),
+	// 			fieldsForBlock2 = block2.find('input'),
+	// 			firstInputBlock1 = $(block1).find('input, select').first(), //Finds first form element inside block1 whether it is a select menu or an text input
+	// 			firstInputBlock2 = $(block2).find('input').first(),
+	//       formFocusGuardBottom = $('form').find('.focusguard-bottom');
+	//
+	//
+	// 	function runInvalidFunc(fieldsToProcess) {
+	// 		fieldsToProcess.each(function(index, element) {
+	//
+	//
+	//       if (element != $('#item_id')[0]) {
+	//
+	//         $(element).one('blur', function(event) {
+	//   				if (  ( $(this).val() === '' ) || ( $(this).hasClass('error') )  )   {
+	//   					$(this).addClass('error')
+	//   						.attr("aria-invalid", "true")
+	//               .focus();
+	//
+	//               if ($(this)[0].id == 'first_name') {
+	//                 $('#firstNameError').html('Please fill in your name');
+	//                 $('#firstNameError').attr('aria-hidden', 'false');
+	//               }
+	//
+	//               if ($(this)[0].id == 'last_name') {
+	//                 $('#lastNameError').html('Please fill in name');
+	//                 $('#lastNameError').attr('aria-hidden', 'false');
+	//               }
+	//
+	//   				}
+	//         });
+	//       }
+	//
+	// 			$(element).blur(function() {
+	// 				if ($(this).val() !== '' && $(this).attr('aria-invalid', "true")) {
+	//
+	// 					$(this).attr('aria-invalid', "false");
+	// 				}
+	// 			});
+	// 		//   $(element).blur(function() {
+	// 		//     if ( $(this).val() == '' ) {
+	// 		 //
+	// 		//       $(this).addClass('error')
+	// 		//       .attr("aria-invalid", "true")
+	// 		//       .focus();
+	// 		 //
+	// 		//     } else if (  $(this).attr('aria-invalid', "true")  ) {
+	// 		 //
+	// 		//         $(this).attr('aria-invalid', "false")
+	// 		//         console.log('aria not longer invalid')
+	// 		//     }
+	// 		//  });
+	// 	});
+	//  }
+	//
+	// 	function checkBlock1Inputs(clickEvent) {
+	// 		// console.log('FIREDDDD');
+	// 		clickEvent.preventDefault();
+	//
+	// 		fieldsForBlock1.each(function(index, element) {
+	// 			// console.log($(this).val());
+	// 			if ( $(this).val() === '' ) {
+	//
+	// 				$(this).addClass('error')
+	// 				.attr("aria-invalid", "true")
+	// 				.focus();
+	//
+	// 			} else {
+	// 				// Do nothing
+	// 			}
+	// 			checkForInvalidInputsBlock1(fieldsForBlock1);
+	// 		});
+	// 	}
+	//
+	// 	function checkForInvalidInputsBlock1(inputs) {
+	// 		var invalidInputs = inputs.filter('.error').length;
+	//
+	// 		if (invalidInputs == 0) {
+	// 			console.log('ALL INPUTS SEEN AS VALID');
+	// 			block1.addClass('hidden').removeClass('show');
+	// 			block2.addClass('show').removeClass('hidden')
+	//       updatePromptText('Please fill out some basic contact information.');
+	// 			firstInputBlock2.focus();
+	// 		}
+	// 	}
+	//
+	// 	function toggleClasses() {
+	// 		block1.toggleClass('show hidden');
+	// 		block2.toggleClass('show hidden');
+	//     $('.prev-overlay').toggleClass('active');
+	// 	}
+	//
+	//   $('.prev-overlay').on('click', function(e) {
+	//     e.preventDefault();
+	//     toggleClasses();
+	//   });
+	//
+	// 	function proceedToNextStep() {
+	// 		nextButton.click(checkBlock1Inputs);
+	// 	}
+	//
+	//   function updatePromptText(textForFormPrompt) {
+	//     $('.step-form__prompt').text(textForFormPrompt);
+	//   }
+	//
+	// 	function returnToPreviousStep() {
+	// 		previousButton.click(function() {
+	// 			toggleClasses();
+	// 			firstInputBlock1.focus();
+	//       updatePromptText('What degree are you interested in?');
+	// 		});
+	// 	}
+	//
+	//   function exitFormOnTabbing() {
+	//     formFocusGuardBottom.on('focus', function() {
+	//       block1.toggleClass('show hidden');
+	//       block2.toggleClass('show hidden');
+	//       updatePromptText('What degree are you interested in?');
+	//       $('.prev-overlay').toggleClass('active');
+	//       $('.js-modal').first().focus();
+	//     })
+	//   }
+	//
+	//   previousButton.keyup(function(e) {
+	//     if (e.which == 13) {
+	//       previousButton.click();
+	//       firstInputBlock1.focus();
+	//     }
+	// 	});
+	//
+	//   function escapeListener () {
+	//     $(document).on('keyup',function(event) {
+	//         if (event.keyCode == 27 && block2.hasClass('show')) {
+	//           block1.toggleClass('show hidden');
+	//       		block2.toggleClass('show hidden');
+	//           updatePromptText('What degree are you interested in?');
+	//           $('.prev-overlay').toggleClass('active');
+	//           console.log(nextButton);
+	//           nextButton.focus();
+	//         }
+	//     });
+	//   }
+	//
+	//   escapeListener();
+	// 	runInvalidFunc(fieldsForBlock1);
+	// 	runInvalidFunc(fieldsForBlock2);
+	// 	proceedToNextStep();
+	// 	returnToPreviousStep();
+	//   exitFormOnTabbing();
+	//
+	// 	nextButton.keypress(function(e) {
+	// 		if (e.which == 13) {
+	//       nextButton.click();
+	// 			firstInputBlock2.focus();
+	// 		}
+	// 	});
+	//
+	// })();
+	//
+
+
 	(function () {
 		function escapeListener () {
 		  $(document).on('keyup',function(event) {
@@ -66,18 +233,6 @@ jQuery(document).ready(function($) {
 		      }
 		  });
 		}
-
-		$('#item_id').on('blur', function() {
-			console.log('blurred');
-			// $('.block1 .formError').remove()
-			// $(document).on('keydown',function(event) {
-		  //     if (event.keyCode == 9) {
-		  //       event.preventDefault();
-			// 			console.log('Worked!');
-		  //     }
-		  // });
-		})
-
 
 	})();
 

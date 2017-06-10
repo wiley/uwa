@@ -3,7 +3,22 @@
 			<div class="content">
 
 				<!-- <div class="wrap cf"> -->
+<?php global $post; ?>
+<?php
 
+$terms = get_the_terms( $post->ID, 'degree_level');
+$termArray = $terms[0];
+
+$ID = $termArray->term_id;
+
+$acfTerm = 'term_' . $ID;
+// if (is_array($terms)):
+// 	foreach($terms as $term):
+// 		// print_r($term->slug);
+// 	endforeach;
+// endif;
+?>
+<?php the_field('main_image', $acfTerm); ?>
 						<main class="main-content cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 							<?php if ( function_exists('yoast_breadcrumb') ) {
@@ -16,11 +31,8 @@
 									<span class="program__badge">Online Master of Education Degree</span>
 									<h1 class="program__title"><?php the_title(); ?></h1>
 									<p class="program__subtitle">Make a Difference in the Lives of Young Children</p>
-									<div class="accreditations">
-										<img src="/wp-content/themes/uwa/library/images/accreditations/1.png" alt="accreditation logo">
-										<img src="/wp-content/themes/uwa/library/images/accreditations/2.png" alt="accreditation logo">
-										<img src="/wp-content/themes/uwa/library/images/accreditations/3.png" alt="accreditation logo">
-									</div>
+									<?php include ('includes/singleDegrees/accreditations.php'); ?>
+
 									<?php include ('includes/singleDegrees/degreeOverview.php'); ?>
 									<?php include ('includes/singleDegrees/who.php'); ?>
 								</div>

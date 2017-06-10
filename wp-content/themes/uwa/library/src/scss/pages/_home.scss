@@ -156,7 +156,11 @@ HOMEPAGE SPECIFIC STYLES
 		&__heading {
 			color: $red;
 		}
-
+		&__text {
+			max-width: 500px;
+			margin-left: auto;
+			margin-right: auto;
+		}
 		&__extraText {
 			background: white;
 			max-width: 900px;
@@ -205,6 +209,9 @@ HOMEPAGE SPECIFIC STYLES
 	.expect {
 		.section-heading {
 			color: $gray_dark;
+			@include susy-breakpoint($bp-med) {
+			    padding-top: 1em;
+			}
 		}
 
 		.expectCards {
@@ -404,6 +411,7 @@ HOMEPAGE SPECIFIC STYLES
 				/* to hide the lines from behind the text, you have to set the background color the same as the container */
 				background: $black;
 				padding: 0 15px;
+				letter-spacing: 0;
 			}
 		}
 
