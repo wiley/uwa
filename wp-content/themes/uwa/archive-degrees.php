@@ -5,7 +5,7 @@
 				<div class="wrap cf">
 
 					<h1 class="archive-title"><?php post_type_archive_title(); ?></h1>
-
+					<h2>NEED TO FIX THIS PAGE</h2>
 					<main class="main-content cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 						<div class="program-list">
