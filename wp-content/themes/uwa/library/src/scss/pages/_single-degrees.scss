@@ -238,7 +238,7 @@
 			text-align: center;
 			flex-flow: row wrap;
 			padding: 1em 2em 2em;
-			max-width: 380px;
+			// max-width: 380px;
 			@include susy-breakpoint($bp-med) {
 				flex: 1 1 25%;
 			}

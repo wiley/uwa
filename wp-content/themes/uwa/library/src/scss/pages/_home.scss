@@ -181,9 +181,9 @@ HOMEPAGE SPECIFIC STYLES
 			justify-content: center;
 			.card {
 				@extend %flexCard;
-				padding: 0 2em 2em;
+				
 				margin: 1em .75em;
-				max-width: 300px;
+				// max-width: 300px;
 
 				@include susy-breakpoint($bp-med) {
 				    margin: 1em 1.5em;
