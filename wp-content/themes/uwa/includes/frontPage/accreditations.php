@@ -9,7 +9,7 @@
       <img src="/wp-content/themes/uwa/library/images/accreditations/2.png" alt="accreditation logo">
     </div>
     <div class="accreditations__logoWrapper">
-      <img src="/wp-content/themes/uwa/library/images/accreditations/3.png" alt="accreditation logo">
+      <img src="/wp-content/themes/uwa/library/images/accreditations/ncate.png" alt="accreditation logo">
     </div>
   </div>
 </div>
