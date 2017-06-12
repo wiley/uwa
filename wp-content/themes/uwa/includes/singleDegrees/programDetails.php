@@ -27,10 +27,14 @@
       <p class="program__details-dotted"></p>
       <p class="program__details-info"><?php the_field('cost_per_credit'); ?></p>
     </div>
-    <div class="program__details-row">
-      <p class="program__details-title">Alabama Teaching Certification</p>
-      <p class="program__details-dotted"></p>
-      <p class="program__details-info"><?php the_field('alabama_teaching_certification'); ?></p>
-    </div>
+
+    <?php if (get_field('show_alabama_certification_info')): ?>
+      <div class="program__details-row">
+        <p class="program__details-title">Alabama Teaching Certification</p>
+        <p class="program__details-dotted"></p>
+        <p class="program__details-info"><?php the_field('alabama_teaching_certification'); ?></p>
+      </div>
+    <?php endif; ?>
+
   </div>
 </div>

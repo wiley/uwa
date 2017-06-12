@@ -18,7 +18,7 @@ $acfTerm = 'term_' . $ID;
 // 	endforeach;
 // endif;
 ?>
-<?php the_field('main_image', $acfTerm); ?>
+
 						<main class="main-content cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 							<?php if ( function_exists('yoast_breadcrumb') ) {
@@ -30,7 +30,11 @@ $acfTerm = 'term_' . $ID;
 								<div class="program__main">
 									<span class="program__badge">Online Master of Education Degree</span>
 									<h1 class="program__title"><?php the_title(); ?></h1>
-									<p class="program__subtitle">Make a Difference in the Lives of Young Children</p>
+									<p class="program__subtitle">
+										<?php if (get_field('program_subtitle')): ?>
+											<?php the_field('program_subtitle'); ?>
+										<?php endif; ?>
+									</p>
 									<?php include ('includes/singleDegrees/accreditations.php'); ?>
 
 									<?php include ('includes/singleDegrees/degreeOverview.php'); ?>

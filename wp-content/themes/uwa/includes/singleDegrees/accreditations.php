@@ -6,6 +6,9 @@
     <img src="/wp-content/themes/uwa/library/images/accreditations/2.png" alt="accreditation logo">
   <?php endif; ?>
   <?php if (get_field('ncate_logo')): ?>
-    <img src="/wp-content/themes/uwa/library/images/accreditations/3.png" alt="accreditation logo">
+    <img src="/wp-content/themes/uwa/library/images/accreditations/ncate.png" alt="accreditation logo">
+  <?php endif; ?>
+  <?php if (get_field('caep_logo')): ?>
+    <img src="/wp-content/themes/uwa/library/images/accreditations/caep.png" alt="accreditation logo">
   <?php endif; ?>
 </div>
