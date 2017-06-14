@@ -138,6 +138,8 @@ HEADER STYLES
 					font-weight: 600;
 					font-size: 1em;
 					padding: 0.5em 1em;
+					font-family: $lora;
+					letter-spacing: .2px;
 					color: $black;
 					@include susy-breakpoint($bp-med) {
 						font-size: 0.9em;

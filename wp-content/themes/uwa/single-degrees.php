@@ -36,11 +36,14 @@ $acfTerm = 'term_' . $ID;
 										<?php endif; ?>
 									</p>
 									<?php include ('includes/singleDegrees/accreditations.php'); ?>
-
+									<div class="mobileOnly">
+										<?php include ('includes/singleDegrees/programDetails.php'); ?>
+									</div>
 									<?php include ('includes/singleDegrees/degreeOverview.php'); ?>
 									<?php include ('includes/singleDegrees/who.php'); ?>
 								</div>
 								<?php include ('includes/singleDegrees/programDetails.php'); ?>
+
 							</div>
 						</div>
 

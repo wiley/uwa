@@ -30,6 +30,7 @@ if( $posts ): ?>
   						      <div class="flexTestWrapper">
   						        <div class="cardLink__text">
   						          <h3 class="cardLink__heading"><?php echo $title; ?></h3>
+												<div class="cardLink__borderSeperator"></div>
   						        </div>
   						        <div class="cardLink__info">
   						          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat animi neque corrupti quae numquam recusandae laborum fuga veniam culpa enim.</p>

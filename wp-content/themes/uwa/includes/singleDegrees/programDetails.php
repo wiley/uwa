@@ -1,6 +1,7 @@
 <div class="program__side">
   <img src="<?php the_field('program_image'); ?>" alt="">
   <div class="program__details">
+    <div class="program__details-line"></div>
     <h6 class="program__details-heading">Program Detail</h6>
     <div class="program__details-row">
       <p class="program__details-title">Next Start Date</p>

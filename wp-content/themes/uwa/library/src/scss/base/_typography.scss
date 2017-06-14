@@ -1,7 +1,7 @@
 /******************************************************************
 Typography Styles
 ******************************************************************/
-
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i|Lora:400,400i,700,700i');
 @font-face {
 	font-family: 'Trade Gothic LT Std';
 	src: url('../fonts/TradeGothicLTStd-Bd2.eot');
@@ -12,6 +12,7 @@ Typography Styles
 	font-style: normal;
 }
 
+
 /// Sans Serif
 /// @group Fonts
 $sans-serif:        'Open Sans', Helvetica, Arial, sans-serif;
@@ -19,16 +20,21 @@ $sans-serif:        'Open Sans', Helvetica, Arial, sans-serif;
 /// @group Fonts
 $condensed:					 'Open Sans', Helvetica, Arial, sans-serif;
 
+$lora: 'Lora', Helvetica, Arial, serif;
+$lato: 'Lato', Helvetica, Arial, sans-serif;
 
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 
+body {
+	font-family: $lato;
+}
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	text-rendering: optimizelegibility;
 	font-weight: bold;
 	text-transform: uppercase;
-	font-family: $condensed;
+	font-family: $lora;
 
 	a {
 		text-decoration: none;

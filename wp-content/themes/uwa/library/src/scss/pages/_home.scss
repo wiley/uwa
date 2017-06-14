@@ -34,6 +34,9 @@ HOMEPAGE SPECIFIC STYLES
 // END OF TEMPORARY STYLES == UNTIL BRAND PAGE IS READY TO BE REDIRECTED TO
 
 .home {
+	p {
+		// font-family: $lato;
+	}
 	.main-content {
 		padding: 0 !important;
 	}
@@ -181,7 +184,7 @@ HOMEPAGE SPECIFIC STYLES
 			justify-content: center;
 			.card {
 				@extend %flexCard;
-				
+
 				margin: 1em .75em;
 				// max-width: 300px;
 

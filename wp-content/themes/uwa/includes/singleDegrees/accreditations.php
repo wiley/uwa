@@ -11,4 +11,7 @@
   <?php if (get_field('caep_logo')): ?>
     <img src="/wp-content/themes/uwa/library/images/accreditations/caep.png" alt="accreditation logo">
   <?php endif; ?>
+  <?php if (get_field('acbsp_logo')): ?>
+    <img src="/wp-content/themes/uwa/library/images/accreditations/acbsp.png" alt="accreditation logo">
+  <?php endif; ?>
 </div>
