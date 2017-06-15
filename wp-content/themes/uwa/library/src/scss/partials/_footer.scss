@@ -19,6 +19,13 @@
 		max-width: 300px;
 	}
 
+	&__copyright {
+		margin-bottom: 0;
+
+		& + p {
+			margin-bottom: 0;
+		}
+	}
 	&__heading {
 		color: $gold;
 		flex-basis: 100%;

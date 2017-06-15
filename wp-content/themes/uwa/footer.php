@@ -6,8 +6,10 @@
 					<div class="flexWrapper">
 						<div class="info flexItem">
 							<?php include('library/images/logo-footer.svg'); ?>
-							<p class="footer__copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>. <a href="/privacy-policy/">Privacy Policy</a></p>
+							<p class="footer__infoStatement">Your career goals are within reach with an online degree from the University of West Alabama. Experience a personalized education designed to help you achieve your dreams, on your schedule and at an affordable cost.</p>
+							<p class="footer__copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
 							<?php the_field('address', 'option') ?>
+							<a href="/privacy-policy/">Privacy Policy</a>
 						</div>
 
 						<div class="resources flexItem">
