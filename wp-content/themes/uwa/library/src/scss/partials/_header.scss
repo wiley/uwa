@@ -141,8 +141,11 @@ HEADER STYLES
 					font-family: $lora;
 					letter-spacing: .2px;
 					color: $black;
+					font-family: "Lora", Helvetica, Arial, serif;
+    text-transform: uppercase;
+    font-weight: normal;
 					@include susy-breakpoint($bp-med) {
-						font-size: 0.9em;
+						// font-size: 0.9em;
 					}
 				}
 			}

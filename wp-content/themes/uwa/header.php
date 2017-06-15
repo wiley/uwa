@@ -146,6 +146,10 @@
 
 					<div class="banner">
 						<div class="wrap">
+							<?php if ( !is_front_page() && is_page() ): ?>
+								<h1 class="banner__heading"><?php the_title(); ?></h1>
+							<?php endif; ?>
+
 							<?php if (get_field('banner_headline') && get_field('banner_headline')): ?>
 								<h1 class="banner__heading"><?php the_field('banner_headline'); ?></h1>
 							<?php endif; ?>
@@ -160,7 +164,21 @@
 
 					<div class="datesBox">
 						<h5 class="datesBox__heading"><span>Important Dates</span></h5>
-						<p class="datesBox__text">Register by <span class="datesBox__date"><?php the_field('register_by', 'option'); ?></span> to start by <span class="datesBox__date"><?php the_field('start_by', 'option'); ?></span></p>
+
+							<div class="datesBox__text">
+								<div class="datesBox__flexWrapper">
+									<span class="datesBox__register-start">Register by</span>
+									<span class="datesBox__dottedLine"></span>
+									<span class="datesBox__date"><?php the_field('register_by', 'option'); ?></span>
+								</div>
+
+								<div class="datesBox__flexWrapper">
+									<span class="datesBox__register-start">to start by</span>
+									<span class="datesBox__dottedLine"></span>
+									<span class="datesBox__date"><?php the_field('start_by', 'option'); ?></span>
+								</div>
+
+							</div>
 						<a class="datesBox__cta btn__hollow" href="#">Apply Now</a>
 						<a class="datesBox__cta btn__hollow" href="/request-info">Request Info</a>
 					</div>

@@ -13,7 +13,13 @@
 
   <div class="content">
     <main id="main" class="cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+      <?php if( is_tax() ) {
+          echo '<h1>WORKED</h1>';
+      } ?>
 
+      <?php if (has_term('business', 'degee_vertical')): ?>
+        <h1>TERM WORKED TOO!</h1>
+      <?php endif; ?>
       <!-- <div class="entry-content"></div> -->
 
       <div class="intro">

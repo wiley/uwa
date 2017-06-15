@@ -56,3 +56,16 @@ body.mobileNav--active {
 		margin-bottom: 1em;
 	}
 }
+
+.banner {
+	&__heading {
+		text-shadow: 0 2px 14px #000000;
+		color: white;
+		@include susy-breakpoint($bp-med) {
+			font-size: 3.25em;
+		}
+		@include susy-breakpoint($bp-lg) {
+			font-size: 4.5em;
+		}
+	}
+}

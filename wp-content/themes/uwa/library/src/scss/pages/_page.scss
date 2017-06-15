@@ -54,10 +54,12 @@ article {}
 
 			& li {
 				margin: 0 1em;
-					border-top: 5px solid transparent;
+				border-top: 5px solid transparent;
+
 				&.current_page_item {
 					border-top: 5px solid white;
 				}
+
 				a {
 					color: white;
 					padding: 0.5em;
@@ -65,14 +67,13 @@ article {}
 					display: inline-block;
 					padding: 1em;
 
-					&:hover, &:focus {
+					&:focus,
+					&:hover {
 						text-decoration: underline;
 					}
 				}
 			}
 		}
-
-
 
 		&__breadcrumbs {
 			background-color: #A81D32;
@@ -83,7 +84,6 @@ article {}
 			font-weight: 600;
 			PADDING: 0;
 			// TEMPORARY FIX
-
 			a {
 				color: white;
 			}
@@ -106,8 +106,33 @@ article {}
 		background: white;
 	}
 }
+
 .waiting {
 	// background: $tan !important;
 	padding: 2em 0;
 	text-align: center;
+}
+
+.banner {
+	.wrap {
+		position: absolute;
+		z-index: 99999;
+		color: white;
+		text-align: center;
+		width: 100%;
+		left: 0;
+		right: 0;
+		bottom: 50px;
+	}
+
+	&__heading {
+		text-shadow: 0 2px 14px #000000;
+		color: white;
+		@include susy-breakpoint($bp-med) {
+			font-size: 3.25em;
+		}
+		@include susy-breakpoint($bp-lg) {
+			font-size: 4.5em;
+		}
+	}
 }

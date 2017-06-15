@@ -37,6 +37,7 @@ HOMEPAGE SPECIFIC STYLES
 	p {
 		// font-family: $lato;
 	}
+
 	.main-content {
 		padding: 0 !important;
 	}
@@ -79,7 +80,6 @@ HOMEPAGE SPECIFIC STYLES
 
 	.banner {
 		background-image: url("#{$images}/home-banner.jpg");
-		min-height: 600px;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
@@ -89,6 +89,14 @@ HOMEPAGE SPECIFIC STYLES
 		align-items: center;
 		text-align: center;
 		color: white;
+		background-position: 85% center;
+		position: relative;
+		height: 60vw;
+		min-height: 400px;
+		@include susy-breakpoint($bp-med) {
+			min-height: 600px;
+			max-height: 900px;
+		}
 
 		&:after {
 			background: linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, rgba(0,0,0,0.24) 27.27%, rgba(255, 255, 255, 0) 100%);
@@ -100,12 +108,22 @@ HOMEPAGE SPECIFIC STYLES
 			left: 0;
 		}
 
+		.btn-red {
+			width: 300px;
+		}
+
 		.wrap {
 			max-width: 800px;
 			position: relative;
 			z-index: 9;
+			padding: 12em 0 2em;
+			position: absolute;
+			// z-index: 999;
+			padding: 0;
+			top: 30%;
 			@include susy-breakpoint($bp-med) {
 				padding: 10em 0;
+				top: 5%;
 			}
 			@include susy-breakpoint($bp-xl) {
 				padding: 15em 0;
@@ -115,8 +133,11 @@ HOMEPAGE SPECIFIC STYLES
 		&__heading {
 			text-shadow: 0 2px 14px #000000;
 			color: white;
+			margin-bottom: 0.25em;
+			margin-top: 0;
 			@include susy-breakpoint($bp-med) {
 				font-size: 3.25em;
+				margin-bottom: 0.5em;
 			}
 			@include susy-breakpoint($bp-lg) {
 				font-size: 4.5em;
@@ -182,15 +203,15 @@ HOMEPAGE SPECIFIC STYLES
 		.journeyCards {
 			@extend %flexCards;
 			justify-content: center;
+
 			.card {
 				@extend %flexCard;
-
-				margin: 1em .75em;
+				margin: 1em 0.75em;
 				// max-width: 300px;
-
 				@include susy-breakpoint($bp-med) {
-				    margin: 1em 1.5em;
+					margin: 1em 1.5em;
 				}
+
 				&__heading {
 					color: white;
 					flex-basis: 100%;
@@ -253,7 +274,6 @@ HOMEPAGE SPECIFIC STYLES
 							width: 100px;
 						}
 					}
-
 				}
 			}
 
@@ -282,12 +302,15 @@ HOMEPAGE SPECIFIC STYLES
 
 	.affording {
 		position: relative;
+
 		&__heading {
 			color: $red;
 		}
+
 		p {
 			@extend %smallWidthContainer;
 		}
+
 		.wrap {
 			width: 100%;
 			@include susy-breakpoint($bp-med) {
@@ -401,10 +424,48 @@ HOMEPAGE SPECIFIC STYLES
 		padding: 0.5em;
 		top: 50%;
 		right: 0;
-		padding: 0.5em 2em;
+		padding: 1em 2em 2em;
 		min-width: 200px;
 		@include susy-breakpoint($bp-med) {
 			position: absolute;
+					padding: 0.5em 2em;
+		}
+		@include susy-breakpoint($bp-xl) {
+			transform: translateY(-50%);
+			position: absolute;
+		}
+
+		&__flexWrapper {
+			display: flex;
+			flex-flow: row wrap;
+			align-items: flex-end;
+
+			@include susy-breakpoint($bp-med) {
+			    flex-flow: column;
+					align-items: center;
+			}
+		}
+
+		&__register-start {
+			margin-right: 3px;
+		}
+
+		&__dottedLine {
+			border-bottom: 2px dotted #ffffff;
+			margin-left: 3px;
+			margin-right: 3px;
+			margin-top: -5px;
+			position: relative;
+			-webkit-box-flex: 1;
+			-ms-flex: 1 1 auto;
+			flex: 1 1 auto;
+			padding: 0 5px;
+			box-sizing: border-box;
+			top: -4px;
+
+			@include susy-breakpoint($bp-med) {
+			    display: none;
+			}
 		}
 
 		&__heading {
@@ -449,6 +510,7 @@ HOMEPAGE SPECIFIC STYLES
 			font-size: 1.3em;
 			font-weight: 700;
 			font-style: normal;
+			margin-left: 5px;
 		}
 
 		&__cta {
@@ -527,9 +589,9 @@ HOMEPAGE SPECIFIC STYLES
 
 				img {
 					width: auto;
-			    height: 20vw;
-			    max-height: 90px;
-					margin-bottom: .5em;
+					height: 20vw;
+					max-height: 90px;
+					margin-bottom: 0.5em;
 				}
 			}
 			@include susy-breakpoint($bp-med) {
