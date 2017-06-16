@@ -309,6 +309,7 @@ HOMEPAGE SPECIFIC STYLES
 
 		p {
 			@extend %smallWidthContainer;
+			padding-bottom: 2em;
 		}
 
 		.wrap {
@@ -321,15 +322,16 @@ HOMEPAGE SPECIFIC STYLES
 			&:after {
 				content: '';
 				position: absolute;
-				top: 10%;
+				top: 15%;
 				background: $tan;
 				height: 85%;
 				width: 100%;
 				left: 0;
-				width: 65%;
+				width: 55%;
 				left: 50%;
 				transform: translateX(-50%);
 				bottom: 5%;
+				max-width: 875px;
 			}
 		}
 
@@ -338,13 +340,23 @@ HOMEPAGE SPECIFIC STYLES
 			z-index: 99;
 			@include susy-breakpoint($bp-med) {
 				display: flex;
-				justify-content: space-between;
+				justify-content: space-around;
+
+				&:nth-of-type(2) .card {
+					order: 2;
+				}
 			}
 		}
 
 		.card {
 			text-align: left;
-			flex-basis: 64%;
+			flex-basis: 55%;
+
+			&:nth-of-type(2) {
+				order: 2;
+			}
+
+			&__imageWrapper {}
 
 			&__info {
 				position: relative;
@@ -353,7 +365,17 @@ HOMEPAGE SPECIFIC STYLES
 				width: 80%;
 				margin-left: auto;
 				margin-right: auto;
-				padding: 0.5em 1em;
+				// padding: 0.5em 1em;
+				padding: 1em 1.5em 1.5em;
+
+				h2 {
+					margin-top: 0;
+				}
+
+				p {
+					width: initial;
+					margin-left: 0;
+				}
 
 				.btn__hollow {
 					padding: 1em 2em;
@@ -371,7 +393,7 @@ HOMEPAGE SPECIFIC STYLES
 			@include susy-breakpoint($bp-med) {
 				display: block;
 				flex-basis: 33%;
-				background: rgba(245, 241, 229, 0.5);
+				background: rgba(227, 212, 170, .2);
 				height: initial;
 				align-self: center;
 			}
@@ -385,7 +407,7 @@ HOMEPAGE SPECIFIC STYLES
 
 			&__info {
 				font-size: 1.5em;
-				font-weight: 300;
+				font-weight: 400;
 			}
 
 			.lighting {
@@ -398,6 +420,7 @@ HOMEPAGE SPECIFIC STYLES
 	.waiting {
 		padding: 2em 0;
 		background: white;
+
 		.section-heading {
 			color: $gray_dark;
 		}
@@ -428,7 +451,7 @@ HOMEPAGE SPECIFIC STYLES
 		min-width: 200px;
 		@include susy-breakpoint($bp-med) {
 			position: absolute;
-					padding: 0.5em 2em;
+			padding: 0.5em 2em;
 		}
 		@include susy-breakpoint($bp-xl) {
 			transform: translateY(-50%);
@@ -439,10 +462,9 @@ HOMEPAGE SPECIFIC STYLES
 			display: flex;
 			flex-flow: row wrap;
 			align-items: flex-end;
-
 			@include susy-breakpoint($bp-med) {
-			    flex-flow: column;
-					align-items: center;
+				flex-flow: column;
+				align-items: center;
 			}
 		}
 
@@ -462,9 +484,8 @@ HOMEPAGE SPECIFIC STYLES
 			padding: 0 5px;
 			box-sizing: border-box;
 			top: -4px;
-
 			@include susy-breakpoint($bp-med) {
-			    display: none;
+				display: none;
 			}
 		}
 

@@ -11,9 +11,9 @@
 		&:focus,
 		&:hover {
 			text-decoration: underline;
-			text-shadow: 0 0 0.2px #fff, 0 0 0.2px #fff;
+			// text-shadow: 0 0 0.2px #fff, 0 0 0.2px #fff;
 			color: white;
-			transition: text-shadow 0.3s;
+			// transition: text-shadow 0.3s;
 		}
 	}
 
@@ -33,7 +33,7 @@
 		color: #d6cd91 !important; // Overriding $gold because of color contrast
 
 		&:hover, &:focus {
-			text-shadow: 0 0 0.2 #c9bf79, 0 0 0.2 #c9bf79;
+			// text-shadow: 0 0 0.2 #c9bf79, 0 0 0.2 #c9bf79;
 		}
 	}
 
@@ -44,7 +44,7 @@
 		margin-top: 0;
 		color: #d6cd91; // Overriding $gold because of color contrast
 		align-self: baseline;
-		letter-spacing: 1px;
+		letter-spacing: 0;
 		font-weight: 600;
 		@include decorative($gold);
 
@@ -80,7 +80,7 @@
 				&:focus,
 				&:hover {
 					text-decoration: underline;
-					text-shadow: 0 0 0.2px #fff, 0 0 0.2px #fff;
+					// text-shadow: 0 0 0.2px #fff, 0 0 0.2px #fff;
 					color: white;
 					transition: text-shadow 0.25s;
 				}

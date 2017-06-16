@@ -78,3 +78,8 @@ body.mobileNav--active {
 .content {
 	padding: 0 !important;
 }
+
+.main-content {
+	position: relative;
+	z-index: 99;
+}
