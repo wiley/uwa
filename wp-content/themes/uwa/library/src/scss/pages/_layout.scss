@@ -1,25 +1,23 @@
 /********************
 LAYOUT & GRID STYLES
 *********************/
-
 .wrap {
 	width: 90%;
 	max-width: 1440px;
 	margin: 0 auto;
 }
-
 @include mobilefirst($bp-med) {
 	// .main-content { @include span(8); }
-	.sidebar { @include span(4 of 12 last); }
-
+	.sidebar {
+		@include span(4 of 12 last);
+	}
 }
 
 .btn-red {
-  @include button($red);
-  color: white;
-  font-weight: 600;
+	@include button($red);
+	color: white;
+	font-weight: 600;
 }
-
 
 .banner {
 	background-image: url("#{$images}/banner.jpg");
@@ -27,18 +25,18 @@ LAYOUT & GRID STYLES
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-
 	@include susy-breakpoint($bp-med) {
-	    min-height: 400px;
+		min-height: 400px;
 	}
+
 	&:after {
 		background: linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.24) 27.27%, rgba(255, 255, 255, 0) 100%);
-    position: absolute;
-    content: '';
-    top: 0;
-    height: 100%;
-    width: 100%;
-    left: 0;
+		position: absolute;
+		content: '';
+		top: 0;
+		height: 100%;
+		width: 100%;
+		left: 0;
 	}
 }
 
@@ -68,4 +66,15 @@ body.mobileNav--active {
 			font-size: 4.5em;
 		}
 	}
+}
+
+.waiting {
+	.wrap {
+		position: relative;
+		z-index: 999;
+	}
+}
+
+.content {
+	padding: 0 !important;
 }

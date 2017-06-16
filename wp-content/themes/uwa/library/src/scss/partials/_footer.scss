@@ -2,6 +2,7 @@
 	background: $red;
 	color: white;
 	padding: 1em;
+
 	a {
 		color: white;
 		text-decoration: none;
@@ -10,11 +11,12 @@
 		&:focus,
 		&:hover {
 			text-decoration: underline;
-			text-shadow: 0 0 0.65px #fff, 0 0 0.65px #fff;
+			text-shadow: 0 0 0.2px #fff, 0 0 0.2px #fff;
 			color: white;
-			transition: text-shadow .3s;
+			transition: text-shadow 0.3s;
 		}
 	}
+
 	svg {
 		max-width: 300px;
 	}
@@ -26,13 +28,24 @@
 			margin-bottom: 0;
 		}
 	}
+
+	&__privacy {
+		color: #d6cd91 !important; // Overriding $gold because of color contrast
+
+		&:hover, &:focus {
+			text-shadow: 0 0 0.2 #c9bf79, 0 0 0.2 #c9bf79;
+		}
+	}
+
 	&__heading {
 		color: $gold;
 		flex-basis: 100%;
 		font-size: 1em;
 		margin-top: 0;
-		color: #d6cd91;	// Overriding $gold because of color contrast
-
+		color: #d6cd91; // Overriding $gold because of color contrast
+		align-self: baseline;
+		letter-spacing: 1px;
+		font-weight: 600;
 		@include decorative($gold);
 
 		&:before {
@@ -67,9 +80,9 @@
 				&:focus,
 				&:hover {
 					text-decoration: underline;
-					text-shadow: 0 0 0.65px #fff, 0 0 0.65px #fff;
+					text-shadow: 0 0 0.2px #fff, 0 0 0.2px #fff;
 					color: white;
-					transition: text-shadow .3s;
+					transition: text-shadow 0.25s;
 				}
 			}
 		}
@@ -89,9 +102,11 @@
 				&.info {
 					flex: 1 1 15%;
 				}
+
 				&.resources {
 					flex: 1 1 20%;
 				}
+
 				&.degrees {
 					flex: 1 1 25%;
 				}
