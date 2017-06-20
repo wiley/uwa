@@ -58,16 +58,22 @@
 	}
 
 	&__subheading {
-		margin: 0;
+		margin: .5em 0 0;
 		color: white;
 		font-style: italic;
-		font-weight: 400;
+		font-weight: 300;
+		font-size: 1em;
+
+		@include susy-breakpoint($bp-med) {
+		    margin: 0;
+		}
 	}
 
 	ul {
 		list-style-type: none;
-		padding-left: 0;
+		padding-left: 0 !important;
 		font-size: 0.9em;
+		margin-top: 0;
 
 		li {
 			margin: 0.5em 0;
@@ -94,11 +100,11 @@
 		flex-flow: row wrap;
 
 		& > .flexItem {
-			padding: 0.5em 1em;
+			padding: .5em 0;
 			flex-basis: 100%;
 			@include susy-breakpoint($bp-med) {
-				flex-basis: initial;
-
+				// flex-basis: initial;
+				padding: 0.5em 1em;
 				&.info {
 					flex: 1 1 15%;
 				}
@@ -119,7 +125,10 @@
 		flex-flow: row wrap;
 
 		& > .flexItem {
-			flex-basis: 50%;
+			@include susy-breakpoint($bp-med) {
+				flex-basis: 50%;
+			}
+
 		}
 	}
 }

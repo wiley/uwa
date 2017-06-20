@@ -28,14 +28,16 @@ $acfTerm = 'term_' . $ID;
 							<div class="program__flexWrapper">
 
 								<div class="program__main">
-									<span class="program__badge">Online Master of Education Degree</span>
-									<h1 class="program__title"><?php the_title(); ?></h1>
-									<p class="program__subtitle">
-										<?php if (get_field('program_subtitle')): ?>
-											<?php the_field('program_subtitle'); ?>
-										<?php endif; ?>
-									</p>
-									<?php include ('includes/singleDegrees/accreditations.php'); ?>
+									<div class="program__top">
+										<span class="program__badge">Online Master of Education Degree</span>
+										<h1 class="program__title"><?php the_title(); ?></h1>
+										<p class="program__subtitle">
+											<?php if (get_field('program_subtitle')): ?>
+												<?php the_field('program_subtitle'); ?>
+											<?php endif; ?>
+										</p>
+										<?php include ('includes/singleDegrees/accreditations.php'); ?>
+									</div>
 									<div class="mobileOnly">
 										<?php include ('includes/singleDegrees/programDetails.php'); ?>
 									</div>

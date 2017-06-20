@@ -13,9 +13,6 @@
 
   <div class="content">
     <main id="main" class="cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-      <?php if( is_tax() ) {
-
-      } ?>
 
       <!-- <div class="entry-content"></div> -->
 

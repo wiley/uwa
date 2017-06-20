@@ -17,6 +17,26 @@ PAGE SPECIFIC STYLES
 article {}
 
 .page {
+	.content {
+		position: relative;
+		
+		&:after {
+			content: '';
+			background-image: url("#{$images}/triangles.svg");
+			background-repeat: no-repeat;
+			background-position: top center;
+			height: 100%;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			background-size: 400px;
+			transform: rotate(180deg);
+			z-index: 9;
+			@include susy-breakpoint($bp-med) {
+				background-size: 500px;
+			}
+		}
+	}
 	.intro {
 		max-width: 800px;
 		margin: -3.5em 1em 1em;

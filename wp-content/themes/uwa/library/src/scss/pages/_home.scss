@@ -240,6 +240,10 @@ HOMEPAGE SPECIFIC STYLES
 	}
 
 	.expect {
+
+		@include susy-breakpoint($bp-med) {
+		    margin-bottom: 2.5em;
+		}
 		.section-heading {
 			color: $gray_dark;
 			@include susy-breakpoint($bp-med) {
@@ -324,7 +328,7 @@ HOMEPAGE SPECIFIC STYLES
 				position: absolute;
 				top: 15%;
 				background: $tan;
-				height: 85%;
+				height: 80%;
 				width: 100%;
 				left: 0;
 				width: 55%;
@@ -419,7 +423,8 @@ HOMEPAGE SPECIFIC STYLES
 
 	.waiting {
 		padding: 2em 0;
-		background: white;
+		background: none;
+		margin-top: 0em;
 
 		.section-heading {
 			color: $gray_dark;

@@ -150,6 +150,11 @@
 								<h1 class="banner__heading"><?php the_title(); ?></h1>
 							<?php endif; ?>
 
+							<?php if ( is_tax() ): ?>
+								<?php $termID = 'term_' . get_queried_object()->term_id; ?>
+								<h1 class="banner__heading"><?php the_field('banner_headline', $termID); ?></h1>
+							<?php endif; ?>
+				      
 							<?php if (get_field('banner_headline') && get_field('banner_headline')): ?>
 								<h1 class="banner__heading"><?php the_field('banner_headline'); ?></h1>
 							<?php endif; ?>
@@ -179,7 +184,7 @@
 								</div>
 
 							</div>
-						<a class="datesBox__cta btn__hollow" href="#">Apply Now</a>
+						<a class="datesBox__cta btn__hollow" target="_blank" href="http://www.uwa.edu/gaapply/">Apply Now</a>
 						<a class="datesBox__cta btn__hollow" href="/request-info">Request Info</a>
 					</div>
 
