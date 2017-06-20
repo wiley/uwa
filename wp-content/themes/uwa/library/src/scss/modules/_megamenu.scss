@@ -11,15 +11,15 @@
 }
 
 .degrees-menu {
-	height: 325px;
+	// height: 325px;
 	display: none;
-	position: absolute;
+	// position: absolute;
 	top: 100%;
 	background: #A81D32;
 	width: initial;
-	min-width: 550px;
+
 	padding-left: 0;
-	left: -120%;
+	left: -100%;
 	padding-top: 1em;
 	padding-bottom: 1em;
   z-index: 999;
@@ -31,10 +31,15 @@
 	//   visibility: visible;
 	//
 	// }
+
+	@include susy-breakpoint($bp-med) {
+	    position: absolute;
+				min-width: 550px;
+	}
 	&__submenu {
 		flex-basis: 50%;
 		padding-left: 0;
-
+		margin-left: 0;
 		li {
 			margin: 0 1em !important;
 			width: 100%;
@@ -48,6 +53,7 @@
 
 			a {
 				color: white !important;
+				text-transform: capitalize;
 			}
 		}
 	}

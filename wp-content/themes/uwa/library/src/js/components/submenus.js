@@ -1,6 +1,7 @@
 (function($) {
 
-	const MainMenu = $('nav.main:not(.mobileNav__nav)')
+	// const MainMenu = $('nav.main:not(.mobileNav__nav)')
+	const MainMenu = $('nav.main')
 	const MenuItemsWithChildren = MainMenu.find('.menu-item-has-children')
 	const MenuLinksWithChildren = MenuItemsWithChildren.find('> a')
 	const ButtonHTML = `<button class="sub-menu__toggle"></button>`

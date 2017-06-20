@@ -2,6 +2,7 @@
 NAVIGATION STYLES
 *********************/
 // Mobile nav
+
 .mobileNav {
 	position: fixed;
 	background: white;
@@ -12,8 +13,8 @@ NAVIGATION STYLES
 	transition: all 0.4s ease;
 	transform: translateY(-100%);
 	padding-top: 9em;
-	z-index: 9999;
-  padding-bottom: 1.5em;
+	z-index: 999999;
+	padding-bottom: 1.5em;
 	overflow-y: auto;
 
 	&.visible {
@@ -24,11 +25,13 @@ NAVIGATION STYLES
 	}
 
 	&__nav {
-		padding-left: 1.5em;
+		// padding-left: 1.5em;
 	}
+
 	a {
 		font-weight: 600;
 	}
+
 	.main-nav__trigger {
 		z-index: 9;
 		background: white;
@@ -43,6 +46,7 @@ NAVIGATION STYLES
 		&:focus {
 			outline: 5px auto rgb(59, 153, 252);
 		}
+
 		svg {
 			width: 25px;
 			height: 30px;
@@ -66,10 +70,10 @@ NAVIGATION STYLES
 
 	li {
 		list-style: none;
+		position: relative;
 		@include mobilefirst($bp-med) {
 			float: left;
 			position: relative;
-
 			// &:hover > ul.sub-menu {
 			// 	top: auto;
 			// 	visibility: visible;
@@ -88,6 +92,7 @@ NAVIGATION STYLES
 				display: block;
 			}
 		}
+
 		a {
 			display: block;
 			text-decoration: none;
@@ -106,31 +111,35 @@ NAVIGATION STYLES
 		ul.sub-menu {
 			padding: 0;
 			display: none;
+			background: $link-color;
+			margin-top: 0;
+			z-index: 8999;
+			padding-left: 1.25em;
 			@include mobilefirst($bp-med) {
-				background: $link-color;
-				margin-top: 0;
 				position: absolute;
 				// visibility: hidden;
-				z-index: 8999;
 			}
 
 			li {
+				margin-left: 0 !important;
+
 				a {
 					padding-left: 30px;
+					color: white;
+					padding-left: 10px;
+					border-right: 0;
+					display: block;
+					padding: 0.5em 0.75em;
 					@include mobilefirst($bp-med) {
-						color: white;
-						padding-left: 10px;
-						border-right: 0;
-						display: block;
 						width: 180px;
 					}
 				}
-				@include mobilefirst($bp-med) {
-					ul {
-						top: 0;
-						left: 100%;
-					}
+				// @include mobilefirst($bp-med) {
+				ul {
+					top: 0;
+					left: 100%;
 				}
+				// }
 			}
 		}
 
@@ -221,24 +230,23 @@ PAGE NAVI STYLES
 	}
 }
 /* end .wp-prev-next */
-
-
-.menu-item-has-children, .nav-degrees {
+.menu-item-has-children,
+.nav-degrees {
 	&:after {
-		background: url(#{$images}/arrow-down.svg);
+		background: url("#{$images}/arrow-down.svg");
 		// content: '';
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    left: 100%;
-    top: 15px;
-    background-repeat: no-repeat;
-    margin-left: 0;
-    left: calc(100% - 10px);
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		left: 100%;
+		top: 15px;
+		background-repeat: no-repeat;
+		margin-left: 0;
+		left: calc(100% - 10px);
 		z-index: 9999999;
-    display: block;
-    top: 8px;
-    cursor: pointer;
+		display: block;
+		top: 8px;
+		cursor: pointer;
 
 		&:hover {
 			background-color: black;
@@ -247,5 +255,5 @@ PAGE NAVI STYLES
 }
 
 .header .main-nav__trigger:focus {
-  outline: -webkit-focus-ring-color auto 5px;
+	outline: -webkit-focus-ring-color auto 5px;
 }
