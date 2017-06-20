@@ -67,6 +67,7 @@
 			</footer>
 
 			<div class="mobileNav">
+				<a class="logo" href="<?php echo home_url(); ?>" rel="nofollow"><img  src="/wp-content/uploads/2017/01/uwa-logo.svg" alt="The University of West Alabama Logo"></a>
 				<button class="main-nav__trigger button header__button js__menu-trigger" href="#">
 					<?php include ('library/images/close-button.svg'); ?>
 				</button>
