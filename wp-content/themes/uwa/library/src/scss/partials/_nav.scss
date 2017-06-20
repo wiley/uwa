@@ -143,6 +143,7 @@ NAVIGATION STYLES
 					border-right: 0;
 					display: block;
 					padding: 0.5em 0.75em;
+					text-transform: capitalize;
 					@include mobilefirst($bp-med) {
 						width: 180px;
 					}
