@@ -21,12 +21,12 @@ LAYOUT & GRID STYLES
 
 .banner {
 	background-image: url("#{$images}/banner.jpg");
-	min-height: 325px;
+	// min-height: 325px;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 	@include susy-breakpoint($bp-med) {
-		min-height: 400px;
+		// min-height: 400px;
 	}
 
 	&:after {
@@ -59,11 +59,16 @@ body.mobileNav--active {
 	&__heading {
 		text-shadow: 0 2px 14px #000000;
 		color: white;
+		margin: 0;
+		padding: 3.75em 0 2.5em;
+		font-size: 2.5em;
 		@include susy-breakpoint($bp-med) {
 			font-size: 3.25em;
+
 		}
 		@include susy-breakpoint($bp-lg) {
 			font-size: 4.5em;
+			padding: 2.75em 0 1.75em;
 		}
 	}
 }

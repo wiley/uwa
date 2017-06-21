@@ -19,7 +19,7 @@ article {}
 .page {
 	.content {
 		position: relative;
-		
+
 		&:after {
 			content: '';
 			background-image: url("#{$images}/triangles.svg");
@@ -39,7 +39,7 @@ article {}
 	}
 	.intro {
 		max-width: 800px;
-		margin: -3.5em 1em 1em;
+		margin: -5.5em 1em 1em;
 		position: relative;
 		background: white;
 		margin-left: auto;
@@ -157,14 +157,14 @@ text-align: center;
 
 .banner {
 	.wrap {
-		position: absolute;
+		// position: absolute;
 		z-index: 99999;
 		color: white;
 		text-align: center;
 		width: 100%;
-		left: 0;
-		right: 0;
-		bottom: 50px;
+		// left: 0;
+		// right: 0;
+		// bottom: 50px;
 	}
 
 	&__heading {
