@@ -47,13 +47,36 @@ article {}
 		text-align: center;
 		z-index: 9999;
 		padding-bottom: 1em;
+
+		img, table, video {
+			@include susy-breakpoint($bp-med) {
+				width: 120%;
+				margin-left: -10%;
+				margin-top: 2em;
+				margin-bottom: 2em;
+			}
+		}
 		p {
 			padding: 0 2em;
 			text-align: left;
 			margin-top: 1em;
 			margin-bottom: 1em;
+
+			// &:first-of-type {
+			// 	font-size: 2em;
+		  //   font-weight: 300;
+		  //   padding: 0 1em !important;
+			// }
 		}
 
+		&__breadcrumbs {
+			background-color: #A81D32;
+			color: white;
+			padding: 1em 0.5em;
+			text-align: center;
+			font-size: 0.8em;
+			font-weight: 600;
+		}
 		.btn {
 			transition: text-shadow 0.3s;
 
@@ -99,11 +122,10 @@ article {}
 		&__breadcrumbs {
 			background-color: #A81D32;
 			color: white;
-			padding: 1em.5em;
+			padding: 1em 0.5em;
 			text-align: center;
 			font-size: 0.8em;
 			font-weight: 600;
-			PADDING: 0;
 			// TEMPORARY FIX
 			a {
 				color: white;
