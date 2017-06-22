@@ -4,6 +4,15 @@
 		padding-bottom: 0;
 	}
 
+	.banner {
+		height: 85vw;
+		min-height: 200px;
+		max-height: 400px;
+
+		@include susy-breakpoint($bp-med) {
+		    max-height: 450px;
+		}
+	}
 	.section-title {
 		margin-top: 2em;
 	}

@@ -120,14 +120,16 @@ HOMEPAGE SPECIFIC STYLES
 			position: absolute;
 			// z-index: 999;
 			padding: 0;
-			top: 30%;
-			@include susy-breakpoint($bp-med) {
-				padding: 10em 0;
-				top: 5%;
-			}
-			@include susy-breakpoint($bp-xl) {
-				padding: 15em 0;
-			}
+			top: 50%;
+			transform: translateY(-50%);
+			position: absolute;
+			// @include susy-breakpoint($bp-med) {
+			// 	padding: 10em 0;
+			// 	top: 5%;
+			// }
+			// @include susy-breakpoint($bp-xl) {
+			// 	padding: 15em 0;
+			// }
 		}
 
 		&__heading {
@@ -135,6 +137,7 @@ HOMEPAGE SPECIFIC STYLES
 			color: white;
 			margin-bottom: 0.25em;
 			margin-top: 0;
+			padding: 0;
 			@include susy-breakpoint($bp-med) {
 				font-size: 3.25em;
 				margin-bottom: 0.5em;
@@ -240,10 +243,10 @@ HOMEPAGE SPECIFIC STYLES
 	}
 
 	.expect {
-
 		@include susy-breakpoint($bp-med) {
-		    margin-bottom: 2.5em;
+			margin-bottom: 2.5em;
 		}
+
 		.section-heading {
 			color: $gray_dark;
 			@include susy-breakpoint($bp-med) {
@@ -424,7 +427,7 @@ HOMEPAGE SPECIFIC STYLES
 	.waiting {
 		padding: 2em 0;
 		background: none;
-		margin-top: 0em;
+		margin-top: 0;
 
 		.section-heading {
 			color: $gray_dark;
