@@ -17,7 +17,7 @@
 						<main class="main-content cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 							<div class="intro">
-				        <div class="intro__breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+				        <div class="intro__subNav" typeof="BreadcrumbList" vocab="https://schema.org/">
 									<ul class="subpagesNav">
 										<?php
 										$subpageNav = wp_list_pages(array(
