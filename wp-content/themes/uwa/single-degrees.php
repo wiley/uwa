@@ -29,7 +29,9 @@ $acfTerm = 'term_' . $ID;
 
 								<div class="program__main">
 									<div class="program__top">
-										<span class="program__badge">Online Master of Education Degree</span>
+										<?php if (get_field('program_badge_selection')): ?>
+											<span class="program__badge"><?php the_field('program_badge_selection'); ?></span>	
+										<?php endif; ?>
 										<h1 class="program__title"><?php the_title(); ?></h1>
 										<p class="program__subtitle">
 											<?php if (get_field('program_subtitle')): ?>
