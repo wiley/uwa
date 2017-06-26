@@ -306,6 +306,7 @@
 		position: relative;
 		z-index: 9999;
 		padding: 3em;
+		margin-top: 0;
 		background: white !important;
 		@include susy-breakpoint(0 $bp-med) {
 			padding: 2em 0;
