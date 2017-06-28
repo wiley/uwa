@@ -29,21 +29,29 @@ $acfTerm = 'term_' . $ID;
 
 								<div class="program__main">
 									<div class="program__top">
+
 										<?php if (get_field('program_badge_selection')): ?>
-											<span class="program__badge"><?php the_field('program_badge_selection'); ?></span>	
+											<span class="program__badge"><?php the_field('program_badge_selection'); ?></span>
 										<?php endif; ?>
+
 										<h1 class="program__title"><?php the_title(); ?></h1>
 										<p class="program__subtitle">
 											<?php if (get_field('program_subtitle')): ?>
 												<?php the_field('program_subtitle'); ?>
 											<?php endif; ?>
 										</p>
+										
 										<?php include ('includes/singleDegrees/accreditations.php'); ?>
 									</div>
+
 									<div class="mobileOnly">
 										<?php include ('includes/singleDegrees/programDetails.php'); ?>
 									</div>
-									<?php include ('includes/singleDegrees/degreeOverview.php'); ?>
+
+									<?php if (get_field('overview_info')): ?>
+											<?php include ('includes/singleDegrees/degreeOverview.php'); ?>
+									<?php endif; ?>
+
 									<?php include ('includes/singleDegrees/who.php'); ?>
 								</div>
 								<?php include ('includes/singleDegrees/programDetails.php'); ?>
