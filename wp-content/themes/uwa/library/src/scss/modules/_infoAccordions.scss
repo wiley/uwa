@@ -1,0 +1,22 @@
+.infoTabs {
+	.accordion {
+		.accord {
+			margin: 2em 0;
+			background: rgba(81, 9, 21, 0.07);
+		}
+		.accord-content {
+			display: none;
+			padding: 0 1em 1em 1em;
+		}
+
+		button {
+			background: #510915;
+			color: #fff;
+			border: none;
+			padding: 0.5em 1em;
+			width: 100%;
+			max-width: 100%;
+			text-align: left;
+		}
+	}
+}

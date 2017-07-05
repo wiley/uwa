@@ -15,6 +15,7 @@
       <button id="tuition" role="tab" aria-selected="false" aria-controls="content-tuition">Tuition & Financing</button>
       <button id="transfer" role="tab" aria-selected="false" aria-controls="content-transfer">Transfer Credit Policy</button>
     </div>
+
     <div class="infoTabs__contentWrapper">
 
       <?php include ('infoTabs/courseDetails.php'); ?>

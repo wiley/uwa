@@ -15,6 +15,21 @@ import './components/carousel'
 
 jQuery(document).ready(function($) {
 
+  // COURSE DETAILS ACCORDION
+  (function () {
+    var buttons = $('.accord-header button');
+
+    buttons.on('click', function() {
+      var content = $(this).parent().next();
+      var state = $(this).attr('aria-expanded') === 'false' ? true : false;
+      $(this).attr('aria-expanded', state);
+
+      content
+        .attr('aria-hidden', !state)
+        .slideToggle();
+    });
+  })();
+
 
     // $('.owl-item.cloned').remove();
     $('.accordion .accord').on("click", function(){
