@@ -8,10 +8,19 @@
 
 $terms = get_the_terms( $post->ID, 'degree_level');
 $termArray = $terms[0];
-
+// print_r($termArray);
 $ID = $termArray->term_id;
 
 $acfTerm = 'term_' . $ID;
+
+
+
+// $verticalInfoArray = get_the_terms( $post->ID, 'degree_vertical');
+// $verticalInfo = $verticalInfoArray[0];
+// $verticalName = $verticalInfo->name;
+//
+// print_r($verticalName);
+$ID = $termArray->term_id;
 // if (is_array($terms)):
 // 	foreach($terms as $term):
 // 		// print_r($term->slug);
@@ -40,7 +49,7 @@ $acfTerm = 'term_' . $ID;
 												<?php the_field('program_subtitle'); ?>
 											<?php endif; ?>
 										</p>
-										
+
 										<?php include ('includes/singleDegrees/accreditations.php'); ?>
 									</div>
 

@@ -1,14 +1,24 @@
 <?php
 
-$posts = get_field('related_programs_selected');
+	$posts = get_field('related_programs_selected');
+	$verticalInfoArray = get_the_terms( $post->ID, 'degree_vertical');
+	$verticalInfo = $verticalInfoArray[0];
+	$verticalName = $verticalInfo->name;
+	$verticalURL = '/online-programs/degrees/' . $verticalInfo->slug;
+?>
 
-if( $posts ): ?>
+<?php if( $posts ): ?>
 	<div class="relatedDegrees">
 
   	<div class="wrap cf">
   		<div class="relatedDegrees__infoWrapper">
   			<h2 class="relatedDegrees__heading">Related Degrees</h2>
-  			<a href="#" class="btn__hollow">View All Teaching Degrees</a>
+
+
+			<?php if ($verticalName !== ''): ?>
+				<a href="<?php echo $verticalURL; ?>" class="btn__hollow">View All <?php echo $verticalName; ?> Degrees</a>
+			<?php endif; ?>
+
   		</div>
   				<div class="relatedDegrees__flexWrapper">
   			    <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>

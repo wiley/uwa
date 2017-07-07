@@ -151,7 +151,12 @@
 
 	.cardLink {
 		overflow: hidden;
+		height: 280px;
 
+		img {
+			object-fit: cover;
+			height: 100%;
+		}
 		&:focus,
 		&:hover {
 			.flexTestWrapper {
