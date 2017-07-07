@@ -9,8 +9,8 @@
     <?php include 'courseInfoAccordion.php'; ?>
   <?php endif; ?>
 
-  <?php if (get_field('course_info_outro')): ?>
-    <?php the_field('course_info_outro'); ?>
+  <?php if (get_field('course_info_intro')): ?>
+    <?php the_field('course_info_intro'); ?>
   <?php endif; ?>
 
   <?php if( have_rows('concentration_accordion') ): $i = 0;?>
