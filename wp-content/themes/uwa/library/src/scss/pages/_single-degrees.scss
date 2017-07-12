@@ -422,6 +422,7 @@
 				flex: 1 1 29%;
 				flex: 0 0 300px;
 				margin: 1em 10px;
+				height: 300px;
 			}
 		}
 
@@ -435,9 +436,10 @@
 				bottom: 0;
 				left: 0;
 				width: 100%;
-				height: 70%;
+				height: 100%;
 				display: block;
-				background: linear-gradient(to bottom, transparent 0, rgba(0, 0, 0, 0.78) 50%, rgba(15, 6, 5, 0.64) 100%);
+				// background: linear-gradient(to bottom, transparent 0, rgba(0, 0, 0, 0.78) 50%, rgba(15, 6, 5, 0.64) 100%);
+				background: linear-gradient(to bottom, rgba(0, 0, 0, 0.51) 0, rgba(0, 0, 0, 0.57) 50%, rgba(2, 2, 2, 0.64) 100%);
 			}
 
 			img {
@@ -485,6 +487,8 @@
 
 		.cardLink {
 			overflow: hidden;
+			width: inherit;
+			height: inherit;
 
 			&:focus,
 			&:hover {
@@ -504,6 +508,11 @@
 				}
 			}
 
+			img {
+				object-fit: cover;
+width: inherit;
+height: 100%;
+			}
 			&__info {
 				flex-basis: 50%;
 				color: white;
@@ -515,7 +524,7 @@
 				flex-basis: 50%;
 				position: relative;
 				padding: 0;
-				align-self: flex-end;
+				// align-self: flex-end;
 				padding-bottom: 3em;
 			}
 

@@ -42,6 +42,33 @@ jQuery(document).ready(function($) {
     });
 
 
+    // faq
+    (function() {
+      var questionsContainer = $('.questions')
+      var questionLinks = questionsContainer.find('a')
+
+      var answersContainer = $('.answers')
+      var answerLinks = answersContainer.find('a')
+
+
+      questionLinks.on('click', function(clickEvent) {
+        clickEvent.preventDefault();
+        questionLinks.removeClass('active')
+        answersContainer.find('a.active').removeClass('active')
+
+        var currentID = $(this).attr('href')
+        var currentTitle = currentID.replace("#","")
+        var newAnswer = $('a[title = "' + currentTitle + '"]')
+
+        newAnswer.addClass('active')
+        $(this).addClass('active')
+        // answersContainer
+        //   .find("a[title = ]")
+        //   .remove();
+      })
+
+      // questionsContainer.on('click', handleContentView)
+    })()
 
     // Pullquote functionality so the content is not repeated
    $(function() {

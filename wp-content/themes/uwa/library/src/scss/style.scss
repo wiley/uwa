@@ -46,10 +46,12 @@ IMPORTING BASE
 @import "pages/layout";
 @import "pages/home";
 @import "pages/page";
+@import "pages/faq";
 @import "pages/single-degrees";
 @import "pages/post";
 @import "pages/thank-you";
 @import "pages/verticals";
+@import "pages/degreesArchive";
 /*********************
 PRINT
 *********************/
@@ -161,4 +163,21 @@ body {
 		vertical-align: top;
 		margin: 1%;
 	}
+}
+
+.page-id-513 {
+  .intro {
+    max-width: 1200px;
+  }
+}
+.faqWrapper {
+  text-align: left;
+  p {
+    padding: 0;
+  }
+  .questions, .answers {
+    width: 48%;
+    display: inline-block;
+		vertical-align: top;
+  }
 }

@@ -1,0 +1,65 @@
+.post-type-archive-degrees {
+	main {
+		padding: 6em 0;
+	}
+
+	.banner {
+		height: 400px;
+	}
+
+	#mix-container {
+		display: flex;
+		justify-content: flex-start;
+		flex-flow: row wrap;
+	}
+
+	.toolbar-filter {
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+
+		&__label {
+			display: block;
+			font-weight: 700;
+			margin-bottom: 1em;
+			width: 100%;
+			text-align: center;
+		}
+
+    button.btn__hollow {
+			width: 150px;
+			margin: 0.25em 0.5em;
+			flex: 1 1 0;
+		}
+	}
+
+	.mix.card {
+		flex: 260px;
+		border: 1px solid gray;
+		margin: 1em;
+		padding: 2em 1em;
+		flex: 1 1 280px;
+		max-width: 280px;
+    text-decoration: none;
+
+		&:focus,
+		&:hover {
+			background: #e3e3e3;
+		}
+	}
+
+	.mix.card.business {
+		border-left: 10px solid #a81d32;
+	}
+
+	.mix.card.teaching {
+		border-left: $gold 10px solid;
+	}
+
+	.mix.card.psychology-counseling {
+		border-left: $gray_dark 10px solid;
+	}
+}

@@ -4,49 +4,120 @@
 
 				<div class="wrap cf">
 
-					<h1 class="archive-title"><?php post_type_archive_title(); ?></h1>
-
 					<main class="main-content cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+						<?php
+							$allDegreesArgs = array(
+								 'posts_per_page' => -1,
+								 'orderby' => 'title',
+								 'order'   => 'ASC',
+								 'post_type' => 'degrees',
+								 'post_status' => 'publish',
+							);
+							$allDegrees = get_posts( $allDegreesArgs );
+						?>
 
-						<div class="program-list">
-							<h2>Undergraduate Programs</h2>
-							<div class="program-list__description"><?php echo term_description( '2', '' ); ?></div>
-							<?php /* Call in Program Custom Post Type */ ?>
-							<?php $loop = new WP_Query( array(
-									'post_type' => 'degrees',
-									'posts_per_page' => -1,
-									'degree_level' => 'undergraduate',
-									'orderby' => 'name',
-									'order'   => 'ASC'
-							) ); ?>
-							<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+						<?php
+							$businessArgs = array(
+								 'posts_per_page' => -1,
+								 'orderby' => 'title',
+								 'order'   => 'ASC',
+								 'post_type' => 'degrees',
+								 'degree_vertical' => 'business',
+								 'post_status' => 'publish'
+							);
+							$businessDegrees = get_posts( $businessArgs );
+						?>
 
-							<?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
-							<article <?php post_class( 'cf card' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting" style="background-image :url(<?php echo $feat_image;?>)">
-									<h4 class="card__title" itemprop="headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-							</article>
-							<?php endwhile; wp_reset_query(); ?>
+						<?php
+							$teachingArgs = array(
+								 'posts_per_page' => -1,
+								 'orderby' => 'title',
+								 'order'   => 'ASC',
+								 'post_type' => 'degrees',
+								 'degree_vertical' => 'teaching',
+								 'post_status' => 'publish'
+							);
+							$teachingDegrees = get_posts( $teachingArgs );
+						?>
+						<?php
+							$psychologyCounselingArgs = array(
+								 'posts_per_page' => -1,
+								 'orderby' => 'title',
+								 'order'   => 'ASC',
+								 'post_type' => 'degrees',
+								 'degree_vertical' => 'psychology-counseling',
+								 'post_status' => 'publish'
+							);
+							$psychologyCounselingDegrees = get_posts( $psychologyCounselingArgs );
+						?>
+
+						<div class="controls">
+
+						    <div class="toolbar-filter" role="toolbar">
+						      <span class="toolbar-filter__label" style="font-family: 'Oswald', sans-serif; font-size: 0.9em; text-transform: uppercase;">Select Degree Type:</span>
+						      <button class="btn__hollow" aria-label="List business degrees" data-filter=".business" class="filter">Business</button>
+
+						      <button class="btn__hollow" aria-label="List education degrees" data-filter=".teaching" class="filter">Teaching</button>
+
+						      <button class="btn__hollow" aria-label="List psychology and human-services degrees" data-filter=".psychology-counseling" class="filter">Psychology</button>
+						      <button class="btn__hollow" aria-label="List All Degrees" data-filter="all" class="filter">All</button>
+						    </div>
+
 						</div>
 
-						<div class="program-list">
-							<h2>Graduate Programs</h2>
-							<div class="program-list__description"><?php echo term_description( '3', '' ); ?></div>
-									<?php /* Call in Program Custom Post Type */ ?>
-									<?php $loop = new WP_Query( array(
-											'post_type' => 'degrees',
-											'posts_per_page' => -1,
-											'degree_level' => 'graduate',
-											'orderby' => 'name',
-											'order'   => 'ASC'
-									) ); ?>
-									<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
-									<?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
-									<article <?php post_class( 'cf card' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting" style="background-image :url(<?php echo $feat_image;?>)">
-											<h4 class="card__title" itemprop="headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-									</article>
-									<?php endwhile; wp_reset_query(); ?>
-						</div>
+						<ul id="mix-container" class="noList cf">
+						  <?php foreach ($allDegrees as $post): ?>
+						    <?php setup_postdata($post); ?>
+									<?php $terms = get_the_terms( $post->ID, 'degree_vertical'); ?>
+									<a class="mix card <?php echo custom_taxonomies_terms_slugs(); ?>" href="<?php the_permalink(); ?>">
+									  <div>
+									    <?php if (!empty( $terms )): ?>
+									    <?php endif; ?>
+									    <h4><?php the_title(); ?></h4>
+									    <div class="card__info">More Information &gt;&gt;</div>
+									  </div>
+									</a>
+						  <?php endforeach;?>
+
+						  <?php foreach ($teachingDegrees as $post): ?>
+						    <?php setup_postdata($post); ?>
+									<?php $terms = get_the_terms( $post->ID, 'degree_vertical'); ?>
+									<a class="mix card <?php echo custom_taxonomies_terms_slugs(); ?>" href="<?php the_permalink(); ?>">
+									  <div>
+									    <?php if (!empty( $terms )): ?>
+									      <div class="program__icons">
+									        <?php foreach ($terms as $term): ?>
+
+
+									        <?php endforeach; ?>
+									      </div>
+									    <?php endif; ?>
+									    <h4><?php the_title(); ?></h4>
+									    <div class="card__info">More Information &gt;&gt;</div>
+									  </div>
+									</a>
+						  <?php endforeach; ?>
+
+							<?php foreach ($psychologyCounselingDegrees as $post): ?>
+								<?php setup_postdata($post); ?>
+									<?php $terms = get_the_terms( $post->ID, 'degree_vertical'); ?>
+									<a class="mix card <?php echo custom_taxonomies_terms_slugs(); ?>" href="<?php the_permalink(); ?>">
+										<div>
+											<?php if (!empty( $terms )): ?>
+												<div class="program__icons">
+													<?php foreach ($terms as $term): ?>
+
+
+													<?php endforeach; ?>
+												</div>
+											<?php endif; ?>
+											<h4><?php the_title(); ?></h4>
+											<div class="card__info">More Information &gt;&gt;</div>
+										</div>
+									</a>
+							<?php endforeach; ?>
+						</ul>
 
 					</main>
 

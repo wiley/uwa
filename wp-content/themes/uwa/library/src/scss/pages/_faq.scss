@@ -1,0 +1,24 @@
+.page-id-513 {
+  .intro {
+    max-width: 1200px;
+  }
+}
+.faqWrapper {
+  text-align: left;
+  p {
+    padding: 0;
+  }
+  .questions, .answers {
+    width: 48%;
+    display: inline-block;
+
+    a.active {
+      background: #ccc;
+    }
+  }
+  .answers {
+      // &.active {
+      //   display: block;
+      // }
+  }
+}

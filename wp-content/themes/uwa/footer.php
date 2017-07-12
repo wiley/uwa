@@ -101,17 +101,48 @@
                             });
         </script>
 <style media="screen">
-/*.requestinfo input, .requestinfo select {
-	border: 4px solid transparent;
-}
-	*:focus {
-		border: 4px black dotted !important;
-	}*/
+/* NOTE: NEED TO GET ALL DEGREES AND ADD FILTER FOR THAT */
+/* Temporary Fix */
+/*.controls {
+	background: #c9c9c9;
+	z-index: 99999;
+	position: fixed;
+	bottom: 100px;
+}*/
+
 
 </style>
 
 <script src="/wp-content/themes/uwa/library/src/owl/owl.carousel.min.js"></script>
-<!-- <script src="/wp-content/themes/uwa/library/src/owl/accessibility.js"></script> -->
+<!-- /wp-content/themes/uwa/library/js/libs/mixitup.min.js -->
+<script src="<?php echo get_template_directory_uri(); ?>/library/src/js/libs/mixitup.min.js"></script>
+
+
+<script>
+if ($('#mix-container')) {
+	var container = $('#mix-container')
+	var mixer = mixitup(container, {
+		callbacks: {
+			onMixStart: function(state, futureState) {
+			},
+			onMixEnd: function() {
+				container
+					.find('.card:visible:first')
+					.focus();
+			}
+		}
+	});
+	if (location.hash) {
+
+		var hash = location.hash.replace('#', '.')
+		// if (hash == '.psych') {
+		// 	hash = '.psychology-human-services'
+		// }
+		mixer.filter(hash)
+	}
+}
+</script>
+
 <script type="text/javascript">
 // $('.owl-carousel').owlCarousel({
 // 	loop: true,

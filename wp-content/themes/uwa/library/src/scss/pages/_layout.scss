@@ -35,8 +35,24 @@ LAYOUT & GRID STYLES
 		content: '';
 		top: 0;
 		height: 100%;
+		min-height: 400px;
 		width: 100%;
 		left: 0;
+	}
+
+	&__heading {
+		text-shadow: 0 2px 14px #000000;
+		color: white;
+		margin-bottom: 0.25em;
+		margin-top: 0;
+		padding: 0;
+		@include susy-breakpoint($bp-med) {
+			font-size: 3.25em;
+			margin-bottom: 0.5em;
+		}
+		@include susy-breakpoint($bp-lg) {
+			font-size: 4.5em;
+		}
 	}
 }
 

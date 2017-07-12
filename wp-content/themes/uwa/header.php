@@ -150,11 +150,15 @@
 								<h1 class="banner__heading"><?php the_title(); ?></h1>
 							<?php endif; ?>
 
+							<?php if (is_post_type_archive()): ?>
+								<h1 class="banner__heading"><?php post_type_archive_title(); ?></h1>
+							<?php endif; ?>
+
 							<?php if ( is_tax() ): ?>
 								<?php $termID = 'term_' . get_queried_object()->term_id; ?>
 								<h1 class="banner__heading"><?php the_field('banner_headline', $termID); ?></h1>
 							<?php endif; ?>
-				      
+
 							<?php if (get_field('banner_headline') && get_field('banner_headline')): ?>
 								<h1 class="banner__heading"><?php the_field('banner_headline'); ?></h1>
 							<?php endif; ?>
