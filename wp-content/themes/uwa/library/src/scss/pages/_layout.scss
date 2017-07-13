@@ -30,12 +30,12 @@ LAYOUT & GRID STYLES
 	}
 
 	&:after {
-		background: linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.24) 27.27%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.29) 27.27%, rgba(0, 0, 0, 0.52) 100%);
 		position: absolute;
 		content: '';
 		top: 0;
 		height: 100%;
-		min-height: 400px;
+		// min-height: 400px;
 		width: 100%;
 		left: 0;
 	}
@@ -46,6 +46,8 @@ LAYOUT & GRID STYLES
 		margin-bottom: 0.25em;
 		margin-top: 0;
 		padding: 0;
+		position: relative;
+		z-index: 9;
 		@include susy-breakpoint($bp-med) {
 			font-size: 3.25em;
 			margin-bottom: 0.5em;
