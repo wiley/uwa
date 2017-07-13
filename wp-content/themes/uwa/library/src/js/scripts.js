@@ -54,12 +54,13 @@ jQuery(document).ready(function($) {
       questionLinks.on('click', function(clickEvent) {
         clickEvent.preventDefault();
         questionLinks.removeClass('active')
-        answersContainer.find('a.active').removeClass('active')
+        answersContainer.find('.active').removeClass('active')
+
 
         var currentID = $(this).attr('href')
         var currentTitle = currentID.replace("#","")
-        var newAnswer = $('a[title = "' + currentTitle + '"]')
-
+        var newAnswer = $('[data-id = "' + currentTitle + '"]')
+        console.log(newAnswer);
         newAnswer.addClass('active')
         $(this).addClass('active')
         // answersContainer
