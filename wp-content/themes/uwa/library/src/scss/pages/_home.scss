@@ -123,6 +123,8 @@ HOMEPAGE SPECIFIC STYLES
 			top: 50%;
 			transform: translateY(-50%);
 			position: absolute;
+			transform: translate3d(-50%,-50%,0);
+			left: 50%;
 			// @include susy-breakpoint($bp-med) {
 			// 	padding: 10em 0;
 			// 	top: 5%;
