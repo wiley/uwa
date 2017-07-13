@@ -17,7 +17,6 @@
 						<main class="main-content cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 							<div class="intro">
-															<?php echo 'TEST ' . $post->post_parent; ?>
 				        <div class="intro__subNav" typeof="BreadcrumbList" vocab="https://schema.org/">
 									<ul class="subpagesNav">
 										<?php
