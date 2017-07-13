@@ -113,4 +113,8 @@ body.mobileNav--active {
 
 .tableWrapper {
     overflow-x: auto;
+
+		@media (min-width: 960px) {
+			overflow-x: initial;
+		}
 }
