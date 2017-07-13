@@ -15,7 +15,6 @@
 					<main class="main-content cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 						<div class="intro">
 
-						<div class="intro">
 							<?php
 								$hasSiblingPages = get_pages(array(
 										'child_of' => $post->post_parent,
