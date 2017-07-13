@@ -85,6 +85,8 @@ article {}
 		&__subNav {
 			background-color: #A81D32;
 			font-size: 0.8em;
+			white-space: nowrap;
+    overflow-x: auto;
 		}
 
 		.btn {
