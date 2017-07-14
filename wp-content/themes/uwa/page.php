@@ -7,31 +7,29 @@
 	// );
 	// $subpages = new WP_query($args);
 	// var_dump($subpages);
+	// print("<pre>".print_r($post,true)."</pre>");
 ?>
 			<div class="content">
 
 				<div class="wrap cf">
 
-
+<hr>
+<hr>
 <?php
+// $menuLocations = get_nav_menu_locations();
+//
+// $menuID = $menuLocations['main-nav'];
+//
+// $primaryNav = wp_get_nav_menu_items($menuID);
 
-$menuLocations = get_nav_menu_locations(); // Get our nav locations (set in our theme, usually functions.php)
-                                           // This returns an array of menu locations ([LOCATION_NAME] = MENU_ID);
-
-$menuID = $menuLocations['main-nav']; // Get the *primary* menu ID
-
-$primaryNav = wp_get_nav_menu_items($menuID);
-
-foreach ( $primaryNav as $navItem ) {
-	if ($navItem->post_parent == 215) {
-		# code...
-		// print_r($navItem);
-		echo '<li><a href="'.$navItem->url.'" title="'.$navItem->title.'">'.$navItem->title.'</a></li>';
-
-	}
-
-
-}
+// foreach ( $primaryNav as $navItem ) {
+// 	if ($navItem->post_parent == $post->ID) {
+// 		// print("<pre>".print_r($navItem,true)."</pre>");
+// 		echo '<li><a href="'.$navItem->url.'" title="'.$navItem->title.'">'.$navItem->title.'</a></li>';
+// 	} else {
+// 		echo 'NO SIBLINGS';
+// 	}
+// }
 ?>
 
 					<main class="main-content cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
