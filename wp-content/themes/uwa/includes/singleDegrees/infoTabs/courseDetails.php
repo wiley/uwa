@@ -18,7 +18,11 @@
     <?php if (get_field('concentrations_intro')): ?>
       <div class="concentrationsIntroWrapper" style="margin-top: 3.5em;"><?php the_field('concentrations_intro'); ?></div>
     <?php endif; ?>
-    <?php include 'concentrationAccordion.php'; ?>
+
+    <?php if (get_field('concentration_accordion')): ?>
+      <?php include 'concentrationAccordion.php'; ?>
+    <?php endif; ?>
+
 
   <?php endif; ?>
 </div>
