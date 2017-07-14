@@ -13,8 +13,6 @@
 
 				<div class="wrap cf">
 
-<hr>
-<hr>
 <?php
 // $menuLocations = get_nav_menu_locations();
 //
