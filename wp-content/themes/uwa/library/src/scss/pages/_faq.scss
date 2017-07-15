@@ -12,11 +12,37 @@
     width: 48%;
     display: inline-block;
 
-    a.active {
-      background: #ccc;
+  }
+
+  .questions {
+    border-right: 2px solid gray;
+    ul {
+      list-style: none;
+      margin-left: 0;
+
+      li {
+        margin-top: .5em;
+        margin-bottom: .5em;
+      }
+    }
+    a {
+      display: block;
+      padding: .25em;
+
+      &.active {
+        font-weight: 700;
+      }
     }
   }
   .answers {
+    padding-left: .75em;
+    > * {
+      display: none;
+    }
+
+    & .active {
+      display: block !important;
+    }
       // &.active {
       //   display: block;
       // }

@@ -48,9 +48,9 @@ jQuery(document).ready(function($) {
       var questionLinks = questionsContainer.find('a')
 
       var answersContainer = $('.answers')
-      var answerLinks = answersContainer.find('a')
 
-
+      questionLinks.first().addClass('active')
+      answersContainer.find('[data-id]').first().addClass('active')
       questionLinks.on('click', function(clickEvent) {
         clickEvent.preventDefault();
         questionLinks.removeClass('active')
