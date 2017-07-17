@@ -26,7 +26,6 @@ LAYOUT & GRID STYLES
 .banner {
 	&:not(.banner--blogPost) {
 		background-image: url("#{$images}/banner.jpg");
-
 	}
 	// min-height: 325px;
 	background-size: cover;
@@ -37,7 +36,7 @@ LAYOUT & GRID STYLES
 	}
 
 	&:after {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.29) 27.27%, rgba(0, 0, 0, 0.52) 100%);
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.29) 27.27%, rgba(0, 0, 0, 0.52) 100%);
 		position: absolute;
 		content: '';
 		top: 0;
@@ -89,7 +88,6 @@ body.mobileNav--active {
 		font-size: 2.5em;
 		@include susy-breakpoint($bp-med) {
 			font-size: 3.25em;
-
 		}
 		@include susy-breakpoint($bp-lg) {
 			font-size: 4.5em;
@@ -115,14 +113,14 @@ body.mobileNav--active {
 }
 
 .tableWrapper {
-    overflow-x: auto;
+	overflow-x: auto;
+	@media (min-width: 960px) {
+		overflow-x: initial;
+	}
 
-		@media (min-width: 960px) {
-			overflow-x: initial;
-		}
-		tr > td:first-of-type {
-		    text-align: left !important;
-		}
+	tr > td:first-of-type {
+		text-align: left !important;
+	}
 }
 
 .accreditationList {
@@ -134,8 +132,32 @@ body.mobileNav--active {
 }
 
 .intro {
-	h2, h3 {
+	h2,
+	h3 {
 		text-align: left;
-    padding: 0 .5em;
+		padding: 0 0.5em;
+	}
+}
+
+.presidentList {
+	text-align: left;
+	list-style-type: none;
+	margin-left: 0;
+	font-weight: 600;
+
+	li {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+	}
+
+	.president {
+		&__year {
+			flex: 0 1 150px;
+		}
+
+		&__name {
+			flex: 1 1 0;
+		}
 	}
 }
