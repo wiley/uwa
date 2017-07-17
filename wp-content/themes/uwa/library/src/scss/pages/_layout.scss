@@ -124,3 +124,11 @@ body.mobileNav--active {
 		    text-align: left !important;
 		}
 }
+
+.accreditationList {
+	text-align: left;
+
+	&__link {
+		display: block;
+	}
+}
