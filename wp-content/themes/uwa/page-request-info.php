@@ -69,13 +69,14 @@
 								<?php the_field('intro_headline') ?>
 							<?php endif; ?>
 						</p>
-						<div class="formWrapper">
-							<h2 class="h3 formHeader">Request Info</h2>
-							<script src="http://requestforms.learninghouse.com/form/show/university-west-alabama/ppc-form-multi/734/3589/online.uwa.edu:thank-you:request_id" type="text/javascript"></script>
-						</div>
+
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 								<?php the_content(); ?>
 							<?php endwhile; endif; ?>
+							<div class="formWrapper">
+								<!-- <h2 class="h3 formHeader">Request Info</h2> -->
+								<script src="http://requestforms.learninghouse.com/form/show/university-west-alabama/ppc-form-multi/734/3589/online.uwa.edu:thank-you:request_id" type="text/javascript"></script>
+							</div>
 						</div>
 
 					</main>
