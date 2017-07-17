@@ -126,6 +126,13 @@ body.mobileNav--active {
 .accreditationList {
 	text-align: left;
 
+	li {
+		margin-bottom: 1.5em;
+
+		& > br {
+			display: none;
+		}
+	}
 	&__link {
 		display: block;
 	}
