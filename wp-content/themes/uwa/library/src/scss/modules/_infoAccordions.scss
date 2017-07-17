@@ -8,6 +8,15 @@
 		.accord-content {
 			display: none;
 			padding: 0 1em 1em;
+
+			h4 {
+				margin-top: 3.5em;
+				font-weight: 600;
+
+				&:first-of-type {
+					margin-top: 1em;
+				}
+			}
 		}
 
 		button {
@@ -20,13 +29,15 @@
 			text-align: left;
 			position: relative;
 		}
+
 		td:last-child {
-		    text-align: center;
-				width: 145px;
+			text-align: center;
+			width: 145px;
 		}
 	}
 }
 // From Codepen
+
 .iconsWrapper {
 	width: 30px;
 	height: 30px;
@@ -51,7 +62,7 @@
 	left: 0;
 	line-height: 32px;
 	text-align: center;
-	transition: .35s all ease-in-out;
+	transition: 0.35s all ease-in-out;
 }
 
 .plus {
@@ -67,9 +78,9 @@
 button[aria-expanded="true"] > .iconsWrapper {
 	.plus {
 		opacity: 0;
-
 		transform: rotate(90deg);
 	}
+
 	.minus {
 		opacity: 1;
 		// transition: opacity .1s;

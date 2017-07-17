@@ -24,7 +24,10 @@ LAYOUT & GRID STYLES
 }
 
 .banner {
-	background-image: url("#{$images}/banner.jpg");
+	&:not(.banner--blogPost) {
+		background-image: url("#{$images}/banner.jpg");
+
+	}
 	// min-height: 325px;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -116,5 +119,8 @@ body.mobileNav--active {
 
 		@media (min-width: 960px) {
 			overflow-x: initial;
+		}
+		tr > td:first-of-type {
+		    text-align: left !important;
 		}
 }

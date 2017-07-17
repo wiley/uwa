@@ -1,0 +1,48 @@
+.blog {
+	article {
+		padding: 2em 0;
+    position: relative;
+
+    &:hover {
+      .background {
+        opacity: 1;
+      }
+      a {
+        color: white;
+      }
+      .post-header__title {
+        color: white;
+      }
+      .post-meta {
+        color: white;
+      }
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+		.background {
+			position: absolute;
+			top: 0;
+			height: 100%;
+			left: 0;
+			width: 100%;
+			background-size: cover;
+      opacity: 0;
+      transition: .5s ease;
+		}
+
+
+		.wrap {
+			position: relative;
+			z-index: 1;
+		}
+
+		.post-header__title {
+			// a {
+			// 	color: white;
+			// }
+		}
+	}
+}

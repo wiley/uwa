@@ -144,11 +144,21 @@
 					</div>
 				</div>
 
+				<?php if ( is_single('post') ): ?>
+					<?php $featuredImage = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+					<div class="banner banner--blogPost" style="background-image: url(<?php echo $featuredImage; ?>)">
+						<div class="wrap">
+							<h1 class="banner__heading"><?php the_title(); ?></h1>
+						</div>
+					</div>
+
+				<?php else: ?>
 					<div class="banner">
 						<div class="wrap">
 							<?php if ( !is_front_page() && is_page() ): ?>
 								<h1 class="banner__heading"><?php the_title(); ?></h1>
 							<?php endif; ?>
+
 
 							<?php if (is_post_type_archive()): ?>
 								<h1 class="banner__heading"><?php post_type_archive_title(); ?></h1>
@@ -167,9 +177,18 @@
 								<a href="<?php the_field('banner_button_link'); ?>" class="btn-red banner__link"><?php the_field('banner_button_text'); ?></a>
 							<?php endif; ?>
 
+							<?php if ( is_home() ): ?>
+								<h1 class="banner__heading">News</h1>
+							<?php endif; ?>
+
 
 						</div>
 					</div>
+
+
+				<?php endif; ?>
+
+
 
 					<div class="datesBox">
 						<h5 class="datesBox__heading"><span>Important Dates</span></h5>

@@ -29,6 +29,7 @@ IMPORTING BASE
 @import "modules/tables";
 @import "modules/carousel";
 @import "modules/overlayForm";
+@import "modules/form";
 @import "modules/megamenu";
 @import "modules/infoAccordions";
 
@@ -52,6 +53,7 @@ IMPORTING BASE
 @import "pages/thank-you";
 @import "pages/verticals";
 @import "pages/degreesArchive";
+@import "pages/blog";
 /*********************
 PRINT
 *********************/
@@ -114,7 +116,7 @@ body {
 
 .sub-menu__toggle {
 	right: 1.5em;
-	background-size: 25px 25px !important;
+	background-size: 17px 17px !important;
 	background: url("/wp-content/themes/uwa/library/images/arrow-down-red.svg");
 	background-repeat: no-repeat;
 	background-position: center;
@@ -139,6 +141,7 @@ body {
 		right: -16px;
 		top: 40%;
 		left: calc(100% - 10px);
+		left: calc(100% - 25px);
 		background-size: 75%;
 	}
 
