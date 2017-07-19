@@ -21,21 +21,27 @@ jQuery(document).ready(function($) {
     (function () {
       if ( $('.answers').length ) {
           // grab the initial top offset of the navheaderigation
-          var stickyElementOffsetTop = $('.answers').offset().top;
+          var stickyElement = $('.answers')
+          var stickyElementOffsetTop = stickyElement.offset().top;
+          var width = stickyElement.width() + 30
+
+
+
           // the function that decides weather the navigation bar should have "fixed" css position or not
           var makeStickyElementOnScroll = function(stickyOffset) {
-
 
               var scroll_top = $(window).scrollTop(); // the current vertical position from the top
               // console.log(scroll_top);
 
               // if user scrolled more than the navigation, change its position to fixed to stick to top, otherwise change it back to relative
               if (scroll_top > stickyOffset) {
-                  $('.answers').addClass('fixed');
-                  // $('#header').css("margin-top", $('.answers').height());
+                  stickyElement.css("width", width);
+                  stickyElement.addClass('fixed');
+                  // $('#header').css("margin-top", stickyElement.height());
               } else {
-                  $('.answers').removeClass('fixed');
+                  stickyElement.removeClass('fixed');
                   // $('#header').css("margin-top", 0);
+                  stickyElement.css("width", '48%');
               }
           };
 
@@ -48,11 +54,11 @@ jQuery(document).ready(function($) {
           });
 
           $(window).on('resize', function() {
-              console.log('FIRED!!!');
-              if ( $('.answers').hasClass('fixed') ) {
-                  $('.answers').removeClass('fixed');
+              if ( stickyElement.hasClass('fixed') ) {
+                  stickyElement.removeClass('fixed');
               }
-              stickyElementOffsetTop = $('.answers').offset().top;
+              stickyElementOffsetTop = stickyElement.offset().top;
+              width = stickyElement.width() + 30
               makeStickyElementOnScroll(stickyElementOffsetTop);
           });
       }
