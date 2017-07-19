@@ -31,9 +31,7 @@ IMPORTING BASE
 @import "modules/overlayForm";
 @import "modules/form";
 @import "modules/megamenu";
-@import "modules/infoAccordions";
-
-// // /*********************
+@import "modules/infoAccordions"; // // /*********************
 // // IMPORTING PARTIALS
 // // *********************/
 // //
@@ -169,18 +167,103 @@ body {
 }
 
 .page-id-513 {
-  .intro {
-    max-width: 1200px;
-  }
+	.intro {
+		max-width: 1200px;
+	}
 }
+
 .faqWrapper {
-  text-align: left;
-  p {
-    padding: 0;
-  }
-  .questions, .answers {
-    width: 48%;
-    display: inline-block;
+	text-align: left;
+
+	p {
+		padding: 0;
+	}
+
+	.answers,
+	.questions {
+		width: 48%;
+		display: inline-block;
 		vertical-align: top;
-  }
+	}
+}
+// TEST NEW MENU STYLES
+
+
+
+@media (min-width: 900px) {
+	.logo {
+		display: none !important;
+	}
+	#menuTest {
+		background: white;
+		position: absolute;
+		width: 100%;
+		top: 50px;
+
+		.header__nav {
+			#menu-main {
+				float: none;
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 0;
+
+				li {
+					margin: 0;
+					flex: 0 1 10%;
+					text-align: center;
+					padding: 0;
+					margin: 0 0.25em;
+
+					a {
+						// padding: 0.5em;
+					}
+
+					.sub-menu {
+						padding: .5em .5em .5em .25em;
+
+						li {
+							text-align: left;
+						}
+					}
+				}
+				.sub-menu__toggle {
+					top: 50%;
+				}
+
+			}
+
+			.logoHolder {
+				margin: 0 1em !important;
+
+				a {
+					transition: .25s ease;
+					width: 120px;
+					height: 120px;
+					transform: translateX(-50%);
+					background-image: url("/wp-content/uploads/2017/01/uwa-logo.svg");
+					z-index: 9;
+					position: absolute;
+					background-repeat: no-repeat;
+					background-size: cover;
+					top: -40px;
+					transform: translate3d(-50%,-50%,0);
+					top: 50%;
+					left: 50%;
+				}
+			}
+		}
+	}
+}
+
+.logoHolder a {
+	@media (min-width: 1260px) {
+		width: 130px !important;
+		height: 130px !important;
+	}
+	@media (min-width: 1460px) {
+		width: 140px !important;
+		height: 140px !important;
+	}
 }

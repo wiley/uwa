@@ -118,7 +118,8 @@
 
 			<div class="wrap main-nav__wrap cf">
 
-				<div class="main-nav">
+				<div id="menuTest" class="main-nav">
+				<!-- <div class="menuTest"> -->
 
 						<a class="logo" href="<?php echo home_url(); ?>" rel="nofollow"><img  src="/wp-content/uploads/2017/01/uwa-logo.svg" alt="The University of West Alabama Logo"></a>
 
