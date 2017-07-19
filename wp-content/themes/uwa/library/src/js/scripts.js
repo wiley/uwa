@@ -55,7 +55,7 @@ jQuery(document).ready(function($) {
 
           $(window).on('resize', function() {
               if ( stickyElement.hasClass('fixed') ) {
-                  stickyElement.removeClass('fixed');
+                  // stickyElement.removeClass('fixed');
               }
               stickyElementOffsetTop = stickyElement.offset().top;
               width = stickyElement.width() + 30
