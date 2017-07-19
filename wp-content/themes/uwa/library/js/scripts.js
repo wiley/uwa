@@ -108,4 +108,43 @@ jQuery(document).ready(function($) {
       });
     })();
 
+    // FAQ PAGE
+    if ( $('.answers').length ) {
+        // grab the initial top offset of the navheaderigation
+        var stickyElementOffsetTop = $('.answers').offset().top - 130;
+        // the function that decides weather the navigation bar should have "fixed" css position or not
+        var makeStickyElementOnScroll = function(stickyOffset) {
+
+
+            var scroll_top = $(window).scrollTop(); // the current vertical position from the top
+            // console.log(scroll_top);
+
+            // if user scrolled more than the navigation, change its position to fixed to stick to top, otherwise change it back to relative
+            if (scroll_top > stickyOffset) {
+                $('.answers').addClass('fixed');
+                // $('#header').css("margin-top", $('.answers').height());
+            } else {
+                $('.answers').removeClass('fixed');
+                // $('#header').css("margin-top", 0);
+            }
+        };
+l
+        // run the function on load
+        makeStickyElementOnScroll(stickyElementOffsetTop);
+
+        // and run it again every time you scroll
+        $(window).on('scroll', function() {
+            makeStickyElementOnScroll(stickyElementOffsetTop);
+        });
+
+        $(window).on('resize', function() {
+            console.log('FIRED!!!');
+            if ( $('.answers').hasClass('fixed') ) {
+                $('.answers').removeClass('fixed');
+            }
+            stickyElementOffsetTop = $('.answers').offset().top - 130;
+            makeStickyElementOnScroll(stickyElementOffsetTop);
+        });
+    }
+
 }); /* end of as page load scripts */

@@ -125,6 +125,15 @@
 						<button class="main-nav__trigger button header__button js__menu-trigger" href="#">
 							<?php include ('library/images/menu-button.svg'); ?>
 						</button>
+<?php
+$menuLocations = get_nav_menu_locations(); // Get our nav locations (set in our theme, usually functions.php)
+                                           // This returns an array of menu locations ([LOCATION_NAME] = MENU_ID);
+
+$menuID = $menuLocations['main-nav']; // Get the *primary* menu ID
+
+$primaryNav = wp_get_nav_menu_items($menuID);
+?>
+
 						<nav class="main header__nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label='Main Menu'>
 
 						  <?php wp_nav_menu(array(
