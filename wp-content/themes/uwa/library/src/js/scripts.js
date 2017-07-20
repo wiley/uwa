@@ -32,7 +32,10 @@ jQuery(document).ready(function($) {
           // grab the initial top offset of the navheaderigation
           var stickyElement = $('.answers')
           var stickyElementOffsetTop = stickyElement.offset().top;
-          var width = stickyElement.width() + 30
+          var containerWidth = $('.faqWrapper').width()
+
+          var width = containerWidth * .64
+          // var width = stickyElement.width() + 30
 
 
 
@@ -50,7 +53,7 @@ jQuery(document).ready(function($) {
               } else {
                   stickyElement.removeClass('fixed');
                   // $('#header').css("margin-top", 0);
-                  stickyElement.css("width", '48%');
+                  // stickyElement.css("width", '48%');
               }
           };
 
@@ -64,10 +67,13 @@ jQuery(document).ready(function($) {
 
           $(window).on('resize', function() {
               if ( stickyElement.hasClass('fixed') ) {
-                  // stickyElement.removeClass('fixed');
+                  stickyElement.removeClass('fixed');
+              }
+              if (!desktopWidthChecker()) {
+                stickyElement.css("width", 'initial');
               }
               stickyElementOffsetTop = stickyElement.offset().top;
-              width = stickyElement.width() + 30
+              // width = stickyElement.width() + 30
               makeStickyElementOnScroll(stickyElementOffsetTop);
           });
       }

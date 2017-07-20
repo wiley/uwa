@@ -63,7 +63,7 @@
     &.fixed {
       position: fixed;
       top: 0;
-      width: 389px;
+      width: calc(1200px * .64);
       padding-left: 25px;
       padding-top: 5px;
     }
