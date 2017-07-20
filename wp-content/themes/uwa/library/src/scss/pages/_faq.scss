@@ -3,19 +3,28 @@
     max-width: 1200px;
   }
 }
+
+.page-id-309 {
+  .intro {
+    max-width: 1200px;
+  }
+}
 .faqWrapper {
   text-align: left;
   p {
     padding: 0;
   }
   .questions, .answers {
-    width: 48%;
+    // width: 48%;
     display: inline-block;
 
   }
 
   .questions {
-    border-right: 2px solid gray;
+    @include susy-breakpoint(768px) {
+      width: 34%;
+      border-right: 2px solid gray;
+    }
     ul {
       list-style: none;
       padding-left: 0;
@@ -35,6 +44,10 @@
     }
   }
   .answers {
+
+    @include susy-breakpoint(768px) {
+      width: 64%;
+    }
     padding-left: 20px;
     padding-right: 5px;
     > * {
@@ -53,6 +66,56 @@
       width: 389px;
       padding-left: 25px;
       padding-top: 5px;
+    }
+  }
+}
+
+
+// FOR MOBILE
+@media (max-width: 767px) {
+  .faqWrapper .answers {
+      overflow-x: hidden;
+      border-top: 4px solid gray;
+      background: white;
+      right: 0;
+      width: 100vw;
+      padding: 1.5em 0.75em;
+      height: 100%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      transform: translateY(100%);
+      transition: all .35s ease-in-out;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 9999999999;
+      display: block !important;
+
+      &.active {
+        transform: translateY(0);
+      }
+  }
+  button#answerCloser {
+      position: fixed;
+      bottom: 20px;
+      z-index: 99999999999;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 2px solid gray;
+      padding: 3px 10px 5px 10px;
+      border-radius: 50%;
+      font-weight: 700;
+      cursor: pointer;
+      transform: translateY(250px);
+      transition: all .35s ease-in-out;
+  }
+  body.active {
+    overflow: hidden;
+    header {
+      opacity: 0;
+    }
+    button#answerCloser {
+      transform: translateY(0);
     }
   }
 }

@@ -16,10 +16,19 @@ import './components/carousel'
 
 
 jQuery(document).ready(function($) {
-
+  function desktopWidthChecker() {
+    var viewPortWidth = $( window ).width();
+    if (viewPortWidth >= 768) {
+      return true
+    } else {
+      return false
+    }
+  }
 
     (function () {
-      if ( $('.answers').length ) {
+
+
+      if ( $('.answers').length && desktopWidthChecker()) {
           // grab the initial top offset of the navheaderigation
           var stickyElement = $('.answers')
           var stickyElementOffsetTop = stickyElement.offset().top;
@@ -93,13 +102,17 @@ jQuery(document).ready(function($) {
 
     // faq
     (function() {
+      var body = $('body')
       var questionsContainer = $('.questions')
       var questionLinks = questionsContainer.find('a')
-
       var answersContainer = $('.answers')
+      var closeAnswerButton = $('#answerCloser')
 
-      questionLinks.first().addClass('active')
-      answersContainer.find('[data-id]').first().addClass('active')
+      if (desktopWidthChecker()) {
+        questionLinks.first().addClass('active')
+        answersContainer.find('[data-id]').first().addClass('active')
+      }
+
       questionLinks.on('click', function(clickEvent) {
         clickEvent.preventDefault();
         questionLinks.removeClass('active')
@@ -110,11 +123,22 @@ jQuery(document).ready(function($) {
         var currentTitle = currentID.replace("#","")
         var newAnswer = $('[data-id = "' + currentTitle + '"]')
         console.log(newAnswer);
+        body.addClass('active')
+        answersContainer.addClass('active')
         newAnswer.addClass('active')
         $(this).addClass('active')
         // answersContainer
         //   .find("a[title = ]")
         //   .remove();
+      })
+
+      closeAnswerButton.on('click', function(clickEvent) {
+        clickEvent.preventDefault();
+
+        body.removeClass('active')
+        questionLinks.removeClass('active')
+        answersContainer.removeClass('active')
+        answersContainer.find('.active').removeClass('active')
       })
 
       // questionsContainer.on('click', handleContentView)

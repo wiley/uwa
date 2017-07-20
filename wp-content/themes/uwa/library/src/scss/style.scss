@@ -181,7 +181,7 @@ body {
 
 	.answers,
 	.questions {
-		width: 48%;
+		// width: 48%;
 		display: inline-block;
 		vertical-align: top;
 	}
@@ -266,4 +266,8 @@ body {
 		width: 140px !important;
 		height: 140px !important;
 	}
+}
+
+.page .intro .subpagesNav {
+	overflow: hidden;
 }
