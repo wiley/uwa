@@ -75,7 +75,7 @@
 @media (max-width: 767px) {
   .faqWrapper .answers {
       overflow-x: hidden;
-      border-top: 4px solid gray;
+      border-top: 5px solid gray;
       background: white;
       right: 0;
       width: 100vw;
@@ -92,33 +92,36 @@
       display: block !important;
       font-size: 1.05em;
       line-height: 1.6;
-
+    padding: 3.75em 2em 2em 1.75em;
       &.active {
         transform: translateY(0);
       }
   }
   button#answerCloser {
       position: fixed;
-      bottom: 20px;
+      // bottom: 20px;
       z-index: 99999999999;
-      left: 50%;
+      // left: 50%;
       transform: translateX(-50%);
       border: 2px solid gray;
       padding: 3px 10px 5px 10px;
       border-radius: 50%;
       font-weight: 700;
       cursor: pointer;
-      transform: translateY(250px);
+      // transform: translateY(250px);
       transition: all .35s ease-in-out;
       background: $red;
       background-image: url(#{$images}/close-button.svg);
-      width: 40px;
-      height: 40px;
+      width: 45px;
+      height: 45px;
       border: none;
       background-size: 50%;
       background-position: center center;
       background-repeat: no-repeat;
-      left: 45%;
+      // left: 45%;
+      right: 20px;
+      top: 20px;
+      transform: translateY(-80px);
       box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   }
   body.active {
