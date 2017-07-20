@@ -92,6 +92,7 @@
       display: block !important;
       font-size: 1.05em;
       line-height: 1.6;
+
       &.active {
         transform: translateY(0);
       }
@@ -118,6 +119,7 @@
       background-position: center center;
       background-repeat: no-repeat;
       left: 45%;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   }
   body.active {
     overflow: hidden;
