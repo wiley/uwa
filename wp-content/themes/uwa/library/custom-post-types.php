@@ -72,7 +72,7 @@ function add_degrees() {
         'show_in_rest'       => true,
     		'rest_base'          => 'verticals',
     		'rest_controller_class' => 'WP_REST_Terms_Controller',
-        'rewrite' => array('slug' => 'online-programs/areas-of-study', 'with_front' => false )
+        'rewrite' => array('slug' => 'online-degrees/areas-of-study', 'with_front' => false )
       );
 
       register_taxonomy( 'degree_vertical', 'degrees', $args );
@@ -102,7 +102,7 @@ function add_degrees() {
         'show_in_rest'       => true,
     		'rest_base'          => 'levels',
     		'rest_controller_class' => 'WP_REST_Terms_Controller',
-        'rewrite' => array('slug' => 'online-degrees/degree-level', 'with_front' => false )
+        'rewrite' => array('slug' => 'online-degrees/degree-levels', 'with_front' => false )
       );
 
       register_taxonomy( 'degree_level', 'degrees', $args );
