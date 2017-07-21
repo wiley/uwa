@@ -29,7 +29,7 @@
 			text-align: center;
 		}
 
-    button.btn__hollow {
+		button.btn__hollow {
 			width: 150px;
 			margin: 0.25em 0.5em;
 			flex: 1 1 0;
@@ -41,14 +41,18 @@
 		border: 1px solid gray;
 		margin: 1em;
 		padding: 2em 1em;
-		flex: 1 1 280px;
-		max-width: 280px;
-    text-decoration: none;
-		height: 215px;
+		// flex: 1 1 280px;
+		flex: 1 1 350px;
+		// max-width: 280px;
+		max-width: 400px;
+		text-decoration: none;
+		// height: 215px;
+		height: 300px;
 
 		&:focus,
 		&:hover {
-			background: #e3e3e3;
+			color: white;
+			// background: #e3e3e3;
 		}
 	}
 
@@ -63,4 +67,106 @@
 	.mix.card.psychology-counseling {
 		border-left: $gray_dark 10px solid;
 	}
+}
+// WITH IMAGES
+
+.card {
+	position: relative;
+	color: white;
+	background-size: cover;
+	flex: none;
+	// width: 350px !important;
+	flex: 1 1 350px !important;
+
+	&:after {
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.65) 27.27%, rgba(0, 0, 0, 0.66) 100%);
+		position: absolute;
+		content: '';
+		top: 0;
+		height: 100%;
+		width: 100%;
+		left: 0;
+	}
+
+	&__infoWrapper {
+		position: relative;
+		z-index: 9;
+		transition: 0.25s ease;
+	}
+
+	&__title {
+		transition: 0.25s ease;
+		font-weight: 600;
+		margin-top: 0;
+		color: white;
+		font-size: 1.5em;
+		font-weight: 500;
+		text-shadow: 0 2px 14px #000000;
+	}
+
+	&__info {
+		transition: 0.2s ease;
+	}
+
+	&:hover {
+		& .card__title {
+			font-size: 1.6em;
+			// text-decoration: underline;
+			font-weight: 700;
+		}
+
+		& .card__info {
+			font-size: 115%;
+			transition: 0.2s ease;
+			font-weight: 700;
+			// text-decoration: underline;
+		}
+	}
+}
+
+
+.post-type-archive-degrees {
+	main {
+		padding-top: 0;
+		width: 90%;
+		max-width: 1600px;
+		margin-left: auto;
+		margin-right: auto;
+		@include susy-breakpoint(768px) {
+		    display: flex;
+				padding-top: 3em;
+		}
+		.controlsWrapper {
+				flex: 1 1 20%;
+
+				.toolbar-filter {
+					&__label {
+						font-weight: 600;
+						margin-bottom: .5em;
+						font-size: 1.5em;
+						margin-left: .5em;
+						text-align: left;
+					}
+					button {
+						 flex: 1 1 auto !important;
+						 padding: .5em;
+					}
+				}
+
+			#Reset {
+				display: block;
+		    width: 85%;
+		    margin-left: auto;
+		    margin-right: auto;
+			}
+
+		}
+		.mix-containerWrapper {
+			flex: 1 1 80%;
+		}
+		#mix-container {
+			padding: 0;
+		}
+	}
+
 }
