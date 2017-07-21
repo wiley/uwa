@@ -8,7 +8,8 @@
 	}
 
 	&-carousel {
-		.controls, .owl-nav {
+		.controls,
+		.owl-nav {
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -16,7 +17,8 @@
 			height: 100%;
 			z-index: 99;
 		}
-		.owl-stage-outer{
+
+		.owl-stage-outer {
 			z-index: 999;
 		}
 	}
@@ -24,7 +26,7 @@
 	&-next,
 	&-prev {
 		cursor: pointer;
-    // background-color: black;
+		// background-color: black;
 		position: absolute;
 		background-image: url("/wp-content/themes/uwa/library/images/triangles.svg");
 		background-size: contain;
@@ -44,38 +46,65 @@
 		transform: rotate(270deg);
 		left: 130%;
 	}
-
 	@include susy-breakpoint($bp-med) {
 		&-next,
-	 	&-prev {
+		&-prev {
 			width: 150px;
-	 	}
+		}
 
-	 	&-prev {
-	 		transform: rotate(90deg);
-	 		right: calc(100% + 40px);
-	 	}
+		&-prev {
+			transform: rotate(90deg);
+			right: calc(100% + 40px);
+		}
 
-	 	&-next {
-	 		transform: rotate(270deg);
-	 		left: calc(100% + 40px);
-	 	}
+		&-next {
+			transform: rotate(270deg);
+			left: calc(100% + 40px);
+		}
 	}
-
 	@include susy-breakpoint($bp-xl) {
 		&-next,
-	 	&-prev {
+		&-prev {
 			width: 200px;
-	 	}
+		}
 
-	 	&-prev {
-	 		transform: rotate(90deg);
-	 		right: calc(100% + 80px);
-	 	}
+		&-prev {
+			transform: rotate(90deg);
+			right: calc(100% + 80px);
+		}
 
-	 	&-next {
-	 		transform: rotate(270deg);
-	 		left: calc(100% + 80px);
-	 	}
+		&-next {
+			transform: rotate(270deg);
+			left: calc(100% + 80px);
+		}
 	}
+}
+
+.archive {
+	.single {
+		display: flex;
+		justify-content: center;
+
+		.cardLinkWrapper.item {
+			// margin: 1em 2em;
+			flex: 1 1 350px;
+			max-width: 400px;
+		}
+	}
+
+	.double {
+		display: flex;
+		justify-content: center;
+		flex-flow: row wrap;
+
+		.cardLinkWrapper.item {
+			margin: 1em 2em;
+			flex: 1 1 350px;
+			max-width: 400px;
+		}
+	}
+}
+
+.tax-degree_vertical .cardLink img {
+	width: 100%;
 }

@@ -15,8 +15,9 @@
 		background: white;
 		margin-left: auto;
 		margin-right: auto;
-    z-index: 9;
+		z-index: 9;
 		width: 90%;
+
 		&__breadcrumbs {
 			background-color: #A81D32;
 			color: white;
@@ -110,9 +111,9 @@
 			bottom: 0;
 			left: 0;
 			width: 100%;
-			height: 70%;
+			height: 100%;
 			display: block;
-			background: linear-gradient(to bottom, transparent 0, rgba(0, 0, 0, 0.78) 50%, rgba(15, 6, 5, 0.64) 100%);
+			background: linear-gradient(to bottom, rgba(40, 40, 40, 0.86) 0, rgba(0, 0, 0, 0.78) 50%, rgba(15, 6, 5, 0.64) 100%);
 		}
 
 		img {
@@ -129,6 +130,7 @@
 			border-bottom: 5px solid white;
 			padding-bottom: 0.5em;
 			color: white;
+			text-shadow: 0 2px 14px #000000;
 		}
 
 		&__cta {
@@ -157,6 +159,7 @@
 			object-fit: cover;
 			height: 100%;
 		}
+
 		&:focus,
 		&:hover {
 			.flexTestWrapper {
@@ -180,14 +183,16 @@
 			color: white;
 			padding: 1em;
 			background: rgba(46, 46, 46, 0.6);
+			font-size: 20px;
+			line-height: 1.6;
 		}
 
 		&__text {
 			flex-basis: 50%;
 			position: relative;
 			padding: 0;
-			align-self: flex-end;
-			padding-bottom: 3em;
+			align-self: flex-start;
+			// padding-bottom: 3em;
 		}
 
 		&__heading {
@@ -228,7 +233,8 @@
 	.mastersDegrees {
 		text-align: center;
 		position: relative;
-		    padding-bottom: 2em;
+		padding-bottom: 2em;
+
 		.narrow {
 			max-width: 1000px;
 			background: white;

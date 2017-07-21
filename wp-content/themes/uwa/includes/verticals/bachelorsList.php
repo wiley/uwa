@@ -39,6 +39,10 @@
   <?php $degreeID = $post->ID; ?>
   <?php $link = get_permalink($degreeID); ?>
 
+  <?php if (get_field('program_subtitle', $degreeID)): ?>
+    <?php $text = get_field('program_subtitle', $degreeID); ?>
+  <?php endif; ?>
+
     <div class="cardLinkWrapper item">
       <a href="<?php echo $link; ?>" class="cardLink" aria-describedby="info<?php echo $degreeID; ?>">
 
@@ -49,7 +53,7 @@
           <h3 class="cardLink__heading"><?php echo $title; ?></h3>
         </div>
         <div class="cardLink__info">
-          <p id="info<?php echo $degreeID; ?>">This is the description text for <?php echo $title; ?></p>
+          <p id="info<?php echo $degreeID; ?>"><?php echo $text; ?></p>
           <div class="cardLink__cta-background"></div>
         </div>
       </div>
