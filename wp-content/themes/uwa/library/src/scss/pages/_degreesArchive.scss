@@ -70,59 +70,6 @@
 }
 // WITH IMAGES
 
-.card {
-	position: relative;
-	color: white;
-	background-size: cover;
-	flex: none;
-	// width: 350px !important;
-	flex: 1 1 350px !important;
-
-	&:after {
-		background: linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.65) 27.27%, rgba(0, 0, 0, 0.66) 100%);
-		position: absolute;
-		content: '';
-		top: 0;
-		height: 100%;
-		width: 100%;
-		left: 0;
-	}
-
-	&__infoWrapper {
-		position: relative;
-		z-index: 9;
-		transition: 0.25s ease;
-	}
-
-	&__title {
-		transition: 0.25s ease;
-		font-weight: 600;
-		margin-top: 0;
-		color: white;
-		font-size: 1.5em;
-		font-weight: 500;
-		text-shadow: 0 2px 14px #000000;
-	}
-
-	&__info {
-		transition: 0.2s ease;
-	}
-
-	&:hover {
-		& .card__title {
-			font-size: 1.6em;
-			// text-decoration: underline;
-			font-weight: 700;
-		}
-
-		& .card__info {
-			font-size: 115%;
-			transition: 0.2s ease;
-			font-weight: 700;
-			// text-decoration: underline;
-		}
-	}
-}
 
 .post-type-archive-degrees {
 	main {
@@ -171,6 +118,60 @@
 
 		#mix-container {
 			padding: 0;
+		}
+	}
+
+	.card {
+		position: relative;
+		color: white;
+		background-size: cover;
+		flex: none;
+		// width: 350px !important;
+		flex: 1 1 350px !important;
+
+		&:after {
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.65) 27.27%, rgba(0, 0, 0, 0.66) 100%);
+			position: absolute;
+			content: '';
+			top: 0;
+			height: 100%;
+			width: 100%;
+			left: 0;
+		}
+
+		&__infoWrapper {
+			position: relative;
+			z-index: 9;
+			transition: 0.25s ease;
+		}
+
+		&__title {
+			transition: 0.25s ease;
+			font-weight: 600;
+			margin-top: 0;
+			color: white;
+			font-size: 1.5em;
+			font-weight: 500;
+			text-shadow: 0 2px 14px #000000;
+		}
+
+		&__info {
+			transition: 0.2s ease;
+		}
+
+		&:hover {
+			& .card__title {
+				font-size: 1.6em;
+				// text-decoration: underline;
+				font-weight: 700;
+			}
+
+			& .card__info {
+				font-size: 115%;
+				transition: 0.2s ease;
+				font-weight: 700;
+				// text-decoration: underline;
+			}
 		}
 	}
 }
