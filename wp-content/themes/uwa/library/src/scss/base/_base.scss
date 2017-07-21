@@ -18,6 +18,7 @@ body {
 	background-color: white;
 	-webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 
 	// @include mobilefirst($bp-lg) { font-size: 112.5%; }
 	// @include mobilefirst(1600px) { font-size: 125%; }

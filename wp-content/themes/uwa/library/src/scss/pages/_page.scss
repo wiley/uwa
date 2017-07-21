@@ -59,7 +59,9 @@ article {}
 				margin-bottom: 2em;
 			}
 		}
-
+		> * {
+			text-align: left;
+		}
 		ul {
 			margin-left: 1em;
 		}
