@@ -31,6 +31,7 @@ IMPORTING BASE
 @import "modules/overlayForm";
 @import "modules/form";
 @import "modules/megamenu";
+@import "modules/priorityNav";
 @import "modules/infoAccordions"; // // /*********************
 // // IMPORTING PARTIALS
 // // *********************/
@@ -187,13 +188,11 @@ body {
 	}
 }
 // TEST NEW MENU STYLES
-
-
-
 @media (min-width: 900px) {
 	.logo {
 		display: none !important;
 	}
+
 	#menuTest {
 		background: white;
 		position: absolute;
@@ -221,24 +220,24 @@ body {
 					}
 
 					.sub-menu {
-						padding: .5em .5em .5em .25em;
+						padding: 0.5em 0.5em 0.5em 0.25em;
 
 						li {
 							text-align: left;
 						}
 					}
 				}
+
 				.sub-menu__toggle {
 					top: 50%;
 				}
-
 			}
 
 			.logoHolder {
 				margin: 0 1em !important;
 
 				a {
-					transition: .25s ease;
+					transition: 0.25s ease;
 					width: 120px;
 					height: 120px;
 					transform: translateX(-50%);
@@ -270,4 +269,38 @@ body {
 
 .page .intro .subpagesNav {
 	overflow: hidden;
+}
+// Priority Nav
+.subpagesNav {
+	display: inline-block !important;
+}
+
+ul.nav__dropdown.priority-nav__dropdown.show {
+	background: $red_dark;
+	list-style-type: none;
+	list-style-type: none;
+	right: 0;
+	padding-left: 20px;
+	padding-right: 40px;
+	margin-top: 0;
+	text-align: left;
+	a {
+		color: white;
+		text-decoration: none;
+	}
+}
+
+.nav__dropdown-toggle {
+	background-image: url(#{$images}/submenu-more-icon.svg);
+	background-image: url(#{$images}/more-options.svg);
+	height: 30px;
+	width: 30px;
+	background-color: transparent;
+	background-size: cover;
+	border: none;
+	top: -15px;
+}
+
+.priority-nav__wrapper {
+	position: static;
 }

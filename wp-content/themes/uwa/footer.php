@@ -114,53 +114,215 @@
 </style>
 
 <script src="/wp-content/themes/uwa/library/src/owl/owl.carousel.min.js"></script>
+<script src="/wp-content/themes/uwa/library/src/js/libs/priority-nav.min.js"></script>
 <!-- /wp-content/themes/uwa/library/js/libs/mixitup.min.js -->
 <script src="<?php echo get_template_directory_uri(); ?>/library/src/js/libs/mixitup.min.js"></script>
 
 
 <script>
-if ($('#mix-container')) {
-	var container = $('#mix-container')
-	var mixer = mixitup(container, {
-		callbacks: {
-			onMixStart: function(state, futureState) {
-			},
-			onMixEnd: function() {
-				container
-					.find('.card:visible:first')
-					.focus();
-			}
-		}
-	});
-	if (location.hash) {
+// if ($('#mix-container')) {
+// 	var container = $('#mix-container')
+// 	var mixer = mixitup(container, {
+// 		callbacks: {
+// 			onMixStart: function(state, futureState) {
+// 			},
+// 			onMixEnd: function() {
+// 				container
+// 					.find('.card:visible:first')
+// 					.focus();
+// 			}
+// 		}
+// 	});
+// 	if (location.hash) {
+//
+// 		var hash = location.hash.replace('#', '.')
+// 		// if (hash == '.psych') {
+// 		// 	hash = '.psychology-human-services'
+// 		// }
+// 		mixer.filter(hash)
+// 	}
+// }
 
-		var hash = location.hash.replace('#', '.')
-		// if (hash == '.psych') {
-		// 	hash = '.psychology-human-services'
-		// }
-		mixer.filter(hash)
-	}
-}
+//
+// if ($('#mix-container')) {
+// 	var container = $('#mix-container')
+// 	var mixer = mixitup(container, {
+// 		callbacks: {
+// 			onMixStart: function(state, futureState) {
+// 			},
+// 			onMixEnd: function() {
+// 				container
+// 					.find('.card:visible:first')
+// 					.focus();
+// 			}
+// 		}
+// 	});
+// 	if (location.hash) {
+//
+// 		var hash = location.hash.replace('#', '.')
+// 		// if (hash == '.psych') {
+// 		// 	hash = '.psychology-human-services'
+// 		// }
+// 		mixer.filter(hash)
+// 	}
+// }
 </script>
 
 <script type="text/javascript">
-// $('.owl-carousel').owlCarousel({
-// 	loop: true,
-// 	margin: 30,
-// 	nav: true,
-// 	responsive: {
-// 		0: {
-// 			items: 1,
-// 			// nav: true
-// 		},
-// 		900: {
-// 			items: 3
-// 			// nav: false
-// 		}
-// 	}
-// 	// onInitialized: owlSetup
-// });
-//
+// To keep our code clean and modular, all custom functionality will be contained inside a single object literal called "buttonFilter".
+
+
+
+// On document ready, initialise our code.
+
+$(function(){
+
+  // Initialize buttonFilter code
+
+
+
+  // Instantiate MixItUp
+	// var container = $('#mix-container')
+	// var mixer = mixitup(container, {
+	// 	callbacks: {
+	// 		onMixStart: function(state, futureState) {
+	// 		},
+	// 		onMixEnd: function() {
+	// 			container
+	// 				.find('.card:visible:first')
+	// 				.focus();
+	// 		}
+	// 	}
+	// });
+
+if ($('#mix-container').length) {
+	var Container = $('#mix-container')
+  var mixer = mixitup(Container, {
+    controls: {
+      enable: false // we won't be needing these
+    }
+  });
+
+
+
+
+	var buttonFilter = {
+
+	  // Declare any variables we will need as properties of the object
+
+	  $filters: null,
+	  $reset: null,
+	  groups: [],
+	  outputArray: [],
+	  outputString: '',
+
+	  // The "init" method will run on document ready and cache any jQuery objects we will need.
+
+	  init: function(){
+	    var self = this; // As a best practice, in each method we will asign "this" to the variable "self" so that it remains scope-agnostic. We will use it to refer to the parent "buttonFilter" object so that we can share methods and properties between all parts of the object.
+
+	    self.$filters = $('#Filters');
+	    self.$reset = $('#Reset');
+	    self.$container = $('#Container');
+
+	    self.$filters.find('fieldset').each(function(){
+	      self.groups.push({
+	        $buttons: $(this).find('.filter'),
+	        active: ''
+	      });
+	    });
+
+	    self.bindHandlers();
+	  },
+
+	  // The "bindHandlers" method will listen for whenever a button is clicked.
+
+	  bindHandlers: function(){
+	    var self = this;
+
+	    // Handle filter clicks
+
+	    self.$filters.on('click', '.filter', function(e){
+	      e.preventDefault();
+
+	      var $button = $(this);
+
+	      // If the button is active, remove the active class, else make active and deactivate others.
+
+	      $button.hasClass('active') ?
+	        $button.removeClass('active') :
+	        $button.addClass('active').siblings('.filter').removeClass('active');
+
+	      self.parseFilters();
+	    });
+
+	    // Handle reset click
+
+	    self.$reset.on('click', function(e){
+	      e.preventDefault();
+
+	      self.$filters.find('.filter').removeClass('active');
+	      self.$filters.find('.show-all').addClass('active');
+
+	      self.parseFilters();
+	    });
+	  },
+
+	  // The parseFilters method checks which filters are active in each group:
+
+	  parseFilters: function(){
+	    var self = this;
+
+	    // loop through each filter group and grap the active filter from each one.
+
+	    for(var i = 0, group; group = self.groups[i]; i++){
+	      group.active = group.$buttons.filter('.active').attr('data-filter') || '';
+				console.log(group.active);
+	    }
+
+	    self.concatenate();
+	  },
+
+	  // The "concatenate" method will crawl through each group, concatenating filters as desired:
+
+	  concatenate: function(){
+	    var self = this;
+
+	    self.outputString = ''; // Reset output string
+
+	    for(var i = 0, group; group = self.groups[i]; i++){
+	      self.outputString += group.active;
+	    }
+
+	    // If the output string is empty, show all rather than none:
+
+	    !self.outputString.length && (self.outputString = 'all');
+
+	    console.log(self.outputString);
+
+	    // ^ we can check the console here to take a look at the filter string that is produced
+
+	    // Send the output string to MixItUp via the 'filter' method:
+			mixer.filter(self.outputString)
+		  // if(self.$container.mixitup('isLoaded')){
+	    // 	self.$container.mixitup('filter', self.outputString);
+		  // }
+	  }
+	};
+	buttonFilter.init();
+}
+
+});
+</script>
+
+
+<script type="text/javascript">
+	var nav = priorityNav.init({
+		mainNavWrapper: ".intro__subNav", // mainnav wrapper selector (must be direct parent from mainNav)
+		mainNav: ".subpagesNav",
+		breakPoint: 0,
+		navDropdownLabel: ""
+	});
 </script>
 	</body>
 
