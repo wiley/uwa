@@ -282,7 +282,7 @@ ul.nav__dropdown.priority-nav__dropdown.show {
 	right: 0;
 	padding-left: 20px;
 	padding-right: 40px;
-	margin-top: 0;
+	// margin-top: 0;
 	text-align: left;
 	a {
 		color: white;
@@ -291,14 +291,14 @@ ul.nav__dropdown.priority-nav__dropdown.show {
 }
 
 .nav__dropdown-toggle {
-	background-image: url(#{$images}/submenu-more-icon.svg);
+	// background-image: url(#{$images}/submenu-more-icon.svg);
 	background-image: url(#{$images}/more-options.svg);
 	height: 30px;
 	width: 30px;
 	background-color: transparent;
 	background-size: cover;
 	border: none;
-	top: -15px;
+	// top: -15px;
 }
 
 .priority-nav__wrapper {
@@ -306,10 +306,12 @@ ul.nav__dropdown.priority-nav__dropdown.show {
 }
 
 .nav__dropdown-wrapper {
-	position: relative;
+	// position: relative;
 	vertical-align: -webkit-baseline-middle;
 	width: 30px;
 	height: 30px;
 	display: inline-block;
-	top: -25px;
+	vertical-align: top;
+    padding-top: 13px;
+	// top: -25px;
 }
