@@ -1,3 +1,27 @@
+<?php
+	$menu_name = 'footer-links';
+	$locations = get_nav_menu_locations();
+	// print_r($locations);
+	$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+	// print_r($menu);
+	$menuitems = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) );
+?>
+
+<?php
+	$degreeAreasTaxonomy = 'degree_vertical';
+	$degreeAreas = get_terms( $degreeAreasTaxonomy, $args = array(
+		'hide_empty' => false, // do not hide empty terms
+	));
+?>
+
+<?php
+// your taxonomy name
+	$degreeTypesTaxonomy = 'degree_level';
+	// get the terms of taxonomy
+	$degreeTypes = get_terms( $degreeTypesTaxonomy, $args = array(
+		'hide_empty' => false, // do not hide empty terms
+	));
+?>
 
 		<footer class="footer cf" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 
@@ -15,14 +39,21 @@
 						<div class="resources flexItem">
 							<h5 class="footer__heading">Resources</h5>
 							<ul>
-								<li><a href="">Admissions</a></li>
+								<?php foreach ($menuitems as $item): ?>
+									<?php
+										$url = $item->url;
+										$title = $item->title;
+									?>
+					          <li><a href="<?php echo esc_url( $url ); ?>"><?php echo $title; ?></a></li>
+								<?php endforeach; ?>
+								<!-- <li><a href="">Admissions</a></li>
 								<li><a href="">Tuition & Financial Aid</a></li>
 								<li><a href="">About</a></li>
 								<li><a href="">Current Students</a></li>
 								<li><a href="">Class Access</a></li>
 								<li><a href="">UWA.edu</a></li>
 								<li><a href="">Apply Now</a></li>
-								<li><a href="">Request Info</a></li>
+								<li><a href="">Request Info</a></li> -->
 							</ul>
 						</div>
 						<div class="degrees flexItem">
@@ -30,27 +61,35 @@
 							<div class="programType flexItem">
 								<h6 class="footer__subheading">By Program Type</h6>
 								<ul>
-									<li><a href="">Bachelor’s Degrees</a></li>
-									<li><a href="">Master’s Degrees</a></li>
-									<li><a href="">M.AT Degrees</a></li>
-									<li><a href="">M.Ed Degrees</a></li>
-									<li><a href="">Education Specialist</a></li>
-									<li><a href="">Alternative Teaching Certification</a></li>
-									<li><a href="">Teaching Certificates</a></li>
+									<?php foreach ($degreeTypes as $degreeType ): ?>
+					          <?php
+					            $url = get_term_link( $degreeType );
+					            $name = $degreeType->name;
+					          ?>
+					          <li><a href="<?php echo esc_url( $url ); ?>"><?php echo $name; ?></a></li>
+					        <?php endforeach; ?>
 								</ul>
 							</div>
 							<div class="verticals flexItem">
 								<h6 class="footer__subheading">By Areas of Study</h6>
 								<ul>
-									<li><a href="">Business</a></li>
-									<li><a href="">Teaching</a></li>
-									<li><a href="">Psychology & Counseling</a></li>
+									<?php foreach ($degreeAreas as $degreeArea ): ?>
+					          <?php
+					            $url = get_term_link( $degreeArea );
+					            $name = $degreeArea->name;
+					          ?>
+					          <li><a href="<?php echo esc_url( $url ); ?>"><?php echo $name; ?></a></li>
+					        <?php endforeach; ?>
 								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
-				<nav role="navigation" class="footer__nav">
+
+
+
+
+				<!-- <nav role="navigation" class="footer__nav">
 					<?php wp_nav_menu(array(
 						'container' => '',                           // enter '' to remove nav container (just make sure .footer-links in _base.scss isn't wrapping)
 						'menu' => __( 'Footer Links', 'bonestheme' ),   // nav name
@@ -63,7 +102,7 @@
 						'depth' => 0,                                   // limit the depth of the nav
 						'fallback_cb' => 'bones_footer_links_fallback'  // fallback function
 					)); ?>
-				</nav>
+				</nav> -->
 			</footer>
 
 			<div class="mobileNav">
