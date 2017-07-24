@@ -27,6 +27,7 @@
   							<?php $title = $post->post_title; ?>
   						  <?php $degreeID = $post->ID; ?>
   						  <?php $link = get_permalink($degreeID); ?>
+								<?php $text = get_field('program_subtitle', $degreeID); ?>
 
   						    <div class="cardLinkWrapper item">
   						      <a href="<?php echo $link; ?>" class="cardLink ">
@@ -43,7 +44,7 @@
 												<div class="cardLink__borderSeperator"></div>
   						        </div>
   						        <div class="cardLink__info">
-  						          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat animi neque corrupti quae numquam recusandae laborum fuga veniam culpa enim.</p>
+												<p><?php echo $text; ?></p>
   						          <div class="cardLink__cta-background"></div>
 
   						        </div>
