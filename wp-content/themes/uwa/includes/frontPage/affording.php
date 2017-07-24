@@ -15,7 +15,7 @@
       </div>
       <div class="fastFact">
         <h6 class="fastFact__heading"><?php include('lighting.svg'); ?>Fast Fact</h6>
-        <p class="fastFact__info">The University of West Alabama was founded in 1935</p>
+        <p class="fastFact__info">The University of West Alabama was founded in 1835</p>
       </div>
     </div>
 
