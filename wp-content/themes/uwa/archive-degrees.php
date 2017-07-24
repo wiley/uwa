@@ -37,7 +37,7 @@ $degreeLevels = get_terms([
 			    <h2 class="toolbar-filter__label">Areas Of Study</h2>
 					<div class="degreeTypesToolbar toolbar-filter" role="toolbar">
 						<!-- <span class="toolbar-filter__label" style="font-family: 'Oswald', sans-serif; font-size: 0.9em; text-transform: uppercase;">Select Degree Level:</span> -->
-						<button class="btn__hollow filter" aria-label="List All Degrees Types" data-filter="all">All</button>
+						<button class="btn__hollow filter" aria-label="List All Degrees Types" data-filter="">All</button>
 							<?php foreach ($degreeTypes as $degreeType): ?>
 								<?php
 									$Name = $degreeType->name;
@@ -53,7 +53,7 @@ $degreeLevels = get_terms([
 			    <h2 class="toolbar-filter__label">Degree Types</h2>
 					<div class="degreeLevelsToolbar toolbar-filter" role="toolbar">
 						<!-- <span class="toolbar-filter__label" style="font-family: 'Oswald', sans-serif; font-size: 0.9em; text-transform: uppercase;">Select Degree Level:</span> -->
-						<button  class="btn__hollow filter" aria-label="List All Degrees Levels" data-filter="all">All</button>
+						<button  class="btn__hollow filter" aria-label="List All Degrees Levels" data-filter="">All</button>
 							<?php foreach ($degreeLevels as $degreeLevel): ?>
 								<?php
 									$Name = $degreeLevel->name;
