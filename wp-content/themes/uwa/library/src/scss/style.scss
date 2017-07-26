@@ -188,6 +188,10 @@ body {
 	}
 }
 // TEST NEW MENU STYLES
+
+.logoHolder {
+	display: none;
+}
 @media (min-width: 900px) {
 	.logo {
 		display: none !important;
@@ -235,6 +239,7 @@ body {
 
 			.logoHolder {
 				margin: 0 1em !important;
+				display: block;
 
 				a {
 					transition: 0.25s ease;
@@ -250,6 +255,7 @@ body {
 					transform: translate3d(-50%,-50%,0);
 					top: 50%;
 					left: 50%;
+					color: #a81d32;
 				}
 			}
 		}
