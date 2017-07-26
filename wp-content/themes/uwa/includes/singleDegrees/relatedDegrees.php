@@ -4,7 +4,7 @@
 	$verticalInfoArray = get_the_terms( $post->ID, 'degree_vertical');
 	$verticalInfo = $verticalInfoArray[0];
 	$verticalName = $verticalInfo->name;
-	$verticalURL = '/online-programs/degrees/' . $verticalInfo->slug;
+	$verticalURL = '/online-degrees/areas-of-study/' . $verticalInfo->slug;
 ?>
 
 <?php if( $posts ): ?>

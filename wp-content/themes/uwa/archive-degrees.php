@@ -36,7 +36,6 @@ $degreeLevels = get_terms([
 			  <fieldset>
 			    <h2 class="toolbar-filter__label">Areas Of Study</h2>
 					<div class="degreeTypesToolbar toolbar-filter" role="toolbar">
-						<!-- <span class="toolbar-filter__label" style="font-family: 'Oswald', sans-serif; font-size: 0.9em; text-transform: uppercase;">Select Degree Level:</span> -->
 						<button class="btn__hollow filter" aria-label="List All Degrees Types" data-filter="">All</button>
 							<?php foreach ($degreeTypes as $degreeType): ?>
 								<?php
@@ -91,23 +90,6 @@ $degreeLevels = get_terms([
 				</ul>
 <!-- </div> -->
 			</div>
-
-		<!-- <div id="Container" class="container">
-		  <div class="mix triangle white"></div>
-		  <div class="mix square white"></div>
-		  <div class="mix circle green"></div>
-		  <div class="mix triangle blue"></div>
-		  <div class="mix square white"></div>
-		  <div class="mix circle blue"></div>
-		  <div class="mix triangle green"></div>
-		  <div class="mix square blue"></div>
-		  <div class="mix circle white"></div>
-
-		  <div class="gap"></div>
-		  <div class="gap"></div>
-		  <div class="gap"></div>
-		  <div class="gap"></div>
-		</div> -->
 
 	</main>
 
