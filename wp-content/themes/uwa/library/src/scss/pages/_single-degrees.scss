@@ -45,7 +45,7 @@
 		}
 
 		&__flexWrapper {
-			margin-top: -10em;
+			margin-top: -9em;
 			position: relative;
 			z-index: 99;
 			@include susy-breakpoint($bp-med) {
@@ -215,11 +215,12 @@
 				margin: 0.5em;
 				text-transform: uppercase;
 				width: 45%;
-				font-size: 0.8em;
+				font-size: 0.7em;
 				@include susy-breakpoint($bp-med) {
 					width: 100%;
 					// font-size: 1em;
 					padding: 1em .5em;
+					font-size: .8em;
 				}
 
 				&.active {
