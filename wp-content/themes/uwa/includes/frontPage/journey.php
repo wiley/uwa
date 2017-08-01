@@ -1,6 +1,6 @@
 <div class="journey">
   <h2 class="journey__heading section-heading">Start Your Journey</h2>
-  <p class="journey__text">Choose from over 40 degree and certification programs at the University of West Alabama Online.</p>
+  <p class="journey__text">Choose from over 50 degree and certification programs at the University of West Alabama Online.</p>
   <div class="journeyCards">
     <div class="card">
       <h3 class="card__heading">Business</h3>
