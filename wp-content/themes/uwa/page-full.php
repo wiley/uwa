@@ -1,42 +1,85 @@
+<?php get_header(); ?>
 <?php
-/*
-Template Name: Full Width
- */
-get_header();
+	global $post;
+	// $args = array(
+	// 		'post_parent' => $post->ID,
+	// 		'post_type' => 'page'
+	// );
+	// $subpages = new WP_query($args);
+	// var_dump($subpages);
+	// print("<pre>".print_r($post,true)."</pre>");
 ?>
-
 			<div class="content">
 
 				<div class="wrap cf">
 
-						<main class="main-content cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+<?php
+// $menuLocations = get_nav_menu_locations();
+//
+// $menuID = $menuLocations['main-nav'];
+//
+// $primaryNav = wp_get_nav_menu_items($menuID);
 
+// foreach ( $primaryNav as $navItem ) {
+// 	if ($navItem->post_parent == $post->ID) {
+// 		// print("<pre>".print_r($navItem,true)."</pre>");
+// 		echo '<li><a href="'.$navItem->url.'" title="'.$navItem->title.'">'.$navItem->title.'</a></li>';
+// 	} else {
+// 		echo 'NO SIBLINGS';
+// 	}
+// }
+?>
+
+					<main class="main-content cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+						<div class="intro">
+
+							<?php
+								$hasSiblingPages = get_pages(array(
+										'child_of' => $post->post_parent,
+										'title_li' => ''
+										// 'exclude' => $post->ID
+								));
+							?>
+
+							<?php if ($hasSiblingPages && $post->post_parent != 0): ?>
+								<div class="intro__subNav" typeof="BreadcrumbList" vocab="https://schema.org/">
+									<ul class="subpagesNav">
+										<?php
+										$subpageNav = wp_list_pages(array(
+												'child_of' => $post->post_parent,
+												'title_li' => ''
+												// 'exclude' => $post->ID
+										))
+										?>
+									</ul>
+								</div>
+							<?php else: ?>
+								<div class="intro__breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+									<?php if(function_exists('bcn_display'))
+									{
+											bcn_display();
+									}?>
+								</div>
+							<?php endif; ?>
+
+
+
+						<p class="intro_headline">
+							<?php if (get_field('intro_headline')): ?>
+								<?php the_field('intro_headline') ?>
+							<?php endif; ?>
+						</p>
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-							<article <?php post_class( 'cf' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-
-								<header class="page-header">
-
-									<?php
-										if ( function_exists('yoast_breadcrumb') ) {
-											yoast_breadcrumb('<p class="breadcrumbs">','</p>');
-										}
-									?>
-									<h1 class="page-header__title" itemprop="headline"><?php the_title(); ?></h1>
-
-								</header> <?php // end article header ?>
-
-								<section class="page-content cf" itemprop="articleBody">
-									<?php the_content(); ?>
-								</section> <?php // end article section ?>
-
-							</article>
-
+								<?php the_content(); ?>
 							<?php endwhile; endif; ?>
+						</div>
 
-						</main>
+					</main>
+
+
 
 				</div>
+				<?php include('includes/waiting.php'); ?>
 
 			</div>
 
