@@ -278,14 +278,17 @@ jQuery(document).ready(function($) {
 			closeButton = FormWrapper.find('.form__toggle'),
 			formFocusGuardTop = FormWrapper.find('.focusguard-top'),
 			formFocusGuardBottom = FormWrapper.find('.focusguard-bottom'),
-			firstFormElement = Form.find(':input:not([type=hidden])').first();
+			firstFormElement = Form.find(':input:not([type=hidden])').first(),
+      Body = $('body');
 
 	function openForm() {
+    Body.addClass('active');
 		FormWrapper.addClass('active');
 		firstFormElement.focus();
 	}
 
 	function closeForm() {
+    Body.removeClass('active');
 		FormWrapper.removeClass('active');
 		requestInfoBtn.focus();
 	}
