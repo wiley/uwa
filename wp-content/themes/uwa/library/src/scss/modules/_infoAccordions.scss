@@ -28,6 +28,7 @@
 			max-width: 100%;
 			text-align: left;
 			position: relative;
+			padding-right: 2.5em;
 		}
 
 		td:last-child {
@@ -49,7 +50,8 @@
 	color: #fff;
 	position: absolute;
 	right: 15px;
-	top: 7px;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .minus,
