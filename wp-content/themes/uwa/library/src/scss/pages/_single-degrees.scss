@@ -29,6 +29,7 @@
 		&__title {
 			margin-bottom: 0.15em;
 			margin-top: 0;
+			text-transform: initial;
 			@include susy-breakpoint(0 $bp-med) {
 				font-size: 1.75em;
 			}
