@@ -1,5 +1,12 @@
 <?php get_header(); ?>
 <?php $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );  ?>
+<?php
+$degreeTypes = get_terms([
+    'taxonomy' => 'degree_vertical',
+    'hide_empty' => false,
+]);
+// print("<pre>".print_r($degreeTypes,true)."</pre>");
+?>
 
 <style media="screen">
   .owl-carousel .owl-dots.disabled, .owl-carousel .owl-nav.disabled {

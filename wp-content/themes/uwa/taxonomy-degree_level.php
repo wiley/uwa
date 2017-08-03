@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<?php $termID = 'term_' . get_queried_object()->term_id; ?>
+<h1 class="banner__heading"><?php the_field('degree_level_description', $termID); ?></h1>
 
 			<div class="content">
 
@@ -54,7 +56,7 @@
 
 						</main>
 
-			
+
 
 				</div>
 
