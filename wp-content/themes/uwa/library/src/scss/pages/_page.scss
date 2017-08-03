@@ -45,7 +45,8 @@ article {}
 		background: white;
 		margin-left: auto;
 		margin-right: auto;
-		text-align: center;
+		// text-align: center;
+		text-align: left;
 		z-index: 9999;
 		padding-bottom: 1em;
 
@@ -59,9 +60,7 @@ article {}
 				margin-bottom: 2em;
 			}
 		}
-		> *:not('.priority-nav') {
-			text-align: left;
-		}
+
 		ul {
 			margin-left: 1em;
 		}
