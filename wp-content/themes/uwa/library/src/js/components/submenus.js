@@ -1,6 +1,5 @@
 (function($) {
 
-	// const MainMenu = $('nav.main:not(.mobileNav__nav)')
 	const MainMenu = $('nav.main')
 	const MenuItemsWithChildren = MainMenu.find('.menu-item-has-children')
 	const MenuLinksWithChildren = MenuItemsWithChildren.find('> a')
@@ -9,17 +8,15 @@
 	const lastLinks = Submenus.find('a:last')
 
 	MenuLinksWithChildren.after(ButtonHTML)
-
-	Submenus.attr({
-		'aria-hidden': true
-	})
-
 	const Buttons = $('.sub-menu__toggle')
+
 	Buttons.attr({
 		'aria-haspopup': true,
 		'aria-expanded': false
 	})
-
+	Submenus.attr({
+		'aria-hidden': true
+	})
 	function escapeListener(submenu, submenuToggler) {
 		submenu.on('keydown', function(keyEvent) {
 			if (keyEvent.which == 27) {
