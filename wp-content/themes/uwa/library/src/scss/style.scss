@@ -311,10 +311,24 @@ ul.nav__dropdown.priority-nav__dropdown.show {
 	// top: -15px;
 }
 
+.priority-nav {
+	// display: flex;
+  justify-content: space-between;
+  align-items: center;
+	text-align: center;
+}
 .priority-nav__wrapper {
 	position: static;
+	overflow: hidden;
 }
 
+.priority-nav-has-dropdown {
+	height: 60px;
+	position: relative !important;
+	.subpagesNav {
+		float: left;
+	}
+}
 .nav__dropdown-wrapper {
 	// position: relative;
 	vertical-align: -webkit-baseline-middle;
@@ -322,6 +336,27 @@ ul.nav__dropdown.priority-nav__dropdown.show {
 	height: 30px;
 	display: inline-block;
 	vertical-align: top;
-    padding-top: 13px;
+	padding-top: 10px;
+	// float: right;
+	margin-right: 15px;
+	padding: 0;
+  margin-top: 13px;
+
+	button {
+		transform: rotate(90deg);
+		position: absolute !important;
+    right: 10px;
+		transition: .15s ease-out;
+
+		&.is-open {
+			transform: rotate(0deg);
+		}
+	}
+
 	// top: -25px;
+}
+
+.priority-nav__dropdown {
+	right: 0;
+	top: 79%;
 }

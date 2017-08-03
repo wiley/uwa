@@ -59,7 +59,7 @@ article {}
 				margin-bottom: 2em;
 			}
 		}
-		> * {
+		> *:not('.priority-nav') {
 			text-align: left;
 		}
 		ul {
