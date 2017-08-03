@@ -127,6 +127,8 @@ body {
 	vertical-align: initial;
 	width: 44px;
 	height: 34px;
+// 	width: 20px;
+// height: 20px;
 	transition: 0.25s ease;
 	border: 2px solid transparent;
 
@@ -135,7 +137,7 @@ body {
 		border: 2px solid rgba(71, 71, 71, 0.78);
 	}
 	@include susy-breakpoint($bp-med) {
-		background: url("/wp-content/themes/uwa/library/images/arrow-down.svg");
+		// background: url("/wp-content/themes/uwa/library/images/arrow-down-red.svg");
 		background-repeat: no-repeat;
 		background-position: center;
 		right: -16px;
@@ -235,6 +237,7 @@ body {
 
 				.sub-menu__toggle {
 					top: 50%;
+					// background: url("/wp-content/themes/uwa/library/images/arrow-down-red.svg") !important;
 				}
 			}
 
