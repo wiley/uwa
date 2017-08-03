@@ -1,9 +1,6 @@
 <?php get_header(); ?>
 
 <?php $termID = 'term_' . get_queried_object()->term_id; ?>
-<?php if (get_field('degree_level_description', $termID)): ?>
-	<p><?php the_field('degree_level_description', $termID); ?></p>
-<?php endif; ?>
 
 
 			<div class="content">
@@ -11,6 +8,9 @@
 				<div class="wrap cf">
 
 						<main class="main-content cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+							<?php if (get_field('degree_level_description', $termID)): ?>
+								<p><?php the_field('degree_level_description', $termID); ?></p>
+							<?php endif; ?>
 
 							<!-- <?php
 							the_archive_title( '<h1 class="archive-title">', '</h1>' );
