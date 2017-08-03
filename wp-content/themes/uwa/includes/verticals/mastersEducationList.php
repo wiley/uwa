@@ -9,7 +9,7 @@
         "terms"    => $term->slug,
       )
   ),
-  'degree_level' => 'bachelors',
+  'degree_level' => 'med-master-education-programs',
   'orderby' => 'title',
   'order'   => 'ASC',
 );
@@ -25,7 +25,7 @@
           $Classes = 'double';
           break;
       case ($Count >= 3):
-          $Classes = 'owl-carousel bachelors';
+          $Classes = 'owl-carousel med';
           break;
       default:
           echo "";

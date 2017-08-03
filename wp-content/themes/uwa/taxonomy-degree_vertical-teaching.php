@@ -14,14 +14,9 @@ $degreeTypes = get_terms([
   }
 </style>
 
-
-<!-- <div class="wrap"> -->
-
-
+<!--
   <div class="content">
-    <main id="main" class="cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-
-      <!-- <div class="entry-content"></div> -->
+    <main id="main" class="cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog"> -->
 
       <div class="intro">
         <div class="intro__breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
@@ -35,7 +30,7 @@ $degreeTypes = get_terms([
         <a href="/online-degrees" class="intro__link">Browse All Degrees <?php include('library/images/arrow.svg'); ?></a>
       </div>
 
-    <!-- </div> -->
+
 
         <div class="mainDegrees degreeType">
           <div class="wrap">
@@ -81,7 +76,7 @@ $degreeTypes = get_terms([
               <h2 class="mainDegrees__headline">MEd Degrees</h2>
               <p class="mainDegrees__text">Focus on theoretical aspects of education to build your career in or outside the classroom. Learn more about the science of education and how to apply strategic aspects of education, like curriculum and course planning, to current and future career roles.</p>
             </div>
-            <?php include ('includes/verticals/mastersArtsTeachingList.php'); ?>
+            <?php include ('includes/verticals/mastersEducationList.php'); ?>
           </div>
         </div>
 
@@ -95,7 +90,7 @@ $degreeTypes = get_terms([
           </div>
         </div>
 
-        <div class="degreeType">
+        <div class="degreeType coloredBackground">
           <div class="wrap">
             <div class="narrow">
               <h2 class="mainDegrees__headline">Teaching Certificates</h2>
@@ -104,10 +99,10 @@ $degreeTypes = get_terms([
             <?php include ('includes/verticals/teachingCertificatesList.php'); ?>
           </div>
         </div>
-      </div><!-- .entry-content -->
 
-    </main>
-  </div>
+
+    <!-- </main>
+  </div> -->
 
 
 

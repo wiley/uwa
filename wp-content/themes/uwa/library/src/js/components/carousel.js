@@ -17,29 +17,72 @@ import 'owl.carousel'
 // }
 
 (function($) {
-	$('.owl-carousel').owlCarousel({
-		// loop: true,
-		rewind: true,
-		margin: 30,
-		nav: false,
-		responsive: {
-			0: {
-				items: 1,
-				// nav: true
+
+	function bindCarouselToElement(Element) {
+		Element.owlCarousel({
+			// loop: true,
+			rewind: true,
+			margin: 30,
+			nav: false,
+			responsive: {
+				0: {
+					items: 1,
+					// nav: true
+				},
+				800: {
+					items: 2
+					// nav: false
+				},
+				1200: {
+					items: 3
+					// nav: false
+				}
 			},
-			800: {
-				items: 2
-				// nav: false
-			},
-			1200: {
-				items: 3
-				// nav: false
-			}
-		},
-		onInitialized: owlSetup,
-		onChange: owlChange,
-		onChanged: owlChanged
-	});
+			onInitialized: owlSetup,
+			onChange: owlChange,
+			onChanged: owlChanged
+		});
+
+	}
+	// const DegreeTypes = $('.degreeType')
+
+	// DegreeTypes.each(function() {
+	// 	let Element = this
+	// 	console.log('ELEMENT: ', Element);
+	// 	bindCarouselToElement(this)
+	// });
+	bindCarouselToElement($('.med'));
+	bindCarouselToElement($('.mat'));
+	bindCarouselToElement($('.eds'));
+	bindCarouselToElement($('.atc'));
+	bindCarouselToElement($('.bachelors'));
+	bindCarouselToElement($('.masters'));
+	bindCarouselToElement($('.tc'));
+
+
+	// $('.med').owlCarousel({
+	// 	// loop: true,
+	// 	rewind: true,
+	// 	margin: 30,
+	// 	nav: false,
+	// 	responsive: {
+	// 		0: {
+	// 			items: 1,
+	// 			// nav: true
+	// 		},
+	// 		800: {
+	// 			items: 2
+	// 			// nav: false
+	// 		},
+	// 		1200: {
+	// 			items: 3
+	// 			// nav: false
+	// 		}
+	// 	},
+	// 	onInitialized: owlSetup,
+	// 	onChange: owlChange,
+	// 	onChanged: owlChanged
+	// });
 
 	function owlChange(event) {
 		console.log($(document.activeElement));
@@ -56,7 +99,8 @@ import 'owl.carousel'
 
 	function owlSetup(event) {
 		// Go to the next item
-		const Carousel = $('.owl-carousel')
+		const Carousel = $(event.target)
+		console.log(Carousel);
 		const ControlsHTML = `<div class="controls">
       <span class="owl-prev customPrevBtn" role="button" aria-label="Show Previous Slide">Prev</span>
       <span class="owl-next customNextBtn" role="button" aria-label="Show Next Slide">Next</span>
