@@ -137,6 +137,9 @@
 			padding-bottom: 0.5em;
 			color: white;
 			text-shadow: 0 2px 14px #000000;
+			line-height: 1.2;
+			margin-top: .7em;
+			padding-right: .5em !important;
 		}
 
 		&__cta {
@@ -163,6 +166,7 @@
 	.cardLinkWrapper {
 		text-align: center;
 	}
+
 	.cardLink {
 		overflow: hidden;
 		height: 280px;
@@ -226,7 +230,7 @@
 			font-size: 1em !important;
 			transition: all 0.3s ease;
 			font-weight: 700;
-    font-size: 1.1em !important;
+			font-size: 1.1em !important;
 
 			svg {
 				// width: 15px;
@@ -281,7 +285,6 @@
 		.cardLink_cta__wrapper {
 			display: none;
 		}
-
 		@include susy-breakpoint(800px) {
 			.cardLink {
 				overflow: visible;

@@ -14,9 +14,9 @@ $degreeTypes = get_terms([
   }
 </style>
 
-<!--
+
   <div class="content">
-    <main id="main" class="cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog"> -->
+    <main id="main" class="cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
       <div class="intro">
         <div class="intro__breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
@@ -101,8 +101,8 @@ $degreeTypes = get_terms([
         </div>
 
 
-    <!-- </main>
-  </div> -->
+    </main>
+  </div>
 
 
 
