@@ -33,8 +33,10 @@ $degreeLevels = get_terms([
 			<form class="controls" id="Filters">
 			  <!-- We can add an unlimited number of "filter groups" using the following format: -->
 
-			  <fieldset>
-			    <h2 class="toolbar-filter__label">Areas Of Study</h2>
+			  <fieldset class="degreeTypes">
+			    <h2 class="toolbar-filter__label">Areas Of Study
+						<?php include('library/images/arrow-down-red.svg'); ?>
+					</h2>
 					<div class="degreeTypesToolbar toolbar-filter" role="toolbar">
 						<button class="btn__hollow filter" aria-label="List All Degrees Types" data-filter="">All</button>
 							<?php foreach ($degreeTypes as $degreeType): ?>
@@ -43,13 +45,17 @@ $degreeLevels = get_terms([
 									$slug = $degreeType->slug;
 								?>
 
-									<button class="btn__hollow filter" aria-label="Filter By <?php echo $Name; ?>" data-filter=".<?php echo $slug; ?>"><?php echo $Name; ?></button>
+									<button class="btn__hollow filter" aria-label="Filter By <?php echo $Name; ?>" data-filter=".<?php echo $slug; ?>"><?php echo $Name; ?>
+
+									</button>
 							<?php endforeach; ?>
 					</div>
 			  </fieldset>
 
-			  <fieldset>
-			    <h2 class="toolbar-filter__label">Degree Types</h2>
+			  <fieldset class="degreeLevels">
+			    <h2 class="toolbar-filter__label">Degree Types
+						<?php include('library/images/arrow-down-red.svg'); ?>
+					</h2>
 					<div class="degreeLevelsToolbar toolbar-filter" role="toolbar">
 						<!-- <span class="toolbar-filter__label" style="font-family: 'Oswald', sans-serif; font-size: 0.9em; text-transform: uppercase;">Select Degree Level:</span> -->
 						<button  class="btn__hollow filter" aria-label="List All Degrees Levels" data-filter="">All</button>
