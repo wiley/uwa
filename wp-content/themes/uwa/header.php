@@ -101,7 +101,7 @@
 		<?php // If is blog page show the progress bar ?>
 		<?php if ( is_singular( 'post' ) ) { ?><progress value="0"></progress><?php } ?>
 
-		<!-- <div id="container" class="container"> -->
+		<div id="container" class="container">
 
 			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 

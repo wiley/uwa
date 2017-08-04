@@ -51,13 +51,16 @@ import 'owl.carousel'
 	// 	console.log('ELEMENT: ', Element);
 	// 	bindCarouselToElement(this)
 	// });
-	bindCarouselToElement($('.med'));
-	bindCarouselToElement($('.mat'));
-	bindCarouselToElement($('.eds'));
-	bindCarouselToElement($('.atc'));
-	bindCarouselToElement($('.bachelors'));
-	bindCarouselToElement($('.masters'));
-	bindCarouselToElement($('.tc'));
+	if ($('body').hasClass('term-teaching')) {
+		bindCarouselToElement($('.med'));
+		bindCarouselToElement($('.mat'));
+		bindCarouselToElement($('.eds'));
+		bindCarouselToElement($('.atc'));
+		bindCarouselToElement($('.bachelors'));
+		bindCarouselToElement($('.masters'));
+		bindCarouselToElement($('.tc'));
+	}
+
 
 
 	// $('.med').owlCarousel({
