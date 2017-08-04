@@ -9,6 +9,7 @@ window.$ = window.jQuery = $;
 import './components/megaMenu'
 import './components/submenus'
 import './components/carousel'
+import './components/filters'
 
 
 // import 'imports?jQuery=jquery!owl.carousel';

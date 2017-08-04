@@ -12,7 +12,6 @@
 		justify-content: center;
 		flex-flow: row wrap;
 		padding: 0;
-
 	}
 
 	.toolbar-filter {
@@ -56,11 +55,12 @@
 		flex: none !important;
 		width: 485px !important;
 		max-width: 100%;
-		transition: .25s ease;
+		// transition: 0.25s ease;
+
 		&:focus,
 		&:hover {
 			color: white;
-			transform: scale(1.02);
+			// transform: scale(1.02);
 			// background: #e3e3e3;
 		}
 	}
@@ -127,7 +127,6 @@
 		.mix-containerWrapper {
 			flex: 1 1 80%;
 		}
-
 	}
 
 	.card {
@@ -174,7 +173,8 @@
 			margin-left: auto;
 		}
 
-		&:hover, &:focus {
+		&:focus,
+		&:hover {
 			& .card__title {
 				// font-size: 1.6em;
 				// text-decoration: underline;
@@ -185,9 +185,78 @@
 				// font-size: 115%;
 				// transition: 0.2s ease;
 				font-size: 110%;
-transition: .15s ease-in-out;
+				transition: 0.15s ease-in-out;
 				font-weight: 700;
 				// text-decoration: underline;
+			}
+		}
+	}
+}
+// WORKING ON NEW MOBILE FILTERS
+@media (max-width: 799px) {
+	.post-type-archive-degrees main .controlsWrapper {
+		.toolbar-filter__label {
+			font-size: 1em;
+			text-align: center;
+			margin: 1em 0 0.5em;
+			border: 2px solid gray;
+			padding: 0.5em 0 0.75em;
+			cursor: pointer;
+
+			&:hover + .toolbar-filter {
+				// max-height: 100vh;
+			}
+		}
+	}
+
+	.controls {
+		display: flex;
+		flex-flow: row wrap;
+		margin-left: -5%;
+		margin-right: -5%;
+		justify-content: space-around;
+		padding: 5px;
+		position: relative;
+	}
+
+	fieldset {
+		width: 47% !important;
+		margin: 0;
+		padding: 0;
+
+		&:first-of-type .toolbar-filter {
+			transform: translateX(-110%);
+
+			&.activeFilter {
+				transform: translateX(0%);
+			}
+		}
+
+		.toolbar-filter {
+			transition: all 0.35s ease-in-out;
+			transform: translateX(110%);
+			// overflow: hidden;
+			// max-height: 0;
+			align-content: flex-start;
+			height: inherit;
+			background: white;
+			padding-bottom: 1.5em;
+			position: absolute;
+			// left: 0;
+			// bottom: 0;
+			top: 65.5px;
+			// right: 0;
+			width: 45.5%;
+			padding: 1em 0.5em 1.25em;
+			z-index: 999;
+    	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+			&.activeFilter {
+				transform: translateX(0%);
+			}
+
+			button {
+				font-size: .85em !important;
+				background: white;
 			}
 		}
 	}

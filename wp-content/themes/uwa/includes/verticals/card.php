@@ -17,13 +17,16 @@
       <div class="flexTestWrapper">
         <div class="cardLink__text">
           <h3 class="cardLink__heading"><?php echo $title; ?></h3>
+
         </div>
 
         <div class="cardLink__info">
           <p><?php echo $text; ?></p>
 
-          <?php if ($classes == 'single'): ?>
+          <?php if ($Classes == 'single'): ?>
+
             <div class="cardLink__cta__wrapper">
+
               <div class="cardLink__cta-background"></div>
               <p class="cardLink__cta">View Program <?php include('arrow.svg'); ?></p>
             </div>

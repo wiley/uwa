@@ -293,8 +293,11 @@
 				overflow: visible;
 				left: -50%;
 
-				&__cta-background {
+				&__cta {
 					display: none;
+				}
+				&__cta-background {
+					// display: none;
 				}
 
 				&:focus,
@@ -305,7 +308,9 @@
 
 					.cardLink_cta__wrapper {
 						.cardLink__cta {
+							display: block;
 							&-background {
+
 								transform: translateX(0);
 								right: 0;
 							}
@@ -323,8 +328,11 @@
 					position: absolute;
 					right: 20px;
 					bottom: 0;
+					height: 100%;
+					right: 0;
+					width: 100%;
 
-					.ctaLink_cta {
+					.cardLink_cta {
 						position: relative;
 						left: 0;
 						padding-top: 4px;
@@ -338,10 +346,39 @@
 							width: 100%;
 							transition: all 0.15s ease;
 							transform: translateX(102%);
+							display: block;
 						}
 					}
 				}
 			}
 		}
 	}
+
+	.single {
+		.cardLink__cta {
+			display: none;
+		}
+		.cardLink__cta-background {
+			display: none !important;
+		}
+		.cardLink__cta__wrapper .cardLink__cta-background {
+			display: block !important;
+			right: 20;
+			transition: all 0.15s ease;
+			transform: translateX(115%);
+			display: block;
+			 width: 160px;
+		}
+
+		.cardLink__cta__wrapper .cardLink__cta {
+			display: block;
+		}
+
+		.cardLink:hover, .cardLink:focus {
+			.cardLink__cta__wrapper .cardLink__cta-background {
+				transform: translateX(0);
+			}
+		}
+	}
+
 }
