@@ -29,7 +29,7 @@
       </ul>
 
       <ul class="degrees-menu__submenu">
-        <li class="label">By Areas of Study</li>
+        <li class="label">By Area of Study</li>
         <?php foreach ($degreeTypes as $type ): ?>
           <?php
             $url = get_term_link( $type );

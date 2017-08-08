@@ -3,7 +3,7 @@
 <?php
 $degreeTypes = get_terms([
     'taxonomy' => 'degree_vertical',
-    'hide_empty' => true,
+    'hide_empty' => false,
 ]);
 // print("<pre>".print_r($degreeTypes,true)."</pre>");
 ?>
@@ -30,19 +30,21 @@ $degreeTypes = get_terms([
       </div>
 
 
+
         <div class="mainDegrees degreeType">
           <div class="wrap">
-            <h2 id="mainDegreesHeadline" class="mainDegrees__headline">Online Bachelor’s Degrees</h2>
-            <p id="mainDegreesText" class="mainDegrees__text">Pursue a successful future in business with a fully online bachelor’s degree. Choose from a wide range of fields and specialties, including the one-of-a-kind integrated marketing communications programs that span several areas of study.</p>
-            <?php include ('includes/verticals/bachelorsList.php'); ?>
+            <h2 id="mainDegreesHeadline" class="mainDegrees__headline">Bachelor of Arts/Science</h2>
+            <p id="mainDegreesText" class="mainDegrees__text">Gain a strong foundation in psychology with a BA/BS that will prepare you for immediate employment or graduate school. You’ll have the opportunity to engage in research and learn from experienced scholars and practitioners.</p>
+            <?php include ('includes/verticals/bachelorsArtsScience.php'); ?>
           </div>
         </div>
 
         <div class="mastersDegrees degreeType">
           <div class="wrap">
             <div class="narrow">
-              <h2 class="mainDegrees__headline">Online Bachelor’s Degrees</h2>
-              <p class="mainDegrees__text">Forbes reports salary gains of 40 percent to 50 percent post-MBA. Advance your business career and earning potential with a fully online MBA. Choose from elective concentrations in General Business or Finance.</p>            </div>
+              <h2 class="mainDegrees__headline">Master of Science</h2>
+              <p class="mainDegrees__text">Develop your knowledge and skills to pursue career opportunities in experimental psychology, clinical mental health counseling or a related field. Enhance your career with a master’s degree from one of Alabama’s oldest and most prestigious universities.</p>
+            </div>
             <?php include ('includes/verticals/mastersList.php'); ?>
           </div>
         </div>

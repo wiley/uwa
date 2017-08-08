@@ -19,23 +19,16 @@
 							<div class="degreeLevel__flexWrapper">
 								<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
+						    <div class="cardLinkWrapper item">
+									<a class="card" style="background-image: url(<?php the_field('program_image'); ?>);" href="<?php the_permalink(); ?>">
+										<div class="card__infoWrapper">
 
+											<h4 class="card__title"><?php the_title(); ?></h4>
 
-
-			  						    <div class="cardLinkWrapper item">
-													<a class="card" style="background-image: url(<?php the_field('program_image'); ?>);" href="<?php the_permalink(); ?>">
-														<div class="card__infoWrapper">
-
-															<h4 class="card__title"><?php the_title(); ?></h4>
-
-															<!-- <div class="card__info">More Information &gt;&gt;</div> -->
-														</div>
-													</a>
-
-			  						    </div>
-
-
-
+											<!-- <div class="card__info">More Information &gt;&gt;</div> -->
+										</div>
+									</a>
+						    </div>
 
 								<?php endwhile; ?>
 							</div>

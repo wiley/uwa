@@ -71,7 +71,7 @@
 								</ul>
 							</div>
 							<div class="verticals flexItem">
-								<h6 class="footer__subheading">By Areas of Study</h6>
+								<h6 class="footer__subheading">By Area of Study</h6>
 								<ul>
 									<?php foreach ($degreeAreas as $degreeArea ): ?>
 					          <?php

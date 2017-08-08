@@ -61,7 +61,16 @@ import 'owl.carousel'
 		bindCarouselToElement($('.tc'));
 	}
 
+	if ($('body').hasClass('term-psychology-counseling')) {
 
+		// bindCarouselToElement($('.med'));
+		// bindCarouselToElement($('.mat'));
+		// bindCarouselToElement($('.eds'));
+		// bindCarouselToElement($('.atc'));
+		bindCarouselToElement($('.bachelors'));
+		bindCarouselToElement($('.masters'));
+		// bindCarouselToElement($('.tc'));
+	}
 
 	// $('.med').owlCarousel({
 	// 	// loop: true,

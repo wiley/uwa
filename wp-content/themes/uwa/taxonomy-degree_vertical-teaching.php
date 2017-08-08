@@ -50,15 +50,6 @@ $degreeTypes = get_terms([
           </div>
         </div>
 
-        <div class="degreeType coloredBackground">
-          <div class="wrap">
-            <div class="narrow">
-              <h2 class="mainDegrees__headline">Education Specialist</h2>
-              <p class="mainDegrees__text">Gain the knowledge of a PhD or EdD program with the speed of a master’s degree. You’ll expand your education past the master’s degree level but without the cost and time required of a typical doctoral degree.</p>
-            </div>
-            <?php include ('includes/verticals/educationSpecialistList.php'); ?>
-          </div>
-        </div>
 
         <div class="degreeType">
           <div class="wrap">
@@ -80,6 +71,16 @@ $degreeTypes = get_terms([
           </div>
         </div>
 
+        <div class="degreeType coloredBackground">
+          <div class="wrap">
+            <div class="narrow">
+              <h2 class="mainDegrees__headline">Teaching Certificates</h2>
+              <p class="mainDegrees__text">Increase your education by building on your skills and knowledge. Achieve your goals with a teaching certificate.</p>
+            </div>
+            <?php include ('includes/verticals/teachingCertificatesList.php'); ?>
+          </div>
+        </div>
+        
         <div class="degreeType">
           <div class="wrap">
             <div class="narrow">
@@ -93,10 +94,10 @@ $degreeTypes = get_terms([
         <div class="degreeType coloredBackground">
           <div class="wrap">
             <div class="narrow">
-              <h2 class="mainDegrees__headline">Teaching Certificates</h2>
-              <p class="mainDegrees__text">Increase your education by building on your skills and knowledge. Achieve your goals with a teaching certificate.</p>
+              <h2 class="mainDegrees__headline">Education Specialist</h2>
+              <p class="mainDegrees__text">Gain the knowledge of a PhD or EdD program with the speed of a master’s degree. You’ll expand your education past the master’s degree level but without the cost and time required of a typical doctoral degree.</p>
             </div>
-            <?php include ('includes/verticals/teachingCertificatesList.php'); ?>
+            <?php include ('includes/verticals/educationSpecialistList.php'); ?>
           </div>
         </div>
 
