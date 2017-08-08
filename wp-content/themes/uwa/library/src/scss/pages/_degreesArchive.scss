@@ -55,6 +55,8 @@
 		flex: none !important;
 		width: 485px !important;
 		max-width: 100%;
+		max-width: 450px;
+    flex: 1 1 300px !important;
 		// transition: 0.25s ease;
 
 		&:focus,
