@@ -223,7 +223,7 @@ HOMEPAGE SPECIFIC STYLES
 
 			.card {
 				@extend %flexCard;
-				margin: 1em 0.75em;
+				margin: 1em 0;
 				// max-width: 300px;
 				@include susy-breakpoint($bp-med) {
 					margin: 1em 1.5em;
@@ -604,11 +604,18 @@ HOMEPAGE SPECIFIC STYLES
 			content: '';
 			position: absolute;
 			left: 0;
+			right: 0;
 			top: 140px;
 			height: 95%;
-			width: 100%;
+			// width: 100%;
 			z-index: -1;
 			clip-path: polygon(50% 15%, 100% 0, 100% 95%, 50% 100%, 0 95%, 0 0);
+
+
+			@include susy-breakpoint(900px) {
+				left: 2.5%;
+	    	right: 2.5%;
+			}
 			@include susy-breakpoint(1200px) {
 				clip-path: polygon(50% 15%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
 			}

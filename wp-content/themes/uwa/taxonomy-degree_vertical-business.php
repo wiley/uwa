@@ -41,7 +41,7 @@ $degreeTypes = get_terms([
         <div class="mastersDegrees degreeType">
           <div class="wrap">
             <div class="narrow">
-              <h2 class="mainDegrees__headline">Online Bachelor’s Degrees</h2>
+              <h2 class="mainDegrees__headline">Online Master's Degrees</h2>
               <p class="mainDegrees__text">Forbes reports salary gains of 40 percent to 50 percent post-MBA. Advance your business career and earning potential with a fully online MBA. Choose from elective concentrations in General Business or Finance.</p>            </div>
             <?php include ('includes/verticals/mastersList.php'); ?>
           </div>
