@@ -32,7 +32,11 @@ HEADER STYLES
 .header {
 	position: relative;
 
-
+	.banner {
+		.wrap {
+			width: 90%;
+		}
+	}
 	.main-nav {
 		display: flex;
 		flex-flow: row wrap;

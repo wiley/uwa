@@ -24,8 +24,8 @@ $degreeTypes = get_terms([
               bcn_display();
           }?>
         </div>
-        <h2 class="intro__headline">Are You Reaching Your Earning Potential?</h2>
-        <p class="intro__text">Take charge of your future with an online business degree designed for your budget and your schedule at the University of West Alabama. You’ll develop the skills and knowledge needed for real-world success, in a fully online program from one of Alabama’s oldest and most prestigious universities.</p>
+        <h2 class="intro__headline">Become a Leader and Increase Your Earning Potential</h2>
+        <p class="intro__text">Choose an online business degree designed for your budget and your schedule at the University of West Alabama. You’ll develop the skills and knowledge needed for success, in a fully online program from one of Alabama’s oldest and most prestigious universities.</p>
         <a href="/online-degrees" class="intro__link">Browse All Degrees <?php include('library/images/arrow.svg'); ?></a>
       </div>
 

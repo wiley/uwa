@@ -62,16 +62,14 @@ import 'owl.carousel'
 	}
 
 	if ($('body').hasClass('term-psychology-counseling')) {
-
-		// bindCarouselToElement($('.med'));
-		// bindCarouselToElement($('.mat'));
-		// bindCarouselToElement($('.eds'));
-		// bindCarouselToElement($('.atc'));
 		bindCarouselToElement($('.bachelors'));
 		bindCarouselToElement($('.masters'));
-		// bindCarouselToElement($('.tc'));
 	}
 
+	if ($('body').hasClass('term-business')) {
+		bindCarouselToElement($('.bachelors'));
+		bindCarouselToElement($('.masters'));
+	}
 	// $('.med').owlCarousel({
 	// 	// loop: true,
 	// 	rewind: true,
