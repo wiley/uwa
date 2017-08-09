@@ -1,9 +1,6 @@
-<!--#if expr="$HTTP_COOKIE=/fonts\-loaded\=true/" -->
 <!doctype html>
 <html lang="en" class="fonts-loaded">
-<!--#else -->
-<!doctype html>
-<!--#endif -->
+
 
 <!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
 <!--[if (IE 7)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8"><![endif]-->
@@ -97,7 +94,6 @@
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WWK9WWK"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<!-- End Google Tag Manager -->
-
 		<?php // If is blog page show the progress bar ?>
 		<?php if ( is_singular( 'post' ) ) { ?><progress value="0"></progress><?php } ?>
 
@@ -174,9 +170,11 @@ $primaryNav = wp_get_nav_menu_items($menuID);
 								<h1 class="banner__heading"><?php post_type_archive_title(); ?></h1>
 							<?php endif; ?>
 
-							<?php if ( is_tax() && get_field('banner_headline', $termID) ): ?>
+							<?php if ( is_tax() ): ?>
 								<?php $termID = 'term_' . get_queried_object()->term_id; ?>
-								<h1 class="banner__heading"><?php the_field('banner_headline', $termID); ?></h1>								
+								<?php if (get_field('banner_headline', $termID)): ?>
+									<h1 class="banner__heading"><?php the_field('banner_headline', $termID); ?></h1>
+								<?php endif; ?>
 							<?php endif; ?>
 
 							<?php if (get_field('banner_headline') && get_field('banner_headline')): ?>
