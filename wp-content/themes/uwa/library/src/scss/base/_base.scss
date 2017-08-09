@@ -6,7 +6,12 @@ GENERAL STYLES
 html {
   box-sizing: border-box;
   overflow-x: hidden;
+
+  &.activeModal {
+    overflow: hidden;
+  }
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -27,6 +32,7 @@ body {
 	&.no-scroll {
 		overflow: hidden;
 	}
+
 }
 
 // Styled box with a border
