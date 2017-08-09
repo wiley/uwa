@@ -174,9 +174,9 @@ $primaryNav = wp_get_nav_menu_items($menuID);
 								<h1 class="banner__heading"><?php post_type_archive_title(); ?></h1>
 							<?php endif; ?>
 
-							<?php if ( is_tax() ): ?>
+							<?php if ( is_tax() && get_field('banner_headline', $termID) ): ?>
 								<?php $termID = 'term_' . get_queried_object()->term_id; ?>
-								<h1 class="banner__heading"><?php the_field('banner_headline', $termID); ?></h1>
+								<h1 class="banner__heading"><?php the_field('banner_headline', $termID); ?></h1>								
 							<?php endif; ?>
 
 							<?php if (get_field('banner_headline') && get_field('banner_headline')): ?>

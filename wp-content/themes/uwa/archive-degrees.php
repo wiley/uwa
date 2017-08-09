@@ -34,7 +34,7 @@ $degreeLevels = get_terms([
 			  <!-- We can add an unlimited number of "filter groups" using the following format: -->
 
 			  <fieldset class="degreeTypes">
-			    <h2 class="toolbar-filter__label">Areas Of Study
+			    <h2 class="toolbar-filter__label">Area Of Study
 						<?php include('library/images/arrow-down-red.svg'); ?>
 					</h2>
 					<div class="degreeTypesToolbar toolbar-filter" role="toolbar">

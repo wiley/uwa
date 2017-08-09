@@ -197,6 +197,9 @@ article {}
 }
 
 .banner {
+	height: 85vw;
+min-height: 200px;
+max-height: 400px;
 	.wrap {
 		// position: absolute;
 		z-index: 99999;
