@@ -32,7 +32,8 @@
 	&__privacy {
 		color: #d6cd91 !important; // Overriding $gold because of color contrast
 
-		&:hover, &:focus {
+		&:focus,
+		&:hover {
 			// text-shadow: 0 0 0.2 #c9bf79, 0 0 0.2 #c9bf79;
 		}
 	}
@@ -58,14 +59,13 @@
 	}
 
 	&__subheading {
-		margin: .5em 0 0;
+		margin: 0.5em 0 0;
 		color: white;
 		font-style: italic;
 		font-weight: 300;
 		font-size: 1em;
-
 		@include susy-breakpoint($bp-med) {
-		    margin: 0;
+			margin: 0;
 		}
 	}
 
@@ -100,11 +100,12 @@
 		flex-flow: row wrap;
 
 		& > .flexItem {
-			padding: .5em 0;
+			padding: 0.5em 0;
 			flex-basis: 100%;
 			@include susy-breakpoint($bp-med) {
 				// flex-basis: initial;
 				padding: 0.5em 1em;
+
 				&.info {
 					flex: 1 1 15%;
 				}
@@ -128,11 +129,29 @@
 			@include susy-breakpoint($bp-med) {
 				flex-basis: 50%;
 			}
-
 		}
 	}
 
 	.programType ul {
 		padding-right: 2em;
+	}
+}
+
+.footer .resources {
+	ul {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		@include susy-breakpoint($bp-med) {
+			display: block;
+		}
+		li {
+			width: 49%;
+			margin: .25em 0;
+			@include susy-breakpoint($bp-med) {
+				width: 100%;
+				margin: .5em 0;
+			}
+		}
 	}
 }
