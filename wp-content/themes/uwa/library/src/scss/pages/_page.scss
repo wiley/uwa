@@ -95,7 +95,12 @@ article {}
 
 		.btn {
 			transition: text-shadow 0.3s;
-
+			display: block;
+			    margin-left: auto;
+			    width: 450px;
+			    margin-right: auto;
+			    margin-bottom: 2em;
+			    max-width: 100%;
 			&:focus,
 			&:hover {
 				text-decoration: underline;
@@ -198,8 +203,8 @@ article {}
 
 .banner {
 	height: 85vw;
-min-height: 200px;
-max-height: 400px;
+	min-height: 320px;
+	max-height: 455px;
 	.wrap {
 		// position: absolute;
 		z-index: 99999;
