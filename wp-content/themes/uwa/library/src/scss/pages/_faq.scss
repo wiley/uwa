@@ -1,139 +1,149 @@
 .page-id-513 {
-  .intro {
-    max-width: 1200px;
-  }
+	.intro {
+		max-width: 1200px;
+	}
 }
 
 .page-id-309 {
-  .intro {
-    max-width: 1200px;
-  }
+	.intro {
+		max-width: 1200px;
+	}
 }
+
 .faqWrapper {
-  text-align: left;
-  p {
-    padding: 0;
-  }
-  .questions, .answers {
-    // width: 48%;
-    display: inline-block;
+	text-align: left;
 
-  }
+	p {
+		padding: 0;
+	}
 
-  .questions {
-    @include susy-breakpoint(768px) {
-      width: 34%;
-      border-right: 2px solid gray;
-    }
-    ul {
-      list-style: none;
-      padding-left: 0;
+	.answers,
+	.questions {
+		// width: 48%;
+		display: inline-block;
+	}
 
-      li {
-        margin-top: .5em;
-        margin-bottom: .5em;
-      }
-    }
-    a {
-      display: block;
-      padding: .25em;
+	.questions {
+		@include susy-breakpoint(768px) {
+			width: 34%;
+			border-right: 2px solid gray;
+		}
 
-      &.active {
-        font-weight: 700;
-      }
-    }
-  }
-  .answers {
+		ul {
+			list-style: none;
+			padding-left: 0;
 
-    @include susy-breakpoint(768px) {
-      width: 64%;
-    }
-    padding-left: 20px;
-    padding-right: 5px;
-    > * {
-      display: none;
-    }
+			li {
+				margin-top: 0.5em;
+				margin-bottom: 0.5em;
+			}
+		}
 
-    & .active {
-      display: block !important;
-    }
-      // &.active {
-      //   display: block;
-      // }
-    &.fixed {
-      position: fixed;
-      top: 0;
-      width: calc(1200px * .64);
-      padding-left: 25px;
-      padding-top: 5px;
-    }
-  }
+		a {
+			display: block;
+			padding: 0.25em;
+
+			&.active {
+				font-weight: 700;
+			}
+		}
+	}
+
+	.answers {
+		@include susy-breakpoint(768px) {
+			width: 64%;
+		}
+		padding-left: 20px;
+		padding-right: 5px;
+
+		> * {
+			display: none;
+		}
+
+		& .active {
+			display: block !important;
+		}
+		// &.active {
+		//   display: block;
+		// }
+		&.fixed {
+			position: fixed;
+			top: 0;
+			width: calc(1200px * .64);
+			padding-left: 25px;
+			padding-top: 5px;
+		}
+	}
 }
-
-
 // FOR MOBILE
 @media (max-width: 767px) {
-  .faqWrapper .answers {
-      overflow-x: hidden;
-      border-top: 5px solid gray;
-      background: white;
-      right: 0;
-      padding: 1.5em 0.75em;
-      overflow-y: scroll;
-      overflow-x: hidden;
-      transform: translateY(100%);
-      transition: all .35s ease-in-out;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      z-index: 9999999999;
-      display: block !important;
-      font-size: 1.05em;
-      line-height: 1.6;
-      padding: 3.75em 2em 2em 1.75em;
-      width: 100vw;
-      bottom: 0;
-            -webkit-overflow-scrolling: touch;
-      &.active {
-        transform: translateY(0);
-      }
-  }
-  button#answerCloser {
-      position: fixed;
-      // bottom: 20px;
-      z-index: 99999999999;
-      // left: 50%;
-      transform: translateX(-50%);
-      border: 2px solid gray;
-      padding: 3px 10px 5px 10px;
-      border-radius: 50%;
-      font-weight: 700;
-      cursor: pointer;
-      // transform: translateY(250px);
-      transition: all .35s ease-in-out;
-      background: $red;
-      background-image: url(#{$images}/close-button.svg);
-      width: 45px;
-      height: 45px;
-      border: none;
-      background-size: 50%;
-      background-position: center center;
-      background-repeat: no-repeat;
-      // left: 45%;
-      right: 20px;
-      top: 20px;
-      transform: translateY(-80px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	.faqWrapper .answers {
+		overflow-x: hidden;
+		border-top: 5px solid gray;
+		background: white;
+		right: 0;
+		padding: 1.5em 0.75em;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		transform: translateY(100%);
+		transition: all 0.35s ease-in-out;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		z-index: 9999999999;
+		display: block !important;
+		font-size: 1.05em;
+		line-height: 1.6;
+		padding: 3.75em 2em 2em 1.75em;
+		width: 100vw;
+		bottom: 0;
+		-webkit-overflow-scrolling: touch;
+		top: 0;
+		overflow: scroll;
 
-  }
-  body.activeModal {
-    overflow: hidden;
-    position: fixed;
-    header {
-      opacity: 0;
-    }
-    button#answerCloser {
-      transform: translateY(0);
-    }
-  }
+		&.active {
+			transform: translateY(0);
+		}
+	}
+
+	button#answerCloser {
+		position: fixed;
+		// bottom: 20px;
+		z-index: 99999999999;
+		// left: 50%;
+		transform: translateX(-50%);
+		border: 2px solid gray;
+		padding: 3px 10px 5px;
+		border-radius: 50%;
+		font-weight: 700;
+		cursor: pointer;
+		// transform: translateY(250px);
+		transition: all 0.35s ease-in-out;
+		background: $red;
+		background-image: url("#{$images}/close-button.svg");
+		width: 45px;
+		height: 45px;
+		border: none;
+		background-size: 50%;
+		background-position: center center;
+		background-repeat: no-repeat;
+		// left: 45%;
+		right: 20px;
+		top: 20px;
+		transform: translateY(-80px);
+		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	}
+
+	body.activeModal {
+		overflow: hidden;
+		position: fixed;
+
+		header {
+			opacity: 0;
+		}
+
+		button#answerCloser {
+			transform: translateY(0);
+		}
+	}
 }
