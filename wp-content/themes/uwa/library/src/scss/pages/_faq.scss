@@ -135,9 +135,12 @@
 	}
 
 	body.activeModal {
-		overflow: hidden;
-		position: fixed;
-
+    position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        overflow: hidden;
 		header {
 			opacity: 0;
 		}
