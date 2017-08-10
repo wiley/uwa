@@ -1,5 +1,4 @@
 .single-degrees {
-
 	.content {
 		padding-bottom: 0;
 	}
@@ -8,14 +7,15 @@
 		height: 85vw;
 		min-height: 200px;
 		max-height: 400px;
-
 		@include susy-breakpoint($bp-med) {
-		    max-height: 450px;
+			max-height: 450px;
 		}
 	}
+
 	.section-title {
 		margin-top: 2em;
 	}
+
 	.program {
 		&__badge {
 			display: inline-block;
@@ -89,7 +89,7 @@
 				@include susy-breakpoint(0 $bp-med) {
 					.program__side {
 						width: 112%;
-				    margin-left: -6%;
+						margin-left: -6%;
 						display: block;
 					}
 				}
@@ -99,6 +99,7 @@
 		&__top {
 			padding: 1em;
 		}
+
 		&__details {
 			background: #af1332;
 			padding: 1em;
@@ -192,8 +193,8 @@
 
 		ul {
 			padding-left: 30px;
-
 		}
+
 		&__buttons {
 			position: relative;
 			z-index: 1;
@@ -209,8 +210,8 @@
 				background: rgba(200,191,121,0.2);
 				color: $red;
 				border: none;
-				padding: 1em .75em;
-					// padding: 1em .5em;
+				padding: 1em 0.75em;
+				// padding: 1em .5em;
 				width: 400px;
 				display: block;
 				margin: 0.5em;
@@ -220,8 +221,8 @@
 				@include susy-breakpoint($bp-med) {
 					width: 100%;
 					// font-size: 1em;
-					padding: 1em .5em;
-					font-size: .8em;
+					padding: 1em 0.5em;
+					font-size: 0.8em;
 				}
 
 				&.active {
@@ -297,7 +298,6 @@
 		@include decorative($gold);
 		padding-top: 1em;
 		margin-top: 1em;
-
 		@include susy-breakpoint(0 $bp-med) {
 			font-size: 1.75em;
 		}
@@ -396,6 +396,9 @@
 			justify-content: space-between;
 			align-content: flex-end;
 			align-items: baseline;
+			max-width: 980px;
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 		&__heading {
@@ -417,7 +420,10 @@
 		&__flexWrapper {
 			display: flex;
 			flex-flow: row wrap;
-			justify-content: center;
+			justify-content: space-between;
+			max-width: 1000px;
+			margin-left: auto;
+			margin-right: auto;
 
 			.cardLinkWrapper.item {
 				margin: 1em;
@@ -425,6 +431,7 @@
 				flex: 0 0 300px;
 				margin: 1em 10px;
 				height: 300px;
+				flex: 0 0 30%;
 			}
 		}
 
@@ -512,9 +519,10 @@
 
 			img {
 				object-fit: cover;
-width: inherit;
-height: 100%;
+				width: inherit;
+				height: 100%;
 			}
+
 			&__info {
 				flex-basis: 50%;
 				color: white;
