@@ -96,11 +96,12 @@ article {}
 		.btn {
 			transition: text-shadow 0.3s;
 			display: block;
-			    margin-left: auto;
-			    width: 450px;
-			    margin-right: auto;
-			    margin-bottom: 2em;
-			    max-width: 100%;
+	    margin-left: auto;
+	    width: 450px;
+	    margin-right: auto;
+	    margin-bottom: 2em;
+	    max-width: 100%;
+			text-align: center;
 			&:focus,
 			&:hover {
 				text-decoration: underline;
@@ -159,7 +160,11 @@ article {}
 			text-align: left;
 			font-size: 2em;
 			font-weight: 300;
-			padding: 0 1em !important;
+			padding: 0 .5em !important;
+
+			@include susy-breakpoint(768px) {
+			    padding: 0 1em !important;
+			}
 		}
 
 		&__text {

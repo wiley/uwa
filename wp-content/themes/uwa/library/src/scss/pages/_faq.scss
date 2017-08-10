@@ -103,7 +103,13 @@
 
 		&.active {
 			transform: translateY(0);
+
+			button#answerCloser {
+				transform: translateY(0);
+			}
 		}
+
+
 	}
 
 	button#answerCloser {
@@ -145,8 +151,6 @@
 			opacity: 0;
 		}
 
-		button#answerCloser {
-			transform: translateY(0);
-		}
+
 	}
 }
