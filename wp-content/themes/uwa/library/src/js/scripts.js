@@ -26,6 +26,7 @@ jQuery(document).ready(function($) {
     }
   }
 
+$('.subpagesNav .page-item-523 a').text('Teacher Connect Scholarship').attr('href', 'http://onlineuwa.staging.wpengine.com/my/teacherconnect/');
     (function () {
 
 

@@ -4,7 +4,7 @@
 import $ from 'jquery'
 window.$ = window.jQuery = $
 jQuery(document).ready(function($) {
-  alert('hi');
+
     $('.accordion .accord').on("click", function(){
         if($(this).hasClass('active')){
            $(this).removeClass('active');
