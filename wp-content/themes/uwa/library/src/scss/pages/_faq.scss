@@ -78,9 +78,7 @@
       border-top: 5px solid gray;
       background: white;
       right: 0;
-      width: 100vw;
       padding: 1.5em 0.75em;
-      height: 100%;
       overflow-y: scroll;
       overflow-x: hidden;
       transform: translateY(100%);
@@ -92,7 +90,10 @@
       display: block !important;
       font-size: 1.05em;
       line-height: 1.6;
-    padding: 3.75em 2em 2em 1.75em;
+      padding: 3.75em 2em 2em 1.75em;
+      width: 100vw;
+      bottom: 0;
+            -webkit-overflow-scrolling: touch;
       &.active {
         transform: translateY(0);
       }
@@ -123,9 +124,11 @@
       top: 20px;
       transform: translateY(-80px);
       box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
   }
-  html.activeModal {
+  body.activeModal {
     overflow: hidden;
+    position: fixed;
     header {
       opacity: 0;
     }

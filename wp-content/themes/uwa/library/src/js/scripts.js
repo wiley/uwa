@@ -110,7 +110,7 @@ $('.subpagesNav .page-item-523 a').text('Teacher Connect Scholarship').attr('hre
 
     // faq
     (function() {
-      var html = $('html')
+      var noScrollElement = $('body')
       var questionsContainer = $('.questions')
       var questionLinks = questionsContainer.find('a')
       var answersContainer = $('.answers')
@@ -131,7 +131,7 @@ $('.subpagesNav .page-item-523 a').text('Teacher Connect Scholarship').attr('hre
         var currentTitle = currentID.replace("#","")
         var newAnswer = $('[data-id = "' + currentTitle + '"]')
         console.log(newAnswer);
-        html.addClass('activeModal')
+        noScrollElement.addClass('activeModal')
         answersContainer.addClass('active')
         newAnswer.addClass('active')
         $(this).addClass('active')
@@ -143,7 +143,7 @@ $('.subpagesNav .page-item-523 a').text('Teacher Connect Scholarship').attr('hre
       closeAnswerButton.on('click', function(clickEvent) {
         clickEvent.preventDefault();
 
-        html.removeClass('activeModal')
+        noScrollElement.removeClass('activeModal')
         questionLinks.removeClass('active')
         answersContainer.removeClass('active')
         answersContainer.find('.active').removeClass('active')
