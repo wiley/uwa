@@ -31,8 +31,13 @@ LAYOUT & GRID STYLES
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	background-attachment: fixed;
+	background-position: top;
+	background-size: initial;
+
 	@include susy-breakpoint($bp-med) {
 		// min-height: 400px;
+		background-size: contain;
 	}
 
 	&:after {
@@ -133,9 +138,10 @@ body.mobileNav--active {
 			display: none;
 		}
 	}
+
 	&__link {
 		display: block;
-		margin: .25em 0;
+		margin: 0.25em 0;
 	}
 }
 
