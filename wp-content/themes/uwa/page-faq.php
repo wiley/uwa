@@ -73,7 +73,7 @@
 								<?php the_content(); ?>
 							<?php endwhile; endif; ?>
 						</div>
-						<button id="answerCloser" name="button"></button>
+						
 					</main>
 
 
