@@ -29,6 +29,8 @@ jQuery(document).ready(function($) {
 $('.subpagesNav .page-item-523 a').text('Teacher Connect Scholarship').attr('href', 'http://onlineuwa.staging.wpengine.com/my/teacherconnect/');
     (function () {
 
+      const ButtonHTML = `<button id="answerCloser" name="button"></button>`
+      $('.answers').append(ButtonHTML)
 
       if ( $('.answers').length && desktopWidthChecker()) {
           // grab the initial top offset of the navheaderigation

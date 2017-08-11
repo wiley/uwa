@@ -123,7 +123,7 @@
 
 				</nav>
 			</div>
-			<button id="answerCloser" name="button"></button>
+			<!-- <button id="answerCloser" name="button"></button> -->
 		</div>
 		<!--  End of #container (Begins in header.php)-->
 
