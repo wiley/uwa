@@ -93,12 +93,15 @@ HOMEPAGE SPECIFIC STYLES
 		position: relative;
 		height: 60vw;
 		min-height: 400px;
+		// background-attachment: fixed;
 		background-attachment: fixed;
+background-position: 65% -150px;
+background-size: 1180px;
 		@include susy-breakpoint($bp-med) {
 			min-height: 600px;
 			max-height: 900px;
 			background-size: cover;
-			background-position: 85% bottom;
+			// background-position: 85% bottom;
 		}
 
 		&:after {
