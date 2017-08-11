@@ -90,12 +90,16 @@ HOMEPAGE SPECIFIC STYLES
 		text-align: center;
 		color: white;
 		background-position: 85% center;
+		background-position: 70% bottom;
 		position: relative;
 		height: 60vw;
 		min-height: 400px;
+		background-attachment: fixed;
 		@include susy-breakpoint($bp-med) {
 			min-height: 600px;
 			max-height: 900px;
+			background-size: cover;
+			background-position: 85% bottom;
 		}
 
 		&:after {
