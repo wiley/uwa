@@ -16,11 +16,7 @@
 
 	.requestinfo {
 		// background: $red;
-	}
 
-	label {
-		// color: white;
-		color: black;
 	}
 
 	input,
@@ -43,6 +39,39 @@
 		}
 	}
 }
+
+.form {
+	&Wrapper {
+		padding: 2em 1em;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 0;
+		background: #A81D35;
+		// max-width: 550px;
+		color: white;
+		padding: 2em 1em;
+		max-width: 650px;
+    margin-top: 3em;
+		label {
+			color: white;
+			// color: black;
+		}
+
+		li {
+			margin-top: 0 !important;
+		}
+	}
+
+	&__header {
+		margin: 0;
+		color: white;
+		padding: 1em 1.5em 0;
+		background: $red;
+		padding: .5em .75em 0 !important;
+	}
+}
+
+
 
 // .form {
 // 	&__toggle {
@@ -84,10 +113,6 @@
 // 	}
 // }
 //
-
-
-
-
 // VERSION 2
 .form {
 	&__toggle {
@@ -97,14 +122,14 @@
 		background-color: white;
 		background-size: cover;
 		background-repeat: no-repeat;
-background-position: center;
-background-size: 50%;
-		background-image: url(#{$images}/close-form-button.svg);
+		background-position: center;
+		background-size: 50%;
+		background-image: url("#{$images}/close-form-button.svg");
 		display: flex;
-    justify-content: center;
-    align-items: center;
+		justify-content: center;
+		align-items: center;
 		top: 15px;
-    right: -10px;
+		right: -10px;
 		width: 40px;
 		height: 40px;
 		border: none;
@@ -143,15 +168,10 @@ background-size: 50%;
 		margin-right: auto;
 		height: auto;
 		padding: 2em 0;
-		margin: 1.5em;
-		    margin-left: auto;
-		    margin-right: auto;
-		    width: 90%;
+		margin: 1.5em auto;
+		width: 90%;
 	}
 }
-
-
-
 
 html.activeModal {
 	overflow: hidden;

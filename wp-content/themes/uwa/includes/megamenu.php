@@ -2,7 +2,7 @@
   <?php
     $verticalsTaxonomy = 'degree_vertical';
     $degreeTypes = get_terms( $verticalsTaxonomy, $args = array(
-      'hide_empty' => false, // do not hide empty terms
+      'hide_empty' => true, // do not hide empty terms
     ));
   ?>
 
@@ -11,7 +11,7 @@
     $levelsTaxonomy = 'degree_level';
     // get the terms of taxonomy
     $degreeLevels = get_terms( $levelsTaxonomy, $args = array(
-      'hide_empty' => false, // do not hide empty terms
+      'hide_empty' => true, // do not hide empty terms
     ));
   ?>
 
@@ -23,8 +23,12 @@
           <?php
             $url = get_term_link( $level );
             $name = $level->name;
+            $slug = $level->slug;
           ?>
-          <li><a href="<?php echo esc_url( $url ); ?>"><?php echo $name; ?></a></li>
+<?php if ( ($slug != 'mat-master-arts-teaching-programs' && $slug != 'med-master-education-programs') ): ?>
+            <li><a href="<?php echo esc_url( $url ); ?>"><?php echo $name; ?></a></li>
+<?php endif; ?>
+
         <?php endforeach; ?>
       </ul>
 
@@ -34,6 +38,7 @@
           <?php
             $url = get_term_link( $type );
             $name = $type->name;
+
           ?>
           <li><a href="<?php echo esc_url( $url ); ?>"><?php echo $name; ?></a></li>
         <?php endforeach; ?>
