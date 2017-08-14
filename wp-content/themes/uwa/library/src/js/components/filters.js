@@ -39,5 +39,5 @@
   Filters.on('click', function() {
     setTimeout(handleFilterSelection, 100)
   })
-  // Filters.on('click', handleFilterSelection)
+
 })(jQuery)

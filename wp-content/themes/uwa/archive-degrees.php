@@ -6,6 +6,18 @@
     font-weight: 900;
 	}
 </style>
+
+<?php
+function setDisplayOrder($term1, $term2) {
+        if ($term1->display_order == $term2->display_order) {
+            return 0;
+        } elseif ($term1->display_order < $term2->display_order) {
+            return -1;
+        } else {
+            return 1;
+        }
+    }
+?>
 <?php
 $degreeTypes = get_terms([
     'taxonomy' => 'degree_vertical',
@@ -19,6 +31,21 @@ $degreeLevels = get_terms([
 ?>
 
 <?php
+
+if ($degreeLevels) {
+    foreach ($degreeLevels as $index => $term) {
+			$termID = 'term_' . $term->term_id;
+			$menuOrderValue =  get_field('menu_order', $termID);
+
+			$degreeLevels[$index]->display_order = $menuOrderValue;
+
+    }
+    usort($degreeLevels, 'setDisplayOrder');
+}
+
+?>
+
+<?php
 	$allDegreesArgs = array(
 		 'posts_per_page' => -1,
 		 'orderby' => 'title',
@@ -29,6 +56,8 @@ $degreeLevels = get_terms([
 	$allDegrees = get_posts( $allDegreesArgs );
 ?>
 	<main>
+
+
 		<div class="controlsWrapper">
 			<form class="controls" id="Filters">
 			  <!-- We can add an unlimited number of "filter groups" using the following format: -->

@@ -317,7 +317,8 @@ if ($('#mix-container').length) {
 
 	    for(var i = 0, group; group = self.groups[i]; i++){
 	      group.active = group.$buttons.filter('.active').attr('data-filter') || '';
-				console.log(group.active);
+				console.log('ACTIVE: ',group.active);
+
 	    }
 
 	    self.concatenate();
@@ -338,7 +339,7 @@ if ($('#mix-container').length) {
 
 	    !self.outputString.length && (self.outputString = 'all');
 
-	    console.log(self.outputString);
+	    console.log('TEST', self.outputString);
 
 	    // ^ we can check the console here to take a look at the filter string that is produced
 
