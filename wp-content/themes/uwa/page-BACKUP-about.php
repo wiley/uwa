@@ -33,7 +33,9 @@
 					<main class="main-content cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 						<div class="intro">
 
-						<?php include('includes/subNav.php'); ?>
+							<?php include('includes/subNav.php'); ?>
+
+
 
 						<p class="intro_headline">
 							<?php if (get_field('intro_headline')): ?>
@@ -46,6 +48,8 @@
 						</div>
 
 					</main>
+
+
 
 				</div>
 				<?php include('includes/waiting.php'); ?>

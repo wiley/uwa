@@ -2,6 +2,9 @@
 
   const FilterButtons = $('.toolbar-filter__label')
   const FilterToolbars = $('.toolbar-filter')
+  const Filters = $('.filter')
+  const CurrentFilters = $('.filter.active')
+
 
   function handleFilter() {
     let currentFilterButton = $(this)
@@ -19,6 +22,22 @@
     }
   }
 
-  FilterButtons.on('click', handleFilter)
+  function closeFilter() {
 
+  }
+
+  function handleFilterSelection() {
+    let currentFilters = Filters.filter('.active')
+    console.log(currentFilters);
+    FilterToolbars.removeClass('activeFilter')
+    FilterButtons.removeClass('activeFilter')
+
+  }
+
+
+  FilterButtons.on('click', handleFilter)
+  Filters.on('click', function() {
+    setTimeout(handleFilterSelection, 100)
+  })
+  // Filters.on('click', handleFilterSelection)
 })(jQuery)

@@ -34,6 +34,7 @@ $('.subpagesNav .page-item-523 a').text('Teacher Connect Scholarship').attr('hre
 
       if ( $('.answers').length && desktopWidthChecker()) {
           // grab the initial top offset of the navheaderigation
+
           var stickyElement = $('.answers')
           var stickyElementOffsetTop = stickyElement.offset().top;
           var containerWidth = $('.faqWrapper').width()
@@ -66,6 +67,9 @@ $('.subpagesNav .page-item-523 a').text('Teacher Connect Scholarship').attr('hre
 
           // and run it again every time you scroll
           $(window).on('scroll', function() {
+
+              console.log('Scroll Top: ', scroll_top);
+              console.log('Scroll Offset: ', scroll_top);
               makeStickyElementOnScroll(stickyElementOffsetTop);
           });
 
@@ -74,7 +78,7 @@ $('.subpagesNav .page-item-523 a').text('Teacher Connect Scholarship').attr('hre
                   stickyElement.removeClass('fixed');
               }
               if (!desktopWidthChecker()) {
-                stickyElement.css("width", 'initial');
+                // stickyElement.css("width", '64%');
               }
               stickyElementOffsetTop = stickyElement.offset().top;
               // width = stickyElement.width() + 30

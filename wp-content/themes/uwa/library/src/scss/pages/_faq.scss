@@ -52,6 +52,7 @@
 	.answers {
 		@include susy-breakpoint(768px) {
 			width: 64%;
+			padding-right: 2em;
 		}
 		padding-left: 20px;
 		padding-right: 5px;
