@@ -35,10 +35,8 @@ $degreeLevels = get_terms([
 if ($degreeLevels) {
     foreach ($degreeLevels as $index => $term) {
 			$termID = 'term_' . $term->term_id;
-			$menuOrderValue =  get_field('menu_order', $termID);
-
+			$menuOrderValue = get_field('menu_order', $termID);
 			$degreeLevels[$index]->display_order = $menuOrderValue;
-
     }
     usort($degreeLevels, 'setDisplayOrder');
 }
@@ -89,12 +87,18 @@ if ($degreeLevels) {
 						<!-- <span class="toolbar-filter__label" style="font-family: 'Oswald', sans-serif; font-size: 0.9em; text-transform: uppercase;">Select Degree Level:</span> -->
 						<button  class="btn__hollow filter" aria-label="List All Degrees Levels" data-filter="">All</button>
 							<?php foreach ($degreeLevels as $degreeLevel): ?>
+
 								<?php
 									$Name = $degreeLevel->name;
 									$slug = $degreeLevel->slug;
+									$termID = 'term_' . $degreeLevel->term_id;
+									$menuOrderValue = get_field('menu_order', $termID);
 								?>
 
-									<button  class="btn__hollow filter" aria-label="Filter By <?php echo $Name; ?>" data-filter=".<?php echo $slug; ?>"><?php echo $Name; ?></button>
+									<?php if ($menuOrderValue): ?>
+										<button  class="btn__hollow filter" aria-label="Filter By <?php echo $Name; ?>" data-filter=".<?php echo $slug; ?>"><?php echo $Name; ?></button>
+									<?php endif; ?>
+
 							<?php endforeach; ?>
 					</div>
 			  </fieldset>
