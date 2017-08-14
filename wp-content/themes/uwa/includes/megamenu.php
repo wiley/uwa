@@ -24,10 +24,13 @@
             $url = get_term_link( $level );
             $name = $level->name;
             $slug = $level->slug;
+            $termID = 'term_' . $level->term_id;
+            $menuOrderValue = get_field('menu_order', $termID);
           ?>
-<?php if ( ($slug != 'mat-master-arts-teaching-programs' && $slug != 'med-master-education-programs') ): ?>
-            <li><a href="<?php echo esc_url( $url ); ?>"><?php echo $name; ?></a></li>
-<?php endif; ?>
+
+          <?php if ($menuOrderValue): ?>
+              <li><a href="<?php echo esc_url( $url ); ?>"><?php echo $name; ?></a></li>
+          <?php endif; ?>
 
         <?php endforeach; ?>
       </ul>
