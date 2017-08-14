@@ -20,7 +20,7 @@
 ?>
 
 <?php
-	function setDisplayOrder($term1, $term2) {
+	function setFilterOrder($term1, $term2) {
 	        if ($term1->display_order == $term2->display_order) {
 	            return 0;
 	        } elseif ($term1->display_order < $term2->display_order) {
