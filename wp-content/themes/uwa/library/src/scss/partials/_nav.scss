@@ -15,8 +15,8 @@ NAVIGATION STYLES
 	padding-top: 9em;
 	z-index: 999999;
 	padding-bottom: 1.5em;
-	overflow-y: auto;
-
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
 	&.visible {
 		transform: translateY(0%);
 	}
