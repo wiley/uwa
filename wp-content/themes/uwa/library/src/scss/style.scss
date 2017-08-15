@@ -127,9 +127,8 @@ body {
 	transform: translateY(-50%);
 	vertical-align: initial;
 	width: 44px;
-	height: 34px;
-// 	width: 20px;
-// height: 20px;
+	height: 34px; // 	width: 20px;
+	// height: 20px;
 	transition: 0.25s ease;
 	border: 2px solid transparent;
 
@@ -141,11 +140,14 @@ body {
 		// background: url("/wp-content/themes/uwa/library/images/arrow-down-red.svg");
 		background-repeat: no-repeat;
 		background-position: center;
-		right: -16px;
 		top: 40%;
-		left: calc(100% - 10px);
-		left: calc(100% - 25px);
+		width: 25px;
+		height: 25px;
+		padding: 0 !important;
+		// left: calc(100% - 10px);
+		// left: calc(100% - 25px);
 		background-size: 75%;
+		right: -8px !important;
 	}
 
 	& + .degrees-menuv[aria-hidden="false"] {
@@ -196,13 +198,15 @@ body {
 .logoHolder {
 	display: none;
 }
+
 .secondary-nav__wrapper {
 	top: -10px;
 }
-.main-nav__wrap, .secondary-nav__wrapper {
 
+.main-nav__wrap,
+.secondary-nav__wrapper {
 	@include susy-breakpoint(900px) {
-	width: 95%;
+		width: 95%;
 	}
 	@include susy-breakpoint(1024px) {
 		width: 95%;
@@ -215,7 +219,6 @@ body {
 	.logo {
 		display: none !important;
 	}
-
 
 	#menuTest {
 		background: white;
@@ -232,26 +235,32 @@ body {
 				align-items: center;
 				padding: 0;
 
-				li {
-					margin: 0;
+				> li {
 					// flex: 0 1 10%;
 					text-align: center;
 					padding: 0;
 					margin: 0 0.25em;
-
-					a {
-						// padding: 0.5em;
+					// display: flex;
+					// height: 64px;
+					// align-items: center;
+					> a {
+						display: flex;
+						height: 64px;
+						align-items: center;
 					}
 
+					&.logoHolder a {
+
+					}
+					// padding: 0.5em;
 					.sub-menu {
 						padding: 0.5em 0.5em 0.5em 0.25em;
-
-
 						// @include susy-breakpoint(1040px) {
 						// 	top: 139%;
 						// }
-
 						li {
+							padding: 0;
+							margin: 0 0.25em;
 							text-align: left;
 						}
 					}
@@ -279,8 +288,9 @@ body {
 
 				a {
 					transition: 0.25s ease;
-					width: 100%;
-					height: 100%;
+					width: 100% !important;
+					height: 100% !important;
+					display: block !important;
 					transform: translateX(-50%);
 					background-image: url("/wp-content/uploads/2017/01/uwa-logo.svg");
 					z-index: 9;
@@ -292,13 +302,11 @@ body {
 					top: 50%;
 					left: 50%;
 					color: #a81d32;
-
 				}
 			}
 		}
 	}
 }
-
 // .logoHolder a {
 // 	width: 70px;
 // 	height: 70px;
@@ -316,6 +324,7 @@ body {
 	overflow: hidden;
 }
 // Priority Nav
+
 .subpagesNav {
 	display: inline-block !important;
 }
@@ -329,6 +338,7 @@ ul.nav__dropdown.priority-nav__dropdown.show {
 	padding-right: 40px;
 	// margin-top: 0;
 	text-align: left;
+
 	a {
 		color: white;
 		text-decoration: none;
@@ -337,7 +347,7 @@ ul.nav__dropdown.priority-nav__dropdown.show {
 
 .nav__dropdown-toggle {
 	// background-image: url(#{$images}/submenu-more-icon.svg);
-	background-image: url(#{$images}/more-options.svg);
+	background-image: url("#{$images}/more-options.svg");
 	height: 30px;
 	width: 30px;
 	background-color: transparent;
@@ -348,10 +358,11 @@ ul.nav__dropdown.priority-nav__dropdown.show {
 
 .priority-nav {
 	// display: flex;
-  justify-content: space-between;
-  align-items: center;
+	justify-content: space-between;
+	align-items: center;
 	text-align: center;
 }
+
 .priority-nav__wrapper {
 	position: static;
 	overflow: hidden;
@@ -360,10 +371,12 @@ ul.nav__dropdown.priority-nav__dropdown.show {
 .priority-nav-has-dropdown {
 	height: 60px;
 	position: relative !important;
+
 	.subpagesNav {
 		float: left;
 	}
 }
+
 .nav__dropdown-wrapper {
 	// position: relative;
 	vertical-align: -webkit-baseline-middle;
@@ -375,19 +388,18 @@ ul.nav__dropdown.priority-nav__dropdown.show {
 	// float: right;
 	margin-right: 15px;
 	padding: 0;
-  margin-top: 13px;
+	margin-top: 13px;
 
 	button {
 		transform: rotate(90deg);
 		position: absolute !important;
-    right: 10px;
-		transition: .15s ease-out;
+		right: 10px;
+		transition: 0.15s ease-out;
 
 		&.is-open {
 			transform: rotate(0deg);
 		}
 	}
-
 	// top: -25px;
 }
 
@@ -397,13 +409,14 @@ ul.nav__dropdown.priority-nav__dropdown.show {
 }
 
 .sub-menu {
-	@include susy-breakpoint(900px) {
-	  top: 140%;
-	}
-	@include susy-breakpoint(1024px) {
-		top: 135%;
-	}
-	@include susy-breakpoint(1260px) {
-		top: 130%
-	}
+	top: 100%;
+	// @include susy-breakpoint(900px) {
+	// 	top: 140%;
+	// }
+	// @include susy-breakpoint(1024px) {
+	// 	top: 135%;
+	// }
+	// @include susy-breakpoint(1260px) {
+	// 	top: 130%;
+	// }
 }

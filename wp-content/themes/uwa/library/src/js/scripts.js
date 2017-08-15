@@ -243,6 +243,7 @@ $('.subpagesNav .page-item-523 a').text('Teacher Connect Scholarship').attr('hre
       e.preventDefault();
 
       $('body').toggleClass('mobileNav--active')
+      $('html').toggleClass('mobileNav--active')
       $('.mobileNav').toggleClass('visible');
       $('.mobileNav__nav').find('a').first().focus();
   });

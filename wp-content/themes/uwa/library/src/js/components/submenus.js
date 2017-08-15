@@ -45,6 +45,16 @@
 				parentListItem = SubmenuButton.parent('.menu-item-has-children'),
 				CurrentSubmenu = SubmenuButton.next('.sub-menu')
 
+		var hasOpenSubmenu = Submenus.filter('[aria-hidden="false"]').length == 1 ? true : false
+		var openingNewSubmenu = CurrentSubmenu.attr('aria-hidden') == 'true' ? true : false
+
+		if ( hasOpenSubmenu && openingNewSubmenu ) {
+			let openSubmenu = Submenus.filter('[aria-hidden="false"]')
+			// openSubmenuButton = openSubmenu.prev('sub-menu__toggle')
+			parentListItem.toggleClass('activeSubmenu')
+			slideSubmenu(openSubmenu)
+		}
+
 		parentListItem.toggleClass('activeSubmenu')
 		slideSubmenu(CurrentSubmenu)
 		escapeListener(CurrentSubmenu, SubmenuButton)
@@ -66,22 +76,38 @@
 	// })
 
 	MainMenu
-		.on('mouseenter focusin', '.sub-menu', function(e) {
+		.on('mouseenter focusin', '.sub-menu', function(event) {
 			var Current = $(this)
 			Current.attr('data-has-focus', 'true');
 		})
-		.on('mouseleave focusout', '.sub-menu', function(e) {
-			var ActiveSubmenu = $(this)
+		.on('mouseleave focusout', '.activeSubmenu', function(event) {
+			var parentListItem = $(this)
+			var activeSubmenu = parentListItem.find('.sub-menu')
+			var parentListItem = activeSubmenu.parent('.menu-item-has-children')
+
+			if (event.type == 'mouseleave') {
+				setTimeout(function() {
+					activeSubmenu.attr('data-has-focus', 'false');
+					parentListItem.toggleClass('activeSubmenu')
+					slideSubmenu(activeSubmenu)
+				}, 200);
+			}
+
 
 			setTimeout(function() {
-				if (ActiveSubmenu.find(':focus').length) {
-					// Still in submenu
+
+				// if (ActiveSubmenu.find(':focus').length || parentListItem.find(':focus').length) {
+				if (parentListItem.find(':focus').length) {
+					// Still in active submenu
+					console.log('still here');
 				} else {
-					ActiveSubmenu.attr('data-has-focus', 'false');
-					slideSubmenu(ActiveSubmenu)
+					console.log('left');
+					activeSubmenu.attr('data-has-focus', 'false');
+					parentListItem.toggleClass('activeSubmenu')
+					slideSubmenu(activeSubmenu)
 
 				}
-			}, 100);
+			}, 200);
 		})
 
 })(jQuery)
