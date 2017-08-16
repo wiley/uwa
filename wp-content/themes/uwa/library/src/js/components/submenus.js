@@ -50,7 +50,7 @@
 
 		if ( hasOpenSubmenu && openingNewSubmenu ) {
 			let openSubmenu = Submenus.filter('[aria-hidden="false"]')
-			// openSubmenuButton = openSubmenu.prev('sub-menu__toggle')
+			openSubmenuButton = openSubmenu.prev('sub-menu__toggle')
 			parentListItem.toggleClass('activeSubmenu')
 			slideSubmenu(openSubmenu)
 		}
@@ -77,6 +77,7 @@
 
 	MainMenu
 		.on('mouseenter focusin', '.sub-menu', function(event) {
+			console.log($(window).width())
 			var Current = $(this)
 			Current.attr('data-has-focus', 'true');
 		})
@@ -85,29 +86,35 @@
 			var activeSubmenu = parentListItem.find('.sub-menu')
 			var parentListItem = activeSubmenu.parent('.menu-item-has-children')
 
-			if (event.type == 'mouseleave') {
+			var currentWidth = event.view.outerWidth
+			console.log(currentWidth);
+			if (currentWidth > 990) {
+
+				if (event.type == 'mouseleave') {
+					setTimeout(function() {
+						activeSubmenu.attr('data-has-focus', 'false');
+						parentListItem.toggleClass('activeSubmenu')
+						slideSubmenu(activeSubmenu)
+					}, 200);
+				}
+
+
 				setTimeout(function() {
-					activeSubmenu.attr('data-has-focus', 'false');
-					parentListItem.toggleClass('activeSubmenu')
-					slideSubmenu(activeSubmenu)
+
+					// if (ActiveSubmenu.find(':focus').length || parentListItem.find(':focus').length) {
+					if (parentListItem.find(':focus').length) {
+						// Still in active submenu
+						// console.log('still here');
+					} else {
+						// console.log('left');
+
+						activeSubmenu.attr('data-has-focus', 'false');
+						parentListItem.toggleClass('activeSubmenu')
+						slideSubmenu(activeSubmenu)
+
+					}
 				}, 200);
 			}
-
-
-			setTimeout(function() {
-
-				// if (ActiveSubmenu.find(':focus').length || parentListItem.find(':focus').length) {
-				if (parentListItem.find(':focus').length) {
-					// Still in active submenu
-					console.log('still here');
-				} else {
-					console.log('left');
-					activeSubmenu.attr('data-has-focus', 'false');
-					parentListItem.toggleClass('activeSubmenu')
-					slideSubmenu(activeSubmenu)
-
-				}
-			}, 200);
 		})
 
 })(jQuery)

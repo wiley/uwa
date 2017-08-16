@@ -165,14 +165,21 @@ body {
 }
 
 .degrees-menu {
-	transition: none;
-	padding: 1em !important;
+
+	padding: 1em;
 
 	&__submenu {
 		width: 46%;
 		display: inline-block;
 		vertical-align: top;
 		margin: 1%;
+
+		.label {
+			padding-top: 1em;
+		}
+		li:last-of-type {
+			padding-bottom: 1em !important;
+		}
 	}
 }
 
@@ -257,7 +264,7 @@ body {
 					}
 					// padding: 0.5em;
 					.sub-menu {
-						padding: 0.5em 0.5em 0.5em 0.25em;
+						padding: 0 0.5em 0 0.25em;
 						// @include susy-breakpoint(1040px) {
 						// 	top: 139%;
 						// }
@@ -265,6 +272,13 @@ body {
 							padding: 0;
 							margin: 0 0.25em;
 							text-align: left;
+
+							&:first-of-type {
+								padding-top: .5em;
+							}
+							&:last-of-type {
+								padding-bottom: .5em;
+							}
 						}
 					}
 				}
