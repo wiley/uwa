@@ -46,14 +46,6 @@
 									?>
 					          <li><a href="<?php echo esc_url( $url ); ?>"><?php echo $title; ?></a></li>
 								<?php endforeach; ?>
-								<!-- <li><a href="">Admissions</a></li>
-								<li><a href="">Tuition & Financial Aid</a></li>
-								<li><a href="">About</a></li>
-								<li><a href="">Current Students</a></li>
-								<li><a href="">Class Access</a></li>
-								<li><a href="">UWA.edu</a></li>
-								<li><a href="">Apply Now</a></li>
-								<li><a href="">Request Info</a></li> -->
 							</ul>
 						</div>
 						<div class="degrees flexItem">
@@ -240,10 +232,25 @@ if ($('#mix-container').length) {
   var mixer = mixitup(Container, {
     controls: {
       enable: false // we won't be needing these
-    }
+    },
+		callbacks: {
+			onMixStart: function(state, futureState) {
+			},
+			onMixEnd: function(mixEvent) {
+				if (mixEvent.totalShow == 0) {
+					// var message = $("<p></p>").text("No programs match this criteria");
+					$('body').prepend("<div id='message'>No programs match this criteria</div>")
+					setTimeout(function() {
+					  $('#message').fadeOut();
+					}, 2000);
+				}
+				//
+				Container
+					.find('.card:visible:first')
+					.focus();
+			}
+		}
   });
-
-
 
 
 	var buttonFilter = {

@@ -12,6 +12,44 @@
 		justify-content: center;
 		flex-flow: row wrap;
 		padding: 0;
+		position: relative;
+	}
+
+	#message {
+		// align-self: normal;
+		// margin-left: auto;
+		// display: block;
+		// position: absolute;
+		// text-align: center;
+		// width: 100%;
+		// margin-right: auto;
+		// top: 50%;
+		// height: 100%;
+		// display: flex;
+		// justify-content: center;
+		// align-items: center;
+		// transform: translateY(-50%);
+		position: fixed;
+		// width: 100vw;
+		// height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-weight: 700;
+		font-size: 1.1em;
+		align-items: center;
+		font-weight: 700;
+		font-size: 1.1em;
+		top: 50%;
+		background: white;
+		height: 60px;
+		width: 96vw;
+		z-index: 9999;
+		border: 2px solid #cecece;
+		max-width: 400px;
+		transform: translate3d(-50%, -50%, 0);
+		left: 50%;
+		// display: none;
 	}
 
 	.toolbar-filter {
@@ -56,9 +94,8 @@
 		width: 485px !important;
 		max-width: 100%;
 		max-width: 450px;
-    flex: 1 1 300px !important;
+		flex: 1 1 300px !important;
 		// transition: 0.25s ease;
-
 		&:focus,
 		&:hover {
 			color: white;
@@ -110,12 +147,10 @@
 				}
 
 				button {
-
 					padding: 0.5em;
 					text-transform: capitalize;
 					font-weight: 500;
 					font-size: 0.95em;
-
 					@include susy-breakpoint(800px) {
 						flex: 1 1 45%;
 					}
@@ -200,7 +235,6 @@
 }
 // WORKING ON NEW MOBILE FILTERS
 @media (max-width: 799px) {
-
 	.post-type-archive-degrees {
 		main .controlsWrapper {
 			.toolbar-filter__label {
@@ -208,17 +242,16 @@
 				text-align: center;
 				margin: 1em 0 0.5em;
 				border: 2px solid gray;
-				padding: 0.5em 0 0.5em;
+				padding: 0.5em 0;
 				cursor: pointer;
 
-				&.activeFilter  {
+				&.activeFilter {
 					background: #4A4A49;
 					color: white;
-					transition: .2s ease;
+					transition: 0.2s ease;
 					// max-height: 100vh;
-
 					svg {
-    				background: white;
+						background: white;
 						transform: rotate(-90deg);
 
 						g#Program {
@@ -229,12 +262,12 @@
 
 				svg {
 					width: 20px;
-			    height: 20px;
-			    vertical-align: middle;
-			    padding: 3px;
-			    margin-left: 3px;
-			    border-radius: 50%;
-			    transition: all .3s ease;
+					height: 20px;
+					vertical-align: middle;
+					padding: 3px;
+					margin-left: 3px;
+					border-radius: 50%;
+					transition: all 0.3s ease;
 					display: block;
 					margin: 3px auto 0;
 				}
@@ -256,8 +289,9 @@
 		}
 
 		#Reset {
-			 bottom: -15px;
+			bottom: -15px;
 		}
+
 		fieldset {
 			width: 47% !important;
 			margin: 0;
@@ -270,8 +304,6 @@
 
 				&.activeFilter {
 					transform: translateX(0%);
-
-
 				}
 			}
 
@@ -293,15 +325,14 @@
 				width: 75%;
 				padding: 1em 1em 1.25em;
 				z-index: 999;
-	    	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+				box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 
 				&.activeFilter {
 					transform: translateX(0%);
 				}
 
 				button {
-					font-size: .85em !important;
-
+					font-size: 0.85em !important;
 					flex: 1 1 100% !important;
 				}
 			}
