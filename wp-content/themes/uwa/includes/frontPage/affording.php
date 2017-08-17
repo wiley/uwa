@@ -44,7 +44,7 @@
         <div class="card__info">
           <h2>Scholarships</h2>
           <p>Save thousands of dollars with UWA-specific scholarships: Military Connect, Teacher Connect and Business Connect.</p>
-          <a href="/scholarships" class="btn__hollow">Scholarship Info</a>
+          <a href="/my/teacherconnect/" class="btn__hollow">Scholarship Info</a>
         </div>
       </div>
       <div class="fastFact">

@@ -2,7 +2,9 @@
 	background: $red;
 	color: white;
 	padding: 1em;
-
+	.telephoneLink {
+		display: block;
+	}
 	a {
 		color: white;
 		text-decoration: none;

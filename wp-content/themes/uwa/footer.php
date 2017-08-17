@@ -32,7 +32,10 @@
 							<?php include('library/images/logo-footer.svg'); ?>
 							<p class="footer__infoStatement">Your career goals are within reach with an online degree from the University of West Alabama. Experience a personalized education designed to help you achieve your dreams, on your schedule and at an affordable cost.</p>
 							<p class="footer__copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
-							<?php the_field('address', 'option') ?>
+							<!-- <?php the_field('address', 'option') ?> -->
+							<p>Livingston, Alabama 35470</p>
+							<a class="telephoneLink" href="tel:8449003037">(844) 900-3037</a>
+
 							<a class="footer__privacy" href="/privacy-policy/">Privacy Policy</a>
 						</div>
 
@@ -113,6 +116,17 @@
 										 'depth' => 0			                               // limit the depth of the nav
 					)); ?>
 
+				</nav>
+				<hr class="navSplit">
+				<nav class="mobileNav__nav secondary-nav__wrapper">
+					<?php wp_nav_menu(array(
+										 'container' => false,                           // remove nav container
+										 'container_class' => 'cf',         // class of container (should you choose to use it)
+										 'menu' => __( 'Secondary Menu', 'bonestheme' ),  // nav name
+										 'menu_class' => 'nav secondary-nav cf',               // adding custom nav class
+										 'theme_location' => 'secondary',                 // where it's located in the theme
+										 'depth' => 0			                               // limit the depth of the nav
+					)); ?>
 				</nav>
 			</div>
 			<!-- <button id="answerCloser" name="button"></button> -->

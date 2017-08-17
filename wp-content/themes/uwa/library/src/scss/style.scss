@@ -117,7 +117,6 @@ body {
 
 .sub-menu__toggle {
 	right: 1.5em;
-
 	background: url("/wp-content/themes/uwa/library/images/arrow-down-red.svg");
 	background-repeat: no-repeat;
 	background-position: center;
@@ -126,14 +125,13 @@ body {
 	top: 25px;
 	transform: translateY(-50%);
 	vertical-align: initial;
-
 	// height: 20px;
 	transition: 0.25s ease;
 	border: 2px solid transparent;
-
 	background-size: 25px 25px !important;
 	width: 50px;
 	height: 50px;
+
 	&:focus,
 	&:hover {
 		border: 2px solid rgba(71, 71, 71, 0.78);
@@ -165,7 +163,6 @@ body {
 }
 
 .degrees-menu {
-
 	padding: 1em;
 
 	&__submenu {
@@ -177,6 +174,7 @@ body {
 		.label {
 			padding-top: 1em;
 		}
+
 		li:last-of-type {
 			padding-bottom: 1em !important;
 		}
@@ -259,9 +257,7 @@ body {
 						align-items: center;
 					}
 
-					&.logoHolder a {
-
-					}
+					&.logoHolder a {}
 					// padding: 0.5em;
 					.sub-menu {
 						padding: 0 0.5em 0 0.25em;
@@ -274,10 +270,11 @@ body {
 							text-align: left;
 
 							&:first-of-type {
-								padding-top: .5em;
+								padding-top: 0.5em;
 							}
+
 							&:last-of-type {
-								padding-bottom: .5em;
+								padding-bottom: 0.5em;
 							}
 						}
 					}
@@ -436,4 +433,16 @@ ul.nav__dropdown.priority-nav__dropdown.show {
 	// @include susy-breakpoint(1260px) {
 	// 	top: 130%;
 	// }
+}
+
+nav.mobileNav__nav.secondary-nav__wrapper {
+	font-size: 0.9em;
+}
+
+.navSplit {
+	height: 2px;
+	background: rgba(81, 9, 21, 0.9);
+	margin-right: 20px;
+	margin-left: 20px;
+	border: none;
 }
