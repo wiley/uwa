@@ -60,28 +60,54 @@
 	}
 }
 
-#megamenu {
-	.allLink {
-		font-weight: 700;
-		font-style: italic;
-		font-size: 1em;
-		color: white;
-		text-align: right;
-    border-bottom: 2px solid white;
-    display: inline-block;
-    float: right;
-    bottom: 10px;
-    position: relative;
-    right: 10px;
-		// text-decoration: underline;
-	}
-}
+// #megamenu {
+// 	.allLink {
+// 		font-weight: 700;
+// 		font-style: italic;
+// 		font-size: 1em;
+// 		color: white;
+// 		text-align: right;
+//     border-bottom: 2px solid white;
+//     display: inline-block;
+//     float: right;
+//     bottom: 10px;
+//     position: relative;
+//     right: 10px;
+// 		// text-decoration: underline;
+// 	}
+// }
 
-.allLink {
+#allLink {
 	font-weight: 700;
 	font-style: italic;
 	font-size: 1em;
 	color: white !important;
 	text-align: right;
 	// text-decoration: underline;
+
+
+
+	font-weight: 700;
+    font-style: italic;
+    font-size: 1em;
+    color: white;
+    text-align: right;
+    border-bottom: 2px solid white;
+    display: block;
+    // float: right;
+    bottom: 10px;
+    position: relative;
+    right: 10px;
+    float: none;
+    text-align: left;
+
+    width: 155px;
+    padding-left: 0;
+    margin-left: 15px;
+		padding-left: 0 !important;
+    margin-left: 15px;
+    margin-top: 1em;
+		&__wrapper {
+			padding-bottom: 0 !important;
+		}
 }
