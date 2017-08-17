@@ -16,19 +16,6 @@
 	}
 
 	#message {
-		// align-self: normal;
-		// margin-left: auto;
-		// display: block;
-		// position: absolute;
-		// text-align: center;
-		// width: 100%;
-		// margin-right: auto;
-		// top: 50%;
-		// height: 100%;
-		// display: flex;
-		// justify-content: center;
-		// align-items: center;
-		// transform: translateY(-50%);
 		position: fixed;
 		// width: 100vw;
 		// height: 100vh;
@@ -96,6 +83,10 @@
 		max-width: 450px;
 		flex: 1 1 300px !important;
 		// transition: 0.25s ease;
+		overflow: hidden;
+		height: 280px;
+		max-width: 400px;
+
 		&:focus,
 		&:hover {
 			color: white;
@@ -212,6 +203,17 @@
 			transition: 0.2s ease;
 			align-self: flex-end;
 			margin-left: auto;
+			color: #C8BF79;
+			font-weight: 700;
+
+			svg {
+				vertical-align: middle;
+				padding: 2px;
+				fill: #C8BF79;
+				width: 25px;
+				height: 25px;
+				padding: 5px;
+			}
 		}
 
 		&:focus,
@@ -225,9 +227,9 @@
 			& .card__info {
 				// font-size: 115%;
 				// transition: 0.2s ease;
-				font-size: 110%;
-				transition: 0.15s ease-in-out;
-				font-weight: 700;
+				// font-size: 110%;
+				// transition: 0.15s ease-in-out;
+				// font-weight: 700;
 				// text-decoration: underline;
 			}
 		}
@@ -338,8 +340,58 @@
 			}
 		}
 	}
+
+
 }
 
 .toolbar-filter__label svg {
 	display: none;
+}
+
+
+.card__wrapper {
+	position: absolute;
+	bottom: 0;
+	width: 200%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	top: 0;
+	transition: all 0.3s ease;
+	text-align: left;
+}
+
+.cardLink__cta-background {
+	position: absolute;
+	right: 0;
+	bottom: -4px;
+	background: #C8BF79;
+	width: 200px;
+	height: 35px;
+	transition: .25s ease;
+	transform: translateX(115%);
+}
+
+.mix.card {
+	// &:focus,
+	&:hover {
+		& .card__title {
+			// font-size: 1.6em;
+			// text-decoration: underline;
+			// font-weight: 700;
+		}
+
+		& .card__info {
+
+			color: black !important;
+			z-index: 9999;
+			svg {
+				fill: black;
+			}
+		}
+
+		.cardLink__cta-background  {
+			transform: translateX(0);
+		}
+	}
 }

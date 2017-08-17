@@ -105,19 +105,24 @@
 		</div>
 
 			<div class="mix-containerWrapper">
-<!-- <div class="wrap cf"> -->
+
 				<ul id="mix-container" class="container noList cf">
 					<?php foreach ($allDegrees as $post): ?>
 						<?php setup_postdata($post); ?>
 							<?php $terms = get_the_terms( $post->ID, 'degree_vertical'); ?>
 
+							<?php if (get_field('program_subtitle', $post->ID)): ?>
+						    <?php $text = get_field('program_subtitle', $post->ID); ?>
+						  <?php endif; ?>
+
 							<a style="background-image: url(<?php the_field('program_image'); ?>);" class="mix card <?php echo custom_taxonomies_terms_slugs(); ?>" href="<?php the_permalink(); ?>">
 								<div class="card__infoWrapper">
 									<?php if (!empty( $terms )): ?>
 									<?php endif; ?>
-									<h4 class="card__title"><?php the_title(); ?></h4>
+									<h3 class="card__title"><?php the_title(); ?></h3>
 
-									<div class="card__info">More Information &gt;&gt;</div>
+									<div class="card__info">More Information <?php include('library/images/arrow.svg'); ?></div>
+									<div class="cardLink__cta-background"></div>
 								</div>
 							</a>
 					<?php endforeach;?>
