@@ -26,7 +26,7 @@ $degreeTypes = get_terms([
         </div>
         <h2 class="intro__headline">Programs Designed for Your Budget and Schedule</h2>
         <p class="intro__text">Reach your career goals in psychology or counseling with an online degree from the University of West Alabama. Choose from programs in fields such as experimental psychology, clinical mental health counseling, family counseling and more, all in a flexible online environment.</p>
-        <a href="/online-degrees" class="intro__link">Browse All Degrees <?php include('library/images/arrow.svg'); ?></a>
+        <div class="intro__link"></div>
       </div>
 
 

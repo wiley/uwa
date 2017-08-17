@@ -27,7 +27,7 @@ $degreeTypes = get_terms([
         </div>
         <h2 class="intro__headline">Enhance Your Impact on Students’ Lives</h2>
         <p class="intro__text">Achieve your career goals with an online education degree designed for your budget and your schedule at the University of West Alabama. You’ll develop the skills and knowledge needed for advancement inside or outside the classroom, in a convenient online format from one of Alabama’s oldest and most prestigious universities.</p>
-        <a href="/online-degrees" class="intro__link">Browse All Degrees <?php include('library/images/arrow.svg'); ?></a>
+        <div class="intro__link"></div>
       </div>
 
 

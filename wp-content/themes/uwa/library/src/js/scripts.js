@@ -17,6 +17,9 @@ import './components/filters'
 
 
 jQuery(document).ready(function($) {
+
+  $('form.requestinfo .contact-info').find('.field_half').addClass('fullMobile')
+
   function desktopWidthChecker() {
     var viewPortWidth = $( window ).width();
     if (viewPortWidth >= 768) {

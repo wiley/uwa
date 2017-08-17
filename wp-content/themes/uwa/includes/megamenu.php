@@ -64,6 +64,9 @@
           ?>
           <li><a href="<?php echo esc_url( $url ); ?>"><?php echo $name; ?></a></li>
         <?php endforeach; ?>
+          <!-- <li><a class="allLink" href="/online-degrees">View All Degrees</a></li> -->
       </ul>
+      <a class="allLink" href="/online-degrees">View All Degrees</a>
     </ul>
+
 </script>
