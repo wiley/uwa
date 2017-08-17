@@ -31,12 +31,18 @@ LAYOUT & GRID STYLES
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-attachment: fixed;
 	background-position: top;
-	background-size: initial;
+	background-size: cover;
 
+
+	@include susy-breakpoint(768px) {
+		// min-height: 400px;
+			background-attachment: fixed;
+		background-size: cover;
+	}
 	@include susy-breakpoint($bp-med) {
 		// min-height: 400px;
+
 		background-size: cover;
 	}
 

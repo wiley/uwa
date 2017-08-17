@@ -248,7 +248,7 @@ body {
 					text-align: center;
 					padding: 0;
 					margin: 0 0.25em;
-						padding-right: 1em;
+					padding-right: 1em;
 					// display: flex;
 					// height: 64px;
 					// align-items: center;
@@ -438,7 +438,8 @@ ul.nav__dropdown.priority-nav__dropdown.show {
 
 nav.mobileNav__nav.secondary-nav__wrapper {
 	font-size: 0.9em;
-    padding-bottom: 5em;
+	padding-bottom: 5em;
+
 	ul {
 		padding-bottom: 2em;
 	}
@@ -454,11 +455,12 @@ nav.mobileNav__nav.secondary-nav__wrapper {
 
 body.mobileNav--active {
 	position: fixed;
-			left: 0;
-			top: 0;
-			bottom: 0;
-			right: 0;
-			overflow: hidden;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	overflow: hidden;
+
 	.content {
 		overflow: hidden;
 	}

@@ -144,7 +144,7 @@ $('.subpagesNav .page-item-523 a').text('Teacher Connect Scholarship').attr('hre
       }
 
       questionLinks.on('click', function(clickEvent) {
-        clickEvent.preventDefault();
+
         questionLinks.removeClass('active')
         answersContainer.find('.active').removeClass('active')
 
@@ -157,6 +157,7 @@ $('.subpagesNav .page-item-523 a').text('Teacher Connect Scholarship').attr('hre
         newAnswer.addClass('active')
         $(this).addClass('active')
         noScrollElement.addClass('activeModal')
+          clickEvent.preventDefault();
         // answersContainer
         //   .find("a[title = ]")
         //   .remove();

@@ -169,8 +169,16 @@ body.activeModal .waiting {
 }
 
 body.page-id-309 {
-	position: fixed;
-	overflow-y: scroll;
+	position: absolute;
+	overflow-y: auto;
 	height: 100%;
 	-webkit-overflow-scrolling: touch;
+
+	&.activeModal {
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		overflow: hidden;
+	}
 }
