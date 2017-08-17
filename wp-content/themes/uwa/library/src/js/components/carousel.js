@@ -18,6 +18,7 @@ import 'owl.carousel'
 
 (function($) {
 
+
 	function bindCarouselToElement(Element) {
 		Element.owlCarousel({
 			// loop: true,
@@ -40,7 +41,8 @@ import 'owl.carousel'
 			},
 			onInitialized: owlSetup,
 			onChange: owlChange,
-			onChanged: owlChanged
+			onChanged: owlChanged,
+			onResized: owlResized
 		});
 
 	}
@@ -100,17 +102,27 @@ import 'owl.carousel'
 	}
 
 	function owlChanged(event) {
-		// var items = event.item.count; // Number of items
-		// var item = event.item.index; // Position of the current item
-		// console.log(event);
-		// console.log(items);
-		// console.log(item);
+	}
+
+	function owlResized(event) {
+		const Carousel = $(event.target)
+		const Items = Carousel.find('.owl-item')
+		const ActiveItems = Carousel.find('.owl-item.active')
+		const Controls = Carousel.find('.controls')
+
+		if (Items.length == 3 && ActiveItems.length < 3 ) {
+			Controls.removeClass('hidden')
+		}
+
+		if (Items.length == 3 && ActiveItems.length == 3 ) {
+			Controls.addClass('hidden')
+		}
 	}
 
 	function owlSetup(event) {
 		// Go to the next item
 		const Carousel = $(event.target)
-		console.log(Carousel);
+
 		const ControlsHTML = `<div class="controls">
       <span class="owl-prev customPrevBtn" role="button" aria-label="Show Previous Slide">Prev</span>
       <span class="owl-next customNextBtn" role="button" aria-label="Show Next Slide">Next</span>
@@ -124,17 +136,26 @@ import 'owl.carousel'
 		// 	'aria-atomic': 'false'
 		// })
 
-		const Items = $('.owl-item')
+		const Items = Carousel.find('.owl-item')
 		const ClonedItems = Carousel.find('.owl-item.cloned')
 		const ActiveItems = Carousel.find('.owl-item.active')
 		var FirstActiveItem;
 		var LastActiveItem;
 		const ClonedLinks = ClonedItems.find('a')
+		const Controls = Carousel.find('.controls')
 		const PrevBtn = Carousel.find('.owl-prev')
 		const NextBtn = Carousel.find('.owl-next')
 
 
 
+
+		if (Items.length == 3 && ActiveItems.length < 3 ) {
+			Controls.removeClass('hidden')
+		}
+
+		if (Items.length == 3 && ActiveItems.length == 3 ) {
+			Controls.addClass('hidden')
+		}
 		// console.log(ActiveItems);
 		// console.log(LastActiveItem);
 		ClonedItems.attr('aria-hidden', 'true')
