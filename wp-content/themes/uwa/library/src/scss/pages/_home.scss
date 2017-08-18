@@ -670,7 +670,7 @@ background-size: 1180px;
 			@include susy-breakpoint($bp-med) {
 				img {
 					height: 25vw;
-					max-height: 120px;
+    			max-height: 80px;
 				}
 			}
 		}
