@@ -101,7 +101,7 @@
 			  </fieldset>
 				<div id="holder">
 					<div id="activeFiltersHolder"></div>
-					<button id="Reset" class="btn-red">X</button>
+					<button id="Reset" class="btn-red">Clear</button>
 				</div>
 
 			</form>
