@@ -99,8 +99,11 @@
 							<?php endforeach; ?>
 					</div>
 			  </fieldset>
+				<div id="holder">
+					<div id="activeFiltersHolder"></div>
+					<button id="Reset" class="btn-red">X</button>
+				</div>
 
-			  <button id="Reset" class="btn-red">Clear Filters</button>
 			</form>
 		</div>
 

@@ -1,4 +1,34 @@
 .post-type-archive-degrees {
+	#holder {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		flex-flow: row wrap;
+		justify-content: center;
+		// display: none;
+	}
+
+	#activeFiltersHolder {
+		width: 75%;
+		width: 70%;
+		display: inline-block;
+		font-weight: 600;
+	}
+
+	#Reset {
+		width: 15%;
+		margin: 0;
+		bottom: initial;
+		margin: 0;
+		width: 100px;
+		bottom: initial;
+		margin: 0;
+		display: inline-block;
+		vertical-align: top;
+		float: right;
+		width: 60px;
+	}
+
 	main {
 		padding: 6em 0;
 	}
@@ -149,10 +179,12 @@
 			}
 
 			#Reset {
-				display: block;
-				width: 85%;
-				margin-left: auto;
-				margin-right: auto;
+				@include susy-breakpoint(768px) {
+					display: block;
+					width: 85%;
+					margin-left: auto;
+					margin-right: auto;
+				}
 			}
 		}
 
@@ -290,10 +322,6 @@
 			}
 		}
 
-		#Reset {
-			bottom: -15px;
-		}
-
 		fieldset {
 			width: 47% !important;
 			margin: 0;
@@ -340,14 +368,11 @@
 			}
 		}
 	}
-
-
 }
 
 .toolbar-filter__label svg {
 	display: none;
 }
-
 
 .card__wrapper {
 	position: absolute;
@@ -368,7 +393,7 @@
 	background: #C8BF79;
 	width: 200px;
 	height: 35px;
-	transition: .25s ease;
+	transition: 0.25s ease;
 	transform: translateX(115%);
 }
 
@@ -382,15 +407,15 @@
 		}
 
 		& .card__info {
-
 			color: black !important;
 			z-index: 9999;
+
 			svg {
 				fill: black;
 			}
 		}
 
-		.cardLink__cta-background  {
+		.cardLink__cta-background {
 			transform: translateX(0);
 		}
 	}

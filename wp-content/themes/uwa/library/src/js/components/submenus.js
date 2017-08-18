@@ -82,18 +82,6 @@
 
 	Buttons.on('click', submenuToggleHandler)
 
-// NOTE: NOT WORKING PROPERLY YET
-	// Buttons.on('focusout', function(event) {
-	// 	var ariaExpanded = $(this).attr('aria-expanded')
-	// 	console.log(ariaExpanded);
-	//
-	// 	if ( ariaExpanded === true ) {
-	// 		var ActiveSubmenu = $(this).next('.sub-menu')
-	// 		slideSubmenu(ActiveSubmenu)
-	// 	} else {
-	// 		console.log('Submenu was not open when Button lost focus');
-	// 	}
-	// })
 
 	MainMenu
 		.on('mouseenter focusin', '.sub-menu', function(event) {
@@ -107,7 +95,7 @@
 			var parentListItem = activeSubmenu.parent('.menu-item-has-children')
 
 			var currentWidth = event.view.outerWidth
-			console.log(currentWidth);
+
 			if (currentWidth > 990) {
 
 				if (event.type == 'mouseleave') {

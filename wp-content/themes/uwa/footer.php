@@ -258,10 +258,11 @@ if ($('#mix-container').length) {
 					  $('#message').fadeOut();
 					}, 2000);
 				}
-				//
-				Container
-					.find('.card:visible:first')
-					.focus();
+				if ($(window).width() > 767) {
+					Container
+						.find('.card:visible:first')
+						.focus();
+				}
 			}
 		}
   });

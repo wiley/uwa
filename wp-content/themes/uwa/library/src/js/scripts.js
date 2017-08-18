@@ -11,6 +11,7 @@ import './components/submenus'
 import './components/carousel'
 import './components/filters'
 import './components/tables'
+import './components/faq'
 
 
 // import 'imports?jQuery=jquery!owl.carousel';
@@ -45,62 +46,7 @@ jQuery(document).ready(function($) {
   }
 
 $('.subpagesNav .page-item-523 a').text('Teacher Connect Scholarship').attr('href', 'http://onlineuwa.staging.wpengine.com/my/teacherconnect/');
-    (function () {
 
-      const ButtonHTML = `<button id="answerCloser" name="button"></button>`
-      $('.answers').append(ButtonHTML)
-
-      if ( $('.answers').length && desktopWidthChecker()) {
-          // grab the initial top offset of the navheaderigation
-
-          var stickyElement = $('.answers')
-          var stickyElementOffsetTop = stickyElement.offset().top;
-          var containerWidth = $('.faqWrapper').width()
-
-          var width = containerWidth * .64
-          // var width = stickyElement.width() + 30
-
-
-          // the function that decides weather the navigation bar should have "fixed" css position or not
-          function makeStickyElementOnScroll(stickyOffset) {
-              console.log('sticky ran')
-              var scroll_top = $(window).scrollTop(); // the current vertical position from the top
-              // console.log(scroll_top);
-
-              // if user scrolled more than the navigation, change its position to fixed to stick to top, otherwise change it back to relative
-              if (scroll_top > stickyOffset) {
-                  stickyElement.css("width", width);
-                  stickyElement.addClass('fixed');
-                  // $('#header').css("margin-top", stickyElement.height());
-              } else {
-                  stickyElement.removeClass('fixed');
-                  // $('#header').css("margin-top", 0);
-                  // stickyElement.css("width", '48%');
-              }
-          };
-
-          // run the function on load
-          makeStickyElementOnScroll(stickyElementOffsetTop);
-
-          // and run it again every time you scroll
-          $('body').on('scroll', function() {
-
-              makeStickyElementOnScroll(stickyElementOffsetTop);
-          });
-
-          $('body').on('resize', function() {
-              if ( stickyElement.hasClass('fixed') ) {
-                  stickyElement.removeClass('fixed');
-              }
-              if (!desktopWidthChecker()) {
-                // stickyElement.css("width", '64%');
-              }
-              stickyElementOffsetTop = stickyElement.offset().top;
-              // width = stickyElement.width() + 30
-              makeStickyElementOnScroll(stickyElementOffsetTop);
-          });
-      }
-    })();
 
   // COURSE DETAILS ACCORDION
   (function () {
@@ -129,57 +75,7 @@ $('.subpagesNav .page-item-523 a').text('Teacher Connect Scholarship').attr('hre
     });
 
 
-    // FAQ
-    (function() {
-      var noScrollElement = $('body')
-      var questionsContainer = $('.questions')
-      var questionLinks = questionsContainer.find('a')
-      var answersContainer = $('.answers')
-      var closeAnswerButton = $('#answerCloser')
-      var questionHolder = $('#questionHolder')
 
-      function updateQuestion(text) {
-        questionHolder.text(text)
-      }
-
-      if (desktopWidthChecker()) {
-        questionLinks.first().addClass('active')
-        updateQuestion( questionLinks.first().text() )
-        answersContainer.find('[data-id]').first().addClass('active')
-      }
-
-      questionLinks.on('click', function(clickEvent) {
-        clickEvent.preventDefault();
-        questionLinks.removeClass('active')
-        answersContainer.find('.active').removeClass('active')
-
-
-        var currentID = $(this).attr('href')
-        var currentTitle = currentID.replace("#","")
-
-        updateQuestion( $(this).text() )
-
-        var newAnswer = $('[data-id = "' + currentTitle + '"]')
-
-        answersContainer.addClass('active')
-        newAnswer.addClass('active')
-        $(this).addClass('active')
-        noScrollElement.addClass('activeModal')
-        // answersContainer
-        //   .find("a[title = ]")
-        //   .remove();
-      })
-
-      closeAnswerButton.on('click', function(clickEvent) {
-        clickEvent.preventDefault();
-        answersContainer.find('.active').removeClass('active')
-        questionLinks.removeClass('active')
-        answersContainer.removeClass('active')
-          noScrollElement.removeClass('activeModal')
-      })
-
-      // questionsContainer.on('click', handleContentView)
-    })()
 
     // Pullquote functionality so the content is not repeated
    $(function() {

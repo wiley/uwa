@@ -77,9 +77,16 @@
 		&.fixed {
 			position: fixed;
 			top: 0;
+			bottom: 0;
 			width: calc(1200px * .64);
 			padding-left: 25px;
 			padding-top: 5px;
+		}
+
+		&.absolute {
+			position: absolute;
+			top: initial;
+			bottom: 50px;
 		}
 	}
 }
@@ -160,6 +167,8 @@
 			transition-delay: 0.25s;
 		}
 	}
+
+
 }
 
 main button#answerCloser {
@@ -171,13 +180,12 @@ body.activeModal .waiting {
 }
 
 body.page-id-309 {
-	position: absolute;
-	overflow-y: auto;
-	height: 100%;
-	-webkit-overflow-scrolling: touch;
-
-	&.activeModal {
-		@media (max-width: 767px) {
+	@media (max-width: 767px) {
+		position: absolute;
+		overflow-y: auto;
+		height: 100%;
+		-webkit-overflow-scrolling: touch;
+			&.activeModal {
 			left: 0;
 			top: 0;
 			bottom: 0;
