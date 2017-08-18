@@ -6,6 +6,8 @@
 	const ButtonHTML = `<button class="sub-menu__toggle"></button>`
 	const Submenus = MenuItemsWithChildren.children('.sub-menu')
 	const lastLinks = Submenus.find('a:last')
+	var closeSubmenuTimer;
+
 
 	MenuLinksWithChildren.after(ButtonHTML)
 	const Buttons = $('.sub-menu__toggle')
@@ -40,23 +42,41 @@
 		})
 	}
 
+	function openSubmenu(CurrentSubmenu) {
+		CurrentSubmenu.slideDown(350, 'swing', function() {
+			toggleSubmenuState(CurrentSubmenu)
+		})
+	}
+
+	function closeSubmenu(CurrentSubmenu) {
+		CurrentSubmenu.slideUp(350, 'swing', function() {
+			toggleSubmenuState(CurrentSubmenu)
+		})
+	}
+
 	function submenuToggleHandler() {
 		var SubmenuButton = $(this),
 				parentListItem = SubmenuButton.parent('.menu-item-has-children'),
 				CurrentSubmenu = SubmenuButton.next('.sub-menu')
 
+
 		var hasOpenSubmenu = Submenus.filter('[aria-hidden="false"]').length == 1 ? true : false
 		var openingNewSubmenu = CurrentSubmenu.attr('aria-hidden') == 'true' ? true : false
 
+		if ( hasOpenSubmenu && !openingNewSubmenu ) {
+			console.log('CLOSE HERE!')
+			closeSubmenu(CurrentSubmenu)
+			return
+		}
 		if ( hasOpenSubmenu && openingNewSubmenu ) {
 			let openSubmenu = Submenus.filter('[aria-hidden="false"]')
 			openSubmenuButton = openSubmenu.prev('sub-menu__toggle')
-			parentListItem.toggleClass('activeSubmenu')
-			slideSubmenu(openSubmenu)
+			parentListItem.removeClass('activeSubmenu')
+			closeSubmenu(openSubmenu)
 		}
 
-		parentListItem.toggleClass('activeSubmenu')
-		slideSubmenu(CurrentSubmenu)
+		parentListItem.addClass('activeSubmenu')
+		openSubmenu(CurrentSubmenu)
 		escapeListener(CurrentSubmenu, SubmenuButton)
 	}
 
@@ -77,7 +97,7 @@
 
 	MainMenu
 		.on('mouseenter focusin', '.sub-menu', function(event) {
-			console.log($(window).width())
+			clearTimeout(closeSubmenuTimer)
 			var Current = $(this)
 			Current.attr('data-has-focus', 'true');
 		})
@@ -91,11 +111,12 @@
 			if (currentWidth > 990) {
 
 				if (event.type == 'mouseleave') {
-					setTimeout(function() {
+
+					closeSubmenuTimer = setTimeout(function() {
 						activeSubmenu.attr('data-has-focus', 'false');
 						parentListItem.toggleClass('activeSubmenu')
-						slideSubmenu(activeSubmenu)
-					}, 200);
+						closeSubmenu(activeSubmenu)
+					}, 1000);
 				}
 
 
@@ -110,7 +131,7 @@
 
 						activeSubmenu.attr('data-has-focus', 'false');
 						parentListItem.toggleClass('activeSubmenu')
-						slideSubmenu(activeSubmenu)
+						closeSubmenu(activeSubmenu)
 
 					}
 				}, 200);

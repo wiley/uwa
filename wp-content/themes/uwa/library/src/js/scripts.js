@@ -279,8 +279,13 @@ $('.subpagesNav .page-item-523 a').text('Teacher Connect Scholarship').attr('hre
       tabPanels = $('.infoTabs__content'),
       firstTabPanel = tabPanels.first();
 
-  firstTabPanel.attr('aria-hidden', false)
-  tabPanels.not(firstTabPanel).attr('aria-hidden', true)
+
+  function showFirstTabOnPageLoad() {
+    firstTabPanel.attr('aria-hidden', false)
+    tabPanels.not(firstTabPanel).attr('aria-hidden', true)
+  }
+
+  showFirstTabOnPageLoad();
 
   Buttons.on('click', function(event) {
     var id = $(this).attr('id')
@@ -296,7 +301,7 @@ $('.subpagesNav .page-item-523 a').text('Teacher Connect Scholarship').attr('hre
       .attr('aria-hidden', true);
 
     ContentWrapper
-      .find(`.${id}`)
+      .find(`.${id}`) // .find('.' + id)
       .addClass('active')
       .attr('aria-hidden', false);
   });
