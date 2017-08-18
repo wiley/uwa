@@ -34,11 +34,13 @@
 
     let newText = ''
     $(currentFilters).each(function( index ) {
-
-      newText += '- ' + $( this ).text() + '</br>';
+      if ($( this ).text() != 'All') {
+        newText += '- ' + $( this ).text() + '</br>';
+        ActiveFiltersHolder.html(newText)
+        Holder.fadeIn(500)
+      }
     });
-    ActiveFiltersHolder.html(newText)
-    Holder.fadeIn(500)
+
     FilterToolbars.removeClass('activeFilter')
     FilterButtons.removeClass('activeFilter')
 
