@@ -50,7 +50,7 @@ $degreeTypes = get_terms([
         </div>
 
 
-        <div class="degreeType">
+        <div class="degreeType coloredBackground">
           <div class="wrap">
             <div class="narrow">
               <h2 class="mainDegrees__headline">MAT Degrees</h2>
@@ -60,7 +60,7 @@ $degreeTypes = get_terms([
           </div>
         </div>
 
-        <div class="degreeType coloredBackground">
+        <div class="degreeType">
           <div class="wrap">
             <div class="narrow">
               <h2 class="mainDegrees__headline">MEd Degrees</h2>

@@ -29,6 +29,8 @@ jQuery.fn.center = function(parent) {
 return this;
 }
 
+
+
 jQuery(document).ready(function($) {
 
   $('form.requestinfo .contact-info').find('.field_half').addClass('fullMobile')
@@ -59,10 +61,9 @@ $('.subpagesNav .page-item-523 a').text('Teacher Connect Scholarship').attr('hre
           // var width = stickyElement.width() + 30
 
 
-
           // the function that decides weather the navigation bar should have "fixed" css position or not
-          var makeStickyElementOnScroll = function(stickyOffset) {
-
+          function makeStickyElementOnScroll(stickyOffset) {
+              console.log('sticky ran')
               var scroll_top = $(window).scrollTop(); // the current vertical position from the top
               // console.log(scroll_top);
 
@@ -82,14 +83,12 @@ $('.subpagesNav .page-item-523 a').text('Teacher Connect Scholarship').attr('hre
           makeStickyElementOnScroll(stickyElementOffsetTop);
 
           // and run it again every time you scroll
-          $(window).on('scroll', function() {
+          $('body').on('scroll', function() {
 
-              console.log('Scroll Top: ', scroll_top);
-              console.log('Scroll Offset: ', scroll_top);
               makeStickyElementOnScroll(stickyElementOffsetTop);
           });
 
-          $(window).on('resize', function() {
+          $('body').on('resize', function() {
               if ( stickyElement.hasClass('fixed') ) {
                   stickyElement.removeClass('fixed');
               }
