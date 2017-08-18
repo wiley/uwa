@@ -129,16 +129,22 @@ $('.subpagesNav .page-item-523 a').text('Teacher Connect Scholarship').attr('hre
     });
 
 
-    // faq
+    // FAQ
     (function() {
       var noScrollElement = $('body')
       var questionsContainer = $('.questions')
       var questionLinks = questionsContainer.find('a')
       var answersContainer = $('.answers')
       var closeAnswerButton = $('#answerCloser')
+      var questionHolder = $('#questionHolder')
+
+      function updateQuestion(text) {
+        questionHolder.text(text)
+      }
 
       if (desktopWidthChecker()) {
         questionLinks.first().addClass('active')
+        updateQuestion( questionLinks.first().text() )
         answersContainer.find('[data-id]').first().addClass('active')
       }
 
@@ -150,8 +156,11 @@ $('.subpagesNav .page-item-523 a').text('Teacher Connect Scholarship').attr('hre
 
         var currentID = $(this).attr('href')
         var currentTitle = currentID.replace("#","")
+
+        updateQuestion( $(this).text() )
+
         var newAnswer = $('[data-id = "' + currentTitle + '"]')
-        console.log(newAnswer);
+
         answersContainer.addClass('active')
         newAnswer.addClass('active')
         $(this).addClass('active')
