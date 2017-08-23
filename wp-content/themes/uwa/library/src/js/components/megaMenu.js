@@ -12,10 +12,12 @@ window.$ = window.jQuery = $;
     // .attr('tabindex', 0);
 
   NavDegreesLink.after(content);
-  const MegaMenu = $('nav.main:not(.mobileNav__nav) .degrees-menu');
+  const MegaMenu = $('nav.main:not(.mobileNav__nav) #megamenu');
 
-	MegaMenu
-    .attr('id', 'megamenu')
+  MegaMenu.hide()
+
+	// MegaMenu
+  //   .attr('id', 'megamenu')
 
 	NavDegreesLink
     .attr('id', 'NavDegreesLink')

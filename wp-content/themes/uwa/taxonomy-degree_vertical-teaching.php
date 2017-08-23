@@ -34,7 +34,7 @@ $degreeTypes = get_terms([
         <div class="mainDegrees degreeType">
           <div class="wrap">
             <h2 id="mainDegreesHeadline" class="mainDegrees__headline">Online Bachelor’s Degrees</h2>
-            <p id="mainDegreesText" class="mainDegrees__text">Take charge of your future with an online business degree designed for your budget and your schedule at the University of West Alabama. You’ll develop the skills and knowledge needed for real-world success, in a fully online program from one of Alabama’s oldest and most prestigious universities.</p>
+            <p id="mainDegreesText" class="mainDegrees__text">Take charge of your future with an online education degree designed for your budget and your schedule at the University of West Alabama. You’ll develop the skills and knowledge needed for real-world success, in a fully online program from one of Alabama’s oldest and most prestigious universities.</p>
             <?php include ('includes/verticals/bachelorsList.php'); ?>
           </div>
         </div>
@@ -43,7 +43,7 @@ $degreeTypes = get_terms([
           <div class="wrap">
             <div class="narrow">
               <h2 class="mainDegrees__headline">Online Master's Degrees</h2>
-              <p class="mainDegrees__text">Take charge of your future with an online business degree designed for your budget and your schedule at the University of West Alabama. You’ll develop the skills and knowledge needed for real-world success, in a fully online program from one of Alabama’s oldest and most prestigious universities.</p>
+              <p class="mainDegrees__text">Take charge of your future with an online education degree designed for your budget and your schedule at the University of West Alabama. You’ll develop the skills and knowledge needed for real-world success, in a fully online program from one of Alabama’s oldest and most prestigious universities.</p>
             </div>
             <?php include ('includes/verticals/mastersList.php'); ?>
           </div>

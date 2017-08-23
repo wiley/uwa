@@ -17,12 +17,11 @@
 	top: 100%;
 	background: #A81D32;
 	width: initial;
-
 	padding-left: 0;
 	left: -100%;
 	// padding-top: 1em;
 	// padding-bottom: 1em;
-  z-index: 999;
+	z-index: 999;
 	// visibility: hidden;
 	// height: 0;
 	// transition: height 0.4s ease;
@@ -31,15 +30,16 @@
 	//   visibility: visible;
 	//
 	// }
-
 	@include susy-breakpoint($bp-med) {
-	    position: absolute;
-				min-width: 550px;
+		position: absolute;
+		min-width: 550px;
 	}
+
 	&__submenu {
-		flex-basis: 50%;
+		flex-basis: 23.25%;
 		padding-left: 0;
 		margin-left: 0;
+
 		li {
 			margin: 0 1em !important;
 			width: 100%;
@@ -54,12 +54,110 @@
 			a {
 				color: white !important;
 				text-transform: capitalize;
-				padding: .5em !important;
+				padding: 0.5em !important;
 			}
 		}
 	}
 }
+// MEGAMENU WITH PROGRAM CARD
 
+#menu-main {
+	position: relative;
+
+	.nav-degrees.menu-item {
+		position: static;
+
+		#NavDegreesLink {
+			display: inline;
+			vertical-align: super;
+		}
+
+		& > button {
+			top: initial;
+			bottom: initial;
+			transform: none;
+			left: -15px;
+			position: relative;
+		}
+	}
+}
+
+#megamenu {
+	left: 0;
+	height: 375px;
+	padding: 0;
+	width: 100%;
+	display: flex;
+	padding: 0 !important;
+}
+
+#megamenuCard {
+	display: flex;
+	flex-basis: 50%;
+	overflow: hidden;
+	position: relative;
+
+	.cardLink__cta-background {
+		position: absolute !important;
+	}
+
+	&:after {
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.94) 100%);
+		position: absolute;
+		content: '';
+		top: 0;
+		height: 100%;
+		width: 100%;
+		left: 0;
+	}
+
+	.title {
+		text-align: left;
+		font-size: 1.4em;
+	}
+	.label {
+		color: white;
+    font-style: italic;
+	}
+	.card {
+		&__link {
+			height: 100%;
+			width: 100%;
+			// background-size: 985px;
+			// background-position: 0 30%;
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+			flex-flow: row wrap;
+			padding-bottom: 1.5em;
+
+			& > * {
+				position: relative;
+				z-index: 99;
+			}
+		}
+
+		&__title {
+			color: white;
+			margin: 0;
+			flex-basis: 50%;
+			text-align: left;
+		}
+
+		&__info {
+			flex-basis: 50%;
+			text-align: right;
+			position: relative;
+			z-index: 9;
+			color: $gold;
+			font-weight: 700;
+			font-size: 1.1em;
+		}
+	}
+}
 // #megamenu {
 // 	.allLink {
 // 		font-weight: 700;
@@ -84,31 +182,28 @@
 	color: white !important;
 	text-align: right;
 	// text-decoration: underline;
-
-
-
 	font-weight: 700;
-    font-style: italic;
-    font-size: 1em;
-    color: white;
-    text-align: right;
-    border-bottom: 2px solid white;
-    display: block;
-    // float: right;
-    bottom: 10px;
-    position: relative;
-    right: 10px;
-    float: none;
-    text-align: left;
+	font-style: italic;
+	font-size: 1em;
+	color: white;
+	text-align: right;
+	border-bottom: 2px solid white;
+	display: block;
+	// float: right;
+	bottom: 10px;
+	position: relative;
+	right: 10px;
+	float: none;
+	text-align: left;
+	width: 155px;
+	padding-left: 0;
+	margin-left: 15px;
+	padding-left: 0 !important;
+	margin-left: 15px;
+	max-width: 100%;
+	margin-top: 1em;
 
-    width: 155px;
-    padding-left: 0;
-    margin-left: 15px;
-		padding-left: 0 !important;
-    margin-left: 15px;
-		max-width: 100%;
-    margin-top: 1em;
-		&__wrapper {
-			padding-bottom: 0 !important;
-		}
+	&__wrapper {
+		padding-bottom: 0 !important;
+	}
 }
