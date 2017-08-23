@@ -36,7 +36,8 @@
 	}
 
 	&__submenu {
-		flex-basis: 23.25%;
+		// flex-basis: 23.25%;
+		flex-basis: 50%;
 		padding-left: 0;
 		margin-left: 0;
 
@@ -84,9 +85,9 @@
 
 #megamenu {
 	left: 0;
-	height: 375px;
+	// height: 375px;
 	padding: 0;
-	width: 100%;
+	width: 50%;
 	display: flex;
 	padding: 0 !important;
 }

@@ -82,7 +82,7 @@
   <?php wp_reset_postdata(); ?>
 <?php endif; ?>
 
-        <div id="megamenuCard" class="card">
+        <!-- <div id="megamenuCard" class="card">
 
           <a class="card__link" href="#" style="background-image: url('/wp-content/uploads/2017/06/MAT.jpg');">
             <div class="title">
@@ -92,7 +92,7 @@
             <div class="card__info">View Program </div>
             <div class="cardLink__cta-background"></div>
           </a>
-        </div>
+        </div> -->
         <!-- <a class="allLink" href="/online-degrees">View All Degrees</a> -->
       </ul>
 
