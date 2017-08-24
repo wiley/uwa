@@ -293,13 +293,16 @@ body {
 				display: block;
 				width: 90px;
 				height: 90px;
+				top: -12px;
 				@media (min-width: 1024px) {
 					width: 100px !important;
 					height: 100px !important;
+
 				}
 				@media (min-width: 1260px) {
 					width: 130px !important;
 					height: 130px !important;
+					top: -24px;
 				}
 
 				a {
