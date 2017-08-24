@@ -65,8 +65,9 @@
 #menu-main {
 	position: relative;
 	@include susy-breakpoint(900px) {
-	    align-items: initial !important;
+		align-items: initial !important;
 	}
+
 	.nav-degrees.menu-item {
 		// position: static;
 		//
@@ -74,7 +75,6 @@
 		// 	display: inline;
 		// 	vertical-align: super;
 		// }
-
 		// & > button {
 		// 	top: initial;
 		// 	bottom: initial;
@@ -86,12 +86,14 @@
 }
 
 #megamenu {
-	left: 0;
 	// height: 375px;
 	padding: 0;
-	width: 50%;
 	display: flex;
 	padding: 0 !important;
+	@include susy-breakpoint(900px) {
+		width: 50%;
+		left: -100px;
+	}
 }
 
 #megamenuCard {
@@ -118,10 +120,12 @@
 		text-align: left;
 		font-size: 1.4em;
 	}
+
 	.label {
 		color: white;
-    font-style: italic;
+		font-style: italic;
 	}
+
 	.card {
 		&__link {
 			height: 100%;
