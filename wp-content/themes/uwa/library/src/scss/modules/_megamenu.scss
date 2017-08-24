@@ -64,7 +64,9 @@
 
 #menu-main {
 	position: relative;
-
+	@include susy-breakpoint(900px) {
+	    align-items: initial !important;
+	}
 	.nav-degrees.menu-item {
 		// position: static;
 		//
