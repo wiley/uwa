@@ -282,7 +282,8 @@ body {
 				}
 
 				.sub-menu__toggle {
-					top: 50%;
+					// top: 50%;
+					top: 32px;
 					// background: url("/wp-content/themes/uwa/library/images/arrow-down-red.svg") !important;
 				}
 			}
@@ -426,7 +427,7 @@ ul.nav__dropdown.priority-nav__dropdown.show {
 }
 
 .sub-menu {
-	top: 100%;
+	// top: 100%;
 	// @include susy-breakpoint(900px) {
 	// 	top: 140%;
 	// }
