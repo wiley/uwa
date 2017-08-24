@@ -66,20 +66,20 @@
 	position: relative;
 
 	.nav-degrees.menu-item {
-		position: static;
+		// position: static;
+		//
+		// #NavDegreesLink {
+		// 	display: inline;
+		// 	vertical-align: super;
+		// }
 
-		#NavDegreesLink {
-			display: inline;
-			vertical-align: super;
-		}
-
-		& > button {
-			top: initial;
-			bottom: initial;
-			transform: none;
-			left: -15px;
-			position: relative;
-		}
+		// & > button {
+		// 	top: initial;
+		// 	bottom: initial;
+		// 	transform: none;
+		// 	left: -15px;
+		// 	position: relative;
+		// }
 	}
 }
 
