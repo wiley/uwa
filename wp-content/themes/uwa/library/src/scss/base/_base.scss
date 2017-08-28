@@ -5,7 +5,7 @@ GENERAL STYLES
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
   box-sizing: border-box;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 
   &.activeModal {
     overflow: hidden;
@@ -25,7 +25,7 @@ body {
 	-webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-
+  background-color: white;
 	// @include mobilefirst($bp-lg) { font-size: 112.5%; }
 	// @include mobilefirst(1600px) { font-size: 125%; }
 
