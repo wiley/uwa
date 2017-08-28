@@ -1708,3 +1708,7 @@ TECHER CONNECT SCHOLARSHIP STYLES - https://online.uwa.edu/my/education/
 /* Militaty Connect */
 .postid-240 .banner {
   background-position: center; }
+
+/* Transfer Scholarship - adding margin to better center image within mobile */
+.postid-254 .banner__text {
+  margin-left: 20px; }
