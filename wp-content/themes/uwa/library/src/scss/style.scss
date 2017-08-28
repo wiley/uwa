@@ -62,11 +62,11 @@ PRINT
 	 @import"partials/print";
 }
 
-html > * {
-	&:focus {
-		background-color: gray;
-	}
-}
+// html > * {
+// 	&:focus {
+// 		background-color: gray;
+// 	}
+// }
 /* ACCESSIBILITY */
 .sr-only {
 	position: absolute;
