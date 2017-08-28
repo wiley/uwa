@@ -138,7 +138,7 @@ body {
 	}
 	@include susy-breakpoint($bp-med) {
 		// background: url("/wp-content/themes/uwa/library/images/arrow-down-red.svg");
-		background-size: 17px 17px !important;
+		background-size: 17px !important;
 		background-repeat: no-repeat;
 		background-position: center;
 		top: 40%;
