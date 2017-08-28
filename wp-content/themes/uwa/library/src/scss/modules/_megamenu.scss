@@ -87,6 +87,12 @@
 
 #megamenu {
 	// height: 375px;
+	@media (max-width: 899px) {
+		display: none;
+	}
+	// @include susy-breakpoint(max-width: 899px) {
+	// 	display: none;
+	// }
 	padding: 0;
 	display: flex;
 	padding: 0 !important;
