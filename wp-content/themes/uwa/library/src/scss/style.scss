@@ -294,7 +294,8 @@ body {
 				display: block;
 				width: 90px;
 				height: 90px;
-				top: -12px;
+				align-self: center;
+				// top: -12px;
 				@media (min-width: 1024px) {
 					width: 100px !important;
 					height: 100px !important;
@@ -303,7 +304,7 @@ body {
 				@media (min-width: 1260px) {
 					width: 130px !important;
 					height: 130px !important;
-					top: -24px;
+					// top: -24px;
 				}
 
 				a {
@@ -317,13 +318,15 @@ body {
 					position: absolute;
 					background-repeat: no-repeat;
 					background-size: cover;
-					top: -40px;
-					transform: translate3d(-50%,-50%,0);
-					top: 50%;
+					// top: -40px;
+					// transform: translate3d(-50%,-50%,0);
+					// top: 50%;
 					left: 50%;
 					color: #a81d32;
 					z-index: 999999;
     			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+					// bottom: -50%;
+    			top: initial;
 				}
 			}
 		}
