@@ -101,7 +101,7 @@
 			</footer>
 
 			<div class="mobileNav">
-				<a class="logo" href="<?php echo home_url(); ?>" rel="nofollow"><img  src="/wp-content/uploads/2017/01/uwa-logo.svg" alt="The University of West Alabama Logo"></a>
+				<a class="logo" href="<?php echo home_url(); ?>" rel="nofollow"><img  src="/wp-content/uploads/2017/01/,-logo.svg" alt="The University of West Alabama Logo"></a>
 				<button class="main-nav__trigger button header__button js__menu-trigger" href="#">
 					<?php include ('library/images/close-button.svg'); ?>
 				</button>
@@ -164,56 +164,9 @@
 <!-- /wp-content/themes/uwa/library/js/libs/mixitup.min.js -->
 <script src="<?php echo get_template_directory_uri(); ?>/library/src/js/libs/mixitup.min.js"></script>
 
-
 <script>
-// if ($('#mix-container')) {
-// 	var container = $('#mix-container')
-// 	var mixer = mixitup(container, {
-// 		callbacks: {
-// 			onMixStart: function(state, futureState) {
-// 			},
-// 			onMixEnd: function() {
-// 				container
-// 					.find('.card:visible:first')
-// 					.focus();
-// 			}
-// 		}
-// 	});
-// 	if (location.hash) {
-//
-// 		var hash = location.hash.replace('#', '.')
-// 		// if (hash == '.psych') {
-// 		// 	hash = '.psychology-human-services'
-// 		// }
-// 		mixer.filter(hash)
-// 	}
-// }
-
-//
-// if ($('#mix-container')) {
-// 	var container = $('#mix-container')
-// 	var mixer = mixitup(container, {
-// 		callbacks: {
-// 			onMixStart: function(state, futureState) {
-// 			},
-// 			onMixEnd: function() {
-// 				container
-// 					.find('.card:visible:first')
-// 					.focus();
-// 			}
-// 		}
-// 	});
-// 	if (location.hash) {
-//
-// 		var hash = location.hash.replace('#', '.')
-// 		// if (hash == '.psych') {
-// 		// 	hash = '.psychology-human-services'
-// 		// }
-// 		mixer.filter(hash)
-// 	}
-// }
+$('a[href^="http://uwa.edu"]').attr('target','_blank');
 </script>
-
 <script type="text/javascript">
 // To keep our code clean and modular, all custom functionality will be contained inside a single object literal called "buttonFilter".
 

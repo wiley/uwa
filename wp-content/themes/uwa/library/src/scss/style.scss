@@ -475,3 +475,7 @@ body.mobileNav--active {
 		overflow: hidden;
 	}
 }
+
+select::-ms-expand {
+    display: none;
+}

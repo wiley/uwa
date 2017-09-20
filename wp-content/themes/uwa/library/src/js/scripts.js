@@ -221,7 +221,7 @@ $('.subpagesNav .page-item-523 a').text('Teacher Connect Scholarship').attr('hre
 	}
 
 	function closeForm() {
-    $('html').removeClass('active');
+    $('html').removeClass('activeModal');
 		FormWrapper.removeClass('active');
 		requestInfoBtn.focus();
 	}
