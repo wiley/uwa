@@ -40,11 +40,15 @@
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>
 
-    <?php /* Critical CSS ?>
-    <?php if ( is_front_page() ) { ?> <style><?php include 'library/css/build/minified/home-critical.css'; ?></style><?php } ?>
-		<?php if ( ! is_front_page() ) { ?><style><?php include 'library/css/build/minified/interior-critical.css'; ?></style><?php } */ ?>
+    <?php /* Critical CSS ?> */ ?>
 
-		<!-- <script>
+		<?php if ( is_front_page()): ?>
+				<style><?php include('library/css/build/minified/critical-home.css'); ?></style>
+		<?php endif; ?>
+		<?php if ( !is_front_page()): ?>
+				<style><?php include('library/css/build/minified/critical-interior.css'); ?></style>
+		<?php endif; ?>
+		<script>
 		    ! function(a) {
 		        "use strict";
 		        var b = function(b, c, d) {
@@ -83,9 +87,9 @@
 		<script>
 		    loadCSS("/wp-content/themes/uwa/library/css/build/minified/style.css");
 		</script>
-		<noscript><link rel="stylesheet" href="/wp-content/themes/uwa/library/css/build/minified/style.css"></noscript> -->
+		<noscript><link rel="stylesheet" href="/wp-content/themes/uwa/library/css/build/minified/style.css"></noscript>
 
-		<link rel="stylesheet" href="/wp-content/themes/uwa/library/css/build/minified/style.css">
+		<!-- <link rel="stylesheet" href="/wp-content/themes/uwa/library/css/build/minified/style.css"> -->
 		<link rel="stylesheet" href="/wp-content/themes/uwa/library/src/owl/assets/owl.carousel.min.css" />
 	</head>
 

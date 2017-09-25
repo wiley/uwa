@@ -15,16 +15,18 @@ let options = {
 // mix.setPublicPath('path/to/public');
 
 mix.js('src/js/scripts.js', 'js/build/production.min.js')
-   .sass('src/scss/style.scss', 'css/build/minified/')
-   .options({
-      // processCssUrls: false,
-      postCss: [
-          require('postcss-custom-selectors')(options)
-          // require('postcss-uncss')({
-          //   html: ['http://uwa.loc/about'],
-          // })
-      ]
-   });
+  .sass('src/scss/style.scss', 'css/build/minified/')
+  .sass('src/scss/critical-home.scss', 'css/build/minified/critical-home.css')
+  .sass('src/scss/critical-interior.scss', 'css/build/minified/critical-interior.css')
+  .options({
+    // processCssUrls: false,
+    postCss: [
+        require('postcss-custom-selectors')(options)
+        // require('postcss-uncss')({
+        //   html: ['http://uwa.loc/about'],
+        // })
+    ]
+  });
 // mix.sass('scss/style.scss', 'dist/');
 // Full API
 // mix.js(src, output);
