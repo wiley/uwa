@@ -10,13 +10,13 @@
 
 							<header class="post-header">
 
-								<h1 class="post-header__title"><?php _e( '404 - Article Not Found', 'bonestheme' ); ?></h1>
+								<h1 class="post-header__title"><?php _e( 'Page Not Found', 'bonestheme' ); ?></h1>
 
 							</header>
 
 							<section class="post-content">
 
-								<p><?php _e( 'The article you were looking for was not found, but maybe try looking again!'); ?></p>
+								<p><?php _e( 'The page you were looking for was not found. Back to <a href="/">home</a>'); ?></p>
 
 							</section>
 
