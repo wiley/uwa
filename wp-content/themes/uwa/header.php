@@ -30,6 +30,12 @@
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
+		<!--  Only load on requestinfo page and single degrees  -->
+		<?php if (is_page('209') || is_singular('degrees')): ?>
+			<script type="text/javascript" src="https://requestforms.learninghouse.com/form/affiliate/734"></script>
+		<?php endif; ?>
+
+
 		<?php // wordpress head functions ?>
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>
