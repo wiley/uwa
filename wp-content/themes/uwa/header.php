@@ -35,7 +35,7 @@
 		<?php // wordpress head functions ?>
 		<?php wp_head(); ?>
 		<script type="text/javascript" src="https://requestforms.learninghouse.com/form/affiliate/734"></script>
-		
+
 		<?php // end of wordpress head ?>
 
     <?php /* Critical CSS ?> */ ?>
@@ -43,9 +43,7 @@
 		<?php if ( is_front_page()): ?>
 				<style><?php include('library/css/build/minified/critical-home.css'); ?></style>
 		<?php endif; ?>
-		<?php if ( !is_front_page()): ?>
-				<style><?php include('library/css/build/minified/critical-interior.css'); ?></style>
-		<?php endif; ?>
+
 		<script>
 		    ! function(a) {
 		        "use strict";
