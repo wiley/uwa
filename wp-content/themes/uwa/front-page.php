@@ -26,15 +26,3 @@
 			</div>
 
 <?php get_footer(); ?>
-<script type="text/javascript">
-// (function($) {
-	var Script = $('#formScript')
-	var ScriptUpdater = $('#updateForm')
-alert('hi');
-	ScriptUpdater.on('click', function() {
-		console.log('fired!');
-		$('main')
-		    .append($('<script id="new" type="text/javascript" src="https://requestforms.learninghouse.com/form/show/concordia-university-texas/ppc-form-multi/221/2063"></script>'));
-});
-
-</script>
