@@ -44,7 +44,7 @@
 				<style><?php include('library/css/build/minified/critical-home.css'); ?></style>
 		<?php endif; ?>
 
-		<script>
+		<!-- <script>
 		    ! function(a) {
 		        "use strict";
 		        var b = function(b, c, d) {
@@ -83,9 +83,9 @@
 		<script>
 		    loadCSS("/wp-content/themes/uwa/library/css/build/minified/style.css");
 		</script>
-		<noscript><link rel="stylesheet" href="/wp-content/themes/uwa/library/css/build/minified/style.css"></noscript>
+		<noscript><link rel="stylesheet" href="/wp-content/themes/uwa/library/css/build/minified/style.css"></noscript> -->
 
-		<!-- <link rel="stylesheet" href="/wp-content/themes/uwa/library/css/build/minified/style.css"> -->
+		<link rel="stylesheet" href="/wp-content/themes/uwa/library/css/build/minified/style.css">
 		<link rel="stylesheet" href="/wp-content/themes/uwa/library/src/owl/assets/owl.carousel.min.css" />
 	</head>
 

@@ -6,10 +6,6 @@
 
 						<main class="main-content cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
-
-							<button id="updateForm" type="button" name="button">Update Form</button>
-							<script id="formScript" src="https://requestforms.learninghouse.com/form/show/point-park-university/ppc-form-multi/563/3129" type="text/javascript"></script>
-
 							<div class="tanBackground">
 								<div class="wrap cf">
 									<?php include('includes/frontPage/journey.php'); ?>
