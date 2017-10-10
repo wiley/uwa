@@ -1,0 +1,37 @@
+.scholarships-parnerships {
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		flex-flow: row wrap;
+		list-style-type: none;
+		padding: 0;
+		margin: 0 !important;
+		width: 110%;
+		margin-left: -5% !important;
+	}
+
+	&__item {
+		background: #f5f1e5;
+		padding: 2em;
+		margin: 1em;
+		flex: 45%;
+		font-family: "Open Sans", Helvetica, Arial, sans-serif;
+		font-size: 100%;
+		line-height: 1.5;
+		color: #4a4a4a;
+		display: flex;
+		flex-flow: row wrap;
+		align-content: space-between;
+
+		    padding: 1.5em;
+		.bold {
+			font-weight: 700;
+		}
+	}
+
+	&__btn {
+		width: 350px !important;
+    max-width: 100% !important;
+    margin-top: 2em !important;
+	}
+}
