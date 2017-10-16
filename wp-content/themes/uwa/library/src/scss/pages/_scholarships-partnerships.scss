@@ -1,4 +1,4 @@
-.scholarships-parnerships {
+.scholarships-partnerships {
 	&__list {
 		display: flex;
 		justify-content: space-between;
@@ -10,6 +10,10 @@
 		margin-left: -5% !important;
 	}
 
+	&__heading {
+		margin: 0 0 .5em 0 !important;
+		padding: 0 !important;
+	}
 	&__item {
 		background: #f5f1e5;
 		padding: 2em;
@@ -35,3 +39,7 @@
     margin-top: 2em !important;
 	}
 }
+
+// .scholarships-partnerships__heading {
+// 	font-weight: 900 !important;
+// }
