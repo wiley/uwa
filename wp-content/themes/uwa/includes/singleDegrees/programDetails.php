@@ -6,7 +6,8 @@
     <div class="program__details-row">
       <p class="program__details-title">Next Start Date</p>
       <p class="program__details-dotted"></p>
-      <p class="program__details-info"><?php the_field('next_start_date'); ?></p>
+      <p class="program__details-info"><?php the_field('start_by', 'option'); ?></p>
+
     </div>
     <div class="program__details-row">
       <p class="program__details-title">Est. Program Length</p>
