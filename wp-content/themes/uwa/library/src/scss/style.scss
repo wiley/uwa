@@ -55,6 +55,7 @@ IMPORTING BASE
 @import "pages/blog";
 @import "pages/taxDegreeLevel";
 @import "pages/scholarships-partnerships";
+@import "pages/template-scholarship-partnership";
 @import "pages/accreditation";
 @import "pages/404";
 
@@ -64,7 +65,4 @@ PRINT
 *********************/
 @media print {
 	 @import"partials/print";
-}
-body {
-	font-size: 30px !important;
 }

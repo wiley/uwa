@@ -28,7 +28,7 @@ LAYOUT & GRID STYLES
 		background-image: url("#{$images}/banner.jpg");
 	}
 	// min-height: 325px;
-	background-size: cover;
+	background-size: 100% auto;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-position: top;
@@ -38,12 +38,12 @@ LAYOUT & GRID STYLES
 	@include susy-breakpoint(768px) {
 		// min-height: 400px;
 			background-attachment: fixed;
-		background-size: cover;
+	background-size: 100% auto;
 	}
 	@include susy-breakpoint($bp-med) {
 		// min-height: 400px;
 
-		background-size: cover;
+	background-size: 100% auto;
 	}
 
 	&:after {

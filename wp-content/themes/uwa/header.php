@@ -167,7 +167,13 @@ $primaryNav = wp_get_nav_menu_items($menuID);
 				<?php else: ?>
 					<div class="banner">
 						<div class="wrap">
-							<?php if ( !is_front_page() && is_page() ): ?>
+
+							<?php if ( !is_front_page() && is_page_template( 'scholarship-partnership-single-template.php' ) ): ?>
+								<?php $title = get_field('banner_title') ? get_field('banner_title') : get_the_title(); ?>
+								<h1 class="banner__heading"><?php echo $title; ?></h1>
+							<?php endif; ?>
+
+							<?php if ( !is_front_page() && is_page() && !is_page_template( 'scholarship-partnership-single-template.php' )): ?>
 								<h1 class="banner__heading"><?php the_title(); ?></h1>
 							<?php endif; ?>
 
