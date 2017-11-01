@@ -5,6 +5,7 @@
 				<!-- <div class="wrap cf"> -->
 
 
+
 						<main class="main-content cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -13,30 +14,27 @@
 
 							<article <?php post_class( 'cf' ); ?> role="article">
 
-<a href="<?php the_permalink(); ?>" class="article__link">
-	<div class="background" style="background-image: url(<?php echo $featuredImage; ?>)"></div>
-		<div class="wrap cf">
-			<header class="post-header">
+								<a href="<?php the_permalink(); ?>" class="article__link">
+									<div class="background" style="background-image: url(<?php echo $featuredImage; ?>)"></div>
+										<div class="wrap cf">
+											<!-- <header class="post-header"> -->
 
-				<h1 class="h2 post-header__title"><?php the_title(); ?></h1>
-				<p class="post-meta">
-			                        <?php printf( __( 'Posted', 'bonestheme' ).' %1$s %2$s',
-			                        /* the time the post was published */
-			                        '<time class="post-meta__time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
-			                        /* the author of the post */
-			                        '<span class="post-meta__by">'.__( 'by', 'bonestheme').'</span> <span class="post-meta__author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
-			                        ); ?>
-				</p>
+												<h2 class="h2 post-header__title"><?php the_title(); ?></h2>
+												<p class="post-meta">
+	                        <?php printf( __( 'Posted', 'bonestheme' ).' %1$s %2$s',
+	                        /* the time the post was published */
+	                        '<time class="post-meta__time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
+	                        /* the author of the post */
+	                        '<span class="post-meta__by">'.__( 'by', 'bonestheme').'</span> <span class="post-meta__author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
+	                        ); ?>
+												</p>
 
-			</header>
+											<!-- </header> -->
 
-			<section class="post-content cf">
-				<?php the_excerpt(); ?>
-			</section>
-		</div>
-	</a>
+										</div>
+									</a>
 
-</article>
+								</article>
 
 							<?php endwhile; ?>
 
@@ -60,7 +58,7 @@
 
 						</main>
 
-					<?php get_sidebar(); ?>
+
 
 				<!-- </div> -->
 

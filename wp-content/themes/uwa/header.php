@@ -156,7 +156,7 @@ $primaryNav = wp_get_nav_menu_items($menuID);
 					</div>
 				</div>
 
-				<?php if ( is_single('post') ): ?>
+				<?php if ( is_single() ): ?>
 					<?php $featuredImage = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
 					<div class="banner banner--blogPost" style="background-image: url(<?php echo $featuredImage; ?>)">
 						<div class="wrap">
@@ -177,6 +177,10 @@ $primaryNav = wp_get_nav_menu_items($menuID);
 								<h1 class="banner__heading"><?php the_title(); ?></h1>
 							<?php endif; ?>
 
+
+							<?php if (is_single()): ?>
+								<h1 class="banner__heading"><?php the_title(); ?></h1>
+							<?php endif; ?>
 
 							<?php if (is_post_type_archive()): ?>
 								<h1 class="banner__heading"><?php post_type_archive_title(); ?></h1>

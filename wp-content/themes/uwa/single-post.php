@@ -4,60 +4,56 @@
 
 				<div class="wrap cf">
 
-					<main class="main-content cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+					<div class="content__innerWrapper">
+						<main class="main-content cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
-						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-							<article <?php post_class('cf'); ?> role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+								<article <?php post_class('cf'); ?> role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
 
-							  <header class="post-header entry-header">
-	                <?php if ( function_exists('yoast_breadcrumb') ) {
-	                    yoast_breadcrumb('<p id="breadcrumbs">','</p>');
-	                } ?>
+								  <section class="post-content cf" itemprop="articleBody">
+								    <?php the_content(); ?>
+								  </section> <?php // end article section ?>
 
-							    <h1 class="post-header__title single-title" itemprop="headline" rel="bookmark"><?php the_title(); ?></h1>
+								</article> <?php // end article ?>
 
-							    <p class="post-meta">
+							<?php endwhile; ?>
 
-							      <?php printf( __( 'Posted', 'bonestheme' ).' %1$s %2$s',
-							         /* the time the post was published */
-							         '<time class="post-meta__time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
-							         /* the author of the post */
-							         '<span class="post-meta__by">'.__( 'by', 'bonestheme' ).'</span> <span class="post-meta__author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
-							      ); ?>
+							<?php else : ?>
 
-							    </p>
+								<article class="post-not-found hentry cf">
+										<header class="post-header">
+											<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
+										</header>
+										<section class="post-content">
+											<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
+										</section>
+										<footer class="post-footer">
+												<p><?php _e( 'This is the error message in the single.php template.', 'bonestheme' ); ?></p>
+										</footer>
+								</article>
 
-							  </header> <?php // end article header ?>
+							<?php endif; ?>
+						</main>
+						<aside>
+							<div class="sidebar--singlePost cf" role="complementary">
 
-							  <section class="post-content cf" itemprop="articleBody">
-							    <?php the_content(); ?>
-							  </section> <?php // end article section ?>
+								<div class="formWrapper">
+									<h2 class="h3 formWrapper__heading">Request Your Info Packet</h2>
+									<script src="http://requestforms.learninghouse.com/form/show/university-west-alabama/ppc-form-multi/734/3589/online.uwa.edu:thank-you:request_id" type="text/javascript"></script>
+								</div>
 
-							</article> <?php // end article ?>
+						<?php dynamic_sidebar( 'Sidebar Blog' ); ?>
+								<?php
+									if ( is_active_sidebar( 'sidebar1' ) ) :
+										dynamic_sidebar( 'sidebar1' );
+									endif;
+								?>
 
-						<?php endwhile; ?>
+							</div>
 
-						<?php else : ?>
-
-							<article class="post-not-found hentry cf">
-									<header class="post-header">
-										<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-									</header>
-									<section class="post-content">
-										<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-									</section>
-									<footer class="post-footer">
-											<p><?php _e( 'This is the error message in the single.php template.', 'bonestheme' ); ?></p>
-									</footer>
-							</article>
-
-						<?php endif; ?>
-
-					</main>
-
-					<?php get_sidebar(); ?>
-
+						</aside>
+						</div>
 				</div>
 
 			</div>
