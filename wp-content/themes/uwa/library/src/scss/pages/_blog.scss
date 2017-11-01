@@ -72,6 +72,13 @@
 			z-index: 1;
 		}
 
+		.post-header__wrapper {
+			padding: 1em 0;
+	    max-width: 800px;
+	    margin: 0 auto;
+	    position: relative;
+	    z-index: 2;
+		}
 		.post-header__title {
 			color: #a71d33;
 			text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);

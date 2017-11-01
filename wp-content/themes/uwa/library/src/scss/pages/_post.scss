@@ -34,7 +34,28 @@ POST STYLES
 
 		main {}
 
-		aside {}
+		aside {
+			.widget_categories {
+				background: #f5f1e5;
+		    position: relative;
+		    padding: 1em 1.5em 4em;
+		    max-width: 550px;
+		    margin: 2em auto;
+				ul {
+					list-style-type: none;
+					padding-left: 20px;
+					a {
+						text-decoration: none;
+						font-weight: 600;
+						color: #A81D32;
+					}
+				}
+			}
+
+			.widgettitle {
+				 font-size: 1em auto;
+			}
+		}
 		@include susy-breakpoint(900px) {
 			display: flex;
 			padding: 3em 0;

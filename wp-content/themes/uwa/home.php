@@ -16,7 +16,7 @@
 
 								<a href="<?php the_permalink(); ?>" class="article__link">
 									<div class="background" style="background-image: url(<?php echo $featuredImage; ?>)"></div>
-										<div class="wrap cf">
+										<div class="wrap post-header__wrapper cf">
 											<!-- <header class="post-header"> -->
 
 												<h2 class="h2 post-header__title"><?php the_title(); ?></h2>
