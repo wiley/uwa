@@ -182,6 +182,10 @@ $primaryNav = wp_get_nav_menu_items($menuID);
 								<h1 class="banner__heading"><?php the_title(); ?></h1>
 							<?php endif; ?>
 
+							<?php if (is_archive() && is_category()): ?>
+								<h1 class="banner__heading"><?php the_archive_title(); ?></h1>
+							<?php endif; ?>
+
 							<?php if (is_post_type_archive()): ?>
 								<h1 class="banner__heading"><?php post_type_archive_title(); ?></h1>
 							<?php endif; ?>
