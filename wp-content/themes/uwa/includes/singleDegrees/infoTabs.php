@@ -3,6 +3,10 @@
     <div class="infoTabs__buttons" role="tablist">
       <button id="details" class="active" role="tab" aria-selected="true" aria-controls="content-details">Course Information</button>
 
+      <?php if (get_field('certificate_accordion')): ?>
+        <button id="certificates" role="tab" aria-selected="false" aria-controls="content-certificates">Certificates</button>
+      <?php endif; ?>
+
       <?php if (get_field('concentrations_intro') || get_field('concentration_accordion')): ?>
         <button id="concentrations" role="tab" aria-selected="false" aria-controls="content-conentrations">Concentrations</button>
       <?php endif; ?>
@@ -19,6 +23,7 @@
     <div class="infoTabs__contentWrapper">
 
       <?php include ('infoTabs/courseDetails.php'); ?>
+      <?php include ('infoTabs/certificates.php'); ?>
 
       <?php if (get_field('concentrations_intro') || get_field('concentration_accordion')): ?>
         <?php include ('infoTabs/concentrations.php'); ?>
