@@ -17,11 +17,12 @@
 
 <?php if ($hasChildrenPages): ?>
   <div class="intro__subNav" typeof="BreadcrumbList" vocab="https://schema.org/">
-    <ul class="subpagesNav">
+    <ul class="subpagesNav hasChildrenPages">
       <?php
       $subpageNav = wp_list_pages(array(
           'child_of' => $post->ID,
-          'title_li' => ''
+          'title_li' => '',
+					'depth'    => 1
           // 'exclude' => $post->ID
       ))
       ?>
@@ -30,11 +31,12 @@
 
 <?php elseif ($hasSiblingPages): ?>
   <div class="intro__subNav" typeof="BreadcrumbList" vocab="https://schema.org/">
-    <ul class="subpagesNav">
+    <ul class="subpagesNav hasSiblingPages">
       <?php
       $subpageNav = wp_list_pages(array(
           'child_of' => $post->post_parent,
-          'title_li' => ''
+          'title_li' => '',
+          'depth'    => 1
           // 'exclude' => $post->ID
       ))
       ?>
