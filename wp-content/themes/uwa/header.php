@@ -90,7 +90,10 @@
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
-
+		<?php
+		    global $post;
+		    $author_id=$post->post_author;
+		?>
 		<!-- Google Tag Manager -->
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -156,11 +159,27 @@ $primaryNav = wp_get_nav_menu_items($menuID);
 					</div>
 				</div>
 
-				<?php if ( is_single() ): ?>
+				<?php if ( is_single() && is_singular('post')): ?>
 					<?php $featuredImage = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
 					<div class="banner banner--blogPost" style="background-image: url(<?php echo $featuredImage; ?>)">
 						<div class="wrap">
-							<h1 class="banner__heading"><?php the_title(); ?></h1>
+							<div class="banner__text">
+								<h1 class="banner__heading"><?php the_title(); ?></h1>
+								<p class="byline entry-meta vcard">
+
+									<span class="entry-date">Posted <?php echo get_the_date(); ?> by <?php the_author_meta( 'display_name', $author_id ); ?> | </span class="entry-categories">
+										<?php
+												$categories = get_the_category();
+												$separator = ', ';
+												$output = '';
+												if ( ! empty( $categories ) ) {
+														foreach( $categories as $category ) {
+																$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+														}
+														echo trim( $output, $separator );
+												} ?>
+								</p>
+							</div>
 						</div>
 					</div>
 
@@ -177,8 +196,11 @@ $primaryNav = wp_get_nav_menu_items($menuID);
 								<h1 class="banner__heading"><?php the_title(); ?></h1>
 							<?php endif; ?>
 
+							<!-- Don't load bannger heading for single degrees -->
+							<?php if (is_singular('degrees')): ?>
+							<?php endif; ?>
 
-							<?php if (is_single()): ?>
+							<?php if (is_single() && !is_singular('degrees')): ?>
 								<h1 class="banner__heading"><?php the_title(); ?></h1>
 							<?php endif; ?>
 

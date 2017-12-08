@@ -45,7 +45,7 @@
 												<h2 class="scholarships-partnerships__heading">Military Connect</h2>
 												<span class="scholarships-partnerships__content">The <span class="bold">Military Connect </span>program at UWA helps <span class="bold">active military members, veterans, spouses and dependents </span>complete their degrees online while qualifying for a <span class="bold">tuition scholarship of up to $100 per credit hour</span>. After the scholarship, tuition equals $329 per credit hour for graduate programs and $275 per credit hour for undergraduate programs. The scholarship is available to students who qualify for the Air University Associate-to-Baccalaureate Cooperative program.</span>
 											</div>
-											<a target="_blank" href="/my/military-connect-scholarship/" class="scholarships-partnerships__btn btn">Learn More</a>
+											<a target="_blank" href="/tuition/scholarships-partnerships/military-connect/" class="scholarships-partnerships__btn btn">Learn More</a>
 										</li>
 								 		<li class="scholarships-partnerships__item">
 											<div class="scholarships-partnerships__contentWrapper">

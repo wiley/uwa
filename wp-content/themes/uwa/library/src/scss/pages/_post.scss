@@ -1,6 +1,29 @@
 /*********************
 POST STYLES
 *********************/
+
+
+.single-post .banner__heading {
+	max-width: 1250px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.banner__heading {
+	font-size: 2em;
+}
+@media (min-width: 900px){
+	.banner__heading {
+	    font-size: 3.0em;
+	}
+}
+
+@media (min-width: 1040px) {
+	.banner__heading {
+	    font-size: 3.75em;
+	}
+}
+
 .single-post {
 	.banner {
 		min-height: 375px;
@@ -14,7 +37,16 @@ POST STYLES
 			min-height: 550px;
 		}
 
-		&__heading {
+		&:after {
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.76) 50%, rgba(0, 0, 0, 0.45) 100%);
+	    position: absolute;
+	    content: '';
+	    top: 0;
+	    height: 100%;
+	    width: 100%;
+	    left: 0;
+		}
+		&__text {
 			top: 60%;
 			position: absolute;
 			transform: translateY(-50%);
@@ -24,6 +56,16 @@ POST STYLES
 			padding: 0;
 			left: 5%;
 			right: 5%;
+			z-index: 9;
+
+			.entry-meta a {
+				color: white !important;
+				font-style: italic;
+			}
+		}
+
+		&__heading {
+			padding: 0;
 		}
 	}
 

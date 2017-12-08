@@ -37,7 +37,7 @@ mix.js('src/js/scripts.js', 'js/build/production.min.js')
 // mix.less(src, output);
 // mix.stylus(src, output);
 // mix.browserSync('uwa.loc');
-
+mix.disableNotifications();
 mix.browserSync({
     proxy: 'uwa.loc',
     host: 'uwa.loc',
