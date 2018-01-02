@@ -18,6 +18,7 @@ mix.js('src/js/scripts.js', 'js/build/production.min.js')
   .sass('src/scss/style.scss', 'css/build/minified/')
   .sass('src/scss/critical-home.scss', 'css/build/minified/critical-home.css')
   .sass('src/scss/critical-interior.scss', 'css/build/minified/critical-interior.css')
+  .sass('src/scss/lp-style.scss', 'css/build/minified/lp-style.css')
   .options({
     // processCssUrls: false,
     postCss: [

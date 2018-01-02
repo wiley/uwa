@@ -162,7 +162,7 @@ body {
 				> li {
 					text-align: center;
 					padding: 0;
-					margin: 0 0.25em;
+					margin: 0;
 					padding-right: 1em;
 					> a {
 						display: flex;
@@ -232,6 +232,11 @@ body {
 	}
 }
 
+@media (min-width: 950px) {
+	#menu-main li {
+		margin: 0 0.25em;
+	}
+}
 .page .intro .subpagesNav {
 	overflow: hidden;
 }
