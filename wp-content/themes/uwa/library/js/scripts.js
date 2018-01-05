@@ -1,8 +1,70 @@
 /*
  * Put all your regular jQuery in here.
 */
+
+
+// import 'owl.carousel/dist/assets/owl.carousel.css';
+import $ from 'jquery';
+window.$ = window.jQuery = $;
+import './components/megaMenu'
+import './components/submenus'
+import './components/carousel'
+import './components/filters'
+import './components/tables'
+import './components/faq'
+
+
+// import 'imports?jQuery=jquery!owl.carousel';
+
+jQuery.fn.center = function(parent) {
+    if (parent) {
+        parent = this.parent();
+    } else {
+        parent = window;
+    }
+    this.css({
+        "position": "absolute",
+        "top": ((($(parent).height() - this.outerHeight()) / 2) + $(parent).scrollTop() + "px"),
+        "left": ((($(parent).width() - this.outerWidth()) / 2) + $(parent).scrollLeft() + "px")
+    });
+return this;
+}
+
+
+
 jQuery(document).ready(function($) {
 
+  $('form.requestinfo .contact-info').find('.field_half').addClass('fullMobile')
+
+  function desktopWidthChecker() {
+    var viewPortWidth = $( window ).width();
+    if (viewPortWidth >= 768) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+$('.subpagesNav .page-item-523 a').text('Teacher Connect Scholarship').attr('href', 'http://onlineuwa.staging.wpengine.com/my/teacherconnect/');
+
+
+  // COURSE DETAILS ACCORDION
+  (function () {
+    var buttons = $('.accord-header button');
+
+    buttons.on('click', function() {
+      var content = $(this).parent().next();
+      var state = $(this).attr('aria-expanded') === 'false' ? true : false;
+      $(this).attr('aria-expanded', state);
+
+      content
+        .attr('aria-hidden', !state)
+        .slideToggle();
+    });
+  })();
+
+
+    // $('.owl-item.cloned').remove();
     $('.accordion .accord').on("click", function(){
         if($(this).hasClass('active')){
            $(this).removeClass('active');
@@ -11,6 +73,9 @@ jQuery(document).ready(function($) {
             $(this).addClass("active");
         }
     });
+
+
+
 
     // Pullquote functionality so the content is not repeated
    $(function() {
@@ -48,10 +113,7 @@ jQuery(document).ready(function($) {
     });
 
     // Mobile Nav Trigger
-    $('.js__menu-trigger').on('click', function(e) {
-				e.preventDefault();
-        $('.header__nav').toggleClass('visible');
-    });
+
 
 		// Modal Stuff
 		// $('.js-modal').on('click', function(e) {
@@ -95,3 +157,96 @@ jQuery(document).ready(function($) {
 
 
 }); /* end of as page load scripts */
+
+(function( $ ) {
+  $('.js__menu-trigger').on('click', function(e) {
+      e.preventDefault();
+
+      $('body').toggleClass('mobileNav--active')
+      $('html').toggleClass('mobileNav--active')
+      $('.mobileNav').toggleClass('visible');
+      $('.mobileNav__nav').find('a').first().focus();
+  });
+})( jQuery );
+
+(function( $ ) {
+  var Buttons = $('.infoTabs__buttons button'),
+      ContentWrapper = $('.infoTabs__contentWrapper'),
+      tabPanels = $('.infoTabs__content'),
+      firstTabPanel = tabPanels.first();
+
+
+  function showFirstTabOnPageLoad() {
+    firstTabPanel.attr('aria-hidden', false)
+    tabPanels.not(firstTabPanel).attr('aria-hidden', true)
+  }
+
+  showFirstTabOnPageLoad();
+
+  Buttons.on('click', function(event) {
+    var id = $(this).attr('id')
+    Buttons
+      .removeClass('active')
+      .attr('aria-selected', false)
+
+    $(this).addClass('active').attr('aria-selected', true);
+
+    ContentWrapper
+      .find('.infoTabs__content')
+      .removeClass('active')
+      .attr('aria-hidden', true);
+
+    ContentWrapper
+      .find(`.${id}`) // .find('.' + id)
+      .addClass('active')
+      .attr('aria-hidden', false);
+  });
+})( jQuery );
+
+
+(function( $ ) {
+  var Form = $('.requestinfo'),
+			FormWrapper = $('.form__wrapper'),
+			requestInfoBtn = $('.requestInfo'),
+			closeButton = FormWrapper.find('.form__toggle'),
+			formFocusGuardTop = FormWrapper.find('.focusguard-top'),
+			formFocusGuardBottom = FormWrapper.find('.focusguard-bottom'),
+			firstFormElement = Form.find(':input:not([type=hidden])').first(),
+      Body = $('body');
+
+	function openForm() {
+    $('html').addClass('activeModal');
+		FormWrapper.addClass('active');
+		firstFormElement.focus();
+	}
+
+	function closeForm() {
+    $('html').removeClass('activeModal');
+		FormWrapper.removeClass('active');
+		requestInfoBtn.focus();
+	}
+
+	function handleTabbingBack() {
+		var lastFormElement = Form.find(':input:enabled:not([type=hidden], :disabled)').last();
+		lastFormElement.focus();
+	}
+
+	function handleTabbingFwd() {
+		closeButton.focus();
+	}
+
+	function escapeListener () {
+		FormWrapper.on('keyup',function(event) {
+			if (event.keyCode == 27) {
+				closeForm();
+			}
+		});
+	}
+	escapeListener();
+
+	requestInfoBtn.on('click', openForm);
+	closeButton.on('click', closeForm);
+	formFocusGuardTop.on('focus', handleTabbingBack);
+	formFocusGuardBottom.on('focus', handleTabbingFwd);
+
+})( jQuery );

@@ -86,7 +86,7 @@
 		<noscript><link rel="stylesheet" href="/wp-content/themes/uwa/library/css/build/minified/style.css"></noscript> -->
 
 		<link rel="stylesheet" href="/wp-content/themes/uwa/library/css/build/minified/style.css">
-		<link rel="stylesheet" href="/wp-content/themes/uwa/library/src/owl/assets/owl.carousel.min.css" />
+		<link rel="stylesheet" href="/wp-content/themes/uwa/library/css/build/minified/owl.carousel.min.css" />
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
