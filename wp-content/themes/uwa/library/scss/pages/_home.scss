@@ -1,38 +1,681 @@
 /*************************
 HOMEPAGE SPECIFIC STYLES
 *************************/
-
-// TEMPORARY UNTIL BRAND PAGE IS READY TO BE REDIRECTED TO
-
-body.home {
-  height: 100vh;
-  overflow: hidden;
-}
-
 .home {
-  .header {
-    text-align: center;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate3d(-50%,-50%, 0);
-  }
+	p {
+		// font-family: $lato;
+	}
 
-  .logo {
-    img {
-      width: 500px;
-    }
-  }
+	.main-content {
+		padding: 0 !important;
+	}
 
-  .footer {
-    position: absolute;
-    bottom: 0;
-    padding: 3em;
-    width: 100%;
-    text-align: center;
-    font-weight: 700;
-  }
+	.content {
+
+		position: relative;
+
+		&:before {
+			content: '';
+			background-image: url("#{$images}/triangles.svg");
+			background-repeat: no-repeat;
+			background-position: top center;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			background-size: 15vw;
+		}
+
+		&:after {
+			content: '';
+			background-image: url("#{$images}/triangles.svg");
+			background-repeat: no-repeat;
+			background-position: top center;
+			height: 100%;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			background-size: 400px;
+			transform: rotate(180deg);
+			z-index: 9;
+			@include susy-breakpoint($bp-med) {
+				background-size: 500px;
+			}
+		}
+	}
+
+	.banner {
+		background-image: url("#{$images}/home-banner.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		display: flex;
+		align-content: center;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		color: white;
+		background-position: 85% center;
+		position: relative;
+		height: 60vw;
+		min-height: 400px;
+		// background-attachment: fixed;
+		background-attachment: fixed;
+background-position: 65% -150px;
+background-size: 1180px;
+		@include susy-breakpoint($bp-med) {
+			min-height: 600px;
+			max-height: 900px;
+			background-size: cover;
+			// background-position: 85% bottom;
+		}
+
+		&:after {
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, rgba(0,0,0,0.24) 27.27%, rgba(255, 255, 255, 0) 100%);
+			position: absolute;
+			content: '';
+			top: 0;
+			height: 100%;
+			width: 100%;
+			left: 0;
+		}
+
+		.btn-red {
+			// width: 300px;
+		}
+
+		.wrap {
+			max-width: 800px;
+			position: relative;
+			z-index: 9;
+			padding: 12em 0 2em;
+			position: absolute;
+			// z-index: 999;
+			padding: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			position: absolute;
+			transform: translate3d(-50%,-50%,0);
+			left: 50%;
+			// @include susy-breakpoint($bp-med) {
+			// 	padding: 10em 0;
+			// 	top: 5%;
+			// }
+			// @include susy-breakpoint($bp-xl) {
+			// 	padding: 15em 0;
+			// }
+		}
+
+		&__heading {
+			text-shadow: 0 2px 14px #000000;
+			color: white;
+			margin-bottom: 0.25em;
+			margin-top: 0;
+			padding: 0;
+			@include susy-breakpoint($bp-med) {
+				font-size: 3.25em;
+				margin-bottom: 0.5em;
+			}
+			@include susy-breakpoint($bp-lg) {
+				font-size: 4.5em;
+			}
+		}
+
+		a {
+			// z-index: -1;
+		}
+	}
+
+	.triangle {
+		svg {
+			position: absolute;
+			width: 100%;
+			height: 10vw;
+			left: 0;
+			right: 0;
+			top: 100px;
+		}
+	}
+
+	.main-content {
+		text-align: center;
+		position: relative;
+		// background-color: #F5F1E5;
+		// background-image: url(#{$images}/triangle.svg);
+	}
+
+	.section-heading {
+		text-align: center;
+	}
+
+	.journey {
+		position: relative;
+		@include susy-breakpoint($bp-med) {
+			text-align: center;
+		}
+
+		&__heading {
+			color: $red;
+		}
+
+		&__text {
+			max-width: 500px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		&__extraText {
+			background: $red;
+			color: white;
+			max-width: 900px;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 2em 3em;
+			margin-top: 2em;
+
+			a {
+				display: block;
+				margin-top: 0.5em;
+				color: white;
+				font-weight: 600;
+			}
+			@include susy-breakpoint($bp-med) {
+				background: white;
+				color: initial;
+
+				a {
+					color: $red;
+				}
+			}
+		}
+
+		.journeyCards {
+			@extend %flexCards;
+			justify-content: center;
+
+			.card {
+				@extend %flexCard;
+				margin: 1em 0;
+				// max-width: 300px;
+				@include susy-breakpoint($bp-med) {
+					margin: 1em 1.5em;
+				}
+
+				&__heading {
+					color: white;
+					flex-basis: 100%;
+				}
+
+				&__text {
+					text-align: left;
+					@include decorative($gold);
+
+					&:before {
+						position: relative;
+						text-align: center;
+						margin-left: auto;
+						margin-right: auto;
+						width: 7em;
+						height: 5px;
+						top: -1.5em;
+					}
+				}
+
+				&__link {
+					@extend %flexCardLink;
+				}
+			}
+		}
+	}
+
+	.expect {
+		@include susy-breakpoint($bp-med) {
+			margin-bottom: 2.5em;
+		}
+
+		.section-heading {
+			color: $gray_dark;
+			padding-top: 2em;
+			@include susy-breakpoint($bp-med) {
+				padding-top: 1em;
+				padding-bottom: 1em;
+			}
+		}
+
+		.expectCards {
+			display: flex;
+			justify-content: space-around;
+			flex-flow: row wrap;
+		}
+
+		.card {
+			padding: 0;
+			color: $gray_dark;
+			// text-transform: capitalize;
+			@include susy-breakpoint($bp-med) {
+				flex-basis: 32%;
+				padding: 1em;
+			}
+
+			&:not(:first-of-type) {
+				.card__heading {
+					@include susy-media(0 900px) {
+						padding-top: 1.5em !important;
+						@include decorative($gold);
+
+						&:before {
+							left: 50%;
+							transform: translateX(-50%);
+							width: 100px;
+						}
+					}
+				}
+			}
+
+			&__icon {
+				display: none;
+				width: 100px;
+				@include susy-breakpoint($bp-med) {
+					display: initial;
+				}
+			}
+
+			&__heading {
+				color: $gray_dark;
+				text-transform: capitalize;
+				@include susy-media(0 900px) {
+					margin-bottom: 0.25em;
+					padding-bottom: 0.5em;
+				}
+			}
+
+			&__text {
+				padding: 0 1em;
+				max-width: 500px;
+			}
+		}
+	}
+
+	.affording {
+		position: relative;
+
+		&__heading {
+			color: $red;
+			padding-left: 5%;
+			padding-right: 5%;
+		}
+
+		p {
+			@extend %smallWidthContainer;
+			padding-bottom: 2em;
+			padding-left: 5%;
+			padding-right: 5%;
+		}
+
+		.wrap {
+			width: 100%;
+			@include susy-breakpoint($bp-med) {
+				width: 90%;
+			}
+		}
+		@include susy-breakpoint($bp-med) {
+			margin-bottom: -300px;
+			&:after {
+				content: '';
+				position: absolute;
+				top: 15%;
+				background: $tan;
+				height: 62%;
+				width: 100%;
+				left: 0;
+				width: 55%;
+				left: 50%;
+				transform: translateX(-50%);
+				bottom: 10%;
+				max-width: 875px;
+			}
+		}
+		@include susy-breakpoint($bp-lg) {
+			&:after {
+				height: 67%;
+			}
+		}
+		.section {
+			position: relative;
+			// z-index:
+			margin-left: -6%;
+			margin-right: -6%;
+			&:first-of-type {
+				z-index: 999;
+			}
+
+
+			@include susy-breakpoint($bp-med) {
+				display: flex;
+				justify-content: space-around;
+				margin-left: 0;
+				margin-right: 0;
+
+				&:nth-of-type(2) {
+					z-index: 99;
+					top: -150px;
+
+					.card {
+						order: 2;
+					}
+				}
+
+				&:nth-of-type(3) {
+					z-index: 9;
+					top: -300px;
+				}
+			}
+		}
+
+		.card {
+			text-align: left;
+			flex-basis: 55%;
+
+			p {
+				padding: 0;
+			}
+			&:nth-of-type(2) {
+				order: 2;
+			}
+
+			&__imageWrapper {}
+
+			&__info {
+				position: relative;
+				bottom: 60px;
+				background: white;
+				width: 80%;
+				margin-left: auto;
+				margin-right: auto;
+				// padding: 0.5em 1em;
+				padding: 1em 1.5em 1.5em;
+
+				h2 {
+					margin-top: 0;
+				}
+
+				p {
+					width: initial;
+					margin-left: 0;
+				}
+
+				.btn__hollow {
+					padding: 1em 2em;
+					border: 2px solid;
+					display: inline-block;
+					text-decoration: none;
+					text-transform: uppercase;
+					font-weight: 600;
+				}
+			}
+		}
+
+		.fastFact {
+			display: none;
+			top: -50px;
+			position: relative;
+			@include susy-breakpoint($bp-med) {
+				display: block;
+				flex-basis: 33%;
+				background: rgba(227, 212, 170, .2);
+				height: initial;
+				align-self: center;
+			}
+
+			p {
+				padding-bottom: 0;
+			}
+			&__heading {
+				text-transform: uppercase;
+				font-size: 1em;
+				margin-bottom: 0.5em;
+				color: $gold;
+			}
+
+			&__info {
+				font-size: 1.5em;
+				font-weight: 400;
+			}
+
+			.lighting {
+				vertical-align: bottom;
+				margin-right: 0.5em;
+			}
+		}
+	}
+
+	.waiting {
+		padding: 2em 0;
+		background: none;
+		margin-top: 0;
+
+		.section-heading {
+			color: $gray_dark;
+		}
+
+		.btn-red {
+			display: block;
+			margin: 0 auto 1em;
+			max-width: 350px;
+			padding: 0.35em 3em 0.15em;
+			width: 275px;
+			@include susy-breakpoint($bp-med) {
+				display: inline-block;
+				max-width: 100%;
+				margin: 1em;
+			}
+		}
+	}
+
+	.datesBox {
+		display: block;
+		background: $black;
+		color: white;
+		text-align: center;
+		padding: 0.5em;
+		top: 50%;
+		right: 0;
+		padding: 1em 2em 2em;
+		min-width: 200px;
+		@include susy-breakpoint($bp-med) {
+			position: absolute;
+			padding: 0.5em 2em;
+		}
+		@include susy-breakpoint($bp-xl) {
+			transform: translateY(-50%);
+			position: absolute;
+		}
+
+		&__flexWrapper {
+			display: flex;
+			flex-flow: row wrap;
+			align-items: flex-end;
+			@include susy-breakpoint($bp-med) {
+				flex-flow: column;
+				align-items: center;
+			}
+		}
+
+		&__register-start {
+			margin-right: 3px;
+		}
+
+		&__dottedLine {
+			border-bottom: 2px dotted #ffffff;
+			margin-left: 3px;
+			margin-right: 3px;
+			margin-top: -5px;
+			position: relative;
+			-webkit-box-flex: 1;
+			-ms-flex: 1 1 auto;
+			flex: 1 1 auto;
+			padding: 0 5px;
+			box-sizing: border-box;
+			top: -4px;
+			@include susy-breakpoint($bp-med) {
+				display: none;
+			}
+		}
+
+		&__heading {
+			color: white;
+			position: relative;
+			z-index: 1;
+			max-width: 500px;
+			margin-left: auto;
+			margin-right: auto;
+
+			&:before {
+				border-top: 2px solid $gold;
+				content: "";
+				margin: 0 auto;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				width: 95%;
+				z-index: -1;
+				@include susy-breakpoint($bp-med) {
+					width: 120%;
+					left: -18px;
+				}
+			}
+
+			span {
+				/* to hide the lines from behind the text, you have to set the background color the same as the container */
+				background: $black;
+				padding: 0 15px;
+				letter-spacing: 0;
+			}
+		}
+
+		&__text {
+			margin-top: 0;
+			margin-bottom: 1.5em;
+			font-style: italic;
+			font-weight: 600;
+			max-width: 500px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		&__date {
+			display: block;
+			font-size: 1.3em;
+			font-weight: 700;
+			font-style: normal;
+			margin-left: 5px;
+		}
+
+		&__cta {
+			padding: 1em 2em;
+			border: 2px solid $gold;
+			display: inline-block;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-weight: 600;
+			color: $gold;
+			margin: 0.5em;
+			padding: 0.5em 1em;
+			min-width: 140px;
+			@include susy-breakpoint($bp-med) {
+				display: none;
+			}
+		}
+	}
+
+	.tanBackground {
+		position: relative;
+		padding-bottom: 2.5em;
+		margin-bottom: 5em;
+
+		&:after {
+			// background: #ebead0;
+			background: $tan;
+			background-repeat: no-repeat;
+			background-size: cover;
+			padding-bottom: 13em;
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 175px;
+			height: 95%;
+			// width: 100%;
+			z-index: -1;
+			clip-path: polygon(50% 15%, 100% 0, 100% 95%, 50% 100%, 0 95%, 0 0);
+
+
+			@include susy-breakpoint(900px) {
+				left: 2.5%;
+	    	right: 2.5%;
+			}
+			@include susy-breakpoint(1200px) {
+				clip-path: polygon(50% 15%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
+			}
+		}
+	}
+
+	.accreditations {
+		&__title {
+			font-size: 1.5em;
+			display: none;
+			text-transform: capitalize;
+			@include susy-breakpoint($bp-med) {
+				display: block;
+				@include decorative($gold);
+
+				&:before {
+					left: 50%;
+					width: 620px;
+					transform: translateX(-50%);
+				}
+				padding-top: 2.5em;
+			}
+		}
+
+		&__logos {
+			display: flex;
+			flex-flow: row wrap;
+			align-items: center;
+			justify-content: center;
+			@media(max-width: $bp-med - 1) {
+				 @include decorative($gold);
+
+				&:before {
+					left: 50%;
+					width: 100px;
+					transform: translateX(-50%);
+				}
+
+				img {
+					width: auto;
+					height: 20vw;
+					max-height: 90px;
+					margin-bottom: 0.5em;
+				}
+			}
+			@include susy-breakpoint($bp-med) {
+				img {
+					height: 25vw;
+    			max-height: 80px;
+				}
+			}
+		}
+
+		&__logoWrapper {
+			flex: 0 1 auto;
+			margin: 1em 0.5em;
+			@include susy-breakpoint($bp-med) {
+				margin: 1em;
+			}
+		}
+	}
+	
 }
-
-
-// END OF TEMPORARY STYLES == UNTIL BRAND PAGE IS READY TO BE REDIRECTED TO

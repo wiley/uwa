@@ -1,7 +1,5 @@
 let mix = require('laravel-mix');
-let options = {
-  lineBreak: false
-}
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -14,8 +12,23 @@ let options = {
  */
 // mix.setPublicPath('path/to/public');
 
+mix.options({ processCssUrls: false });
+
 mix.js('js/scripts.js', 'js/build/production.min.js')
-  .sass('scss/style.scss', 'css/style.min.css');
+  .sass('scss/style.scss', 'css/build/minified/style.css');
+
+mix.disableNotifications();
+
+mix.browserSync({
+    proxy: 'uwa-gulp.dev',
+    notify: false,
+    files: ["./css/build/minified/*.css", "./js/build/production.min.js"]
+})
+
+mix.copy('node_modules/fontfaceobserver/fontfaceobserver.js', 'js/build/fontfaceobserver.js');
+
+
+
 // mix.sass('scss/style.scss', 'dist/');
 // Full API
 // mix.js(src, output);
@@ -26,14 +39,6 @@ mix.js('js/scripts.js', 'js/build/production.min.js')
 // mix.less(src, output);
 // mix.stylus(src, output);
 // mix.browserSync('uwa.loc');
-mix.disableNotifications();
-mix.browserSync({
-    proxy: 'uwa-gulp.dev',
-    // host: 'startermix.local',
-    notify: false,
-    files: ["./css/*.css", "./js/build/production.min.js"]
-})
-
 // mix.autoload({
 //    jquery: ['$', 'window.jQuery']
 // });

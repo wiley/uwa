@@ -5,7 +5,13 @@ GENERAL STYLES
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
   box-sizing: border-box;
+  // overflow-x: hidden;
+
+  &.activeModal {
+    overflow: hidden;
+  }
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -18,13 +24,15 @@ body {
 	background-color: white;
 	-webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-	@include mobilefirst($bp-lg) { font-size: 112.5%; }
-	@include mobilefirst(1600px) { font-size: 125%; }
+  overflow-x: hidden;
+  background-color: white;
+	// @include mobilefirst($bp-lg) { font-size: 112.5%; }
+	// @include mobilefirst(1600px) { font-size: 125%; }
 
 	&.no-scroll {
 		overflow: hidden;
 	}
+
 }
 
 // Styled box with a border
@@ -34,7 +42,7 @@ body {
 }
 
 .content {
-	margin: 1.5em 0;
+	padding: 1.5em 0;
 }
 
 .bg {
@@ -51,3 +59,25 @@ body {
 .show { display: block; }
 .hidden { display: none; }
 .pull-right { float: right; }
+
+@custom-selector :--headings h1, h2, h3, h4, h5, h6;
+
+:--headings {
+  color: $gray_dark;
+}
+
+.sr {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px); /* for Internet Explorer */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+table {
+  display: table;
+  overflow-x: scroll;
+}

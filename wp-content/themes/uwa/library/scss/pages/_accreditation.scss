@@ -1,0 +1,32 @@
+.accreditationList {
+	list-style-type: none;
+  padding-left: 0;
+	li {
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	&__text {
+		order: 2;
+	}
+
+	a {
+		// display: block;
+		order: 1;
+	}
+
+	img {
+		width: 100px !important;
+		float: none;
+		margin: 0.5em auto !important;
+	}
+
+  @include susy-breakpoint(768px) {
+    li {
+      display: flex;
+    }
+    &__text {
+      width: 70%;
+    }
+  }
+}

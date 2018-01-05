@@ -1,0 +1,118 @@
+.tax-degree_level {
+	.degreeLevel__flexWrapper {
+		display: flex;
+		justify-content: space-around;
+		flex-flow: row wrap;
+	}
+
+	.cardLinkWrapper.item {
+		margin: 1em 0;
+		max-width: 100%;
+	}
+
+	.card {
+		background-size: cover;
+		width: 400px;
+		height: 320px;
+		display: block;
+		position: relative;
+		background-position: top center;
+		text-decoration: none;
+		max-width: 100%;
+
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: block;
+			background: linear-gradient(to bottom, rgba(0, 0, 0, 0.51) 0, rgba(0, 0, 0, 0.57) 50%, rgba(2, 2, 2, 0.64) 100%);
+		}
+
+		&__title {
+			color: white;
+			text-shadow: 0 2px 14px #000000;
+			margin-top: 0;
+		}
+
+		&__infoWrapper {
+			position: relative;
+			z-index: 99;
+			padding: 0.5em 1em;
+		}
+	}
+
+	.degreeType {
+		background: #f5f1e5;
+	}
+}
+
+.tax-degree_level {
+	.card {
+		flex: 1 1 300px !important;
+		overflow: hidden;
+		height: 280px;
+		max-width: 100%;
+		padding: 0.5em 0.5em 1em;
+
+		&__infoWrapper {
+			flex-flow: row wrap;
+			height: 100%;
+			display: flex;
+		}
+
+		&__info {
+			transition: 0.2s ease;
+			align-self: flex-end;
+			margin-left: auto;
+			color: #C8BF79;
+			font-weight: 700;
+
+			svg {
+				vertical-align: middle;
+				padding: 2px;
+				fill: #C8BF79;
+				width: 25px;
+				height: 25px;
+				padding: 5px;
+			}
+		}
+
+		.cardLink__cta-background {
+			position: absolute;
+			right: 8px;
+			bottom: 3px;
+			background: #C8BF79;
+			width: 200px;
+			height: 35px;
+			transition: 0.25s ease;
+			transform: translateX(115%);
+		}
+	}
+
+	.card {
+		// &:focus,
+		&:hover {
+			& .card__title {
+				// font-size: 1.6em;
+				// text-decoration: underline;
+				// font-weight: 700;
+			}
+
+			& .card__info {
+				color: black !important;
+				z-index: 9999;
+
+				svg {
+					fill: black;
+				}
+			}
+
+			.cardLink__cta-background {
+				transform: translateX(0);
+			}
+		}
+	}
+}

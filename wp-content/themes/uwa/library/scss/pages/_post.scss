@@ -2,17 +2,154 @@
 POST STYLES
 *********************/
 
+
+.single-post .banner__heading {
+	max-width: 1250px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.banner__heading {
+	font-size: 2em;
+}
+@media (min-width: 900px){
+	.banner__heading {
+	    font-size: 3.0em;
+	}
+}
+
+@media (min-width: 1040px) {
+	.banner__heading {
+	    font-size: 3.75em;
+	}
+}
+
+.single-post {
+	.banner {
+		min-height: 375px;
+		@include susy-breakpoint(650px) {
+			min-height: 425px;
+		}
+		@include susy-breakpoint(900px) {
+			min-height: 500px;
+		}
+		@include susy-breakpoint(1200px) {
+			min-height: 550px;
+		}
+
+		&:after {
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.76) 50%, rgba(0, 0, 0, 0.45) 100%);
+	    position: absolute;
+	    content: '';
+	    top: 0;
+	    height: 100%;
+	    width: 100%;
+	    left: 0;
+		}
+		&__text {
+			top: 60%;
+			position: absolute;
+			transform: translateY(-50%);
+			text-align: center;
+			margin-left: auto;
+			width: inherit;
+			padding: 0;
+			left: 5%;
+			right: 5%;
+			z-index: 9;
+
+			.entry-meta a {
+				color: white !important;
+				font-style: italic;
+			}
+		}
+
+		&__heading {
+			padding: 0;
+			padding-bottom: .2em;
+		}
+	}
+
+	.content__innerWrapper {
+		flex-flow: row wrap;
+		justify-content: space-between;
+		padding: 1.5em 0;
+
+		main {}
+
+		aside {
+			.widget_categories {
+				background: #f5f1e5;
+		    position: relative;
+		    padding: 1em 1.5em 3em;
+		    max-width: 550px;
+		    margin: 2em auto;
+				ul {
+					list-style-type: none;
+					padding-left: 20px;
+					a {
+						text-decoration: none;
+						font-weight: 600;
+						color: #A81D32;
+					}
+				}
+			}
+
+			.widgettitle {
+				margin: 1em auto;
+		    font-size: 1.75em;
+			}
+		}
+		@include susy-breakpoint(900px) {
+			display: flex;
+			padding: 3em 0;
+			flex: 1;
+	    min-width: 375px;
+			main {
+				flex: 2;
+				margin-right: 2.5em;
+			}
+
+			aside {
+				margin-left: 2.5em;
+				flex: 1;
+			}
+		}
+		.formWrapper {
+			max-width: 550px;
+			margin: 0 auto;
+			padding: 1em;
+
+			&__heading {
+				padding: 0 0.35em;
+				color: white;
+				text-shadow: 0 2px 7px rgba(0, 0, 0, 0.25);
+				font-weight: 500;
+				text-align: center;
+			}
+
+			.halfField li {
+				width: 48%;
+			}
+
+			.halfField:last-child li {
+				width: 34%;
+			}
+			.halfField:last-child li:first-child {
+				width: 62%;
+			}
+		}
+	}
+}
 /* post meta */
 .post-meta {
 	color: gray;
 	font-style: italic;
 	margin: 0;
 }
-
 /* entry content */
 .post-content {
-	padding: 1.5em 0;
-
+	// padding: 1.5em 0;
 	p {
 		margin: 0 0 1.5em;
 	}
@@ -33,7 +170,7 @@ POST STYLES
 	}
 
 	img {
-		margin: 0 0 1.5em 0;
+		margin: 0 0 1.5em;
 		max-width: 100%;
 		height: auto;
 	}
@@ -46,13 +183,14 @@ POST STYLES
 		margin: 0 0 1.5em;
 		border-radius: 3px;
 	}
+}
+/* end .entry-content */
+// the tag output
 
-} /* end .entry-content */
+.tags {
+	margin: 0;
+}
 
-
-	// the tag output
-	.tags {
-		margin: 0;
-	}
-
-
+.single {
+	.banner {}
+}

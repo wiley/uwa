@@ -1,0 +1,106 @@
+.blog {
+	.banner {
+		&__heading {
+			text-shadow: 0 2px 14px #000000;
+			color: white;
+			margin: 0;
+			padding: 2.75em 0 1.75em;
+			font-size: 3.25em;
+			@include susy-breakpoint($bp-med) {
+				font-size: 3.5em;
+			}
+			@include susy-breakpoint($bp-lg) {
+				font-size: 4.5em;
+				padding: 2.75em 0 1.75em;
+			}
+		}
+	}
+
+	article {
+		padding: 4em 0;
+		position: relative;
+		border-bottom: 1px solid gray;
+
+		@include susy-breakpoint($bp-med) {
+			padding: 6em 0;
+		}
+
+		@include susy-breakpoint($bp-med) {
+			padding: 7.5em 0;
+		}
+
+		.post-meta {
+			color: #9a9a9a;
+			font-weight: 600;
+		}
+
+		.background {
+			&:after {
+				background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.76) 50%, rgba(0, 0, 0, 0.45) 100%);
+				position: absolute;
+				content: '';
+				top: 0;
+				height: 100%;
+				width: 100%;
+				left: 0;
+			}
+		}
+
+		&:hover {
+			.background {
+				opacity: 1;
+			}
+
+			a {
+				color: white;
+			}
+
+			.post-header__title {
+				color: white;
+			}
+
+			.post-meta {
+				color: white;
+			}
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		.background {
+			position: absolute;
+			top: 0;
+			height: 100%;
+			left: 0;
+			width: 100%;
+			background-size: cover;
+			opacity: 0;
+			transition: 0.5s ease;
+		}
+
+		.wrap {
+			position: relative;
+			z-index: 1;
+		}
+
+		.post-header__wrapper {
+			padding: 1em 0;
+			max-width: 800px;
+			margin: 0 auto;
+			position: relative;
+			z-index: 2;
+		}
+
+		.post-header__title {
+			color: #a71d33;
+			text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+			font-size: 2.5em !important;
+			letter-spacing: 1px;
+			line-height: 1.25em;
+			@include susy-breakpoint(900px) {
+				font-size: 3em !important;
+			}
+		}
+	}
+}

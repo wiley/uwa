@@ -1,22 +1,22 @@
 /******************************************************************
 Main Stylesheet
 ******************************************************************/
-
+@import "~susy/sass/susy";
 /*********************
 IMPORTING BASE
-*********************/
-
+// *********************/
+// @import "~susy/sass/susy";
+// // @import "susy";
 @import "base/normalize";
 @import "base/variables";
 @import "base/mixins";
 @import "base/typography";
 @import "base/grid";
-@import "base/base";
-
-/*********************
-IMPORTING MODULES
-*********************/
-
+@import "base/base"; // //
+// // /*********************
+// // IMPORTING MODULES
+// // *********************/
+// //
 @import "modules/accordion";
 @import "modules/buttons";
 @import "modules/clearfix";
@@ -27,55 +27,43 @@ IMPORTING MODULES
 @import "modules/sidebar";
 @import "modules/social";
 @import "modules/tables";
-
-/*********************
-IMPORTING PARTIALS
-*********************/
-
-@import "partials/header";
+@import "modules/carousel";
+@import "modules/overlayForm";
+@import "modules/form";
+@import "modules/megamenu";
+@import "modules/priorityNav";
+@import "modules/infoAccordions"; // // /*********************
+// // IMPORTING PARTIALS
+// // *********************/
+// //
 @import "partials/nav";
-@import "partials/footer";
-
-/*********************
-IMPORTING PAGES
-*********************/
-
+@import "partials/header";
+@import "partials/footer"; // //
+// // /*********************
+// // IMPORTING PAGES
+// // *********************/
+// //
 @import "pages/layout";
 @import "pages/home";
 @import "pages/page";
+@import "pages/faq";
+@import "pages/single-degrees";
 @import "pages/post";
 @import "pages/thank-you";
+@import "pages/verticals";
+@import "pages/degreesArchive";
+@import "pages/blog";
+@import "pages/taxDegreeLevel";
+@import "pages/scholarships-partnerships";
+@import "pages/template-scholarship-partnership";
+@import "pages/accreditation";
+@import "pages/archives";
+@import "pages/404";
 
+@import "misc";
 /*********************
 PRINT
 *********************/
-@media print { @import "partials/print"; }
-
-html > * {
-  &:focus {
-    background-color: gray;
-  }
-}
-
-/* ACCESSIBILITY */
-.sr-only
-{position:absolute;
-display: block;
-left:-10000px;
-top:auto;
-width:1px;
-height:1px;
-overflow:hidden;}
-
-input.btn {
-  max-width: 87%;
-  display: block;
-}
-.next.btn {
-  margin: 0 30px;
-}
-
-.block2 .next {
-
-  margin: 0 30px;
+@media print {
+	 @import"partials/print";
 }

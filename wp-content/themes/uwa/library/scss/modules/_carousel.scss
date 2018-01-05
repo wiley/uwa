@@ -1,0 +1,118 @@
+.owl {
+	&-nav.disabled {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+	}
+
+	&-carousel {
+		.controls,
+		.owl-nav {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 99;
+			transition: 0.15s ease-out;
+
+			&.hidden {
+				opacity: 0;
+			}
+		}
+
+		.owl-stage-outer {
+			z-index: 999;
+		}
+	}
+
+	&-next,
+	&-prev {
+		cursor: pointer;
+		// background-color: black;
+		position: absolute;
+		background-image: url("/wp-content/themes/uwa/library/images/slider-arrow.svg");
+		background-size: contain;
+		height: inherit;
+		width: 100px;
+		background-repeat: no-repeat;
+		height: 100%;
+		z-index: 999;
+	}
+
+	&-prev {
+		transform: rotate(90deg);
+		right: 88vw;
+		right: calc(100% + 100px);
+	}
+
+	&-next {
+		transform: rotate(270deg);
+		left: 88vw;
+		left: calc(100% + 100px);
+	}
+	@include susy-breakpoint($bp-med) {
+		&-next,
+		&-prev {
+			width: 150px;
+		}
+
+		&-prev {
+			transform: rotate(90deg);
+			right: calc(100% + 40px);
+		}
+
+		&-next {
+			transform: rotate(270deg);
+			left: calc(100% + 40px);
+		}
+	}
+	@include susy-breakpoint($bp-xl) {
+		&-next,
+		&-prev {
+			width: 200px;
+		}
+
+		&-prev {
+			transform: rotate(90deg);
+			// right: calc(100% + 80px);
+		}
+
+		&-next {
+			transform: rotate(270deg);
+			// left: calc(100% + 80px);
+		}
+	}
+}
+
+.archive {
+	.single {
+		display: flex;
+		justify-content: center;
+
+		.cardLinkWrapper.item {
+			// margin: 1em 2em;
+			flex: 1 1 350px;
+			max-width: 400px;
+		}
+	}
+
+	.double {
+		display: flex;
+		justify-content: center;
+		flex-flow: row wrap;
+
+		.cardLinkWrapper.item {
+			margin: 1em 2em;
+			flex: 1 1 250px;
+	    max-width: 350px;
+			flex: none;
+		}
+	}
+}
+
+.tax-degree_vertical .cardLink img {
+	width: 100%;
+}

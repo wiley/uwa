@@ -1,16 +1,247 @@
 /*************************
 PAGE SPECIFIC STYLES
 *************************/
-
-.single-header__title,
 .page-header__title,
-.post-header__title {
+.post-header__title,
+.single-header__title {
 	margin: 0;
 }
-
-
 /**** PAGE TEMPLATE FULL WIDTH ****/
-
 .page-template-page-full .main-content {
-	@include mobilefirst($bp-med) { @include span(12); } // Make full width instead of 8 columns
+	@include mobilefirst($bp-med) {
+		 @include span(12);
+	}
+	// Make full width instead of 8 columns
+}
+
+article {}
+
+.page {
+	.content {
+		position: relative;
+
+		&:after {
+			content: '';
+			background-image: url("#{$images}/triangles.svg");
+			background-repeat: no-repeat;
+			background-position: top center;
+			height: 100%;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			background-size: 400px;
+			transform: rotate(180deg);
+			z-index: 9;
+			@include susy-breakpoint($bp-med) {
+				background-size: 500px;
+			}
+		}
+	}
+
+	.intro {
+		max-width: 800px;
+		margin: -5.5em 1em 1em;
+		position: relative;
+		background: white;
+		margin-left: auto;
+		margin-right: auto;
+		// text-align: center;
+		text-align: left;
+		z-index: 9999;
+		padding-bottom: 5em;
+
+		img,
+		table,
+		video {
+			@include susy-breakpoint($bp-med) {
+				width: 120%;
+				margin-left: -10%;
+				margin-top: 2em;
+				margin-bottom: 2em;
+			}
+		}
+
+		ul {
+			margin-left: 1em;
+		}
+
+		p {
+			padding: 0 1.25em;
+			text-align: left;
+			margin-top: 1em;
+			margin-bottom: 1em;
+			// &:first-of-type {
+			// 	font-size: 2em;
+			//   font-weight: 300;
+			//   padding: 0 1em !important;
+			// }
+		}
+
+		&__breadcrumbs {
+			background-color: #A81D32;
+			color: white;
+			padding: 1em 0.5em;
+			text-align: center;
+			font-size: 0.8em;
+			font-weight: 600;
+		}
+
+		&__subNav {
+			background-color: #A81D32;
+			font-size: 0.8em;
+			// white-space: nowrap;
+			// overflow-x: auto;
+		}
+
+		.btn {
+			transition: text-shadow 0.3s;
+			display: block;
+	    margin-left: auto;
+	    width: 450px;
+	    margin-right: auto;
+	    margin-bottom: 2em;
+	    max-width: 100%;
+			text-align: center;
+			&:focus,
+			&:hover {
+				text-decoration: underline;
+				// font-weight: 600;
+				// text-shadow: 0 0 0.65px #11181F, 0 0 0.65px #11181F;
+			}
+		}
+
+		.subpagesNav {
+			list-style-type: none;
+			display: flex;
+			justify-content: center;
+			padding-left: 0;
+			margin: 0.5em;
+			margin-top: 0;
+			text-decoration: none;
+
+			& li {
+				margin: 0 1em;
+				border-top: 5px solid transparent;
+
+				&.current_page_item {
+					border-top: 5px solid white;
+				}
+
+				a {
+					color: white;
+					padding: 0.5em;
+					text-decoration: none;
+					display: inline-block;
+					padding: 1em;
+
+					&:focus,
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+
+		&__breadcrumbs {
+			background-color: #A81D32;
+			color: white;
+			padding: 1em 0.5em;
+			text-align: center;
+			font-size: 0.8em;
+			font-weight: 600;
+			// TEMPORARY FIX
+			a {
+				color: white;
+			}
+		}
+
+		&__headline {
+			padding: 0 1em;
+			text-align: left;
+			font-size: 2em;
+			font-weight: 300;
+			padding: 0 .5em !important;
+
+			@include susy-breakpoint(768px) {
+			    padding: 0 1em !important;
+			}
+		}
+
+		&__text {
+			padding: 0.5em 2em;
+		}
+	}
+
+	.waiting {
+		// background: white;
+	}
+}
+
+.waiting {
+	background: #f5f1e5;
+	position: relative;
+	margin-top: -4em;
+	padding-top: 6em;
+	padding-bottom: 0;
+
+	&__heading {
+		margin-bottom: 1em;
+		margin-top: 1em;
+	}
+
+	a {
+		width: 300px;
+		letter-spacing: 3px;
+		margin: 0.5em;
+		width: 95%;
+		max-width: 300px;
+	}
+
+	.wrap {
+		z-index: 999;
+		padding: 2em 0 0;
+		top: -65px;
+		position: relative;
+		text-align: center;
+	}
+}
+
+.banner {
+	// height: 85vw;
+	min-height: 300px;
+	max-height: 455px;
+	.wrap {
+		// position: absolute;
+		z-index: 99999;
+		color: white;
+		text-align: center;
+		width: 100%;
+		// left: 0;
+		// right: 0;
+		// bottom: 50px;
+	}
+
+	&__heading {
+		text-shadow: 0 2px 14px #000000;
+		color: white;
+		@include susy-breakpoint($bp-med) {
+			font-size: 3.25em;
+		}
+		@include susy-breakpoint($bp-lg) {
+			font-size: 4.5em;
+		}
+	}
+}
+// TEMP FIX
+.breadcrumb-icon {
+	display: none;
+}
+
+table {
+	margin-bottom: 5em !important;
+	th {
+		background-color: #676767;
+		color: white;
+		/* text-transform: uppercase; */
+	}
 }

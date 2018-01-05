@@ -1,59 +1,78 @@
 /******************************************************************
 Button Styles
 ******************************************************************/
-
 /// BASE BUTTON
 /// @example
 ///     @include buton($color);
 /// @param {variable} $btn-color [$link-color] - Background Button Color
-
-@mixin button($btn-color: $link-color) {
-  display: inline-block;
-  position: relative;
-  font-family: $condensed;
+@mixin button($btn-color: $link-color, $text-color: #fff !important) {
+	display: inline-block;
+	position: relative;
+	font-family: $condensed;
 	letter-spacing: 2px;
-  text-decoration: none;
-  color: white !important;
-  font-size: 1em;
-  line-height: 34px;
-  font-weight: normal;
-  padding: .5em 1em;
-  border: 0;
-  cursor: pointer;
-  transition: background-color 0.14s ease-in-out;
-  background: $btn-color;
+	text-decoration: none;
+	color: $text-color;
+	font-size: 1em;
+	line-height: 34px;
+	font-weight: normal;
+	padding: 0.5em 1em;
+	border: 0;
+	cursor: pointer;
+	transition: background-color 0.14s ease-in-out;
+	background: $btn-color;
 	text-transform: uppercase;
 	border-bottom: 6px solid darken($btn-color, 20%);
-
-  // hovering on the btn
-  &:hover, &:focus {
-    color: white;
-    text-decoration: none;
-    outline: none;
-    background: darken($btn-color, 15%);
-  } // end hover
-
-  // clicking on the button
-  &:active {
-    top: 1px; // adds a tiny hop to the click
-  } // end active
-
-} // end .button
-
+	// hovering on the btn
+	&:focus,
+	&:hover {
+		color: white;
+		text-decoration: none;
+		outline: none;
+		background: darken($btn-color, 15%);
+	}
+	// end hover
+	// clicking on the button
+	&:active {
+		top: 1px; // adds a tiny hop to the click
+	}
+	// end active
+}
+// end .button
 // Regular Button
-.button, .btn {
-  @include button();
+.btn,
+.button {
+	@include button();
 }
 
 .button_gold {
 	@include button($gold);
 	color: $black !important;
 }
-
 // Small Button
 .button_sm {
-	font-size: .9em;
-	padding: .3em .8em;
+	font-size: 0.9em;
+	padding: 0.3em 0.8em;
 }
 
+.btn__hollow {
+	padding: 1em 2em;
+	border: 2px solid;
+	display: inline-block;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 600;
+	background-color: inherit;
+	border-color: $red;
+	transition: 0.25s ease;
+	// box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.31);
+	// box-shadow: 2px 3px 2px 0 rgba(135, 135, 135, 0.45);
 
+	&.mixitup-control-active {
+		background: $red;
+		color: white;
+		font-weight: 700;
+	}
+	// &--red {
+	//   border-color: $red;
+	// }
+}

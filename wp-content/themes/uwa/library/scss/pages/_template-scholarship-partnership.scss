@@ -1,0 +1,325 @@
+.page-template-scholarship-partnership-single-template {
+	.content:after {
+		display: none;
+	}
+	.accordion {
+		.accord {
+			margin: 1.25em 0;
+			background: rgba(81, 9, 21, 0.07);
+		}
+
+		.accord-content {
+			display: none;
+			padding: 0 1em 1em;
+
+			h4 {
+				margin-top: 3.5em;
+				font-weight: 600;
+				text-transform: initial;
+
+				&:first-of-type {
+					margin-top: 1em;
+				}
+			}
+		}
+
+		.accord-header {
+			margin: 0;
+		}
+
+		button {
+			background: #510915;
+			color: #fff;
+			border: none;
+			padding: 0.5em 1em;
+			width: 100%;
+			max-width: 100%;
+			text-align: left;
+			position: relative;
+			padding-right: 2.5em;
+		}
+
+		td:last-child {
+			text-align: center;
+			width: 145px;
+		}
+	}
+
+	.benefits {
+		margin: 3em 0;
+
+		ul {
+
+			flex-flow: row wrap;
+			justify-content: space-between;
+			padding: 0;
+			list-style-type: none;
+			width: 100%;
+			@include susy-breakpoint(650px) {
+				display: flex;
+			}
+		}
+
+		li {
+			// width: 25%;
+			// float: left;
+			flex: 1 1 50%;
+			min-width: 50%;
+			padding-left: 1.5em;
+			padding-right: 3rem;
+			position: relative;
+			z-index: 1;
+
+			@include susy-breakpoint(650px) {
+
+			}
+			h3 {
+				margin-top: 0;
+				color: $red;
+			}
+
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: -.75em;
+				width: 3em;
+				height: 3em;
+				background: #f5f1e5;
+				display: block;
+				z-index: -1;
+			}
+		}
+	}
+
+	.scholarshipDetails {
+		padding: 1em 2em;
+		background: #f5f1e5;
+	}
+	.waiting {
+		position: relative;
+		z-index: 9999;
+		padding: 3em;
+		margin-top: 0;
+		background: white !important;
+		@include susy-breakpoint(0 $bp-med) {
+			padding: 2em 0;
+		}
+
+		&:before {
+			content: '';
+			background-image: url("/wp-content/themes/uwa/library/images/triangles.svg");
+			background-repeat: no-repeat;
+			background-position: top center;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			background-size: 100vw;
+			transform: rotate(180deg);
+			@include susy-breakpoint($bp-med) {
+				background-size: 50%;
+			}
+		}
+
+		&__heading {
+			@include susy-breakpoint(0 $bp-med) {
+				font-size: 2.25em;
+			}
+			font-size: 50px;
+			text-align: center;
+		}
+	}
+
+	.waitingCards {
+		@extend %flexCards;
+		position: relative;
+
+		.card {
+			flex-basis: 100%;
+			@extend %flexCard;
+			display: flex;
+			text-align: center;
+			flex-flow: row wrap;
+			padding: 1em 2em 2em;
+			margin: 0.75em 0 !important;
+			// max-width: 380px;
+			@include susy-breakpoint($bp-med) {
+				flex: 1 1 25%;
+				margin: 1em !important;
+			}
+
+			&__heading {
+				color: white;
+				flex-basis: 100%;
+				position: relative;
+				padding-bottom: 1em;
+				@include decorative($red);
+
+				&:before {
+					transform: translateX(-50%);
+					top: 100%;
+					left: 50%;
+					background: #500A16;
+				}
+			}
+
+			&__link {
+				@extend %flexCardLink;
+				color: #2B2B2B !important;
+				width: 100%;
+				max-width: 250px;
+			}
+		}
+	}
+}
+// From Codepen
+
+.iconsWrapper {
+	width: 30px;
+	height: 30px;
+	// background: red;
+	position: relative;
+	font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;
+	color: #fff;
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.minus,
+.plus {
+	width: 30px;
+	height: 30px;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	line-height: 32px;
+	text-align: center;
+	transition: 0.35s all ease-in-out;
+}
+
+.plus {
+	opacity: 1;
+	transform: rotate(0deg);
+}
+
+.minus {
+	opacity: 0;
+	transform: rotate(-90deg);
+}
+
+button[aria-expanded="true"] > .iconsWrapper {
+	.plus {
+		opacity: 0;
+		transform: rotate(90deg);
+	}
+
+	.minus {
+		opacity: 1;
+		// transition: opacity .1s;
+		// transition: transform .7s;
+		transform: rotate(0deg);
+	}
+}
+
+.page {
+	&__flexWrapper {
+		margin-top: -3em;
+		// border-top: 30px solid #a71d33;
+		position: relative;
+		z-index: 99;
+		@include susy-breakpoint($bp-med) {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+
+	&__side {
+		background: #af1332;
+		align-self: flex-start;
+		display: none;
+		@include susy-breakpoint($bp-med) {
+			display: block;
+			flex-basis: 32%;
+			order: 1;
+		}
+	}
+
+	&__main {
+		background: white;
+		margin: 0 1em;
+		padding: 1em 1.5em 3em;
+		border-top: 30px solid $red;
+		@include susy-breakpoint($bp-med) {
+			flex-basis: 70%;
+			order: 2;
+		}
+		@include susy-breakpoint(0 $bp-med) {
+			margin: 0;
+			padding: 0;
+		}
+
+		.mobileOnly {
+			display: block;
+			margin-top: 2em;
+			margin-bottom: 3em;
+			@include susy-breakpoint($bp-med) {
+				display: none;
+			}
+			@include susy-breakpoint(0 $bp-med) {
+				.program__side {
+					// width: 112%;
+					// margin-left: -6%;
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+.decorativeForm {
+	// background: #510915;
+	padding: 0.5em 5%;
+	position: relative;
+	padding: 0;
+	margin-top: 0;
+
+	&__header {
+		background: #510915;
+		padding: 0.5em 5%;
+		position: relative;
+		padding-bottom: 4em;
+	}
+
+	&__heading {
+		margin-bottom: 0.2em;
+		margin-top: 0.5em;
+		font-size: 1.8em;
+		color: white;
+		text-transform: uppercase;
+		font-weight: 600;
+	}
+
+	&__prompt {
+		color: white;
+	}
+
+	.elp_submit {
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+
+	.legal-text {
+		max-width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 1em;
+	}
+}

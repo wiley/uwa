@@ -2,12 +2,12 @@
 SUSY GRID // For any questions go to http://susydocs.oddbird.net/en/latest/
 ******************************************************************/
 
-@import "../../bower_components/susy/sass/_susy.scss";
+@import "~susy/sass/susy";
 
 $susy: (
-  columns: 12, 
+  columns: 12,
   gutters: 1/2,
-  math: fluid, 
+  math: fluid,
   output: float,
   gutter-position: inside,
 );
@@ -16,4 +16,3 @@ $susy: (
 .half { @include span(6); }
 .quarter { @include span(3); }
 .third { @include span(4); }
-

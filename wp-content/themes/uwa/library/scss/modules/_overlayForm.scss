@@ -1,0 +1,71 @@
+.form {
+	&__wrapper {
+		position: fixed;
+		top: 0;
+		background: rgba(15, 14, 14, 0.66);
+		padding: 1em;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 99999;
+		transition: all 0.4s ease;
+		transform: translateY(-120%);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+    visibility: hidden;
+
+		&.active {
+			transform: translateY(0);
+      visibility: visible;
+		}
+
+		form {
+			background: #A81D32;
+			max-width: 550px;
+			color: white;
+			padding: 2em 1em;
+		}
+
+		.elp_submit {
+			text-align: right;
+			padding-left: 5%;
+			padding-right: 5%;
+			max-width: 300px;
+			margin-left: auto;
+
+			.requestinfo input[type="submit"] {
+				font-weight: 700;
+			}
+		}
+	}
+
+	&__heading {
+		background: #a81d32;
+		color: white;
+		margin: 0;
+		padding: 2em 1.25em 0;
+		font-size: 2em;
+	}
+
+	&__innerwrapper {
+		position: relative;
+	}
+
+	&__toggle {
+		border-radius: 50%;
+		background: white;
+		-webkit-appearance: none !important;
+		display: block;
+		position: absolute;
+		right: -25px;
+		top: -25px;
+
+    svg {
+      padding: 5px;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    }
+	}
+}

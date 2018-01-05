@@ -1,0 +1,97 @@
+.infoTabs {
+	.accordion {
+		.accord {
+			margin: 1.25em 0;
+			background: rgba(81, 9, 21, 0.07);
+		}
+
+		.accord-content {
+			display: none;
+			padding: 0 1em 1em;
+
+			h4 {
+				margin-top: 3.5em;
+				font-weight: 600;
+				text-transform: initial;
+
+				&:first-of-type {
+					margin-top: 1em;
+				}
+			}
+		}
+
+		.accord-header {
+			margin: 0;
+		}
+
+		button {
+			background: #510915;
+			color: #fff;
+			border: none;
+			padding: 0.5em 1em;
+			width: 100%;
+			max-width: 100%;
+			text-align: left;
+			position: relative;
+			padding-right: 2.5em;
+		}
+
+		td:last-child {
+			text-align: center;
+			width: 145px;
+		}
+	}
+}
+// From Codepen
+
+.iconsWrapper {
+	width: 30px;
+	height: 30px;
+	// background: red;
+	position: relative;
+	font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;
+	color: #fff;
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.minus,
+.plus {
+	width: 30px;
+	height: 30px;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	line-height: 32px;
+	text-align: center;
+	transition: 0.35s all ease-in-out;
+}
+
+.plus {
+	opacity: 1;
+	transform: rotate(0deg);
+}
+
+.minus {
+	opacity: 0;
+	transform: rotate(-90deg);
+}
+
+button[aria-expanded="true"] > .iconsWrapper {
+	.plus {
+		opacity: 0;
+		transform: rotate(90deg);
+	}
+
+	.minus {
+		opacity: 1;
+		// transition: opacity .1s;
+		// transition: transform .7s;
+		transform: rotate(0deg);
+	}
+}

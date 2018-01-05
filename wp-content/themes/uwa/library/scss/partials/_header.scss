@@ -1,21 +1,19 @@
 /*********************
 HEADER STYLES
 *********************/
-
 .header {
-
+	position: relative;
+	// z-index: 99;
 	&__logo {
 		margin: 0.75em 0;
-
 		@include mobilefirst($bp-med) {
 			float: left;
 		}
 	}
 
 	&__nav {
-    visibility: hidden;
-    height: 0;
-
+		// visibility: hidden;
+		// height: 0;
 		@include mobilefirst($bp-med) {
 			.nav {
 				float: right;
@@ -24,10 +22,178 @@ HEADER STYLES
 			}
 		}
 
-    &.visible {
-        visibility: visible;
-        height: auto;
-    }
+		&.visible {
+			visibility: visible;
+			height: auto;
+		}
+	}
+}
+
+.header {
+	position: relative;
+
+	.banner {
+		.wrap {
+			width: 90%;
+		}
 	}
 
+	.main-nav {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: flex-start;
+		position: absolute;
+		width: 100%;
+		margin: 1em 0;
+		@include susy-breakpoint($bp-med) {
+			background: white;
+			top: 60px;
+			width: 100%;
+			margin: 0;
+		}
+
+		&__wrap {
+			position: relative;
+			z-index: 999;
+		}
+
+		.logo {
+			position: relative;
+			z-index: 999;
+			box-shadow: 0 0 24px 0 rgba(0,0,0,0.31);
+			@include susy-breakpoint($bp-med) {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate3d(-50%, -50%, 0);
+			}
+
+			img {
+				max-width: 100px;
+				display: block;
+				@include susy-breakpoint($bp-med) {
+					max-width: 200px;
+				}
+			}
+		}
+
+		&__trigger {
+			z-index: 9;
+			background: white;
+			border: none;
+			padding: 5px 10px 0;
+			height: 40px;
+
+			svg {
+				width: 25px;
+				height: 30px;
+				fill: #510915;
+			}
+		}
+
+		nav {
+			@media (max-width:$bp-med) {
+				// position: fixed;
+				// background: #d2d2d2;
+				// width: 100vw;
+				// height: 100vh;
+				// top: 0;
+				// left: 0;
+				// transition: all 0.4s ease;
+				// transform: translateY(-100%);
+				// padding-top: 160px;
+				// z-index: 9999;
+				display: none;
+
+				&.visible {
+					transform: translateY(0%);
+				}
+			}
+			@include susy-breakpoint($bp-med) {
+				display: block;
+				width: 100%;
+			}
+
+			ul#menu-main {
+				padding: 0 20px;
+				float: none;
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				flex-flow: row wrap;
+				height: 64px;
+			}
+// Need new commit
+			li {
+				margin: 0.5em;
+				flex-basis: 100%;
+				@include susy-breakpoint($bp-med) {
+					flex-basis: initial;
+					flex: none;
+					&:nth-of-type(4) {
+						margin-left: auto;
+					}
+				}
+				@include susy-breakpoint($bp-xl) {
+					margin: 0.5em 1.5em 0;
+					padding-bottom: 0.5em;
+				}
+
+				a {
+					font-weight: 600;
+					font-size: 1em;
+					padding: 0.5em 1em;
+					font-family: $lora;
+					letter-spacing: 0;
+					color: $black;
+					font-family: "Lora", Helvetica, Arial, serif;
+					// text-transform: uppercase;
+					font-weight: normal;
+					@include susy-breakpoint($bp-med) {
+						font-size: 0.9em;
+					}
+					@include susy-breakpoint($bp-lg) {
+						font-size: 0.95em;
+					}
+					@include susy-breakpoint($bp-xl) {
+						font-size: 1em;
+					}
+				}
+			}
+		}
+	}
+
+	.secondary {
+		&-nav {
+			position: absolute;
+			right: 0;
+			top: 10px;
+
+			a {
+				color: white;
+				font-weight: 700;
+				font-size: 0.9em;
+			}
+
+			&__wrapper {
+				display: none;
+				position: relative;
+				z-index: 999;
+				@include susy-breakpoint($bp-med) {
+					display: block;
+				}
+			}
+		}
+	}
+	// #menu-secondary {
+	//     position: absolute;
+	//     right: 0;
+	//
+	// 		a {
+	// 			color: white;
+	// 			font-weight: 700;
+	// 			font-size: .9em;
+	// 		}
+	// }
 }

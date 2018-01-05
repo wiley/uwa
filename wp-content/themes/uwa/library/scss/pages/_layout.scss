@@ -1,15 +1,187 @@
 /********************
 LAYOUT & GRID STYLES
 *********************/
-
 .wrap {
 	width: 90%;
 	max-width: 1440px;
 	margin: 0 auto;
 }
-
 @include mobilefirst($bp-med) {
-	.main-content { @include span(8); }
-	.sidebar { @include span(4 of 12 last); }
+	// .main-content { @include span(8); }
+	.sidebar {
+		@include span(4 of 12 last);
+	}
+}
 
+.btn-red {
+	@media (max-width: 600px) {
+		width: 95%;
+		max-width: 300px;
+	}
+	@include button($red);
+	color: white;
+	font-weight: 600;
+}
+
+.banner {
+	&:not(.banner--blogPost) {
+		background-image: url("#{$images}/banner.jpg");
+	}
+	// min-height: 325px;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-position: top;
+	background-size: cover;
+
+
+	@include susy-breakpoint(768px) {
+		// min-height: 400px;
+			background-attachment: fixed;
+	background-size: 100% auto;
+	}
+	@include susy-breakpoint($bp-med) {
+		// min-height: 400px;
+
+	background-size: 100% auto;
+	}
+
+	&:after {
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.29) 27.27%, rgba(0, 0, 0, 0.52) 100%);
+		position: absolute;
+		content: '';
+		top: 0;
+		height: 100%;
+		// min-height: 400px;
+		width: 100%;
+		left: 0;
+	}
+
+	&__heading {
+		text-shadow: 0 2px 14px #000000;
+		color: white;
+		margin-bottom: 0.25em;
+		margin-top: 0;
+		padding: 0;
+		position: relative;
+		z-index: 9;
+		@include susy-breakpoint($bp-med) {
+			font-size: 3.25em;
+			margin-bottom: 0.5em;
+		}
+		@include susy-breakpoint($bp-lg) {
+			font-size: 4.5em;
+		}
+	}
+}
+
+.datesBox {
+	display: none;
+}
+
+body.mobileNav--active {
+	overflow: hidden;
+}
+
+html.mobileNav--active {
+	overflow: hidden;
+}
+
+.content {
+	li {
+		margin-top: 1em;
+		margin-bottom: 1em;
+	}
+}
+
+.banner {
+	&__heading {
+		text-shadow: 0 2px 14px #000000;
+		color: white;
+		margin: 0;
+		padding: 3.75em 0 2.5em;
+		font-size: 2.5em;
+		@include susy-breakpoint($bp-med) {
+			font-size: 3.25em;
+		}
+		@include susy-breakpoint($bp-lg) {
+			font-size: 4.5em;
+			padding: 2.75em 0 1.75em;
+		}
+	}
+}
+
+.waiting {
+	.wrap {
+		position: relative;
+		z-index: 999;
+	}
+}
+
+.content {
+	padding: 0 !important;
+}
+
+.main-content {
+	position: relative;
+	z-index: 99;
+}
+
+.tableWrapper {
+	overflow-x: auto;
+	@media (min-width: 960px) {
+		overflow-x: initial;
+	}
+
+	tr > td:first-of-type {
+		text-align: left !important;
+	}
+}
+
+.accreditationList {
+	text-align: left;
+
+	li {
+		margin-bottom: 1.5em;
+
+		& > br {
+			display: none;
+		}
+	}
+
+	&__link {
+		display: block;
+		margin: 0.25em 0;
+	}
+}
+
+.intro {
+	h2,
+	h3 {
+		text-align: left;
+		padding: 0 0.5em;
+	}
+}
+
+.presidentList {
+	text-align: left;
+	list-style-type: none;
+	margin-left: 0;
+	font-weight: 600;
+
+	li {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+	}
+
+	.president {
+		&__year {
+			flex: 0 1 150px;
+		}
+
+		&__name {
+			flex: 1 1 0;
+		}
+	}
 }

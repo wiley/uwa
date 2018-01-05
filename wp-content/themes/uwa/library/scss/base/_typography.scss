@@ -1,34 +1,40 @@
 /******************************************************************
 Typography Styles
 ******************************************************************/
-
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i|Lora:400,400i,700,700i');
 @font-face {
 	font-family: 'Trade Gothic LT Std';
-	src: url('../../../fonts/TradeGothicLTStd-Bd2.eot');
-	src: url('../../../fonts/TradeGothicLTStd-Bd2.eot?#iefix') format('embedded-opentype'),
-		url('../../../fonts/TradeGothicLTStd-Bd2.woff') format('woff'),
-		url('../../../fonts/TradeGothicLTStd-Bd2.ttf') format('truetype');
+	src: url('../fonts/TradeGothicLTStd-Bd2.eot');
+	src: url('../fonts/TradeGothicLTStd-Bd2.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/TradeGothicLTStd-Bd2.woff') format('woff'),
+		url('../fonts/TradeGothicLTStd-Bd2.ttf') format('truetype');
 	font-weight: bold;
 	font-style: normal;
 }
+
 
 /// Sans Serif
 /// @group Fonts
 $sans-serif:        'Open Sans', Helvetica, Arial, sans-serif;
 /// Condensed
 /// @group Fonts
-$condensed:					'Trade Gothic LT Std', Arial, sans-serif;
+$condensed:					 'Open Sans', Helvetica, Arial, sans-serif;
 
+$lora: 'Lora', Helvetica, Arial, serif;
+$lato: 'Lato', Helvetica, Arial, sans-serif;
 
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 
+body {
+	font-family: $lato;
+}
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	text-rendering: optimizelegibility;
-	font-weight: bold;
-	text-transform: uppercase;
-	font-family: $condensed;
+	font-weight: normal;
+	text-transform: capitalize;
+	font-family: $lora;
 
 	a {
 		text-decoration: none;
