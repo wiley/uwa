@@ -1,57 +1,140 @@
 <?php get_header(); ?>
+<style media="screen">
+	.filter.active {
+		background: #A81D32;
+    color: white;
+    font-weight: 900;
+	}
+</style>
 
-			<div class="content">
+<?php
+	$degreeTypes = get_terms([
+	    'taxonomy' => 'degree_vertical',
+	    'hide_empty' => false,
+	]);
 
-				<div class="wrap cf">
+	$degreeLevels = get_terms([
+	    'taxonomy' => 'degree_level',
+	    'hide_empty' => false,
+	]);
+?>
 
-					<h1 class="archive-title"><?php post_type_archive_title(); ?></h1>
+<?php
+	function setFilterOrder($term1, $term2) {
+	        if ($term1->display_order == $term2->display_order) {
+	            return 0;
+	        } elseif ($term1->display_order < $term2->display_order) {
+	            return -1;
+	        } else {
+	            return 1;
+	        }
+	    }
 
-					<main class="main-content cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+	if ($degreeLevels) {
+	    foreach ($degreeLevels as $index => $term) {
+				$termID = 'term_' . $term->term_id;
+				$menuOrderValue = get_field('menu_order', $termID);
+				$degreeLevels[$index]->display_order = $menuOrderValue;
+	    }
+	    usort($degreeLevels, 'setDisplayOrder');
+	}
+?>
 
-						<div class="program-list">
-							<h2>Undergraduate Programs</h2>
-							<div class="program-list__description"><?php echo term_description( '2', '' ); ?></div>
-							<?php /* Call in Program Custom Post Type */ ?>
-							<?php $loop = new WP_Query( array(
-									'post_type' => 'degrees',
-									'posts_per_page' => -1,
-									'degree_level' => 'undergraduate',
-									'orderby' => 'name',
-									'order'   => 'ASC'
-							) ); ?>
-							<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+<?php
+	$allDegreesArgs = array(
+		 'posts_per_page' => -1,
+		 'orderby' => 'title',
+		 'order'   => 'ASC',
+		 'post_type' => 'degrees',
+		 'post_status' => 'publish',
+	);
+	$allDegrees = get_posts( $allDegreesArgs );
+?>
+	<main>
 
-							<?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
-							<article <?php post_class( 'cf card' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting" style="background-image :url(<?php echo $feat_image;?>)">
-									<h4 class="card__title" itemprop="headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-							</article>
-							<?php endwhile; wp_reset_query(); ?>
-						</div>
 
-						<div class="program-list">
-							<h2>Graduate Programs</h2>
-							<div class="program-list__description"><?php echo term_description( '3', '' ); ?></div>
-									<?php /* Call in Program Custom Post Type */ ?>
-									<?php $loop = new WP_Query( array(
-											'post_type' => 'degrees',
-											'posts_per_page' => -1,
-											'degree_level' => 'graduate',
-											'orderby' => 'name',
-											'order'   => 'ASC'
-									) ); ?>
-									<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+		<div class="controlsWrapper">
+			<form class="controls" id="Filters">
+			  <!-- We can add an unlimited number of "filter groups" using the following format: -->
 
-									<?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
-									<article <?php post_class( 'cf card' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting" style="background-image :url(<?php echo $feat_image;?>)">
-											<h4 class="card__title" itemprop="headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-									</article>
-									<?php endwhile; wp_reset_query(); ?>
-						</div>
+			  <fieldset class="degreeTypes">
+			    <h2 class="toolbar-filter__label">Area Of Study
+						<?php include('library/images/arrow-down-red.svg'); ?>
+					</h2>
+					<div class="degreeTypesToolbar toolbar-filter" role="toolbar">
+						<button class="btn__hollow filter" aria-label="List All Degrees Types" data-filter="">All</button>
+							<?php foreach ($degreeTypes as $degreeType): ?>
+								<?php
+									$Name = $degreeType->name;
+									$slug = $degreeType->slug;
+								?>
 
-					</main>
+									<button class="btn__hollow filter" aria-label="Filter By <?php echo $Name; ?>" data-filter=".<?php echo $slug; ?>"><?php echo $Name; ?>
 
+									</button>
+							<?php endforeach; ?>
+					</div>
+			  </fieldset>
+
+			  <fieldset class="degreeLevels">
+			    <h2 class="toolbar-filter__label">Degree Types
+						<?php include('library/images/arrow-down-red.svg'); ?>
+					</h2>
+					<div class="degreeLevelsToolbar toolbar-filter" role="toolbar">
+						<!-- <span class="toolbar-filter__label" style="font-family: 'Oswald', sans-serif; font-size: 0.9em; text-transform: uppercase;">Select Degree Level:</span> -->
+						<button  class="btn__hollow filter" aria-label="List All Degrees Levels" data-filter="">All</button>
+							<?php foreach ($degreeLevels as $degreeLevel): ?>
+
+								<?php
+									$Name = $degreeLevel->name;
+									$slug = $degreeLevel->slug;
+									$termID = 'term_' . $degreeLevel->term_id;
+									$menuOrderValue = get_field('menu_order', $termID);
+								?>
+
+									<?php if ($menuOrderValue): ?>
+										<button  class="btn__hollow filter" aria-label="Filter By <?php echo $Name; ?>" data-filter=".<?php echo $slug; ?>"><?php echo $Name; ?></button>
+									<?php endif; ?>
+
+							<?php endforeach; ?>
+					</div>
+			  </fieldset>
+				<div id="holder">
+					<div id="activeFiltersHolder"></div>
+					<button id="Reset" class="btn-red">Clear</button>
 				</div>
 
+			</form>
+		</div>
+
+			<div class="mix-containerWrapper">
+
+				<ul id="mix-container" class="container noList cf">
+					<?php foreach ($allDegrees as $post): ?>
+						<?php setup_postdata($post); ?>
+							<?php $terms = get_the_terms( $post->ID, 'degree_vertical'); ?>
+
+							<?php if (get_field('program_subtitle', $post->ID)): ?>
+						    <?php $text = get_field('program_subtitle', $post->ID); ?>
+						  <?php endif; ?>
+
+							<a style="background-image: url(<?php the_field('program_image'); ?>);" class="mix card <?php echo custom_taxonomies_terms_slugs(); ?>" href="<?php the_permalink(); ?>">
+								<div class="card__infoWrapper">
+									<?php if (!empty( $terms )): ?>
+									<?php endif; ?>
+									<h3 class="card__title"><?php the_title(); ?></h3>
+
+									<div class="card__info">More Information <?php include('library/images/arrow.svg'); ?></div>
+									<div class="cardLink__cta-background"></div>
+								</div>
+							</a>
+					<?php endforeach;?>
+
+
+				</ul>
+<!-- </div> -->
 			</div>
+
+	</main>
 
 <?php get_footer(); ?>

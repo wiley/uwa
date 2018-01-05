@@ -2,13 +2,50 @@
 
 // LOAD BONES CORE (if you remove this, the theme will break)
 require_once( 'library/bones.php' );
+require_once( 'aria-walker.php' );
 
 /*********************
 LAUNCH BONES
 Let's get everything up and running.
 *********************/
-// MAINTENANCE MODE CUSTOM SETTING
-require_once( 'library/maintenance.php' );
+
+/**
+* tell WP Migrate DB Pro to preserve some options,
+* so that we can stay in dev / test mode
+* @param string $preserved_options
+* @return string
+*/
+
+
+add_filter( 'get_the_archive_title', function ($title) {
+
+    if ( is_category() ) {
+
+            $title = single_cat_title( '', false );
+
+        } elseif ( is_tag() ) {
+
+            $title = single_tag_title( '', false );
+
+        } elseif ( is_author() ) {
+
+            $title = '<span class="vcard">' . get_the_author() . '</span>' ;
+
+        }
+
+    return $title;
+
+});
+
+add_filter('wpmdb_preserved_options', function($preserved_options) {
+
+    $preserved_options = array_merge($preserved_options, array(
+        'wppusher_token', // don't overwrite wppusher_token
+    ));
+
+    return array_unique($preserved_options);
+});
+
 
 function bones_ahoy() {
 
@@ -62,7 +99,15 @@ function bones_register_sidebars() {
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	));
-
+  register_sidebar(array(
+		'id' => 'sidebar_blog',
+		'name' => __( 'Sidebar Blog' ),
+		'description' => __( 'The first (primary) sidebar.' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
 } // don't remove this bracket!
 
 
@@ -152,6 +197,32 @@ function enqueue_scripts() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
 
+
+function custom_taxonomies_terms_slugs(){
+  // get post by post id
+  $post = get_post();
+
+  // get post type by post
+  $post_type = $post->post_type;
+
+  // get post type taxonomies
+  $taxonomies = get_object_taxonomies( $post_type, 'objects' );
+
+  $out = array();
+  foreach ( $taxonomies as $taxonomy_slug => $taxonomy ){
+
+    // get the terms related to post
+    $terms = get_the_terms( $post->ID, $taxonomy_slug );
+
+    if ( !empty( $terms ) ) {
+      foreach ( $terms as $term ) {
+        $out[] = $term->slug . ' ';
+      }
+    }
+  }
+
+  return implode('', $out );
+}
 
 
 // function attributes_shortcode( $attr, $content = null ) {
