@@ -111,7 +111,7 @@ function bones_scripts_and_styles() {
 		// wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
 
 		// form validation and tracking script
-		wp_register_script( 'form-script', 'https://requestforms.learninghouse.com/form/affiliate/568', array(), '', false );
+		wp_register_script( 'form-script', 'https://requestforms.learninghouse.com/form/affiliate/734', array('jquery'), '', false );
 
 		// ie-only style sheet
 		wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
@@ -326,7 +326,7 @@ add_shortcode( 'privacy', 'privacy_policy' );
 
 /****************************************************************************
 This is where we include the custom theme setting for Maintenance Alerts
-*****************************************************************************
+*****************************************************************************/
 
 // Add Settins Page
 add_action( 'admin_menu', 'mnt_add_admin_menu' );
@@ -407,6 +407,6 @@ if (is_array($options) && $options['mnt_checkbox_field_0'] == '1') {
           return $message;
       }
     }
-  }  */
+  }
 
 ?>
