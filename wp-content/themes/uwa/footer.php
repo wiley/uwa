@@ -137,8 +137,8 @@
 		<!-- <script src="/wp-content/themes/uwa/library/js/build/production.min.js" charset="utf-8"></script> -->
 		<?php wp_footer(); ?>
 
-        <?php // better font loading with fontfaceobserver ?>
-        <script src="<?php echo get_stylesheet_directory_uri(); ?>/library/bower_components/fontfaceobserver/fontfaceobserver.js">
+<?php // better font loading with fontfaceobserver ?>
+        <script src="<?php echo get_stylesheet_directory_uri(); ?>/library/js/build/fontfaceobserver.js">
         <script>
         new w.FontFaceObserver( "Source Sans Pro" )
             .check()
