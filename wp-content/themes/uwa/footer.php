@@ -138,7 +138,7 @@
 		<?php wp_footer(); ?>
 
         <?php // better font loading with fontfaceobserver ?>
-        <script src="<?php echo get_stylesheet_directory_uri(); ?>/library/bower_components/fontfaceobserver/fontfaceobserver.js">
+        <script src="<?php echo get_stylesheet_directory_uri(); ?>/library/js/build/fontfaceobserver.js">
         <script>
         new w.FontFaceObserver( "Source Sans Pro" )
             .check()
@@ -159,10 +159,10 @@
 
 </style>
 
-<script src="/wp-content/themes/uwa/library/src/owl/owl.carousel.min.js"></script>
-<script src="/wp-content/themes/uwa/library/src/js/libs/priority-nav.min.js"></script>
-<!-- /wp-content/themes/uwa/library/js/libs/mixitup.min.js -->
-<script src="<?php echo get_template_directory_uri(); ?>/library/src/js/libs/mixitup.min.js"></script>
+
+<script src="<?php echo get_template_directory_uri(); ?>/library/js/libs/mixitup.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/library/js/libs/priority-nav.min.js"></script>
+<!-- <script src="<?php echo get_template_directory_uri(); ?>/library/js/libs/owl.carousel.min.js"></script> -->
 
 <script>
 $('a[href^="http://uwa.edu"]').attr('target','_blank');
