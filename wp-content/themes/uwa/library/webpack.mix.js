@@ -25,10 +25,15 @@ mix.browserSync({
     files: ["./css/build/minified/*.css", "./js/build/production.min.js"]
 })
 
+
 mix.copy('node_modules/fontfaceobserver/fontfaceobserver.js', 'js/build/fontfaceobserver.js');
+mix.copy('node_modules/mixitup/dist/mixitup.min.js', 'js/libs/mixitup.min.js');
+mix.copy('node_modules/priority-nav/dist/priority-nav.min.js', 'js/libs/priority-nav.min.js');
 
 
-
+// mix.autoload({
+//   'jquery': ['$', 'window.jQuery', 'jQuery'],
+// });
 // mix.sass('scss/style.scss', 'dist/');
 // Full API
 // mix.js(src, output);

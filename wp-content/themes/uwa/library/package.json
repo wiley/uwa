@@ -22,7 +22,9 @@
   },
   "dependencies": {
     "fontfaceobserver": "^2.0.1",
-    "load-grunt-tasks": "~2.0.0"
+    "load-grunt-tasks": "~2.0.0",
+    "mixitup": "^3.2.1",
+    "priority-nav": "^1.0.12"
   },
   "license": "MIT"
 }
