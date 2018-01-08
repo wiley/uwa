@@ -159,10 +159,9 @@
 
 </style>
 
-
-<script src="<?php echo get_template_directory_uri(); ?>/library/js/libs/mixitup.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/library/js/libs/priority-nav.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/library/js/libs/owl.carousel.min.js"></script>
+<script async="async" src="<?php echo get_template_directory_uri(); ?>/library/js/libs/mixitup.min.js"></script>
+<script async="async" src="<?php echo get_template_directory_uri(); ?>/library/js/libs/owl.carousel.min.js"></script>
 
 <script>
 $('a[href^="http://uwa.edu"]').attr('target','_blank');
