@@ -52,7 +52,7 @@
     transition: 0.25s ease;
     border: 2px solid transparent;
     background-size: 17px !important;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat !important;
     background: url(/wp-content/themes/uwa/library/images/arrow-down-red.svg);
     background-position: center;
     top: 32px;
