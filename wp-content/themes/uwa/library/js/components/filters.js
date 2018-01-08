@@ -1,60 +1,54 @@
 (function($) {
+	const FilterButtons = $('.toolbar-filter__label');
+	const FilterToolbars = $('.toolbar-filter');
+	const Filters = $('.filter');
+	const CurrentFilters = $('.filter.active');
+	const ActiveFiltersHolder = $('#activeFiltersHolder');
+	const Holder = $('#holder');
+	const ResetButton = $('#Reset');
 
-  const FilterButtons = $('.toolbar-filter__label')
-  const FilterToolbars = $('.toolbar-filter')
-  const Filters = $('.filter')
-  const CurrentFilters = $('.filter.active')
-  const ActiveFiltersHolder = $('#activeFiltersHolder')
-  const Holder = $('#holder')
-  const ResetButton = $('#Reset')
+	Holder.hide();
+	function handleFilter() {
+		let currentFilterButton = $(this);
+		let currentFilter = currentFilterButton.next('.toolbar-filter');
 
-  Holder.hide()
-  function handleFilter() {
-    let currentFilterButton = $(this)
-    let currentFilter = currentFilterButton.next('.toolbar-filter')
+		if (currentFilterButton.hasClass('activeFilter')) {
+			currentFilter.removeClass('activeFilter');
+			currentFilterButton.removeClass('activeFilter');
+		} else {
+			FilterButtons.removeClass('activeFilter');
+			FilterToolbars.removeClass('activeFilter');
+			currentFilter.toggleClass('activeFilter');
+			currentFilterButton.toggleClass('activeFilter');
+		}
+	}
 
-    if (currentFilterButton.hasClass('activeFilter')) {
-      currentFilter.removeClass('activeFilter')
-      currentFilterButton.removeClass('activeFilter')
-    } else {
+	function closeFilter() {}
 
-      FilterButtons.removeClass('activeFilter')
-      FilterToolbars.removeClass('activeFilter')
-      currentFilter.toggleClass('activeFilter')
-      currentFilterButton.toggleClass('activeFilter')
-    }
-  }
+	function handleFilterSelection() {
+		let currentFilters = Filters.filter('.active');
 
-  function closeFilter() {
+		let newText = '';
+		$(currentFilters).each(function(index) {
+			if ($(this).text() != 'All') {
+				newText += '- ' + $(this).text() + '</br>';
+				ActiveFiltersHolder.html(newText);
+				Holder.fadeIn(500);
+			}
+		});
 
-  }
+		FilterToolbars.removeClass('activeFilter');
+		FilterButtons.removeClass('activeFilter');
+	}
 
-  function handleFilterSelection() {
-    let currentFilters = Filters.filter('.active')
+	function handleReset() {
+		Holder.fadeOut(500);
+		ActiveFiltersHolder.html();
+	}
 
-    let newText = ''
-    $(currentFilters).each(function( index ) {
-      if ($( this ).text() != 'All') {
-        newText += '- ' + $( this ).text() + '</br>';
-        ActiveFiltersHolder.html(newText)
-        Holder.fadeIn(500)
-      }
-    });
-
-    FilterToolbars.removeClass('activeFilter')
-    FilterButtons.removeClass('activeFilter')
-
-  }
-
-  function handleReset() {
-    Holder.fadeOut(500)
-    ActiveFiltersHolder.html()
-  }
-
-  ResetButton.on('click', handleReset)
-  FilterButtons.on('click', handleFilter)
-  Filters.on('click', function() {
-    setTimeout(handleFilterSelection, 100)
-  })
-
-})(jQuery)
+	ResetButton.on('click', handleReset);
+	FilterButtons.on('click', handleFilter);
+	Filters.on('click', function() {
+		setTimeout(handleFilterSelection, 100);
+	});
+})(jQuery);

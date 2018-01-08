@@ -107,7 +107,7 @@
 		<?php if ( is_singular( 'post' ) ) { ?><progress value="0"></progress><?php } ?>
 
 		<!-- <div id="container" class="container"> -->
-		<h1 style="display:none;">HIDDEN!!!</h1>
+
 			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
 				<div class="wrap secondary-nav__wrapper">
