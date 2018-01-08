@@ -80,7 +80,7 @@ $ID = $termArray->term_id;
 					<div class="focusguard-top" tabindex="0" aria-hidden="true"></div>
 					<button class="form__toggle" aria-label="Close Form Window" type="button" name="closeForm"></button>
 					<h4 class="form__heading">Request Info</h4>
-	        <script src="http://requestforms.learninghouse.com/form/show/university-west-alabama/olc/734/3589/online.uwa.edu:my:thank-you:request_id" type="text/javascript"></script>
+	        <script src="https://requestforms.learninghouse.com/form/show/university-west-alabama/olc/734/3589/online.uwa.edu:my:thank-you:request_id" type="text/javascript"></script>
 				</div>
 			</div>
 <?php get_footer(); ?>

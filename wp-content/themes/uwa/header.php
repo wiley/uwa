@@ -39,18 +39,8 @@
 		<?php // end of wordpress head ?>
 
     <?php /* Critical CSS ?> */ ?>
+		<?php require_once( 'critical-css-injection.php' ); ?>
 
-		<?php if ( is_front_page()): ?>
-			<style>
-				<?php include('library/css/build/minified/critical-home.css'); ?>
-			</style>
-		<?php endif; ?>
-
-		<?php if ( !is_front_page()): ?>
-			<style>
-				<?php include('library/css/build/minified/critical-interior.css'); ?>
-			</style>
-		<?php endif; ?>
 
 		<script>
 		    ! function(a) {
@@ -96,6 +86,7 @@
 		</noscript>
 
 		<link rel="stylesheet" href="/wp-content/themes/uwa/library/css/build/minified/owl.carousel.min.css" />
+		<script src="<?php echo get_template_directory_uri(); ?>/library/js/libs/priority-nav.min.js"></script>
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">

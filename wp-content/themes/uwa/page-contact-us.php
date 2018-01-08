@@ -75,7 +75,7 @@
 							<?php endwhile; endif; ?>
 							<div class="formWrapper">
 								<h2 class="h3 form__header">Request Info</h2>
-								<script src="http://requestforms.learninghouse.com/form/show/university-west-alabama/olc/734/3589/online.uwa.edu:thank-you:request_id" type="text/javascript"></script>
+								<script src="https://requestforms.learninghouse.com/form/show/university-west-alabama/olc/734/3589/online.uwa.edu:thank-you:request_id" type="text/javascript"></script>
 							</div>
 						</div>
 

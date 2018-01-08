@@ -27,7 +27,7 @@ function async_scripts($url)
     else
 	return str_replace( '#asyncload', '', $url )."' async='async";
     }
-add_filter( 'clean_url', 'async_scripts', 11, 1 );
+// add_filter( 'clean_url', 'async_scripts', 11, 1 );
 
 
 

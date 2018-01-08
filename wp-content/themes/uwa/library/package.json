@@ -21,6 +21,7 @@
     "susy": "^2.2.12"
   },
   "dependencies": {
+    "critical": "^1.1.0",
     "fontfaceobserver": "^2.0.1",
     "load-grunt-tasks": "~2.0.0",
     "mixitup": "^3.2.1",
