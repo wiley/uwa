@@ -38,3 +38,28 @@
     }
   </style>
 <?php endif; ?>
+
+<style>
+  .menu-item-has-children {
+    position: relative;
+  }
+  .sub-menu__toggle {
+    position: absolute;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    vertical-align: initial;
+    -webkit-transition: 0.25s ease;
+    transition: 0.25s ease;
+    border: 2px solid transparent;
+    background-size: 17px !important;
+    background-repeat: no-repeat;
+    background: url(/wp-content/themes/uwa/library/images/arrow-down-red.svg);
+    background-position: center;
+    top: 32px;
+    width: 25px;
+    height: 25px;
+    padding: 0 !important;
+    background-size: 75%;
+    right: 8px !important;
+  }
+</style>

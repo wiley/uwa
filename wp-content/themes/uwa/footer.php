@@ -146,20 +146,8 @@
                         w.document.documentElement.className += " fonts-loaded";
                             });
         </script>
-<style media="screen">
-/* NOTE: NEED TO GET ALL DEGREES AND ADD FILTER FOR THAT */
-/* Temporary Fix */
-/*.controls {
-	background: #c9c9c9;
-	z-index: 99999;
-	position: fixed;
-	bottom: 100px;
-}*/
 
-
-</style>
-
-<script src="<?php echo get_template_directory_uri(); ?>/library/js/libs/priority-nav.min.js"></script>
+<!-- <script src="<?php echo get_template_directory_uri(); ?>/library/js/libs/priority-nav.min.js"></script> -->
 <script async="async" src="<?php echo get_template_directory_uri(); ?>/library/js/libs/mixitup.min.js"></script>
 <script async="async" src="<?php echo get_template_directory_uri(); ?>/library/js/libs/owl.carousel.min.js"></script>
 

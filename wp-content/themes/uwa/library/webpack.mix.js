@@ -15,9 +15,7 @@ let mix = require('laravel-mix');
 mix.options({ processCssUrls: false });
 
 mix.js('js/scripts.js', 'js/build/production.min.js')
-  .sass('scss/style.scss', 'css/build/minified/style.css')
-  .sass('scss/critical-home.scss', 'css/build/minified/critical-home.css')
-  .sass('scss/critical-interior.scss', 'css/build/minified/critical-interior.css');
+  .sass('scss/style.scss', 'css/build/minified/style.css');
 
 mix.disableNotifications();
 
@@ -36,8 +34,6 @@ mix.copy('node_modules/owl.carousel/dist/owl.carousel.min.js', 'js/libs/owl.caro
 
 // CSS
 mix.copy('node_modules/owl.carousel/dist/assets/owl.carousel.min.css', 'css/build/minified/owl.carousel.min.css');
-
-
 
 
 // mix.autoload({
