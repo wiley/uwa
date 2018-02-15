@@ -7879,3 +7879,93 @@ ul#menu-secondary-left {
 .search .intro {
   padding-bottom: 0;
 }
+
+#degrees-app .degrees {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 600px;
+  overflow: auto;
+  padding: 2em 1em;
+  margin: 1em auto;
+  background: #dedede7d;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#degrees-app .degrees .degree {
+  margin: 1em;
+  border: 1px solid gray;
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  height: 200px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 340px;
+          flex: 0 1 340px;
+}
+
+#degrees-app .degrees .degree__title {
+  font-size: 1.5em;
+  margin-top: .5em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: 100%;
+          flex-flow: 100%;
+}
+
+#degrees-app .degrees .degree a {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.degree-transition-move {
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.degree-transition-active, .degree-transition-active {
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+}
+
+.degree-transition-enter, .degree-transition-leave-to {
+  opacity: 0;
+}
+
+.degree-transition-move {
+  -webkit-transition: all 600ms ease-in-out 50ms;
+  transition: all 600ms ease-in-out 50ms;
+}
+
+.degree-transition-enter-active {
+  -webkit-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}
+
+.degree-transition-leave-active {
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+  z-index: 0;
+}
+
+.degree-transition-enter, .degree-transition-leave-to {
+  opacity: 0;
+}
+
+.degree-transition-enter {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}

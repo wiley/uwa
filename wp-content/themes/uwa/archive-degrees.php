@@ -52,7 +52,8 @@
 ?>
 
 	<div id="app">
-		<div class="controlsWrapper">
+		<degrees-app></degrees-app>
+		<!-- <div class="controlsWrapper">
 			<fieldset class="degreeTypes">
 				<h2 class="toolbar-filter__label">Area Of Study
 					<?php include('library/images/arrow-down-red.svg'); ?>
@@ -64,13 +65,26 @@
 						:key="area.id"
 						class="btn__hollow filter"
 						:data-filter="area.slug"
-						:aria-label="'Filter By ' + area.name">
-						{{area.name}}
+						:aria-label="'Filter By ' + area.name"
+						@click.prevent="updateDegrees(area)">
+						{{area.name}} : {{area.id}}
 					</button>
 				</div>
 			</fieldset>
-		</div>
 
+			<h3>Acive Area: {{this.activeAreaOfStudy}}</h3>
+		</div>
+		<div class="degrees">
+			<template
+				v-for="degree in filteredDegrees">
+				<div
+					:key="degree.id"
+					class="degree">
+					<h3 v-html="degree.title.rendered"></h3>
+					<a :href="'online-degrees/' + degree.slug">More Info</a>
+				</div>
+			</template>
+		</div> -->
 	</div>
 	<main>
 
