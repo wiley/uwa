@@ -32,7 +32,8 @@ IMPORTING BASE
 @import "modules/form";
 @import "modules/megamenu";
 @import "modules/priorityNav";
-@import "modules/infoAccordions"; // // /*********************
+@import "modules/infoAccordions";
+@import "modules/searchbox"; // // /*********************
 // // IMPORTING PARTIALS
 // // *********************/
 // //
@@ -59,11 +60,43 @@ IMPORTING BASE
 @import "pages/accreditation";
 @import "pages/archives";
 @import "pages/404";
-
+@import "pages/search";
 @import "misc";
 /*********************
 PRINT
 *********************/
 @media print {
-	 @import"partials/print";
+	@import "partials/print";
+}
+
+ul#menu-secondary-left {
+	left: 0;
+}
+
+.search-results {
+	article {
+		border-bottom: 1px solid lightgray;
+		margin: 1em 0;
+		padding: 1em 0;
+
+		&:last-of-type {
+			border-bottom: 0;
+		}
+
+		header {
+			a {
+				font-family: "Open Sans", Helvetica, Arial, sans-serif;
+				font-weight: 100;
+				padding: 0 0.5em;
+				text-align: left;
+				margin-top: 1em;
+				margin-bottom: 1em;
+				font-size: 0.8em;
+			}
+		}
+	}
+}
+
+.search .intro {
+	padding-bottom: 0;
 }

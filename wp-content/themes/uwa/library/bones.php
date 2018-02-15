@@ -169,7 +169,9 @@ function bones_theme_support() {
 		array(
 			'main-nav' => __( 'The Main Menu' ),   // main nav in header
 			'footer-links' => __( 'Footer Links' ), // secondary nav in footer
-			'secondary' => __( 'Secondary Menu' ) // secondary nav in footer
+			'secondary' => __( 'Secondary Menu' ), // secondary nav in footer
+			'secondary-left' => __( 'Secondary Left Menu' ), // secondary nav in footer
+			'secondary-right' => __( 'Secondary Right Menu' ) // secondary nav in footer
 		)
 	);
 

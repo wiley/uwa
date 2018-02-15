@@ -41,6 +41,32 @@
     <?php /* Critical CSS ?> */ ?>
 		<?php require_once( 'critical-css-injection.php' ); ?>
 
+		<style media="screen">
+		.searchbox__wrapper {
+		  position: fixed;
+		  top: 0;
+		  background: rgba(15, 14, 14, 0.66);
+		  padding: 1em;
+		  left: 0;
+		  right: 0;
+		  bottom: 0;
+		  z-index: 99999;
+		  -webkit-transition: all 0.4s ease;
+		  transition: all 0.4s ease;
+		  -webkit-transform: translateY(-120%);
+		          transform: translateY(-120%);
+		  display: -webkit-box;
+		  display: -ms-flexbox;
+		  display: flex;
+		  -webkit-box-pack: center;
+		      -ms-flex-pack: center;
+		          justify-content: center;
+		  -webkit-box-align: center;
+		      -ms-flex-align: center;
+		          align-items: center;
+		  visibility: hidden;
+		}			
+		</style>
 
 		<script>
 		    ! function(a) {
@@ -115,8 +141,16 @@
 										 'container' => false,                           // remove nav container
 										 'container_class' => 'cf',         // class of container (should you choose to use it)
 										 'menu' => __( 'Secondary Menu', 'bonestheme' ),  // nav name
-										 'menu_class' => 'nav secondary-nav cf',               // adding custom nav class
-										 'theme_location' => 'secondary',                 // where it's located in the theme
+										 'menu_class' => 'nav secondary-left secondary-nav cf',               // adding custom nav class
+										 'theme_location' => 'secondary-left',                 // where it's located in the theme
+										 'depth' => 0			                               // limit the depth of the nav
+					)); ?>
+					<?php wp_nav_menu(array(
+										 'container' => false,                           // remove nav container
+										 'container_class' => 'cf',         // class of container (should you choose to use it)
+										 'menu' => __( 'Secondary Menu', 'bonestheme' ),  // nav name
+										 'menu_class' => 'nav secondary-right secondary-nav cf',               // adding custom nav class
+										 'theme_location' => 'secondary-right',                 // where it's located in the theme
 										 'depth' => 0			                               // limit the depth of the nav
 					)); ?>
 				</div>
@@ -128,7 +162,11 @@
 
 						<a class="logo" href="<?php echo home_url(); ?>" rel="nofollow"><img  src="/wp-content/uploads/2017/01/uwa-logo.svg" alt="The University of West Alabama Logo"></a>
 
-						<button class="main-nav__trigger button header__button js__menu-trigger" href="#">
+						<button class="searchbox-trigger header__buton">
+							<?php include ('library/images/searchbox-icon.svg'); ?>
+						</button>
+
+						<button class="main-nav__trigger button header__button js__menu-trigger">
 							<?php include ('library/images/menu-button.svg'); ?>
 						</button>
 <?php
@@ -231,6 +269,13 @@ $primaryNav = wp_get_nav_menu_items($menuID);
 								<h1 class="banner__heading">News</h1>
 							<?php endif; ?>
 
+							<?php if ( is_search() ): ?>
+								<?php
+									$search_query = get_search_query();
+									$banner_heading = 'Search Results for: ' . $search_query;
+								?>
+								<h1 class="banner__heading"><?php echo $banner_heading; ?></h1>
+							<?php endif; ?>
 
 						</div>
 					</div>

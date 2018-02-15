@@ -262,3 +262,32 @@ jQuery(document).ready(function($) {
 	formFocusGuardTop.on("focus", handleTabbingBack);
 	formFocusGuardBottom.on("focus", handleTabbingFwd);
 })(jQuery);
+
+
+(function($) {
+	var SearchWrapper = $(".searchbox__wrapper"),
+		CloseButtonForSearch = $('.searchbox__close-button'),
+		SearchBoxTrigger = $(".searchbox-trigger");
+
+	function openForm() {
+		// alert('worked!')
+		$("html").addClass("activeModal");
+		SearchWrapper.addClass("active");
+		// firstFormElement.focus();
+	}
+
+	function closeForm() {
+		$("html").removeClass("activeModal");
+		SearchWrapper.removeClass("active");
+		requestInfoBtn.focus();
+	}
+
+	function setSearchButtonValue() {
+		$('.search-form .search-submit').val('Submit')
+	}
+
+	setSearchButtonValue();
+	SearchBoxTrigger.on("click", openForm);
+	CloseButtonForSearch.on("click", closeForm);
+
+})(jQuery);

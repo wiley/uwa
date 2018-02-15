@@ -23,6 +23,15 @@
 	));
 ?>
 
+<div class="searchbox__wrapper">
+	<div class="searchbox__innerwrapper">
+		<div class="focusguard-top" tabindex="0" aria-hidden="true"></div>
+		<button class="searchbox__close-button searchbox__toggle" aria-label="Close Form Window" type="button" name="closeForm"></button>
+		<h4 class="form__heading">Search</h4>
+		<?php get_search_form(); ?>
+	</div>
+</div>
+
 		<footer class="footer cf" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 
 				<div class="wrap cf">
