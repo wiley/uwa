@@ -5,13 +5,14 @@
 // import 'owl.carousel/dist/assets/owl.carousel.css';
 import $ from "jquery";
 window.$ = window.jQuery = $;
-import "./components/megaMenu";
-import "./components/submenus";
-import "./components/carousel";
-import "./components/filters";
-import "./components/tables";
-import "./components/faq";
-
+import './components/megaMenu';
+import './components/submenus';
+import './components/carousel';
+import './components/filters';
+import './components/tables';
+import './components/faq';
+import './components/faq';
+import './components/vue-filters';
 // import 'imports?jQuery=jquery!owl.carousel';
 
 jQuery.fn.center = function(parent) {

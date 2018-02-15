@@ -25,6 +25,10 @@ mix.browserSync({
     files: ["./css/build/minified/*.css", "./js/build/production.min.js"]
 })
 
+mix.autoload({
+  vue: ['Vue', 'window.Vue']
+});
+
 
 // JS
 mix.copy('node_modules/fontfaceobserver/fontfaceobserver.js', 'js/build/fontfaceobserver.js');

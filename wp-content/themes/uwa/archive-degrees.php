@@ -50,8 +50,29 @@
 	);
 	$allDegrees = get_posts( $allDegreesArgs );
 ?>
-	<main>
 
+	<div id="app">
+		<div class="controlsWrapper">
+			<fieldset class="degreeTypes">
+				<h2 class="toolbar-filter__label">Area Of Study
+					<?php include('library/images/arrow-down-red.svg'); ?>
+				</h2>
+				<div class="degreeTypesToolbar toolbar-filter" role="toolbar">
+					<button class="btn__hollow filter" aria-label="List All Degrees Types" data-filter="">All</button>
+					<button
+						v-for="area in areasOfStudy"
+						:key="area.id"
+						class="btn__hollow filter"
+						:data-filter="area.slug"
+						:aria-label="'Filter By ' + area.name">
+						{{area.name}}
+					</button>
+				</div>
+			</fieldset>
+		</div>
+
+	</div>
+	<main>
 
 		<div class="controlsWrapper">
 			<form class="controls" id="Filters">

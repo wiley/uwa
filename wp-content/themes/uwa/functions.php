@@ -29,7 +29,23 @@ function async_scripts($url)
     }
 // add_filter( 'clean_url', 'async_scripts', 11, 1 );
 
+add_filter( 'rest_post_collection_params', 'my_prefix_change_post_per_page', 10, 1 );
 
+function my_prefix_change_post_per_page( $params ) {
+    if ( isset( $params['per_page'] ) ) {
+        $params['per_page']['maximum'] = 100;
+    }
+
+    return $params;
+};
+
+add_action( 'send_headers', function() {
+	if ( ! did_action('rest_api_init') && $_SERVER['REQUEST_METHOD'] == 'HEAD' ) {
+		header( 'Access-Control-Allow-Origin: *' );
+		header( 'Access-Control-Expose-Headers: Link' );
+		header( 'Access-Control-Allow-Methods: HEAD' );
+	}
+} );
 
 add_filter( 'get_the_archive_title', function ($title) {
 
