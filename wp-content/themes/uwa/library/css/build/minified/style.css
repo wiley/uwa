@@ -7880,6 +7880,25 @@ ul#menu-secondary-left {
   padding-bottom: 0;
 }
 
+#degrees-app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#degrees-app .controlsWrapper {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 300px;
+          flex: 0 1 300px;
+}
+
 #degrees-app .degrees {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7891,13 +7910,16 @@ ul#menu-secondary-left {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  height: 600px;
   overflow: auto;
   padding: 2em 1em;
   margin: 1em auto;
   background: #dedede7d;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 calc(100% - 300px);
+          flex: 1 1 calc(100% - 300px);
 }
 
 #degrees-app .degrees .degree {
@@ -7915,11 +7937,13 @@ ul#menu-secondary-left {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 340px;
           flex: 0 1 340px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #degrees-app .degrees .degree__title {
   font-size: 1.5em;
-  margin-top: .5em;
+  margin-top: 0.5em;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: 100%;
