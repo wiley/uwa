@@ -4,9 +4,9 @@
 	max-width: 1400px;
 	margin-left: auto;
 	margin-right: auto;
-
+	margin-top: 5em;
 	.controlsWrapper {
-		flex: 0 1 300px;
+		flex: 0 1 350px;
 	}
 
 	.degrees {
@@ -22,7 +22,7 @@
 		background: #dedede7d;
 		// justify-content: space-around;
 		justify-content: flex-start;
-		flex: 1 1 calc(100% - 300px);
+		flex: 1 1 calc(100% - 350px);
 
 		.degree {
 			margin: 1em;
@@ -108,3 +108,7 @@
 //   opacity: 1;
 //   transition: all 0.5s;
 // }
+
+.filters-areas {
+    margin-top: 1.5em;
+}

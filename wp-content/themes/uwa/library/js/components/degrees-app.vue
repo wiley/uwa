@@ -1,36 +1,10 @@
 <template>
 <div id="degrees-app">
 	<div class="controlsWrapper">
-		<div class="filters-areas">
-			<fieldset class="degreeTypes">
-				<h2 class="toolbar-filter__label">Area Of Study
-            <img src="/wp-content/themes/uwa/library/images/arrow-down-red.svg" alt="Arrow Down">
-          </h2>
-				<div class="degreeAreasToolbar toolbar-filter" role="toolbar">
-					<button
-            key="all"
-            class="btn__hollow filter"
-            aria-label="List All Degrees Areas"
-            @click="updateDegreeAreaToAll">All
-          </button>
-					<button
-            v-for="area in areasOfStudy"
-            :key="area.id" class="btn__hollow filter"
-            :class="{active: area.id === activeAreaOfStudy}"
-            :aria-label="'Filter By ' + area.name"
-            @click.prevent="updateDegrees(area)"
-            v-html="area.name">
-          </button>
-				</div>
-			</fieldset>
-		</div>
-
 
 		<div class="filters-types">
 			<fieldset class="degreeLevels">
-				<h2 class="toolbar-filter__label">Degree Types
-             <img src="/wp-content/themes/uwa/library/images/arrow-down-red.svg" alt="Arrow Down">
-           </h2>
+				<h2 class="toolbar-filter__label">Degree Types</h2>
 				<div class="degreeLevelsToolbar toolbar-filter" role="toolbar">
           <button
             key="all"
@@ -45,6 +19,29 @@
             :aria-label="'Filter By ' + type.name"
             @click.prevent="updateDegrees(type)"
             v-html="type.name">
+          </button>
+				</div>
+			</fieldset>
+		</div>
+		
+		<div class="filters-areas">
+			<fieldset class="degreeTypes">
+				<h2 class="toolbar-filter__label">Area Of Study</h2>
+				<div class="degreeAreasToolbar toolbar-filter" role="toolbar">
+					<button
+            key="allAreas"
+            class="btn__hollow filter"
+						:class="{active: activeAreaOfStudy === 'all' }"
+            aria-label="List All Degrees Areas"
+            @click="updateDegreeAreaToAll">All
+          </button>
+					<button
+            v-for="area in areasOfStudy"
+            :key="area.id" class="btn__hollow filter"
+            :class="{active: area.id === activeAreaOfStudy}"
+            :aria-label="'Filter By ' + area.name"
+            @click.prevent="updateDegrees(area)"
+            v-html="area.name">
           </button>
 				</div>
 			</fieldset>

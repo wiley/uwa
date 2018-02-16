@@ -26,14 +26,53 @@
 	  font-weight: 100;
 	  padding: 0 0.5em;
 	  text-align: left;
-	  margin-top: 1em;
-	  margin-bottom: 1em;
+		display: block;
+		margin: .25em 0;
 	  font-size: 0.8em;
 	}
-
 	.search .intro {
 	  padding-bottom: 0;
-	}	
+	}
+
+	/* No Results */
+
+	.intro .searchbox__innerwrapper {
+	    margin: 0 auto;
+	    padding: 0;
+	}
+
+	.intro .searchbox__close-button {
+		display: none;
+	}
+
+	.search-no-results .intro {
+    padding: 1.5em .5em;
+    box-shadow: 0 0 12px 0 rgba(112, 112, 112, 0.17);
+    margin-top: -2.5em;
+		height: 450px;
+	}
+
+	.search-no-results .search-results form {
+    display: none;
+	}
+	.search-no-results .intro p {
+		/* font-family: "Open Sans", Helvetica, Arial, sans-serif; */
+    padding: 0 0.5em;
+    display: block;
+    margin: .25em 0;
+    font-size: 1.5em;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.45;
+    text-align: center;
+    /* font-weight: 500; */
+		text-rendering: optimizelegibility;
+		font-weight: normal;
+		font-family: "Lora", Helvetica, Arial, serif;
+		margin-bottom: 1.5em;
+	}
+
 </style>
 <div class="content">
 	<div class="wrap cf">
