@@ -5,6 +5,9 @@
 // import 'owl.carousel/dist/assets/owl.carousel.css';
 import $ from "jquery";
 window.$ = window.jQuery = $;
+import Transitions from 'vue2-transitions'
+Vue.use(Transitions)
+
 import './components/megaMenu';
 import './components/submenus';
 import './components/carousel';

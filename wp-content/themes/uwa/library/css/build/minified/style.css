@@ -7917,9 +7917,6 @@ ul#menu-secondary-left {
 }
 
 #degrees-app .degrees {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
@@ -7930,7 +7927,6 @@ ul#menu-secondary-left {
   overflow: auto;
   padding: 2em 1em;
   margin: 1em auto;
-  background: #dedede7d;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -7951,15 +7947,11 @@ ul#menu-secondary-left {
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
   height: 200px;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 340px;
-          flex: 0 1 340px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 260px;
 }
 
 #degrees-app .degrees .degree__title {
-  font-size: 1.5em;
+  font-size: 1.25em;
   margin-top: 0.5em;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;

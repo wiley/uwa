@@ -32,7 +32,6 @@
           <button
             key="all"
             class="btn__hollow filter"
-						:class="{active: activeDegreeType === 'all' }"
             aria-label="List All Degrees Types"
             @click="updateDegreeTypeToAll">All
           </button>
@@ -51,11 +50,24 @@
 	</div>
 
 	<isotope ref="cpt" id="root_isotope1" class="degrees" :list="degrees" :options='isotopeOptions'>
+    <!-- <div v-for="element,index in list" :class='[element.category]'  :key="index">
+      <h3 class="name">{{element.name}}</h3>
+      <p class="symbol">{{element.symbol}}</p>
+      <p class="number">{{element.number}}</p>
+      <p class="weight">{{element.weight}}</p>
+    </div> -->
 		<div v-for="degree, index in listForFilteredDegreesAreaAndLevel" :key="index" class="degree-transition degree">
 			<h3 class="degree__title" v-html="degree.title.rendered"></h3>
 			<a :href="'online-degrees/' + degree.slug">More Info</a>
 		</div>
   </isotope>
+
+	<!-- <transition-group class="degrees" name="degree-transition" tag="ul">
+		<li v-for="(degree, index) in filteredDegrees" :key="index" class="degree-transition degree">
+			<h3 class="degree__title" v-html="degree.title.rendered"></h3>
+			<a :href="'online-degrees/' + degree.slug">More Info</a>
+		</li>
+	</transition-group> -->
 
 </div>
 </template>
