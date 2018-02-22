@@ -1,30 +1,7 @@
 <template>
 <div id="degrees-app">
 	<div class="controlsWrapper">
-
-		<div class="filters-areas">
-			<fieldset class="degreeTypes">
-				<h2 class="toolbar-filter__label">Area Of Study</h2>
-				<div class="degreeAreasToolbar toolbar-filter" role="toolbar">
-					<button
-            key="allAreas"
-            class="btn__hollow filter"
-						:class="{active: activeAreaOfStudy === 'all' }"
-            aria-label="List All Degrees Areas"
-            @click="updateDegreeAreaToAll">All
-          </button>
-					<button
-            v-for="area in areasOfStudy"
-            :key="area.id" class="btn__hollow filter"
-            :class="{active: area.id === activeAreaOfStudy}"
-            :aria-label="'Filter By ' + area.name"
-            @click.prevent="updateActiveDegreeArea(area)"
-            v-html="area.name">
-          </button>
-				</div>
-			</fieldset>
-		</div>
-
+		<input type="text" class="toolbar-filter__search" placeholder="Click here to search" v-model="searchFilter">
 		<div class="filters-types">
 			<fieldset class="degreeLevels">
 				<h2 class="toolbar-filter__label">Degree Types</h2>
@@ -48,13 +25,51 @@
 			</fieldset>
 		</div>
 
+		<div class="filters-areas">
+			<fieldset class="degreeTypes">
+				<h2 class="toolbar-filter__label">Areas Of Study</h2>
+				<div class="degreeAreasToolbar toolbar-filter" role="toolbar">
+					<button
+            key="allAreas"
+            class="btn__hollow filter"
+						:class="{active: activeAreaOfStudy === 'all' }"
+            aria-label="List All Degrees Areas"
+            @click="updateDegreeAreaToAll">All
+          </button>
+
+					<template
+					  v-for="(area, key) in areasOfStudy">
+						<button
+							:key="area.id" class="btn__hollow filter"
+							:class="{active: area.id === activeAreaOfStudy}"
+							:aria-label="'Filter By ' + area.name"
+							@click.prevent="updateActiveDegreeArea(area)"
+							v-html="area.name">
+
+							<!-- <template v-if="area.sub_areas">
+								<pre>{{area.sub_areas}}</pre>
+							</template> -->
+						</button>
+					</template>
+
+				</div>
+			</fieldset>
+		</div>
+
 	</div>
 
 	<isotope ref="cpt" id="root_isotope1" class="degrees" :list="degrees" :options='isotopeOptions'>
-		<div v-for="degree, index in listForFilteredDegreesAreaAndLevel" :key="index" class="degree-transition degree">
+		<a
+			v-for="degree, index in listForFilteredDegreesAreaAndLevel"
+			:key="index"
+			:href="'online-degrees/' + degree.slug"
+			class="degree-transition degree"
+			:class="getDegreeClasses(degree)">
+			<small class="label" v-if="degree.degree_types[0]" v-text="degree.degree_types[0].name"></small>
+			<small class="label undefined" v-else>No Program Type Set</small>
 			<h3 class="degree__title" v-html="degree.title.rendered"></h3>
-			<a :href="'online-degrees/' + degree.slug">More Info</a>
-		</div>
+			<div class="degree__cta-button">More Info</div>
+		</a>
   </isotope>
 
 </div>
@@ -72,6 +87,7 @@ export default {
 	},
 	data() {
 		return {
+			searchFilter: '',
 			degrees: [],
 			areasOfStudy: [],
 			degreeTypes: [],
@@ -92,6 +108,14 @@ export default {
 		};
 	},
 
+	// watch:{
+	// 	filterDegreesBySearch(val) {
+	// 		setTimeout(() => {
+	// 			this.listForFilteredDegreesAreaAndLevel = val
+  //      }, 500);
+	// 	}
+	// },
+
 	computed: {
 		allFilterSelected() {
 			return this.activeAreaOfStudy === "all" || this.activeDegreeType === "all"
@@ -99,14 +123,21 @@ export default {
 				: false;
 		},
 
-		filteredDegrees() {
+		filteredDegreesByArea() {
 			let activeAreaOfStudy = this.activeAreaOfStudy;
 			let activeDegreeType = this.activeDegreeType;
 
 			return activeAreaOfStudy || activeDegreeType
-				? this.filterDegrees(activeAreaOfStudy, activeDegreeType)
+				? this.filterDegreesByArea(activeAreaOfStudy, activeDegreeType)
 				: this.degrees;
 		},
+
+		filteredDegreesBySearch() {
+      return this.degrees.filter(degree => {
+				let title = degree.title.rendered
+        return title.toLowerCase().includes(this.searchFilter.toLowerCase())
+      })
+    },
 
 		filteredDegreesByType() {
 			let activeDegreeType = this.activeDegreeType;
@@ -115,12 +146,38 @@ export default {
 				? this.filterDegreesByType(activeDegreeType)
 				: this.degrees;
 		},
+		areasOfStudyFilters() {
+			function returnTeachingFilterIndex(area) {
+				return area.id === 7
+			}
+			let teachingSubAreas = []
+			let areasFiltersArray = this.areasOfStudy
+			let topLevelFilters = areasFiltersArray.filter(area => {
+				return area.parent === 0
+			});
+			let teachingFilterIndex = topLevelFilters.findIndex(returnTeachingFilterIndex)
+
+			areasFiltersArray.forEach(function (area, index) {
+					// area[index]['sub_areas'] = []
+					if (area.parent === 7) {
+						teachingSubAreas.push(area)
+					}
+			});
+			return []
+			// if (topLevelFilters) {
+			// 	topLevelFilters[teachingFilterIndex]['sub_areas'] = teachingSubAreas
+			// }
+			//
+			// return topLevelFilters
+		},
 
 		listForFilteredDegreesAreaAndLevel () {
-			let a = new Set(this.filteredDegrees);
+			let a = new Set(this.filteredDegreesByArea);
 			let b = new Set(this.filteredDegreesByType);
+			let c = new Set(this.filteredDegreesBySearch);
 			let intersection = new Set(
-			    [...a].filter(x => b.has(x)));
+			    [...a].filter(x => b.has(x) && c.has(x))
+				);
 
 			return [...intersection]
 		}
@@ -131,6 +188,25 @@ export default {
 	},
 
 	methods: {
+		getDegreeClasses(degree) {
+			let degreeLevels = degree.degree_levels
+			let degreeTypes = degree.degree_types
+
+			let levels = degreeLevels.map(level => {
+				return level.slug || ''
+			})
+
+			let types = degreeTypes.map(type => {
+				if (type.slug) {
+					return type.slug
+				} else {
+					return ''
+				}
+			})
+			// return levels
+			return levels.concat(types)
+		},
+
 		updateActiveDegreeArea(area) {
 			this.activeAreaOfStudy = area.id;
 		},
@@ -169,11 +245,6 @@ export default {
 			});
 			return filteredDegrees;
 
-			// let filteredDegrees = this.degrees.filter(degree => {
-			// 	let degreeTypesForDegree = degree.levels;
-			// 	return degreeTypesForDegree.includes(this.activeDegreeType);
-			// });
-			// return filteredDegrees;
 		},
 
 		filterDegreesByType(activeDegreeType) {
@@ -187,7 +258,7 @@ export default {
 			return filteredDegrees;
 		},
 
-		filterDegrees(activeAreaOfStudy, activeDegreeType) {
+		filterDegreesByArea(activeAreaOfStudy, activeDegreeType) {
 			let filteredDegrees = this.degrees.filter(degree => {
 				if (this.activeAreaOfStudy === 'all') {
 					return degree;
@@ -236,5 +307,11 @@ export default {
 </script>
 
 <style lang="scss">
-
+	input.toolbar-filter__search {
+		border: 2.33px solid #A81D32;
+		margin: 1em;
+		max-width: 315px;
+		width: 100%;
+		font-style: italic;
+	}
 </style>

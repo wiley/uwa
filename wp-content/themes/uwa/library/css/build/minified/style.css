@@ -7896,6 +7896,102 @@ ul#menu-secondary-left {
   padding-bottom: 0;
 }
 
+.all:hover {
+  color: #11181F !important;
+}
+
+.all .label {
+  background-color: #11181F;
+}
+
+.all .label {
+  background-color: #11181F;
+}
+
+.biology:hover {
+  color: #966208 !important;
+}
+
+.biology .label {
+  background-color: #966208;
+}
+
+.biology .label {
+  background-color: #966208;
+}
+
+.business:hover {
+  color: #0366C9 !important;
+}
+
+.business .label {
+  background-color: #0366C9;
+}
+
+.business .label {
+  background-color: #0366C9;
+}
+
+.communications:hover {
+  color: #177D74 !important;
+}
+
+.communications .label {
+  background-color: #177D74;
+}
+
+.communications .label {
+  background-color: #177D74;
+}
+
+.psychology-counseling:hover {
+  color: #8A27B4 !important;
+}
+
+.psychology-counseling .label {
+  background-color: #8A27B4;
+}
+
+.psychology-counseling .label {
+  background-color: #8A27B4;
+}
+
+.public-safety:hover {
+  color: #666666 !important;
+}
+
+.public-safety .label {
+  background-color: #666666;
+}
+
+.public-safety .label {
+  background-color: #666666;
+}
+
+.school-administration:hover {
+  color: #510915 !important;
+}
+
+.school-administration .label {
+  background-color: #510915;
+}
+
+.school-administration .label {
+  background-color: #510915;
+}
+
+.teaching:hover {
+  color: #A81D32 !important;
+}
+
+.teaching .label {
+  background-color: #A81D32;
+}
+
+.teaching .label {
+  background-color: #A81D32;
+}
+
 #degrees-app {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7904,7 +8000,7 @@ ul#menu-secondary-left {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  max-width: 1400px;
+  max-width: 1680px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 5em;
@@ -7921,7 +8017,6 @@ ul#menu-secondary-left {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   overflow: auto;
@@ -7935,6 +8030,10 @@ ul#menu-secondary-left {
           flex: 1 1 calc(100% - 350px);
 }
 
+#degrees-app .degrees a {
+  text-decoration: none;
+}
+
 #degrees-app .degrees .degree {
   margin: 1em;
   border: 1px solid gray;
@@ -7946,8 +8045,33 @@ ul#menu-secondary-left {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  height: 200px;
-  width: 260px;
+  height: 240px;
+  width: 365px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border: 4px solid #E9E9EA;
+}
+
+#degrees-app .degrees .degree .label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 1;
+  color: white;
+  padding: 0.25em 0.5em;
+  margin-bottom: auto;
+  font-family: "Open Sans";
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+#degrees-app .degrees .degree .label.undefined {
+  background-color: black;
 }
 
 #degrees-app .degrees .degree__title {
@@ -7957,11 +8081,40 @@ ul#menu-secondary-left {
   -webkit-box-direction: normal;
       -ms-flex-flow: 100%;
           flex-flow: 100%;
+  color: #525252;
+  font-family: Lora;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 31px;
+  margin-top: 0;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
 }
 
-#degrees-app .degrees .degree a {
+#degrees-app .degrees .degree__cta-button {
   -ms-flex-item-align: end;
       align-self: flex-end;
+  letter-spacing: 3px;
+  text-align: center;
+  font-weight: 700;
+  padding: .25em;
+  font-family: "Open Sans";
+  text-transform: uppercase;
+  width: 180px;
+  margin-left: auto;
+  border: 2.94px solid #4A4A4A;
+  color: #4A4A4A;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+#degrees-app .degrees .degree:hover, #degrees-app .degrees .degree:focus {
+  border-color: gray;
+}
+
+#degrees-app .degrees .degree:hover .degree__cta-button, #degrees-app .degrees .degree:focus .degree__cta-button {
+  background: #4A4A4A;
+  color: white;
 }
 
 .degree-transition-move {

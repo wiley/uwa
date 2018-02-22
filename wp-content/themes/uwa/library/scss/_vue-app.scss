@@ -1,10 +1,47 @@
+// Degree Areas Of Study Colors
+$all: #11181F;
+$biology: #966208;
+$business: #0366C9;
+$communications: #177D74;
+$psychology-counseling: #8A27B4;
+$public-safety: #666666;
+$school-administration: #510915;
+$teaching: #A81D32;
+$degreeAreas: (
+	"all": #11181F,
+	"biology": #966208,
+	"business": #0366C9,
+	"communications": #177D74,
+	"psychology-counseling": #8A27B4,
+	"public-safety": #666666,
+	"school-administration": #510915,
+	"teaching": #A81D32
+);
+
+@each $area, $value in $degreeAreas {
+
+	.#{$area} {
+		&:hover {
+			color: $value !important;
+		}
+		.label {
+			background-color: $value;
+		}
+	}
+
+	.#{$area} .label {
+		background-color: $value;
+	}
+}
+
 #degrees-app {
 	display: flex;
 	flex-flow: row wrap;
-	max-width: 1400px;
+	max-width: 1680px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 5em;
+
 	.controlsWrapper {
 		flex: 0 1 350px;
 	}
@@ -12,7 +49,7 @@
 	.degrees {
 		// display: flex;
 		flex-flow: row wrap;
-		max-width: 1200px;
+		// max-width: 1680px;
 		margin-left: auto;
 		margin-right: auto;
 		// height: 600px;
@@ -23,27 +60,72 @@
 		// justify-content: space-around;
 		justify-content: flex-start;
 		flex: 1 1 calc(100% - 350px);
-
+		a {
+			text-decoration: none;
+		}
 		.degree {
 			margin: 1em;
 			border: 1px solid gray;
 			padding: 1em;
 			display: flex;
 			flex-flow: row wrap;
-			height: 200px;
-			width: 260px;
-			// flex: 0 1 340px;
-			// margin-left: auto;
-			// margin-right: auto;
+			height: 240px;
+			width: 365px;
+			align-items: flex-start;
+			border: 4px solid #E9E9EA;
+
+			.label {
+				display: flex;
+				align-items: center;
+				line-height: 1;
+				color: white;
+				padding: 0.25em 0.5em;
+				margin-bottom: auto;
+				font-family: "Open Sans";
+				font-size: 13px;
+				font-weight: 600;
+				line-height: 18px;
+
+				&.undefined {
+					background-color: black;
+				}
+			}
 
 			&__title {
 				font-size: 1.25em;
 				margin-top: 0.5em;
 				flex-flow: 100%;
+				color: #525252;
+				font-family: Lora;
+				font-size: 24px;
+				font-weight: bold;
+				line-height: 31px;
+				margin-top: 0;
+				flex-basis: 100%;
 			}
 
-			a {
+			&__cta-button {
 				align-self: flex-end;
+				letter-spacing: 3px;
+		    text-align: center;
+		    font-weight: 700;
+		    padding: .25em;
+		    font-family: "Open Sans";
+		    text-transform: uppercase;
+		    width: 180px;
+		    margin-left: auto;
+				border: 2.94px solid #4A4A4A;
+				color: #4A4A4A;
+				transition: all .25s ease;
+
+			}
+
+			&:hover, &:focus {
+				border-color: gray;
+				.degree__cta-button {
+					background: #4A4A4A;
+					color: white;
+				}
 			}
 		}
 	}
@@ -111,5 +193,5 @@
 // }
 
 .filters-areas {
-    margin-top: 1.5em;
+	margin-top: 1.5em;
 }
