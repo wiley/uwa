@@ -27,7 +27,7 @@
         <div class="card__info">
           <h2>Financial Aid</h2>
           <p>Learn more about financial aid and how you can maximize these opportunities to cut the cost of your education.</p>
-          <a href="/financial-aid" class="btn__hollow">Financial Aid Info</a>
+          <a href="/tuition/financial-aid/" class="btn__hollow">Financial Aid Info</a>
         </div>
       </div>
       <div class="fastFact">
