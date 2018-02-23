@@ -16,7 +16,7 @@
 		video {
 			@include susy-breakpoint($bp-med) {
 				width: 120%;
-				margin-left: -10%;
+				// margin-left: -10%;
 				margin-top: 2em;
 				margin-bottom: 2em;
 			}

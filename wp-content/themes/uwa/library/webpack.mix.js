@@ -15,7 +15,8 @@ let mix = require('laravel-mix');
 mix.options({ processCssUrls: false });
 
 mix.js('js/scripts.js', 'js/build/production.min.js')
-  .sass('scss/style.scss', 'css/build/minified/style.css');
+  .sass('scss/style.scss', 'css/build/minified/style.css')
+  .sass('scss/critical-interior.scss', 'css/build/minified/critical-interior.css');
 
 mix.disableNotifications();
 

@@ -1,48 +1,33 @@
 <?php get_header(); ?>
-<?php
-	global $post;
-	// $args = array(
-	// 		'post_parent' => $post->ID,
-	// 		'post_type' => 'page'
-	// );
-	// $subpages = new WP_query($args);
-	// var_dump($subpages);
-	// print("<pre>".print_r($post,true)."</pre>");
-?>
+<?php global $post; ?>
 			<div class="content">
 
 				<div class="wrap cf">
-
-<?php
-// $menuLocations = get_nav_menu_locations();
-//
-// $menuID = $menuLocations['main-nav'];
-//
-// $primaryNav = wp_get_nav_menu_items($menuID);
-
-// foreach ( $primaryNav as $navItem ) {
-// 	if ($navItem->post_parent == $post->ID) {
-// 		// print("<pre>".print_r($navItem,true)."</pre>");
-// 		echo '<li><a href="'.$navItem->url.'" title="'.$navItem->title.'">'.$navItem->title.'</a></li>';
-// 	} else {
-// 		echo 'NO SIBLINGS';
-// 	}
-// }
-?>
 
 					<main class="main-content cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 						<div class="intro">
 
 						<?php include('includes/subNav.php'); ?>
+						<div class="intro__main-wrapper">
+							<div class="intro__content">
+								<p class="intro_headline">
+									<?php if (get_field('intro_headline')): ?>
+										<?php the_field('intro_headline') ?>
+									<?php endif; ?>
+								</p>
+								<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+									<?php the_content(); ?>
+								<?php endwhile; endif; ?>
+							</div>
+							<div class="intro__form">
+								<div class="formWrapper">
+									<h2 class="h3 form__header">Request Info</h2>
+									<script src="https://requestforms.learninghouse.com/form/show/university-west-alabama/olc/734/3589/online.uwa.edu:thank-you:request_id" type="text/javascript"></script>
+								</div>
+							</div>
+						</div>
 
-						<p class="intro_headline">
-							<?php if (get_field('intro_headline')): ?>
-								<?php the_field('intro_headline') ?>
-							<?php endif; ?>
-						</p>
-							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-								<?php the_content(); ?>
-							<?php endwhile; endif; ?>
+
 						</div>
 
 					</main>

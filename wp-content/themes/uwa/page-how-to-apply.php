@@ -1,14 +1,5 @@
 <?php get_header(); ?>
-<?php
-	global $post;
-	// $args = array(
-	// 		'post_parent' => $post->ID,
-	// 		'post_type' => 'page'
-	// );
-	// $subpages = new WP_query($args);
-	// var_dump($subpages);
-// ?>
-
+<?php global $post; ?>
 
 			<div class="content">
 
@@ -28,10 +19,20 @@
 										?>
 									</ul>
 				        </div>
-				        <p class="intro__headline">Applying to an online program at the University of West Alabama is simple.</p>
-								<a target="_blank" href="https://www.gowest-alabama.org/apply/get-started.htm" class="btn">Start your online application today</a>
-								<p>You will be asked to create a username and password during this process. If you don’t complete your application immediately, the application system will be able to locate your application when you’re ready to complete it.</p>
- 	 							<p>Once your application has been received, you will be contacted by an enrollment counselor, who will help you with application documents and transfer credits.</p>
+								<div class="intro__main-wrapper">
+									<div class="intro__content">
+										<p class="intro__headline">Applying to an online program at the University of West Alabama is simple.</p>
+										<a target="_blank" href="https://www.gowest-alabama.org/apply/get-started.htm" class="btn">Start your online application today</a>
+										<p>You will be asked to create a username and password during this process. If you don’t complete your application immediately, the application system will be able to locate your application when you’re ready to complete it.</p>
+										<p>Once your application has been received, you will be contacted by an enrollment counselor, who will help you with application documents and transfer credits.</p>
+									</div>
+									<div class="intro__form">
+										<div class="formWrapper">
+											<h2 class="h3 form__header">Request Info</h2>
+											<script src="https://requestforms.learninghouse.com/form/show/university-west-alabama/olc/734/3589/online.uwa.edu:thank-you:request_id" type="text/javascript"></script>
+										</div>
+									</div>
+								</div>
 				      </div>
 
 						</main>
