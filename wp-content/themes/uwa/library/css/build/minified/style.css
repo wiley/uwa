@@ -3252,7 +3252,7 @@ LAYOUT & GRID STYLES
 
 @media (min-width: 900px) {
   .banner {
-    background-size: 100% auto;
+    background-size: 1500px auto;
   }
 }
 
@@ -4436,8 +4436,13 @@ PAGE SPECIFIC STYLES
 }
 
 .banner {
-  min-height: 300px;
   max-height: 455px;
+}
+
+@media (min-width: 900px) {
+  .banner {
+    min-height: 425px;
+  }
 }
 
 .banner .wrap {

@@ -207,9 +207,10 @@ article {}
 }
 
 .banner {
-	// height: 85vw;
-	min-height: 300px;
 	max-height: 455px;
+	@media (min-width: 900px) {
+		min-height: 425px;
+	}
 	.wrap {
 		// position: absolute;
 		z-index: 99999;
