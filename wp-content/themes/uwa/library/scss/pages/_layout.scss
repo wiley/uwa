@@ -33,17 +33,14 @@ LAYOUT & GRID STYLES
 	background-position: center;
 	background-position: top;
 	background-size: cover;
-
-
 	@include susy-breakpoint(768px) {
 		// min-height: 400px;
-			background-attachment: fixed;
-	background-size: 100% auto;
+		background-attachment: fixed;
+		background-size: 100% auto;
 	}
 	@include susy-breakpoint($bp-med) {
 		// min-height: 400px;
-
-	background-size: 100% auto;
+		background-size: 1500px auto;
 	}
 
 	&:after {

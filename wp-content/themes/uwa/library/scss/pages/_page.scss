@@ -323,10 +323,11 @@ article {}
 }
 
 .banner {
-	// height: 85vw;
-	min-height: 300px;
 	max-height: 455px;
-
+	min-height: 300px;
+	@media (min-width: 900px) {
+		min-height: 425px;
+	}
 	.wrap {
 		// position: absolute;
 		z-index: 99999;
@@ -346,6 +347,7 @@ article {}
 		}
 		@include susy-breakpoint($bp-lg) {
 			font-size: 4.5em;
+			padding: 3.25em 0 1.75em;
 		}
 	}
 }
