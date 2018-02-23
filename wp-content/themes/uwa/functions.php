@@ -30,7 +30,6 @@ function async_scripts($url)
 // add_filter( 'clean_url', 'async_scripts', 11, 1 );
 
 
-
 add_filter( 'get_the_archive_title', function ($title) {
 
     if ( is_category() ) {
