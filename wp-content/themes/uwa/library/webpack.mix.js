@@ -12,7 +12,7 @@ let mix = require('laravel-mix');
  */
 // mix.setPublicPath('path/to/public');
 
-mix.options({ processCssUrls: false });
+
 
 mix.js('js/scripts.js', 'js/build/production.min.js')
   .sass('scss/style.scss', 'css/build/minified/style.css');
@@ -29,7 +29,7 @@ mix.autoload({
   vue: ['Vue', 'window.Vue']
 });
 
-
+mix.options({ processCssUrls: false });
 // JS
 mix.copy('node_modules/fontfaceobserver/fontfaceobserver.js', 'js/build/fontfaceobserver.js');
 mix.copy('node_modules/mixitup/dist/mixitup.min.js', 'js/libs/mixitup.min.js');

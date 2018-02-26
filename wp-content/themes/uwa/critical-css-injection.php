@@ -12,7 +12,7 @@
 
 <?php if ( is_post_type_archive( 'degrees') ): ?>
   <style>
-  <?php include('library/css/build/minified/critical-online-degrees.css'); ?>
+  /* <?php include('library/css/build/minified/critical-online-degrees.css'); ?> */
   </style>
 <?php endif; ?>
 

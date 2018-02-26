@@ -6359,51 +6359,6 @@ POST STYLES
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
   }
-  .post-type-archive-degrees fieldset {
-    width: 47% !important;
-    margin: 0;
-    padding: 0;
-  }
-  .post-type-archive-degrees fieldset:first-of-type .toolbar-filter {
-    left: 0;
-    right: initial;
-    -webkit-transform: translateX(-110%);
-            transform: translateX(-110%);
-  }
-  .post-type-archive-degrees fieldset:first-of-type .toolbar-filter.activeFilter {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
-  }
-  .post-type-archive-degrees fieldset .toolbar-filter {
-    -webkit-transition: all 0.35s ease-in-out;
-    transition: all 0.35s ease-in-out;
-    -webkit-transform: translateX(110%);
-            transform: translateX(110%);
-    -ms-flex-line-pack: start;
-        align-content: flex-start;
-    height: inherit;
-    background: white;
-    padding-bottom: 1.5em;
-    position: absolute;
-    top: 83px;
-    right: 0;
-    width: 45.5%;
-    width: 75%;
-    padding: 1em 1em 1.25em;
-    z-index: 999;
-    -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-            box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-  }
-  .post-type-archive-degrees fieldset .toolbar-filter.activeFilter {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
-  }
-  .post-type-archive-degrees fieldset .toolbar-filter button {
-    font-size: 0.85em !important;
-    -webkit-box-flex: 1 !important;
-        -ms-flex: 1 1 100% !important;
-            flex: 1 1 100% !important;
-  }
 }
 
 .toolbar-filter__label svg {
@@ -7998,9 +7953,7 @@ ul#menu-secondary-left {
 }
 
 #degrees-app {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
@@ -8009,6 +7962,14 @@ ul#menu-secondary-left {
   margin-left: auto;
   margin-right: auto;
   margin-top: 5em;
+}
+
+@media (min-width: 800px) {
+  #degrees-app {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 #degrees-app .controlsWrapper {
@@ -8102,22 +8063,22 @@ ul#menu-secondary-left {
   letter-spacing: 3px;
   text-align: center;
   font-weight: 700;
-  padding: .25em;
+  padding: 0.25em;
   font-family: "Open Sans";
   text-transform: uppercase;
   width: 180px;
   margin-left: auto;
   border: 2.94px solid #4A4A4A;
   color: #4A4A4A;
-  -webkit-transition: all .25s ease;
-  transition: all .25s ease;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
 }
 
-#degrees-app .degrees .degree:hover, #degrees-app .degrees .degree:focus {
+#degrees-app .degrees .degree:focus, #degrees-app .degrees .degree:hover {
   border-color: gray;
 }
 
-#degrees-app .degrees .degree:hover .degree__cta-button, #degrees-app .degrees .degree:focus .degree__cta-button {
+#degrees-app .degrees .degree:focus .degree__cta-button, #degrees-app .degrees .degree:hover .degree__cta-button {
   background: #4A4A4A;
   color: white;
 }
@@ -8163,4 +8124,126 @@ ul#menu-secondary-left {
 
 .filters-areas {
   margin-top: 1.5em;
+}
+
+.input-wrapper.search-filter {
+  margin: 1em;
+  height: 45px;
+  max-width: 315px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+input.toolbar-filter__search {
+  border: 2px solid #A81D32;
+  padding: 0 !important;
+  margin: 0 !important;
+  padding-left: 10px !important;
+  height: 45px;
+  width: 100%;
+  font-style: italic;
+}
+
+.search-enter-active,
+.search-leave-active {
+  -webkit-transition: opacity 0.175s ease-in-out;
+  transition: opacity 0.175s ease-in-out;
+}
+
+.search-enter,
+.search-leave-to {
+  opacity: 0;
+}
+
+.icon-switch-enter-active,
+.icon-switch-leave-active {
+  -webkit-transition: opacity 0.175s ease-in-out;
+  transition: opacity 0.175s ease-in-out;
+}
+
+.icon-switch-enter,
+.icon-switch-leave-to {
+  opacity: 0;
+}
+
+.slide-down-enter-active,
+.slide-down-leave-active {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.slide-down-enter,
+.slide-down-leave-to {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  opacity: 0;
+}
+
+#degrees-app .toolbar-filter .btn__hollow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 2.25em;
+}
+
+#degrees-app .toolbar-filter .active-filter-indicator {
+  position: absolute;
+  display: block;
+  margin-right: 0;
+  margin-left: auto;
+  right: 0.75em;
+  margin-bottom: auto;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+@media (max-width: 799px) {
+  #degrees-app .controlsWrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+  #degrees-app .controlsWrapper .search-filter {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  #degrees-app .controlsWrapper .filter-group {
+    position: static;
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+  #degrees-app .controlsWrapper .filters-areas {
+    margin-top: 0;
+  }
+  #degrees-app .controlsWrapper .toolbar-filter {
+    position: absolute;
+    left: 0;
+    background: #555555;
+    color: white;
+    z-index: 999;
+    left: 1em;
+    right: 1em;
+  }
+  #degrees-app .controlsWrapper .toolbar-filter .filter {
+    color: white;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
 }

@@ -349,51 +349,47 @@
 			}
 		}
 
-		fieldset {
-			width: 47% !important;
-			margin: 0;
-			padding: 0;
-
-			&:first-of-type .toolbar-filter {
-				left: 0;
-				right: initial;
-				transform: translateX(-110%);
-
-				&.activeFilter {
-					transform: translateX(0%);
-				}
-			}
-
-			.toolbar-filter {
-				transition: all 0.35s ease-in-out;
-				transform: translateX(110%);
-				// overflow: hidden;
-				// max-height: 0;
-				align-content: flex-start;
-				height: inherit;
-				background: white;
-				padding-bottom: 1.5em;
-				position: absolute;
-				// left: 0;
-				// bottom: 0;
-				top: 83px;
-				right: 0;
-				width: 45.5%;
-				width: 75%;
-				padding: 1em 1em 1.25em;
-				z-index: 999;
-				box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-
-				&.activeFilter {
-					transform: translateX(0%);
-				}
-
-				button {
-					font-size: 0.85em !important;
-					flex: 1 1 100% !important;
-				}
-			}
-		}
+		// fieldset {
+		// 	width: 47% !important;
+		// 	margin: 0;
+		// 	padding: 0;
+		//
+		// 	&:first-of-type .toolbar-filter {
+		// 		left: 0;
+		// 		right: initial;
+		// 		transform: translateX(-110%);
+		//
+		// 		&.activeFilter {
+		// 			transform: translateX(0%);
+		// 		}
+		// 	}
+		//
+		// 	// .toolbar-filter {
+		// 	// 	transition: all 0.35s ease-in-out;
+		// 	// 	transform: translateX(110%);
+		// 	// 	align-content: flex-start;
+		// 	// 	height: inherit;
+		// 	// 	background: white;
+		// 	// 	padding-bottom: 1.5em;
+		// 	// 	position: absolute;
+		// 	// 	top: 83px;
+		// 	// 	right: 0;
+		// 	// 	width: 45.5%;
+		// 	// 	width: 75%;
+		// 	// 	padding: 1em 1em 1.25em;
+		// 	// 	z-index: 999;
+		// 	// 	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+		// 	//
+		// 	// 	&.activeFilter {
+		// 	// 		transform: translateX(0%);
+		// 	// 	}
+		// 	//
+		// 	// 	button {
+		// 	// 		font-size: 0.85em !important;
+		// 	// 		flex: 1 1 100% !important;
+		// 	// 	}
+		// 	// }
+		// }
 	}
 }
 

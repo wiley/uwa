@@ -14,8 +14,7 @@ import './components/carousel';
 import './components/filters';
 import './components/tables';
 import './components/faq';
-import './components/faq';
-import './components/vue-filters';
+import './vdegree-filtering/index.js';
 // import 'imports?jQuery=jquery!owl.carousel';
 
 jQuery.fn.center = function(parent) {
