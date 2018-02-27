@@ -40,7 +40,7 @@ LAYOUT & GRID STYLES
 	}
 	@include susy-breakpoint($bp-med) {
 		// min-height: 400px;
-		background-size: 1500px auto;
+		background-size: cover;
 	}
 
 	&:after {

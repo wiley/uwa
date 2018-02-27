@@ -2,18 +2,19 @@
 	&__list {
 		display: flex;
 		justify-content: space-between;
+		justify-content: center;
 		flex-flow: row wrap;
 		list-style-type: none;
 		padding: 0;
 		margin: 0 !important;
-		width: 110%;
-		margin-left: -5% !important;
+		max-width: 100%;
 	}
 
 	&__heading {
-		margin: 0 0 .5em 0 !important;
+		margin: 0 0 0.5em 0 !important;
 		padding: 0 !important;
 	}
+
 	&__item {
 		background: #f5f1e5;
 		padding: 2em;
@@ -26,8 +27,8 @@
 		display: flex;
 		flex-flow: row wrap;
 		align-content: space-between;
+		padding: 1.5em;
 
-		    padding: 1.5em;
 		.bold {
 			font-weight: 700;
 		}
@@ -35,11 +36,10 @@
 
 	&__btn {
 		width: 350px !important;
-    max-width: 100% !important;
-    margin-top: 2em !important;
+		max-width: 100% !important;
+		margin-top: 2em !important;
 	}
 }
-
 // .scholarships-partnerships__heading {
 // 	font-weight: 900 !important;
 // }

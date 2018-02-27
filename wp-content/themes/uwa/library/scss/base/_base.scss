@@ -12,6 +12,17 @@ html {
   }
 }
 
+// IOS 11 bug fix: cursor for input gets put in wrong position
+
+.ios-11-body-fixed {
+   position: fixed;
+   width: 100%;
+}
+
+input[type=search] {
+  -webkit-appearance: none;
+}
+
 *, *:before, *:after {
   box-sizing: inherit;
 }

@@ -270,16 +270,16 @@ jQuery(document).ready(function($) {
 		SearchBoxTrigger = $(".searchbox-trigger");
 
 	function openForm() {
-		// alert('worked!')
 		$("html").addClass("activeModal");
 		SearchWrapper.addClass("active");
-		// firstFormElement.focus();
+		$('body').addClass('ios-11-body-fixed');
+
 	}
 
 	function closeForm() {
 		$("html").removeClass("activeModal");
 		SearchWrapper.removeClass("active");
-		requestInfoBtn.focus();
+		$('body').removeClass('ios-11-body-fixed');
 	}
 
 	function setSearchButtonValue() {
