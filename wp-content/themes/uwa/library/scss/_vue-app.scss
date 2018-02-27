@@ -17,8 +17,8 @@ $degreeAreas: (
 	"school-administration": #510915,
 	"teaching": #A81D32
 );
-@each $area, $value in $degreeAreas {
-	.#{$area} {
+@each $degreeArea, $value in $degreeAreas {
+	.#{$degreeArea} {
 		&:hover {
 			color: $value !important;
 		}
@@ -28,9 +28,37 @@ $degreeAreas: (
 		}
 	}
 
-	.#{$area} .label {
+	.#{$degreeArea} .label {
 		background-color: $value;
 	}
+
+	.filter.#{$degreeArea} .filter__color {
+		background-color: $value;
+	}
+
+	.filter.#{$degreeArea}.active {
+		background-color: $value;
+
+		.filter__color {
+			background: transparent;
+			border: 2px solid;
+		}
+	}
+}
+
+#degrees-app .toolbar-filter .filter.active:hover {
+	color: white !important;
+}
+
+.post-type-archive-degrees main {
+	display: block !important;
+}
+
+#app {
+	max-width: 1600px;
+	width: 92%;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 #degrees-app {
@@ -39,7 +67,7 @@ $degreeAreas: (
 	max-width: 1680px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 5em;
+	// margin-top: 5em;
 	@media (min-width: 800px) {
 		display: flex;
 	}
@@ -68,15 +96,17 @@ $degreeAreas: (
 		}
 
 		.degree {
-			margin: 1em;
+			margin: 1em 0.5em;
 			border: 1px solid gray;
 			padding: 1em;
 			display: flex;
 			flex-flow: row wrap;
 			height: 240px;
-			width: 365px;
+			max-width: 300px;
+			// width: 365px;
 			align-items: flex-start;
 			border: 4px solid #E9E9EA;
+			@media (min-width: 800px) {}
 
 			.label {
 				display: flex;
@@ -202,12 +232,13 @@ $degreeAreas: (
 }
 
 .input-wrapper.search-filter {
-	margin: 1em;
+	margin: 1em auto;
 	height: 45px;
-	max-width: 315px;
+	max-width: 500px;
 	position: relative;
 	display: flex;
 	align-items: center;
+	flex: 1 1 100%;
 }
 
 input.toolbar-filter__search {
@@ -243,14 +274,13 @@ input.toolbar-filter__search {
 .slide-down-enter-active,
 .slide-down-leave-active {
 	// transition: opacity 0.175s ease-in-out;
-	transition: all .3s ease;
-
+	transition: all 0.3s ease;
 }
 
 .slide-down-enter,
 .slide-down-leave-to {
 	transform: translateY(-10px);
-  opacity: 0;
+	opacity: 0;
 	// height: 0;
 }
 
@@ -264,7 +294,7 @@ input.toolbar-filter__search {
 			padding-right: 2.25em;
 		}
 
-		.active-filter-indicator {
+		.filter__active-indicator {
 			position: absolute;
 			display: block;
 			margin-right: 0;
@@ -274,6 +304,17 @@ input.toolbar-filter__search {
 			top: 50%;
 			transform: translateY(-50%);
 		}
+
+		&.degreeAreasToolbar {
+			.filter__active-indicator {
+				left: 1em;
+				right: initial;
+
+				img {
+					width: 28px;
+				}
+			}
+		}
 	}
 }
 @media (max-width: 799px) {
@@ -281,6 +322,7 @@ input.toolbar-filter__search {
 		.controlsWrapper {
 			display: flex;
 			flex-flow: row wrap;
+			justify-content: space-between;
 
 			.search-filter {
 				flex-basis: 100%;
@@ -306,8 +348,8 @@ input.toolbar-filter__search {
 
 				.filter {
 					color: white;
-					margin-left: 1em;
-			    margin-right: 1em;
+					// margin-left: 1em;
+					// margin-right: 1em;
 				}
 			}
 		}

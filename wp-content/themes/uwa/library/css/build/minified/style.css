@@ -7868,6 +7868,19 @@ ul#menu-secondary-left {
   background-color: #11181F;
 }
 
+.filter.all .filter__color {
+  background-color: #11181F;
+}
+
+.filter.all.active {
+  background-color: #11181F;
+}
+
+.filter.all.active .filter__color {
+  background: transparent;
+  border: 2px solid;
+}
+
 .biology:hover {
   color: #966208 !important;
 }
@@ -7878,6 +7891,19 @@ ul#menu-secondary-left {
 
 .biology .label {
   background-color: #966208;
+}
+
+.filter.biology .filter__color {
+  background-color: #966208;
+}
+
+.filter.biology.active {
+  background-color: #966208;
+}
+
+.filter.biology.active .filter__color {
+  background: transparent;
+  border: 2px solid;
 }
 
 .business:hover {
@@ -7892,6 +7918,19 @@ ul#menu-secondary-left {
   background-color: #0366C9;
 }
 
+.filter.business .filter__color {
+  background-color: #0366C9;
+}
+
+.filter.business.active {
+  background-color: #0366C9;
+}
+
+.filter.business.active .filter__color {
+  background: transparent;
+  border: 2px solid;
+}
+
 .communications:hover {
   color: #177D74 !important;
 }
@@ -7902,6 +7941,19 @@ ul#menu-secondary-left {
 
 .communications .label {
   background-color: #177D74;
+}
+
+.filter.communications .filter__color {
+  background-color: #177D74;
+}
+
+.filter.communications.active {
+  background-color: #177D74;
+}
+
+.filter.communications.active .filter__color {
+  background: transparent;
+  border: 2px solid;
 }
 
 .psychology-counseling:hover {
@@ -7916,6 +7968,19 @@ ul#menu-secondary-left {
   background-color: #8A27B4;
 }
 
+.filter.psychology-counseling .filter__color {
+  background-color: #8A27B4;
+}
+
+.filter.psychology-counseling.active {
+  background-color: #8A27B4;
+}
+
+.filter.psychology-counseling.active .filter__color {
+  background: transparent;
+  border: 2px solid;
+}
+
 .public-safety:hover {
   color: #666666 !important;
 }
@@ -7926,6 +7991,19 @@ ul#menu-secondary-left {
 
 .public-safety .label {
   background-color: #666666;
+}
+
+.filter.public-safety .filter__color {
+  background-color: #666666;
+}
+
+.filter.public-safety.active {
+  background-color: #666666;
+}
+
+.filter.public-safety.active .filter__color {
+  background: transparent;
+  border: 2px solid;
 }
 
 .school-administration:hover {
@@ -7940,6 +8018,19 @@ ul#menu-secondary-left {
   background-color: #510915;
 }
 
+.filter.school-administration .filter__color {
+  background-color: #510915;
+}
+
+.filter.school-administration.active {
+  background-color: #510915;
+}
+
+.filter.school-administration.active .filter__color {
+  background: transparent;
+  border: 2px solid;
+}
+
 .teaching:hover {
   color: #A81D32 !important;
 }
@@ -7952,6 +8043,34 @@ ul#menu-secondary-left {
   background-color: #A81D32;
 }
 
+.filter.teaching .filter__color {
+  background-color: #A81D32;
+}
+
+.filter.teaching.active {
+  background-color: #A81D32;
+}
+
+.filter.teaching.active .filter__color {
+  background: transparent;
+  border: 2px solid;
+}
+
+#degrees-app .toolbar-filter .filter.active:hover {
+  color: white !important;
+}
+
+.post-type-archive-degrees main {
+  display: block !important;
+}
+
+#app {
+  max-width: 1600px;
+  width: 92%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 #degrees-app {
   display: block;
   -webkit-box-orient: horizontal;
@@ -7961,7 +8080,6 @@ ul#menu-secondary-left {
   max-width: 1680px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5em;
 }
 
 @media (min-width: 800px) {
@@ -8001,7 +8119,7 @@ ul#menu-secondary-left {
 }
 
 #degrees-app .degrees .degree {
-  margin: 1em;
+  margin: 1em 0.5em;
   border: 1px solid gray;
   padding: 1em;
   display: -webkit-box;
@@ -8012,7 +8130,7 @@ ul#menu-secondary-left {
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
   height: 240px;
-  width: 365px;
+  max-width: 300px;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -8127,9 +8245,9 @@ ul#menu-secondary-left {
 }
 
 .input-wrapper.search-filter {
-  margin: 1em;
+  margin: 1em auto;
   height: 45px;
-  max-width: 315px;
+  max-width: 500px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8137,6 +8255,9 @@ ul#menu-secondary-left {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
 }
 
 input.toolbar-filter__search {
@@ -8173,8 +8294,8 @@ input.toolbar-filter__search {
 
 .slide-down-enter-active,
 .slide-down-leave-active {
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .slide-down-enter,
@@ -8198,7 +8319,7 @@ input.toolbar-filter__search {
   padding-right: 2.25em;
 }
 
-#degrees-app .toolbar-filter .active-filter-indicator {
+#degrees-app .toolbar-filter .filter__active-indicator {
   position: absolute;
   display: block;
   margin-right: 0;
@@ -8210,6 +8331,15 @@ input.toolbar-filter__search {
           transform: translateY(-50%);
 }
 
+#degrees-app .toolbar-filter.degreeAreasToolbar .filter__active-indicator {
+  left: 1em;
+  right: initial;
+}
+
+#degrees-app .toolbar-filter.degreeAreasToolbar .filter__active-indicator img {
+  width: 28px;
+}
+
 @media (max-width: 799px) {
   #degrees-app .controlsWrapper {
     display: -webkit-box;
@@ -8219,6 +8349,9 @@ input.toolbar-filter__search {
     -webkit-box-direction: normal;
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   #degrees-app .controlsWrapper .search-filter {
     -ms-flex-preferred-size: 100%;
@@ -8243,7 +8376,5 @@ input.toolbar-filter__search {
   }
   #degrees-app .controlsWrapper .toolbar-filter .filter {
     color: white;
-    margin-left: 1em;
-    margin-right: 1em;
   }
 }

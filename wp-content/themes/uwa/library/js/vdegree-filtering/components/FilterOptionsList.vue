@@ -4,7 +4,7 @@
       key="all"
       class="btn__hollow filter"
       :class="{active: currentlySelectedOption === 'all' }"
-      aria-label="List All Degrees Types"
+      aria-label="Reset This Filter Group"
       @click="$emit('reset-filter')">
       All
     </button>
@@ -12,13 +12,18 @@
       v-for="option in options"
       :key="option.id"
       class="btn__hollow filter"
-      :class="{active: option.id === currentlySelectedOption}"
+      :class="[{ active: option.id === currentlySelectedOption}, option.slug]"
       :aria-label="'Filter By ' + option.name"
       @click.prevent="optionSelected(option)">
-      {{option.name}}
-      <span class="active-filter-indicator">
-        <img v-if="option.id === currentlySelectedOption" src="/wp-content/themes/uwa/library/images/filtering-module/check.svg" alt="Active Filter Icon">
+      <span class="filter__color"></span>
+      <span class="filter__title" v-html="option.name"></span>
+      <span class="filter__active-indicator">
+        <img
+          v-if="option.id === currentlySelectedOption"
+          src="/wp-content/themes/uwa/library/images/filtering-module/check.svg"
+          alt="Active Filter Icon">
       </span>
+
     </button>
   </div>
 </template>
@@ -38,5 +43,33 @@ export default {
 <style lang="scss">
 .filter {
   width: 100%;
+  text-transform: capitalize !important;
+  @media (max-width: 799px) {
+    border-bottom: 2px solid #6D6D6D !important;
+    font-size: 14px;
+  }
 }
+.optionsWrapper {
+  padding: 1em;
+  width: 100%;
+}
+.degreeAreasToolbar {
+  .filter {
+    &__color {
+      width: 40px;
+      position: absolute;
+      height: 40px;
+    }
+    &__title {
+      left: 50px;
+      position: relative;
+    }
+  }
+}
+.degreeLevelsToolbar {
+  .filter__color {
+    display: none;
+  }
+}
+
 </style>

@@ -1,5 +1,6 @@
 <template>
 <div id="degrees-app">
+
 	<div class="controlsWrapper">
 		<div class="input-wrapper search-filter">
 			<input
@@ -21,27 +22,17 @@
 
 
 		<div class="filter-group filters-types">
-			<fieldset class="degreeLevels">
 				<h2
 					@click="toggleDegreeTypesFilters"
 					class="toolbar-filter__label"
 					:class="{activeFilter: degreeTypesFilterIsActive}">
 					Degree Types
-					<transition mode="out-in" name="search">
+					<transition mode="out-in" name="icon-switch">
 						<img key="arrow-down" v-if="mobileMode && !showDegreeTypesToolbar" src="/wp-content/themes/uwa/library/images/filtering-module/arrow-down.svg" alt="">
 						<img key="arrow-down" v-else-if="mobileMode && showDegreeTypesToolbar" src="/wp-content/themes/uwa/library/images/filtering-module/arrow-up.svg" alt="">
-						<!-- <img key="clear" v-else src="/wp-content/themes/uwa/library/images/filtering-module/clear-search.svg" alt="Clear Search"> -->
 					</transition>
-
 				</h2>
 				<h3 v-if="mobileMode" class="toolbar-filter__activeTitle">{{activeDegreeTypeTitle}}</h3>
-
-				<toolbar-filter
-					class="degreeLevelsToolbar"
-					:activeFilterClass="degreeTypesFilterIsActive"
-					:isShowing="showDegreeTypesToolbar">
-				</toolbar-filter>
-
 
 				<transition name="slide-down">
 					<div
@@ -49,41 +40,26 @@
 						class="degreeLevelsToolbar toolbar-filter"
 						:class="{activeFilter: degreeTypesFilterIsActive}"
 						role="toolbar">
-	          <button
-	            key="all"
-	            class="btn__hollow filter"
-							:class="{active: activeDegreeType === 'all' }"
-	            aria-label="List All Degrees Types"
-	            @click="updateDegreeTypeToAll">All
-	          </button>
 						<filter-options-list
 							:options="degreeTypes"
 							@option-selected="updateActiveDegreeType"
 							@reset-filter="updateDegreeTypeToAll"
 							:currentlySelectedOption="activeDegreeType">
 						</filter-options-list>
-						<!-- <button
-	            v-for="type in degreeTypes"
-	            :key="type.id" class="btn__hollow filter"
-	            :class="{active: type.id === activeDegreeType}"
-	            :aria-label="'Filter By ' + type.name"
-	            @click.prevent="updateActiveDegreeType(type)">
-							{{type.name}}
-							<span class="active-filter-indicator">
-								<img v-if="type.id === activeDegreeType" src="/wp-content/themes/uwa/library/images/filtering-module/check.svg" alt="Active Filter Icon">
-							</span>
-						</button> -->
 					</div>
 				</transition>
-			</fieldset>
 		</div>
 
 		<div class="filter-group filters-areas">
-			<fieldset class="degreeAreas">
+			<!-- <fieldset class="degreeAreas"> -->
 				<h2
 					@click="toggleDegreeAreasFilters"
 					class="toolbar-filter__label">
 					Areas Of Study
+					<transition mode="out-in" name="icon-switch">
+						<img key="arrow-down" v-if="mobileMode && !showDegreeAreasToolbar" src="/wp-content/themes/uwa/library/images/filtering-module/arrow-down.svg" alt="">
+						<img key="arrow-down" v-else-if="mobileMode && showDegreeAreasToolbar" src="/wp-content/themes/uwa/library/images/filtering-module/arrow-up.svg" alt="">
+					</transition>
 				</h2>
 				<h3 v-if="mobileMode" class="toolbar-filter__activeTitle">{{activeAreaOfStudyTitle}}</h3>
 				<transition name="slide-down">
@@ -91,32 +67,17 @@
 						v-if="showDegreeAreasToolbar"
 						class="degreeAreasToolbar toolbar-filter"
 						role="toolbar">
-						<button
-							key="allAreas"
-							class="btn__hollow filter"
-							:class="{active: activeAreaOfStudy === 'all' }"
-							aria-label="List All Degrees Areas"
-							@click="updateDegreeAreaToAll">
-							All
-						</button>
 
-						<template
-						  v-for="(area, key) in areasOfStudy">
-							<button
-								:key="area.id" class="btn__hollow filter"
-								:class="{active: area.id === activeAreaOfStudy}"
-								:aria-label="'Filter By ' + area.name"
-								@click.prevent="updateActiveDegreeArea(area)">
-								{{area.name}}
-								<span class="active-filter-indicator">
-									<img v-if="area.id === activeAreaOfStudy" src="/wp-content/themes/uwa/library/images/filtering-module/check.svg" alt="Active Filter Icon">
-								</span>
-							</button>
-						</template>
+						<filter-options-list
+							:options="areasOfStudy"
+							@option-selected="updateActiveDegreeArea"
+							@reset-filter="updateDegreeAreaToAll"
+							:currentlySelectedOption="activeAreaOfStudy">
+						</filter-options-list>
 					</div>
 				</transition>
 
-			</fieldset>
+			<!-- </fieldset> -->
 		</div>
 
 	</div>
@@ -131,10 +92,11 @@
 			<small class="label" v-if="degree.degree_types[0]" v-text="degree.degree_types[0].name"></small>
 			<small class="label undefined" v-else>No Program Type Set</small>
 			<h3 class="degree__title" v-html="degree.title.rendered"></h3>
+			<span v-if="checkForTeachingCertificate(degree)" class="includes-licensure">Includes Licensure</span>
 			<div class="degree__cta-button">More Info</div>
 		</a>
   </isotope>
-
+	<div id="no-results-msg" v-if="!listForFilteredDegreesAreaAndLevel.length">No Results Match This Criteria</div>
 </div>
 </template>
 
@@ -143,7 +105,9 @@ import WPAPI from "wpapi";
 import isotope from 'vueisotope'
 import ToolbarFilter from './components/ToolbarFilter'
 import FilterOptionsList from './components/FilterOptionsList'
-const apiPromise = WPAPI.discover("https://uwa-gulp.dev");
+const devUrl = 'https://uwa-gulp.dev'
+const liveUrl = 'https://onlineuwa.staging.wpengine.com'
+const apiPromise = WPAPI.discover(devUrl);
 
 export default {
 	name: "degrees-app",
@@ -234,7 +198,11 @@ export default {
 						teachingSubAreas.push(area)
 					}
 			});
-			return []
+			console.log('areasFiltersArray: ', areasFiltersArray);
+			console.log('topLevelFilters: ', topLevelFilters);
+			// topLevelFilters[2]['sub_areas'] = 'NEWWW'
+			return topLevelFilters
+			// return []
 		},
 
 		listForFilteredDegreesAreaAndLevel () {
@@ -328,6 +296,28 @@ export default {
 			})
 			// return levels
 			return levels.concat(types)
+		},
+
+		checkForTeachingCertificate(degree) {
+			let degreeLevels = degree.degree_levels
+			// return degreeLevels.includes('')
+			let levels = degreeLevels.filter(level => {
+				return level.slug == "teaching-certificates"
+			})
+			console.log(levels.length);
+			if (levels.length > 0 ) {
+				return true
+			} else {
+				return false
+			}
+			// return levels.length ? true : false
+
+			// let filteredDegrees = this.degrees.filter(degree => {
+			// 	let areasOfStudyForDegree = degree.verticals;
+			// 	return areasOfStudyForDegree.includes(this.activeAreaOfStudy);
+			// });
+			// return filteredDegrees;
+
 		},
 
 		updateActiveDegreeType(type) {
@@ -467,24 +457,73 @@ export default {
 		}
 }
 
-.toolbar-filter {
-	&__label {
-		cursor: pointer;
-		position: relative;
-		@media (min-width: 901px) {
-			cursor: auto;
+#degrees-app {
+	.controlsWrapper {
+		@media (min-width: 800px) {
+			margin-top: 3em;
 		}
+		.filter-group {
 
-		img {
-			position: absolute;
-			right: 1em;
+			@media (max-width: 799px) {
+				margin-top: 0;
+				flex-basis: 47%;
+				background: #E9E9EA;
+				margin: .5em 0;
+			}
+
 		}
-	}
-	&__activeTitle {
-		font-size: 1em;
-		position: absolute;
+		.toolbar-filter {
+			&__label {
+				cursor: pointer;
+				position: relative;
+				font-size: 14px;
+				padding-left: .5em;
+				@media (min-width: 601px) {
+					font-size: 16px;
+				}
+				@media (min-width: 901px) {
+					cursor: auto;
+					font-size: 20px;
+				}
+
+				img {
+					position: absolute;
+					right: 5px;
+				}
+			}
+			&__activeTitle {
+				font-size: 1em;
+				position: absolute;
+				width: 48%;
+			}
+		}
 	}
 }
 
+#no-results-msg {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.5em;
+	font-weight: 600;
 
+	@media (min-width: 800px) {
+		position: fixed;
+		left: 50%;
+		top: 65%;
+		transform: translate3d(-50%, -50%, 0);
+		width: 400px;
+		text-align: center;
+		font-size: 2.25em;
+		background: white;
+		border-radius: 3px;
+	}
+}
+.includes-licensure {
+    position: relative;
+    top: -1.5em;
+		font-weight: bold;
+    font-size: 15px;		
+}
 </style>

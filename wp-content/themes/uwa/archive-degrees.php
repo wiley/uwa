@@ -51,13 +51,13 @@
 	$allDegrees = get_posts( $allDegreesArgs );
 ?>
 
-	<div id="app">
-		<degrees-app></degrees-app>
-	</div>
-	<main>
 
+	<!-- <main> -->
 
+		<div id="app">
+			<degrees-app></degrees-app>
+		</div>
 
-	</main>
+	<!-- </main> -->
 
 <?php get_footer(); ?>
