@@ -2,11 +2,18 @@
   <div class="optionsWrapper">
     <button
       key="all"
-      class="btn__hollow filter"
+      class="btn__hollow filter all"
       :class="{active: currentlySelectedOption === 'all' }"
       aria-label="Reset This Filter Group"
       @click="$emit('reset-filter')">
-      All
+      <span class="filter__color"></span>
+      <span class="filter__title">All</span>
+      <span class="filter__active-indicator">
+        <img
+          v-if="currentlySelectedOption === 'all'"
+          src="/wp-content/themes/uwa/library/images/filtering-module/check.svg"
+          alt="Active Filter Icon">
+      </span>
     </button>
     <button
       v-for="option in options"

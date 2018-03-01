@@ -82,7 +82,8 @@
 
 	</div>
 
-	<isotope ref="cpt" id="root_isotope1" class="degrees" :list="degrees" :options='isotopeOptions'>
+	<loading-spinner :isVisible="!listForFilteredDegreesAreaAndLevel.length && !degrees.length"></loading-spinner>
+	<isotope v-show="listForFilteredDegreesAreaAndLevel.length" ref="cpt" id="root_isotope1" class="degrees" :list="degrees" :options='isotopeOptions'>
 		<a
 			v-for="degree, index in listForFilteredDegreesAreaAndLevel"
 			:key="index"
@@ -96,7 +97,7 @@
 			<div class="degree__cta-button">More Info</div>
 		</a>
   </isotope>
-	<div id="no-results-msg" v-if="!listForFilteredDegreesAreaAndLevel.length">No Results Match This Criteria</div>
+	<div id="no-results-msg" v-show="!listForFilteredDegreesAreaAndLevel.length && degrees.length">No Results Match This Criteria</div>
 </div>
 </template>
 
@@ -105,6 +106,7 @@ import WPAPI from "wpapi";
 import isotope from 'vueisotope'
 import ToolbarFilter from './components/ToolbarFilter'
 import FilterOptionsList from './components/FilterOptionsList'
+import LoadingSpinner from './components/LoadingSpinner'
 const devUrl = 'https://uwa-gulp.dev'
 const liveUrl = 'https://onlineuwa.staging.wpengine.com'
 const apiPromise = WPAPI.discover(devUrl);
@@ -114,12 +116,13 @@ export default {
 	components: {
 		isotope,
 		ToolbarFilter,
-		FilterOptionsList
+		FilterOptionsList,
+		LoadingSpinner
 	},
 	data() {
 		return {
 			searchFilter: '',
-			// searchIsActive: false,
+			loadingApi: true,
 			mobileMode: false,
 			showDegreeTypesToolbar: true,
 			showDegreeAreasToolbar: true,
@@ -135,6 +138,11 @@ export default {
 			activeFilter: null,
 			isotopeOptions: {
 	      itemSelector: ".degree",
+				// layoutMode: 'fitRows',
+				masonry: {
+			    // columnWidth: 200,
+			    // isFitWidth: true
+			  },
 	      getFilterData: {
 	        "show all": function() {
 	          return true;
@@ -162,8 +170,8 @@ export default {
 			let activeAreaOfStudy = this.activeAreaOfStudy;
 			let activeDegreeType = this.activeDegreeType;
 
-			return activeAreaOfStudy || activeDegreeType
-				? this.filterDegreesByArea(activeAreaOfStudy, activeDegreeType)
+			return activeAreaOfStudy
+				? this.filterDegreesByArea(activeAreaOfStudy)
 				: this.degrees;
 		},
 
@@ -219,9 +227,12 @@ export default {
 
 	created() {
 		this.getData();
+		console.log('After .then: all done');
+		this.loadingApi = false
 	},
 
 	mounted () {
+
 		if (matchMedia) {
 			const mq = window.matchMedia("(min-width: 800px)");
 			mq.addListener(this.WidthHandler);
@@ -402,6 +413,7 @@ export default {
 		},
 
 		getData() {
+
 			apiPromise.then(site => {
 				site
 					.degrees()
@@ -428,6 +440,7 @@ export default {
 					.perPage(100)
 					.then(levels => {
 						this.degreeTypes = levels;
+						// this.loadingApi = false
 					})
 					.catch(error => {
 						console.log(error);
@@ -458,6 +471,8 @@ export default {
 }
 
 #degrees-app {
+	min-height: 600px;
+	position: relative;
 	.controlsWrapper {
 		@media (min-width: 800px) {
 			margin-top: 3em;
@@ -509,21 +524,33 @@ export default {
 	font-weight: 600;
 
 	@media (min-width: 800px) {
-		position: fixed;
-		left: 50%;
-		top: 65%;
-		transform: translate3d(-50%, -50%, 0);
+		// position: fixed;
+		// right: 50%;
+		// top: 65%;
+		transform: translate3d(50%, -50%, 0);
+		position: absolute;
 		width: 400px;
+		max-width: 100%;
+		flex: 1 1 calc(100% - 400px);
+		align-self: flex-start;
+		// position: relative;
+		// margin-top: 15%;
+		margin-left: auto;
+		margin-right: auto;
 		text-align: center;
 		font-size: 2.25em;
 		background: white;
 		border-radius: 3px;
+		right: 40%;
+    top: 40%;
 	}
 }
 .includes-licensure {
     position: relative;
     top: -1.5em;
 		font-weight: bold;
-    font-size: 15px;		
+    font-size: 15px;
 }
+
+
 </style>

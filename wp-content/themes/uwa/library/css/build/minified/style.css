@@ -7872,11 +7872,11 @@ ul#menu-secondary-left {
   background-color: #11181F;
 }
 
-.filter.all.active {
+.degreeAreasToolbar .filter.all.active {
   background-color: #11181F;
 }
 
-.filter.all.active .filter__color {
+.degreeAreasToolbar .filter.all.active .filter__color {
   background: transparent;
   border: 2px solid;
 }
@@ -7897,11 +7897,11 @@ ul#menu-secondary-left {
   background-color: #966208;
 }
 
-.filter.biology.active {
+.degreeAreasToolbar .filter.biology.active {
   background-color: #966208;
 }
 
-.filter.biology.active .filter__color {
+.degreeAreasToolbar .filter.biology.active .filter__color {
   background: transparent;
   border: 2px solid;
 }
@@ -7922,11 +7922,11 @@ ul#menu-secondary-left {
   background-color: #0366C9;
 }
 
-.filter.business.active {
+.degreeAreasToolbar .filter.business.active {
   background-color: #0366C9;
 }
 
-.filter.business.active .filter__color {
+.degreeAreasToolbar .filter.business.active .filter__color {
   background: transparent;
   border: 2px solid;
 }
@@ -7947,11 +7947,11 @@ ul#menu-secondary-left {
   background-color: #177D74;
 }
 
-.filter.communications.active {
+.degreeAreasToolbar .filter.communications.active {
   background-color: #177D74;
 }
 
-.filter.communications.active .filter__color {
+.degreeAreasToolbar .filter.communications.active .filter__color {
   background: transparent;
   border: 2px solid;
 }
@@ -7972,11 +7972,11 @@ ul#menu-secondary-left {
   background-color: #8A27B4;
 }
 
-.filter.psychology-counseling.active {
+.degreeAreasToolbar .filter.psychology-counseling.active {
   background-color: #8A27B4;
 }
 
-.filter.psychology-counseling.active .filter__color {
+.degreeAreasToolbar .filter.psychology-counseling.active .filter__color {
   background: transparent;
   border: 2px solid;
 }
@@ -7997,11 +7997,11 @@ ul#menu-secondary-left {
   background-color: #666666;
 }
 
-.filter.public-safety.active {
+.degreeAreasToolbar .filter.public-safety.active {
   background-color: #666666;
 }
 
-.filter.public-safety.active .filter__color {
+.degreeAreasToolbar .filter.public-safety.active .filter__color {
   background: transparent;
   border: 2px solid;
 }
@@ -8022,11 +8022,11 @@ ul#menu-secondary-left {
   background-color: #510915;
 }
 
-.filter.school-administration.active {
+.degreeAreasToolbar .filter.school-administration.active {
   background-color: #510915;
 }
 
-.filter.school-administration.active .filter__color {
+.degreeAreasToolbar .filter.school-administration.active .filter__color {
   background: transparent;
   border: 2px solid;
 }
@@ -8047,11 +8047,11 @@ ul#menu-secondary-left {
   background-color: #A81D32;
 }
 
-.filter.teaching.active {
+.degreeAreasToolbar .filter.teaching.active {
   background-color: #A81D32;
 }
 
-.filter.teaching.active .filter__color {
+.degreeAreasToolbar .filter.teaching.active .filter__color {
   background: transparent;
   border: 2px solid;
 }
@@ -8097,6 +8097,9 @@ ul#menu-secondary-left {
 }
 
 #degrees-app .degrees {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
@@ -8122,15 +8125,13 @@ ul#menu-secondary-left {
   margin: 1em 0.5em;
   border: 1px solid gray;
   padding: 1em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  height: 240px;
-  max-width: 300px;
+  height: 245px !important;
+  width: calc(100% - 48px);
+  max-width: 360px;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -8326,13 +8327,13 @@ input.toolbar-filter__search {
   margin-left: auto;
   right: 0.75em;
   margin-bottom: auto;
-  top: 50%;
+  top: 55%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
 
 #degrees-app .toolbar-filter.degreeAreasToolbar .filter__active-indicator {
-  left: 1em;
+  left: 15px;
   right: initial;
 }
 
