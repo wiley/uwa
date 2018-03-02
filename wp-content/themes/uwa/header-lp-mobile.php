@@ -27,16 +27,15 @@
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
 		<style>
-		<?php /* include 'library/css/build/minified/lp-critical.css'; */ ?>
+		<?php include 'library/css/build/minified/lp-critical.css'; ?>
 		</style>
 
 		<?php wp_head(); ?>
 		<script type="text/javascript" src="https://requestforms.learninghouse.com/form/affiliate/734"></script>
-		<?php /*<script>!function(a){"use strict";var b=function(b,c,d){function j(a){return e.body?a():void setTimeout(function(){j(a)})}function l(){f.addEventListener&&f.removeEventListener("load",l),f.media=d||"all"}var g,e=a.document,f=e.createElement("link");if(c)g=c;else{var h=(e.body||e.getElementsByTagName("head")[0]).childNodes;g=h[h.length-1]}var i=e.styleSheets;f.rel="stylesheet",f.href=b,f.media="only x",j(function(){g.parentNode.insertBefore(f,c?g:g.nextSibling)});var k=function(a){for(var b=f.href,c=i.length;c--;)if(i[c].href===b)return a();setTimeout(function(){k(a)})};return f.addEventListener&&f.addEventListener("load",l),f.onloadcssdefined=k,k(l),f};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);</script>
+		<script>!function(a){"use strict";var b=function(b,c,d){function j(a){return e.body?a():void setTimeout(function(){j(a)})}function l(){f.addEventListener&&f.removeEventListener("load",l),f.media=d||"all"}var g,e=a.document,f=e.createElement("link");if(c)g=c;else{var h=(e.body||e.getElementsByTagName("head")[0]).childNodes;g=h[h.length-1]}var i=e.styleSheets;f.rel="stylesheet",f.href=b,f.media="only x",j(function(){g.parentNode.insertBefore(f,c?g:g.nextSibling)});var k=function(a){for(var b=f.href,c=i.length;c--;)if(i[c].href===b)return a();setTimeout(function(){k(a)})};return f.addEventListener&&f.addEventListener("load",l),f.onloadcssdefined=k,k(l),f};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);</script>
 		<script>loadCSS( "/wp-content/themes/uwa/library/css/build/minified/lp-style.css" );</script>
-<noscript><link rel="stylesheet" href="/wp-content/themes/uwa/library/css/build/minified/lp-style.css"></noscript> */ ?>
-<link rel="stylesheet" href="/wp-content/themes/uwa/library/css/build/minified/lp-style.css">
-
+		<noscript><link rel="stylesheet" href="/wp-content/themes/uwa/library/css/build/minified/lp-style.css"></noscript>
+		<link rel="stylesheet" href="/wp-content/themes/uwa/library/css/build/minified/lp-style.css">
 
 	</head>
 
@@ -58,10 +57,29 @@
 
 				<?php
 					$image = get_field('banner_image');
-					$url = $image['url'];
+					$medium = $image['sizes'][ 'medium_large' ];
+					$large = $image['sizes'][ 'large' ];
+					$full = $image[ 'url' ];
 				?>
+				<style>
+				@media screen and (min-width: 1200px) {
+					.banner {
+						background-image: url(<?php echo $full; ?>);
+					}
+				}
+				@media screen and (min-width: 801px) and (max-width: 1200px) {
+					.banner {
+						background-image: url(<?php echo $large; ?>);
+					}
+				}
+				@media screen and (max-width: 800px) {
+					.banner {
+						background-image: url(<?php echo $medium; ?>);
+					}
+				}
+				</style>
 
-				<div class="banner" style="background-image: url(<?php echo $url; ?>);">
+				<div class="banner">
 
 					<div class="wrap">
 
