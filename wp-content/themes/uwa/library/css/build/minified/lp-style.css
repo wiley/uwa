@@ -2344,24 +2344,6 @@ MOBILE SPECIFIC STYLES
   }
 }
 
-@media screen and (min-width: 801px) {
-  .landing-pages-template-single-landing-pages-mobile .about-us__bg {
-    background-image: url(/wp-content/uploads/2017/01/about-us-bg-1024x554.jpg);
-  }
-}
-
-@media screen and (min-width: 321px) and (max-width: 800px) {
-  .landing-pages-template-single-landing-pages-mobile .about-us__bg {
-    background-image: url(/wp-content/themes/uwa/library/images/about-us-bg-mobile.jpg);
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .landing-pages-template-single-landing-pages-mobile .about-us__bg {
-    background-image: url(/wp-content/uploads/2017/01/about-us-bg-300x162.jpg);
-  }
-}
-
 .landing-pages-template-single-landing-pages-mobile .about-us__content {
   padding-top: 20px;
   padding-right: 5%;
