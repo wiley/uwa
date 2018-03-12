@@ -3252,7 +3252,7 @@ LAYOUT & GRID STYLES
 
 @media (min-width: 900px) {
   .banner {
-    background-size: 1500px auto;
+    background-size: cover;
   }
 }
 
@@ -8092,8 +8092,8 @@ ul#menu-secondary-left {
 
 #degrees-app .controlsWrapper {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 350px;
-          flex: 0 1 350px;
+      -ms-flex: 0 1 300px;
+          flex: 0 1 300px;
 }
 
 #degrees-app .degrees {
@@ -8113,8 +8113,8 @@ ul#menu-secondary-left {
       -ms-flex-pack: start;
           justify-content: flex-start;
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 calc(100% - 350px);
-          flex: 1 1 calc(100% - 350px);
+      -ms-flex: 1 1 calc(100% - 300px);
+          flex: 1 1 calc(100% - 300px);
 }
 
 #degrees-app .degrees a {
@@ -8131,7 +8131,7 @@ ul#menu-secondary-left {
           flex-flow: row wrap;
   height: 245px !important;
   width: calc(100% - 48px);
-  max-width: 360px;
+  max-width: 310px;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -8161,19 +8161,18 @@ ul#menu-secondary-left {
 
 #degrees-app .degrees .degree__title {
   font-size: 1.25em;
-  margin-top: 0.5em;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: 100%;
           flex-flow: 100%;
   color: #525252;
   font-family: Lora;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 31px;
-  margin-top: 0;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 28px;
+  margin-top: 5px;
 }
 
 #degrees-app .degrees .degree__cta-button {
@@ -8191,6 +8190,9 @@ ul#menu-secondary-left {
   color: #4A4A4A;
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
 }
 
 #degrees-app .degrees .degree:focus, #degrees-app .degrees .degree:hover {
@@ -8372,10 +8374,13 @@ input.toolbar-filter__search {
     background: #555555;
     color: white;
     z-index: 999;
-    left: 1em;
-    right: 1em;
+    left: 0;
+    right: 0;
   }
   #degrees-app .controlsWrapper .toolbar-filter .filter {
+    color: white !important;
+  }
+  #degrees-app .controlsWrapper .toolbar-filter .filter:hover, #degrees-app .controlsWrapper .toolbar-filter .filter:focus {
     color: white;
   }
 }

@@ -3,16 +3,8 @@
 
 	<div class="controlsWrapper">
 		<div class="input-wrapper search-filter">
-			<input
-				type="text"
-				class="toolbar-filter__search"
-				placeholder="Click here to search"
-				v-model="searchFilter">
-			<div
-				tabindex="0"
-				@click="clearSearch"
-				@keypress.enter="clearSearch"
-				class="searchFilter-icon" :class="{clickable: searchQueryExists}">
+			<input type="text" class="toolbar-filter__search" placeholder="Click here to search" v-model="searchFilter">
+			<div tabindex="0" @click="clearSearch" @keypress.enter="clearSearch" class="searchFilter-icon" :class="{clickable: searchQueryExists}">
 				<transition mode="out-in" name="search">
 					<img key="search" v-if="!searchQueryExists" src="/wp-content/themes/uwa/library/images/filtering-module/seach.svg" alt="Search Icon">
 					<img key="clear" v-else src="/wp-content/themes/uwa/library/images/filtering-module/clear-search.svg" alt="Clear Search">
@@ -22,60 +14,59 @@
 
 
 		<div class="filter-group filters-types">
-				<h2
-					@click="toggleDegreeTypesFilters"
-					class="toolbar-filter__label"
-					:class="{activeFilter: degreeTypesFilterIsActive}">
+			<h2 @click="toggleDegreeTypesFilters" class="toolbar-filter__label" :class="{activeFilter: degreeTypesFilterIsActive}">
 					Degree Types
 					<transition mode="out-in" name="icon-switch">
-						<img key="arrow-down" v-if="mobileMode && !showDegreeTypesToolbar" src="/wp-content/themes/uwa/library/images/filtering-module/arrow-down.svg" alt="">
-						<img key="arrow-down" v-else-if="mobileMode && showDegreeTypesToolbar" src="/wp-content/themes/uwa/library/images/filtering-module/arrow-up.svg" alt="">
+						<img key="arrow-down" v-if="mobileMode && !showDegreeTypesToolbar" src="/wp-content/themes/uwa/library/images/filtering-module/arrow-down-red.svg" alt="">
+						<img key="arrow-down" v-else-if="mobileMode && showDegreeTypesToolbar" src="/wp-content/themes/uwa/library/images/filtering-module/arrow-up-red.svg" alt="">
+					</transition>
+					<transition name="icon-switch">
+						<span @click="activeDegreeType = 'all'" class="desktop-clear" v-if="!mobileMode && activeDegreeType != 'all'">
+							<img key="clear" src="/wp-content/themes/uwa/library/images/filtering-module/clear-search-red.svg" alt="Clear Search">
+							Clear
+						</span>
 					</transition>
 				</h2>
-				<h3 v-if="mobileMode" class="toolbar-filter__activeTitle">{{activeDegreeTypeTitle}}</h3>
 
-				<transition name="slide-down">
-					<div
-						v-if="showDegreeTypesToolbar"
-						class="degreeLevelsToolbar toolbar-filter"
-						:class="{activeFilter: degreeTypesFilterIsActive}"
-						role="toolbar">
-						<filter-options-list
-							:options="degreeTypes"
-							@option-selected="updateActiveDegreeType"
-							@reset-filter="updateDegreeTypeToAll"
-							:currentlySelectedOption="activeDegreeType">
-						</filter-options-list>
-					</div>
-				</transition>
+			<h3 v-if="mobileMode && activeDegreeType != 'all'" class="toolbar-filter__activeTitle">
+					{{activeDegreeTypeTitle}}
+					<img class="activeTitle-clear" @click="activeDegreeType = 'all'" src="/wp-content/themes/uwa/library/images/filtering-module/clear-search-red.svg" alt="Clear Search">
+				</h3>
+
+			<transition name="slide-down">
+				<div v-if="showDegreeTypesToolbar" class="degreeLevelsToolbar toolbar-filter" :class="{activeFilter: degreeTypesFilterIsActive}" role="toolbar">
+					<filter-options-list :options="degreeTypes" @option-selected="updateActiveDegreeType" @reset-filter="updateDegreeTypeToAll" :currentlySelectedOption="activeDegreeType">
+					</filter-options-list>
+				</div>
+			</transition>
 		</div>
 
 		<div class="filter-group filters-areas">
 			<!-- <fieldset class="degreeAreas"> -->
-				<h2
-					@click="toggleDegreeAreasFilters"
-					class="toolbar-filter__label">
+			<h2 @click="toggleDegreeAreasFilters" class="toolbar-filter__label">
 					Areas Of Study
 					<transition mode="out-in" name="icon-switch">
-						<img key="arrow-down" v-if="mobileMode && !showDegreeAreasToolbar" src="/wp-content/themes/uwa/library/images/filtering-module/arrow-down.svg" alt="">
-						<img key="arrow-down" v-else-if="mobileMode && showDegreeAreasToolbar" src="/wp-content/themes/uwa/library/images/filtering-module/arrow-up.svg" alt="">
+						<img key="arrow-down" v-if="mobileMode && !showDegreeAreasToolbar" src="/wp-content/themes/uwa/library/images/filtering-module/arrow-down-red.svg" alt="">
+						<img key="arrow-down" v-else-if="mobileMode && showDegreeAreasToolbar" src="/wp-content/themes/uwa/library/images/filtering-module/arrow-up-red.svg" alt="">
+					</transition>
+					<transition name="icon-switch">
+						<span @click="activeAreaOfStudy = 'all'" class="desktop-clear" v-if="!mobileMode && activeAreaOfStudy != 'all'">
+							<img key="clear" src="/wp-content/themes/uwa/library/images/filtering-module/clear-search-red.svg" alt="Clear Search">
+							Clear
+						</span>
 					</transition>
 				</h2>
-				<h3 v-if="mobileMode" class="toolbar-filter__activeTitle">{{activeAreaOfStudyTitle}}</h3>
-				<transition name="slide-down">
-					<div
-						v-if="showDegreeAreasToolbar"
-						class="degreeAreasToolbar toolbar-filter"
-						role="toolbar">
+			<h3 v-if="mobileMode && activeAreaOfStudy != 'all'" class="toolbar-filter__activeTitle">
+					{{activeAreaOfStudyTitle}}
+					<img class="activeTitle-clear" @click="activeAreaOfStudy = 'all'" src="/wp-content/themes/uwa/library/images/filtering-module/clear-search-red.svg" alt="Clear Search">
+				</h3>
+			<transition name="slide-down">
+				<div v-if="showDegreeAreasToolbar" class="degreeAreasToolbar toolbar-filter" role="toolbar">
 
-						<filter-options-list
-							:options="areasOfStudy"
-							@option-selected="updateActiveDegreeArea"
-							@reset-filter="updateDegreeAreaToAll"
-							:currentlySelectedOption="activeAreaOfStudy">
-						</filter-options-list>
-					</div>
-				</transition>
+					<filter-options-list :options="areasOfStudy" @option-selected="updateActiveDegreeArea" @reset-filter="updateDegreeAreaToAll" :currentlySelectedOption="activeAreaOfStudy">
+					</filter-options-list>
+				</div>
+			</transition>
 
 			<!-- </fieldset> -->
 		</div>
@@ -84,19 +75,14 @@
 
 	<loading-spinner :isVisible="!listForFilteredDegreesAreaAndLevel.length && !degrees.length"></loading-spinner>
 	<isotope v-show="listForFilteredDegreesAreaAndLevel.length" ref="cpt" id="root_isotope1" class="degrees" :list="degrees" :options='isotopeOptions'>
-		<a
-			v-for="degree, index in listForFilteredDegreesAreaAndLevel"
-			:key="index"
-			:href="'online-degrees/' + degree.slug"
-			class="degree-transition degree"
-			:class="getDegreeClasses(degree)">
-			<small class="label" v-if="degree.degree_types[0]" v-text="degree.degree_types[0].name"></small>
+		<a v-for="degree, index in listForFilteredDegreesAreaAndLevel" :key="index" :href="'online-degrees/' + degree.slug" class="degree-transition degree" :class="getDegreeClasses(degree)">
+			<small class="label" v-if="degree.degree_types[0]" v-html="degree.degree_types[0].name"></small>
 			<small class="label undefined" v-else>No Program Type Set</small>
 			<h3 class="degree__title" v-html="degree.title.rendered"></h3>
 			<span v-if="checkForTeachingCertificate(degree)" class="includes-licensure">Includes Licensure</span>
 			<div class="degree__cta-button">More Info</div>
 		</a>
-  </isotope>
+	</isotope>
 	<div id="no-results-msg" v-show="!listForFilteredDegreesAreaAndLevel.length && degrees.length">No Results Match This Criteria</div>
 </div>
 </template>
@@ -109,7 +95,7 @@ import FilterOptionsList from './components/FilterOptionsList'
 import LoadingSpinner from './components/LoadingSpinner'
 const devUrl = 'https://uwa-gulp.dev'
 const liveUrl = 'https://onlineuwa.staging.wpengine.com'
-const apiPromise = WPAPI.discover(devUrl);
+const apiPromise = WPAPI.discover(liveUrl);
 
 export default {
 	name: "degrees-app",
@@ -137,21 +123,21 @@ export default {
 			activeDegreeType: 'all',
 			activeFilter: null,
 			isotopeOptions: {
-	      itemSelector: ".degree",
+				itemSelector: ".degree",
 				// layoutMode: 'fitRows',
 				masonry: {
-			    // columnWidth: 200,
-			    // isFitWidth: true
-			  },
-	      getFilterData: {
-	        "show all": function() {
-	          return true;
-	        },
+					// columnWidth: 200,
+					// isFitWidth: true
+				},
+				getFilterData: {
+					"show all": function() {
+						return true;
+					},
 					filterByDegreeAreas: function(el) {
 						return this.listForFilteredDegreesAreaAndLevel()
 						// return this.listForFilteredDegreesAreaAndLevel
-	        }
-	      }
+					}
+				}
 			}
 		};
 	},
@@ -161,33 +147,33 @@ export default {
 		},
 
 		allFilterSelected() {
-			return this.activeAreaOfStudy === "all" || this.activeDegreeType === "all"
-				? true
-				: false;
+			return this.activeAreaOfStudy === "all" || this.activeDegreeType === "all" ?
+				true :
+				false;
 		},
 
 		filteredDegreesByArea() {
 			let activeAreaOfStudy = this.activeAreaOfStudy;
 			let activeDegreeType = this.activeDegreeType;
 
-			return activeAreaOfStudy
-				? this.filterDegreesByArea(activeAreaOfStudy)
-				: this.degrees;
+			return activeAreaOfStudy ?
+				this.filterDegreesByArea(activeAreaOfStudy) :
+				this.degrees;
 		},
 
 		filteredDegreesBySearch() {
-      return this.degrees.filter(degree => {
+			return this.degrees.filter(degree => {
 				let title = degree.title.rendered
-        return title.toLowerCase().includes(this.searchFilter.toLowerCase())
-      })
-    },
+				return title.toLowerCase().includes(this.searchFilter.toLowerCase())
+			})
+		},
 
 		filteredDegreesByType() {
 			let activeDegreeType = this.activeDegreeType;
 
-			return activeDegreeType
-				? this.filterDegreesByType(activeDegreeType)
-				: this.degrees;
+			return activeDegreeType ?
+				this.filterDegreesByType(activeDegreeType) :
+				this.degrees;
 		},
 		areasOfStudyFilters() {
 			function returnTeachingFilterIndex(area) {
@@ -200,11 +186,11 @@ export default {
 			});
 			let teachingFilterIndex = topLevelFilters.findIndex(returnTeachingFilterIndex)
 
-			areasFiltersArray.forEach(function (area, index) {
-					// area[index]['sub_areas'] = []
-					if (area.parent === 7) {
-						teachingSubAreas.push(area)
-					}
+			areasFiltersArray.forEach(function(area, index) {
+				// area[index]['sub_areas'] = []
+				if (area.parent === 7) {
+					teachingSubAreas.push(area)
+				}
 			});
 			console.log('areasFiltersArray: ', areasFiltersArray);
 			console.log('topLevelFilters: ', topLevelFilters);
@@ -213,13 +199,13 @@ export default {
 			// return []
 		},
 
-		listForFilteredDegreesAreaAndLevel () {
+		listForFilteredDegreesAreaAndLevel() {
 			let a = new Set(this.filteredDegreesByArea);
 			let b = new Set(this.filteredDegreesByType);
 			let c = new Set(this.filteredDegreesBySearch);
 			let intersection = new Set(
-			    [...a].filter(x => b.has(x) && c.has(x))
-				);
+				[...a].filter(x => b.has(x) && c.has(x))
+			);
 
 			return [...intersection]
 		}
@@ -231,7 +217,7 @@ export default {
 		this.loadingApi = false
 	},
 
-	mounted () {
+	mounted() {
 
 		if (matchMedia) {
 			const mq = window.matchMedia("(min-width: 800px)");
@@ -243,30 +229,30 @@ export default {
 	},
 
 	methods: {
-		WidthHandler (mq) {
+		WidthHandler(mq) {
 			if (mq.matches) {
 				this.mobileMode = false
 				this.showDegreeTypesToolbar = true
 				this.showDegreeAreasToolbar = true
-		  } else {
+			} else {
 				this.mobileMode = true
 				this.showDegreeTypesToolbar = false
 				this.showDegreeAreasToolbar = false
-		  }
+			}
 		},
 
 		setupFiltersModeOnLoad() {
-			if ( this.mobileMode === false ){
+			if (this.mobileMode === false) {
 				this.showDegreeTypesToolbar = true
 			} else {
 				return false
 			}
 		},
 
-		toggleDegreeTypesFilters () {
+		toggleDegreeTypesFilters() {
 			if (this.mobileMode) {
-				if ( this.showDegreeAreasToolbar === true ) {
-					 this.showDegreeAreasToolbar = false
+				if (this.showDegreeAreasToolbar === true) {
+					this.showDegreeAreasToolbar = false
 				}
 				this.showDegreeTypesToolbar = !this.showDegreeTypesToolbar
 				this.degreeTypesFilterIsActive = !this.degreeTypesFilterIsActive
@@ -275,12 +261,12 @@ export default {
 			}
 		},
 
-		toggleDegreeAreasFilters () {
+		toggleDegreeAreasFilters() {
 			if (this.mobileMode) {
-				if ( this.showDegreeTypesToolbar === true ) {
-					 this.showDegreeTypesToolbar = false
+				if (this.showDegreeTypesToolbar === true) {
+					this.showDegreeTypesToolbar = false
 				}
-				this.showDegreeAreasToolbar = ! this.showDegreeAreasToolbar
+				this.showDegreeAreasToolbar = !this.showDegreeAreasToolbar
 				this.degreeAreasFilterIsActive = !this.degreeAreasFilterIsActive
 				this.activeFilter = this.activeFilter === 'degreeAreas' ? null : 'degreeAreas'
 			}
@@ -316,19 +302,11 @@ export default {
 				return level.slug == "teaching-certificates"
 			})
 			console.log(levels.length);
-			if (levels.length > 0 ) {
+			if (levels.length > 0) {
 				return true
 			} else {
 				return false
 			}
-			// return levels.length ? true : false
-
-			// let filteredDegrees = this.degrees.filter(degree => {
-			// 	let areasOfStudyForDegree = degree.verticals;
-			// 	return areasOfStudyForDegree.includes(this.activeAreaOfStudy);
-			// });
-			// return filteredDegrees;
-
 		},
 
 		updateActiveDegreeType(type) {
@@ -463,94 +441,145 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-		position: absolute;
+    position: absolute;
 
-		&.clickable {
-			cursor: pointer;
-		}
+    &.clickable {
+        cursor: pointer;
+    }
 }
 
 #degrees-app {
-	min-height: 600px;
-	position: relative;
-	.controlsWrapper {
-		@media (min-width: 800px) {
-			margin-top: 3em;
-		}
-		.filter-group {
+    min-height: 600px;
+    position: relative;
+    .controlsWrapper {
+        @media (min-width: 800px) {
+            margin-top: 3em;
+        }
+        .filter-group {
 
-			@media (max-width: 799px) {
-				margin-top: 0;
-				flex-basis: 47%;
-				background: #E9E9EA;
-				margin: .5em 0;
-			}
+            @media (max-width: 799px) {
+                margin-top: 0;
+                flex-basis: 48%;
+                background: #E9E9EA;
+                margin: 0.5em 0;
+            }
 
-		}
-		.toolbar-filter {
-			&__label {
-				cursor: pointer;
-				position: relative;
-				font-size: 14px;
-				padding-left: .5em;
-				@media (min-width: 601px) {
-					font-size: 16px;
-				}
-				@media (min-width: 901px) {
-					cursor: auto;
-					font-size: 20px;
-				}
+        }
+        .toolbar-filter {
+            &__label {
+                cursor: pointer;
+                position: relative;
+                font-size: 14px;
+                padding-left: 0.5em;
 
-				img {
-					position: absolute;
-					right: 5px;
-				}
-			}
-			&__activeTitle {
-				font-size: 1em;
-				position: absolute;
-				width: 48%;
-			}
-		}
-	}
+                @media (min-width: 601px) {
+                    font-size: 16px;
+                }
+                @media (min-width: 901px) {
+                    cursor: auto;
+                    font-size: 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                }
+
+                img {
+                    position: absolute;
+                    right: 5px;
+
+                    @media (max-width: 900px) {
+                        top: -5px;
+                        width: 30px;
+                    }
+                }
+            }
+            &__activeTitle {
+                font-size: 1em;
+                position: absolute;
+                width: 48%;
+                padding: 10px 20px 10px 5px;
+                margin-top: 0;
+                background: #F4F2E4;
+                font-size: 0.8em;
+                height: 50px;
+            }
+            @media (min-width: 800px) {
+                .filter:not(.active) {
+                    &:focus,
+                    &:hover {
+                        background: #E9E9EA;
+                    }
+                }
+            }
+        }
+    }
+}
+.desktop-clear {
+    cursor: pointer !important;
+    font-size: 0.7em;
+    display: flex;
+    align-items: flex-end;
+    background: #F4F2E4;
+    padding: 3px 5px;
+    border-radius: 2px;
+    color: #A81D32;
+
+    img {
+        width: 17px;
+        margin-right: 3px;
+        position: relative !important;
+    }
 }
 
+.activeTitle-clear {
+    position: absolute;
+    right: 10px;
+    width: 20px;
+    top: 7px;
+    cursor: pointer;
+}
 #no-results-msg {
-	display: flex;
-	flex-flow: row wrap;
-	align-items: center;
-	justify-content: center;
-	font-size: 1.5em;
-	font-weight: 600;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: 600;
 
-	@media (min-width: 800px) {
-		// position: fixed;
-		// right: 50%;
-		// top: 65%;
-		transform: translate3d(50%, -50%, 0);
-		position: absolute;
-		width: 400px;
-		max-width: 100%;
-		flex: 1 1 calc(100% - 400px);
-		align-self: flex-start;
-		// position: relative;
-		// margin-top: 15%;
-		margin-left: auto;
-		margin-right: auto;
-		text-align: center;
-		font-size: 2.25em;
-		background: white;
-		border-radius: 3px;
-		right: 40%;
-    top: 40%;
-	}
+    @media (min-width: 800px) {
+        // position: fixed;
+        // right: 50%;
+        // top: 65%;
+        transform: translate3d(50%, -50%, 0);
+        position: absolute;
+        width: 400px;
+        max-width: 100%;
+        flex: 1 1 calc(100% - 400px);
+        align-self: flex-start;
+        // position: relative;
+        // margin-top: 15%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        font-size: 2.25em;
+        background: white;
+        border-radius: 3px;
+        right: 40%;
+        top: 40%;
+    }
 }
 .includes-licensure {
-    position: relative;
-    top: -1.5em;
-		font-weight: bold;
-    font-size: 15px;
+	position: relative;
+	top: -2em;
+	font-size: 13px;
+	font-style: italic;
+	font-weight: 600;
 }
-
+#degrees-app .degrees .degree {
+	@media (max-width: 799px) {
+		left: 48% !important;
+		transform: translateX(-50%) !important;
+	}
+}
 
 </style>
