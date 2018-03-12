@@ -56,7 +56,12 @@
 
 			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
-				<div class="banner" style="background-image: url(<?php the_field('banner_image'); ?>);">
+				<?php
+					$image = get_field('banner_image');
+					$url = $image['url'];
+				?>
+
+				<div class="banner" style="background-image: url(<?php echo $url; ?>);">
 
 					<div class="wrap">
 

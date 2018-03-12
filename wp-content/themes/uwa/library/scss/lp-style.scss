@@ -21,8 +21,13 @@ IMPORTING
 	outline: 4px dotted $gold !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: #11181F;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #11181f;
 }
 .fakeclass {
 	color: purple;
@@ -148,7 +153,7 @@ HEADER STYLES
 			height: em(35);
 		}
 		@include mobilefirst(1470px) {
-			right: calc(.5 * (100% - 1440px) );
+			right: calc(0.5 * (100% - 1440px));
 		}
 	}
 }
@@ -181,8 +186,13 @@ HEADER STYLES
 		height: 70%;
 		content: "";
 		display: block;
-		background: rgba(0,0,0,.8);
-		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.33) 50%, rgba(15,6,5,0.64) 100%);
+		background: rgba(0, 0, 0, 0.8);
+		background: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0) 0%,
+			rgba(0, 0, 0, 0.33) 50%,
+			rgba(15, 6, 5, 0.64) 100%
+		);
 	}
 
 	&__text {
@@ -193,7 +203,7 @@ HEADER STYLES
 		left: 0;
 		line-height: 1.1;
 		@include mobilefirst($bp-med) {
-			 @include span(8);
+			@include span(8);
 			padding-right: 8%;
 		}
 	}
@@ -239,7 +249,7 @@ HEADER STYLES
 }
 /**** Form Styling in the banner ****/
 #step-form {
-	background: #A81D32;
+	background: #a81d32;
 	color: #fff;
 	padding-bottom: 1em;
 	position: relative;
@@ -266,7 +276,7 @@ HEADER STYLES
 		top: 5rem;
 	}
 	@include mobilefirst(1470px) {
-		right: calc(.5 * (100% - 1440px) );
+		right: calc(0.5 * (100% - 1440px));
 	}
 }
 
@@ -651,7 +661,7 @@ input.btn {
 		// }
 	}
 
-	input[type=submit] {
+	input[type="submit"] {
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -667,45 +677,59 @@ input.btn {
 }
 
 .decorative.decorative_red_dark {
-    color: white;
+	color: white;
 }
 
-.h1, .h2, .h3, .h4, .h5, h1, h2, h3, h4, h5 {
-    text-rendering: optimizelegibility;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-family: "Trade Gothic LT Std",Arial,sans-serif;
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+h1,
+h2,
+h3,
+h4,
+h5 {
+	text-rendering: optimizelegibility;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-family: "Trade Gothic LT Std", Arial, sans-serif;
 }
 
 body {
-	color: #11181F;
+	color: #11181f;
 }
-
 
 // Imported from Live to Dev for Git Merge
 /* CTA FOR TEACHER CONNECT LP */
-.connect-cta {width:100%;}
+.connect-cta {
+	width: 100%;
+}
 .inner-cta {
 	width: 100%;
-	border: 6px solid #C9BF79;
-  padding: 5px 25px 5px 25px;
+	border: 6px solid #c9bf79;
+	padding: 5px 25px 5px 25px;
 }
 .inner-cta h3 {
-		text-align: center;
-		border-bottom: 2px solid #C9BF79;
-		color: #A81D32;
+	text-align: center;
+	border-bottom: 2px solid #c9bf79;
+	color: #a81d32;
 }
 .inner-cta a {
 	text-align: center;
 	text-decoration: none;
-	color: #A81D32;
+	color: #a81d32;
 }
 
 @media all and (min-width: 700px) {
-	.inner-cta {width: 85%;}
+	.inner-cta {
+		width: 85%;
+	}
 }
 @media all and (min-width: 1000px) {
-	.inner-cta {width: 60%;}
+	.inner-cta {
+		width: 60%;
+	}
 }
 
 //mobile banner images
@@ -718,17 +742,16 @@ body {
 	}
 }
 //end mobile banner images
-#js-modal-connect-calendar .modal__content {max-width: 900px;}
-
-
-
+#js-modal-connect-calendar .modal__content {
+	max-width: 900px;
+}
 
 /********************
 TECHER CONNECT SCHOLARSHIP STYLES - https://online.uwa.edu/my/education/
 *********************/
 
 .teacher-connect-hr {
-	background: #C9BF79;
+	background: #c9bf79;
 	width: 7em;
 	height: 7px;
 	display: block;
@@ -737,26 +760,93 @@ TECHER CONNECT SCHOLARSHIP STYLES - https://online.uwa.edu/my/education/
 }
 
 .teacher-connect-cta {
+	.inner-cta {
+		padding: 0;
+		border: 0;
 
-.inner-cta {
-	padding: 0;
-	border: 0;
-
-	h3 {
-		text-align: left;
-		border-bottom: 0;
+		h3 {
+			text-align: left;
+			border-bottom: 0;
+		}
 	}
 }
 
+/* Air University Associate-to-Baccalaureate Cooperative */
+.postid-709 .banner {
+	background-position: center 52%;
 }
 
-/* Air University Associate-to-Baccalaureate Cooperative */
-.postid-709 .banner {background-position: center 52%;}
-
 /* Business Connect */
-.postid-691 .banner {background-position: center;}
+.postid-691 .banner {
+	background-position: center;
+}
 /* Militaty Connect */
-.postid-692 .banner {background-position: center;}
+.postid-692 .banner {
+	background-position: center;
+}
 
 /* Transfer Scholarship - adding margin to better center image within mobile */
-.postid-254 .banner__text {margin-left:20px;}
+.postid-254 .banner__text {
+	margin-left: 20px;
+}
+
+/********************
+MOBILE SPECIFIC STYLES
+*********************/
+
+.landing-pages-template-single-landing-pages-mobile {
+	.about-us {
+		display: flex;
+		flex-direction: column;
+
+		@include mobilefirst($bp-med) {
+			flex-direction: row;
+			padding: 0;
+		}
+
+		&__bg,
+		&__content {
+			flex: 1;
+		}
+
+		&__bg {
+			position: relative;
+			height: 0;
+			width: 100%;
+			padding-bottom: 50%;
+			background-size: cover;
+			background-position: bottom right;
+
+			@include mobilefirst($bp-med) {
+				padding-bottom: 400px;
+			}
+
+			// @media screen and (min-width: 801px) {
+			// 	background-image: url(/wp-content/uploads/2017/01/about-us-bg-1024x554.jpg);
+			// }
+			//
+			// @media screen and (min-width: 321px) and (max-width: 800px) {
+			// 	background-image: url(/wp-content/themes/uwa/library/images/about-us-bg-mobile.jpg);
+			// }
+			//
+			// @media screen and (max-width: 320px) {
+			// 	background-image: url(/wp-content/uploads/2017/01/about-us-bg-300x162.jpg);
+			// }
+		}
+
+		&__content {
+			padding-top: 20px;
+			padding-right: 5%;
+			padding-bottom: 20px;
+			padding-left: 5%;
+
+			@include mobilefirst($bp-med) {
+				align-self: center;
+
+				* {
+					max-width: 700px;
+				}
+			}
+		}
+	}
+}
