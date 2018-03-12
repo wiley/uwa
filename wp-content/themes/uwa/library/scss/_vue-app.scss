@@ -1,0 +1,371 @@
+// Degree Areas Of Study Colors
+$all: #11181F;
+$biology: #966208;
+$business: #0366C9;
+$communications: #177D74;
+$psychology-counseling: #8A27B4;
+$public-safety: #666666;
+$school-administration: #510915;
+$teaching: #A81D32;
+$degreeAreas: (
+	"all": #11181F,
+	"biology": #966208,
+	"business": #0366C9,
+	"communications": #177D74,
+	"psychology-counseling": #8A27B4,
+	"public-safety": #666666,
+	"school-administration": #510915,
+	"teaching": #A81D32
+);
+@each $degreeArea, $value in $degreeAreas {
+	.#{$degreeArea} {
+		&:hover {
+			color: $value !important;
+		}
+
+		.label {
+			background-color: $value;
+		}
+	}
+
+	.#{$degreeArea} .label {
+		background-color: $value;
+	}
+
+	.filter.#{$degreeArea} .filter__color {
+		background-color: $value;
+	}
+
+	.degreeAreasToolbar {
+		.filter.#{$degreeArea}.active {
+			background-color: $value;
+
+			.filter__color {
+				background: transparent;
+				border: 2px solid;
+			}
+		}
+	}
+
+}
+
+#degrees-app .toolbar-filter .filter.active:hover {
+	color: white !important;
+}
+
+.post-type-archive-degrees main {
+	display: block !important;
+}
+
+#app {
+	max-width: 1600px;
+	width: 92%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#degrees-app {
+	display: block;
+	flex-flow: row wrap;
+	max-width: 1680px;
+	margin-left: auto;
+	margin-right: auto;
+	// margin-top: 5em;
+	@media (min-width: 800px) {
+		display: flex;
+	}
+
+	.controlsWrapper {
+		flex: 0 1 300px;
+	}
+
+	.degrees {
+		display: flex !important;
+		flex-flow: row wrap;
+		// max-width: 1680px;
+		margin-left: auto;
+		margin-right: auto;
+		// height: 600px;
+		overflow: auto;
+		padding: 2em 1em;
+		margin: 1em auto;
+		// background: #dedede7d;
+		// justify-content: space-around;
+		justify-content: flex-start;
+		flex: 1 1 calc(100% - 300px);
+
+		a {
+			text-decoration: none;
+		}
+
+		.degree {
+			margin: 1em 0.5em;
+			border: 1px solid gray;
+			padding: 1em;
+			// display: flex;
+			flex-flow: row wrap;
+			height: 245px !important;
+	    width: calc(100% - 48px);
+	    max-width: 310px;
+			align-items: flex-start;
+			border: 4px solid #E9E9EA;
+			@media (min-width: 800px) {}
+
+			.label {
+				display: flex;
+				align-items: center;
+				line-height: 1;
+				color: white;
+				padding: 0.25em 0.5em;
+				margin-bottom: auto;
+				font-family: "Open Sans";
+				font-size: 13px;
+				font-weight: 600;
+				line-height: 18px;
+
+				&.undefined {
+					background-color: black;
+				}
+			}
+
+			&__title {
+				font-size: 1.25em;
+				// margin-top: 0.5em;
+				flex-flow: 100%;
+				color: #525252;
+				font-family: Lora;
+				// font-size: 24px;
+
+				flex-basis: 100%;
+
+
+				font-size: 21px;
+		    font-weight: bold;
+		    line-height: 28px;
+		    margin-top: 5px;
+			}
+
+			&__cta-button {
+				align-self: flex-end;
+				letter-spacing: 3px;
+				text-align: center;
+				font-weight: 700;
+				padding: 0.25em;
+				font-family: "Open Sans";
+				text-transform: uppercase;
+				width: 180px;
+				margin-left: auto;
+				border: 2.94px solid #4A4A4A;
+				color: #4A4A4A;
+				transition: all 0.25s ease;
+				position: absolute;
+		    bottom: 1em;
+		    right: 1em;
+			}
+
+			&:focus,
+			&:hover {
+				border-color: gray;
+
+				.degree__cta-button {
+					background: #4A4A4A;
+					color: white;
+				}
+			}
+		}
+	}
+}
+
+.degree-transition {
+	&-move {
+		transition: all 1s ease-in-out;
+	}
+
+	&-active,
+	&-active {
+		transition: all 1.5s;
+	}
+
+	&-enter,
+	&-leave-to {
+		opacity: 0;
+		// max-height:0px;
+	}
+
+	&-move {
+		transition: all 600ms ease-in-out 50ms;
+	}
+
+	&-enter-active {
+		transition: all 300ms ease-out;
+	}
+	//
+	&-leave-active {
+		transition: all 500ms ease-in-out;
+		// position: absolute;
+		z-index: 0;
+	}
+	//
+	&-enter,
+	&-leave-to {
+		opacity: 0;
+	}
+
+	&-enter {
+		transform: scale(0.9);
+	}
+}
+// .degree-transition {
+//   transition: all 0.5s;
+//
+// }
+// .degree-transition-enter, .degree-transition-leave-to
+// /* .degree-transition-leave-active for <2.1.8 */ {
+//   opacity: 0;
+//   transform: scale(0);
+// }
+// .degree-transition-enter-to {
+//   opacity: 1;
+//   transform: scale(1);
+// }
+//
+// .degree-transition-leave-active {
+//   /*position: absolute;*/
+// }
+// .degree-transition-move {
+//   opacity: 1;
+//   transition: all 0.5s;
+// }
+
+.filters-areas {
+	margin-top: 1.5em;
+}
+
+.input-wrapper.search-filter {
+	margin: 1em auto;
+	height: 45px;
+	max-width: 500px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	flex: 1 1 100%;
+}
+
+input.toolbar-filter__search {
+	border: 2px solid #A81D32;
+	padding: 0 !important;
+	margin: 0 !important;
+	padding-left: 10px !important;
+	height: 45px;
+	width: 100%;
+	font-style: italic;
+}
+
+.search-enter-active,
+.search-leave-active {
+	transition: opacity 0.175s ease-in-out;
+}
+
+.search-enter,
+.search-leave-to {
+	opacity: 0;
+}
+
+.icon-switch-enter-active,
+.icon-switch-leave-active {
+	transition: opacity 0.175s ease-in-out;
+}
+
+.icon-switch-enter,
+.icon-switch-leave-to {
+	opacity: 0;
+}
+
+.slide-down-enter-active,
+.slide-down-leave-active {
+	// transition: opacity 0.175s ease-in-out;
+	transition: all 0.3s ease;
+}
+
+.slide-down-enter,
+.slide-down-leave-to {
+	transform: translateY(-10px);
+	opacity: 0;
+	// height: 0;
+}
+
+#degrees-app {
+	.toolbar-filter {
+		.btn__hollow {
+			display: flex;
+			justify-content: space-between;
+			position: relative;
+			align-items: center;
+			padding-right: 2.25em;
+		}
+
+		.filter__active-indicator {
+			position: absolute;
+			display: block;
+			margin-right: 0;
+			margin-left: auto;
+			right: 0.75em;
+			margin-bottom: auto;
+			top: 55%;
+			transform: translateY(-50%);
+		}
+
+		&.degreeAreasToolbar {
+			.filter__active-indicator {
+				left: 15px;
+				right: initial;
+
+				img {
+					width: 28px;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 799px) {
+	#degrees-app {
+		.controlsWrapper {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-between;
+
+			.search-filter {
+				flex-basis: 100%;
+			}
+
+			.filter-group {
+				position: static;
+				flex-basis: 50%;
+			}
+
+			.filters-areas {
+				margin-top: 0;
+			}
+
+			.toolbar-filter {
+				position: absolute;
+				left: 0;
+				background: #555555;
+				color: white;
+				z-index: 999;
+				left: 0;
+		    right: 0;
+
+				.filter {
+					color: white !important;
+
+					&:hover, &:focus {
+						color: white;
+					}
+					// margin-left: 1em;
+					// margin-right: 1em;
+				}
+			}
+		}
+	}
+}

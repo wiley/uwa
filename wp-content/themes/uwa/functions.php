@@ -29,6 +29,38 @@ function async_scripts($url)
     }
 // add_filter( 'clean_url', 'async_scripts', 11, 1 );
 
+add_filter( 'rest_post_collection_params', 'my_prefix_change_post_per_page', 10, 1 );
+
+function my_prefix_change_post_per_page( $params ) {
+    if ( isset( $params['per_page'] ) ) {
+        $params['per_page']['maximum'] = 100;
+    }
+
+    return $params;
+};
+
+function prepare_rest($data, $post, $request){
+    $_data = $data->data;
+    $array = array();
+
+    $degreeVerticals = get_the_terms( $post->ID, 'degree_vertical') ? get_the_terms( $post->ID, 'degree_vertical') : $array;
+    $degreeLevels = get_the_terms( $post->ID, 'degree_level') ? get_the_terms( $post->ID, 'degree_level') : $array;
+
+    $_data['degree_types'] = $degreeVerticals;
+    $_data['degree_levels'] = $degreeLevels;
+    $data->data = $_data;
+
+    return $data;
+}
+add_filter('rest_prepare_degrees', 'prepare_rest', 10, 3);
+
+add_action( 'send_headers', function() {
+	if ( ! did_action('rest_api_init') && $_SERVER['REQUEST_METHOD'] == 'HEAD' ) {
+		header( 'Access-Control-Allow-Origin: *' );
+		header( 'Access-Control-Expose-Headers: Link' );
+		header( 'Access-Control-Allow-Methods: HEAD' );
+	}
+} );
 
 add_filter( 'get_the_archive_title', function ($title) {
 

@@ -161,7 +161,22 @@
 <script async="async" src="<?php echo get_template_directory_uri(); ?>/library/js/libs/owl.carousel.min.js"></script>
 
 <script>
-$('a[href^="http://uwa.edu"]').attr('target','_blank');
+	$('a[href^="http://uwa.edu"]').attr('target','_blank');
+</script>
+
+
+<script type="text/javascript">
+	$('input.search-field').val('');
+
+	if ( $('body').hasClass('search-no-results') ) {
+		$(".intro")
+			.append($('.searchbox__innerwrapper').clone()
+			.css({
+				'opacity': 0
+			})
+			.delay(500)
+			.animate({'opacity': 1}, 'slow'));
+	}
 </script>
 <script type="text/javascript">
 // To keep our code clean and modular, all custom functionality will be contained inside a single object literal called "buttonFilter".
@@ -171,24 +186,6 @@ $('a[href^="http://uwa.edu"]').attr('target','_blank');
 // On document ready, initialise our code.
 
 $(function(){
-
-  // Initialize buttonFilter code
-
-
-
-  // Instantiate MixItUp
-	// var container = $('#mix-container')
-	// var mixer = mixitup(container, {
-	// 	callbacks: {
-	// 		onMixStart: function(state, futureState) {
-	// 		},
-	// 		onMixEnd: function() {
-	// 			container
-	// 				.find('.card:visible:first')
-	// 				.focus();
-	// 		}
-	// 	}
-	// });
 
 if ($('#mix-container').length) {
 	var Container = $('#mix-container')

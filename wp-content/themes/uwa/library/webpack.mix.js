@@ -12,7 +12,7 @@ let mix = require("laravel-mix");
  */
 // mix.setPublicPath('path/to/public');
 
-mix.options({ processCssUrls: false });
+
 
 mix
 	.js("js/scripts.js", "js/build/production.min.js")
@@ -26,11 +26,16 @@ mix
 mix.disableNotifications();
 
 mix.browserSync({
-	proxy: "uwa-gulp.dev",
-	notify: false,
-	files: ["./css/build/minified/*.css", "./js/build/production.min.js"]
+    proxy: 'uwa-gulp.dev',
+    notify: false,
+    files: ["./css/build/minified/*.css", "./js/build/production.min.js"]
+})
+
+mix.autoload({
+  vue: ['Vue', 'window.Vue']
 });
 
+mix.options({ processCssUrls: false });
 // JS
 mix.copy(
 	"node_modules/fontfaceobserver/fontfaceobserver.js",
