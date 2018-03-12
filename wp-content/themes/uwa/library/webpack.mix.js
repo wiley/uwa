@@ -26,7 +26,7 @@ mix
 mix.disableNotifications();
 
 mix.browserSync({
-	proxy: "uwa.loc",
+	proxy: "uwa-gulp.dev",
 	notify: false,
 	files: ["./css/build/minified/*.css", "./js/build/production.min.js"]
 });
