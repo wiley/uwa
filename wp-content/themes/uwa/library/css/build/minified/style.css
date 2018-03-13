@@ -4596,12 +4596,6 @@ PAGE SPECIFIC STYLES
   }
 }
 
-@media (min-width: 900px) {
-  .banner {
-    min-height: 425px;
-  }
-}
-
 .banner .wrap {
   z-index: 99999;
   color: white;
