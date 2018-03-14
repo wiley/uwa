@@ -1535,6 +1535,10 @@ a.mobile-nav__link {
   text-decoration: none;
 }
 
+a.mobile-nav__link:hover {
+  color: white;
+}
+
 a.mobile-nav__link img {
   vertical-align: middle;
 }

@@ -97,6 +97,10 @@ a.mobile-nav__link {
 	color: white;
 	text-decoration: none;
 
+	&:hover {
+		color: white;
+	}
+
 	img {
 		vertical-align: middle;
 	}
