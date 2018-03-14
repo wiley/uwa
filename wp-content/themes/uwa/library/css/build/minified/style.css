@@ -4596,12 +4596,6 @@ PAGE SPECIFIC STYLES
   }
 }
 
-@media (min-width: 900px) {
-  .banner {
-    min-height: 425px;
-  }
-}
-
 .banner .wrap {
   z-index: 99999;
   color: white;
@@ -8273,6 +8267,12 @@ ul#menu-secondary-left {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 calc(100% - 300px);
           flex: 1 1 calc(100% - 300px);
+}
+
+@media (min-width: 800px) {
+  #degrees-app .degrees {
+    left: 170px;
+  }
 }
 
 #degrees-app .degrees a {

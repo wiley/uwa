@@ -63,11 +63,27 @@
 			<transition name="slide-down">
 				<div v-if="showDegreeAreasToolbar" class="degreeAreasToolbar toolbar-filter" role="toolbar">
 
-					<filter-options-list :options="areasOfStudy" @option-selected="updateActiveDegreeArea" @reset-filter="updateDegreeAreaToAll" :currentlySelectedOption="activeAreaOfStudy">
-					</filter-options-list>
+					<areas-filter-options-list
+						:options="areasOfStudyTest"
+						@option-selected="updateActiveDegreeArea"
+						@reset-filter="updateDegreeAreaToAll"
+						:currentlySelectedOption="activeAreaOfStudy">
+					</areas-filter-options-list>
 				</div>
 			</transition>
-
+<!-- <ul v-if="areasOfStudyFilters.length">
+	<li
+		v-for="(option, index) in areasOfStudyFilters"
+		:key="option.id"
+		:class="[{ active: option.id === activeAreaOfStudy}, option.slug]">
+		<h4 v-html="option.name"></h4>
+		<ul v-if="option.sub_areas">
+			<li v-for="subAreaOption in option.sub_areas">
+				<h4 v-html="subAreaOption.name"></h4>
+			</li>
+		</ul>
+	</li>
+</ul> -->
 			<!-- </fieldset> -->
 		</div>
 
@@ -79,7 +95,10 @@
 			<small class="label" v-if="degree.degree_types[0]" v-html="degree.degree_types[0].name"></small>
 			<small class="label undefined" v-else>No Program Type Set</small>
 			<h3 class="degree__title" v-html="degree.title.rendered"></h3>
-			<span v-if="checkForTeachingCertificate(degree)" class="includes-licensure">Includes Licensure</span>
+			<span v-if="checkForTeachingCertificate(degree)" class="includes-licensure">
+				<img src="/wp-content/themes/uwa/library/images/filtering-module/icon-alabama.svg" alt="Alabama State Icon">
+				Includes Licensure
+			</span>
 			<div class="degree__cta-button">More Info</div>
 		</a>
 	</isotope>
@@ -92,6 +111,7 @@ import WPAPI from "wpapi";
 import isotope from 'vueisotope'
 import ToolbarFilter from './components/ToolbarFilter'
 import FilterOptionsList from './components/FilterOptionsList'
+import AreasFilterOptionsList from './components/AreasFilterOptionsList'
 import LoadingSpinner from './components/LoadingSpinner'
 const devUrl = 'https://uwa-gulp.dev'
 const liveUrl = 'https://onlineuwa.staging.wpengine.com'
@@ -103,6 +123,7 @@ export default {
 		isotope,
 		ToolbarFilter,
 		FilterOptionsList,
+		AreasFilterOptionsList,
 		LoadingSpinner
 	},
 	data() {
@@ -116,6 +137,7 @@ export default {
 			degreeAreasFilterIsActive: false,
 			degrees: [],
 			areasOfStudy: [],
+			areasOfStudyTest: [],
 			degreeTypes: [],
 			activeAreaOfStudyTitle: '',
 			activeDegreeTypeTitle: '',
@@ -186,15 +208,18 @@ export default {
 			});
 			let teachingFilterIndex = topLevelFilters.findIndex(returnTeachingFilterIndex)
 
-			areasFiltersArray.forEach(function(area, index) {
+			topLevelFilters.forEach((area, index) => {
+				area['sub_areas'] = []
+			});
+
+			areasFiltersArray.forEach((area, index) => {
 				// area[index]['sub_areas'] = []
 				if (area.parent === 7) {
 					teachingSubAreas.push(area)
 				}
 			});
-			console.log('areasFiltersArray: ', areasFiltersArray);
-			console.log('topLevelFilters: ', topLevelFilters);
-			// topLevelFilters[2]['sub_areas'] = 'NEWWW'
+
+			topLevelFilters[teachingFilterIndex]['sub_areas'] = teachingSubAreas
 			return topLevelFilters
 			// return []
 		},
@@ -229,6 +254,33 @@ export default {
 	},
 
 	methods: {
+		createAreasOfStudyFilters(arrayOfFilters) {
+			function returnTeachingFilterIndex(area) {
+				return area.id === 7
+			}
+			let teachingSubAreas = []
+			let areasFiltersArray = this.areasOfStudy
+			let topLevelFilters = areasFiltersArray.filter(area => {
+				return area.parent === 0
+			});
+			let teachingFilterIndex = topLevelFilters.findIndex(returnTeachingFilterIndex)
+
+			topLevelFilters.forEach((area, index) => {
+				area['sub_areas'] = []
+			});
+
+			areasFiltersArray.forEach((area, index) => {
+				// area[index]['sub_areas'] = []
+				if (area.parent === 7) {
+					teachingSubAreas.push(area)
+				}
+			});
+			console.log('sub_areas: ', teachingSubAreas);
+			console.log('topLevelFilters: ', topLevelFilters);
+			topLevelFilters[teachingFilterIndex]['sub_areas'] = teachingSubAreas
+			this.areasOfStudyTest = topLevelFilters
+			// return []
+		},
 		WidthHandler(mq) {
 			if (mq.matches) {
 				this.mobileMode = false
@@ -408,6 +460,7 @@ export default {
 					.perPage(100)
 					.then(areas => {
 						this.areasOfStudy = areas;
+						this.createAreasOfStudyFilters(areas)
 					})
 					.catch(error => {
 						console.log(error);
@@ -570,10 +623,12 @@ export default {
 }
 .includes-licensure {
 	position: relative;
-	top: -2em;
-	font-size: 13px;
+	font-size: 11px;
 	font-style: italic;
-	font-weight: 600;
+	font-weight: 700;
+	display: flex;
+	align-items: flex-start;
+	top: -1.5em;
 }
 #degrees-app .degrees .degree {
 	@media (max-width: 799px) {
