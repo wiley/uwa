@@ -36,26 +36,25 @@
       <div v-if="option.sub_areas.length > 0">
         <button
           class="btn__hollow filter"
-          :class="[{ active: option.id === currentlySelectedOption}, option.slug]"
+          :class="[{ active: option.id === currentlySelectedOption }, option.slug]"
           :aria-label="'Filter By ' + option.name"
-          @click.prevent="optionSelected(option)">
+          @click.prevent="showSubFilters = !showSubFilters">
           <span class="filter__color"></span>
           <span class="filter__title" v-html="option.name"></span>
-          <span class="filter__active-indicator">
-            <img
-              v-if="option.id === currentlySelectedOption"
-              src="/wp-content/themes/uwa/library/images/filtering-module/check.svg"
-              alt="Active Filter Icon">
-          </span>
+          <!-- <transition mode="out-in" name="icon-switch"> -->
+						<img key="hide" v-if="showSubFilters" src="/wp-content/themes/uwa/library/images/filtering-module/hide-sub-filters.svg" alt="">
+            <img key="show" v-else src="/wp-content/themes/uwa/library/images/filtering-module/show-sub-filters.svg" alt="">
+					<!-- </transition> -->
         </button>
-    			<div class="sub-filters-wrapper">
+    			<div class="sub-filters-wrapper" v-if="showSubFilters">
             <button
             v-for="subAreaOption in option.sub_areas"
             class="btn__hollow filter"
             :class="[{ active: subAreaOption.id === currentlySelectedOption}, subAreaOption.slug]"
             :aria-label="'Filter By ' + subAreaOption.name"
             @click.prevent="optionSelected(subAreaOption)">
-              <span class="filter__color"></span>
+
+              <img src="/wp-content/themes/uwa/library/images/filtering-module/subdirectory.svg" alt="Subdirectory Icon">
               <span class="filter__title" v-html="subAreaOption.name"></span>
               <span class="filter__active-indicator">
                 <img
@@ -76,6 +75,11 @@
 export default {
   name: 'filter-options-list',
   props: ['options', 'currentlySelectedOption'],
+  data() {
+    return {
+      showSubFilters: false
+    }
+  },
   methods: {
     optionSelected (option) {
       this.$emit('option-selected', option)
@@ -97,16 +101,24 @@ export default {
   padding: 1em;
   width: 100%;
 }
-.degreeAreasToolbar {
+.sub-filters-wrapper {
+
   .filter {
+    margin-left: 6px !important;
+    justify-content: flex-start !important;
     &__color {
       width: 40px;
       position: absolute;
       height: 40px;
     }
     &__title {
-      left: 50px;
+      left: 20px;
       position: relative;
+    }
+
+    &__active-indicator {
+      right: 15px !important;
+      left: initial !important;
     }
   }
 }

@@ -90,19 +90,21 @@
 	</div>
 
 	<loading-spinner :isVisible="!listForFilteredDegreesAreaAndLevel.length && !degrees.length"></loading-spinner>
-	<isotope v-show="listForFilteredDegreesAreaAndLevel.length" ref="cpt" id="root_isotope1" class="degrees" :list="degrees" :options='isotopeOptions'>
+	<isotope v-show="listForFilteredDegreesAreaAndLevel.length" ref="cpt" id="root_isotope1" class="degrees sticky" :list="degrees" :options='isotopeOptions'>
 		<a v-for="degree, index in listForFilteredDegreesAreaAndLevel" :key="index" :href="'online-degrees/' + degree.slug" class="degree-transition degree" :class="getDegreeClasses(degree)">
-			<small class="label" v-if="degree.degree_types[0]" v-html="degree.degree_types[0].name"></small>
+			<small class="label" v-if="degree.degree_levels[0]" v-html="degree.degree_levels[0].name"></small>
 			<small class="label undefined" v-else>No Program Type Set</small>
 			<h3 class="degree__title" v-html="degree.title.rendered"></h3>
 			<span v-if="checkForTeachingCertificate(degree)" class="includes-licensure">
-				<img src="/wp-content/themes/uwa/library/images/filtering-module/icon-alabama.svg" alt="Alabama State Icon">
+				<img class="state-icon" src="/wp-content/themes/uwa/library/images/filtering-module/icon-alabama.svg" alt="Alabama State Icon">
 				Includes Licensure
 			</span>
 			<div class="degree__cta-button">More Info</div>
 		</a>
 	</isotope>
-	<div id="no-results-msg" v-show="!listForFilteredDegreesAreaAndLevel.length && degrees.length">No Results Match This Criteria</div>
+	<transition name="slide-down">
+		<div id="no-results-msg" class="sticky" v-show="!listForFilteredDegreesAreaAndLevel.length && degrees.length">No Results Match This Criteria</div>
+	</transition>
 </div>
 </template>
 
@@ -113,6 +115,7 @@ import ToolbarFilter from './components/ToolbarFilter'
 import FilterOptionsList from './components/FilterOptionsList'
 import AreasFilterOptionsList from './components/AreasFilterOptionsList'
 import LoadingSpinner from './components/LoadingSpinner'
+import Stickyfill from 'stickyfilljs'
 const devUrl = 'https://uwa-gulp.dev'
 const liveUrl = 'https://onlineuwa.staging.wpengine.com'
 const apiPromise = WPAPI.discover(liveUrl);
@@ -250,7 +253,8 @@ export default {
 			this.WidthHandler(mq);
 			// this.setupFiltersModeOnLoad();
 		}
-
+		var elements = document.querySelectorAll('.sticky');
+		Stickyfill.add(elements);
 	},
 
 	methods: {
@@ -603,22 +607,27 @@ export default {
         // position: fixed;
         // right: 50%;
         // top: 65%;
-        transform: translate3d(50%, -50%, 0);
-        position: absolute;
-        width: 400px;
-        max-width: 100%;
-        flex: 1 1 calc(100% - 400px);
-        align-self: flex-start;
+        // transform: translate3d(50%, -50%, 0);
+        // position: absolute;
+        // width: 400px;
+        // max-width: 100%;
+        // flex: 1 1 calc(100% - 400px);
+        // align-self: flex-start;
         // position: relative;
         // margin-top: 15%;
+				bottom: 60%;
+				margin-top: 1.5em;
+		    margin-bottom: 1em;				
+				width: 500px;
+				padding: .5em 1.5em;//
         margin-left: auto;
         margin-right: auto;
         text-align: center;
         font-size: 2.25em;
-        background: white;
+        background: #e9e9e9;
         border-radius: 3px;
-        right: 40%;
-        top: 40%;
+        // right: 40%;
+        // top: 40%;
     }
 }
 .includes-licensure {
@@ -629,12 +638,30 @@ export default {
 	display: flex;
 	align-items: flex-start;
 	top: -1.5em;
-}
-#degrees-app .degrees .degree {
-	@media (max-width: 799px) {
-		left: 48% !important;
-		transform: translateX(-50%) !important;
+
+	.state-icon {
+		margin-right: 5px;
 	}
 }
+#degrees-app {
+	.degrees {
+		// position: sticky !important;
+		// top: 0 !important;
+
+		.degree {
+			@media (max-width: 799px) {
+				left: 48% !important;
+				transform: translateX(-50%) !important;
+			}
+
+			@media (min-width: 800px) {
+				margin-left: 1.5em !important;
+			}
+		}
+	}
+}
+
+
+
 
 </style>

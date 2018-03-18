@@ -18,9 +18,11 @@ $degreeAreas: (
 	"teaching": #A81D32
 );
 @each $degreeArea, $value in $degreeAreas {
-	.#{$degreeArea} {
-		&:hover {
+
+	.degree.#{$degreeArea} {
+		&:hover, &:focus {
 			color: $value !important;
+			border: 4px solid $value !important;
 		}
 
 		.label {
@@ -59,6 +61,7 @@ $degreeAreas: (
 
 #app {
 	max-width: 1600px;
+	max-width: 1440px;
 	width: 92%;
 	margin-right: auto;
 	margin-left: auto;
@@ -67,7 +70,9 @@ $degreeAreas: (
 #degrees-app {
 	display: block;
 	flex-flow: row wrap;
-	max-width: 1680px;
+	// max-width: 1680px;
+	max-width: 1440px;
+
 	margin-left: auto;
 	margin-right: auto;
 	// margin-top: 5em;
@@ -76,7 +81,7 @@ $degreeAreas: (
 	}
 
 	.controlsWrapper {
-		flex: 0 1 300px;
+		flex: 0 1 340px;
 	}
 
 	.degrees {
@@ -92,10 +97,13 @@ $degreeAreas: (
 		// background: #dedede7d;
 		// justify-content: space-around;
 		justify-content: flex-start;
-		flex: 1 1 calc(100% - 300px);
+		flex: 1 1 calc(100% - 340px);
 
 		@media (min-width: 800px) {
-			left: 170px;
+			// left: 3%;
+		}
+		@media (min-width: 1600px) {
+			// left: 8%;
 		}
 		a {
 			text-decoration: none;
@@ -109,7 +117,8 @@ $degreeAreas: (
 			flex-flow: row wrap;
 			height: 245px !important;
 	    width: calc(100% - 48px);
-	    max-width: 310px;
+	    // max-width: 310px;
+			max-width: 300px;
 			align-items: flex-start;
 			border: 4px solid #E9E9EA;
 			@media (min-width: 800px) {}
@@ -125,7 +134,7 @@ $degreeAreas: (
 				font-size: 13px;
 				font-weight: 600;
 				line-height: 18px;
-
+    		display: inline-block;
 				&.undefined {
 					background-color: black;
 				}
@@ -168,7 +177,7 @@ $degreeAreas: (
 
 			&:focus,
 			&:hover {
-				border-color: gray;
+				// border-color: gray;
 
 				.degree__cta-button {
 					background: #4A4A4A;
@@ -287,7 +296,7 @@ input.toolbar-filter__search {
 .slide-down-enter-active,
 .slide-down-leave-active {
 	// transition: opacity 0.175s ease-in-out;
-	transition: all 0.3s ease;
+	transition: all 0.35s ease-in-out;
 }
 
 .slide-down-enter,
@@ -305,6 +314,7 @@ input.toolbar-filter__search {
 			position: relative;
 			align-items: center;
 			padding-right: 2.25em;
+			padding: .5em .75em .5em;
 		}
 
 		.filter__active-indicator {
@@ -324,7 +334,7 @@ input.toolbar-filter__search {
 				right: initial;
 
 				img {
-					width: 28px;
+					width: 20px;
 				}
 			}
 		}
@@ -371,4 +381,16 @@ input.toolbar-filter__search {
 			}
 		}
 	}
+}
+
+.sticky {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 0;
+}
+
+.sticky:before,
+.sticky:after {
+    content: '';
+    display: table;
 }

@@ -57,15 +57,15 @@ export default {
   }
 }
 .optionsWrapper {
-  padding: 1em;
+  padding: 1em .25em;
   width: 100%;
 }
 .degreeAreasToolbar {
   .filter {
     &__color {
-      width: 40px;
+      width: 25px;
       position: absolute;
-      height: 40px;
+      height: 25px;
     }
     &__title {
       left: 50px;
