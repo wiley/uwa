@@ -38,19 +38,6 @@ add_action( 'wp_enqueue_scripts', 'add_localized_js_data' );
 function add_localized_js_data() {
   wp_enqueue_script( 'degree-filtering', 'data for vue degree filtering', array() );
 
-  $degreeAreas = get_terms([
-	    'taxonomy' => 'degree_vertical',
-	    'hide_empty' => false,
-
-	]);
-
-	$degreeLevels = get_terms([
-	    'taxonomy'     => 'degree_level',
-	    'hide_empty'   => false,
-      'meta_key'		 => 'menu_order',
-    	'orderby'			 => 'meta_value',
-    	'order'				 => 'ASC'
-	]);
 
   $allDegreesArgs = array(
 		 'posts_per_page' => -1,
@@ -61,16 +48,34 @@ function add_localized_js_data() {
 	);
 
 	$allDegrees = get_posts( $allDegreesArgs );
-  // $degree_areas = get_field('degree_vertical_filters_test', 201);
-
+  $degree_areas = get_field('degree_areas', 'option');
+  $degree_levels = get_field('degree_levels', 'option');
+print($degree_levels);
   $data = array(
     'degrees' => buildDegressArray($allDegrees),
-    'degreeAreas' => $degreeAreas,
-    'degreeLevels' => $degreeLevels
+    'degreeAreas' => $degree_areas,
+    'degreeLevels' => buildDegreeLevels($degree_levels)
     );
 
   wp_localize_script( 'degree-filtering', 'wpData', $data );
 
 }
+
+
+// Backup
+//
+// $degreeAreas = get_terms([
+//     'taxonomy' => 'degree_vertical',
+//     'hide_empty' => false,
+//
+// ]);
+//
+// $degreeLevels = get_terms([
+//     'taxonomy'     => 'degree_level',
+//     'hide_empty'   => false,
+//     'meta_key'		 => 'menu_order',
+//     'orderby'			 => 'meta_value',
+//     'order'				 => 'ASC'
+// ]);
 
 ?>
