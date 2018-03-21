@@ -12,8 +12,6 @@ let mix = require("laravel-mix");
  */
 // mix.setPublicPath('path/to/public');
 
-
-
 mix
 	.js("js/scripts.js", "js/build/production.min.js")
 	.sass("scss/style.scss", "css/build/minified/style.css")
@@ -26,13 +24,13 @@ mix
 mix.disableNotifications();
 
 mix.browserSync({
-    proxy: 'uwa-gulp.dev',
-    notify: false,
-    files: ["./css/build/minified/*.css", "./js/build/production.min.js"]
-})
+	proxy: "uwa.loc",
+	notify: false,
+	files: ["./css/build/minified/*.css", "./js/build/production.min.js"]
+});
 
 mix.autoload({
-  vue: ['Vue', 'window.Vue']
+	vue: ["Vue", "window.Vue"]
 });
 
 mix.options({ processCssUrls: false });
