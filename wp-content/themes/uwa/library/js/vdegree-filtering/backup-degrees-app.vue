@@ -2,7 +2,16 @@
 <div id="degrees-app">
 
 	<div class="controlsWrapper">
-		<search-filter v-model="$store.searchFilter"></search-filter>
+		<div class="input-wrapper search-filter">
+			<input type="text" class="toolbar-filter__search" placeholder="Click here to search" v-model="searchFilter">
+			<div tabindex="0" @click="clearSearch" @keypress.enter="clearSearch" class="searchFilter-icon" :class="{clickable: searchQueryExists}">
+				<transition mode="out-in" name="search">
+					<img key="search" v-if="!searchQueryExists" src="/wp-content/themes/uwa/library/images/filtering-module/seach.svg" alt="Search Icon">
+					<img key="clear" v-else src="/wp-content/themes/uwa/library/images/filtering-module/clear-search.svg" alt="Clear Search">
+				</transition>
+			</div>
+		</div>
+
 
 		<div class="filter-group filters-types">
 			<h2 @click="toggleDegreeTypesFilters" class="toolbar-filter__label" :class="{activeFilter: degreeTypesFilterIsActive}">
@@ -12,21 +21,21 @@
 						<img key="arrow-down" v-else-if="mobileMode && showDegreeTypesToolbar" src="/wp-content/themes/uwa/library/images/filtering-module/arrow-up-red.svg" alt="">
 					</transition>
 					<transition name="icon-switch">
-						<span @click="$store.activeDegreeType = 'all'" class="desktop-clear" v-if="!mobileMode && $store.activeDegreeType != 'all'">
+						<span @click="activeDegreeType = 'all'" class="desktop-clear" v-if="!mobileMode && activeDegreeType != 'all'">
 							<img key="clear" src="/wp-content/themes/uwa/library/images/filtering-module/clear-search-red.svg" alt="Clear Search">
 							Clear
 						</span>
 					</transition>
 				</h2>
 
-			<h3 v-if="mobileMode && $store.activeDegreeType != 'all'" class="toolbar-filter__activeTitle">
-					{{$store.activeDegreeTypeTitle}}
-					<img class="activeTitle-clear" @click="$store.activeDegreeType = 'all'" src="/wp-content/themes/uwa/library/images/filtering-module/clear-search-red.svg" alt="Clear Search">
+			<h3 v-if="mobileMode && activeDegreeType != 'all'" class="toolbar-filter__activeTitle">
+					{{activeDegreeTypeTitle}}
+					<img class="activeTitle-clear" @click="activeDegreeType = 'all'" src="/wp-content/themes/uwa/library/images/filtering-module/clear-search-red.svg" alt="Clear Search">
 				</h3>
 
 			<transition name="slide-down">
 				<div v-if="showDegreeTypesToolbar" class="degreeLevelsToolbar toolbar-filter" :class="{activeFilter: degreeTypesFilterIsActive}" role="toolbar">
-					<filter-options-list :options="degreeTypes" @option-selected="updateActiveDegreeType" @reset-filter="updateDegreeTypeToAll" :currentlySelectedOption="$store.activeDegreeType">
+					<filter-options-list :options="degreeTypes" @option-selected="updateActiveDegreeType" @reset-filter="updateDegreeTypeToAll" :currentlySelectedOption="activeDegreeType">
 					</filter-options-list>
 				</div>
 			</transition>
@@ -41,15 +50,15 @@
 						<img key="arrow-down" v-else-if="mobileMode && showDegreeAreasToolbar" src="/wp-content/themes/uwa/library/images/filtering-module/arrow-up-red.svg" alt="">
 					</transition>
 					<transition name="icon-switch">
-						<span @click="$store.activeDegreeArea = 'all'" class="desktop-clear" v-if="!mobileMode && $store.activeDegreeArea != 'all'">
+						<span @click="activeAreaOfStudy = 'all'" class="desktop-clear" v-if="!mobileMode && activeAreaOfStudy != 'all'">
 							<img key="clear" src="/wp-content/themes/uwa/library/images/filtering-module/clear-search-red.svg" alt="Clear Search">
 							Clear
 						</span>
 					</transition>
 				</h2>
-			<h3 v-if="mobileMode && $store.activeDegreeArea != 'all'" class="toolbar-filter__activeTitle">
-					{{$store.activeDegreeAreaTitle}}
-					<img class="activeTitle-clear" @click="$store.activeDegreeArea = 'all'" src="/wp-content/themes/uwa/library/images/filtering-module/clear-search-red.svg" alt="Clear Search">
+			<h3 v-if="mobileMode && activeAreaOfStudy != 'all'" class="toolbar-filter__activeTitle">
+					{{activeAreaOfStudyTitle}}
+					<img class="activeTitle-clear" @click="activeAreaOfStudy = 'all'" src="/wp-content/themes/uwa/library/images/filtering-module/clear-search-red.svg" alt="Clear Search">
 				</h3>
 			<transition name="slide-down">
 				<div v-if="showDegreeAreasToolbar" class="degreeAreasToolbar toolbar-filter" role="toolbar">
@@ -58,7 +67,7 @@
 						:options="areasOfStudyTest"
 						@option-selected="updateActiveDegreeArea"
 						@reset-filter="updateDegreeAreaToAll"
-						:currentlySelectedOption="$store.activeDegreeArea">
+						:currentlySelectedOption="activeAreaOfStudy">
 					</areas-filter-options-list>
 				</div>
 			</transition>
@@ -67,10 +76,8 @@
 	</div>
 
 	<loading-spinner :isVisible="!listForFilteredDegreesAreaAndLevel.length && !degrees.length"></loading-spinner>
-
-
 	<isotope v-show="listForFilteredDegreesAreaAndLevel.length" ref="cpt" id="root_isotope1" class="degrees sticky" :list="degrees" :options='isotopeOptions'>
-		<a v-for="(degree, index) in listForFilteredDegreesAreaAndLevel" :key="index" :href="'online-degrees/' + degree.slug" class="degree-transition degree" :class="getDegreeClasses(degree)">
+		<a v-for="degree, index in listForFilteredDegreesAreaAndLevel" :key="index" :href="'online-degrees/' + degree.slug" class="degree-transition degree" :class="getDegreeClasses(degree)">
 			<small class="label" v-if="degree.degree_levels[0]" v-html="degree.degree_levels[0].name"></small>
 			<small class="label undefined" v-else>No Program Type Set</small>
 			<h3 class="degree__title" v-html="degree.title.rendered"></h3>
@@ -81,76 +88,99 @@
 			<div class="degree__cta-button">More Info</div>
 		</a>
 	</isotope>
-
-	<no-results :isVisible="noResults"></no-results>
+	<transition name="slide-down">
+		<div id="no-results-msg" class="sticky" v-show="!listForFilteredDegreesAreaAndLevel.length && degrees.length">No Results Match This Criteria</div>
+	</transition>
 </div>
 </template>
 
 <script>
-import {DegreeFilteringMixin} from './degree-filtering-mixin'
 import WPAPI from "wpapi";
 import isotope from 'vueisotope'
 import ToolbarFilter from './components/ToolbarFilter'
 import FilterOptionsList from './components/FilterOptionsList'
 import AreasFilterOptionsList from './components/AreasFilterOptionsList'
-import SearchFilter from './components/SearchFilter'
-import NoResults from './components/NoResults'
 import LoadingSpinner from './components/LoadingSpinner'
+import Stickyfill from 'stickyfilljs'
 const devUrl = 'https://uwa-gulp.dev'
 const liveUrl = 'https://onlineuwa.staging.wpengine.com'
 const apiPromise = WPAPI.discover(liveUrl);
 
 export default {
 	name: "degrees-app",
-	mixins: [DegreeFilteringMixin],
 	components: {
 		isotope,
 		ToolbarFilter,
 		FilterOptionsList,
 		AreasFilterOptionsList,
-		LoadingSpinner,
-		SearchFilter,
-		NoResults
+		LoadingSpinner
 	},
- 	// store: ['activeFilter1', 'activeFilter2'],
 	data() {
 		return {
+			searchFilter: '',
+			loadingApi: true,
+			mobileMode: false,
+			showDegreeTypesToolbar: true,
+			showDegreeAreasToolbar: true,
+			degreeTypesFilterIsActive: false,
+			degreeAreasFilterIsActive: false,
+			degrees: [],
+			areasOfStudy: [],
+			areasOfStudyTest: [],
+			degreeTypes: [],
+			activeAreaOfStudyTitle: '',
+			activeDegreeTypeTitle: '',
+			activeAreaOfStudy: 'all',
+			activeDegreeType: 'all',
+			activeFilter: null,
 			isotopeOptions: {
-				itemSelector: '.degree',
+				itemSelector: ".degree",
+				// layoutMode: 'fitRows',
+				masonry: {
+					// columnWidth: 200,
+					// isFitWidth: true
+				},
 				getFilterData: {
 					"show all": function() {
 						return true;
 					},
 					filterByDegreeAreas: function(el) {
 						return this.listForFilteredDegreesAreaAndLevel()
+						// return this.listForFilteredDegreesAreaAndLevel
 					}
 				}
 			}
 		};
 	},
 	computed: {
-		noResults() {
-			return !this.listForFilteredDegreesAreaAndLevel.length && this.degrees.length ? true : false
+		searchQueryExists() {
+			return this.searchFilter !== ''
 		},
 
-		currentDegreesByArea() {
-			let activeDegreeArea = this.$store.activeDegreeArea;
-			let activeDegreeType = this.$store.activeDegreeType;
+		allFilterSelected() {
+			return this.activeAreaOfStudy === "all" || this.activeDegreeType === "all" ?
+				true :
+				false;
+		},
 
-			return activeDegreeArea ?
-				this.filterDegreesByArea(activeDegreeArea) :
+		filteredDegreesByArea() {
+			let activeAreaOfStudy = this.activeAreaOfStudy;
+			let activeDegreeType = this.activeDegreeType;
+
+			return activeAreaOfStudy ?
+				this.filterDegreesByArea(activeAreaOfStudy) :
 				this.degrees;
 		},
 
-		currentDegreesBySearch() {
+		filteredDegreesBySearch() {
 			return this.degrees.filter(degree => {
 				let title = degree.title.rendered
-				return title.toLowerCase().includes(this.$store.searchFilter.toLowerCase())
+				return title.toLowerCase().includes(this.searchFilter.toLowerCase())
 			})
 		},
 
-		currentDegreesByType() {
-			let activeDegreeType = this.$store.activeDegreeType;
+		filteredDegreesByType() {
+			let activeDegreeType = this.activeDegreeType;
 
 			return activeDegreeType ?
 				this.filterDegreesByType(activeDegreeType) :
@@ -158,7 +188,7 @@ export default {
 		},
 		areasOfStudyFilters() {
 			function returnTeachingFilterIndex(area) {
-				return area.term_id === 7
+				return area.id === 7
 			}
 			let teachingSubAreas = []
 			let areasFiltersArray = this.areasOfStudy
@@ -184,9 +214,9 @@ export default {
 		},
 
 		listForFilteredDegreesAreaAndLevel() {
-			let a = new Set(this.currentDegreesByArea);
-			let b = new Set(this.currentDegreesByType);
-			let c = new Set(this.currentDegreesBySearch);
+			let a = new Set(this.filteredDegreesByArea);
+			let b = new Set(this.filteredDegreesByType);
+			let c = new Set(this.filteredDegreesBySearch);
 			let intersection = new Set(
 				[...a].filter(x => b.has(x) && c.has(x))
 			);
@@ -197,23 +227,29 @@ export default {
 
 	created() {
 		this.getData();
+		console.log('After .then: all done');
 		this.loadingApi = false
 	},
 
 	mounted() {
-		this.degreeTypes = wpData.degreeLevels;
-		this.createAreasOfStudyFilters()
 
+		if (matchMedia) {
+			const mq = window.matchMedia("(min-width: 800px)");
+			mq.addListener(this.WidthHandler);
+			this.WidthHandler(mq);
+			// this.setupFiltersModeOnLoad();
+		}
+		var elements = document.querySelectorAll('.sticky');
+		Stickyfill.add(elements);
 	},
 
 	methods: {
-
 		createAreasOfStudyFilters(arrayOfFilters) {
 			function returnTeachingFilterIndex(area) {
-				return area.term_id === 7
+				return area.id === 7
 			}
 			let teachingSubAreas = []
-			let areasFiltersArray = wpData.degreeAreas
+			let areasFiltersArray = this.areasOfStudy
 			let topLevelFilters = areasFiltersArray.filter(area => {
 				return area.parent === 0
 			});
@@ -229,10 +265,23 @@ export default {
 					teachingSubAreas.push(area)
 				}
 			});
+			console.log('sub_areas: ', teachingSubAreas);
+			console.log('topLevelFilters: ', topLevelFilters);
 			topLevelFilters[teachingFilterIndex]['sub_areas'] = teachingSubAreas
 			this.areasOfStudyTest = topLevelFilters
+			// return []
 		},
-
+		WidthHandler(mq) {
+			if (mq.matches) {
+				this.mobileMode = false
+				this.showDegreeTypesToolbar = true
+				this.showDegreeAreasToolbar = true
+			} else {
+				this.mobileMode = true
+				this.showDegreeTypesToolbar = false
+				this.showDegreeAreasToolbar = false
+			}
+		},
 
 		setupFiltersModeOnLoad() {
 			if (this.mobileMode === false) {
@@ -265,23 +314,8 @@ export default {
 			}
 		},
 
-		getDegreeClassesNew(degree) {
-			let degreeLevels = degree.degree_levels
-			let degreeTypes = degree.degree_areas
-
-			let levels = degreeLevels.map(level => {
-				return level.slug || ''
-			})
-
-			let types = degreeTypes.map(type => {
-				if (type.slug) {
-					return type.slug
-				} else {
-					return ''
-				}
-			})
-			// return levels
-			return levels.concat(types)
+		clearSearch() {
+			this.searchFilter = ''
 		},
 
 		getDegreeClasses(degree) {
@@ -309,7 +343,7 @@ export default {
 			let levels = degreeLevels.filter(level => {
 				return level.slug == "teaching-certificates"
 			})
-
+			console.log(levels.length);
 			if (levels.length > 0) {
 				return true
 			} else {
@@ -318,36 +352,36 @@ export default {
 		},
 
 		updateActiveDegreeType(type) {
-			this.$store.activeDegreeType = type.term_id;
+			this.activeDegreeType = type.id;
 			if (this.mobileMode) {
-				this.$store.activeDegreeTypeTitle = type.name;
+				this.activeDegreeTypeTitle = type.name;
 				this.showDegreeTypesToolbar = false
 			}
 			this.activeFilter = null
 		},
 
 		updateActiveDegreeArea(area) {
-			this.$store.activeDegreeArea = area.term_id;
+			this.activeAreaOfStudy = area.id;
 			if (this.mobileMode) {
-				this.$store.activeDegreeAreaTitle = area.name;
+				this.activeAreaOfStudyTitle = area.name;
 				this.showDegreeAreasToolbar = false
 			}
 			this.activeFilter = null
 		},
 
 		updateDegreeTypeToAll() {
-			this.$store.activeDegreeType = "all";
+			this.activeDegreeType = "all";
 			if (this.mobileMode) {
-				this.$store.activeDegreeTypeTitle = '';
+				this.activeDegreeTypeTitle = '';
 				this.showDegreeTypesToolbar = false
 			}
 			this.activeFilter = null
 		},
 
 		updateDegreeAreaToAll() {
-			this.$store.activeDegreeArea = "all";
+			this.activeAreaOfStudy = "all";
 			if (this.mobileMode) {
-				this.$store.activeDegreeAreaTitle = '';
+				this.activeAreaOfStudyTitle = '';
 				this.showDegreeAreasToolbar = false
 			}
 			this.activeFilter = null
@@ -360,7 +394,7 @@ export default {
 		returnListForFilteredDegreesArea() {
 			let filteredDegrees = this.degrees.filter(degree => {
 				let areasOfStudyForDegree = degree.verticals;
-				return areasOfStudyForDegree.includes(this.$store.activeDegreeArea);
+				return areasOfStudyForDegree.includes(this.activeAreaOfStudy);
 			});
 			return filteredDegrees;
 		},
@@ -368,12 +402,34 @@ export default {
 		returnListForFilteredDegreesType() {
 			let filteredDegrees = this.degrees.filter(degree => {
 				let areasOfStudyForDegree = degree.verticals;
-				// console.log(areasOfStudyForDegree);
+				console.log(areasOfStudyForDegree);
 
-				return areasOfStudyForDegree.includes(this.$store.activeDegreeArea);
+				return areasOfStudyForDegree.includes(this.activeAreaOfStudy);
 			});
 			return filteredDegrees;
 
+		},
+
+		filterDegreesByType(activeDegreeType) {
+			let filteredDegrees = this.degrees.filter(degree => {
+				if (this.activeDegreeType === 'all') {
+					return degree;
+				}
+				let degreeTypesForDegree = degree.levels;
+				return degreeTypesForDegree.includes(activeDegreeType);
+			});
+			return filteredDegrees;
+		},
+
+		filterDegreesByArea(activeAreaOfStudy, activeDegreeType) {
+			let filteredDegrees = this.degrees.filter(degree => {
+				if (this.activeAreaOfStudy === 'all') {
+					return degree;
+				}
+				let areasOfStudyForDegree = degree.verticals;
+				return areasOfStudyForDegree.includes(activeAreaOfStudy);
+			});
+			return filteredDegrees;
 		},
 
 		getData() {
@@ -389,6 +445,27 @@ export default {
 						console.log(error);
 					});
 
+				site
+					.verticals()
+					.perPage(100)
+					.then(areas => {
+						this.areasOfStudy = areas;
+						this.createAreasOfStudyFilters(areas)
+					})
+					.catch(error => {
+						console.log(error);
+					});
+
+				site
+					.levels()
+					.perPage(100)
+					.then(levels => {
+						this.degreeTypes = levels;
+						// this.loadingApi = false
+					})
+					.catch(error => {
+						console.log(error);
+					});
 			});
 		}
 	}

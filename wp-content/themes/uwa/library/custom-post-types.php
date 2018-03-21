@@ -51,7 +51,7 @@ function add_degrees() {
     add_action( 'init', 'add_degrees');
 
 
-    function taxonomies_degree_verticals() {
+    function taxonomies_degree_areas() {
       $labels = array(
         'name'              => _x( 'Degree Verticals', 'taxonomy general name' ),
         'singular_name'     => _x( 'Degree Vertical', 'taxonomy singular name' ),
@@ -70,7 +70,7 @@ function add_degrees() {
         'labels' => $labels,
         'hierarchical' => true,
         'show_in_rest'       => true,
-    		'rest_base'          => 'verticals',
+    		'rest_base'          => 'areas',
     		'rest_controller_class' => 'WP_REST_Terms_Controller',
         'rewrite' => array('slug' => 'online-degrees/areas-of-study', 'with_front' => false )
       );
@@ -79,7 +79,7 @@ function add_degrees() {
 
     }
 
-    add_action( 'init', 'taxonomies_degree_verticals', 0 );
+    add_action( 'init', 'taxonomies_degree_areas', 0 );
 
     function taxonomies_degree_levels() {
       $labels = array(

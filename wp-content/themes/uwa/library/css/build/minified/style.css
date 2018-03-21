@@ -1687,7 +1687,7 @@ th {
           flex: none;
 }
 
-.tax-degree_vertical .cardLink img {
+.tax-degree_area .cardLink img {
   width: 100%;
 }
 
@@ -5751,19 +5751,19 @@ POST STYLES
   padding: 0 .35em;
 }
 
-.tax-degree_vertical .owl-carousel {
+.tax-degree_area .owl-carousel {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
 }
 
 @media (min-width: 1200px) {
-  .tax-degree_vertical .owl-carousel {
+  .tax-degree_area .owl-carousel {
     width: 100%;
   }
 }
 
-.tax-degree_vertical .intro {
+.tax-degree_area .intro {
   max-width: 800px;
   margin: -3.5em 1em 1em;
   position: relative;
@@ -5774,7 +5774,7 @@ POST STYLES
   width: 90%;
 }
 
-.tax-degree_vertical .intro__breadcrumbs {
+.tax-degree_area .intro__breadcrumbs {
   background-color: #A81D32;
   color: white;
   padding: 1em 0.5em;
@@ -5783,19 +5783,19 @@ POST STYLES
   font-weight: 600;
 }
 
-.tax-degree_vertical .intro__breadcrumbs a {
+.tax-degree_area .intro__breadcrumbs a {
   color: white;
 }
 
-.tax-degree_vertical .intro__headline {
+.tax-degree_area .intro__headline {
   padding: 0 1em;
 }
 
-.tax-degree_vertical .intro__text {
+.tax-degree_area .intro__text {
   padding: 0.5em 2em;
 }
 
-.tax-degree_vertical .intro__link {
+.tax-degree_area .intro__link {
   background-color: #11181F;
   color: white;
   font-weight: 600;
@@ -5807,12 +5807,12 @@ POST STYLES
   height: 20px;
 }
 
-.tax-degree_vertical .intro__link:focus, .tax-degree_vertical .intro__link:hover, .tax-degree_vertical .intro__link:visited:focus, .tax-degree_vertical .intro__link:visited:hover {
+.tax-degree_area .intro__link:focus, .tax-degree_area .intro__link:hover, .tax-degree_area .intro__link:visited:focus, .tax-degree_area .intro__link:visited:hover {
   color: white;
   text-decoration: underline;
 }
 
-.tax-degree_vertical .intro__link svg {
+.tax-degree_area .intro__link svg {
   width: 20px;
   background: #C8BF79;
   height: 20px;
@@ -5827,20 +5827,20 @@ POST STYLES
   padding: 5px;
 }
 
-.tax-degree_vertical .mainDegrees {
+.tax-degree_area .mainDegrees {
   background: #f5f1e5;
   margin-top: -5em;
   overflow: hidden;
 }
 
-.tax-degree_vertical .mainDegrees .wrap {
+.tax-degree_area .mainDegrees .wrap {
   max-width: 1100px;
   background: #f5f1e5;
   padding: 5em 0 3em;
   position: relative;
 }
 
-.tax-degree_vertical .mainDegrees__headline {
+.tax-degree_area .mainDegrees__headline {
   text-align: center;
   text-align: center;
   max-width: 800px;
@@ -5848,7 +5848,7 @@ POST STYLES
   margin-right: auto;
 }
 
-.tax-degree_vertical .mainDegrees__text {
+.tax-degree_area .mainDegrees__text {
   text-align: center;
   text-align: center;
   max-width: 800px;
@@ -5856,12 +5856,12 @@ POST STYLES
   margin-right: auto;
 }
 
-.tax-degree_vertical .cardLink {
+.tax-degree_area .cardLink {
   display: inline-block;
   position: relative;
 }
 
-.tax-degree_vertical .cardLink:before {
+.tax-degree_area .cardLink:before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -5873,17 +5873,17 @@ POST STYLES
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.94) 100%);
 }
 
-.tax-degree_vertical .cardLink img {
+.tax-degree_area .cardLink img {
   max-height: 400px;
 }
 
-.tax-degree_vertical .cardLink__text {
+.tax-degree_area .cardLink__text {
   position: absolute;
   bottom: 0;
   padding: 1em 1em 0;
 }
 
-.tax-degree_vertical .cardLink__heading {
+.tax-degree_area .cardLink__heading {
   border-bottom: 5px solid white;
   padding-bottom: 0.5em;
   color: white;
@@ -5893,7 +5893,7 @@ POST STYLES
   padding-right: .5em !important;
 }
 
-.tax-degree_vertical .cardLink__cta {
+.tax-degree_area .cardLink__cta {
   text-align: right;
   color: #C8BF79;
   font-size: 1.2em;
@@ -5903,7 +5903,7 @@ POST STYLES
   padding-left: 10px;
 }
 
-.tax-degree_vertical .flexTestWrapper {
+.tax-degree_area .flexTestWrapper {
   position: absolute;
   bottom: 0;
   width: 200%;
@@ -5916,56 +5916,56 @@ POST STYLES
   text-align: left;
 }
 
-.tax-degree_vertical .cardLinkWrapper {
+.tax-degree_area .cardLinkWrapper {
   text-align: center;
 }
 
-.tax-degree_vertical .cardLink {
+.tax-degree_area .cardLink {
   overflow: hidden;
   height: 280px;
   max-width: 400px;
 }
 
 @media (min-width: 1200px) {
-  .tax-degree_vertical .cardLink {
+  .tax-degree_area .cardLink {
     width: 340px;
   }
 }
 
 @media (min-width: 1400px) {
-  .tax-degree_vertical .cardLink {
+  .tax-degree_area .cardLink {
     width: 375px;
   }
 }
 
-.tax-degree_vertical .cardLink img {
+.tax-degree_area .cardLink img {
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: top;
      object-position: top;
 }
 
-.tax-degree_vertical .cardLink:focus .flexTestWrapper, .tax-degree_vertical .cardLink:hover .flexTestWrapper {
+.tax-degree_area .cardLink:focus .flexTestWrapper, .tax-degree_area .cardLink:hover .flexTestWrapper {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
 
-.tax-degree_vertical .cardLink:focus .cardLink__cta, .tax-degree_vertical .cardLink:hover .cardLink__cta {
+.tax-degree_area .cardLink:focus .cardLink__cta, .tax-degree_area .cardLink:hover .cardLink__cta {
   color: black !important;
   font-size: 1em !important;
   padding-left: 10px;
 }
 
-.tax-degree_vertical .cardLink:focus .cardLink__cta svg, .tax-degree_vertical .cardLink:hover .cardLink__cta svg {
+.tax-degree_area .cardLink:focus .cardLink__cta svg, .tax-degree_area .cardLink:hover .cardLink__cta svg {
   fill: black;
 }
 
-.tax-degree_vertical .cardLink:focus .cardLink__cta-background, .tax-degree_vertical .cardLink:hover .cardLink__cta-background {
+.tax-degree_area .cardLink:focus .cardLink__cta-background, .tax-degree_area .cardLink:hover .cardLink__cta-background {
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
 }
 
-.tax-degree_vertical .cardLink__info {
+.tax-degree_area .cardLink__info {
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
   color: white;
@@ -5976,11 +5976,11 @@ POST STYLES
   width: 50%;
 }
 
-.tax-degree_vertical .cardLink__info p {
+.tax-degree_area .cardLink__info p {
   padding-left: .5em;
 }
 
-.tax-degree_vertical .cardLink__text {
+.tax-degree_area .cardLink__text {
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
   position: relative;
@@ -5990,13 +5990,13 @@ POST STYLES
   width: 50%;
 }
 
-.tax-degree_vertical .cardLink__heading {
+.tax-degree_area .cardLink__heading {
   border: none;
   padding: 0 0 0 0.5em;
   margin-right: 0;
 }
 
-.tax-degree_vertical .cardLink__cta {
+.tax-degree_area .cardLink__cta {
   position: absolute;
   bottom: 0;
   right: 1em;
@@ -6007,7 +6007,7 @@ POST STYLES
   font-size: 1.1em !important;
 }
 
-.tax-degree_vertical .cardLink__cta svg {
+.tax-degree_area .cardLink__cta svg {
   vertical-align: middle;
   padding: 2px;
   fill: #C8BF79;
@@ -6017,7 +6017,7 @@ POST STYLES
   padding: 5px;
 }
 
-.tax-degree_vertical .cardLink__cta-background {
+.tax-degree_area .cardLink__cta-background {
   position: absolute;
   right: 1em;
   bottom: 28px;
@@ -6026,13 +6026,13 @@ POST STYLES
   height: 34px;
 }
 
-.tax-degree_vertical .mastersDegrees {
+.tax-degree_area .mastersDegrees {
   text-align: center;
   position: relative;
   padding-bottom: 2em;
 }
 
-.tax-degree_vertical .mastersDegrees .narrow {
+.tax-degree_area .mastersDegrees .narrow {
   max-width: 1000px;
   background: white;
   margin-left: auto;
@@ -6041,51 +6041,51 @@ POST STYLES
   padding: 0.5em 3em;
 }
 
-.tax-degree_vertical .degreeType {
+.tax-degree_area .degreeType {
   padding: 3em 0 5em;
 }
 
 @media (min-width: 768px) {
-  .tax-degree_vertical .degreeType .wrap {
+  .tax-degree_area .degreeType .wrap {
     width: 84%;
   }
 }
 
-.tax-degree_vertical .coloredBackground {
+.tax-degree_area .coloredBackground {
   background: #f5f1e5;
 }
 
-.tax-degree_vertical .single .cardLink_cta__wrapper {
+.tax-degree_area .single .cardLink_cta__wrapper {
   display: none;
 }
 
 @media (min-width: 800px) {
-  .tax-degree_vertical .single .cardLink {
+  .tax-degree_area .single .cardLink {
     overflow: visible;
     left: -50%;
   }
-  .tax-degree_vertical .single .cardLink img {
+  .tax-degree_area .single .cardLink img {
     height: 100%;
   }
-  .tax-degree_vertical .single .cardLink__cta {
+  .tax-degree_area .single .cardLink__cta {
     display: none;
   }
-  .tax-degree_vertical .single .cardLink:focus .flexTestWrapper, .tax-degree_vertical .single .cardLink:hover .flexTestWrapper {
+  .tax-degree_area .single .cardLink:focus .flexTestWrapper, .tax-degree_area .single .cardLink:hover .flexTestWrapper {
     -webkit-transform: none !important;
             transform: none !important;
   }
-  .tax-degree_vertical .single .cardLink:focus .cardLink_cta__wrapper .cardLink__cta, .tax-degree_vertical .single .cardLink:hover .cardLink_cta__wrapper .cardLink__cta {
+  .tax-degree_area .single .cardLink:focus .cardLink_cta__wrapper .cardLink__cta, .tax-degree_area .single .cardLink:hover .cardLink_cta__wrapper .cardLink__cta {
     display: block;
   }
-  .tax-degree_vertical .single .cardLink:focus .cardLink_cta__wrapper .cardLink__cta-background, .tax-degree_vertical .single .cardLink:hover .cardLink_cta__wrapper .cardLink__cta-background {
+  .tax-degree_area .single .cardLink:focus .cardLink_cta__wrapper .cardLink__cta-background, .tax-degree_area .single .cardLink:hover .cardLink_cta__wrapper .cardLink__cta-background {
     -webkit-transform: translateX(0);
             transform: translateX(0);
     right: 0;
   }
-  .tax-degree_vertical .single .cardLink__info {
+  .tax-degree_area .single .cardLink__info {
     background: #0F181F;
   }
-  .tax-degree_vertical .single .cardLink__cta__wrapper {
+  .tax-degree_area .single .cardLink__cta__wrapper {
     display: block;
     overflow: hidden;
     position: absolute;
@@ -6095,14 +6095,14 @@ POST STYLES
     right: 0;
     width: 100%;
   }
-  .tax-degree_vertical .single .cardLink__cta__wrapper .cardLink_cta {
+  .tax-degree_area .single .cardLink__cta__wrapper .cardLink_cta {
     position: relative;
     left: 0;
     padding-top: 4px;
     padding-bottom: 0;
     padding-left: 10px;
   }
-  .tax-degree_vertical .single .cardLink__cta__wrapper .cardLink_cta-background {
+  .tax-degree_area .single .cardLink__cta__wrapper .cardLink_cta-background {
     top: 0;
     right: 0;
     height: inherit;
@@ -6115,15 +6115,15 @@ POST STYLES
   }
 }
 
-.tax-degree_vertical .single .cardLink__cta {
+.tax-degree_area .single .cardLink__cta {
   display: none;
 }
 
-.tax-degree_vertical .single .cardLink__cta-background {
+.tax-degree_area .single .cardLink__cta-background {
   display: none !important;
 }
 
-.tax-degree_vertical .single .cardLink__cta__wrapper .cardLink__cta-background {
+.tax-degree_area .single .cardLink__cta__wrapper .cardLink__cta-background {
   display: block !important;
   right: 20px;
   -webkit-transition: all 0.15s ease;
@@ -6134,11 +6134,11 @@ POST STYLES
   width: 160px;
 }
 
-.tax-degree_vertical .single .cardLink__cta__wrapper .cardLink__cta {
+.tax-degree_area .single .cardLink__cta__wrapper .cardLink__cta {
   display: block;
 }
 
-.tax-degree_vertical .single .cardLink:hover .cardLink__cta__wrapper .cardLink__cta-background, .tax-degree_vertical .single .cardLink:focus .cardLink__cta__wrapper .cardLink__cta-background {
+.tax-degree_area .single .cardLink:hover .cardLink__cta__wrapper .cardLink__cta-background, .tax-degree_area .single .cardLink:focus .cardLink__cta__wrapper .cardLink__cta-background {
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }

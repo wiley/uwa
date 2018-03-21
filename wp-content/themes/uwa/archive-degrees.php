@@ -19,26 +19,6 @@
 	]);
 ?>
 
-<?php
-	function setFilterOrder($term1, $term2) {
-	        if ($term1->display_order == $term2->display_order) {
-	            return 0;
-	        } elseif ($term1->display_order < $term2->display_order) {
-	            return -1;
-	        } else {
-	            return 1;
-	        }
-	    }
-
-	if ($degreeLevels) {
-	    foreach ($degreeLevels as $index => $term) {
-				$termID = 'term_' . $term->term_id;
-				$menuOrderValue = get_field('menu_order', $termID);
-				$degreeLevels[$index]->display_order = $menuOrderValue;
-	    }
-	    usort($degreeLevels, 'setDisplayOrder');
-	}
-?>
 
 <?php
 	$allDegreesArgs = array(

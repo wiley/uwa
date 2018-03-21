@@ -16,7 +16,17 @@
 </style>
 <?php
 	global $post;
+
+
+	if (is_page('Teacher Connect')) {
+		$form_template = 'single-step-partners';
+	} else {
+		$form_template = 'olc';
+	}
+
+	$form_script_url = 'https://requestforms.learninghouse.com/form/show/university-west-alabama/' . $form_template . '/734/3589/online.uwa.edu:thank-you:request_id';
 ?>
+
 			<div class="content">
 				<main class="main-content cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
@@ -47,7 +57,7 @@
 										<h3 class="decorativeForm__heading decorative decorative_red">Request Info</h3>
 										<p class="decorativeForm__prompt">What degree are you interested in?</p>
 									</div>
-									<script src="https://requestforms.learninghouse.com/form/show/university-west-alabama/olc/734/3589/online.uwa.edu:thank-you:request_id" type="text/javascript"></script>
+									<script src="<?php echo $form_script_url; ?>" type="text/javascript"></script>
 								</div>
 							</div>
 							<?php if (get_field('content_text')): ?>
@@ -116,7 +126,8 @@
 									<h3 class="decorativeForm__heading decorative decorative_red">Request Info</h3>
 									<p class="decorativeForm__prompt">What degree are you interested in?</p>
 								</div>
-								<script src="https://requestforms.learninghouse.com/form/show/university-west-alabama/olc/734/3589/online.uwa.edu:thank-you:request_id" type="text/javascript"></script>
+
+								<script src="<?php echo $form_script_url; ?>" type="text/javascript"></script>
 							</div>
 						</div>
 

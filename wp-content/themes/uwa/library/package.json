@@ -32,6 +32,7 @@
     "stickyfilljs": "^2.0.3",
     "vue": "^2.5.13",
     "vue-affix": "^0.2.4",
+    "vue-stash": "^2.0.1-beta",
     "vue2-transitions": "^0.2.3",
     "vueisotope": "^3.1.1",
     "wpapi": "^1.1.2"

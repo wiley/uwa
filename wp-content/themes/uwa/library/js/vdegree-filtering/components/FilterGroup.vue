@@ -23,13 +23,13 @@
           </button>
           <button
             v-for="type in degreeTypes"
-            :key="type.id" class="btn__hollow filter"
-            :class="{active: type.id === activeDegreeType}"
+            :key="type.term_id" class="btn__hollow filter"
+            :class="{active: type.term_id === activeDegreeType}"
             :aria-label="'Filter By ' + type.name"
             @click.prevent="updateActiveDegreeType(type)">
             {{type.name}}
             <span class="active-filter-indicator">
-              <img v-if="type.id === activeDegreeType" src="/wp-content/themes/uwa/library/images/filtering-module/check.svg" alt="Active Filter Icon">
+              <img v-if="type.term_id === activeDegreeType" src="/wp-content/themes/uwa/library/images/filtering-module/check.svg" alt="Active Filter Icon">
             </span>
           </button>
         </div>

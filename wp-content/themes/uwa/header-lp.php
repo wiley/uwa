@@ -58,7 +58,7 @@
 
 				<?php
 					$image = get_field('banner_image');
-					$url = $image['url'];
+					$url = $image;
 				?>
 
 				<div class="banner" style="background-image: url(<?php echo $url; ?>);">

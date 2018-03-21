@@ -17,6 +17,9 @@ Let's get everything up and running.
 */
 
 
+require_once( 'filters.php' );
+
+
 // Async load
 function async_scripts($url)
 {

@@ -17,16 +17,16 @@
     </button>
     <button
       v-for="option in options"
-      :key="option.id"
+      :key="option.term_id"
       class="btn__hollow filter"
-      :class="[{ active: option.id === currentlySelectedOption}, option.slug]"
+      :class="[{ active: option.term_id === currentlySelectedOption}, option.slug]"
       :aria-label="'Filter By ' + option.name"
       @click.prevent="optionSelected(option)">
       <span class="filter__color"></span>
       <span class="filter__title" v-html="option.name"></span>
       <span class="filter__active-indicator">
         <img
-          v-if="option.id === currentlySelectedOption"
+          v-if="option.term_id === currentlySelectedOption"
           src="/wp-content/themes/uwa/library/images/filtering-module/check.svg"
           alt="Active Filter Icon">
       </span>
