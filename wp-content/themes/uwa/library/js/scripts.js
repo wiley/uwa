@@ -266,31 +266,28 @@ jQuery(document).ready(function($) {
 	formFocusGuardBottom.on("focus", handleTabbingFwd);
 })(jQuery);
 
-
 (function($) {
 	var SearchWrapper = $(".searchbox__wrapper"),
-		CloseButtonForSearch = $('.searchbox__close-button'),
+		CloseButtonForSearch = $(".searchbox__close-button"),
 		SearchBoxTrigger = $(".searchbox-trigger");
 
 	function openForm() {
 		$("html").addClass("activeModal");
 		SearchWrapper.addClass("active");
-		$('body').addClass('ios-11-body-fixed');
-
+		$("body").addClass("ios-11-body-fixed");
 	}
 
 	function closeForm() {
 		$("html").removeClass("activeModal");
 		SearchWrapper.removeClass("active");
-		$('body').removeClass('ios-11-body-fixed');
+		$("body").removeClass("ios-11-body-fixed");
 	}
 
 	function setSearchButtonValue() {
-		$('.search-form .search-submit').val('Submit')
+		$(".search-form .search-submit").val("Submit");
 	}
 
 	setSearchButtonValue();
 	SearchBoxTrigger.on("click", openForm);
 	CloseButtonForSearch.on("click", closeForm);
-
 })(jQuery);
