@@ -28,7 +28,6 @@
 				<div v-if="showDegreeTypesToolbar" class="degreeLevelsToolbar toolbar-filter" :class="{activeFilter: degreeTypesFilterIsActive}" role="toolbar">
 					<filter-options-list
 						:options="degreeTypes"
-						:reset.sync="$store.activeDegreeType"
 						:selectedFilter.sync="$store.activeDegreeType">
 					</filter-options-list>
 				</div>
@@ -59,7 +58,6 @@
 
 					<areas-filter-options-list
 						:options="areasOfStudyTest"
-						:reset.sync="$store.activeDegreeType"
 						:selectedFilter.sync="$store.activeDegreeArea">
 					</areas-filter-options-list>
 				</div>
@@ -70,19 +68,22 @@
 
 	<loading-spinner :isVisible="!listForFilteredDegreesAreaAndLevel.length && !degrees.length"></loading-spinner>
 
+	<transition-group tag="ul" class="degree-grid degrees sticky" name="list">
+		<!-- <degree-grid-item v-for="degree in listForFilteredDegreesAreaAndLevel" :degree="degree"></degree-grid-item> -->
 
-	<isotope v-show="listForFilteredDegreesAreaAndLevel.length" ref="cpt" id="root_isotope1" class="degrees sticky" :list="degrees" :options='isotopeOptions'>
-		<a v-for="(degree, index) in listForFilteredDegreesAreaAndLevel" :key="index" :href="'online-degrees/' + degree.slug" class="degree-transition degree" :class="getDegreeClasses(degree)">
-			<small class="label" v-if="degree.degree_levels[0]" v-html="degree.degree_levels[0].name"></small>
-			<small class="label undefined" v-else>No Program Type Set</small>
-			<h3 class="degree__title" v-html="degree.title.rendered"></h3>
-			<span v-if="checkForTeachingCertificate(degree)" class="includes-licensure">
-				<img class="state-icon" src="/wp-content/themes/uwa/library/images/filtering-module/icon-alabama.svg" alt="Alabama State Icon">
-				Includes Licensure
-			</span>
-			<div class="degree__cta-button">More Info</div>
-		</a>
-	</isotope>
+		<li v-for="degree in listForFilteredDegreesAreaAndLevel" class="degree degree-grid-item" :class="getDegreeClasses(degree)" :key="degree.id">
+			<a :href="'online-degrees/' + degree.slug">
+				<small class="label" v-if="degree.degree_levels[0]" v-html="degree.degree_levels[0].name"></small>
+				<small class="label undefined" v-else>No Program Type Set</small>
+				<h3 class="degree__title" v-html="degree.title.rendered"></h3>
+				<span v-if="checkForTeachingCertificate(degree)" class="includes-licensure">
+					<img class="state-icon" src="/wp-content/themes/uwa/library/images/filtering-module/icon-alabama.svg" alt="Alabama State Icon">
+					Includes Licensure
+				</span>
+				<div class="degree__cta-button">More Info</div>
+			</a>
+    </li>
+  </transition-group>
 
 	<no-results :isVisible="noResults"></no-results>
 </div>
@@ -117,6 +118,11 @@ export default {
  	// store: ['activeFilter1', 'activeFilter2'],
 	data() {
 		return {
+			list: [
+	      { id: 1 },
+	      { id: 2 },
+	      { id: 3 }
+	    ],
 			isotopeOptions: {
 				itemSelector: '.degree',
 				getFilterData: {
@@ -186,6 +192,7 @@ export default {
 		},
 
 		listForFilteredDegreesAreaAndLevel() {
+			if ( !this.degrees ) return []
 			let a = new Set(this.currentDegreesByArea);
 			let b = new Set(this.currentDegreesByType);
 			let c = new Set(this.currentDegreesBySearch);
@@ -572,7 +579,5 @@ export default {
 	}
 }
 
-
-
-
 </style>
+<!-- <style src="./list-transition.scss" lang="scss"></style> -->

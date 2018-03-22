@@ -5,7 +5,7 @@
       class="btn__hollow filter all"
       :class="{active: selectedFilter === 'all' }"
       aria-label="Reset This Filter Group"
-      @click="$emit('reset-filter')">
+      @click="updateFilter('all')">
       <span class="filter__color"></span>
       <span class="filter__title">All</span>
       <span class="filter__active-indicator">
@@ -24,7 +24,7 @@
         :class="[{ active: option.term_id === selectedFilter}, option.slug]"
         :aria-label="'Filter By ' + option.name"
 
-        @click.prevent="$emit('update:selectedFilter', option.term_id)">
+        @click.prevent="updateFilter(option.term_id)">
         <span class="filter__color"></span>
         <span class="filter__title" v-html="option.name"></span>
         <span class="filter__active-indicator">
@@ -35,36 +35,43 @@
         </span>
       </button>
       <div v-if="option.sub_areas && option.sub_areas.length > 0">
+
         <button
           class="btn__hollow filter"
           :class="[{ active: option.term_id === selectedFilter }, option.slug]"
           :aria-label="'Filter By ' + option.name"
-          @click.prevent="showSubFilters = !showSubFilters">
+          @click.prevent="updateFilterAndSubFilters(option.term_id)">
           <span class="filter__color"></span>
           <span class="filter__title" v-html="option.name"></span>
+          <span class="filter__active-indicator">
+            <img
+              v-if="option.term_id === selectedFilter"
+              src="/wp-content/themes/uwa/library/images/filtering-module/check.svg"
+              alt="Active Filter Icon">
+          </span>
           <!-- <transition mode="out-in" name="icon-switch"> -->
 						<img key="hide" v-if="showSubFilters" src="/wp-content/themes/uwa/library/images/filtering-module/hide-sub-filters.svg" alt="">
             <img key="show" v-else src="/wp-content/themes/uwa/library/images/filtering-module/show-sub-filters.svg" alt="">
 					<!-- </transition> -->
         </button>
-    			<!-- <div class="sub-filters-wrapper" v-if="showSubFilters">
+    			<div class="sub-filters-wrapper" v-if="showSubFilters">
             <button
             v-for="subAreaOption in option.sub_areas"
             class="btn__hollow filter"
-            :class="[{ active: subAreaOption.term_id === currentlySelectedOption}, subAreaOption.slug]"
+            :class="[{ active: subAreaOption.term_id === selectedFilter}, subAreaOption.slug]"
             :aria-label="'Filter By ' + subAreaOption.name"
-            @click.prevent="optionSelected(subAreaOption)">
+            @click.prevent="updateFilter(subAreaOption.term_id)">
 
               <img src="/wp-content/themes/uwa/library/images/filtering-module/subdirectory.svg" alt="Subdirectory Icon">
               <span class="filter__title" v-html="subAreaOption.name"></span>
               <span class="filter__active-indicator">
                 <img
-                  v-if="subAreaOption.term_id === currentlySelectedOption"
+                  v-if="subAreaOption.term_id === selectedFilter"
                   src="/wp-content/themes/uwa/library/images/filtering-module/check.svg"
                   alt="Active Filter Icon">
               </span>
             </button>
-    			</div> -->
+    			</div>
   		</div>
 
     </div>
@@ -75,16 +82,19 @@
 <script>
 export default {
   name: 'filter-options-list',
-  props: ['options', 'currentlySelectedOption', 'selectedFilter'],
+  props: ['options', 'selectedFilter'],
   data() {
     return {
       showSubFilters: false
     }
   },
   methods: {
-    optionSelected (option) {
-      this.$emit('updated:currentlySelectedOption', option.term_id)
-      // this.$emit('option-selected', option)
+    updateFilter (selectedId) {
+      this.$emit('update:selectedFilter', selectedId)
+    },
+    updateFilterAndSubFilters (selectedId) {
+      this.updateFilter(selectedId)
+      this.showSubFilters = !this.showSubFilters
     }
   }
 }

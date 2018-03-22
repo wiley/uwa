@@ -5,7 +5,7 @@
       class="btn__hollow filter all"
       :class="{active: selectedFilter === 'all' }"
       aria-label="Reset This Filter Group"
-      @click="$emit('update:reset', 'all')">
+      @click="updateFilter('all')">
       <span class="filter__color"></span>
       <span class="filter__title">All</span>
       <span class="filter__active-indicator">
@@ -21,7 +21,7 @@
       class="btn__hollow filter"
       :class="[{ active: option.term_id === selectedFilter}, option.slug]"
       :aria-label="'Filter By ' + option.name"
-      @click.prevent="optionSelected(option)">
+      @click="updateFilter(option.term_id)">
       <span class="filter__color"></span>
       <span class="filter__title" v-html="option.name"></span>
       <span class="filter__active-indicator">
@@ -40,9 +40,8 @@ export default {
   name: 'filter-options-list',
   props: ['options', 'selectedFilter'],
   methods: {
-    optionSelected (option) {
-      // this.$emit('option-selected', option)
-      this.$emit('update:selectedFilter', option.term_id)
+    updateFilter (selectedId) {
+      this.$emit('update:selectedFilter', selectedId)
     }
   }
 }
