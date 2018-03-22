@@ -3,14 +3,14 @@
     <button
       key="all"
       class="btn__hollow filter all"
-      :class="{active: currentlySelectedOption === 'all' }"
+      :class="{active: selectedFilter === 'all' }"
       aria-label="Reset This Filter Group"
       @click="$emit('reset-filter')">
       <span class="filter__color"></span>
       <span class="filter__title">All</span>
       <span class="filter__active-indicator">
         <img
-          v-if="currentlySelectedOption === 'all'"
+          v-if="selectedFilter === 'all'"
           src="/wp-content/themes/uwa/library/images/filtering-module/check.svg"
           alt="Active Filter Icon">
       </span>
@@ -21,14 +21,15 @@
       <button
         v-if="option.sub_areas && !option.sub_areas.length"
         class="btn__hollow filter"
-        :class="[{ active: option.term_id === currentlySelectedOption}, option.slug]"
+        :class="[{ active: option.term_id === selectedFilter}, option.slug]"
         :aria-label="'Filter By ' + option.name"
-        @click.prevent="optionSelected(option)">
+
+        @click.prevent="$emit('update:selectedFilter', option.term_id)">
         <span class="filter__color"></span>
         <span class="filter__title" v-html="option.name"></span>
         <span class="filter__active-indicator">
           <img
-            v-if="option.term_id === currentlySelectedOption"
+            v-if="option.term_id === selectedFilter"
             src="/wp-content/themes/uwa/library/images/filtering-module/check.svg"
             alt="Active Filter Icon">
         </span>
@@ -36,7 +37,7 @@
       <div v-if="option.sub_areas && option.sub_areas.length > 0">
         <button
           class="btn__hollow filter"
-          :class="[{ active: option.term_id === currentlySelectedOption }, option.slug]"
+          :class="[{ active: option.term_id === selectedFilter }, option.slug]"
           :aria-label="'Filter By ' + option.name"
           @click.prevent="showSubFilters = !showSubFilters">
           <span class="filter__color"></span>
@@ -46,7 +47,7 @@
             <img key="show" v-else src="/wp-content/themes/uwa/library/images/filtering-module/show-sub-filters.svg" alt="">
 					<!-- </transition> -->
         </button>
-    			<div class="sub-filters-wrapper" v-if="showSubFilters">
+    			<!-- <div class="sub-filters-wrapper" v-if="showSubFilters">
             <button
             v-for="subAreaOption in option.sub_areas"
             class="btn__hollow filter"
@@ -63,7 +64,7 @@
                   alt="Active Filter Icon">
               </span>
             </button>
-    			</div>
+    			</div> -->
   		</div>
 
     </div>
@@ -74,7 +75,7 @@
 <script>
 export default {
   name: 'filter-options-list',
-  props: ['options', 'currentlySelectedOption'],
+  props: ['options', 'currentlySelectedOption', 'selectedFilter'],
   data() {
     return {
       showSubFilters: false
@@ -82,7 +83,8 @@ export default {
   },
   methods: {
     optionSelected (option) {
-      this.$emit('option-selected', option)
+      this.$emit('updated:currentlySelectedOption', option.term_id)
+      // this.$emit('option-selected', option)
     }
   }
 }

@@ -50,7 +50,7 @@ function add_localized_js_data() {
 	$allDegrees = get_posts( $allDegreesArgs );
   $degree_areas = get_field('degree_areas', 'option');
   $degree_levels = get_field('degree_levels', 'option');
-print($degree_levels);
+// print($degree_levels);
   $data = array(
     'degrees' => buildDegressArray($allDegrees),
     'degreeAreas' => $degree_areas,

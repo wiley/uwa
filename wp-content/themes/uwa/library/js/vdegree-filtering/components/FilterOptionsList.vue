@@ -3,14 +3,14 @@
     <button
       key="all"
       class="btn__hollow filter all"
-      :class="{active: currentlySelectedOption === 'all' }"
+      :class="{active: selectedFilter === 'all' }"
       aria-label="Reset This Filter Group"
-      @click="$emit('reset-filter')">
+      @click="$emit('update:reset', 'all')">
       <span class="filter__color"></span>
       <span class="filter__title">All</span>
       <span class="filter__active-indicator">
         <img
-          v-if="currentlySelectedOption === 'all'"
+          v-if="selectedFilter === 'all'"
           src="/wp-content/themes/uwa/library/images/filtering-module/check.svg"
           alt="Active Filter Icon">
       </span>
@@ -19,14 +19,14 @@
       v-for="option in options"
       :key="option.term_id"
       class="btn__hollow filter"
-      :class="[{ active: option.term_id === currentlySelectedOption}, option.slug]"
+      :class="[{ active: option.term_id === selectedFilter}, option.slug]"
       :aria-label="'Filter By ' + option.name"
       @click.prevent="optionSelected(option)">
       <span class="filter__color"></span>
       <span class="filter__title" v-html="option.name"></span>
       <span class="filter__active-indicator">
         <img
-          v-if="option.term_id === currentlySelectedOption"
+          v-if="option.term_id === selectedFilter"
           src="/wp-content/themes/uwa/library/images/filtering-module/check.svg"
           alt="Active Filter Icon">
       </span>
@@ -38,10 +38,11 @@
 <script>
 export default {
   name: 'filter-options-list',
-  props: ['options', 'currentlySelectedOption'],
+  props: ['options', 'selectedFilter'],
   methods: {
     optionSelected (option) {
-      this.$emit('option-selected', option)
+      // this.$emit('option-selected', option)
+      this.$emit('update:selectedFilter', option.term_id)
     }
   }
 }

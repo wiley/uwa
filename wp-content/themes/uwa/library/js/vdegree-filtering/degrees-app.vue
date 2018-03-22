@@ -26,7 +26,10 @@
 
 			<transition name="slide-down">
 				<div v-if="showDegreeTypesToolbar" class="degreeLevelsToolbar toolbar-filter" :class="{activeFilter: degreeTypesFilterIsActive}" role="toolbar">
-					<filter-options-list :options="degreeTypes" @option-selected="updateActiveDegreeType" @reset-filter="updateDegreeTypeToAll" :currentlySelectedOption="$store.activeDegreeType">
+					<filter-options-list
+						:options="degreeTypes"
+						:reset.sync="$store.activeDegreeType"
+						:selectedFilter.sync="$store.activeDegreeType">
 					</filter-options-list>
 				</div>
 			</transition>
@@ -56,9 +59,8 @@
 
 					<areas-filter-options-list
 						:options="areasOfStudyTest"
-						@option-selected="updateActiveDegreeArea"
-						@reset-filter="updateDegreeAreaToAll"
-						:currentlySelectedOption="$store.activeDegreeArea">
+						:reset.sync="$store.activeDegreeType"
+						:selectedFilter.sync="$store.activeDegreeArea">
 					</areas-filter-options-list>
 				</div>
 			</transition>
