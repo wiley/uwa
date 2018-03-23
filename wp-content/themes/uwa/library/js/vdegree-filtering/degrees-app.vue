@@ -3,6 +3,18 @@
 
 	<div class="controlsWrapper">
 		<search-filter v-model="$store.searchFilter"></search-filter>
+		<!-- <isotope v-show="listForFilteredDegreesAreaAndLevel.length" ref="cpt" id="root_isotope1" class="degrees sticky" :list="degrees" :options='isotopeOptions'>
+			<a v-for="(degree, index) in listForFilteredDegreesAreaAndLevel" :key="index" :href="'online-degrees/' + degree.slug" class="degree-transition degree" :class="getDegreeClasses(degree)">
+				<small class="label" v-if="degree.degree_levels[0]" v-html="degree.degree_levels[0].name"></small>
+				<small class="label undefined" v-else>No Program Type Set</small>
+				<h3 class="degree__title" v-html="degree.title.rendered"></h3>
+				<span v-if="checkForTeachingCertificate(degree)" class="includes-licensure">
+					<img class="state-icon" src="/wp-content/themes/uwa/library/images/filtering-module/icon-alabama.svg" alt="Alabama State Icon">
+					Includes Licensure
+				</span>
+				<div class="degree__cta-button">More Info</div>
+			</a>
+		</isotope> -->
 
 		<div class="filter-group filters-types">
 			<h2 @click="toggleDegreeTypesFilters" class="toolbar-filter__label" :class="{activeFilter: degreeTypesFilterIsActive}">
@@ -68,22 +80,34 @@
 
 	<loading-spinner :isVisible="!listForFilteredDegreesAreaAndLevel.length && !degrees.length"></loading-spinner>
 
-	<transition-group tag="ul" class="degree-grid degrees sticky" name="list">
-		<!-- <degree-grid-item v-for="degree in listForFilteredDegreesAreaAndLevel" :degree="degree"></degree-grid-item> -->
-
-		<li v-for="degree in listForFilteredDegreesAreaAndLevel" class="degree degree-grid-item" :class="getDegreeClasses(degree)" :key="degree.id">
-			<a :href="'online-degrees/' + degree.slug">
-				<small class="label" v-if="degree.degree_levels[0]" v-html="degree.degree_levels[0].name"></small>
-				<small class="label undefined" v-else>No Program Type Set</small>
-				<h3 class="degree__title" v-html="degree.title.rendered"></h3>
-				<span v-if="checkForTeachingCertificate(degree)" class="includes-licensure">
-					<img class="state-icon" src="/wp-content/themes/uwa/library/images/filtering-module/icon-alabama.svg" alt="Alabama State Icon">
-					Includes Licensure
-				</span>
-				<div class="degree__cta-button">More Info</div>
-			</a>
-    </li>
-  </transition-group>
+	<div class="sticky-grid">
+		<transition-group tag="ul" class="sticky degree-grid degrees" name="list">
+			<li v-for="degree in listForFilteredDegreesAreaAndLevel" class="degree degree-grid-item" :class="getDegreeClasses(degree)" :key="degree.id">
+				<a :href="'online-degrees/' + degree.slug">
+					<small class="label" v-if="degree.degree_levels[0]" v-html="degree.degree_levels[0].name"></small>
+					<small class="label undefined" v-else>No Program Type Set</small>
+					<h3 class="degree__title" v-html="degree.title.rendered"></h3>
+					<span v-if="checkForTeachingCertificate(degree)" class="includes-licensure">
+						<img class="state-icon" src="/wp-content/themes/uwa/library/images/filtering-module/icon-alabama.svg" alt="Alabama State Icon">
+						Includes Licensure
+					</span>
+					<div class="degree__cta-button">More Info</div>
+				</a>
+	    </li>
+	  </transition-group>
+	</div>
+	<!-- <isotope v-show="listForFilteredDegreesAreaAndLevel.length" ref="cpt" id="root_isotope1" class="degrees sticky" :list="degrees" :options='isotopeOptions'>
+		<a v-for="(degree, index) in listForFilteredDegreesAreaAndLevel" :key="index" :href="'online-degrees/' + degree.slug" class="degree-transition degree" :class="getDegreeClasses(degree)">
+			<small class="label" v-if="degree.degree_levels[0]" v-html="degree.degree_levels[0].name"></small>
+			<small class="label undefined" v-else>No Program Type Set</small>
+			<h3 class="degree__title" v-html="degree.title.rendered"></h3>
+			<span v-if="checkForTeachingCertificate(degree)" class="includes-licensure">
+				<img class="state-icon" src="/wp-content/themes/uwa/library/images/filtering-module/icon-alabama.svg" alt="Alabama State Icon">
+				Includes Licensure
+			</span>
+			<div class="degree__cta-button">More Info</div>
+		</a>
+	</isotope> -->
 
 	<no-results :isVisible="noResults"></no-results>
 </div>
@@ -563,8 +587,8 @@ export default {
 }
 #degrees-app {
 	.degrees {
-		// position: sticky !important;
-		// top: 0 !important;
+		position: sticky !important;
+		top: 0 !important;
 
 		.degree {
 			@media (max-width: 799px) {

@@ -1,20 +1,21 @@
 ul.degree-grid {
 	position: relative;
 	padding-top: 18px;
-  list-style-type: none;
+	list-style-type: none;
 	display: flex;
 	flex-flow: row wrap;
 	align-items: flex-start;
 	align-content: flex-start;
-	justify-content: flex-start;
+	justify-content: space-between;
 	flex: 1 1 calc(100% - 380px);
 	margin-right: auto;
 	padding: 1.5em;
 	// background: #ccc;
 	margin-left: 2em;
-
 }
-
+.sticky-grid {
+	flex: 1 1 calc(100% - 440px) !important;
+}
 .degree-grid li {
 	// display: flex;
 	// margin: 8px;
@@ -23,15 +24,16 @@ ul.degree-grid {
 	// flex: 1 1 300px;
 	// background-color: #e5e5e5;
 	// height: 180px;
-    background: white;
-	z-index: 1;
+	background: white;
+	// z-index: 1;
 	flex: none;
 	width: 300px;
 	margin-left: 1em;
 	margin-right: 1em;
-	padding: .5em;
-
-  a {
+	padding: 0.5em;
+// NEW
+	margin: 1em auto;
+	a {
 		display: block;
 		width: 100%;
 		height: 100%;
@@ -44,14 +46,13 @@ ul.degree-grid {
 }
 
 #degrees-app {
-  max-width: 1540px !important;
-  .degrees {
-    flex: 1 1 calc(100% - 440px) !important;
-    margin-left: 4em !important;
-  }
+	max-width: 1540px !important;
+
+	.degrees {
+		flex: 1 1 calc(100% - 440px) !important;
+		margin-left: 4em !important;
+	}
 }
-
-
 
 .list-enter-active,
 .list-leave-active,

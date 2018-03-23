@@ -29,7 +29,7 @@ export const DegreeFilteringMixin = {
 			mq.addListener(this.WidthHandler);
 			this.WidthHandler(mq);
 		}
-		var elements = document.querySelectorAll('.sticky');
+		var elements = document.querySelectorAll('.sticky-grid');
 		Stickyfill.add(elements);
 	},
 

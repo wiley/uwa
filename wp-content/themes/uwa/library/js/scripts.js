@@ -8,7 +8,7 @@ window.$ = window.jQuery = $;
 // import Transitions from 'vue2-transitions'
 // Vue.use(Transitions)
 
-import './components/megaMenu';
+// import './components/megaMenu';
 import './components/submenus';
 import './components/carousel';
 import './components/filters';

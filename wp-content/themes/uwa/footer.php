@@ -15,12 +15,15 @@
 ?>
 
 <?php
-// your taxonomy name
-	$degreeTypesTaxonomy = 'degree_level';
-	// get the terms of taxonomy
-	$degreeTypes = get_terms( $degreeTypesTaxonomy, $args = array(
-		'hide_empty' => false, // do not hide empty terms
-	));
+
+	$degreeLevels = get_terms([
+	    'taxonomy'     => 'degree_level',
+	    'hide_empty'   => false,
+	    'meta_key'		 => 'menu_order',
+	    'orderby'			 => 'meta_value',
+	    'order'				 => 'ASC'
+	]);
+
 ?>
 
 <div class="searchbox__wrapper">
@@ -65,10 +68,10 @@
 							<div class="programType flexItem">
 								<h6 class="footer__subheading">By Program Type</h6>
 								<ul>
-									<?php foreach ($degreeTypes as $degreeType ): ?>
+									<?php foreach ($degreeLevels as $degreeLevel ): ?>
 					          <?php
-					            $url = get_term_link( $degreeType );
-					            $name = $degreeType->name;
+					            $url = get_term_link( $degreeLevel );
+					            $name = $degreeLevel->name;
 					          ?>
 					          <li><a href="<?php echo esc_url( $url ); ?>"><?php echo $name; ?></a></li>
 					        <?php endforeach; ?>
