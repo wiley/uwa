@@ -17,20 +17,13 @@ ul.degree-grid {
 	flex: 1 1 calc(100% - 440px) !important;
 }
 .degree-grid li {
-	// display: flex;
-	// margin: 8px;
-	// padding: 8px 12px;
-	// max-width: 325px;
-	// flex: 1 1 300px;
-	// background-color: #e5e5e5;
-	// height: 180px;
+	padding: .75em .5em;
 	background: white;
 	// z-index: 1;
 	flex: none;
 	width: 300px;
 	margin-left: 1em;
 	margin-right: 1em;
-	padding: 0.5em;
 // NEW
 	margin: 1em auto;
 	a {
@@ -41,7 +34,8 @@ ul.degree-grid {
 	}
 
 	.degree__cta-button {
-		right: 0.5em;
+		bottom: .25em !important;
+		right: .25em !important;
 	}
 }
 
@@ -50,7 +44,9 @@ ul.degree-grid {
 
 	.degrees {
 		flex: 1 1 calc(100% - 440px) !important;
-		margin-left: 4em !important;
+		@media (min-width: 800px) {
+			margin-left: 4em !important;
+		}
 	}
 }
 

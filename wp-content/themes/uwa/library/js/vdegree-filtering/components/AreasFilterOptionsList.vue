@@ -21,15 +21,15 @@
       <button
         v-if="option.sub_areas && !option.sub_areas.length"
         class="btn__hollow filter"
-        :class="[{ active: option.term_id === selectedFilter}, option.slug]"
+        :class="[{ active: option.term_id === selectedFilter.term_id}, option.slug]"
         :aria-label="'Filter By ' + option.name"
-
-        @click.prevent="updateFilter(option.term_id)">
+        @click.prevent="updateFilter(option)">
         <span class="filter__color"></span>
         <span class="filter__title" v-html="option.name"></span>
         <span class="filter__active-indicator">
+
           <img
-            v-if="option.term_id === selectedFilter"
+            v-if="option.term_id === selectedFilter.term_id"
             src="/wp-content/themes/uwa/library/images/filtering-module/check.svg"
             alt="Active Filter Icon">
         </span>
@@ -38,35 +38,45 @@
 
         <button
           class="btn__hollow filter"
-          :class="[{ active: option.term_id === selectedFilter }, option.slug]"
+          :class="[{ active: option.term_id === selectedFilter.term_id || option.term_id === selectedFilter.parent }, option.slug, { 'remove-hover-styles': removeHoverStyles === true }]"
           :aria-label="'Filter By ' + option.name"
-          @click.prevent="updateFilterAndSubFilters(option.term_id)">
+          @click.prevent="updateFilter(option)">
           <span class="filter__color"></span>
           <span class="filter__title" v-html="option.name"></span>
           <span class="filter__active-indicator">
             <img
-              v-if="option.term_id === selectedFilter"
+              v-if="option.term_id === selectedFilter.term_id"
               src="/wp-content/themes/uwa/library/images/filtering-module/check.svg"
               alt="Active Filter Icon">
+              <img
+                v-if="option.term_id === selectedFilter.parent"
+                src="/wp-content/themes/uwa/library/images/filtering-module/hide-white.svg"
+                alt="Active Filter Icon">
           </span>
-          <!-- <transition mode="out-in" name="icon-switch"> -->
-						<img key="hide" v-if="showSubFilters" src="/wp-content/themes/uwa/library/images/filtering-module/hide-sub-filters.svg" alt="">
-            <img key="show" v-else src="/wp-content/themes/uwa/library/images/filtering-module/show-sub-filters.svg" alt="">
-					<!-- </transition> -->
+
+          <div class="toggle-subfilter"
+            @mouseover="removeHoverStyles = true"
+            @mouseout="removeHoverStyles = false"
+            tabindex="0"
+            @click.stop="showSubFilters = !showSubFilters">
+            <img class="subfilter-toggle-icon" key="hide" v-if="showSubFilters" src="/wp-content/themes/uwa/library/images/filtering-module/hide-sub-filters.svg" alt="">
+            <img class="subfilter-toggle-icon "key="show" v-else src="/wp-content/themes/uwa/library/images/filtering-module/show-sub-filters.svg" alt="">
+
+          </div>
         </button>
     			<div class="sub-filters-wrapper" v-if="showSubFilters">
             <button
             v-for="subAreaOption in option.sub_areas"
             class="btn__hollow filter"
-            :class="[{ active: subAreaOption.term_id === selectedFilter}, subAreaOption.slug]"
+            :class="[{ active: subAreaOption.term_id === selectedFilter.term_id}, subAreaOption.slug]"
             :aria-label="'Filter By ' + subAreaOption.name"
-            @click.prevent="updateFilter(subAreaOption.term_id)">
+            @click.prevent="updateFilter(subAreaOption)">
 
               <img src="/wp-content/themes/uwa/library/images/filtering-module/subdirectory.svg" alt="Subdirectory Icon">
               <span class="filter__title" v-html="subAreaOption.name"></span>
               <span class="filter__active-indicator">
                 <img
-                  v-if="subAreaOption.term_id === selectedFilter"
+                  v-if="subAreaOption.term_id === selectedFilter.term_id"
                   src="/wp-content/themes/uwa/library/images/filtering-module/check.svg"
                   alt="Active Filter Icon">
               </span>
@@ -85,15 +95,26 @@ export default {
   props: ['options', 'selectedFilter'],
   data() {
     return {
-      showSubFilters: false
+      showSubFilters: false,
+      removeHoverStyles: false
+    }
+  },
+  computed: {
+    parentOfSelectedSubfilter() {
+      return this.selectedFilter.parent
     }
   },
   methods: {
-    updateFilter (selectedId) {
-      this.$emit('update:selectedFilter', selectedId)
+    updateFilter (selectedOption) {
+      if (selectedOption.parent === 0 && selectedOption.term_id !== this.selectedFilter.parent) this.showSubFilters = false
+      // if (selectedOption.term_id === this.selectedFilter.term_id) {
+      //
+      // }
+      this.$emit('update:selectedFilter', selectedOption)
+      this.$emit('filterSelected')
     },
-    updateFilterAndSubFilters (selectedId) {
-      this.updateFilter(selectedId)
+    updateFilterAndSubFilters (selectedOption) {
+      this.updateFilter(selectedOption)
       this.showSubFilters = !this.showSubFilters
     }
   }
@@ -110,9 +131,25 @@ export default {
   }
 }
 .optionsWrapper {
-  padding: 1em;
+  padding: 1em .5em;
   width: 100%;
 }
+
+.toggle-subfilter {
+  position: absolute;
+  right: 10px;
+  vertical-align: bottom;
+  height: 2.5em;
+  width: 2.5em;
+  .subfilter-toggle-icon {
+    width: 2.25em;
+    height: 2.25em;
+    // background: #9E9E9E;
+    // box-shadow: 0 2px 3px rgba(0, 0, 0, 0.19), 0 2px 3px rgba(0, 0, 0, 0.12);
+  }
+}
+
+
 .sub-filters-wrapper {
 
   .filter {

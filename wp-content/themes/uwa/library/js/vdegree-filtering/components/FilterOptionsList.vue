@@ -19,14 +19,14 @@
       v-for="option in options"
       :key="option.term_id"
       class="btn__hollow filter"
-      :class="[{ active: option.term_id === selectedFilter}, option.slug]"
+      :class="[{ active: option.term_id === selectedFilter.term_id}, option.slug]"
       :aria-label="'Filter By ' + option.name"
-      @click="updateFilter(option.term_id)">
+      @click="updateFilter(option)">
       <span class="filter__color"></span>
       <span class="filter__title" v-html="option.name"></span>
       <span class="filter__active-indicator">
         <img
-          v-if="option.term_id === selectedFilter"
+          v-if="option.term_id === selectedFilter.term_id"
           src="/wp-content/themes/uwa/library/images/filtering-module/check.svg"
           alt="Active Filter Icon">
       </span>
@@ -40,8 +40,9 @@ export default {
   name: 'filter-options-list',
   props: ['options', 'selectedFilter'],
   methods: {
-    updateFilter (selectedId) {
-      this.$emit('update:selectedFilter', selectedId)
+    updateFilter (selectedOption) {
+      this.$emit('update:selectedFilter', selectedOption)
+      this.$emit('filterSelected')
     }
   }
 }

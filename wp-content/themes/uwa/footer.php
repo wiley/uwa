@@ -83,9 +83,13 @@
 									<?php foreach ($degreeAreas as $degreeArea ): ?>
 					          <?php
 					            $url = get_term_link( $degreeArea );
-					            $name = $degreeArea->name;
+											$name = $degreeArea->name;
+					            $slug = $degreeArea->slug;
 					          ?>
-					          <li><a href="<?php echo esc_url( $url ); ?>"><?php echo $name; ?></a></li>
+										<?php if ($slug === 'business' || $slug === 'psychology-counseling' || $slug === 'teaching'): ?>
+											<li><a href="<?php echo esc_url( $url ); ?>"><?php echo $name; ?></a></li>
+										<?php endif; ?>
+
 					        <?php endforeach; ?>
 								</ul>
 							</div>

@@ -3,18 +3,6 @@
 
 	<div class="controlsWrapper">
 		<search-filter v-model="$store.searchFilter"></search-filter>
-		<!-- <isotope v-show="listForFilteredDegreesAreaAndLevel.length" ref="cpt" id="root_isotope1" class="degrees sticky" :list="degrees" :options='isotopeOptions'>
-			<a v-for="(degree, index) in listForFilteredDegreesAreaAndLevel" :key="index" :href="'online-degrees/' + degree.slug" class="degree-transition degree" :class="getDegreeClasses(degree)">
-				<small class="label" v-if="degree.degree_levels[0]" v-html="degree.degree_levels[0].name"></small>
-				<small class="label undefined" v-else>No Program Type Set</small>
-				<h3 class="degree__title" v-html="degree.title.rendered"></h3>
-				<span v-if="checkForTeachingCertificate(degree)" class="includes-licensure">
-					<img class="state-icon" src="/wp-content/themes/uwa/library/images/filtering-module/icon-alabama.svg" alt="Alabama State Icon">
-					Includes Licensure
-				</span>
-				<div class="degree__cta-button">More Info</div>
-			</a>
-		</isotope> -->
 
 		<div class="filter-group filters-types">
 			<h2 @click="toggleDegreeTypesFilters" class="toolbar-filter__label" :class="{activeFilter: degreeTypesFilterIsActive}">
@@ -31,14 +19,16 @@
 					</transition>
 				</h2>
 
-			<h3 v-if="mobileMode && $store.activeDegreeType != 'all'" class="toolbar-filter__activeTitle">
-					{{$store.activeDegreeTypeTitle}}
-					<img class="activeTitle-clear" @click="$store.activeDegreeType = 'all'" src="/wp-content/themes/uwa/library/images/filtering-module/clear-search-red.svg" alt="Clear Search">
-				</h3>
+			<h3 v-if="mobileMode && $store.activeDegreeType !== 'all'"
+				class="toolbar-filter__activeTitle"
+				v-html="$store.activeDegreeType.name">
+				<img class="activeTitle-clear" @click="$store.activeDegreeType = 'all'" src="/wp-content/themes/uwa/library/images/filtering-module/clear-search-red.svg" alt="Clear Search">
+			</h3>
 
 			<transition name="slide-down">
 				<div v-if="showDegreeTypesToolbar" class="degreeLevelsToolbar toolbar-filter" :class="{activeFilter: degreeTypesFilterIsActive}" role="toolbar">
 					<filter-options-list
+						@filterSelected="closeMenuOnMobile"
 						:options="degreeTypes"
 						:selectedFilter.sync="$store.activeDegreeType">
 					</filter-options-list>
@@ -61,14 +51,16 @@
 						</span>
 					</transition>
 				</h2>
-			<h3 v-if="mobileMode && $store.activeDegreeArea != 'all'" class="toolbar-filter__activeTitle">
-					{{$store.activeDegreeAreaTitle}}
+				<h3 v-if="mobileMode && $store.activeDegreeArea !== 'all'"
+					class="toolbar-filter__activeTitle"
+					v-html="$store.activeDegreeArea.name">
 					<img class="activeTitle-clear" @click="$store.activeDegreeArea = 'all'" src="/wp-content/themes/uwa/library/images/filtering-module/clear-search-red.svg" alt="Clear Search">
 				</h3>
 			<transition name="slide-down">
 				<div v-if="showDegreeAreasToolbar" class="degreeAreasToolbar toolbar-filter" role="toolbar">
 
 					<areas-filter-options-list
+						@filterSelected="closeMenuOnMobile"
 						:options="areasOfStudyTest"
 						:selectedFilter.sync="$store.activeDegreeArea">
 					</areas-filter-options-list>
@@ -95,21 +87,9 @@
 				</a>
 	    </li>
 	  </transition-group>
-	</div>
-	<!-- <isotope v-show="listForFilteredDegreesAreaAndLevel.length" ref="cpt" id="root_isotope1" class="degrees sticky" :list="degrees" :options='isotopeOptions'>
-		<a v-for="(degree, index) in listForFilteredDegreesAreaAndLevel" :key="index" :href="'online-degrees/' + degree.slug" class="degree-transition degree" :class="getDegreeClasses(degree)">
-			<small class="label" v-if="degree.degree_levels[0]" v-html="degree.degree_levels[0].name"></small>
-			<small class="label undefined" v-else>No Program Type Set</small>
-			<h3 class="degree__title" v-html="degree.title.rendered"></h3>
-			<span v-if="checkForTeachingCertificate(degree)" class="includes-licensure">
-				<img class="state-icon" src="/wp-content/themes/uwa/library/images/filtering-module/icon-alabama.svg" alt="Alabama State Icon">
-				Includes Licensure
-			</span>
-			<div class="degree__cta-button">More Info</div>
-		</a>
-	</isotope> -->
+		<no-results :isVisible="noResults"></no-results>
 
-	<no-results :isVisible="noResults"></no-results>
+	</div>
 </div>
 </template>
 
@@ -174,6 +154,9 @@ export default {
 				this.degrees;
 		},
 
+		// filterSelected() {
+		//
+		// }
 		currentDegreesBySearch() {
 			return this.degrees.filter(degree => {
 				let title = degree.title.rendered
@@ -234,12 +217,20 @@ export default {
 	},
 
 	mounted() {
-		this.degreeTypes = wpData.degreeLevels;
+
+		this.degreeTypes = this.orderByDisplayOrder(wpData.degreeLevels);
 		this.createAreasOfStudyFilters()
 
 	},
 
 	methods: {
+
+		closeMenuOnMobile() {
+			if ( this.mobileMode ) {
+				this.showDegreeTypesToolbar = false
+				this.showDegreeAreasToolbar = false
+			}
+		},
 
 		createAreasOfStudyFilters(arrayOfFilters) {
 			function returnTeachingFilterIndex(area) {
@@ -263,6 +254,7 @@ export default {
 				}
 			});
 			topLevelFilters[teachingFilterIndex]['sub_areas'] = teachingSubAreas
+
 			this.areasOfStudyTest = topLevelFilters
 		},
 
@@ -416,7 +408,8 @@ export default {
 					.degrees()
 					.perPage(100)
 					.then(degrees => {
-						this.degrees = degrees;
+						// this.degrees = this.shuffle(degrees)
+						this.degrees = degrees.sort(this.sortByCompareTitles);
 					})
 					.catch(error => {
 						console.log(error);
@@ -458,7 +451,8 @@ export default {
 
             @media (max-width: 799px) {
                 margin-top: 0;
-                flex-basis: 48%;
+                // flex-basis: 48%;
+
                 background: #E9E9EA;
                 margin: 0.5em 0;
             }
@@ -496,19 +490,26 @@ export default {
                 font-size: 1em;
                 position: absolute;
                 width: 48%;
-                padding: 10px 20px 10px 5px;
+                // padding: 10px 20px 10px 5px;
+								padding: 10px 20px 15px 10px;
                 margin-top: 0;
                 background: #F4F2E4;
-                font-size: 0.8em;
-                height: 50px;
+                font-size: 0.85em;
+                // height: 50px;
             }
             @media (min-width: 800px) {
-                .filter:not(.active) {
+                .filter:not(.active):not(.remove-hover-styles) {
                     &:focus,
                     &:hover {
                         background: #E9E9EA;
                     }
                 }
+								// .filter.remove-hover-styles {
+								// 		&:focus,
+								// 		&:hover {
+								// 				background: initial;
+								// 		}
+								// }
             }
         }
     }
@@ -537,41 +538,7 @@ export default {
     top: 7px;
     cursor: pointer;
 }
-#no-results-msg {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5em;
-    font-weight: 600;
 
-    @media (min-width: 800px) {
-        // position: fixed;
-        // right: 50%;
-        // top: 65%;
-        // transform: translate3d(50%, -50%, 0);
-        // position: absolute;
-        // width: 400px;
-        // max-width: 100%;
-        // flex: 1 1 calc(100% - 400px);
-        // align-self: flex-start;
-        // position: relative;
-        // margin-top: 15%;
-				bottom: 60%;
-				margin-top: 1.5em;
-		    margin-bottom: 1em;
-				width: 500px;
-				padding: .5em 1.5em;//
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        font-size: 2.25em;
-        background: #e9e9e9;
-        border-radius: 3px;
-        // right: 40%;
-        // top: 40%;
-    }
-}
 .includes-licensure {
 	position: relative;
 	font-size: 11px;
@@ -592,8 +559,9 @@ export default {
 
 		.degree {
 			@media (max-width: 799px) {
-				left: 48% !important;
-				transform: translateX(-50%) !important;
+				// left: 48% !important;
+				// transform: translateX(-50%) !important;
+				margin: 1em auto;
 			}
 
 			@media (min-width: 800px) {
@@ -602,6 +570,7 @@ export default {
 		}
 	}
 }
+
 
 </style>
 <!-- <style src="./list-transition.scss" lang="scss"></style> -->
