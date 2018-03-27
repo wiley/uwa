@@ -72,8 +72,11 @@
 					          <?php
 					            $url = get_term_link( $degreeLevel );
 					            $name = $degreeLevel->name;
+											$slug = $degreeLevel->slug;
 					          ?>
-					          <li><a href="<?php echo esc_url( $url ); ?>"><?php echo $name; ?></a></li>
+					          <?php if ($slug !== 'teaching-certificates'): ?>
+					          	<li><a href="<?php echo esc_url( $url ); ?>"><?php echo $name; ?></a></li>
+					          <?php endif; ?>
 					        <?php endforeach; ?>
 								</ul>
 							</div>

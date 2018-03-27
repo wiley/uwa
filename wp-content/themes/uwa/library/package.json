@@ -8,7 +8,8 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "yarn run:dev",
-    "build": "yarn run:build && yarn run:criticalcss",
+    "build": "yarn run:build",
+    "build:critical": "yarn run:criticalcss",
     "run:dev": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "run:build": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "run:criticalcss": "node critical.js"
@@ -28,6 +29,7 @@
     "load-grunt-tasks": "~2.0.0",
     "mixitup": "^3.2.1",
     "owl.carousel": "^2.2.0",
+    "pluralize": "^7.0.0",
     "priority-nav": "^1.0.12",
     "stickyfilljs": "^2.0.3",
     "vue": "^2.5.16",

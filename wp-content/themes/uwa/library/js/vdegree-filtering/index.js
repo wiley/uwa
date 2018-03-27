@@ -1,12 +1,9 @@
 import Vue from 'vue'
-// const VueAffix = require('vue-affix');
-// Vue.use(VueAffix);
+import VueStash from 'vue-stash'
 import DegreesApp from './degrees-app'
 const DegreeFiltersApp = document.getElementById('app');
 
-import VueStash from 'vue-stash'
 Vue.use(VueStash)
-
 
 const StoreObject = {
 	searchFilter: '',
