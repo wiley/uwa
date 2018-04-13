@@ -23,13 +23,12 @@
 				:visible="mobileMode && $store.activeDegreeType !== 'all'">
 			</filter-active-title>
 			<transition name="slide-down">
-				<div v-if="showDegreeTypesToolbar" class="degreeLevelsToolbar toolbar-filter" :class="{activeFilter: degreeTypesFilterIsActive}" role="toolbar">
-					<filter-options-list
-						@filterSelected="closeMenuOnMobile"
-						:options="degreeTypes"
-						:selectedFilter.sync="$store.activeDegreeType">
-					</filter-options-list>
-				</div>
+				<filter-options-list
+					v-if="showDegreeTypesToolbar"
+					@filterSelected="closeMenuOnMobile"
+					:options="degreeTypes"
+					:selectedFilter.sync="$store.activeDegreeType">
+				</filter-options-list>
 			</transition>
 		</div>
 
@@ -54,13 +53,12 @@
 				</filter-active-title>
 
 			<transition name="slide-down">
-				<div v-if="showDegreeAreasToolbar" class="degreeAreasToolbar toolbar-filter" role="toolbar">
-					<areas-filter-options-list
-						@filterSelected="closeMenuOnMobile"
-						:options="areasOfStudyTest"
-						:selectedFilter.sync="$store.activeDegreeArea">
-					</areas-filter-options-list>
-				</div>
+				<areas-filter-options-list
+					v-if="showDegreeAreasToolbar"
+					@filterSelected="closeMenuOnMobile"
+					:options="areasOfStudyTest"
+					:selectedFilter.sync="$store.activeDegreeArea">
+				</areas-filter-options-list>
 			</transition>
 		</div>
 	</div>

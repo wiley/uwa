@@ -1,10 +1,11 @@
 <template>
-  <div class="optionsWrapper">
+  <div class="optionsWrapper toolbar-filter degreeAreasToolbar" role="toolbar">
     <button
       key="all"
       class="btn__hollow filter all"
       :class="{active: selectedFilter === 'all' }"
       aria-label="Reset This Filter Group"
+      :aria-pressed="selectedFilter === 'all'"
       @click="updateFilter('all')">
       <span class="filter__color"></span>
       <span class="filter__title">All</span>
@@ -40,6 +41,7 @@
           class="btn__hollow filter"
           :class="[{ active: option.term_id === selectedFilter.term_id || option.term_id === selectedFilter.parent }, option.slug, { 'remove-hover-styles': removeHoverStyles === true }]"
           :aria-label="'Filter By ' + option.name"
+          :aria-pressed="option.term_id === selectedFilter.term_id"
           @click.prevent="updateFilter(option)">
           <span class="filter__color"></span>
           <span class="filter__title" v-html="option.name"></span>
@@ -70,6 +72,7 @@
             class="btn__hollow filter"
             :class="[{ active: subAreaOption.term_id === selectedFilter.term_id}, subAreaOption.slug]"
             :aria-label="'Filter By ' + subAreaOption.name"
+            :aria-pressed="option.term_id === subAreaOption.term_id"
             @click.prevent="updateFilter(subAreaOption)">
 
               <img src="/wp-content/themes/uwa/library/images/filtering-module/subdirectory.svg" alt="Subdirectory Icon">
@@ -176,5 +179,7 @@ export default {
     display: none;
   }
 }
-
+.degreeAreasToolbar > div {
+  flex-basis: 100%;
+}
 </style>

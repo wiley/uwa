@@ -17,7 +17,7 @@ Let's get everything up and running.
 */
 
 
-require_once( 'filters.php' );
+
 
 
 // Async load
@@ -279,7 +279,7 @@ function custom_taxonomies_terms_slugs(){
 
   return implode('', $out );
 }
-
+// require_once( 'filters.php' );
 
 // function attributes_shortcode( $attr, $content = null ) {
 //     return $content . 'aria-label="My test"';

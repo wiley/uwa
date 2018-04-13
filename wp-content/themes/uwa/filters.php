@@ -36,7 +36,7 @@ function buildDegreeLevels($degreeLevels) {
 
 add_action( 'wp_enqueue_scripts', 'add_localized_js_data' );
 function add_localized_js_data() {
-  wp_enqueue_script( 'degree-filtering',  get_stylesheet_directory_uri() . '/library/js/build/production.min.js', array() );
+  // wp_enqueue_script( 'degree-filtering',  get_stylesheet_directory_uri() . '/library/js/build/production.min.js', array() );
 
 
   $allDegreesArgs = array(
@@ -58,7 +58,7 @@ function add_localized_js_data() {
     'degreeLevels' => buildDegreeLevels($degree_levels)
     );
 
-  wp_localize_script( 'degree-filtering', 'wpData', $data );
+  wp_localize_script( 'bones-js', 'wpData', $data );
 
 }
 

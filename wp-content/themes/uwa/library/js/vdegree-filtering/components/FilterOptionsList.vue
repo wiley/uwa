@@ -1,9 +1,10 @@
 <template>
-  <div class="optionsWrapper">
+  <div class="optionsWrapper degreeLevelsToolbar toolbar-filter" role="toolbar">
     <button
       key="all"
       class="btn__hollow filter all"
       :class="{active: selectedFilter === 'all' }"
+      :aria-pressed="selectedFilter === 'all' ? 'true' : 'false'"
       aria-label="Reset This Filter Group"
       @click="updateFilter('all')">
       <span class="filter__color"></span>
@@ -21,6 +22,7 @@
       class="btn__hollow filter"
       :class="[{ active: option.term_id === selectedFilter.term_id}, option.slug]"
       :aria-label="'Filter By ' + option.name"
+      :aria-pressed="option.term_id === selectedFilter.term_id ? 'true' : 'false'"
       @click="updateFilter(option)">
       <span class="filter__color"></span>
       <span class="filter__title" v-html="option.name"></span>
