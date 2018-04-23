@@ -10,6 +10,29 @@
 	<head>
 		<meta charset="utf-8">
 
+	<?php // Optimizely script ?>
+  <script type="text/javascript">
+  (function() {
+          var projectId = 10619241366;
+          var protocol = ('https:' == document.location.protocol ?
+          'https://' : 'http://');
+          var scriptTag = document.createElement('script');
+          scriptTag.type = 'text/javascript';
+          scriptTag.async = true;
+          scriptTag.src = protocol + 'cdn.optimizely.com/js/' +
+          projectId + '.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(scriptTag, s);
+      })();
+      function optimizelyTimeout() {
+          window.optimizely = window.optimizely|| [];
+          if (!window.optimizely.data) {
+          window.optimizely.push("timeout");
+          }
+      }
+      setTimeout(optimizelyTimeout, 1000);
+  </script>
+	
 		<?php // force Internet Explorer to use the latest rendering engine available ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 

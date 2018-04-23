@@ -11,11 +11,10 @@ HOMEPAGE SPECIFIC STYLES
 	}
 
 	.content {
-
 		position: relative;
 
 		&:before {
-			content: '';
+			content: "";
 			background-image: url("#{$images}/triangles.svg");
 			background-repeat: no-repeat;
 			background-position: top center;
@@ -27,7 +26,7 @@ HOMEPAGE SPECIFIC STYLES
 		}
 
 		&:after {
-			content: '';
+			content: "";
 			background-image: url("#{$images}/triangles.svg");
 			background-repeat: no-repeat;
 			background-position: top center;
@@ -45,7 +44,7 @@ HOMEPAGE SPECIFIC STYLES
 	}
 
 	.banner {
-		background-image: url("#{$images}/home-banner.jpg");
+		background-image: url("#{$images}/home-banner-3.jpg");
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
@@ -61,8 +60,11 @@ HOMEPAGE SPECIFIC STYLES
 		min-height: 400px;
 		// background-attachment: fixed;
 		background-attachment: fixed;
-background-position: 65% -150px;
-background-size: 1180px;
+		// background-position: 65% -150px;
+		// background-size: 1180px;
+
+    background-position: right top;
+    background-size: 1000px;
 		@include susy-breakpoint($bp-med) {
 			min-height: 600px;
 			max-height: 900px;
@@ -71,9 +73,14 @@ background-size: 1180px;
 		}
 
 		&:after {
-			background: linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, rgba(0,0,0,0.24) 27.27%, rgba(255, 255, 255, 0) 100%);
+			background: linear-gradient(
+				180deg,
+				rgba(0, 0, 0, 0.78) 0%,
+				rgba(0, 0, 0, 0.24) 27.27%,
+				rgba(255, 255, 255, 0) 100%
+			);
 			position: absolute;
-			content: '';
+			content: "";
 			top: 0;
 			height: 100%;
 			width: 100%;
@@ -95,7 +102,7 @@ background-size: 1180px;
 			top: 50%;
 			transform: translateY(-50%);
 			position: absolute;
-			transform: translate3d(-50%,-50%,0);
+			transform: translate3d(-50%, -50%, 0);
 			left: 50%;
 			// @include susy-breakpoint($bp-med) {
 			// 	padding: 10em 0;
@@ -321,7 +328,7 @@ background-size: 1180px;
 		@include susy-breakpoint($bp-med) {
 			margin-bottom: -300px;
 			&:after {
-				content: '';
+				content: "";
 				position: absolute;
 				top: 15%;
 				background: $tan;
@@ -348,7 +355,6 @@ background-size: 1180px;
 			&:first-of-type {
 				z-index: 999;
 			}
-
 
 			@include susy-breakpoint($bp-med) {
 				display: flex;
@@ -383,7 +389,8 @@ background-size: 1180px;
 				order: 2;
 			}
 
-			&__imageWrapper {}
+			&__imageWrapper {
+			}
 
 			&__info {
 				position: relative;
@@ -422,7 +429,7 @@ background-size: 1180px;
 			@include susy-breakpoint($bp-med) {
 				display: block;
 				flex-basis: 33%;
-				background: rgba(227, 212, 170, .2);
+				background: rgba(227, 212, 170, 0.2);
 				height: initial;
 				align-self: center;
 			}
@@ -601,7 +608,7 @@ background-size: 1180px;
 			background-repeat: no-repeat;
 			background-size: cover;
 			padding-bottom: 13em;
-			content: '';
+			content: "";
 			position: absolute;
 			left: 0;
 			right: 0;
@@ -611,10 +618,9 @@ background-size: 1180px;
 			z-index: -1;
 			clip-path: polygon(50% 15%, 100% 0, 100% 95%, 50% 100%, 0 95%, 0 0);
 
-
 			@include susy-breakpoint(900px) {
 				left: 2.5%;
-	    	right: 2.5%;
+				right: 2.5%;
 			}
 			@include susy-breakpoint(1200px) {
 				clip-path: polygon(50% 15%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
@@ -645,8 +651,8 @@ background-size: 1180px;
 			flex-flow: row wrap;
 			align-items: center;
 			justify-content: center;
-			@media(max-width: $bp-med - 1) {
-				 @include decorative($gold);
+			@media (max-width: $bp-med - 1) {
+				@include decorative($gold);
 
 				&:before {
 					left: 50%;
@@ -664,7 +670,7 @@ background-size: 1180px;
 			@include susy-breakpoint($bp-med) {
 				img {
 					height: 25vw;
-    			max-height: 80px;
+					max-height: 80px;
 				}
 			}
 		}
@@ -677,5 +683,4 @@ background-size: 1180px;
 			}
 		}
 	}
-	
 }

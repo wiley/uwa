@@ -25,6 +25,7 @@
 										<a target="_blank" href="https://www.gowest-alabama.org/apply/get-started.htm" class="btn">Start your online application today</a>
 										<p>You will be asked to create a username and password during this process. If you don’t complete your application immediately, the application system will be able to locate your application when you’re ready to complete it.</p>
 										<p>Once your application has been received, you will be contacted by an enrollment counselor, who will help you with application documents and transfer credits.</p>
+										<p>Due to state authorization requirements, we are unable to accept applications from persons who reside in CA, MA, and PR for our online programs.</p>
 									</div>
 									<div class="intro__form">
 										<div class="formWrapper">

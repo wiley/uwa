@@ -56,8 +56,8 @@
 										</li>
 								 		<li class="scholarships-partnerships__item">
 											<div class="scholarships-partnerships__contentWrapper">
-												<h2 class="scholarships-partnerships__heading">Alabama Transfer</h2>
-												<span class="scholarships-partnerships__content">The <span class="bold">Alabama Transfer Scholarship </span>allows students who transfer an associate degree from any partnered community college to earn a scholarship for up to $1,500 at UWA. It will be distributed to your online bachelor’s degree program at $50 per credit hour for the first 30 consecutive credits.</span>
+												<h2 class="scholarships-partnerships__heading">Community College Transfer</h2>
+												<span class="scholarships-partnerships__content">The <span class="bold">Community College Transfer Scholarship </span>allows students who transfer an associate degree from any partnered community college to earn a scholarship for up to $1,500 at UWA. It will be distributed to your online bachelor’s degree program at $50 per credit hour for the first 30 consecutive credits.</span>
 											</div>
 											<a target="_blank" href="/my/transfer/" class="scholarships-partnerships__btn btn">Learn More</a>
 										</li>
