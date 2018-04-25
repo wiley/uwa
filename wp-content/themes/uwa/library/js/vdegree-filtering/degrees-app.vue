@@ -72,6 +72,7 @@
 				:degree="degree"
 				:degreeClasses="getDegreeClasses(degree)"
 				:hasTeachingCertificate="checkForTeachingCertificate(degree)"
+				:nonCertifiedTeachingDegree="checkForNonCertifiedTeaching(degree)"
 				:key="degree.id">
 			</degree-item>
 	  </transition-group>
@@ -285,6 +286,25 @@ export default {
 			})
 
 			if (levels.length > 0) {
+				return true
+			} else {
+				return false
+			}
+		},
+
+		checkForNonCertifiedTeaching(degree) {
+			let degreeLevels = degree.degree_levels
+			let degreeTypes = degree.degree_types
+			// return degreeLevels.includes('')
+			let hasTeachingCertificate = degreeLevels.filter(level => {
+				return level.slug == "teaching-certificates"
+			})
+
+			let isTeachingDegree = degreeTypes.filter(type => {
+				return type.slug == "teaching"
+			})
+
+			if ( isTeachingDegree.length > 0 && hasTeachingCertificate.length === 0 ) {
 				return true
 			} else {
 				return false

@@ -5,7 +5,7 @@
       <small class="label undefined" v-else>No Program Type Set</small>
       <h3 class="degree__title" v-html="degree.title.rendered"></h3>
       <span v-if="checkForTeachingCertificate(degree)" class="includes-licensure">
-        <img class="state-icon" src="/wp-content/themes/uwa/library/images/filtering-module/icon-alabama.svg" alt="Alabama State Icon">
+        <!-- <img class="state-icon" src="/wp-content/themes/uwa/library/images/filtering-module/icon-alabama.svg" alt="Alabama State Icon"> -->
         Includes Licensure
       </span>
       <div class="degree__cta-button">More Info</div>

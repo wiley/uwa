@@ -3,29 +3,14 @@
 			<div class="content">
 
 				<!-- <div class="wrap cf"> -->
+
 <?php global $post; ?>
 <?php
-
-$terms = get_the_terms( $post->ID, 'degree_level');
-$termArray = $terms[0];
-// print_r($termArray);
-$ID = $termArray->term_id;
-
-$acfTerm = 'term_' . $ID;
-
-
-
-// $verticalInfoArray = get_the_terms( $post->ID, 'degree_vertical');
-// $verticalInfo = $verticalInfoArray[0];
-// $verticalName = $verticalInfo->name;
-//
-// print_r($verticalName);
-$ID = $termArray->term_id;
-// if (is_array($terms)):
-// 	foreach($terms as $term):
-// 		// print_r($term->slug);
-// 	endforeach;
-// endif;
+	$terms = get_the_terms( $post->ID, 'degree_level');
+	$termArray = $terms[0];
+	$ID = $termArray->term_id;
+	$acfTerm = 'term_' . $ID;
+	$post_id = $post->ID;
 ?>
 
 						<main class="main-content cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
@@ -45,7 +30,16 @@ $ID = $termArray->term_id;
 
 										<h1 class="program__title"><?php the_title(); ?></h1>
 										<p class="program__subtitle">
-											<?php if (get_field('program_subtitle')): ?>
+											<?php if ( get_field('show_alabama_certification_info') ): ?>
+												<?php $certification = get_field('alabama_teaching_certification'); ?>
+
+													<?php if ($certification === 'Yes'): ?>
+														<?php echo 'Certification'; ?>
+													<?php else: ?>
+														<?php echo 'Non-Certification'; ?>
+													<?php endif; ?>
+
+											<?php elseif ( get_field('program_subtitle') ): ?>
 												<?php the_field('program_subtitle'); ?>
 											<?php endif; ?>
 										</p>
