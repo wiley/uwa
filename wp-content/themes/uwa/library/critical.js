@@ -1,10 +1,8 @@
 var critical = require('critical');
 
 critical.generate({
-    // base: 'test/',
-    // css: ['/library/css/build/minified/style.css'],
     src: 'https://uwa-gulp.dev',
-    dest: 'critical/critical-home.css',
+    dest: 'css/build/minified/critical-home.css',
     minify: true,
     width: 1300,
     height: 900
@@ -12,15 +10,15 @@ critical.generate({
 
 critical.generate({
     src: 'https://uwa-gulp.dev/online-degrees',
-    dest: 'critical/critical-online-degrees.css',
+    dest: 'css/build/minified/critical-online-degrees.css',
     minify: true,
-    width: 1300,
-    height: 900
+    width: 1600,
+    height: 1200
 });
 
 critical.generate({
     src: 'https://uwa-gulp.dev/online-degrees/degree-levels/masters',
-    dest: 'critical/critical-degree-levels.css',
+    dest: 'css/build/minified/critical-degree-levels.css',
     minify: true,
     width: 1300,
     height: 900
@@ -28,7 +26,7 @@ critical.generate({
 
 critical.generate({
     src: 'https://uwa-gulp.dev/online-degrees/areas-of-study/business',
-    dest: 'critical/critical-areas-study.css',
+    dest: 'css/build/minified/critical-areas-study.css',
     minify: true,
     width: 1300,
     height: 900
@@ -36,7 +34,7 @@ critical.generate({
 
 critical.generate({
     src: 'https://uwa-gulp.dev/online-degrees/m-s-guidance-counseling',
-    dest: 'critical/critical-program-page.css',
+    dest: 'css/build/minified/critical-program-page.css',
     minify: true,
     width: 1300,
     height: 900
@@ -45,7 +43,7 @@ critical.generate({
 
 critical.generate({
     src: 'https://uwa-gulp.dev/tuition/tuition-information',
-    dest: 'critical/critical-interior.css',
+    dest: 'css/build/minified/critical-interior.css',
     minify: true,
     width: 1300,
     height: 900
