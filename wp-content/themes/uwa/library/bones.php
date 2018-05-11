@@ -12,6 +12,31 @@ function setFilterOrder($term1, $term2) {
     }
 }
 
+function buildDegreeAreas($filterArray) {
+  $degreeFilterArray = array();
+
+  foreach ($filterArray as $filter) {
+    if(!$filter->parent) {
+      $degreeFilterArray[] = $filter;
+    }
+  }
+
+  foreach ( $degreeFilterArray as $term ) {
+    $term_id = $term->term_id;
+    $taxonomy_name = $term->taxonomy;
+    $term_children = get_terms( $term_id, $taxonomy_name );
+    $term_children = get_terms([
+        'parent' => $term_id,
+        'taxonomy' => $taxonomy_name,
+        'hide_empty' => false,
+    ]);
+    $sub_areas = $term_children ? $term_children : array();
+    $term->sub_areas = $sub_areas;
+  }
+  return $degreeFilterArray;
+}
+
+// get all direct decendants of the $parent
 function buildDegressArray($degrees) {
   foreach ( $degrees as $post ) {
     $array = array();
@@ -179,12 +204,12 @@ function bones_scripts_and_styles() {
 		  $degree_areas = get_field('degree_area_filters', 'option') ? get_field('degree_area_filters', 'option') : array();
 		  $degree_levels = get_field('degree_level_filters', 'option') ? get_field('degree_level_filters', 'option') : array();
 		// print($degree_levels);
-		  $data = array(
-		    'degrees' => buildDegressArray($allDegrees),
-		    'degreeAreas' => $degree_areas,
-		    // 'degreeLevels' => array()
-		    'degreeLevels' => buildDegreeLevels($degree_levels)
-		    );
+
+    $data = array(
+      'degrees' => buildDegressArray($allDegrees),
+      'degreeAreas' => buildDegreeAreas($degree_areas),
+      'degreeLevels' => buildDegreeLevels($degree_levels)
+      );
 
 		  wp_localize_script( 'bones-js', 'wpData', $data );
 

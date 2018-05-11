@@ -61,8 +61,8 @@
             @mouseout="removeHoverStyles = false"
             tabindex="0"
             @click.stop="showSubFilters = !showSubFilters">
-            <img class="subfilter-toggle-icon" key="hide" v-if="showSubFilters" src="/wp-content/themes/uwa/library/images/filtering-module/hide-sub-filters.svg" alt="">
-            <img class="subfilter-toggle-icon "key="show" v-else src="/wp-content/themes/uwa/library/images/filtering-module/show-sub-filters.svg" alt="">
+            <img role="presentation" class="subfilter-toggle-icon" key="hide" v-if="showSubFilters" src="/wp-content/themes/uwa/library/images/filtering-module/hide-sub-filters.svg" alt="Toggle Sub-Filter">
+            <img role="presentation" class="subfilter-toggle-icon "key="show" v-else src="/wp-content/themes/uwa/library/images/filtering-module/show-sub-filters.svg" alt="Toggle Sub-Filter">
 
           </div>
         </button>

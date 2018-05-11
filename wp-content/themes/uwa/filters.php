@@ -1,5 +1,38 @@
 <?php
 
+function get_taxonomy_hierarchy( $taxonomy, $parent = 0 ) {
+	// only 1 taxonomy
+	$taxonomy = is_array( $taxonomy ) ? array_shift( $taxonomy ) : $taxonomy;
+	// get all direct decendants of the $parent
+	$terms = get_terms( $taxonomy, array( 'parent' => $parent ) );
+	// prepare a new array.  these are the children of $parent
+	// we'll ultimately copy all the $terms into this new array, but only after they
+	// find their own children
+	$children = array();
+	// go through all the direct decendants of $parent, and gather their children
+	foreach ( $terms as $term ){
+		// recurse to get the direct decendants of "this" term
+		$term->children = get_taxonomy_hierarchy( $taxonomy, $term->term_id );
+		// add the term to our new array
+		$children[ $term->term_id ] = $term;
+	}
+	// send the results back to the caller
+	return $children;
+}
+
+function get_taxonomy_hierarchy_multiple( $taxonomies, $parent = 0 ) {
+	if ( ! is_array( $taxonomies )  ) {
+		$taxonomies = array( $taxonomies );
+	}
+	$results = array();
+	foreach( $taxonomies as $taxonomy ){
+		$terms = get_taxonomy_hierarchy( $taxonomy, $parent );
+		if ( $terms ) {
+			$results[ $taxonomy ] = $terms;
+		}
+	}
+	return $results;
+}
 
 function setFilterOrder($term1, $term2) {
     if ($term1->display_order == $term2->display_order) {
@@ -49,12 +82,13 @@ function add_localized_js_data() {
 
 	$allDegrees = get_posts( $allDegreesArgs );
   $degree_areas = get_field('degree_area_filters', 'option') ? get_field('degree_area_filters', 'option') : array();
+  // $degree_areas_new = get_field('degree_area_filters', 'option') ? get_field('degree_area_filters', 'option') : array();
   $degree_levels = get_field('degree_level_filters', 'option') ? get_field('degree_level_filters', 'option') : array();
 // print($degree_levels);
   $data = array(
     'degrees' => buildDegressArray($allDegrees),
     'degreeAreas' => $degree_areas,
-    // 'degreeLevels' => array()
+    'degreeAreasNew' => get_taxonomy_hierarchy($degree_areas),
     'degreeLevels' => buildDegreeLevels($degree_levels)
     );
 

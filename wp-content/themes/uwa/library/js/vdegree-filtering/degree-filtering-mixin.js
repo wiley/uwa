@@ -12,6 +12,7 @@ export const DegreeFilteringMixin = {
     	degrees: [],
     	areasOfStudy: [],
     	areasOfStudyTest: [],
+			degreeAreas: [],
     	degreeTypes: [],
     	activeFilter: null,
 		}

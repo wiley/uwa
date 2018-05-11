@@ -291,6 +291,11 @@ input.toolbar-filter__search {
 	height: 45px;
 	width: 100%;
 	font-style: italic;
+
+	&:focus {
+    outline: -webkit-focus-ring-color auto 5px !important;
+		border: none;		
+	}
 }
 
 .search-enter-active,

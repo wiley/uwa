@@ -14,6 +14,7 @@ const StoreObject = {
 	degreeTypesFilterIsActive: false,
 	degreeAreasFilterIsActive: false,
 	degrees: wpData.degrees,
+	wpData: wpData,
 	areasOfStudy: [],
 	areasOfStudyTest: [],
 	degreeTypes: [],

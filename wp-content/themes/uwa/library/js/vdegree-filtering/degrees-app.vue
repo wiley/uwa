@@ -56,7 +56,7 @@
 				<areas-filter-options-list
 					v-if="showDegreeAreasToolbar"
 					@filterSelected="closeMenuOnMobile"
-					:options="areasOfStudyTest"
+					:options="degreeAreas"
 					:selectedFilter.sync="$store.activeDegreeArea">
 				</areas-filter-options-list>
 			</transition>
@@ -143,32 +143,6 @@ export default {
 				this.filterDegreesByType(activeDegreeType) :
 				this.degrees;
 		},
-		areasOfStudyFilters() {
-			function returnTeachingFilterIndex(area) {
-				return area.term_id === 7
-			}
-			let teachingSubAreas = []
-			let areasFiltersArray = this.areasOfStudy
-			let topLevelFilters = areasFiltersArray.filter(area => {
-				return area.parent === 0
-			});
-			let teachingFilterIndex = topLevelFilters.findIndex(returnTeachingFilterIndex)
-
-			topLevelFilters.forEach((area, index) => {
-				area['sub_areas'] = []
-			});
-
-			areasFiltersArray.forEach((area, index) => {
-				// area[index]['sub_areas'] = []
-				if (area.parent === 7) {
-					teachingSubAreas.push(area)
-				}
-			});
-
-			topLevelFilters[teachingFilterIndex]['sub_areas'] = teachingSubAreas
-			return topLevelFilters
-			// return []
-		},
 
 		listForFilteredDegreesAreaAndLevel() {
 			if ( !this.degrees ) return []
@@ -190,7 +164,7 @@ export default {
 
 	mounted() {
 		this.degreeTypes = this.orderByDisplayOrder(wpData.degreeLevels);
-		this.createAreasOfStudyFilters()
+		this.degreeAreas = wpData.degreeAreas;
 	},
 
 	methods: {
@@ -200,33 +174,6 @@ export default {
 				this.showDegreeAreasToolbar = false
 			}
 		},
-
-		createAreasOfStudyFilters(arrayOfFilters) {
-			function returnTeachingFilterIndex(area) {
-				return area.term_id === 7
-			}
-			let teachingSubAreas = []
-			let areasFiltersArray = wpData.degreeAreas
-			let topLevelFilters = areasFiltersArray.filter(area => {
-				return area.parent === 0
-			});
-			let teachingFilterIndex = topLevelFilters.findIndex(returnTeachingFilterIndex)
-
-			topLevelFilters.forEach((area, index) => {
-				area['sub_areas'] = []
-			});
-
-			areasFiltersArray.forEach((area, index) => {
-				// area[index]['sub_areas'] = []
-				if (area.parent === 7) {
-					teachingSubAreas.push(area)
-				}
-			});
-			topLevelFilters[teachingFilterIndex]['sub_areas'] = teachingSubAreas
-
-			this.areasOfStudyTest = topLevelFilters
-		},
-
 
 		setupFiltersModeOnLoad() {
 			if (this.mobileMode === false) {
