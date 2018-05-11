@@ -28,7 +28,6 @@ mix
 	.copy("node_modules/fontfaceobserver/fontfaceobserver.js", "js/build/fontfaceobserver.js")
 	.copy("node_modules/owl.carousel/dist/assets/owl.carousel.min.css", "css/build/minified/owl.carousel.min.css")
 	.copy([
-		"node_modules/mixitup/dist/mixitup.min.js",
 		"node_modules/priority-nav/dist/priority-nav.min.js",
 		"node_modules/owl.carousel/dist/owl.carousel.min.js"
 	], "js/libs");

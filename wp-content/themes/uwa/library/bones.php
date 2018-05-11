@@ -190,7 +190,7 @@ function bones_scripts_and_styles() {
 		//
 
 		function handle_adding_main_js() {
-			wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/build/production.min.js', array( 'jquery' ), microtime(), true );
+			wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/build/production.min.js', array( 'jquery' ), '', true );
 
 			$allDegreesArgs = array(
 				 'posts_per_page' => -1,

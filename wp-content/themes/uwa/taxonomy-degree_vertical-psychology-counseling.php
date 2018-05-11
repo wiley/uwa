@@ -29,8 +29,6 @@ $degreeTypes = get_terms([
         <div class="intro__link"></div>
       </div>
 
-
-
         <div class="mainDegrees degreeType">
           <div class="wrap">
             <h2 id="mainDegreesHeadline" class="mainDegrees__headline">Bachelor of Arts/Science</h2>

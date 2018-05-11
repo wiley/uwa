@@ -63,8 +63,9 @@
 
 		<?php // end of wordpress head ?>
 
-    <?php /* Critical CSS ?> */ ?>
+    <!--  Critical CSS -->
 		<?php require_once( 'critical-css-injection.php' ); ?>
+
 		<style media="screen">
 			.priority-nav {
 				max-height: 98px;

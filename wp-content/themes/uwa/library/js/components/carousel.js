@@ -1,5 +1,5 @@
-import $ from 'jquery';
-window.$ = window.jQuery = $;
+// import $ from 'jquery';
+// window.$ = window.jQuery = $;
 import 'owl.carousel'
 // const Keys = {
 // 	'TAB': 9,

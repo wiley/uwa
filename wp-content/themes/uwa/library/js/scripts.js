@@ -3,8 +3,8 @@
 */
 
 
-import $ from "jquery";
-window.$ = window.jQuery = $;
+// import $ from "jquery";
+// window.$ = window.jQuery = $;
 
 import './components/submenus';
 import './components/carousel';
