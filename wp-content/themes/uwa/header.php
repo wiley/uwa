@@ -32,7 +32,7 @@
       }
       setTimeout(optimizelyTimeout, 1000);
   </script>
-	
+
 		<?php // force Internet Explorer to use the latest rendering engine available ?>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -65,7 +65,14 @@
 
     <?php /* Critical CSS ?> */ ?>
 		<?php require_once( 'critical-css-injection.php' ); ?>
-
+		<style media="screen">
+			.priority-nav {
+				max-height: 98px;
+			}
+			.subpagesNav.hasSiblingPages > li {
+				display: inline-block;
+			}
+	</style>
 		<style media="screen">
 		.searchbox__wrapper {
 		  position: fixed;

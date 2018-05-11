@@ -3,9 +3,9 @@
 ## Basic Usage
 
 * *Theme Name:* uwa
-* *Local Site URL:* 
+* *Local Site URL:*
 * *Landing Pages:* Custom Post Type
-* *Start Date Location:* 
+* *Start Date Location:*
 
 ## Getting Set Up Locally
 
