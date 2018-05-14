@@ -94,7 +94,7 @@ import SearchFilter from './components/SearchFilter'
 import NoResults from './components/NoResults'
 import LoadingSpinner from './components/LoadingSpinner'
 const devUrl = 'https://uwa-gulp.dev'
-const liveUrl = 'https://onlineuwa.staging.wpengine.com'
+const liveUrl = 'https://online.uwa.edu'
 const apiPromise = WPAPI.discover(liveUrl);
 
 export default {
