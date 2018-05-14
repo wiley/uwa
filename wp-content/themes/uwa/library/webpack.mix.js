@@ -1,4 +1,10 @@
 let mix = require("laravel-mix");
+const glob = require('glob-all');
+
+const ThemePathsArray = [
+	path.join(__dirname, '../**/*.php'),
+	path.join(__dirname, 'js/**/*.js')
+];
 
 mix
 	.js("js/scripts.js", "js/build/production.min.js")
@@ -19,6 +25,17 @@ mix.autoload({
 });
 
 mix.options({
+	// purifyCss: {
+	// 	paths: glob.sync([
+	// 			path.join(__dirname, '../**/**/*.php'),
+	// 			path.join(__dirname, 'js/**/*.js')
+	// 	]),
+	// 	purifyOptions: {
+	// 		minify: true,
+	// 		info: true,
+	// 		whitelist: []
+	// 	}
+	// },
 	processCssUrls: false
 });
 

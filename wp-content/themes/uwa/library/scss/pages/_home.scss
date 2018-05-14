@@ -117,7 +117,7 @@ HOMEPAGE SPECIFIC STYLES
 			text-shadow: 0 2px 14px #000000;
 			color: white;
 			margin-bottom: 0.25em;
-			margin-top: 0;
+    	margin-top: 2.25em;
 			padding: 0;
 			@include susy-breakpoint($bp-med) {
 				font-size: 3.25em;
