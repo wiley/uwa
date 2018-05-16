@@ -1,0 +1,36 @@
+.cta-blog {
+	position: relative;
+	overflow: hidden;
+	background: $tan_dark;
+	padding: 2em;
+	text-align: center;
+
+	&:after {
+		content: '';
+		background-image: url("#{$images}/triangles.svg");
+		background-repeat: no-repeat;
+		background-position: top center;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-size: 300px;
+		transform: rotate(180deg);
+		z-index: 9;
+		@include susy-breakpoint($bp-med) {
+			background-size: 400px;
+		}
+	}
+
+	&__title,
+	&__message,
+	&__button {
+		position: relative;
+		z-index: 10;
+	}
+
+	&__title {
+		margin-top: 0;
+	}
+}
