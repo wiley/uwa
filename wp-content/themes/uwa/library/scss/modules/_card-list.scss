@@ -1,0 +1,172 @@
+.tile-list {
+	margin: 0.5rem -1rem;
+	padding: 0.5rem;
+	list-style: none;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: stretch;
+	@include mobilefirst($bp-xl) {
+		margin: -0.5rem -1rem;
+		padding: 0.5rem;
+	}
+
+	> li {
+		display: flex;
+		align-items: stretch;
+		width: 100%;
+		padding: 0.5rem;
+		margin: 0 !important;
+
+		@include mobilefirst($bp-sm) {
+			width: 50%;
+		}
+
+		@include mobilefirst($bp-med) {
+			width: 33.3%;
+		}
+
+		@include mobilefirst($bp-lg) {
+			width: 25%;
+		}
+
+		@include mobilefirst($bp-xl) {
+			padding: 1rem;
+		}
+	}
+}
+
+.tile-list--medium > li {
+	@include mobilefirst($bp-sm) {
+		width: 100%;
+	}
+
+	@include mobilefirst($bp-med) {
+		width: 50%;
+	}
+
+	@include mobilefirst($bp-lg) {
+		width: 33.3%;
+	}
+
+	@include mobilefirst($bp-xl) {
+		padding: 1rem;
+	}
+}
+
+.tile-list--large > li {
+	@include mobilefirst($bp-sm) {
+		width: 100%;
+	}
+
+	@include mobilefirst($bp-med) {
+		width: 50%;
+	}
+
+	@include mobilefirst($bp-lg) {
+		width: 50%;
+	}
+
+	@include mobilefirst($bp-xl) {
+		padding: 1rem;
+	}
+}
+
+.card {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	background-color: $red;
+	color: white;
+	text-align: center;
+	overflow: hidden;
+	width: 100%;
+
+	> * {
+		max-width: 100%;
+	}
+
+	&__image {
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	&__copy {
+		padding: 1.5rem;
+
+		p {
+			margin-bottom: 0;
+			margin-top: 1.5rem;
+		}
+	}
+
+	&__title {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		font-weight: 400;
+		margin-top: 0;
+		margin-bottom: 0;
+
+		&::after {
+			content: "";
+			display: block;
+			background: $gold;
+			width: 3em;
+			height: 5px;
+			margin-top: 1.5rem;
+		}
+	}
+
+	&__action.btn {
+		display: inline-block;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 0.25em 1em;
+		font-size: 0.8em;
+		font-weight: 600;
+		width: auto;
+		color: #4a4a4a !important;
+		margin-bottom: 2em;
+	}
+}
+
+a.card,
+a.card:hover,
+a.card:active,
+a.card:focus {
+	text-decoration: none;
+	color: inherit;
+}
+
+a.card:hover,
+a.card:focus {
+	box-shadow: 0 23px 65px -25px rgba(51, 51, 51, 0.7);
+
+	.card__title {
+		text-decoration: underline;
+	}
+}
+
+.guide-list,
+.infographic-list {
+	margin-bottom: 1.5rem;
+}
+
+// remove guide covers on mobile
+.guide-list .card__image {
+	display: none;
+
+	@include mobilefirst($bp-med) {
+		display: block;
+	}
+}
+
+.card--vertical-mobile {
+	@include mobilefirst($bp-med) {
+		flex-flow: row nowrap;
+	}
+}
