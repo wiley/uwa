@@ -230,25 +230,40 @@ $primaryNav = wp_get_nav_menu_items($menuID);
 					</div>
 				</div>
 
-				<?php if ( is_single() && is_singular('post')): ?>
+				<?php if ( is_single() && is_singular( array('post', 'career-outcome', 'program-resource', 'infographic' ) ) ): ?>
 					<?php $featuredImage = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
-					<div class="banner banner--blogPost" style="background-image: url(<?php echo $featuredImage; ?>)">
+					<div class="banner banner--blogPost"<?php echo $featuredImage ? 'style="background-image: url(' . $featuredImage . ')">' : ''; ?>>
 						<div class="wrap">
 							<div class="banner__text">
 								<h1 class="banner__heading"><?php the_title(); ?></h1>
 								<p class="byline entry-meta vcard">
 
-									<span class="entry-date">Posted <?php echo get_the_date(); ?> by <?php the_author_meta( 'display_name', $author_id ); ?> | </span class="entry-categories">
-										<?php
-												$categories = get_the_category();
-												$separator = ', ';
-												$output = '';
-												if ( ! empty( $categories ) ) {
-														foreach( $categories as $category ) {
-																$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
-														}
-														echo trim( $output, $separator );
-												} ?>
+									<span class="entry-date">Posted <?php echo get_the_date(); ?> by <?php the_author_meta( 'display_name', $author_id ); ?></span>
+									<?php if ( is_singular( 'post' ) ) {
+										$categories = get_the_category();
+										$separator = ', ';
+										$output = '';
+										if ( ! empty( $categories ) ) {
+											echo ' | <span class="entry-categories">';
+											foreach( $categories as $category ) {
+													$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+											}
+											echo trim( $output, $separator );
+											echo '</span>';
+										} ?>
+									<?php } else if ( is_singular( array( 'career-outcome', 'program-resource', 'infographic' ) ) ) {
+											$verticals = get_the_terms( $post->ID, 'degree_vertical' );
+											$separator = ', ';
+											$output = '';
+											if ( ! empty( $verticals ) ) {
+												echo ' | <span class="entry-categories">';
+												foreach( $verticals as $category ) {
+														$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+												}
+												echo trim( $output, $separator );
+												echo '</span>';
+											}
+									} ?>
 								</p>
 							</div>
 						</div>

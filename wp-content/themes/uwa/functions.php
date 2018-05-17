@@ -286,6 +286,6 @@ function custom_taxonomies_terms_slugs(){
 // }
 // add_shortcode('attr', 'attributes_shortcode');
 
-
+require_once( 'library/resources_admin_page.php' );
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

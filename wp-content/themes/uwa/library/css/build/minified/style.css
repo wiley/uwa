@@ -3508,15 +3508,12 @@ LAYOUT & GRID STYLES
 }
 
 .banner {
+  background-image: url("/wp-content/themes/uwa/library/images/banner.jpg");
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center;
   background-position: top;
   background-size: cover;
-}
-
-.banner:not(.banner--blogPost) {
-  background-image: url("/wp-content/themes/uwa/library/images/banner.jpg");
 }
 
 @media (min-width: 768px) {
@@ -3536,7 +3533,7 @@ LAYOUT & GRID STYLES
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.78)), color-stop(27.27%, rgba(0, 0, 0, 0.29)), to(rgba(0, 0, 0, 0.52)));
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.29) 27.27%, rgba(0, 0, 0, 0.52) 100%);
   position: absolute;
-  content: '';
+  content: "";
   top: 0;
   height: 100%;
   width: 100%;
@@ -5803,7 +5800,8 @@ body.activeModal .waiting {
 /*********************
 POST STYLES
 *********************/
-.single-post .banner__heading {
+.single-post .banner__heading,
+.single-career-outcome .banner__heading {
   max-width: 1250px;
   margin-right: auto;
   margin-left: auto;
@@ -5815,7 +5813,7 @@ POST STYLES
 
 @media (min-width: 900px) {
   .banner__heading {
-    font-size: 3.0em;
+    font-size: 3em;
   }
 }
 
@@ -5825,40 +5823,46 @@ POST STYLES
   }
 }
 
-.single-post .banner {
+.single-post .banner,
+.single-career-outcome .banner {
   min-height: 375px;
 }
 
 @media (min-width: 650px) {
-  .single-post .banner {
+  .single-post .banner,
+  .single-career-outcome .banner {
     min-height: 425px;
   }
 }
 
 @media (min-width: 900px) {
-  .single-post .banner {
+  .single-post .banner,
+  .single-career-outcome .banner {
     min-height: 500px;
   }
 }
 
 @media (min-width: 1200px) {
-  .single-post .banner {
+  .single-post .banner,
+  .single-career-outcome .banner {
     min-height: 550px;
   }
 }
 
-.single-post .banner:after {
+.single-post .banner:after,
+.single-career-outcome .banner:after {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.45)), color-stop(50%, rgba(0, 0, 0, 0.76)), to(rgba(0, 0, 0, 0.45)));
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.76) 50%, rgba(0, 0, 0, 0.45) 100%);
   position: absolute;
-  content: '';
+  content: "";
   top: 0;
   height: 100%;
   width: 100%;
   left: 0;
 }
 
-.single-post .banner__text {
+.single-post .banner__text,
+.single-career-outcome .banner__text {
   top: 60%;
   position: absolute;
   -webkit-transform: translateY(-50%);
@@ -5872,17 +5876,20 @@ POST STYLES
   z-index: 9;
 }
 
-.single-post .banner__text .entry-meta a {
+.single-post .banner__text .entry-meta a,
+.single-career-outcome .banner__text .entry-meta a {
   color: white !important;
   font-style: italic;
 }
 
-.single-post .banner__heading {
+.single-post .banner__heading,
+.single-career-outcome .banner__heading {
   padding: 0;
-  padding-bottom: .2em;
+  padding-bottom: 0.2em;
 }
 
-.single-post .content__innerWrapper {
+.single-post .content__innerWrapper,
+.single-career-outcome .content__innerWrapper {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
@@ -5893,7 +5900,8 @@ POST STYLES
   padding: 1.5em 0;
 }
 
-.single-post .content__innerWrapper aside .widget_categories {
+.single-post .content__innerWrapper aside .widget_categories,
+.single-career-outcome .content__innerWrapper aside .widget_categories {
   background: #f5f1e5;
   position: relative;
   padding: 1em 1.5em 3em;
@@ -5901,24 +5909,28 @@ POST STYLES
   margin: 2em auto;
 }
 
-.single-post .content__innerWrapper aside .widget_categories ul {
+.single-post .content__innerWrapper aside .widget_categories ul,
+.single-career-outcome .content__innerWrapper aside .widget_categories ul {
   list-style-type: none;
   padding-left: 20px;
 }
 
-.single-post .content__innerWrapper aside .widget_categories ul a {
+.single-post .content__innerWrapper aside .widget_categories ul a,
+.single-career-outcome .content__innerWrapper aside .widget_categories ul a {
   text-decoration: none;
   font-weight: 600;
-  color: #A81D32;
+  color: #a81d32;
 }
 
-.single-post .content__innerWrapper aside .widgettitle {
+.single-post .content__innerWrapper aside .widgettitle,
+.single-career-outcome .content__innerWrapper aside .widgettitle {
   margin: 1em auto;
   font-size: 1.75em;
 }
 
 @media (min-width: 900px) {
-  .single-post .content__innerWrapper {
+  .single-post .content__innerWrapper,
+  .single-career-outcome .content__innerWrapper {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -5928,13 +5940,15 @@ POST STYLES
             flex: 1;
     min-width: 375px;
   }
-  .single-post .content__innerWrapper main {
+  .single-post .content__innerWrapper main,
+  .single-career-outcome .content__innerWrapper main {
     -webkit-box-flex: 2;
         -ms-flex: 2;
             flex: 2;
     margin-right: 2.5em;
   }
-  .single-post .content__innerWrapper aside {
+  .single-post .content__innerWrapper aside,
+  .single-career-outcome .content__innerWrapper aside {
     margin-left: 2.5em;
     -webkit-box-flex: 1;
         -ms-flex: 1;
@@ -5942,13 +5956,15 @@ POST STYLES
   }
 }
 
-.single-post .content__innerWrapper .formWrapper {
+.single-post .content__innerWrapper .formWrapper,
+.single-career-outcome .content__innerWrapper .formWrapper {
   max-width: 550px;
   margin: 0 auto;
   padding: 1em;
 }
 
-.single-post .content__innerWrapper .formWrapper__heading {
+.single-post .content__innerWrapper .formWrapper__heading,
+.single-career-outcome .content__innerWrapper .formWrapper__heading {
   padding: 0 0.35em;
   color: white;
   text-shadow: 0 2px 7px rgba(0, 0, 0, 0.25);
@@ -5956,15 +5972,18 @@ POST STYLES
   text-align: center;
 }
 
-.single-post .content__innerWrapper .formWrapper .halfField li {
+.single-post .content__innerWrapper .formWrapper .halfField li,
+.single-career-outcome .content__innerWrapper .formWrapper .halfField li {
   width: 48%;
 }
 
-.single-post .content__innerWrapper .formWrapper .halfField:last-child li {
+.single-post .content__innerWrapper .formWrapper .halfField:last-child li,
+.single-career-outcome .content__innerWrapper .formWrapper .halfField:last-child li {
   width: 34%;
 }
 
-.single-post .content__innerWrapper .formWrapper .halfField:last-child li:first-child {
+.single-post .content__innerWrapper .formWrapper .halfField:last-child li:first-child,
+.single-career-outcome .content__innerWrapper .formWrapper .halfField:last-child li:first-child {
   width: 62%;
 }
 
@@ -7679,6 +7698,14 @@ button[aria-expanded="true"] > .iconsWrapper .minus {
   text-align: left;
   z-index: 9999;
   padding: 2rem 2rem 5rem;
+}
+
+.resource-archive-list {
+  background: white;
+  max-width: 60em;
+  margin: -5.5em auto 0;
+  z-index: 9999;
+  padding: 2rem;
 }
 
 .error404 .content {
