@@ -85,8 +85,8 @@ body {
 		display: inline-block;
 		vertical-align: top;
 		margin: 1%;
-		padding-left: .75em;
-		padding-top: .75em;
+		padding-left: 0.75em;
+		padding-top: 0.75em;
 		.label {
 			padding-top: 1em;
 		}
@@ -160,18 +160,31 @@ body {
 				padding: 0;
 
 				> li {
+					position: relative;
 					text-align: center;
 					padding: 0;
 					margin: 0;
-					padding-right: 1em;
+					// padding-right: 1em;
+					flex-basis: calc((100% - 130px) / 6);
+					display: flex;
+					justify-content: center;
+					align-items: center;
 					> a {
 						display: flex;
 						height: 64px;
 						align-items: center;
 					}
 
-					&.logoHolder a {}
+					&:not(.logoHolder) {
+						height: 64px;
+					}
+
+					&.logoHolder a {
+					}
 					.sub-menu {
+						position: absolute;
+						top: 100%;
+						left: 0;
 						padding: 0 0.5em 0 0.25em;
 						li {
 							padding: 0;
@@ -190,24 +203,31 @@ body {
 				}
 
 				.sub-menu__toggle {
-					top: 32px;
+					// top: 32px;
+					position: relative;
+					right: initial !important;
+					top: initial;
+					transform: initial;
+					// margin-left: 0.5rem;
 				}
 			}
 
 			.logoHolder {
-				margin: 0 1em !important;
+				margin: 0 !important;
 				display: block;
 				width: 90px;
 				height: 90px;
+				flex-basis: 90px !important;
 				align-self: center;
 				@media (min-width: 1024px) {
 					width: 100px !important;
 					height: 100px !important;
-
+					flex-basis: 100px !important;
 				}
 				@media (min-width: 1260px) {
 					width: 130px !important;
 					height: 130px !important;
+					flex-basis: 130px !important;
 				}
 
 				a {
@@ -224,8 +244,9 @@ body {
 					left: 50%;
 					color: #a81d32;
 					z-index: 999999;
-    			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    			top: initial;
+					box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+						0 6px 6px rgba(0, 0, 0, 0.23);
+					top: initial;
 				}
 			}
 		}
@@ -325,7 +346,6 @@ ul.nav__dropdown.priority-nav__dropdown.show {
 	top: 79%;
 }
 
-
 nav.mobileNav__nav.secondary-nav__wrapper {
 	font-size: 0.9em;
 	padding-bottom: 5em;
@@ -357,5 +377,5 @@ body.mobileNav--active {
 }
 
 select::-ms-expand {
-    display: none;
+	display: none;
 }
