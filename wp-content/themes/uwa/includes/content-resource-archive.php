@@ -1,6 +1,11 @@
 <?php if (have_posts()) { ?>
 
-	<?php $verticals = get_terms('degree_vertical');
+	<?php
+	$vertical_args = array(
+		'taxonomy' => 'degree_vertical',
+		'parent' => 0
+	);
+	$verticals = get_terms($vertical_args);
 
 	foreach($verticals as $vertical) {
 

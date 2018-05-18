@@ -20,7 +20,7 @@
 											<img src="<?php echo get_template_directory_uri(); ?>/library/images/infographic-placeholder.png" width="2000" height="2000" alt="" aria-hidden="true">
 										<?php } ?>
 										</div>
-										<div class="share"><?php the_content(); ?></div>
+										<div class="infographic-share"><?php tlh_social_sharing_buttons(); ?></div>
 										<?php $infographic_transcript = get_field( 'infographic_transcript' );
 										if ( $infographic_transcript ) { ?>
 											<div class="infographic-transcript">
