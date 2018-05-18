@@ -5,7 +5,7 @@
 			<?php if (have_posts()) {
 
 								$args = array(
-									'post_type' => 'infographic',
+									'post_type' => 'guide',
 									'posts_per_page' => -1,
 									'orderby' => 'date',
 									'order'   => 'DESC',
@@ -14,28 +14,28 @@
 								$guides = new WP_Query($args);
 
 								if ( $guides->have_posts() ) { ?>
-									<ul class="infographic-list tile-list tile-list">
+									<ul class="guide-list tile-list tile-list">
 										<?php while($guides->have_posts()) : $guides->the_post(); ?>
 											<li>
-												<a class="card" href="<?php the_permalink(); ?>" title="View infographic: <?php the_title(); ?>, including a transcript.">
+												<a class="card" href="<?php the_permalink(); ?>">
 													<div>
 														<div class="card__image">
-															<?php $guide_cover_image = get_field( 'infographic_cover_image' );
+															<?php $guide_cover_image = get_field( 'guide_cover_image' );
 															if ( $guide_cover_image ) {
 																echo wp_get_attachment_image( $guide_cover_image, 'large' );
 															} else { ?>
-																<img src="<?php echo get_template_directory_uri(); ?>/library/images/infographic-placeholder.svg" width="300" height="157">
+																<img src="<?php echo get_template_directory_uri(); ?>/library/images/guide-placeholder.svg" width="300" height="157">
 															<?php } ?>
 														</div>
 														<div class="card__copy">
 															<h2 class="h4 card__title"><?php the_title(); ?></h2>
-															<?php $infographic_summary = get_field( 'infographic_summary' );
+															<?php $infographic_summary = get_field( 'guide_summary' );
 															if ( $infographic_summary ) { ?>
-																<p><?php the_field( 'infographic_summary' ); ?></p>
+																<p><?php the_field( 'guide_summary' ); ?></p>
 															<?php } ?>
 														</div>
 													</div>
-													<span class="card__action">View Infographic →</span>
+													<span class="card__action">Find Out More →</span>
 												</a>
 											</li>
 										<?php endwhile; ?>

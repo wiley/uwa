@@ -1168,6 +1168,10 @@ Button Styles
   margin-top: 1.5rem;
 }
 
+.card__copy p .excerpt-read-more {
+  display: none;
+}
+
 .card__title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1205,6 +1209,20 @@ Button Styles
   margin-bottom: 2em;
 }
 
+a.card {
+  background-color: white;
+  border: 4px solid #e9e9ea;
+}
+
+a.card .card__copy p {
+  color: #4a4a4a;
+}
+
+a.card .card__action {
+  padding: 1rem;
+  color: #A81D32;
+}
+
 a.card,
 a.card:hover,
 a.card:active,
@@ -1215,13 +1233,17 @@ a.card:focus {
 
 a.card:hover,
 a.card:focus {
-  -webkit-box-shadow: 0 23px 65px -25px rgba(51, 51, 51, 0.7);
-          box-shadow: 0 23px 65px -25px rgba(51, 51, 51, 0.7);
+  border-color: #A81D32;
 }
 
 a.card:hover .card__title,
 a.card:focus .card__title {
   text-decoration: underline;
+}
+
+a.card:hover .card__action,
+a.card:focus .card__action {
+  background-color: #f5f1e5;
 }
 
 .guide-list,
@@ -5801,7 +5823,9 @@ body.activeModal .waiting {
 POST STYLES
 *********************/
 .single-post .banner__heading,
-.single-career-outcome .banner__heading {
+.single-career-outcome .banner__heading,
+.single-infographic .banner__heading,
+.single-guide .banner__heading {
   max-width: 1250px;
   margin-right: auto;
   margin-left: auto;
@@ -5824,33 +5848,43 @@ POST STYLES
 }
 
 .single-post .banner,
-.single-career-outcome .banner {
+.single-career-outcome .banner,
+.single-infographic .banner,
+.single-guide .banner {
   min-height: 375px;
 }
 
 @media (min-width: 650px) {
   .single-post .banner,
-  .single-career-outcome .banner {
+  .single-career-outcome .banner,
+  .single-infographic .banner,
+  .single-guide .banner {
     min-height: 425px;
   }
 }
 
 @media (min-width: 900px) {
   .single-post .banner,
-  .single-career-outcome .banner {
+  .single-career-outcome .banner,
+  .single-infographic .banner,
+  .single-guide .banner {
     min-height: 500px;
   }
 }
 
 @media (min-width: 1200px) {
   .single-post .banner,
-  .single-career-outcome .banner {
+  .single-career-outcome .banner,
+  .single-infographic .banner,
+  .single-guide .banner {
     min-height: 550px;
   }
 }
 
 .single-post .banner:after,
-.single-career-outcome .banner:after {
+.single-career-outcome .banner:after,
+.single-infographic .banner:after,
+.single-guide .banner:after {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.45)), color-stop(50%, rgba(0, 0, 0, 0.76)), to(rgba(0, 0, 0, 0.45)));
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.76) 50%, rgba(0, 0, 0, 0.45) 100%);
   position: absolute;
@@ -5862,7 +5896,9 @@ POST STYLES
 }
 
 .single-post .banner__text,
-.single-career-outcome .banner__text {
+.single-career-outcome .banner__text,
+.single-infographic .banner__text,
+.single-guide .banner__text {
   top: 60%;
   position: absolute;
   -webkit-transform: translateY(-50%);
@@ -5877,19 +5913,25 @@ POST STYLES
 }
 
 .single-post .banner__text .entry-meta a,
-.single-career-outcome .banner__text .entry-meta a {
+.single-career-outcome .banner__text .entry-meta a,
+.single-infographic .banner__text .entry-meta a,
+.single-guide .banner__text .entry-meta a {
   color: white !important;
   font-style: italic;
 }
 
 .single-post .banner__heading,
-.single-career-outcome .banner__heading {
+.single-career-outcome .banner__heading,
+.single-infographic .banner__heading,
+.single-guide .banner__heading {
   padding: 0;
   padding-bottom: 0.2em;
 }
 
 .single-post .content__innerWrapper,
-.single-career-outcome .content__innerWrapper {
+.single-career-outcome .content__innerWrapper,
+.single-infographic .content__innerWrapper,
+.single-guide .content__innerWrapper {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
@@ -5901,7 +5943,9 @@ POST STYLES
 }
 
 .single-post .content__innerWrapper aside .widget_categories,
-.single-career-outcome .content__innerWrapper aside .widget_categories {
+.single-career-outcome .content__innerWrapper aside .widget_categories,
+.single-infographic .content__innerWrapper aside .widget_categories,
+.single-guide .content__innerWrapper aside .widget_categories {
   background: #f5f1e5;
   position: relative;
   padding: 1em 1.5em 3em;
@@ -5910,27 +5954,35 @@ POST STYLES
 }
 
 .single-post .content__innerWrapper aside .widget_categories ul,
-.single-career-outcome .content__innerWrapper aside .widget_categories ul {
+.single-career-outcome .content__innerWrapper aside .widget_categories ul,
+.single-infographic .content__innerWrapper aside .widget_categories ul,
+.single-guide .content__innerWrapper aside .widget_categories ul {
   list-style-type: none;
   padding-left: 20px;
 }
 
 .single-post .content__innerWrapper aside .widget_categories ul a,
-.single-career-outcome .content__innerWrapper aside .widget_categories ul a {
+.single-career-outcome .content__innerWrapper aside .widget_categories ul a,
+.single-infographic .content__innerWrapper aside .widget_categories ul a,
+.single-guide .content__innerWrapper aside .widget_categories ul a {
   text-decoration: none;
   font-weight: 600;
   color: #a81d32;
 }
 
 .single-post .content__innerWrapper aside .widgettitle,
-.single-career-outcome .content__innerWrapper aside .widgettitle {
+.single-career-outcome .content__innerWrapper aside .widgettitle,
+.single-infographic .content__innerWrapper aside .widgettitle,
+.single-guide .content__innerWrapper aside .widgettitle {
   margin: 1em auto;
   font-size: 1.75em;
 }
 
 @media (min-width: 900px) {
   .single-post .content__innerWrapper,
-  .single-career-outcome .content__innerWrapper {
+  .single-career-outcome .content__innerWrapper,
+  .single-infographic .content__innerWrapper,
+  .single-guide .content__innerWrapper {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -5941,14 +5993,18 @@ POST STYLES
     min-width: 375px;
   }
   .single-post .content__innerWrapper main,
-  .single-career-outcome .content__innerWrapper main {
+  .single-career-outcome .content__innerWrapper main,
+  .single-infographic .content__innerWrapper main,
+  .single-guide .content__innerWrapper main {
     -webkit-box-flex: 2;
         -ms-flex: 2;
             flex: 2;
     margin-right: 2.5em;
   }
   .single-post .content__innerWrapper aside,
-  .single-career-outcome .content__innerWrapper aside {
+  .single-career-outcome .content__innerWrapper aside,
+  .single-infographic .content__innerWrapper aside,
+  .single-guide .content__innerWrapper aside {
     margin-left: 2.5em;
     -webkit-box-flex: 1;
         -ms-flex: 1;
@@ -5957,14 +6013,18 @@ POST STYLES
 }
 
 .single-post .content__innerWrapper .formWrapper,
-.single-career-outcome .content__innerWrapper .formWrapper {
+.single-career-outcome .content__innerWrapper .formWrapper,
+.single-infographic .content__innerWrapper .formWrapper,
+.single-guide .content__innerWrapper .formWrapper {
   max-width: 550px;
   margin: 0 auto;
   padding: 1em;
 }
 
 .single-post .content__innerWrapper .formWrapper__heading,
-.single-career-outcome .content__innerWrapper .formWrapper__heading {
+.single-career-outcome .content__innerWrapper .formWrapper__heading,
+.single-infographic .content__innerWrapper .formWrapper__heading,
+.single-guide .content__innerWrapper .formWrapper__heading {
   padding: 0 0.35em;
   color: white;
   text-shadow: 0 2px 7px rgba(0, 0, 0, 0.25);
@@ -5973,17 +6033,23 @@ POST STYLES
 }
 
 .single-post .content__innerWrapper .formWrapper .halfField li,
-.single-career-outcome .content__innerWrapper .formWrapper .halfField li {
+.single-career-outcome .content__innerWrapper .formWrapper .halfField li,
+.single-infographic .content__innerWrapper .formWrapper .halfField li,
+.single-guide .content__innerWrapper .formWrapper .halfField li {
   width: 48%;
 }
 
 .single-post .content__innerWrapper .formWrapper .halfField:last-child li,
-.single-career-outcome .content__innerWrapper .formWrapper .halfField:last-child li {
+.single-career-outcome .content__innerWrapper .formWrapper .halfField:last-child li,
+.single-infographic .content__innerWrapper .formWrapper .halfField:last-child li,
+.single-guide .content__innerWrapper .formWrapper .halfField:last-child li {
   width: 34%;
 }
 
 .single-post .content__innerWrapper .formWrapper .halfField:last-child li:first-child,
-.single-career-outcome .content__innerWrapper .formWrapper .halfField:last-child li:first-child {
+.single-career-outcome .content__innerWrapper .formWrapper .halfField:last-child li:first-child,
+.single-infographic .content__innerWrapper .formWrapper .halfField:last-child li:first-child,
+.single-guide .content__innerWrapper .formWrapper .halfField:last-child li:first-child {
   width: 62%;
 }
 
@@ -7712,8 +7778,71 @@ button[aria-expanded="true"] > .iconsWrapper .minus {
   max-width: 60em;
 }
 
-.resource-archive-list {
+.infographic-archive-list {
   max-width: 90%;
+}
+
+.infographic-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.separator {
+  border: none;
+  border-top: 4px solid #C9BF79;
+  margin: 1rem 0;
+}
+
+.guide-additional-info {
+  max-width: 70em;
+  margin: 2rem auto 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+@media screen and (min-width: 900px) {
+  .guide-additional-info {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+  }
+}
+
+.guide-additional-info div.cta-box {
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #f5f1e5;
+  padding: 1.5rem;
+}
+
+.guide-additional-info div.cta-box:not(:first-of-type) {
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 900px) {
+  .guide-additional-info div.cta-box:not(:first-of-type) {
+    margin-top: 0;
+    margin-left: 1rem;
+  }
+}
+
+.guide-additional-info div.cta-box .cta-box__title {
+  text-align: center;
+}
+
+.guide-additional-info .what-youll-get {
+  text-align: center;
 }
 
 .error404 .content {

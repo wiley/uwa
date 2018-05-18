@@ -28,6 +28,55 @@
 	max-width: 60em;
 }
 
-.resource-archive-list {
+.infographic-archive-list {
 	max-width: 90%;
+}
+
+.infographic-image img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.separator {
+	border: none;
+	border-top: 4px solid $gold;
+	margin: 1rem 0;
+}
+
+.guide-additional-info {
+	max-width: 70em;
+	margin: 2rem auto 5rem;
+	display: flex;
+	flex-flow: column nowrap;
+
+	@include mobilefirst($bp-med) {
+		flex-flow: row nowrap;
+	}
+
+	div.cta-box {
+		width: 100%;
+		flex: 1;
+		background-color: $tan;
+		padding: 1.5rem;
+
+		&:not(:first-of-type) {
+			margin-top: 1rem;
+
+			@include mobilefirst($bp-med) {
+				margin-top: 0;
+				margin-left: 1rem;
+			}
+		}
+
+		.cta-box__title {
+			text-align: center;
+		}
+	}
+
+	.what-youll-get {
+		text-align: center;
+	}
 }

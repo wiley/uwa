@@ -230,7 +230,7 @@ $primaryNav = wp_get_nav_menu_items($menuID);
 					</div>
 				</div>
 
-				<?php if ( is_single() && is_singular( array('post', 'career-outcome', 'program-resource', 'infographic' ) ) ): ?>
+				<?php if ( is_single() && is_singular( array('post', 'career-outcome', 'program-resource', 'infographic', 'guide' ) ) ): ?>
 					<?php $featuredImage = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
 					<div class="banner banner--blogPost"<?php echo $featuredImage ? 'style="background-image: url(' . $featuredImage . ')">' : ''; ?>>
 						<div class="wrap">
