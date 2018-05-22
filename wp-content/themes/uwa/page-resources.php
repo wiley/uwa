@@ -49,12 +49,12 @@
 											}
 										?>
 											<li>
-												<div class="card">
-													<div class="card__copy">
-														<h2 class="card__title"><?php echo $card_title; ?></h2>
+												<div class="resource-card">
+													<div class="resource-card__copy">
+														<h2 class="resource-card__title"><?php echo $card_title; ?></h2>
 														<p><?php echo $card_description; ?></p>
 													</div>
-													<a class="card__action btn" href="<?php echo $card_link; ?>"><?php echo $card_link_label; ?></a>
+													<a class="resource-card__action btn" href="<?php echo $card_link; ?>"><?php echo $card_link_label; ?></a>
 												</div>
 											</li>
 										<?php } ?>

@@ -17,9 +17,9 @@
 									<ul class="infographic-list tile-list tile-list">
 										<?php while($guides->have_posts()) : $guides->the_post(); ?>
 											<li>
-												<a class="card" href="<?php the_permalink(); ?>" title="View infographic: <?php the_title(); ?>, including a transcript.">
+												<a class="resource-card" href="<?php the_permalink(); ?>" title="View infographic: <?php the_title(); ?>, including a transcript.">
 													<div>
-														<div class="card__image">
+														<div class="resource-card__image">
 															<?php $guide_cover_image = get_field( 'infographic_cover_image' );
 															if ( $guide_cover_image ) {
 																echo wp_get_attachment_image( $guide_cover_image, 'large' );
@@ -27,15 +27,15 @@
 																<img src="<?php echo get_template_directory_uri(); ?>/library/images/infographic-placeholder.svg" width="300" height="157">
 															<?php } ?>
 														</div>
-														<div class="card__copy">
-															<h2 class="h4 card__title"><?php the_title(); ?></h2>
-															<?php $infographic_summary = get_field( 'infographic_summary' );
+														<div class="resource-card__copy">
+															<h2 class="h4 resource-card__title"><?php the_title(); ?></h2>
+															<?php $infographic_summary = get_field( 'resource_summary' );
 															if ( $infographic_summary ) { ?>
-																<p><?php the_field( 'infographic_summary' ); ?></p>
+																<p><?php the_field( 'resource_summary' ); ?></p>
 															<?php } ?>
 														</div>
 													</div>
-													<span class="card__action">View Infographic →</span>
+													<span class="resource-card__action">View Infographic →</span>
 												</a>
 											</li>
 										<?php endwhile; ?>

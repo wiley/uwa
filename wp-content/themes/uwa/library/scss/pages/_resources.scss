@@ -32,6 +32,16 @@
 	max-width: 90%;
 }
 
+.single-infographic .content__innerWrapper main {
+	margin-right: 0 !important;
+}
+
+.infographic-image {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .infographic-image img {
 	display: block;
 	max-width: 100%;
@@ -83,5 +93,15 @@
 
 	.what-youll-get {
 		text-align: center;
+	}
+}
+
+.embed-code {
+	margin-bottom: 1.5rem;
+	text-align: center;
+
+	textarea {
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
