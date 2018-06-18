@@ -1,6 +1,8 @@
 let mix = require("laravel-mix");
 const glob = require("glob-all");
 
+// Testing Git Update
+
 const ThemePathsArray = [
 	path.join(__dirname, "../**/*.php"),
 	path.join(__dirname, "js/**/*.js")
