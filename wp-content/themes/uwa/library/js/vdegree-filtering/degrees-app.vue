@@ -96,7 +96,7 @@ import LoadingSpinner from "./components/LoadingSpinner";
 const devUrl = "https://uwa-gulp.dev";
 const liveUrl = "https://online.uwa.edu";
 let apiUrl = process.env.NODE_ENV === "production" ? liveUrl : devUrl;
-const apiPromise = WPAPI.discover(devUrl);
+const apiPromise = WPAPI.discover(apiUrl);
 
 export default {
 	name: "degrees-app",
