@@ -39,8 +39,8 @@
 							<div class="sidebar--singlePost cf" role="complementary">
 
 								<div class="formWrapper">
-									<h2 class="h3 formWrapper__heading">Request Your Info Packet</h2>
-									<script src="https://requestforms.learninghouse.com/form/show/university-west-alabama/ppc-form-multi/734/3589/online.uwa.edu:thank-you:request_id" type="text/javascript"></script>
+									<h2 class="h3 formWrapper__heading">Request Your Guide</h2>
+									<?php the_field( 'guide_form_code' ); ?>
 								</div>
 
 							</div>
