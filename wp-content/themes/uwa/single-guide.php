@@ -40,7 +40,9 @@
 
 								<div class="formWrapper">
 									<h2 class="h3 formWrapper__heading">Request Your Guide</h2>
-									<?php the_field( 'guide_form_code' ); ?>
+									<div class="guide-request-form">
+										<?php the_field( 'guide_form_code' ); ?>
+									</div>
 								</div>
 
 							</div>
