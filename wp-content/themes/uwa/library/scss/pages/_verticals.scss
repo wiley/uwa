@@ -1,4 +1,4 @@
-.tax-degree_area {
+.tax-degree_area, .tax-degree_vertical {
 	.content {
 		// overflow-x: hidden;
 	}
@@ -408,4 +408,14 @@
 		}
 	}
 
+}
+
+
+
+// May 2018 - David R.
+
+.tax-degree_vertical {
+	.intro {
+		max-width: 1040px;
+	}
 }

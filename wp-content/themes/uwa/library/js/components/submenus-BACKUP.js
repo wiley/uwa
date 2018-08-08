@@ -1,5 +1,5 @@
-import $ from 'jquery';
-window.$ = window.jQuery = $;
+// import $ from 'jquery';
+// window.$ = window.jQuery = $;
 
 (function($) {
   const MainMenu = $('nav.main:not(.mobileNav__nav)')

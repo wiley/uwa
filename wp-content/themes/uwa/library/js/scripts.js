@@ -1,18 +1,9 @@
-/*
- * Put all your regular jQuery in here.
-*/
-
-
-import $ from "jquery";
-window.$ = window.jQuery = $;
-
 import './components/submenus';
 import './components/carousel';
 import './components/filters';
 import './components/tables';
 import './components/faq';
 import './vdegree-filtering/index.js';
-// import 'imports?jQuery=jquery!owl.carousel';
 
 jQuery.fn.center = function(parent) {
 	if (parent) {

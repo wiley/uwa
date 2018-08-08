@@ -12,7 +12,7 @@
 								<article <?php post_class('cf'); ?> role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
 
 								  <section class="post-content cf" itemprop="articleBody">
-								    <?php the_content(); ?>
+								    <?php the_field( 'guide_main_content' ); ?>
 								  </section> <?php // end article section ?>
 
 								</article> <?php // end article ?>
@@ -39,21 +39,26 @@
 							<div class="sidebar--singlePost cf" role="complementary">
 
 								<div class="formWrapper">
-									<h2 class="h3 formWrapper__heading">Request Your Info Packet</h2>
-									<script src="https://requestforms.learninghouse.com/form/show/university-west-alabama/ppc-form-multi/734/3589/online.uwa.edu:thank-you:request_id" type="text/javascript"></script>
+									<h2 class="h3 formWrapper__heading">Request Your Guide</h2>
+									<div class="guide-request-form">
+										<?php the_field( 'guide_form_code' ); ?>
+									</div>
 								</div>
-
-						<?php dynamic_sidebar( 'Sidebar Blog' ); ?>
-								<?php
-									if ( is_active_sidebar( 'sidebar1' ) ) :
-										dynamic_sidebar( 'sidebar1' );
-									endif;
-								?>
 
 							</div>
 
 						</aside>
+					</div>
+					<div class="guide-additional-info">
+						<div class="cta-box what-youll-learn">
+							<h3 class="cta-box__title">What You'll Learn</h3>
+							<p><?php the_field('guide_what_youll_learn'); ?></p>
 						</div>
+						<div class="cta-box what-youll-get">
+							<h3 class="cta-box__title">What You'll Get</h3>
+							<p><?php the_field('guide_what_youll_get'); ?></p>
+						</div>
+					</div>
 				</div>
 
 			</div>

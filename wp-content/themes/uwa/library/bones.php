@@ -190,7 +190,7 @@ function bones_scripts_and_styles() {
 		//
 
 		function handle_adding_main_js() {
-			wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/build/production.min.js', array( 'jquery' ), microtime(), true );
+			wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/build/production.min.js', array( 'jquery' ), '', true );
 
 			$allDegreesArgs = array(
 				 'posts_per_page' => -1,
@@ -363,14 +363,31 @@ add_shortcode( 'pullquote', 'pullquote_func' );
 CTA Shortcode
 *************/
 
-function cta_func($atts, $content = null ) {
-    extract(shortcode_atts(array(
-      'link' => '/online-programs/',
-      'text' => 'Learn More',
-    ), $atts));
-    return '<div class="cta">' . do_shortcode($content) . '<a class="button" href="' . $link . '">' . $text  . '</a></div>';
+// Add Shortcode for blog call to action box
+// Shortcode for Call to Action box in blog posts: [cta]
+function blog_post_cta( $atts ) {
+  $cta_title = get_field('blog_cta_title');
+	$cta_message = get_field('blog_cta_message');
+  $cta_button_label = get_field('blog_cta_button_label') ? get_field('blog_cta_button_label') : 'Learn More';
+  $cta_button_link = get_field('blog_cta_button_link');
+
+	$output = '';
+
+	if ( !empty($cta_button_link) ) {
+		$output .= '<div class="cta-blog">';
+		if ( !empty($cta_title) ) {
+	  	$output .= '<h3 class="cta-blog__title">' . $cta_title . '</h3>';
+		}
+		if ( !empty($cta_message) ) {
+	  	$output .= '<p class="cta-blog__message">' . $cta_message . '</p>';
+		}
+	  $output .= '<a class="button cta-blog__button" href="' .$cta_button_link . '">' . $cta_button_label . '</a>';
+	  $output .= '</div>';
+	}
+
+	return $output;
 }
-add_shortcode( 'cta', 'cta_func' );
+add_shortcode( 'cta', 'blog_post_cta' );
 
 
 /*************************

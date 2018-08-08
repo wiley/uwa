@@ -1,0 +1,107 @@
+.resources-overview {
+	max-width: 60em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.resources-wrapper {
+	max-width: 1540px;
+	margin: -5.5em 1em 1em;
+	position: relative;
+	background: white;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	z-index: 9999;
+	padding: 2rem 2rem 5rem;
+}
+
+.resource-archive-list,
+.infographic-archive-list {
+	background: white;
+	margin: -5.5em auto 0;
+	z-index: 9999;
+	padding: 2rem;
+}
+
+.resource-archive-list {
+	max-width: 60em;
+}
+
+.infographic-archive-list {
+	max-width: 90%;
+}
+
+.single-infographic .content__innerWrapper main {
+	margin-right: 0 !important;
+}
+
+.infographic-image {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.infographic-image img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.infographic-share .social-sharing {
+	float: none !important;
+	margin: 1rem auto !important;
+}
+
+.separator {
+	border: none;
+	border-top: 4px solid $gold;
+	margin: 1rem 0;
+}
+
+.guide-additional-info {
+	max-width: 70em;
+	margin: 2rem auto 5rem;
+	display: flex;
+	flex-flow: column nowrap;
+
+	@include mobilefirst($bp-med) {
+		flex-flow: row nowrap;
+	}
+
+	div.cta-box {
+		width: 100%;
+		flex: 1;
+		background-color: $tan;
+		padding: 1.5rem;
+
+		&:not(:first-of-type) {
+			margin-top: 1rem;
+
+			@include mobilefirst($bp-med) {
+				margin-top: 0;
+				margin-left: 1rem;
+			}
+		}
+
+		.cta-box__title {
+			text-align: center;
+		}
+	}
+
+	.what-youll-get {
+		text-align: center;
+	}
+}
+
+.embed-code {
+	margin-bottom: 1.5rem;
+	text-align: center;
+
+	textarea {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

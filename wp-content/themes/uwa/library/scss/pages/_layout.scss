@@ -24,9 +24,9 @@ LAYOUT & GRID STYLES
 }
 
 .banner {
-	&:not(.banner--blogPost) {
-		background-image: url("#{$images}/banner.jpg");
-	}
+	// &:not(.banner--blogPost) {
+	background-image: url("#{$images}/banner.jpg");
+	// }
 	// min-height: 325px;
 	background-size: 100% auto;
 	background-repeat: no-repeat;
@@ -44,9 +44,14 @@ LAYOUT & GRID STYLES
 	}
 
 	&:after {
-		background: linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.29) 27.27%, rgba(0, 0, 0, 0.52) 100%);
+		background: linear-gradient(
+			180deg,
+			rgba(0, 0, 0, 0.78) 0%,
+			rgba(0, 0, 0, 0.29) 27.27%,
+			rgba(0, 0, 0, 0.52) 100%
+		);
 		position: absolute;
-		content: '';
+		content: "";
 		top: 0;
 		height: 100%;
 		// min-height: 400px;

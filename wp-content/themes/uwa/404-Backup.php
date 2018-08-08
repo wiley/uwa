@@ -35,11 +35,9 @@
 
 						<?php include('includes/subNav.php'); ?>
 
-						<p class="intro_headline">
 							<?php if (get_field('intro_headline')): ?>
-								<?php the_field('intro_headline') ?>
+								<p class="intro_headline"><?php the_field('intro_headline') ?></p>
 							<?php endif; ?>
-						</p>
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 								<?php the_content(); ?>
 							<?php endwhile; endif; ?>

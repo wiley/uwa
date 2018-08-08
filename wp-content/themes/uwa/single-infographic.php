@@ -12,7 +12,28 @@
 								<article <?php post_class('cf'); ?> role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
 
 								  <section class="post-content cf" itemprop="articleBody">
-								    <?php the_content(); ?>
+										<div class="infographic-image">
+										<?php $full_image = get_field( 'infographic_full_image' );
+										if ( $full_image ) { ?>
+											<?php echo wp_get_attachment_image( $full_image, 'full' ); ?>
+										<?php } else { ?>
+											<img src="<?php echo get_template_directory_uri(); ?>/library/images/infographic-placeholder.png" width="2000" height="2000" alt="" aria-hidden="true">
+										<?php } ?>
+										</div>
+										<div class="infographic-share"><?php tlh_social_sharing_buttons(); ?></div>
+										<div class="embed-code">
+											<h2 class="embed-code__title h4">Embed this Image On Your Site</h2>
+											<?php $full_image_meta = wp_get_attachment_image_src( $full_image, 'full'); ?>
+											<textarea style="width: 540px; height: 100px;">&lt;a href="<?php the_permalink(); ?>"&gt;&lt;img style="max-width:100%;height:auto;" src="<?php echo $full_image_meta[0]; ?>" alt="View the <?php the_title(); ?> infographic from Aurora University Online" width="<?php echo $full_image_meta[1]; ?>" height="<?php echo $full_image_meta[2]; ?>" border="0" /&gt;&lt;/a&gt;</textarea>
+										</div>
+										<?php $infographic_transcript = get_field( 'infographic_transcript' );
+										if ( $infographic_transcript ) { ?>
+											<div class="infographic-transcript">
+												<h2 class="h3">Infographic Transcript</h2>
+												<hr class="separator">
+												<?php echo $infographic_transcript; ?>
+											</div>
+										<?php } ?>
 								  </section> <?php // end article section ?>
 
 								</article> <?php // end article ?>
@@ -35,24 +56,6 @@
 
 							<?php endif; ?>
 						</main>
-						<aside>
-							<div class="sidebar--singlePost cf" role="complementary">
-
-								<div class="formWrapper">
-									<h2 class="h3 formWrapper__heading">Request Your Info Packet</h2>
-									<script src="https://requestforms.learninghouse.com/form/show/university-west-alabama/ppc-form-multi/734/3589/online.uwa.edu:thank-you:request_id" type="text/javascript"></script>
-								</div>
-
-						<?php dynamic_sidebar( 'Sidebar Blog' ); ?>
-								<?php
-									if ( is_active_sidebar( 'sidebar1' ) ) :
-										dynamic_sidebar( 'sidebar1' );
-									endif;
-								?>
-
-							</div>
-
-						</aside>
 						</div>
 				</div>
 

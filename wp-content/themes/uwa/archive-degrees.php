@@ -5,23 +5,24 @@
 	    color: white;
 	    font-weight: 900;
 		}
-		.degree-app-wrapper {
-			min-height: 400px;
+
+		.search-filter {
+			position: relative;
 		}
-		.controlsWrapper {
-			max-width: 340px;
+		.searchFilter-icon {
+			height: 45px;
 		}
 
 		@media (min-width: 800px) {
 			#degrees-app {
 				margin-left: 4em;
 			}
-		}
-		.search-filter {
-			position: relative;
-		}
-		.searchFilter-icon {
-			height: 40px;
+			.controlsWrapper {
+				max-width: 340px;
+			}
+			.degree-app-wrapper {
+				min-height: 400px;
+			}
 		}
 	</style>
 

@@ -1,0 +1,1812 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i|Lora:400,400i,700,700i);/*! normalize.css v4.0.0 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Change the default font family in all browsers (opinionated).
+  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
+   */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+       * Remove the margin in all browsers (opinionated).
+        */
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+     ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+  * 1. Add the correct display in Edge, IE, and Firefox.
+   * 2. Add the correct display in IE.
+    */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  /* 1 */
+  display: block;
+}
+
+/**
+   * Add the correct display in IE 9-.
+    */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+}
+
+/**
+   * Add the correct display in iOS 4-7.
+    */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+     * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+      */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+   * Add the correct display in IE 10-.
+    * 1. Add the correct display in IE.
+     */
+template,
+[hidden] {
+  display: none;
+}
+
+/* Links
+     ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+  */
+a {
+  background-color: transparent;
+}
+
+/**
+   * Remove the outline on focused links when they are also active or hovered
+    * in all browsers (opinionated).
+     */
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+/* Text-level semantics
+     ========================================================================== */
+/**
+ * 1. Remove the bottom border in Firefox 39-.
+  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+   */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+       * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+        */
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+   * Add the correct font weight in Chrome, Edge, and Safari.
+    */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+   * Add the correct font style in Android 4.3-.
+    */
+dfn {
+  font-style: italic;
+}
+
+/**
+   * Correct the font size and margin on `h1` elements within `section` and
+    * `article` contexts in Chrome, Firefox, and Safari.
+     */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+     * Add the correct background and color in IE 9-.
+      */
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/**
+     * Add the correct font size in all browsers.
+      */
+small {
+  font-size: 80%;
+}
+
+/**
+   * Prevent `sub` and `sup` elements from affecting the line height in
+    * all browsers.
+     */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+               ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10-.
+  */
+img {
+  border-style: none;
+}
+
+/**
+   * Hide the overflow in IE.
+    */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+     ========================================================================== */
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+  * 2. Correct the odd `em` font sizing in all browsers.
+   */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+     * Add the correct margin in IE 8.
+      */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+   * 1. Add the correct box sizing in Firefox.
+    * 2. Show the overflow in Edge and IE.
+     */
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/* Forms
+         ========================================================================== */
+/**
+ * Change font properties to `inherit` in all browsers (opinionated).
+  */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/**
+   * Restore the font weight unset by the previous rule.
+    */
+optgroup {
+  font-weight: bold;
+}
+
+/**
+   * Show the overflow in IE.
+    * 1. Show the overflow in Edge.
+     * 2. Show the overflow in Edge, Firefox, and IE.
+      */
+button,
+input,
+select {
+  /* 2 */
+  overflow: visible;
+}
+
+/**
+   * Remove the margin in Safari.
+    * 1. Remove the margin in Firefox and Safari.
+     */
+button,
+input,
+select,
+textarea {
+  /* 1 */
+  margin: 0;
+}
+
+/**
+   * Remove the inheritence of text transform in Edge, Firefox, and IE.
+    * 1. Remove the inheritence of text transform in Firefox.
+     */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+   * Change the cursor in all browsers (opinionated).
+    */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  cursor: pointer;
+}
+
+/**
+   * Restore the default cursor to disabled elements unset by the previous rule.
+    */
+[disabled] {
+  cursor: default;
+}
+
+/**
+   * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+    *    controls in Android 4.
+     * 2. Correct the inability to style clickable types in iOS.
+      */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+}
+
+/**
+   * Remove the inner border and padding in Firefox.
+    */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+     * Restore the focus styles unset by the previous rule.
+      */
+button:-moz-focusring,
+input:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+   * Change the border, margin, and padding in all browsers (opinionated).
+    */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+       * 1. Correct the text wrapping in Edge and IE.
+        * 2. Correct the color inheritance from `fieldset` elements in IE.
+         * 3. Remove the padding so developers are not caught out when they zero out
+          *    `fieldset` elements in all browsers.
+           */
+legend {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+             * Remove the default vertical scrollbar in IE.
+              */
+textarea {
+  overflow: auto;
+}
+
+/**
+   * 1. Add the correct box sizing in IE 10-.
+    * 2. Remove the padding in IE 10-.
+     */
+[type="checkbox"],
+[type="radio"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+     * Correct the cursor style of increment and decrement buttons in Chrome.
+      */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+   * Correct the odd appearance of search inputs in Chrome and Safari.
+    */
+[type="search"] {
+  -webkit-appearance: textfield;
+}
+
+/**
+   * Remove the inner padding and cancel buttons in Chrome on OS X and
+    * Safari on OS X.
+     */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/******************************************************************
+Typography Styles
+******************************************************************/
+@font-face {
+  font-family: 'Trade Gothic LT Std';
+  src: url("../fonts/TradeGothicLTStd-Bd2.eot");
+  src: url("../fonts/TradeGothicLTStd-Bd2.eot?#iefix") format("embedded-opentype"), url("../fonts/TradeGothicLTStd-Bd2.woff") format("woff"), url("../fonts/TradeGothicLTStd-Bd2.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+body {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  text-rendering: optimizelegibility;
+  font-weight: normal;
+  text-transform: capitalize;
+  font-family: "Lora", Helvetica, Arial, serif;
+}
+
+h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
+  text-decoration: none;
+}
+
+h1, .h1 {
+  font-size: 2.25em;
+  line-height: 1.25;
+}
+
+@media screen and (min-width: 900px) {
+  h1, .h1 {
+    font-size: 2.5em;
+    line-height: 1.125;
+  }
+}
+
+@media screen and (min-width: 1040px) {
+  h1, .h1 {
+    font-size: 3em;
+    line-height: 1.05;
+  }
+}
+
+h2, .h2 {
+  font-size: 1.9375em;
+  line-height: 1.15384615;
+  margin-bottom: .375em;
+}
+
+@media screen and (min-width: 900px) {
+  h2, .h2 {
+    font-size: 2.25em;
+    line-height: 1.25;
+  }
+}
+
+@media screen and (min-width: 1040px) {
+  h2, .h2 {
+    font-size: 2.5em;
+    line-height: 1.25;
+  }
+}
+
+h3, .h3 {
+  font-size: 1.625em;
+  line-height: 1.13636364;
+}
+
+@media screen and (min-width: 900px) {
+  h3, .h3 {
+    font-size: 1.75em;
+    line-height: 1.25;
+  }
+}
+
+@media screen and (min-width: 1040px) {
+  h3, .h3 {
+    font-size: 1.875em;
+    line-height: 1.25;
+  }
+}
+
+h4, .h4 {
+  color: #A81D32;
+  font-size: 1.25em;
+  line-height: 1.11111111;
+}
+
+@media screen and (min-width: 900px) {
+  h4, .h4 {
+    line-height: 1.222222222;
+  }
+}
+
+h5, .h5 {
+  font-size: 0.84375em;
+  line-height: 1.25;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #A81D32;
+}
+
+h6, .h6 {
+  color: #A81D32;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1.5em;
+}
+
+blockquote {
+  font-size: 1em;
+  line-height: 1.25;
+  /* 25px / 20px */
+  border-left: 4px solid gray;
+  padding-left: 1em;
+}
+
+@media screen and (min-width: 900px) {
+  blockquote {
+    font-size: 1.5em;
+    line-height: 1.45833333;
+  }
+}
+
+figure, figcaption {
+  display: block;
+  font-style: italic;
+  font-size: .9em;
+  color: gray;
+  text-align: center;
+}
+
+.quote {
+  padding: 1.5em;
+  background: gray;
+  position: relative;
+  border-radius: .5em;
+}
+
+.quote:before {
+  position: absolute;
+  top: 99.8%;
+  right: 2em;
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 30px 30px 0;
+  border-color: transparent gray transparent transparent;
+}
+
+/******************************************************************
+TEXT STYLE CLASSES
+******************************************************************/
+.text_red {
+  color: #A81D32;
+}
+
+.text_red_dark {
+  color: #510915;
+}
+
+.text_white {
+  color: white;
+}
+
+.text_uppercase {
+  text-transform: uppercase;
+}
+
+.decorative {
+  position: relative;
+  padding-top: 1em;
+  margin-top: 0;
+}
+
+.decorative:before {
+  content: "";
+  width: 3em;
+  height: 7px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #A81D32;
+}
+
+.decorative_gold:before {
+  background: #C9BF79;
+}
+
+.decorative_white:before {
+  background: white;
+}
+
+.decorative_red_dark:before {
+  background: #510915;
+}
+
+.first {
+  margin-top: 0;
+}
+
+/******************************************************************
+SUSY GRID // For any questions go to http://susydocs.oddbird.net/en/latest/
+******************************************************************/
+.wrap {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wrap:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.half {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 50%;
+  float: left;
+  padding-left: 1.38888889%;
+  padding-right: 1.38888889%;
+}
+
+.quarter {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 25%;
+  float: left;
+  padding-left: 1.38888889%;
+  padding-right: 1.38888889%;
+}
+
+.third {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 33.33333333%;
+  float: left;
+  padding-left: 1.38888889%;
+  padding-right: 1.38888889%;
+}
+
+/*********************
+GENERAL STYLES
+*********************/
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html.activeModal {
+  overflow: hidden;
+}
+
+.ios-11-body-fixed {
+  position: fixed;
+  width: 100%;
+}
+
+input[type=search] {
+  -webkit-appearance: none;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+  color: #4a4a4a;
+  background-color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background-color: white;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.border {
+  border: 2px solid #A81D32;
+  padding: .5em 1em;
+}
+
+.content {
+  padding: 1.5em 0;
+}
+
+.bg_red {
+  background: #A81D32;
+  color: white;
+}
+
+.bg_red_dark {
+  background: #510915;
+  color: white;
+}
+
+.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.pull-right {
+  float: right;
+}
+
+@custom-selector :--headings h1, h2, h3, h4, h5, h6;
+:\--headings {
+  color: #4a4a4a;
+}
+
+.sr {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  /* for Internet Explorer */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+table {
+  display: table;
+  overflow-x: scroll;
+}
+
+.owl-nav.disabled {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.owl-carousel .controls,
+.owl-carousel .owl-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  -webkit-transition: 0.15s ease-out;
+  transition: 0.15s ease-out;
+}
+
+.owl-carousel .controls.hidden,
+.owl-carousel .owl-nav.hidden {
+  opacity: 0;
+}
+
+.owl-carousel .owl-stage-outer {
+  z-index: 999;
+}
+
+.owl-next, .owl-prev {
+  cursor: pointer;
+  position: absolute;
+  background-image: url("/wp-content/themes/uwa/library/images/slider-arrow.svg");
+  background-size: contain;
+  height: inherit;
+  width: 100px;
+  background-repeat: no-repeat;
+  height: 100%;
+  z-index: 999;
+}
+
+.owl-prev {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  right: 88vw;
+  right: calc(100% + 100px);
+}
+
+.owl-next {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+  left: 88vw;
+  left: calc(100% + 100px);
+}
+
+@media (min-width: 900px) {
+  .owl-next, .owl-prev {
+    width: 150px;
+  }
+  .owl-prev {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    right: calc(100% + 40px);
+  }
+  .owl-next {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+    left: calc(100% + 40px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .owl-next, .owl-prev {
+    width: 200px;
+  }
+  .owl-prev {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  .owl-next {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+}
+
+.archive .single {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.archive .single .cardLinkWrapper.item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 350px;
+          flex: 1 1 350px;
+  max-width: 400px;
+}
+
+.archive .double {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.archive .double .cardLinkWrapper.item {
+  margin: 1em 2em;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 250px;
+          flex: 1 1 250px;
+  max-width: 350px;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+}
+
+.tax-degree_area .cardLink img {
+  width: 100%;
+}
+
+.tax-degree_area .owl-carousel, .tax-degree_vertical .owl-carousel {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1200px) {
+  .tax-degree_area .owl-carousel, .tax-degree_vertical .owl-carousel {
+    width: 100%;
+  }
+}
+
+.tax-degree_area .intro, .tax-degree_vertical .intro {
+  max-width: 800px;
+  margin: -3.5em 1em 1em;
+  position: relative;
+  background: white;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 9;
+  width: 90%;
+}
+
+.tax-degree_area .intro__breadcrumbs, .tax-degree_vertical .intro__breadcrumbs {
+  background-color: #A81D32;
+  color: white;
+  padding: 1em 0.5em;
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+.tax-degree_area .intro__breadcrumbs a, .tax-degree_vertical .intro__breadcrumbs a {
+  color: white;
+}
+
+.tax-degree_area .intro__headline, .tax-degree_vertical .intro__headline {
+  padding: 0 1em;
+}
+
+.tax-degree_area .intro__text, .tax-degree_vertical .intro__text {
+  padding: 0.5em 2em;
+}
+
+.tax-degree_area .intro__link, .tax-degree_vertical .intro__link {
+  background-color: #11181F;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  padding: 0.5em;
+  text-decoration: none;
+  height: 20px;
+}
+
+.tax-degree_area .intro__link:focus, .tax-degree_area .intro__link:hover, .tax-degree_area .intro__link:visited:focus, .tax-degree_area .intro__link:visited:hover, .tax-degree_vertical .intro__link:focus, .tax-degree_vertical .intro__link:hover, .tax-degree_vertical .intro__link:visited:focus, .tax-degree_vertical .intro__link:visited:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.tax-degree_area .intro__link svg, .tax-degree_vertical .intro__link svg {
+  width: 20px;
+  background: #C8BF79;
+  height: 20px;
+  fill: white;
+  color: #C8BF79;
+  margin-left: 10px;
+  vertical-align: middle;
+  margin-bottom: 3px;
+  padding: 3px;
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+}
+
+.tax-degree_area .mainDegrees, .tax-degree_vertical .mainDegrees {
+  background: #f5f1e5;
+  margin-top: -5em;
+  overflow: hidden;
+}
+
+.tax-degree_area .mainDegrees .wrap, .tax-degree_vertical .mainDegrees .wrap {
+  max-width: 1100px;
+  background: #f5f1e5;
+  padding: 5em 0 3em;
+  position: relative;
+}
+
+.tax-degree_area .mainDegrees__headline, .tax-degree_vertical .mainDegrees__headline {
+  text-align: center;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tax-degree_area .mainDegrees__text, .tax-degree_vertical .mainDegrees__text {
+  text-align: center;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tax-degree_area .cardLink, .tax-degree_vertical .cardLink {
+  display: inline-block;
+  position: relative;
+}
+
+.tax-degree_area .cardLink:before, .tax-degree_vertical .cardLink:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, 0.85)), color-stop(50%, rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.94)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.94) 100%);
+}
+
+.tax-degree_area .cardLink img, .tax-degree_vertical .cardLink img {
+  max-height: 400px;
+}
+
+.tax-degree_area .cardLink__text, .tax-degree_vertical .cardLink__text {
+  position: absolute;
+  bottom: 0;
+  padding: 1em 1em 0;
+}
+
+.tax-degree_area .cardLink__heading, .tax-degree_vertical .cardLink__heading {
+  border-bottom: 5px solid white;
+  padding-bottom: 0.5em;
+  color: white;
+  text-shadow: 0 2px 14px #000000;
+  line-height: 1.2;
+  margin-top: .7em;
+  padding-right: .5em !important;
+}
+
+.tax-degree_area .cardLink__cta, .tax-degree_vertical .cardLink__cta {
+  text-align: right;
+  color: #C8BF79;
+  font-size: 1.2em;
+  font-weight: 600;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 10px;
+}
+
+.tax-degree_area .flexTestWrapper, .tax-degree_vertical .flexTestWrapper {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.tax-degree_area .cardLinkWrapper, .tax-degree_vertical .cardLinkWrapper {
+  text-align: center;
+}
+
+.tax-degree_area .cardLink, .tax-degree_vertical .cardLink {
+  overflow: hidden;
+  height: 280px;
+  max-width: 400px;
+}
+
+@media (min-width: 1200px) {
+  .tax-degree_area .cardLink, .tax-degree_vertical .cardLink {
+    width: 340px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .tax-degree_area .cardLink, .tax-degree_vertical .cardLink {
+    width: 375px;
+  }
+}
+
+.tax-degree_area .cardLink img, .tax-degree_vertical .cardLink img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+
+.tax-degree_area .cardLink:focus .flexTestWrapper, .tax-degree_area .cardLink:hover .flexTestWrapper, .tax-degree_vertical .cardLink:focus .flexTestWrapper, .tax-degree_vertical .cardLink:hover .flexTestWrapper {
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.tax-degree_area .cardLink:focus .cardLink__cta, .tax-degree_area .cardLink:hover .cardLink__cta, .tax-degree_vertical .cardLink:focus .cardLink__cta, .tax-degree_vertical .cardLink:hover .cardLink__cta {
+  color: black !important;
+  font-size: 1em !important;
+  padding-left: 10px;
+}
+
+.tax-degree_area .cardLink:focus .cardLink__cta svg, .tax-degree_area .cardLink:hover .cardLink__cta svg, .tax-degree_vertical .cardLink:focus .cardLink__cta svg, .tax-degree_vertical .cardLink:hover .cardLink__cta svg {
+  fill: black;
+}
+
+.tax-degree_area .cardLink:focus .cardLink__cta-background, .tax-degree_area .cardLink:hover .cardLink__cta-background, .tax-degree_vertical .cardLink:focus .cardLink__cta-background, .tax-degree_vertical .cardLink:hover .cardLink__cta-background {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.tax-degree_area .cardLink__info, .tax-degree_vertical .cardLink__info {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  color: white;
+  padding: 1em;
+  background: rgba(46, 46, 46, 0.6);
+  font-size: 1.15em;
+  line-height: 1.6;
+  width: 50%;
+}
+
+.tax-degree_area .cardLink__info p, .tax-degree_vertical .cardLink__info p {
+  padding-left: .5em;
+}
+
+.tax-degree_area .cardLink__text, .tax-degree_vertical .cardLink__text {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  position: relative;
+  padding: 0;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: 50%;
+}
+
+.tax-degree_area .cardLink__heading, .tax-degree_vertical .cardLink__heading {
+  border: none;
+  padding: 0 0 0 0.5em;
+  margin-right: 0;
+}
+
+.tax-degree_area .cardLink__cta, .tax-degree_vertical .cardLink__cta {
+  position: absolute;
+  bottom: 0;
+  right: 1em;
+  font-size: 1em !important;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-weight: 700;
+  font-size: 1.1em !important;
+}
+
+.tax-degree_area .cardLink__cta svg, .tax-degree_vertical .cardLink__cta svg {
+  vertical-align: middle;
+  padding: 2px;
+  fill: #C8BF79;
+  color: #C8BF79;
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+}
+
+.tax-degree_area .cardLink__cta-background, .tax-degree_vertical .cardLink__cta-background {
+  position: absolute;
+  right: 1em;
+  bottom: 28px;
+  background: #C8BF79;
+  width: 150px;
+  height: 34px;
+}
+
+.tax-degree_area .mastersDegrees, .tax-degree_vertical .mastersDegrees {
+  text-align: center;
+  position: relative;
+  padding-bottom: 2em;
+}
+
+.tax-degree_area .mastersDegrees .narrow, .tax-degree_vertical .mastersDegrees .narrow {
+  max-width: 1000px;
+  background: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -5em;
+  padding: 0.5em 3em;
+}
+
+.tax-degree_area .degreeType, .tax-degree_vertical .degreeType {
+  padding: 3em 0 5em;
+}
+
+@media (min-width: 768px) {
+  .tax-degree_area .degreeType .wrap, .tax-degree_vertical .degreeType .wrap {
+    width: 84%;
+  }
+}
+
+.tax-degree_area .coloredBackground, .tax-degree_vertical .coloredBackground {
+  background: #f5f1e5;
+}
+
+.tax-degree_area .single .cardLink_cta__wrapper, .tax-degree_vertical .single .cardLink_cta__wrapper {
+  display: none;
+}
+
+@media (min-width: 800px) {
+  .tax-degree_area .single .cardLink, .tax-degree_vertical .single .cardLink {
+    overflow: visible;
+    left: -50%;
+  }
+  .tax-degree_area .single .cardLink img, .tax-degree_vertical .single .cardLink img {
+    height: 100%;
+  }
+  .tax-degree_area .single .cardLink__cta, .tax-degree_vertical .single .cardLink__cta {
+    display: none;
+  }
+  .tax-degree_area .single .cardLink:focus .flexTestWrapper, .tax-degree_area .single .cardLink:hover .flexTestWrapper, .tax-degree_vertical .single .cardLink:focus .flexTestWrapper, .tax-degree_vertical .single .cardLink:hover .flexTestWrapper {
+    -webkit-transform: none !important;
+            transform: none !important;
+  }
+  .tax-degree_area .single .cardLink:focus .cardLink_cta__wrapper .cardLink__cta, .tax-degree_area .single .cardLink:hover .cardLink_cta__wrapper .cardLink__cta, .tax-degree_vertical .single .cardLink:focus .cardLink_cta__wrapper .cardLink__cta, .tax-degree_vertical .single .cardLink:hover .cardLink_cta__wrapper .cardLink__cta {
+    display: block;
+  }
+  .tax-degree_area .single .cardLink:focus .cardLink_cta__wrapper .cardLink__cta-background, .tax-degree_area .single .cardLink:hover .cardLink_cta__wrapper .cardLink__cta-background, .tax-degree_vertical .single .cardLink:focus .cardLink_cta__wrapper .cardLink__cta-background, .tax-degree_vertical .single .cardLink:hover .cardLink_cta__wrapper .cardLink__cta-background {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    right: 0;
+  }
+  .tax-degree_area .single .cardLink__info, .tax-degree_vertical .single .cardLink__info {
+    background: #0F181F;
+  }
+  .tax-degree_area .single .cardLink__cta__wrapper, .tax-degree_vertical .single .cardLink__cta__wrapper {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    height: 100%;
+    right: 0;
+    width: 100%;
+  }
+  .tax-degree_area .single .cardLink__cta__wrapper .cardLink_cta, .tax-degree_vertical .single .cardLink__cta__wrapper .cardLink_cta {
+    position: relative;
+    left: 0;
+    padding-top: 4px;
+    padding-bottom: 0;
+    padding-left: 10px;
+  }
+  .tax-degree_area .single .cardLink__cta__wrapper .cardLink_cta-background, .tax-degree_vertical .single .cardLink__cta__wrapper .cardLink_cta-background {
+    top: 0;
+    right: 0;
+    height: inherit;
+    width: 100%;
+    -webkit-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+    -webkit-transform: translateX(102%);
+            transform: translateX(102%);
+    display: block;
+  }
+}
+
+.tax-degree_area .single .cardLink__cta, .tax-degree_vertical .single .cardLink__cta {
+  display: none;
+}
+
+.tax-degree_area .single .cardLink__cta-background, .tax-degree_vertical .single .cardLink__cta-background {
+  display: none !important;
+}
+
+.tax-degree_area .single .cardLink__cta__wrapper .cardLink__cta-background, .tax-degree_vertical .single .cardLink__cta__wrapper .cardLink__cta-background {
+  display: block !important;
+  right: 20px;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+  -webkit-transform: translateX(115%);
+          transform: translateX(115%);
+  display: block;
+  width: 160px;
+}
+
+.tax-degree_area .single .cardLink__cta__wrapper .cardLink__cta, .tax-degree_vertical .single .cardLink__cta__wrapper .cardLink__cta {
+  display: block;
+}
+
+.tax-degree_area .single .cardLink:hover .cardLink__cta__wrapper .cardLink__cta-background, .tax-degree_area .single .cardLink:focus .cardLink__cta__wrapper .cardLink__cta-background, .tax-degree_vertical .single .cardLink:hover .cardLink__cta__wrapper .cardLink__cta-background, .tax-degree_vertical .single .cardLink:focus .cardLink__cta__wrapper .cardLink__cta-background {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.post-type-archive-degrees #holder {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  width: 96%;
+  padding: 5px 3px;
+}
+
+.post-type-archive-degrees #activeFiltersHolder {
+  width: 75%;
+  width: 70%;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 0.95em;
+}
+
+.post-type-archive-degrees #Reset {
+  width: 15%;
+  margin: 0;
+  bottom: initial;
+  margin: 0;
+  width: 100px;
+  bottom: initial;
+  margin: 0;
+  display: inline-block;
+  vertical-align: top;
+  float: right;
+  width: 60px;
+  background-color: #C8BF76;
+  color: black !important;
+  height: 50px;
+  width: 80px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  border-bottom-color: black;
+}
+
+.post-type-archive-degrees main {
+  padding: 6em 0;
+}
+
+.post-type-archive-degrees .banner {
+  height: 400px;
+}
+
+.post-type-archive-degrees #mix-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  padding: 0;
+  position: relative;
+}
+
+.post-type-archive-degrees #message {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 700;
+  font-size: 1.1em;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.1em;
+  top: 50%;
+  background: white;
+  height: 60px;
+  width: 96vw;
+  z-index: 9999;
+  border: 2px solid #cecece;
+  max-width: 400px;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+  left: 50%;
+}
+
+.post-type-archive-degrees .toolbar-filter {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.post-type-archive-degrees .toolbar-filter__label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 1em;
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  border-bottom: 2px solid #D8D8D8;
+  padding-bottom: .5em;
+  margin-bottom: 0;
+}
+
+.post-type-archive-degrees .toolbar-filter button.btn__hollow {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  border: none;
+  border-bottom: 2px solid #D8D8D8;
+  text-align: left;
+  margin: 0;
+  padding-left: 0;
+  color: #6A6A6A;
+  font-weight: normal;
+  padding: 1em 1em 1em 0;
+}
+
+.post-type-archive-degrees .toolbar-filter button.btn__hollow.active {
+  padding-left: .5em;
+  color: white;
+}
+
+.post-type-archive-degrees .mix.card {
+  -webkit-box-flex: 260px;
+      -ms-flex: 260px;
+          flex: 260px;
+  border: 1px solid gray;
+  margin: 1em;
+  padding: 2em 1em;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 350px;
+          flex: 1 1 350px;
+  max-width: 100%;
+  text-decoration: none;
+  height: 300px;
+  background-size: cover;
+  background-position: 0 25%;
+  background-repeat: no-repeat;
+  -webkit-box-flex: 0 !important;
+      -ms-flex: none !important;
+          flex: none !important;
+  width: 485px !important;
+  max-width: 100%;
+  max-width: 450px;
+  -ms-flex: 1 1 300px !important;
+      flex: 1 1 300px !important;
+  overflow: hidden;
+  height: 280px;
+  max-width: 400px;
+}
+
+.post-type-archive-degrees .mix.card:focus, .post-type-archive-degrees .mix.card:hover {
+  color: white;
+}
+
+.post-type-archive-degrees .banner {
+  height: auto;
+}
+
+.post-type-archive-degrees main {
+  padding-top: 0;
+  width: 90%;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .post-type-archive-degrees main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 3em;
+  }
+}
+
+.post-type-archive-degrees main .controlsWrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20%;
+          flex: 1 1 20%;
+}
+
+.post-type-archive-degrees main .controlsWrapper .toolbar-filter__label {
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+  margin-left: 0.5em;
+  text-align: left;
+}
+
+.post-type-archive-degrees main .controlsWrapper .toolbar-filter button {
+  padding: 0.5em;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 0.95em;
+}
+
+@media (min-width: 800px) {
+  .post-type-archive-degrees main .controlsWrapper .toolbar-filter button {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 45%;
+            flex: 1 1 45%;
+  }
+}
+
+@media (min-width: 768px) {
+  .post-type-archive-degrees main .controlsWrapper #Reset {
+    display: block;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.post-type-archive-degrees main .mix-containerWrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 80%;
+          flex: 1 1 80%;
+}
+
+.post-type-archive-degrees .card {
+  position: relative;
+  color: white;
+  background-size: cover;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  -webkit-box-flex: 1 !important;
+      -ms-flex: 1 1 350px !important;
+          flex: 1 1 350px !important;
+}
+
+.post-type-archive-degrees .card:after {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, 0.85)), color-stop(50%, rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.94)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.94) 100%);
+  position: absolute;
+  content: '';
+  top: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+}
+
+.post-type-archive-degrees .card__infoWrapper {
+  position: relative;
+  z-index: 9;
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  height: 100%;
+}
+
+.post-type-archive-degrees .card__title {
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+  font-weight: 600;
+  margin-top: 0;
+  color: white;
+  font-size: 1.5em;
+  font-weight: 500;
+  text-shadow: 0 2px 14px #000000;
+}
+
+.post-type-archive-degrees .card__info {
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-left: auto;
+  color: #C8BF79;
+  font-weight: 700;
+}
+
+.post-type-archive-degrees .card__info svg {
+  vertical-align: middle;
+  padding: 2px;
+  fill: #C8BF79;
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+}
+
+@media (max-width: 799px) {
+  .post-type-archive-degrees main .controlsWrapper .toolbar-filter__label {
+    font-size: 1em;
+    text-align: center;
+    margin: 1em 0 0.5em;
+    border: 2px solid gray;
+    padding: 0.25em 0 0;
+    cursor: pointer;
+  }
+  .post-type-archive-degrees main .controlsWrapper .toolbar-filter__label.activeFilter {
+    background: #4A4A49;
+    color: white;
+    -webkit-transition: 0.2s ease;
+    transition: 0.2s ease;
+  }
+  .post-type-archive-degrees main .controlsWrapper .toolbar-filter__label.activeFilter svg {
+    background: white;
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+  .post-type-archive-degrees main .controlsWrapper .toolbar-filter__label.activeFilter svg g#Program {
+    stroke: #4a4a4a;
+  }
+  .post-type-archive-degrees main .controlsWrapper .toolbar-filter__label svg {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    padding: 3px;
+    margin-left: 3px;
+    border-radius: 50%;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+  }
+  .post-type-archive-degrees .controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    margin-left: -5%;
+    margin-right: -5%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding: 5px;
+    position: relative;
+  }
+  .post-type-archive-degrees .controls .degreeTypes .toolbar-filter__label.activeFilter svg {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+
+.toolbar-filter__label svg {
+  display: none;
+}
+
+.card__wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.cardLink__cta-background {
+  position: absolute;
+  right: 0;
+  bottom: -4px;
+  background: #C8BF79;
+  width: 200px;
+  height: 35px;
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+  -webkit-transform: translateX(115%);
+          transform: translateX(115%);
+}
+
+.mix.card:hover .card__info {
+  color: black !important;
+  z-index: 9999;
+}
+
+.mix.card:hover .card__info svg {
+  fill: black;
+}
+
+.mix.card:hover .cardLink__cta-background {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.tax-degree_level .degreeLevel__flexWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.tax-degree_level .cardLinkWrapper.item {
+  margin: 1em 0;
+  max-width: 100%;
+}
+
+.tax-degree_level .card {
+  background-size: cover;
+  width: 400px;
+  height: 320px;
+  display: block;
+  position: relative;
+  background-position: top center;
+  text-decoration: none;
+  max-width: 100%;
+}
+
+.tax-degree_level .card:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, 0.51)), color-stop(50%, rgba(0, 0, 0, 0.57)), to(rgba(2, 2, 2, 0.64)));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.51) 0, rgba(0, 0, 0, 0.57) 50%, rgba(2, 2, 2, 0.64) 100%);
+}
+
+.tax-degree_level .card__title {
+  color: white;
+  text-shadow: 0 2px 14px #000000;
+  margin-top: 0;
+}
+
+.tax-degree_level .card__infoWrapper {
+  position: relative;
+  z-index: 99;
+  padding: 0.5em 1em;
+}
+
+.tax-degree_level .degreeType {
+  background: #f5f1e5;
+}
+
+.tax-degree_level .card {
+  -webkit-box-flex: 1 !important;
+      -ms-flex: 1 1 300px !important;
+          flex: 1 1 300px !important;
+  overflow: hidden;
+  height: 280px;
+  max-width: 100%;
+  padding: 0.5em 0.5em 1em;
+}
+
+.tax-degree_level .card__infoWrapper {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tax-degree_level .card__info {
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-left: auto;
+  color: #C8BF79;
+  font-weight: 700;
+}
+
+.tax-degree_level .card__info svg {
+  vertical-align: middle;
+  padding: 2px;
+  fill: #C8BF79;
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+}
+
+.tax-degree_level .card .cardLink__cta-background {
+  position: absolute;
+  right: 8px;
+  bottom: 3px;
+  background: #C8BF79;
+  width: 200px;
+  height: 35px;
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+  -webkit-transform: translateX(115%);
+          transform: translateX(115%);
+}
+
+.tax-degree_level .card:hover .card__info {
+  color: black !important;
+  z-index: 9999;
+}
+
+.tax-degree_level .card:hover .card__info svg {
+  fill: black;
+}
+
+.tax-degree_level .card:hover .cardLink__cta-background {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
