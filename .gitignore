@@ -9,7 +9,7 @@ wp-content/uploads/*
 wp-content/mu-plugins
 sassdoc
 style-guide
-!wp-content/themes/alvernia-microsite
+!wp-content/themes/uwa
 !readme.md
 !robots.txt
 !humans.txt
