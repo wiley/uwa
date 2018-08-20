@@ -24,7 +24,7 @@
 										<div class="embed-code">
 											<h2 class="embed-code__title h4">Embed this Image On Your Site</h2>
 											<?php $full_image_meta = wp_get_attachment_image_src( $full_image, 'full'); ?>
-											<textarea style="width: 540px; height: 100px;">&lt;a href="<?php the_permalink(); ?>"&gt;&lt;img style="max-width:100%;height:auto;" src="<?php echo $full_image_meta[0]; ?>" alt="View the <?php the_title(); ?> infographic from Aurora University Online" width="<?php echo $full_image_meta[1]; ?>" height="<?php echo $full_image_meta[2]; ?>" border="0" /&gt;&lt;/a&gt;</textarea>
+											<textarea style="width: 540px; height: 100px;">&lt;a href="<?php the_permalink(); ?>"&gt;&lt;img style="max-width:100%;height:auto;" src="<?php echo $full_image_meta[0]; ?>" alt="View the <?php the_title(); ?> infographic from <?php echo get_bloginfo('name'); ?>" width="<?php echo $full_image_meta[1]; ?>" height="<?php echo $full_image_meta[2]; ?>" border="0" /&gt;&lt;/a&gt;</textarea>
 										</div>
 										<?php $infographic_transcript = get_field( 'infographic_transcript' );
 										if ( $infographic_transcript ) { ?>

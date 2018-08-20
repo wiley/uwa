@@ -210,6 +210,10 @@ a.resource-card:focus {
 			&:not(:first-of-type) {
 				margin-top: 1rem !important;
 			}
+
+			.required::after {
+				content: "*";
+			}
 		}
 	}
 
