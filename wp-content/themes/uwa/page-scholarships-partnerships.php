@@ -17,17 +17,8 @@
 						<main class="main-content cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 							<div class="intro">
-				        <div class="intro__subNav" typeof="BreadcrumbList" vocab="https://schema.org/">
-									<ul class="subpagesNav">
-										<?php
-										$subpageNav = wp_list_pages(array(
-										    'child_of' => $post->post_parent,
-												'title_li' => ''
-										    // 'exclude' => $post->ID
-										))
-										?>
-									</ul>
-				        </div>
+								<?php include('includes/subNav.php'); ?>
+								
 				        <p class="intro__headline">Scholarships and Partnerships at the University of West Alabama</p>
 								<p>The University of Alabama is dedicated to making education as affordable as possible. Each program is competitively priced, and 80 percent of students receive some type of financial aid. Students also use available grants, scholarships, loans and more.</p>
 
