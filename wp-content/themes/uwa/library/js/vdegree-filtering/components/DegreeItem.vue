@@ -7,10 +7,10 @@
       <small class="label undefined" v-else>No Program Type Set</small>
       <h3 class="degree__title" v-html="degree.title.rendered"></h3>
       <span v-if="hasTeachingCertificate" class="includes-licensure">
-        Includes Licensure
+        Includes Certification/Licensure
       </span>
       <span v-if="nonCertifiedTeachingDegree" class="includes-licensure">
-        Does Not Include Licensure
+        Does Not Include Certification/Licensure
       </span>
       <div class="degree__cta-button">More Info</div>
     </a>
@@ -18,30 +18,30 @@
 </template>
 
 <script>
-import pluralize from 'pluralize'
+import pluralize from "pluralize";
 
 export default {
-  props: {
-    degree: {
-      type: Object,
-      required: true
-    },
-    degreeClasses: {
-      type: [Array, Object, String],
-    },
-    hasTeachingCertificate: {
-      type: Boolean
-    },
-    nonCertifiedTeachingDegree: {
-      type: Boolean
-    }
-  },
-  computed: {
-    singularizedDegreeLevel() {
-      return pluralize.singular(this.degree.degree_levels[0].name)
-    }
-  }
-}
+	props: {
+		degree: {
+			type: Object,
+			required: true
+		},
+		degreeClasses: {
+			type: [Array, Object, String]
+		},
+		hasTeachingCertificate: {
+			type: Boolean
+		},
+		nonCertifiedTeachingDegree: {
+			type: Boolean
+		}
+	},
+	computed: {
+		singularizedDegreeLevel() {
+			return pluralize.singular(this.degree.degree_levels[0].name);
+		}
+	}
+};
 </script>
 
 <style lang="css">
