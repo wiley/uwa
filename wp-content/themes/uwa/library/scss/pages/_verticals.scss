@@ -1,7 +1,35 @@
-.tax-degree_area, .tax-degree_vertical {
+.tax-degree_area,
+.tax-degree_vertical {
 	.content {
 		// overflow-x: hidden;
 	}
+	.content {
+		position: relative;
+
+		&::after {
+			content: "";
+			background-image: url("#{$images}/triangles.svg");
+			background-repeat: no-repeat;
+			background-position: top center;
+			height: 100%;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			background-size: 400px;
+			transform: rotate(180deg);
+			z-index: 9;
+			@include susy-breakpoint($bp-med) {
+				background-size: 500px;
+			}
+		}
+	}
+
+	.child-terms {
+		&__heading {
+			text-align: center;
+		}
+	}
+
 	.owl-carousel {
 		width: 80%;
 		margin-left: auto;
@@ -22,7 +50,7 @@
 		width: 90%;
 
 		&__breadcrumbs {
-			background-color: #A81D32;
+			background-color: #a81d32;
 			color: white;
 			padding: 1em.5em;
 			text-align: center;
@@ -43,7 +71,7 @@
 		}
 
 		&__link {
-			background-color: #11181F;
+			background-color: #11181f;
 			color: white;
 			font-weight: 600;
 			text-transform: uppercase;
@@ -51,7 +79,7 @@
 			text-align: center;
 			padding: 0.5em;
 			text-decoration: none;
-    	height: 20px;
+			height: 20px;
 			&:focus,
 			&:hover,
 			&:visited:focus,
@@ -62,10 +90,10 @@
 
 			svg {
 				width: 20px;
-				background: #C8BF79;
+				background: #c8bf79;
 				height: 20px;
 				fill: white;
-				color: #C8BF79;
+				color: #c8bf79;
 				margin-left: 10px;
 				vertical-align: middle;
 				margin-bottom: 3px;
@@ -91,19 +119,11 @@
 		}
 
 		&__headline {
-			text-align: center;
-			text-align: center;
 			max-width: 800px;
-			margin-left: auto;
-			margin-right: auto;
 		}
 
 		&__text {
-			text-align: center;
-			text-align: center;
 			max-width: 800px;
-			margin-left: auto;
-			margin-right: auto;
 		}
 	}
 
@@ -112,7 +132,7 @@
 		position: relative;
 
 		&:before {
-			content: '';
+			content: "";
 			position: absolute;
 			bottom: 0;
 			left: 0;
@@ -122,7 +142,12 @@
 			// background: linear-gradient(to bottom, rgba(40, 40, 40, 0.86) 0, rgba(0, 0, 0, 0.78) 50%, rgba(15, 6, 5, 0.64) 100%);
 			// background: linear-gradient(to bottom, rgba(40, 40, 40, 0.6) 0, rgba(0, 0, 0, 0.4) 50%, rgba(15, 6, 5, 0.68) 100%);
 			// background: linear-gradient(to bottom, rgba(24, 24, 24, 0.24) 0, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.94) 100%);
-			background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.94) 100%);
+			background: linear-gradient(
+				to bottom,
+				rgba(0, 0, 0, 0.85) 0,
+				rgba(0, 0, 0, 0.4) 50%,
+				rgba(0, 0, 0, 0.94) 100%
+			);
 		}
 
 		img {
@@ -141,13 +166,13 @@
 			color: white;
 			text-shadow: 0 2px 14px #000000;
 			line-height: 1.2;
-			margin-top: .7em;
-			padding-right: .5em !important;
+			margin-top: 0.7em;
+			padding-right: 0.5em !important;
 		}
 
 		&__cta {
 			text-align: right;
-			color: #C8BF79;
+			color: #c8bf79;
 			font-size: 1.2em;
 			font-weight: 600;
 			padding-top: 4px;
@@ -177,10 +202,10 @@
 		// height: 100%;
 		// max-height: 280px;
 		@include susy-breakpoint(1200px) {
-		    width: 340px;
+			width: 340px;
 		}
 		@include susy-breakpoint(1400px) {
-				width: 375px;
+			width: 375px;
 		}
 		img {
 			object-fit: cover;
@@ -224,7 +249,7 @@
 			width: 50%;
 
 			p {
-				padding-left: .5em;
+				padding-left: 0.5em;
 			}
 		}
 
@@ -260,8 +285,8 @@
 				vertical-align: middle;
 				padding: 2px;
 				// fill: white;
-				fill: #C8BF79;
-				color: #C8BF79;
+				fill: #c8bf79;
+				color: #c8bf79;
 				width: 25px;
 				height: 25px;
 				padding: 5px;
@@ -271,7 +296,7 @@
 				position: absolute;
 				right: 1em;
 				bottom: 28px;
-				background: #C8BF79;
+				background: #c8bf79;
 				width: 150px;
 				// height: 1.5em;
 				height: 34px;
@@ -299,9 +324,8 @@
 
 		.wrap {
 			@include susy-breakpoint(768px) {
-			  width: 84%;
+				width: 84%;
 			}
-
 		}
 	}
 
@@ -337,7 +361,6 @@
 						.cardLink__cta {
 							display: block;
 							&-background {
-
 								transform: translateX(0);
 								right: 0;
 							}
@@ -346,7 +369,7 @@
 				}
 
 				&__info {
-					background: #0F181F;
+					background: #0f181f;
 				}
 
 				&__cta__wrapper {
@@ -394,28 +417,101 @@
 			transition: all 0.15s ease;
 			transform: translateX(115%);
 			display: block;
-			 width: 160px;
+			width: 160px;
 		}
 
 		.cardLink__cta__wrapper .cardLink__cta {
 			display: block;
 		}
 
-		.cardLink:hover, .cardLink:focus {
+		.cardLink:hover,
+		.cardLink:focus {
 			.cardLink__cta__wrapper .cardLink__cta-background {
 				transform: translateX(0);
 			}
 		}
 	}
-
 }
-
-
 
 // May 2018 - David R.
 
 .tax-degree_vertical {
 	.intro {
 		max-width: 1040px;
+	}
+}
+
+// October 2018 - Kurt R.
+
+.child-terms {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.related-row {
+	padding-top: 30px;
+	padding-bottom: 30px;
+
+	@include mobilefirst($bp-med) {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+
+	h2 {
+		color: $red;
+		margin-top: 0;
+	}
+
+	> .wrap {
+		@include mobilefirst($bp-med) {
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+		}
+
+		> :first-child {
+			margin-bottom: 20px;
+
+			@include mobilefirst($bp-med) {
+				margin-bottom: 0;
+				margin-right: 50px;
+			}
+		}
+	}
+
+	&__copy {
+		@include mobilefirst($bp-med) {
+			flex: 3;
+		}
+	}
+
+	&__media {
+		@include mobilefirst($bp-med) {
+			flex: 2;
+		}
+	}
+}
+
+.related-resource {
+	background-color: $tan;
+}
+
+.related-video {
+	margin-bottom: 4em;
+}
+
+// Video embed scale
+.video-container {
+	margin: auto;
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 25px;
+
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 	}
 }

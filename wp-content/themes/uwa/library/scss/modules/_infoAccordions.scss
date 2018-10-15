@@ -41,7 +41,47 @@
 			width: 145px;
 		}
 	}
+
+	.accordion--light {
+		.accord {
+			background-color: white;
+		}
+
+		.accord-content {
+		}
+
+		.accord-header {
+		}
+
+		button {
+			background: white;
+			font-weight: 700;
+			color: #444;
+			padding: 1em 3em 1em 1em;
+		}
+	}
 }
+
+.infoTabs {
+	.accordion--columns {
+		@include mobilefirst($bp-med) {
+			display: flex;
+			flex-flow: row wrap;
+			align-items: flex-start;
+		}
+
+		.accord {
+			@include mobilefirst($bp-med) {
+				margin-top: 0;
+				width: calc(50% - 20px);
+				&:nth-of-type(odd) {
+					margin-right: 20px;
+				}
+			}
+		}
+	}
+}
+
 // From Codepen
 
 .iconsWrapper {
@@ -57,29 +97,41 @@
 	right: 15px;
 	top: 50%;
 	transform: translateY(-50%);
-}
 
-.minus,
-.plus {
-	width: 30px;
-	height: 30px;
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	line-height: 32px;
-	text-align: center;
-	transition: 0.35s all ease-in-out;
-}
+	.minus,
+	.plus {
+		width: 30px;
+		height: 30px;
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		line-height: 32px;
+		text-align: center;
+		transition: 0.35s all ease-in-out;
+	}
 
-.plus {
-	opacity: 1;
-	transform: rotate(0deg);
-}
+	.plus {
+		opacity: 1;
+		transform: rotate(0deg);
+	}
 
-.minus {
-	opacity: 0;
-	transform: rotate(-90deg);
+	.minus {
+		opacity: 0;
+		transform: rotate(-90deg);
+	}
+
+	&--large {
+		width: 36px;
+		height: 36px;
+		right: 18px;
+
+		.plus,
+		.minus {
+			width: 36px;
+			height: 36px;
+		}
+	}
 }
 
 button[aria-expanded="true"] > .iconsWrapper {

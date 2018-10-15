@@ -15,9 +15,9 @@
   			<h2 class="relatedDegrees__heading">Related Degrees</h2>
 
 
-			<?php if ($verticalName !== ''): ?>
+			<?php /* if ($verticalName !== ''): ?>
 				<a href="<?php echo $verticalURL; ?>" class="btn__hollow">View All <?php echo $verticalName; ?> Degrees</a>
-			<?php endif; ?>
+			<?php endif; */ ?>
 
   		</div>
   				<div class="relatedDegrees__flexWrapper">

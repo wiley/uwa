@@ -53,25 +53,27 @@ import 'owl.carousel'
 	// 	console.log('ELEMENT: ', Element);
 	// 	bindCarouselToElement(this)
 	// });
-	if ($('body').hasClass('term-teaching')) {
-		bindCarouselToElement($('.med'));
-		bindCarouselToElement($('.mat'));
-		bindCarouselToElement($('.eds'));
-		bindCarouselToElement($('.atc'));
-		bindCarouselToElement($('.bachelors'));
-		bindCarouselToElement($('.masters'));
-		bindCarouselToElement($('.tc'));
-	}
 
-	if ($('body').hasClass('term-psychology-counseling')) {
-		bindCarouselToElement($('.bachelors'));
-		bindCarouselToElement($('.masters'));
-	}
-
-	if ($('body').hasClass('term-business')) {
-		bindCarouselToElement($('.bachelors'));
-		bindCarouselToElement($('.masters'));
-	}
+	// if ($('body').hasClass('term-teaching')) {
+	// 	bindCarouselToElement($('.med'));
+	// 	bindCarouselToElement($('.mat'));
+	// 	bindCarouselToElement($('.eds'));
+	// 	bindCarouselToElement($('.atc'));
+	// 	bindCarouselToElement($('.bachelors'));
+	// 	bindCarouselToElement($('.masters'));
+	// 	bindCarouselToElement($('.tc'));
+	// }
+	//
+	// if ($('body').hasClass('term-psychology-counseling')) {
+	// 	bindCarouselToElement($('.bachelors'));
+	// 	bindCarouselToElement($('.masters'));
+	// }
+	//
+	// if ($('body').hasClass('term-business')) {
+	// 	bindCarouselToElement($('.bachelors'));
+	// 	bindCarouselToElement($('.masters'));
+	// }
+	
 	// $('.med').owlCarousel({
 	// 	// loop: true,
 	// 	rewind: true,

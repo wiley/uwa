@@ -49,7 +49,6 @@
 		margin: 3em 0;
 
 		ul {
-
 			flex-flow: row wrap;
 			justify-content: space-between;
 			padding: 0;
@@ -71,7 +70,6 @@
 			z-index: 1;
 
 			@include susy-breakpoint(650px) {
-
 			}
 			h3 {
 				margin-top: 0;
@@ -82,7 +80,7 @@
 				content: "";
 				position: absolute;
 				left: 0;
-				top: -.75em;
+				top: -0.75em;
 				width: 3em;
 				height: 3em;
 				background: #f5f1e5;
@@ -107,7 +105,7 @@
 		}
 
 		&:before {
-			content: '';
+			content: "";
 			background-image: url("/wp-content/themes/uwa/library/images/triangles.svg");
 			background-repeat: no-repeat;
 			background-position: top center;
@@ -161,13 +159,13 @@
 					transform: translateX(-50%);
 					top: 100%;
 					left: 50%;
-					background: #500A16;
+					background: #500a16;
 				}
 			}
 
 			&__link {
 				@extend %flexCardLink;
-				color: #2B2B2B !important;
+				color: #2b2b2b !important;
 				width: 100%;
 				max-width: 250px;
 			}
@@ -176,57 +174,57 @@
 }
 // From Codepen
 
-.iconsWrapper {
-	width: 30px;
-	height: 30px;
-	// background: red;
-	position: relative;
-	font-size: 20px;
-	font-weight: bold;
-	cursor: pointer;
-	color: #fff;
-	position: absolute;
-	right: 15px;
-	top: 50%;
-	transform: translateY(-50%);
-}
-
-.minus,
-.plus {
-	width: 30px;
-	height: 30px;
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	line-height: 32px;
-	text-align: center;
-	transition: 0.35s all ease-in-out;
-}
-
-.plus {
-	opacity: 1;
-	transform: rotate(0deg);
-}
-
-.minus {
-	opacity: 0;
-	transform: rotate(-90deg);
-}
-
-button[aria-expanded="true"] > .iconsWrapper {
-	.plus {
-		opacity: 0;
-		transform: rotate(90deg);
-	}
-
-	.minus {
-		opacity: 1;
-		// transition: opacity .1s;
-		// transition: transform .7s;
-		transform: rotate(0deg);
-	}
-}
+// .iconsWrapper {
+// 	width: 30px;
+// 	height: 30px;
+// 	// background: red;
+// 	position: relative;
+// 	font-size: 20px;
+// 	font-weight: bold;
+// 	cursor: pointer;
+// 	color: #fff;
+// 	position: absolute;
+// 	right: 15px;
+// 	top: 50%;
+// 	transform: translateY(-50%);
+// }
+//
+// .minus,
+// .plus {
+// 	width: 30px;
+// 	height: 30px;
+// 	display: block;
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	line-height: 32px;
+// 	text-align: center;
+// 	transition: 0.35s all ease-in-out;
+// }
+//
+// .plus {
+// 	opacity: 1;
+// 	transform: rotate(0deg);
+// }
+//
+// .minus {
+// 	opacity: 0;
+// 	transform: rotate(-90deg);
+// }
+//
+// button[aria-expanded="true"] > .iconsWrapper {
+// 	.plus {
+// 		opacity: 0;
+// 		transform: rotate(90deg);
+// 	}
+//
+// 	.minus {
+// 		opacity: 1;
+// 		// transition: opacity .1s;
+// 		// transition: transform .7s;
+// 		transform: rotate(0deg);
+// 	}
+// }
 
 .page {
 	&__flexWrapper {
