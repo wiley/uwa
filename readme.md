@@ -33,7 +33,11 @@ Custom post types can be found in the `custom-post-types.php` file within the `l
 
 - Degrees
 - Landing Pages
-- Resources + Career Outcomes + Program Resources + Infographics + Guides
+- Resources
+	+ Career Outcomes
+	+ Program Resources
+	+ Infographics
+	+ Guides
 
 ### Degree Vertical Taxonomy Archive
 

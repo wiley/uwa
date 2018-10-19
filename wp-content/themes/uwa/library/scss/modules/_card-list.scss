@@ -135,6 +135,12 @@
 		width: auto;
 		color: #4a4a4a !important;
 		margin-bottom: 2em;
+
+		&.full-width {
+			display: block;
+			margin-left: 1.5rem;
+			margin-right: 1.5rem;
+		}
 	}
 }
 

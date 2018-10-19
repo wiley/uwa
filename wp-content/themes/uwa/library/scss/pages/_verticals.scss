@@ -443,9 +443,25 @@
 
 // October 2018 - Kurt R.
 
+.vertical-program-list {
+	margin-top: 3.5rem;
+}
+
 .child-terms {
 	padding-top: 30px;
 	padding-bottom: 30px;
+
+	@include mobilefirst($bp-med) {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+
+	&__description {
+		text-align: center;
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 .related-row {
@@ -494,6 +510,18 @@
 
 .related-resource {
 	background-color: $tan;
+
+	.related-row__copy {
+		@include mobilefirst($bp-med) {
+			order: 1;
+		}
+	}
+
+	.related-row__media {
+		@include mobilefirst($bp-med) {
+			order: 2;
+		}
+	}
 }
 
 .related-video {

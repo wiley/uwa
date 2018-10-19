@@ -81,7 +81,7 @@
         <?php // <div class="intro__link"></div> ?>
       </div>
 
-			<div class="wrap cf">
+			<div class="vertical-program-list wrap cf">
 			  <div class="infoTabs">
 			    <div class="infoTabs__buttons" role="tablist">
 						<?php $tabs_index = 0;
@@ -140,7 +140,7 @@
 			<?php if ( $term_children ) { ?>
 				<div class="child-terms wrap cf">
 					<h2 class="child-terms__heading"><?php echo $term->name; ?> Areas</h2>
-					<p><?php the_field('subcategory_overview', $child_term); ?></p>
+					<p class="child-terms__description"><?php the_field('subcategory_overview', $term); ?></p>
 					<ul class="tile-list tile-list--medium">
 						<?php foreach ( $term_children as $child ) { ?>
 							<?php $child_term = get_term_by( 'id', $child, $current_taxonomy );
@@ -152,7 +152,7 @@
 										<h3 class="resource-card__title"><?php echo $child_term->name; ?></h3>
 										<p><?php echo $child_term_sentences[0]; ?></p>
 									</div>
-									<a class="resource-card__action btn" href="<?php echo get_term_link( $child, $current_taxonomy ); ?>">View Programs</a>
+									<a class="resource-card__action btn full-width" href="<?php echo get_term_link( $child, $current_taxonomy ); ?>">View Programs</a>
 								</div>
 							</li>
 						<?php } ?>
@@ -163,14 +163,14 @@
 			<?php if ( get_field( 'show_related_resource', $term ) ) { ?>
 				<div class="related-resource related-row">
 					<div class="wrap cf">
+						<div class="related-row__media">
+							<?php echo wp_get_attachment_image( get_field( 'related_resource_image', $term ), 'large' ); ?>
+						</div>
 						<div class="related-row__copy">
 							<h2><?php the_field( 'related_resource_heading', $term ); ?></h2>
 							<p><?php the_field( 'related_resource_description', $term ); ?></p>
 							<?php $resource_item = get_field( 'related_resource_item', $term ); ?>
 							<p><a class="btn-red" href="<?php the_permalink( $resource_item->ID ); ?>">Read More</a></p>
-						</div>
-						<div class="related-row__media">
-							<?php echo wp_get_attachment_image( get_field( 'related_resource_image', $term ), 'large' ); ?>
 						</div>
 					</div>
 				</div>
