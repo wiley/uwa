@@ -20,6 +20,8 @@
 
 	if (is_page('Teacher Connect')) {
 		$form_template = 'single-step-partners';
+	} elseif (is_page('Business Connect Scholarship')) {
+		$form_template = 'single-step-partners-business';
 	} else {
 		$form_template = 'olc';
 	}
