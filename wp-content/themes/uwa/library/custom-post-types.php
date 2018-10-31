@@ -324,7 +324,7 @@ function add_cpt_infographics() {
       'hierarchical' => false,
       // 'rewrite' => array('slug' => 'online-degrees', 'with_front' => false ),
       /* the next one is important, it tells what's enabled in the post editor */
-      'supports' => array( 'title', 'editor', 'author', 'revisions')
+      'supports' => array( 'title', 'editor', 'author', 'revisions', 'thumbnail')
     ) /* end of options */
   ); /* end of register post type */
 }

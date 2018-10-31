@@ -170,7 +170,7 @@
 							<h2><?php the_field( 'related_resource_heading', $term ); ?></h2>
 							<p><?php the_field( 'related_resource_description', $term ); ?></p>
 							<?php $resource_item = get_field( 'related_resource_item', $term ); ?>
-							<p><a class="btn-red" href="<?php the_permalink( $resource_item->ID ); ?>">Read More</a></p>
+							<p><a class="btn-red" href="<?php the_permalink( $resource_item ); ?>">Read More</a></p>
 						</div>
 					</div>
 				</div>
