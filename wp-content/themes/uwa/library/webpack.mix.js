@@ -18,7 +18,7 @@ mix
 	);
 
 mix.browserSync({
-	proxy: "onlineuwa.loc",
+	proxy: "uwa-gulp.loc",
 	notify: false,
 	files: ["./css/build/minified/*.css", "./js/build/production.min.js"]
 });
