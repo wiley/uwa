@@ -82,7 +82,7 @@
 					<div class="wrap">
 
 						<div class="mobile-nav">
-							<a role="button" class="mobile-nav__link" href="tel:<?php echo str_replace(' ', '', get_field('phone_number', 'option')); ?>"><span><img src="/wp-content/themes/uwa/library/images/icon-phone.svg" role="presentation" alt=""></span> <?php the_field('phone_number', 'option'); ?></a>
+							<a role="button" class="mobile-nav__link ppcphone" href="tel:8444056365"><span><img src="/wp-content/themes/uwa/library/images/icon-phone.svg" role="presentation" alt=""></span> (844) 405-6365</a>
 							<a class="mobile-nav__link scroll" href="#step-form"><span>Request Info</span></a>
 						</div>
 
@@ -95,7 +95,7 @@
 
 				</div>
 
-				<a role="button" aria-label="Click to speak to an advisor now" class="tel-link" href="tel:<?php echo str_replace(' ', '', get_field('phone_number', 'option')); ?>"><img src="/wp-content/themes/uwa/library/images/icon-phone.svg" role="presentation" alt=""><span id="speakNowText"> Speak to an advisor now</span> <?php the_field('phone_number', 'option'); ?></a>
+				<a role="button" aria-label="Click to speak to an advisor now" class="tel-link" href="tel:8444056365"><img src="/wp-content/themes/uwa/library/images/icon-phone.svg" role="presentation" alt=""><span id="speakNowText"> Speak to an advisor now</span> (844) 405-6365</a>
 
 				<?php the_field('form_script'); ?>
 
