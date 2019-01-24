@@ -102,7 +102,7 @@
 											<p>Earn an online degree on your schedule with personal support from application to graduation</p>
 										</li>
 										<li>
-											<h3>Competitive Tuition</h3>
+											<h3>COMPETITIVE TUITION</h3>
 											<p>Join the 80 percent of UWA students who receive some type of financial aid</p>
 										</li>
 										<li>
