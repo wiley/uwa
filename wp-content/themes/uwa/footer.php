@@ -46,7 +46,7 @@
 							<p class="footer__copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
 							<!-- <?php the_field('address', 'option') ?> -->
 							<p>Livingston, Alabama 35470</p>
-							<a class="telephoneLink" href="tel:8449003037">(844) 900-3037</a>
+							<a class="telephoneLink olcphone" href="tel:8443616034">(844) 361-6034</a>
 
 							<a class="footer__privacy" href="/privacy-policy/">Privacy Policy</a>
 						</div>

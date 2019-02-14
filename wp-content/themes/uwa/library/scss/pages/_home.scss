@@ -685,3 +685,40 @@ HOMEPAGE SPECIFIC STYLES
 		}
 	}
 }
+
+/* Call Us Mobile */
+.olcphone-mobile {
+
+	@include susy-breakpoint($bp-med) {
+		display: none;
+	}
+
+		@media (max-width: 899px) {
+			margin-left: auto;
+			margin-right: 1em;
+			width: 40px;
+			z-index: 9;
+			background: white;
+			border: none;
+			display: flex;
+			padding: 0.2em 0.5em;
+			height: 40px;
+			justify-content: center;
+
+			svg {
+				width: 25px;
+				height: 30px;
+
+				path {
+					fill: #510915 !important;
+				}
+			}
+		}
+		@media (min-width: 900px) {
+			background-repeat: no-repeat;
+			background-position: 100% 52%;
+			background-size: 13px;
+			background-image: url("#{$images}/icons/phone.svg");
+			width: 80px;
+		}
+	}

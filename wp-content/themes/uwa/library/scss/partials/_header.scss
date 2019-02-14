@@ -62,11 +62,13 @@ HEADER STYLES
 			position: relative;
 			z-index: 999;
 			box-shadow: 0 0 24px 0 rgba(0,0,0,0.31);
+			flex-grow:1;
 			@include susy-breakpoint($bp-med) {
 				position: absolute;
 				left: 50%;
 				top: 50%;
 				transform: translate3d(-50%, -50%, 0);
+				flex-grow:0;
 			}
 
 			img {

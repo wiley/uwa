@@ -13,6 +13,7 @@
 		margin-top: 3em;
 		display: flex;
 		flex-flow: row wrap;
+		justify-content: center;
 		@include susy-breakpoint($bp-med) {
 			flex-basis: 28%;
 			display: block;
@@ -73,6 +74,16 @@
 		&.active {
 			display: block;
 			// background: blue;
+		}
+	}
+	.btn-info {
+		-webkit-appearance: inherit;
+		width: 45%;
+		text-align: center;
+		margin:0.4em;
+		@include susy-breakpoint($bp-med) {
+			width: 100%;
+			margin-top:0;
 		}
 	}
 }

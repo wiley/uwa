@@ -195,6 +195,10 @@
 
 						<a class="logo" href="<?php echo home_url(); ?>" rel="nofollow"><img  src="/wp-content/uploads/2017/01/uwa-logo.svg" alt="The University of West Alabama Logo"></a>
 
+						<a href="tel:" class="olcphone olcphone-mobile telephoneLink"><div class="header__button">
+							<?php include ('library/images/icons/phone.svg'); ?>
+						</div></a>
+
 						<button class="searchbox-trigger header__buton">
 							<?php include ('library/images/searchbox-icon.svg'); ?>
 						</button>
