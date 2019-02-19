@@ -18,9 +18,9 @@
 
 							<div class="intro">
 								<?php include('includes/subNav.php'); ?>
-								
+
 				        <p class="intro__headline">Scholarships and Partnerships at the University of West Alabama</p>
-								<p>The University of Alabama is dedicated to making education as affordable as possible. Each program is competitively priced, and 80 percent of students receive some type of financial aid. Students also use available grants, scholarships, loans and more.</p>
+								<p>The University of West Alabama is dedicated to making education as affordable as possible. Each program is competitively priced, and 80 percent of students receive some type of financial aid. Students also use available grants, scholarships, loans and more.</p>
 
 								<p>Here are some exciting scholarship and partnership opportunities at UWA.</p>
 								<ul class="scholarships-partnerships__list">
