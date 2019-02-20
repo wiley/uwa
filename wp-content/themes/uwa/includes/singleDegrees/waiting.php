@@ -8,7 +8,7 @@
       </div>
       <div class="card">
         <h3 class="card__heading">Ready to Apply? </h3>
-        <a class="card__link btn btn-info" target="_blank" rel="noopener noreferrer" href="https://www.gowest-alabama.org/freshman/get-started.htm">Apply Now</a>
+        <a class="card__link btn btn-info" target="_blank" rel="noopener noreferrer" href="http://www.uwa.edu/apply/">Apply Now</a>
       </div>
       <div class="card">
         <h3 class="card__heading">Transfer Your Credits</h3>
