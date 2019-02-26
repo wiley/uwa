@@ -64,6 +64,9 @@
 
 							<?php include ('includes/singleDegrees/infoTabs.php'); ?>
 							<?php include ('includes/singleDegrees/waiting.php'); ?>
+							<?php if( is_single(1128) ): ?>
+							<?php include ('includes/singleDegrees/oer.php'); ?>
+							<?php endif; ?>
 							<?php include ('includes/singleDegrees/relatedDegrees.php'); ?>
 						</main>
 				<!-- </div> -->
