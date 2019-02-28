@@ -1,6 +1,6 @@
 <section class="oer_module" id="oer_module">
 
-												<div class="wrap">										<div>
+												<div class="wrap">
 <div class="oer-heading">
 <img src="/wp-content/uploads/2019/02/OER-Badge-Vert-UWA.png" alt="" width="300" height="272" class="aligncenter size-medium wp-image-1354" srcset="/wp-content/uploads/2019/02/OER-Badge-Vert-UWA.png 300w, /wp-content/uploads/2019/02/OER-Badge-Vert-UWA.png 768w, /wp-content/uploads/2019/02/OER-Badge-Vert-UWA.png 970w" sizes="(max-width: 300px) 100vw, 300px"><p></p>
 <div class="oer-head">
@@ -19,10 +19,10 @@
 <p>Students can save a significant amount on textbook costs by using OER. The OER library and network provide access to learning materials without the high price of traditional textbooks. Students can access course materials they need anytime, anywhere. With interactive content, multiple formats and a variety of resources, students in this program benefit from unlimited access to the study tools they need.
 </p></div>
 </div>
+<div class="oer-vid">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ValJDQ1zAeA?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<style>
-
-</style>
+</div>
 <script>
 $(document).ready(function(){
   $("a").on('click', function(event) {
@@ -38,7 +38,5 @@ $(document).ready(function(){
   });
 });
 </script>
-								</div>
-
 
 						</section>

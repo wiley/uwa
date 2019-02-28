@@ -80,8 +80,29 @@ a.oer_btn {
 .oer-container,
 .oer-heading {
     flex-direction:column;
+    align-items: center;
 }
 .oer-heading img {
     margin-right: auto;
 }
+.oer-prop {
+    margin: 1em;
+    width: 80%;
+}
+}
+.oer_module .wrap {
+  padding-bottom: 6%;
+}
+.oer-vid {
+  position: relative;
+  padding-bottom: 51.25%;
+  padding-top: 25px;
+  height: 0;
+}
+.oer-vid iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
