@@ -18,6 +18,7 @@
       <button id="admission" role="tab" aria-selected="false" aria-controls="content-admission">Admission Requirements</button>
       <button id="tuition" role="tab" aria-selected="false" aria-controls="content-tuition">Tuition & Financing</button>
       <button id="transfer" role="tab" aria-selected="false" aria-controls="content-transfer">Transfer Credit Policy</button>
+      <div type="button" class="btn-info requestInfo" aria-label="Open Request Information Form Window" name="button">Get Started</div>
     </div>
 
     <div class="infoTabs__contentWrapper">

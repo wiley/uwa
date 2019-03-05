@@ -61,7 +61,6 @@ HEADER STYLES
 		.logo {
 			position: relative;
 			z-index: 999;
-			box-shadow: 0 0 24px 0 rgba(0,0,0,0.31);
 			flex-grow:1;
 			@include susy-breakpoint($bp-med) {
 				position: absolute;
@@ -73,6 +72,7 @@ HEADER STYLES
 
 			img {
 				max-width: 100px;
+				box-shadow: 0 0 24px 0 rgba(0,0,0,0.31);
 				display: block;
 				@include susy-breakpoint($bp-med) {
 					max-width: 200px;

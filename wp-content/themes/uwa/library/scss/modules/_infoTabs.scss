@@ -78,9 +78,10 @@
 	}
 	.btn-info {
 		-webkit-appearance: inherit;
-		width: 45%;
+		width: 55%;
 		text-align: center;
 		margin:0.4em;
+		min-width:200px;
 		@include susy-breakpoint($bp-med) {
 			width: 100%;
 			margin-top:0;

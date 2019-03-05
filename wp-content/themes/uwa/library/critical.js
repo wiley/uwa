@@ -1,7 +1,7 @@
 var critical = require("critical");
 
 critical.generate({
-	src: "http://onlineuwa.loc",
+	src: "http://uwa.loc",
 	dest: "css/build/minified/critical-home.css",
 	minify: true,
 	width: 1300,
@@ -9,7 +9,7 @@ critical.generate({
 });
 
 critical.generate({
-	src: "http://onlineuwa.loc/online-degrees",
+	src: "http://uwa.loc/online-degrees",
 	dest: "css/build/minified/critical-online-degrees.css",
 	minify: true,
 	width: 1600,
@@ -17,7 +17,7 @@ critical.generate({
 });
 
 critical.generate({
-	src: "http://onlineuwa.loc/online-degrees/degree-levels/masters",
+	src: "http://uwa.loc/online-degrees/degree-levels/masters",
 	dest: "css/build/minified/critical-degree-levels.css",
 	minify: true,
 	width: 1300,
@@ -25,7 +25,7 @@ critical.generate({
 });
 
 critical.generate({
-	src: "http://onlineuwa.loc/online-degrees/areas-of-study/business",
+	src: "http://uwa.loc/online-degrees/areas-of-study/business",
 	dest: "css/build/minified/critical-areas-study.css",
 	minify: true,
 	width: 1300,
@@ -33,7 +33,7 @@ critical.generate({
 });
 
 critical.generate({
-	src: "http://onlineuwa.loc/online-degrees/m-s-guidance-counseling",
+	src: "http://uwa.loc/online-degrees/m-s-guidance-counseling",
 	dest: "css/build/minified/critical-program-page.css",
 	minify: true,
 	width: 1300,
@@ -41,7 +41,7 @@ critical.generate({
 });
 
 critical.generate({
-	src: "http://onlineuwa.loc/tuition/tuition-information",
+	src: "http://uwa.loc/tuition/tuition-information",
 	dest: "css/build/minified/critical-interior.css",
 	minify: true,
 	width: 1300,

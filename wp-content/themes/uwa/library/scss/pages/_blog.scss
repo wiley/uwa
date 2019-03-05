@@ -14,7 +14,7 @@
 				padding: 2.75em 0 1.75em;
 			}
 		}
-	}
+	} 
 
 	article {
 		padding: 4em 0;
@@ -75,6 +75,8 @@
 			left: 0;
 			width: 100%;
 			background-size: cover;
+    	background-attachment: inherit;
+    	background-position: center;
 			opacity: 0;
 			transition: 0.5s ease;
 		}
