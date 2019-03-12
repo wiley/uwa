@@ -11,7 +11,7 @@
 <div class="oer-prop">
 <img src="/wp-content/uploads/2019/02/OER-Icon-NoCost-UWA.png" alt="" width="300" height="300" class="aligncenter size-medium wp-image-1348" srcset="/wp-content/uploads/2019/02/OER-Icon-NoCost-UWA.png 300w, /wp-content/uploads/2019/02/OER-Icon-NoCost-UWA.png 150w, /wp-content/uploads/2019/02/OER-Icon-NoCost-UWA.png 768w, /wp-content/uploads/2019/02/OER-Icon-NoCost-UWA.png 1024w, /wp-content/uploads/2019/02/OER-Icon-NoCost-UWA.png 125w" sizes="(max-width: 300px) 100vw, 300px"><p></p>
 <h3>Textbook-Free Online Education</h3>
-<p>Many instructors for the University of West Alabama Online’s Ed.D. in Rural Education program use open educational resources in place of traditional textbooks. This means digital, openly licensed content is available to students free of charge. Our use of OER creates an innovative, forward-thinking learning environment.
+<p>Many instructors in this program use open educational resources (OER) in place of traditional textbooks. This means digital, openly licensed content is available free of charge to students. The University of West Alabama’s use of OER gives students the opportunity to experience a unique learning environment.
 </p></div>
 <div class="oer-prop">
 <img src="/wp-content/uploads/2019/02/OER-Icon-Accessibility-UWA.png" alt="" width="300" height="300" class="aligncenter size-medium wp-image-1346" srcset="/wp-content/uploads/2019/02/OER-Icon-Accessibility-UWA.png 300w, /wp-content/uploads/2019/02/OER-Icon-Accessibility-UWA.png 150w, /wp-content/uploads/2019/02/OER-Icon-Accessibility-UWA.png 768w, /wp-content/uploads/2019/02/OER-Icon-Accessibility-UWA.png 1024w, /wp-content/uploads/2019/02/OER-Icon-Accessibility-UWA.png 125w" sizes="(max-width: 300px) 100vw, 300px"><p></p>
