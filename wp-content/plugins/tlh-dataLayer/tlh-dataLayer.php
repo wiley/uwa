@@ -3,16 +3,17 @@
  * Plugin Name: TLH DataLayer
  * Plugin URI: http://www.learninghouse.com
  * Description: This plugin adds the TLH DataLayer
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: The Learning House - Brent maggard
  * Author URI:
  * License: GPL2
  */
 
-function tlh_add_basic_datalayer_data( $dataLayer ) {
+function tlh_add_basic_datalayer_data() {
 	global $current_user, $wp_query;
 
 	//User Data
+	$dataLayer = array();
 
 	// Get the page Title
 	$dataLayer["tlh-pageTitle"] = strip_tags( wp_title( "|", false, "right" ) );
@@ -22,7 +23,7 @@ function tlh_add_basic_datalayer_data( $dataLayer ) {
 	$urlString = parse_url($url, PHP_URL_PATH);
 
 	if ( preg_match( "/\/thank-you/", $urlString, $matches ) ) {
-		if ( $_GET["lid"] ) { #GETS LEAD ID FROM URL LID VARIABLE
+		if ( isset($_GET['lid'] ) ) { #GETS LEAD ID FROM URL LID VARIABLE
 			$dataLayer["leadID"] = $_GET["lid"];
 		} else { #IF LID NOT PRESENT SEE IF CAN FIND LEAD ID AT END OF URL (LEGACY)
 			if ( preg_match( "/\d{5,100}/", $urlString, $lID ) ) {
@@ -32,7 +33,7 @@ function tlh_add_basic_datalayer_data( $dataLayer ) {
 	}
 
 	//GET allocadiaID FROM URL TID
-	if (isset( $_GET["tid"] )) {
+	if ( isset($_GET['tid'] ) ) {
 		$dataLayer["allocadiaID"] = $_GET["tid"];
 	}
 
@@ -86,7 +87,8 @@ function tlh_add_basic_datalayer_data( $dataLayer ) {
 	<script type="text/javascript">
 
 	var dataLayer = dataLayer || []
-';
+	';
+
 	$_gtm_tag .= '
 	dataLayer.push(' . str_replace(
 			array( '"-~-', '-~-"' ),
@@ -94,12 +96,10 @@ function tlh_add_basic_datalayer_data( $dataLayer ) {
 			json_encode( $dataLayer )
 		) . ');';
 
-		$_gtm_tag .= '
+	$_gtm_tag .= '
 	</script>';
 
-      	echo $_gtm_tag;
-
-	return $dataLayer;
+	echo $_gtm_tag;
 }
 
 add_action( 'wp_head', 'tlh_add_basic_datalayer_data');
