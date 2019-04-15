@@ -131,6 +131,11 @@
 
 								<script src="<?php echo $form_script_url; ?>" type="text/javascript"></script>
 							</div>
+
+	<?php if (is_page('Teacher Connect')): ?>
+<div class="scholarship-banner"><img class="aligncenter wp-image-1367 size-full" src="/wp-content/uploads/2017/05/TC-scholarship-graphic-UWA.png" alt="" width="600" height="200" srcset="/wp-content/uploads/2017/05/TC-scholarship-graphic-UWA.png 600w, /wp-content/uploads/2017/05/TC-scholarship-graphic-UWA-300x100.png 300w" sizes="(max-width: 600px) 100vw, 600px"></div>
+	<?php endif; ?>
+
 						</div>
 
 					</div>

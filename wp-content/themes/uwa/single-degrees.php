@@ -64,7 +64,7 @@
 
 							<?php include ('includes/singleDegrees/infoTabs.php'); ?>
 							<?php include ('includes/singleDegrees/waiting.php'); ?>
-							<?php if( is_single(array(1128, 1362)) ): ?>
+							<?php if( is_single(array(1128, 1417)) ): ?>
 							<?php include ('includes/singleDegrees/oer.php'); ?>
 							<?php endif; ?>
 							<?php include ('includes/singleDegrees/relatedDegrees.php'); ?>
