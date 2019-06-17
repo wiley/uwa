@@ -27,7 +27,7 @@
 								 		<li class="scholarships-partnerships__item">
 											<div class="scholarships-partnerships__contentWrapper">
 												<h2 class="scholarships-partnerships__heading">Teacher Connect</h2>
-												<span class="scholarships-partnerships__content">The <span class="bold">Teacher Connect Scholarship </span>program at UWA partners with school systems to help teachers and aspiring teachers complete education degrees online while qualifying for a tuition scholarship of up to $100 per credit hour. It can be applied to all 35 online education programs for certification (undergraduate and graduate level) at UWA.</span>
+												<span class="scholarships-partnerships__content">The <span class="bold">Teacher Connect Scholarship </span>program at UWA partners with school systems to help teachers and aspiring teachers complete education degrees online while qualifying for a tuition scholarship of up to $50 per credit hour. It can be applied to all 35 online education programs for certification (undergraduate and graduate level) at UWA.</span>
 											</div>
 											<a href="/tuition/scholarships-partnerships/teacher-connect/" class="scholarships-partnerships__btn btn">Learn More</a>
 										</li>
