@@ -16,6 +16,11 @@
       <?php endif; ?>
 
       <button id="admission" role="tab" aria-selected="false" aria-controls="content-admission">Admission Requirements</button>
+
+      <?php if( is_single( 427 ) ): ?>
+        <button id="ilprocess" role="tab" aria-selected="false" aria-controls="content-ilprocess">IL Process</button>
+      <?php endif; ?>
+
       <button id="tuition" role="tab" aria-selected="false" aria-controls="content-tuition">Tuition & Financing</button>
       <button id="transfer" role="tab" aria-selected="false" aria-controls="content-transfer">Transfer Credit Policy</button>
       <div type="button" class="btn-info requestInfo" aria-label="Open Request Information Form Window" name="button">Get Started</div>
@@ -35,6 +40,11 @@
         <?php include ('infoTabs/completion.php'); ?>
       <?php endif; ?>
       <?php include ('infoTabs/admission.php'); ?>
+
+
+      <?php if( is_single( 427 ) ): ?>
+      <?php include ('infoTabs/ilprocess.php'); ?>
+      <?php endif; ?>
 
       <?php include ('infoTabs/tuition.php'); ?>
 
