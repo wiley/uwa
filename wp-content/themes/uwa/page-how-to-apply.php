@@ -25,7 +25,7 @@
 										<a target="_blank" href="http://www.uwa.edu/apply/" class="btn">Start your online application today</a>
 										<p>You will be asked to create a username and password during this process. If you don’t complete your application immediately, the application system will be able to locate your application when you’re ready to complete it.</p>
 										<p>Once your application has been received, you will be contacted by an enrollment counselor, who will help you with application documents and transfer credits.</p>
-										<p>Due to state authorization requirements, we are unable to accept applications from persons who reside in CA, MA, and PR for our online programs.</p>
+										<p>Due to state authorization requirements, we are unable to accept applications from persons who reside in California for our online programs.</p>
 
 										<div class="infographicWrapper">
 											<style>
