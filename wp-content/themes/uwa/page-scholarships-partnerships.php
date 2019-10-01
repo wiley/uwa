@@ -59,6 +59,13 @@
 											</div>
 											<a target="_blank" href="/my/assoc-to-baccalaureate/" class="scholarships-partnerships__btn btn">Learn More</a>
 										</li>
+								 		<li class="scholarships-partnerships__item">
+											<div class="scholarships-partnerships__contentWrapper">
+												<h2 class="scholarships-partnerships__heading">Black Belt Teacher Corps Teach for Alabama</h2>
+												<span class="scholarships-partnerships__content">The <span class="bold">Black Belt Teacher Corps Teach for Alabama scholarship</span> program helps junior and senior education majors qualify for up to $10,000 in savings while pursuing degree programs that provide initial teacher certification. The BBTC program is designed to supply designated Alabama public school districts with well-qualified teachers for each classroom. Scholarship recipients complete service teaching in Alabama public schools located in the Black Belt region, designated as rural schools or considered high-needs schools.</span>
+											</div>
+											<a target="_blank" href="/tuition/scholarships-partnerships/bbtc-scholarship/" class="scholarships-partnerships__btn btn">Learn More</a>
+										</li>
 								</ul>
 				      </div>
 
