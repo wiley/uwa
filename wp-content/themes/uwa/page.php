@@ -22,7 +22,7 @@
 							<div class="intro__form">
 								<div class="formWrapper">
 									<h2 class="h3 form__header">Request Info</h2>
-									<script src="https://requestforms.learninghouse.com/form/show/university-west-alabama/olc/734/3589/online.uwa.edu:thank-you:request_id" type="text/javascript"></script>
+									<div id="tlh-form"></div>
 								</div>
 							</div>
 						</div>
