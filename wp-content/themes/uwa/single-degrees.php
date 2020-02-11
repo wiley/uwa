@@ -48,7 +48,7 @@
 									</div>
 
 									<div class="mobileOnly">
-										<?php include ('includes/singleDegrees/programDetails.php'); ?>
+										<?php include ('includes/singleDegrees/programDetailsMobile.php'); ?>
 									</div>
 
 									<?php if (get_field('overview_info')): ?>
@@ -57,7 +57,7 @@
 
 									<?php include ('includes/singleDegrees/who.php'); ?>
 								</div>
-								<?php include ('includes/singleDegrees/programDetails.php'); ?>
+								<?php include ('includes/singleDegrees/programDetailsDesktop.php'); ?>
 
 							</div>
 						</div>
