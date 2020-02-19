@@ -55,3 +55,4 @@ temp/
 /library/.sass-cache
 /library/node_modules
 /library/bower_components
+library/.nvmrc
