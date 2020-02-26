@@ -7,9 +7,9 @@
   },
   "version": "0.1.0",
   "scripts": {
-    "dev": "yarn run:dev",
-    "build": "NODE_ENV=production yarn run:build",
-    "build:critical": "yarn run:criticalcss",
+    "dev": "npm run run:dev",
+    "build": "NODE_ENV=production npm run run:build",
+    "build:critical": "npm run run:criticalcss",
     "run:dev": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "run:build": "node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "run:criticalcss": "node critical.js"
