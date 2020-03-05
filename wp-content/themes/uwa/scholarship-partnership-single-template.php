@@ -13,6 +13,13 @@
 .page-template-scholarship-partnership-single-template .accordion .accord-content {
 	padding: 1em;
 }
+
+form {
+	padding: 1em;
+}
+.legal-text {
+	color: white !important;
+}
 </style>
 <?php
 	global $post;
@@ -59,7 +66,7 @@
 										<h3 class="decorativeForm__heading decorative decorative_red">Request Info</h3>
 										<p class="decorativeForm__prompt">What degree are you interested in?</p>
 									</div>
-									<script src="<?php echo $form_script_url; ?>" type="text/javascript"></script>
+									<div id="tlh-form-mobile"></div>
 								</div>
 							</div>
 							<?php if (get_field('content_text')): ?>
@@ -129,7 +136,7 @@
 									<p class="decorativeForm__prompt">What degree are you interested in?</p>
 								</div>
 
-								<script src="<?php echo $form_script_url; ?>" type="text/javascript"></script>
+								<div id="tlh-form"></div>
 							</div>
 
 	<!-- <?php if (is_page('Teacher Connect')): ?>
@@ -147,16 +154,8 @@
 							<?php include ('includes/singleDegrees/waiting.php'); ?>
 
 			</div>
-			<script type="text/javascript">
-				function setTeacherConnectPrograms() {
-					if ( $('body.page-id-738').length > 0 ) {	// Check if on teacherconnect page
-						$('.mobileOnly #item_id option:not(:selected, [value="3629"], [value="3628"], [value="3630"], [value="3631"], [value="3632"], [value="3636""], [value="3602"], [value="3603"],  [value="3618"], [value="3617"], [value="3620"], [value="3621""], [value="3622"], [value="3623"], [value="3624""], [value="3625"], [value="3604"], [value="3605"], [value="3606"], [value="3607"], [value="3608"], [value="3609"], [value="3610"], [value="3613"], [value="3612"], [value="3621"], [value="3624"], [value="3627"], [value="3633"], [value="3689"], [value="3634"], [value="3635"], [value="3637"], [value="3638"], [value="3636"], [value="3656"], [value="3616"], [value="6911"], [value="4086"], [value="4087"])').remove()
 
-						$('.page__side #item_id option:not(:selected, [value="3629"], [value="3628"], [value="3630"], [value="3631"], [value="3632"], [value="3636""], [value="3602"], [value="3603"],  [value="3618"], [value="3617"], [value="3620"], [value="3621""], [value="3622"], [value="3623"], [value="3624""], [value="3625"], [value="3604"], [value="3605"], [value="3606"], [value="3607"], [value="3608"], [value="3609"], [value="3610"], [value="3613"], [value="3612"], [value="3621"], [value="3624"], [value="3627"], [value="3633"], [value="3689"], [value="3634"], [value="3635"], [value="3637"], [value="3638"], [value="3636"], [value="3656"], [value="3616"], [value="6911"], [value="4086"], [value="4087"])').remove()
-					}
-				}
-
-				// Call function for each page that needs custom list for form programs
-				setTeacherConnectPrograms()
-			</script>
 <?php get_footer(); ?>
+<script>
+	tlhFormLoader('tlh-form-mobile')
+</script>
