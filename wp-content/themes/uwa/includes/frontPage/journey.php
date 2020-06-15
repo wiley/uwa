@@ -20,4 +20,4 @@
   </div>
   <p class="journey__extraText">Other programs include interdisciplinary studies, conservation biology and library media. <a href="/online-degrees">VIEW ALL DEGREES</a>
   </p>
-</div> 
+</div>  
