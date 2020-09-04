@@ -54,13 +54,6 @@
 										</li>
 								 		<li class="scholarships-partnerships__item">
 											<div class="scholarships-partnerships__contentWrapper">
-												<h2 class="scholarships-partnerships__heading">Air University</h2>
-												<span class="scholarships-partnerships__content">The <span class="bold">Air University Associate-to-Baccalaureate Cooperative </span>allows eligible students to transfer all 60 credit hours of their Community College of the Air Force degree into an online bachelor’s program at UWA. Active duty Air Force, Air Force Reserve or Air National Guard members can transfer their degree and be required to complete no more than 60 credit hours at UWA. Note that degree requirements can be completed after retiring or separating from the service.</span>
-											</div>
-											<a target="_blank" href="/my/assoc-to-baccalaureate/" class="scholarships-partnerships__btn btn">Learn More</a>
-										</li>
-								 		<li class="scholarships-partnerships__item">
-											<div class="scholarships-partnerships__contentWrapper">
 												<h2 class="scholarships-partnerships__heading">Black Belt Teacher Corps Teach for Alabama</h2>
 												<span class="scholarships-partnerships__content">The <span class="bold">Black Belt Teacher Corps Teach for Alabama scholarship</span> program helps junior and senior education majors qualify for up to $10,000 in savings while pursuing degree programs that provide initial teacher certification. The BBTC program is designed to supply designated Alabama public school districts with well-qualified teachers for each classroom. Scholarship recipients complete service teaching in Alabama public schools located in the Black Belt region, designated as rural schools or considered high-needs schools.</span>
 											</div>
