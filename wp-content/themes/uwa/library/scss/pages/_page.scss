@@ -123,7 +123,7 @@ article {}
 				.legal-text {
 					color: #11181F !important;
 					text-align: justify;
-    			padding: 0 1.75em;
+    				padding: 0 1.75em;
 				}
 
 				.field_half {
@@ -171,8 +171,8 @@ article {}
 		table,
 		video {
 			@include susy-breakpoint($bp-med) {
-				width: 100%;
-				// margin-left: -10%;
+				//width: 100%;
+				//margin-left: -10%;
 				margin-top: 2em;
 				margin-bottom: 2em;
 			}
