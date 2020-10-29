@@ -14,6 +14,7 @@ $public-safety: #666666;
 $school-administration: #510915;
 $science-environment: #CC00B1;
 $teaching: #A81D32;
+$nursing: #4c5c89;
 $degreeAreas: (
 	"all": #11181F,
 	"biology": #966208,
@@ -24,7 +25,8 @@ $degreeAreas: (
 	"public-safety": #666666,
 	"school-administration": #510915,
 	"science-environment": #CC00B1,
-	"teaching": #A81D32
+	"teaching": #A81D32,
+	"nursing":#4c5c89
 );
 @each $degreeArea, $value in $degreeAreas {
 

@@ -7932,6 +7932,35 @@ ul.degree-grid {
   border: 2px solid;
 }
 
+.degree.nursing:hover, .degree.nursing:focus {
+  color: #4c5c89 !important;
+  border: 4px solid #4c5c89 !important;
+}
+.degree.nursing .label {
+  background-color: #4c5c89;
+}
+
+.nursing .label {
+  background-color: #4c5c89;
+}
+
+.filter.nursing .filter__color {
+  background-color: #4c5c89;
+}
+
+.filter.nursing .filter__title {
+  font-size: 15px;
+}
+
+.degreeAreasToolbar .filter.nursing.active {
+  background-color: #4c5c89;
+  font-weight: 600;
+}
+.degreeAreasToolbar .filter.nursing.active .filter__color {
+  background: transparent;
+  border: 2px solid;
+}
+
 #degrees-app .toolbar-filter .filter.active:hover {
   color: white !important;
 }
