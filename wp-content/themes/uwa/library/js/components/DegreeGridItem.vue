@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <li class="degree degree-grid-item" :class="getDegreeClasses(degree)" :key="degree.id">
     <a :href="'online-degrees/' + degree.slug">
       <small class="label" v-if="degree.degree_levels[0]" v-html="degree.degree_levels[0].name"></small>

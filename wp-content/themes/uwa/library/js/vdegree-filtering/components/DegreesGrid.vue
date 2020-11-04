@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <isotope v-show="listForFilteredDegreesAreaAndLevel.length" ref="cpt" id="root_isotope1" class="degrees sticky" :list="degrees" :options='isotopeOptions'>
     <a v-for="(degree, index) in listForFilteredDegreesAreaAndLevel" :key="index" :href="'online-degrees/' + degree.post_name" class="degree-transition degree" :class="getDegreeClassesNew(degree)">
       <small class="label" v-if="degree.degree_levels[0]" v-html="degree.degree_levels[0].name"></small>

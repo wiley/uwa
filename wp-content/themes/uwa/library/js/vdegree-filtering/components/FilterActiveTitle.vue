@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <h3 v-if="visible"
     class="toolbar-filter__activeTitle">
     <span v-html="filter.name"></span>

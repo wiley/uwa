@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="input-wrapper search-filter">
     <label for="degreeGridSearch" class="sr-only">Search For a Degree</label>
     <input name="degreeGridSearch" :value="value" type="text" class="toolbar-filter__search" placeholder="Click here to search" @input="updateSearch($event.target.value)">

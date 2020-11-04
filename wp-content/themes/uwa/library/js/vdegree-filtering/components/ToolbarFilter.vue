@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div
     v-if="isShowing"
     class="toolbar-filter"

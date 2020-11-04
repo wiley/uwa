@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <transition name="slide-down">
     <div id="no-results-msg" class="sticky" v-if="isVisible">No Results Match This Criteria</div>
   </transition>

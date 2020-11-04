@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="controlsWrapper">
 		<div class="input-wrapper search-filter">
 			<input
