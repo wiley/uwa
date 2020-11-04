@@ -1,8 +1,8 @@
-<template lang="html">
+<template>
   <li
     class="degree degree-grid-item"
     :class="degreeClasses">
-    <a :href="'online-degrees/' + degree.slug">
+    <a :href="'/online-degrees/' + degree.slug">
       <small class="label" v-if="degree.degree_levels[0]" v-html="singularizedDegreeLevel"></small>
       <small class="label undefined" v-else>No Program Type Set</small>
       <h3 class="degree__title" v-html="degree.title.rendered"></h3>
