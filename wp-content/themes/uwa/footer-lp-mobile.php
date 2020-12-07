@@ -4,7 +4,7 @@
 				<div class="wrap cf">
 
 					<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/wp-content/uploads/2017/01/footer__uwa-logo.svg" alt="UWA Online Logo">
-					<p class="footer__copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?> | <a href="/privacy-policy/" target="_blank">Privacy Policy</a> | <a class="ppcphone" href="tel:8444056365"> (844) 405-6365</a></p>
+					<p class="footer__copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?> | <a href="https://policies.edusites.net/privacyus/" target="_blank">Privacy Policy</a> | <a href="https://policies.edusites.net/terms-of-use-us/" target="_blank">Terms of Use</a> | <a class="ppcphone" href="tel:8444056365"> (844) 405-6365</a></p>
   				<div class="focusguard-bottom" tabindex="0" aria-hidden="true"></div>
 				</div>
 

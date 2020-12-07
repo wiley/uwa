@@ -47,8 +47,8 @@
 							<!-- <?php the_field('address', 'option') ?> -->
 							<p>Livingston, Alabama 35470</p>
 							<a class="telephoneLink olcphone" href="tel:8443616034">(844) 361-6034</a>
-
-							<a class="footer__privacy" href="/privacy-policy/">Privacy Policy</a>
+							<a class="footer__privacy" href="https://policies.edusites.net/privacyus/" target="_blank">Privacy Policy</a> |
+							<a class="footer__privacy" href="https://policies.edusites.net/terms-of-use-us/" target="_blank">Terms of Use</a>
 						</div>
 
 						<div class="resources flexItem">
