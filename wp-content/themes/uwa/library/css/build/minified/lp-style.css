@@ -1148,11 +1148,6 @@ STEP FORM STYLES
   z-index: 999;
 }
 
-.tlh-form .form-item label a {
-  pointer-events: auto;
-  color: #fff;
-}
-
 /*********************
 LINK STYLES
 *********************/
