@@ -27,7 +27,7 @@
     "vue-template-compiler": "^2.6.11"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "critical": "^1.3.9",
     "fontfaceobserver": "^2.0.1",
     "grunt": "^1.0.4",
