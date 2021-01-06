@@ -1459,6 +1459,10 @@ STEP FORM STYLES
   color: #fff;
 }
 
+#tlh-form .stepsWrapper {
+  width: 100%;
+}
+
 /*********************
 LINK STYLES
 *********************/

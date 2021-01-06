@@ -1217,6 +1217,15 @@ STEP FORM STYLES
   z-index: 999;
 }
 
+#tlh-form .form-item label a {
+  pointer-events: auto;
+  color: #fff;
+}
+
+#tlh-form .stepsWrapper {
+  width: 100%;
+}
+
 /*********************
 LINK STYLES
 *********************/
