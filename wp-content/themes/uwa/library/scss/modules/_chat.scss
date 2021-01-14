@@ -1,0 +1,55 @@
+body {
+    //
+    button .content:before,
+    button .content:after{
+        background:none!important;
+    }
+    .headerAnnouncement[embeddedService-chatHeader_chatHeader], 
+    .loadingAnimation[embeddedService-chatHeader_chatHeader], 
+    .sidebarHeader[embeddedService-chatHeader_chatHeader] {
+        background-color: #B50029;
+    }
+    //
+    .embeddedServiceSidebarMinimizedDefaultUI.sidebarHeader {
+        background-color: #B50029;
+        border-color: #B50029;
+        border: 0;
+        box-shadow: none;
+        &:hover, &:focus {
+            background-color: #B50029;
+            border-color: #B50029;
+        }
+    }
+
+    @media(max-width:767px) {
+        //
+        .embeddedServiceSidebarMinimizedDefaultUI.helpButton {
+            
+            &:hover, &:focus {
+                background-color: #B50029;
+            }
+        }
+
+        .embeddedServiceSidebarMinimizedDefaultUI {
+            .embeddedServiceIcon,
+            .minimizedImage {
+                
+            }
+            .minimizedText {
+                text-transform: uppercase;
+            }
+        }
+
+        // 
+        .embeddedServiceSidebarMinimizedDefaultUI.sidebarHeader {
+            bottom:17px;
+            right:12px;
+            height: 46px;
+            border-radius: 23px;
+            min-width: 168px;
+        }
+
+    }
+
+}
+
