@@ -84,8 +84,8 @@
 <?php get_footer(); ?>
 
 <script>
-  if (window.optimizelyActive) {
+  //if (window.optimizelyActive) {
 		tlhFormLoader('optimizely-form-desktop', 'optgroups-step-form')
 		tlhFormLoader('optimizely-form-mobile', 'optgroups-step-form')
-  }
+  //}
 </script>
