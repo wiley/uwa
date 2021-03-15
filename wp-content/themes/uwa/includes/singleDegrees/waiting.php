@@ -12,7 +12,7 @@
       </div>
       <div class="card">
         <h3 class="card__heading">Transfer Your Credits</h3>
-        <a class="card__link btn btn-info" href="/wp-content/uploads/2019/05/201905-OTR-Form-UWA.pdf" download>Download Form</a>
+        <a class="card__link btn btn-info" target="_blank" href="https://wesadobe.na2.echosign.com/public/esignWidget?wid=CBFCIBAA3AAABLblqZhB_97SoFuUtRyNhZiaNN1uqFvN_tt93zNRPeb9vPu3wrVT1t2WGOC-sOZyoA0ORtAg*" download>Download Form</a>
       </div>
     </div>
   </div>
