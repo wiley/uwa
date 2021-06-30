@@ -8,12 +8,9 @@
     <div class="accreditations__logoWrapper">
     <a href="http://alsde.edu/" target="_blank" rel="nofollow"><img src="/wp-content/themes/uwa/library/images/accreditations/2.png" alt="accreditation logo"></a>
     </div>
-    <div class="accreditations__logoWrapper">
-      <a href="http://ncate.org/" target="_blank" rel="nofollow"><img src="/wp-content/themes/uwa/library/images/accreditations/ncate.png" alt="accreditation logo"></a>
-    </div>
-    <div class="accreditations__logoWrapper">
+   <!-- <div class="accreditations__logoWrapper">
       <a href="http://www.acbsp.org/?page=search_accredited" target="_blank" rel="nofollow"><img src="/wp-content/themes/uwa/library/images/accreditations/acbsp.png" alt="accreditation logo"></a>
-    </div>
+    </div> -->
     <div class="accreditations__logoWrapper">
       <a href="http://caepnet.org/" target="_blank" rel="nofollow"><img src="/wp-content/themes/uwa/library/images/accreditations/caep.png" alt="accreditation logo"></a>
     </div>
