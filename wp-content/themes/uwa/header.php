@@ -37,7 +37,6 @@
 
 		<?php // wordpress head functions ?>
 		<?php wp_head(); ?>
-		<script type="text/javascript" src="https://requestforms.learninghouse.com/form/affiliate/734"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.js"></script>
 
 
