@@ -21,21 +21,6 @@ form {
 	color: white !important;
 }
 </style>
-<?php
-	global $post;
-
-
-	if (is_page('Teacher Connect')) {
-		$form_template = 'single-step-partners';
-	} elseif (is_page('Business Connect Scholarship')) {
-		$form_template = 'single-step-partners-business';
-	} else {
-		$form_template = 'olc';
-	}
-
-	$form_script_url = 'https://requestforms.learninghouse.com/form/show/university-west-alabama/' . $form_template . '/734/3589/online.uwa.edu:thank-you:request_id';
-?>
-
 			<div class="content">
 				<main class="main-content cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 

@@ -47,7 +47,7 @@
 										<h3 class="decorativeForm__heading decorative decorative_red">Request Info</h3>
 										<p class="decorativeForm__prompt">What degree are you interested in?</p>
 									</div>
-									<script src="https://requestforms.learninghouse.com/form/show/university-west-alabama/single-step-partners/734/3589/online.uwa.edu:thank-you:request_id" type="text/javascript"></script>
+									<div id="tlh-form-mobile" class="tlh-form"></div>
 								</div>
 							</div>
 							<?php if (get_field('content_text')): ?>
@@ -116,7 +116,7 @@
 									<h3 class="decorativeForm__heading decorative decorative_red">Request Info</h3>
 									<p class="decorativeForm__prompt">What degree are you interested in?</p>
 								</div>
-								<script src="https://requestforms.learninghouse.com/form/show/university-west-alabama/olc/734/3589/online.uwa.edu:thank-you:request_id" type="text/javascript"></script>
+								<div id="tlh-form" class="tlh-form"></div>
 							</div>
 						</div>
 
