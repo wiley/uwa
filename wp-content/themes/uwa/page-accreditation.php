@@ -17,8 +17,15 @@
 											<?php the_field('intro_headline') ?>
 										<?php endif; ?>
 									</p>
-									<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-										<ul class="accreditationList">
+									<?php 
+									$content = get_post()->post_content;
+									if(!empty($content)):
+										if (have_posts()) : while (have_posts()) : the_post();
+											the_content();										
+											endwhile; 
+										endif;
+									else: ?>
+									<ul class="accreditationList">
 											<li>
 												<div class="accreditationList__text">The University of West Alabama is accredited by the Southern Association of Colleges and Schools Commission on Colleges to award bachelor’s, master’s and education specialist degrees. Contact the Commission on Colleges at 1866 Southern Lane, Decatur, Georgia 30033-4097 or call 404-679-4500 for questions about the accreditation of the University of West Alabama.</div>
 												<a class="accreditationList__link" title="SACS Link" href="http://www.sacs.org" target="_blank" rel="nofollow noopener"><img class="alignleft size-full wp-image-696" src="/wp-content/uploads/2017/07/1.png" alt="" width="158" height="160" /></a>
@@ -31,11 +38,12 @@
 												<a class="accreditationList__link" title="External link to CAEP website" href="http://caepnet.org/about/vision-mission-goals" target="_blank" rel="nofollow noopener"><img class="alignleft wp-image-699 size-full" src="/wp-content/uploads/2017/07/caep.png" alt="" width="512" height="351" /></a>
 											</li>
 										</ul>
-									<?php endwhile; endif; ?>
+									<?php endif; ?>
 								</div>
 								<div class="intro__form">
 									<div class="formWrapper">
 										<h2 class="h3 form__header">Request Info</h2>
+										<p>Submit your information to be contacted by phone/email.</p>
 										<div id="tlh-form"></div>
 									</div>
 								</div>

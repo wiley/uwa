@@ -41,14 +41,84 @@
 
 					<div class="flexWrapper">
 						<div class="info flexItem">
-							<?php include('library/images/logo-footer.svg'); ?>
-							<p class="footer__infoStatement">Your career goals are within reach with an online degree from the University of West Alabama. Experience a personalized education designed to help you achieve your dreams, on your schedule and at an affordable cost.</p>
+							<?php
+							// logo footer
+							$image = get_field('footer_logo', 'option');
+							if( !empty($image) ): ?>
+								<img style="height:60px;width:auto;max-width:300px;" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr(empty($image['alt'])?$image['alt']:''); ?>"/>
+
+							<?php
+							else:
+								include('library/images/logo-footer.svg');
+							endif; //logo footer
+
+							// footer info statement
+							$statement = get_field('footer_info_statement', 'option');
+							if( !empty($statement ) ): ?>
+
+								<p class="footer__infoStatement"><?php echo $statement; ?></p>
+
+							<?php
+							else: ?>
+								<p class="footer__infoStatement">Your career goals are within reach with an online degree from the University of West Alabama. Experience a personalized education designed to help you achieve your dreams, on your schedule and at an affordable cost.</p>
+							<?php endif; //footer info statement ?>
+
 							<p class="footer__copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
-							<!-- <?php the_field('address', 'option') ?> -->
-							<p>Livingston, Alabama 35470</p>
-							<a class="telephoneLink olcphone" href="tel:8443616034">(844) 361-6034</a>
-							<a class="footer__privacy" href="https://policies.edusites.net/privacyus/" target="_blank">Privacy Policy</a> |
-							<a class="footer__privacy" href="https://policies.edusites.net/terms-of-use-us/" target="_blank">Terms and Conditions</a>
+							<?php (get_field('address', 'option')) ? the_field('address', 'option') : "Livingston, Alabama 35470"; ?>
+							<?php
+								if (get_field('phone_number', 'option')) {
+							?>
+								<a href="tel:<?php echo preg_replace('/\D+/', '',get_field('phone_number', 'option')) ?>" class="telephoneLink olcphone"><?php the_field('phone_number', 'option') ?></a>
+							<?php
+								}
+								else { ?>
+									<a class="telephoneLink olcphone" href="tel:8443616034">(844) 361-6034</a>
+							<?php
+								} ?>
+								<nav class="social-links">
+								<?php
+								if (have_rows('school_social_links', 'option')) :
+									while (have_rows('school_social_links', 'option')) : the_row();
+										$network = get_sub_field('network');
+										$url = get_sub_field('url'); ?>
+										<a href="<?php echo $url ?>" target="_blank" aria-label="vwu online on <?php echo $network['label'] ?> - opens in new tab" class="<?php echo strtolower($network['label']); ?>"><i class="fa fa-<?php echo $network['value'] ?>" aria-hidden="true"></i></a>
+									<?php
+									endwhile;
+								endif; ?>
+							</nav>
+							<?php
+							//Privacy Policy
+							$footer_link = get_field('footer_privacy_policy_link', 'option');
+							if ($footer_link) :
+								$link_url = $footer_link['url'];
+								$link_title = $footer_link['title'];
+								$link_target = $footer_link['target'] ? $footer_link['target'] : '_self';
+							?>
+								<a class="footer__privacy" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"> <?php echo esc_html($link_title); ?> </a>
+							<?php
+
+							else :
+							?>
+								<a class="footer__privacy" href="https://policies.edusites.net/privacyus/" target="_blank">Privacy Policy</a>
+							<?php
+							endif; // Privacy Policy
+							?> |
+							<?php
+							// Terms and Conditions
+							$footer_link = get_field('footer_terms_conditions_link', 'option');
+							if ($footer_link) :
+								$link_url = $footer_link['url'];
+								$link_title = $footer_link['title'];
+								$link_target = $footer_link['target'] ? $footer_link['target'] : '_self';
+							?>
+								<a class="footer__privacy" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"> <?php echo esc_html($link_title); ?> </a>
+							<?php
+							else :
+							?>
+								<a class="footer__privacy" href="https://policies.edusites.net/terms-of-use-us/" target="_blank">Terms and Conditions</a>
+							<?php
+							endif; //  Terms and Conditions
+							?>
 						</div>
 
 						<div class="resources flexItem">
