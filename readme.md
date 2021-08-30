@@ -1,5 +1,5 @@
 # UWA
-# 25 August 2021: when working with this repo, please make sure to update the files in pantheon too since now pantheon is used.
+## 25 August 2021: when working with this repo, please make sure to update the files in pantheon too since now pantheon is used.
 ## Basic Usage
 
 - _Theme Name:_ uwa
