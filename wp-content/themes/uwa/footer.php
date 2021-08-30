@@ -66,16 +66,14 @@
 							<p class="footer__copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
 							<?php (get_field('address', 'option')) ? the_field('address', 'option') : "Livingston, Alabama 35470"; ?>
 							<?php
-								if (get_field('phone_number', 'option')) {
-							?>
+								if (get_field('phone_number', 'option')) : ?>
 								<a href="tel:<?php echo preg_replace('/\D+/', '',get_field('phone_number', 'option')) ?>" class="telephoneLink olcphone"><?php the_field('phone_number', 'option') ?></a>
 							<?php
-								}
-								else { ?>
+								else: ?>
 									<a class="telephoneLink olcphone" href="tel:8443616034">(844) 361-6034</a>
 							<?php
-								} ?>
-								<nav class="social-links">
+								endif; ?>
+								<nav class="social-links" aria-label="social-links">
 								<?php
 								if (have_rows('school_social_links', 'option')) :
 									while (have_rows('school_social_links', 'option')) : the_row();
@@ -95,14 +93,9 @@
 								$link_target = $footer_link['target'] ? $footer_link['target'] : '_self';
 							?>
 								<a class="footer__privacy" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"> <?php echo esc_html($link_title); ?> </a>
-							<?php
-
-							else :
-							?>
+							<?php else : ?>
 								<a class="footer__privacy" href="https://policies.edusites.net/privacyus/" target="_blank">Privacy Policy</a>
-							<?php
-							endif; // Privacy Policy
-							?> |
+							<?php endif; // Privacy Policy ?> |
 							<?php
 							// Terms and Conditions
 							$footer_link = get_field('footer_terms_conditions_link', 'option');
@@ -113,12 +106,10 @@
 							?>
 								<a class="footer__privacy" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"> <?php echo esc_html($link_title); ?> </a>
 							<?php
-							else :
-							?>
+							else : ?>
 								<a class="footer__privacy" href="https://policies.edusites.net/terms-of-use-us/" target="_blank">Terms and Conditions</a>
 							<?php
-							endif; //  Terms and Conditions
-							?>
+							endif; //  Terms and Conditions	?>
 						</div>
 
 						<div class="resources flexItem">
@@ -194,7 +185,7 @@
 				<button class="main-nav__trigger button header__button js__menu-trigger" href="#">
 					<?php include ('library/images/close-button.svg'); ?>
 				</button>
-				<nav class="main mobileNav__nav " role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+				<nav class="main mobileNav__nav " role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="header menu">
 
 					<?php wp_nav_menu(array(
 										 'container' => false,                           // remove nav container
@@ -207,7 +198,7 @@
 
 				</nav>
 				<hr class="navSplit">
-				<nav class="mobileNav__nav secondary-nav__wrapper">
+				<nav class="mobileNav__nav secondary-nav__wrapper" aria-label="secondary-menu">
 					<?php wp_nav_menu(array(
 										 'container' => false,                           // remove nav container
 										 'container_class' => 'cf',         // class of container (should you choose to use it)

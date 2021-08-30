@@ -19,10 +19,10 @@
             "endpoint": 0
         },
         {
-            "key": "field_611cc673095dd",
-            "label": "Button Text",
-            "name": "cta_button_text",
-            "type": "text",
+            "key": "field_61287957f0b39",
+            "label": "Banner Image",
+            "name": "banner_image",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -31,11 +31,16 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_5900a705e0f6b",
@@ -55,22 +60,6 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
-        },
-        {
-            "key": "field_611cc696095de",
-            "label": "Button URL",
-            "name": "cta_button_url",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
         },
         {
             "key": "field_5900a73be0f6c",
@@ -95,8 +84,8 @@
             "key": "field_5900a7acbeaa7",
             "label": "Banner Button Link",
             "name": "banner_button_link",
-            "type": "page_link",
-            "instructions": "",
+            "type": "link",
+            "instructions": "please update button text also.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -104,11 +93,7 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [],
-            "taxonomy": [],
-            "allow_null": 0,
-            "allow_archives": 1,
-            "multiple": 0
+            "return_format": "url"
         },
         {
             "key": "field_611a5144033cb",
@@ -126,6 +111,41 @@
             "message": "<div style=\"color: #0c5460;background-color: #d1ecf1;border-color: #bee5eb;position: relative;padding: .75rem 1.25rem;margin-bottom: 1rem;border: 1px solid transparent;    border-radius: .25rem;\"> \r\n\t<a href=\"\/wp-admin\/admin.php?page=theme-general-settings\" target=\"_blank\">These settings are located in \"Important Dates\" tab here<\/a>\r\n<\/div>",
             "new_lines": "wpautop",
             "esc_html": 0
+        },
+        {
+            "key": "field_611cc696095de",
+            "label": "Button URL",
+            "name": "cta_button_url",
+            "type": "url",
+            "instructions": "(not used in front page)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_611cc673095dd",
+            "label": "Button Text",
+            "name": "cta_button_text",
+            "type": "text",
+            "instructions": "(not used in front page)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_611a4b557b73e",
@@ -176,10 +196,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
+            "new_lines": "",
             "maxlength": "",
-            "rows": 3,
-            "new_lines": ""
+            "placeholder": "",
+            "rows": ""
         },
         {
             "key": "field_58fe2968fe5b3",
@@ -239,10 +259,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
+            "new_lines": "",
             "maxlength": "",
-            "rows": 3,
-            "new_lines": ""
+            "placeholder": "",
+            "rows": ""
         },
         {
             "key": "field_611a4d917b9e4",
@@ -602,5 +622,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1629719790
+    "modified": 1630063770
 }

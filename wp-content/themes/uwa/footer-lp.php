@@ -4,15 +4,13 @@
 					<?php
 					// logo footer
 					$image = get_field('footer_logo', 'option');
-					if (!empty($image)) :
-					?>
+					if(!empty($image)): ?>
 						<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr(empty($image['alt']) ? $image['alt'] : ''); ?>" />
 					<?php
 					else : ?>
 						<img src="/wp-content/uploads/2017/01/footer__uwa-logo.svg" alt="UWA Online Logo">
 					<?php
-					endif; //logo footer
-					?>
+					endif; //logo footer ?>
 					<p class="footer__copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?> |
 						<?php
 						//Privacy Policy
@@ -25,8 +23,7 @@
 							<a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"> <?php echo esc_html($link_title); ?> </a>
 						<?php
 
-						else :
-						?>
+						else : ?>
 							<a href="https://policies.edusites.net/privacyus/" target="_blank">Privacy Policy</a>
 						<?php
 						endif; // Privacy Policy
@@ -41,16 +38,14 @@
 						?>
 							<a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"> <?php echo esc_html($link_title); ?> </a>
 						<?php
-						else :
-						?>
+						else : ?>
 							<a href="https://policies.edusites.net/terms-of-use-us/" target="_blank">Terms and Conditions</a>
 						<?php
 						endif; //  Terms and Conditions
 						?> |
 						<?php
 						//phone number
-						if (get_field('phone_number', 'option')) :
-						?>
+						if (get_field('phone_number', 'option')) : ?>
 							<a class="ppcphone" href="tel:<?php echo preg_replace('/\D+/', '', get_field('phone_number', 'option')) ?>"><?php the_field('phone_number', 'option') ?></a>
 						<?php
 						 else :?>
