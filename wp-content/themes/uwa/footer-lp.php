@@ -1,9 +1,59 @@
 
-		<footer class="footer cf" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
-				<div class="wrap cf">
-					<img src="/wp-content/uploads/2017/01/footer__uwa-logo.svg" alt="UWA Online Logo">
-					<p class="footer__copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?> | <a href="https://policies.edusites.net/privacyus/" target="_blank">Privacy Policy</a> | <a href="https://policies.edusites.net/terms-of-use-us/" target="_blank">Terms and Conditions</a> | <a class="ppcphone" href="tel:8444056365"> (844) 405-6365</a></p>
-  				<div class="focusguard-bottom" tabindex="0" aria-hidden="true"></div>
+				<footer class="footer cf" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+					<div class="wrap cf">
+					<?php
+					// logo footer
+					$image = get_field('footer_logo', 'option');
+					if(!empty($image)): ?>
+						<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr(empty($image['alt']) ? $image['alt'] : ''); ?>" />
+					<?php
+					else : ?>
+						<img src="/wp-content/uploads/2017/01/footer__uwa-logo.svg" alt="UWA Online Logo">
+					<?php
+					endif; //logo footer ?>
+					<p class="footer__copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?> |
+						<?php
+						//Privacy Policy
+						$footer_link = get_field('footer_privacy_policy_link', 'option');
+						if ($footer_link) :
+							$link_url = $footer_link['url'];
+							$link_title = $footer_link['title'];
+							$link_target = $footer_link['target'] ? $footer_link['target'] : '_self';
+						?>
+							<a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"> <?php echo esc_html($link_title); ?> </a>
+						<?php
+
+						else : ?>
+							<a href="https://policies.edusites.net/privacyus/" target="_blank">Privacy Policy</a>
+						<?php
+						endif; // Privacy Policy
+						?> |
+						<?php
+						// Terms and Conditions
+						$footer_link = get_field('footer_terms_conditions_link', 'option');
+						if ($footer_link) :
+							$link_url = $footer_link['url'];
+							$link_title = $footer_link['title'];
+							$link_target = $footer_link['target'] ? $footer_link['target'] : '_self';
+						?>
+							<a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"> <?php echo esc_html($link_title); ?> </a>
+						<?php
+						else : ?>
+							<a href="https://policies.edusites.net/terms-of-use-us/" target="_blank">Terms and Conditions</a>
+						<?php
+						endif; //  Terms and Conditions
+						?> |
+						<?php
+						//phone number
+						if (get_field('phone_number', 'option')) : ?>
+							<a class="ppcphone" href="tel:<?php echo preg_replace('/\D+/', '', get_field('phone_number', 'option')) ?>"><?php the_field('phone_number', 'option') ?></a>
+						<?php
+						 else :?>
+							<a class="ppcphone" href="tel:8444056365"> (844) 405-6365</a>
+						<?php
+						endif; //phone number ?>
+					</p>
+					<div class="focusguard-bottom" tabindex="0" aria-hidden="true"></div>
 				</div>
 			</footer>
 

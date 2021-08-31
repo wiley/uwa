@@ -21,8 +21,17 @@
 				        </div>
 								<div class="intro__main-wrapper">
 									<div class="intro__content">
+									<?php 
+									$content = get_post()->post_content;
+									if(!empty($content)):
+										if (have_posts()) : while (have_posts()) : the_post();
+											the_content();										
+											endwhile; 
+										endif;
+									else: ?>									
 										<p class="intro__headline">Applying to an online program at the University of West Alabama is simple.</p>
 										<a target="_blank" href="http://www.uwa.edu/apply/" class="btn">Start your online application today</a>
+										<a target="_blank" href="https://uwag.radiusbycampusmgmt.com/ssc/zx670cax67020x67020G03I.ssc" class="btn">Check status of Application</a>
 										<p>You will be asked to create a username and password during this process. If you don’t complete your application immediately, the application system will be able to locate your application when you’re ready to complete it.</p>
 										<p>Once your application has been received, you will be contacted by an enrollment counselor, who will help you with application documents and transfer credits.</p>
 										<p>Due to state authorization requirements, we are unable to accept applications from persons who reside in California for our online programs.</p>
@@ -69,11 +78,12 @@
 											</a>
 
 										</div>
-
+									<?php endif; ?>
 									</div>
 									<div class="intro__form">
 										<div class="formWrapper">
 											<h2 class="h3 form__header">Request Info</h2>
+											<p class="text_default">Submit your information to be contacted by phone/email.</p>
 											<div id="tlh-form"></div>
 										</div>
 									</div>

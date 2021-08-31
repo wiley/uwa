@@ -49,6 +49,9 @@
 				<?php
 					$image = get_field('banner_image');
 					$url = $image['url'];
+					//phone number
+					$phone = !empty(get_field('speak_to_advisor_phone'))? get_field('speak_to_advisor_phone'): '(844) 405-6365';
+					$text = !empty(get_field('speak_to_advisor_text'))? get_field('speak_to_advisor_text'): 'Speak to an advisor now';
 				?>
 
 				<div class="banner" style="background-image: url(<?php echo $url; ?>);">
@@ -56,7 +59,7 @@
 					<div class="wrap">
 
 						<div class="mobile-nav">
-							<a role="button" class="mobile-nav__link ppcphone" href="tel:8444056365"><span><img src="/wp-content/themes/uwa/library/images/icon-phone.svg" role="presentation" alt=""></span> (844) 405-6365</a>
+							<a role="button" class="mobile-nav__link ppcphone" href="tel:<?php echo preg_replace('/\D+/', '', $phone) ?>"><span><img src="/wp-content/themes/uwa/library/images/icon-phone.svg" role="presentation" alt=""></span> <?php echo $phone; ?></a>
 							<a class="mobile-nav__link scroll" href="#step-form"><span>Request Info</span></a>
 						</div>
 
@@ -68,8 +71,7 @@
 					</div>
 
 				</div>
-
-				<a role="button" aria-label="Click to speak to an advisor now" class="tel-link ppcphone" href="tel:8444056365"><img src="/wp-content/themes/uwa/library/images/icon-phone.svg" role="presentation" alt=""><span id="speakNowText"> Speak to an advisor now</span> (844) 405-6365</a>
+				<a role="button" aria-label="Click to speak to an advisor now" class="tel-link ppcphone" href="tel:<?php echo preg_replace('/\D+/', '', $phone) ?>"><img src="/wp-content/themes/uwa/library/images/icon-phone.svg" role="presentation" alt=""><span id="speakNowText"> <?php echo $text; ?></span> <?php echo $phone; ?></a>
 
 				<?php the_field('form_script'); ?>
 

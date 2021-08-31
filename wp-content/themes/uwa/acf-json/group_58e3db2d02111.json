@@ -73,11 +73,11 @@
             "maxlength": ""
         },
         {
-            "key": "field_5bc0d542d61f0",
+            "key": "field_5ce6e7fed4205",
             "label": "Program Summary",
             "name": "program_summary",
             "type": "textarea",
-            "instructions": "",
+            "instructions": "Card copy - This appears on vertical pages.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -88,7 +88,7 @@
             "default_value": "",
             "placeholder": "",
             "maxlength": "",
-            "rows": 2,
+            "rows": "",
             "new_lines": ""
         },
         {
@@ -693,6 +693,119 @@
             "delay": 0
         },
         {
+            "key": "field_5d3f5430030f7",
+            "label": "IL Process",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5d3f5444030f8",
+            "label": "IL Process Intro",
+            "name": "il_process_intro",
+            "type": "wysiwyg",
+            "instructions": "Leave blank unless IL Process needs to be added to the page. If so, add page ID to info-tabs.php",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "49",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5d3f5457030f9",
+            "label": "IL Process Outro",
+            "name": "il_process_outro",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "49",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5d3f5467030fa",
+            "label": "IL Process Accordion",
+            "name": "il_process_accordion",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Accordion",
+            "sub_fields": [
+                {
+                    "key": "field_5d3f5468030fb",
+                    "label": "Accordion Header",
+                    "name": "accordion_header",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5d3f5468030fc",
+                    "label": "Accordion Content",
+                    "name": "accordion_content",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                }
+            ]
+        },
+        {
             "key": "field_59398f479fe5c",
             "label": "Tuition & Financing",
             "name": "",
@@ -916,6 +1029,25 @@
             "ui": 0,
             "ui_on_text": "",
             "ui_off_text": ""
+        },
+        {
+            "key": "field_5c75c27c05879",
+            "label": "OER Logo",
+            "name": "oer_logo",
+            "type": "true_false",
+            "instructions": "Show OER logo?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "49",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -937,5 +1069,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1539364258
+    "modified": 1590766279
 }
