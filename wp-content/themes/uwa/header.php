@@ -116,15 +116,15 @@
 		}
 		@media(max-width: 480px) {
 			.btn-red.banner__link {
-                font-size:0.5em;
-                min-height: 32px;
-                line-height: 1em;
+                font-size:0.8em;
+                min-width:45%;
             }
 			.btn-red.banner__link br {
     			display: none;
 			}
-			.banner__heading {
-				font-size: 1.2em!important;
+			.home .banner__heading {
+				margin-top:4em!important;
+				font-size: 1.7em;
 			}
 		}
 	</style>
