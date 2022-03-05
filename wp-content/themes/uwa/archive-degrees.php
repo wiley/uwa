@@ -31,6 +31,7 @@
 	</style>
 	<script>
         /*this is to support filter buttons of home page*/
+		var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 		function waitForElement(elementClass, callBack) {
     		window.setTimeout(
         		function () {
@@ -46,10 +47,18 @@
         jQuery(document).ready(
             function () {
                 waitForElement(
-                    '.filter-group button', function () {
+                    '.filter-group', function () {
                         var id = $(location).attr('hash').slice(1);
                         // to make sure it will for future but you need to make sure degree level slug and hash is equal
-                        jQuery('button.'+id).click();
+						if (isMobile) {
+							jQuery('.filter-group.filters-types h2').one("click", function () {
+								waitForElement('.degreeLevelsToolbar',function(){
+									jQuery('button.btn__hollow.filter.'+id).click();
+								});                                
+    						});
+							jQuery('.filter-group.filters-types h2').trigger("click");								
+						}
+                        jQuery('.degreeLevelsToolbar button.'+id).click();
                     }
                 );
             }

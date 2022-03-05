@@ -348,7 +348,7 @@
 								<?php endif; 
 							endwhile; ?>
 						</div>
-            		<?php else: ?>
+            		<?php elseif(is_front_page() ) : ?>
                     		<a href="/online-degrees/" class="btn-red banner__link">Explore Degrees</a>
             		<?php endif; ?>
 
