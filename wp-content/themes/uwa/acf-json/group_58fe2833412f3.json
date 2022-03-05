@@ -123,7 +123,7 @@
                     "label": "Hero Button Degree Type Link",
                     "name": "degree_type_button_link",
                     "type": "taxonomy",
-                    "instructions": "if you cant see the degree type you seek in filter you can add it from <a href=\"https:\/\/web-uwa.lndo.site\/wp-admin\/admin.php?page=theme-general-settings\">here<\/a>",
+                    "instructions": "If the degree type you seek is not visible in the filter on the online-degrees page: you can add it from <a href=\"\/wp-admin\/admin.php?page=theme-general-settings\">here<\/a>",
                     "required": 0,
                     "conditional_logic": [
                         [
@@ -700,5 +700,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1645974615
+    "modified": 1646501225
 }
