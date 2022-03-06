@@ -152,8 +152,8 @@
                     "key": "field_621dcb8e13b52",
                     "label": "Hero Button Link",
                     "name": "hero_button_link",
-                    "type": "link",
-                    "instructions": "please update button text also.",
+                    "type": "group",
+                    "instructions": "Hero Button Label will be used as button lable.",
                     "required": 0,
                     "conditional_logic": [
                         [
@@ -169,7 +169,63 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "url"
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6223fdb1dc3cd",
+                            "label": "URL",
+                            "name": "hero_button_link_url",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_6223fe08dc3ce",
+                            "label": "Open link in a new tab",
+                            "name": "hero_button_link_target",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_6223fe5bdc3cf",
+                            "label": "add rel=\"nofollow\" to link",
+                            "name": "hero_button_link_add_rel",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -700,5 +756,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1646501225
+    "modified": 1646526042
 }

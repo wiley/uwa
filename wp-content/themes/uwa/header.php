@@ -343,8 +343,13 @@
 								if (get_sub_field('use_degree_link') ) : 
 									$slug = get_term(get_sub_field('degree_type_button_link'))->slug; ?>
 									<a href="<?php get_bloginfo('wpurl');?>/online-degrees/#<?php  echo $slug;?>" class="btn-red banner__link" min-height:90px "><?php the_sub_field('hero_button_label'); ?></a>
-								<?php else : ?>
-									<a href="<?php the_sub_field('hero_button_link'); ?>" class="btn-red banner__link"><?php the_sub_field('hero_button_label'); ?></a>
+								<?php else : 
+									$link = get_sub_field('hero_button_link');
+									$link_url = $link['hero_button_link_url'];
+                                	$link_title = $link['title'];
+                                	$link_target = $link['hero_button_link_target'] ? '_blank' : '_self';
+									$link_no_follow = $link['hero_button_link_target'] ?'nofollow':'';?>
+									<a href="<?php echo esc_url($link_url); ?>" rel="<?php echo esc_attr($link_no_follow); ?>" target="<?php echo esc_attr($link_target); ?>" class="btn-red banner__link"> <?php the_sub_field('hero_button_label'); ?></a>
 								<?php endif; 
 							endwhile; ?>
 						</div>
