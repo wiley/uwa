@@ -88,6 +88,45 @@
 			align-items: center;
 			visibility: hidden;
 		}
+		.banner__buttons__group {
+			vertical-align: middle;
+			display: flex;
+			align-content: center;
+			flex-flow: row wrap;
+			justify-content: center;
+		}
+		.banner__link {
+			margin: 0px 5px 6px 5px;
+    		min-width: 160px;
+    		/*min-height: 90px;*/
+    		display: inline-grid!important;
+    		align-items: center;
+		}
+		@media(max-width: 768px) {
+			.btn-red.banner__link {
+				width: 45%;
+				max-width: 300px;
+				font-size:0.6em;
+				min-height: 50px;
+				line-height: 2em;
+			}
+			.header .main-nav .logo {
+				box-shadow:none;
+			}
+		}
+		@media(max-width: 480px) {
+			.btn-red.banner__link {
+                font-size:0.8em;
+                min-width:45%;
+            }
+			.btn-red.banner__link br {
+    			display: none;
+			}
+			.home .banner__heading {
+				margin-top:4em!important;
+				font-size: 1.7em;
+			}
+		}
 	</style>
 
 	<script>
@@ -297,9 +336,27 @@
 						<h1 class="banner__heading"><?php the_field('banner_headline'); ?></h1>
 					<?php endif; ?>
 
-					<?php if (get_field('banner_button_link') && get_field('banner_button_text')) : ?>
-						<a href="<?php the_field('banner_button_link'); ?>" class="btn-red banner__link"><?php the_field('banner_button_text'); ?></a>
-					<?php endif; ?>
+					<?php if (have_rows('hero_section_buttons') ) : ?>
+						<div class="banner__buttons__group">
+							<?php while ( have_rows('hero_section_buttons') ) :
+								the_row();
+								if (get_sub_field('use_degree_link') ) : 
+									$slug = get_term(get_sub_field('degree_type_button_link'))->slug; ?>
+									<a href="<?php get_bloginfo('wpurl');?>/online-degrees/#<?php  echo $slug;?>" class="btn-red banner__link" min-height:90px "><?php the_sub_field('hero_button_label'); ?></a>
+								<?php else : 
+									$link = get_sub_field('hero_button_link');
+									$link_url = $link['hero_button_link_url'];
+                                	$link_title = $link['title'];
+                                	$link_target = $link['hero_button_link_target'] ? '_blank' : '_self';
+									$link_no_follow = $link['hero_button_link_target'] ?'nofollow':'';?>
+									<a href="<?php echo esc_url($link_url); ?>" rel="<?php echo esc_attr($link_no_follow); ?>" target="<?php echo esc_attr($link_target); ?>" class="btn-red banner__link"> <?php the_sub_field('hero_button_label'); ?></a>
+								<?php endif; 
+							endwhile; ?>
+						</div>
+            		<?php elseif(is_front_page() ) : ?>
+                    		<a href="/online-degrees/" class="btn-red banner__link">Explore Degrees</a>
+            		<?php endif; ?>
+
 
 					<?php if (is_home()) : ?>
 						<h1 class="banner__heading">News</h1>

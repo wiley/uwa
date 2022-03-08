@@ -62,10 +62,10 @@
             "maxlength": ""
         },
         {
-            "key": "field_5900a73be0f6c",
-            "label": "Banner Button Text",
-            "name": "banner_button_text",
-            "type": "text",
+            "key": "field_621dc9124fdce",
+            "label": "Hero Section Buttons",
+            "name": "hero_section_buttons",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -74,26 +74,160 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5900a7acbeaa7",
-            "label": "Banner Button Link",
-            "name": "banner_button_link",
-            "type": "link",
-            "instructions": "please update button text also.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url"
+            "collapsed": "",
+            "min": 1,
+            "max": 4,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_621dc9d352d8a",
+                    "label": "Hero Button Label",
+                    "name": "hero_button_label",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_621dcbd413b53",
+                    "label": "Use Degree Filter or URL",
+                    "name": "use_degree_link",
+                    "type": "true_false",
+                    "instructions": "Please enable if you need to link button to degree type based filter in online degrees page",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "Degree Type",
+                    "ui_off_text": "URL"
+                },
+                {
+                    "key": "field_621dca1152d8b",
+                    "label": "Hero Button Degree Type Link",
+                    "name": "degree_type_button_link",
+                    "type": "taxonomy",
+                    "instructions": "If the degree type you seek is not visible in the filter on the online-degrees page: you can add it from <a href=\"\/wp-admin\/admin.php?page=theme-general-settings\">here<\/a>",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_621dcbd413b53",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "degree_level",
+                    "field_type": "select",
+                    "allow_null": 0,
+                    "add_term": 0,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "id",
+                    "multiple": 0
+                },
+                {
+                    "key": "field_621dcb8e13b52",
+                    "label": "Hero Button Link",
+                    "name": "hero_button_link",
+                    "type": "group",
+                    "instructions": "Hero Button Label will be used as button lable.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_621dcbd413b53",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6223fdb1dc3cd",
+                            "label": "URL",
+                            "name": "hero_button_link_url",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_6223fe08dc3ce",
+                            "label": "Open link in a new tab",
+                            "name": "hero_button_link_target",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_6223fe5bdc3cf",
+                            "label": "add rel=\"nofollow\" to link",
+                            "name": "hero_button_link_add_rel",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        }
+                    ]
+                }
+            ]
         },
         {
             "key": "field_611a5144033cb",
@@ -622,5 +756,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1630063770
+    "modified": 1646526042
 }
