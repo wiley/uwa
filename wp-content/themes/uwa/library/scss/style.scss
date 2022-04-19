@@ -384,3 +384,12 @@ ul#menu-secondary-left {
         }
     }
 }
+
+// Hide page title on /thank-you-campus page
+body.page-id-2189 {
+	.page-header {
+		&__title {
+			display: none;
+		}
+	}
+}

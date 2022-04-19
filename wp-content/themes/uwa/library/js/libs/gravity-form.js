@@ -409,12 +409,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
             success: function(response) {
                 console.log(response)
                 console.log("success")
-                window.location.href = "/thank-you/";			
+                window.location.href = "/thank-you-campus/";			
             },
             error: function(response) {
                 console.log(response)
                 console.log("error")
-                window.location.href = "/thank-you/";
+                window.location.href = "/thank-you-campus/";
             }
         });
     }
