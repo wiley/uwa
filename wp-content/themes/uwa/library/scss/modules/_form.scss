@@ -174,11 +174,22 @@
 			margin: auto;
 			color: #fff;
 		}
+
+		.form-button {
+			background-color: #c9bf79;
+			border-bottom: 6px solid #9d913f;
+		}
 	}
 
 	&__heading {
 		padding: 2em 1.25em 0 0.5em;
 	}
+}
+
+.form-buttons-wrapper .form-button, .form-buttons-wrapper .form-submit-button {
+	background-color: #c9bf79;
+	border-bottom: 6px solid #9d913f;
+	color:#000;
 }
 
 html.activeModal {
