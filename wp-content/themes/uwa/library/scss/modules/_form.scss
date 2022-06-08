@@ -167,6 +167,17 @@
 		padding: 2em 0;
 		margin: 1.5em auto;
 		width: 90%;
+
+		p {
+			background: #a81d35;
+			padding: 1.25em 1.25em 0;
+			margin: auto;
+			color: #fff;
+		}
+	}
+
+	&__heading {
+		padding: 2em 1.25em 0 0.5em;
 	}
 }
 
