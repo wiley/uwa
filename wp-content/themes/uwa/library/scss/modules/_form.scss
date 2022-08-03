@@ -217,3 +217,13 @@ html.activeModal {
     pointer-events: auto;
     color: #000;
 }
+
+#step-form {
+	form {
+		.form-item-militaryAffiliated {
+      		label {
+        		margin-top: 5px;
+      		}
+    	}
+  	}
+}

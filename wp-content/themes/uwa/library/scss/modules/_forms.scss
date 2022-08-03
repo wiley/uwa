@@ -221,3 +221,13 @@ STEP FORM STYLES
     width: 100%;
   }
 }
+
+#step-form {
+	form {
+		.form-item-militaryAffiliated {
+        label {
+        	margin-top: 5px;
+        }
+    	}
+  	}
+}
