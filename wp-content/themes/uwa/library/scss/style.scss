@@ -110,3 +110,286 @@ ul#menu-secondary-left {
 
 
 @import "vue-app";
+
+
+// Gravity Forms
+// Jira: https://jira.wiley.com/browse/MTI-9806
+.gform_wrapper {
+    background-color: #a81d35;
+	color: #fff;
+    padding: 2rem 0 3rem;
+
+    .gform_validation_errors {
+        border: none !important;
+        .gform_submission_error {
+            color: #fff;
+            line-height: initial;
+            text-align: left;
+            padding: 0 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+
+            &::before {
+                margin: 0 1rem 0 0;
+            }
+        }
+    }
+
+    .gform {
+
+        &_heading {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 1rem;
+		}
+
+        &_title {
+            margin: 0 0 1rem !important;
+			padding: 0;
+			font-family: 'Lora', 'Helvetica', 'Arial', sans-serif;
+			font-size: 30px !important;
+			font-weight: normal !important;
+			text-rendering: optimizelegibility;
+			text-transform: capitalize;
+        }
+    }
+
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0 1rem;
+
+        .gform-body {
+            li {
+                padding: 0;
+                margin: 0 !important;
+
+                label {
+                    margin-top: 12px;
+					font-size: 16px;
+					font-family: 'Open Sans', 'Helvetica', 'Arial', 'sans-serif';
+					font-weight: normal;
+
+                    &.error {
+                        display: inline-block;
+                        color: #fff;
+                        font-size: .9em;
+                        font-weight: 200;
+                        text-transform: initial;
+                    }
+                }
+
+                span {
+                    // margin-top: 12px;
+
+                    &.error {
+                        display: inline-block !important;
+                        color: #fff;
+                        font-size: .9em;
+                        font-weight: 200;
+                        text-transform: initial;
+                    }
+
+					&.gfield_required_asterisk {
+						display: none;
+					}
+                }
+
+                input {
+                    padding: 8px 16px !important;
+
+                    &.error {        
+                        background-image: url('../../../images/form_error_icon.svg') !important;
+                        background-size: contain;
+                        background-position: right center;
+                        background-repeat: no-repeat;
+                    }
+                }
+
+                select {
+                    padding: 5px 16px 8px !important;
+                    min-height: initial;
+
+                    &.error {       
+                        color: #222;
+                        background-image: url('../../../images/form_error_icon.svg');
+                        background-size: contain;
+                        background-position: right center;
+                        background-repeat: no-repeat;
+                    }
+                }
+
+				&.gfield:not(.gf_left_half),
+				&#field_1_72 {
+					padding-right: 0 !important;
+                }
+
+                &.zip-full-width {
+                    .ginput_container_address {
+                        .address_zip {
+                            width: 100%;
+                            padding-right: 0 !important;
+                        }
+                    }
+                }
+
+				.ginput_container_address {
+					.address_line_1,
+					.address_line_2,
+					.address_city,
+					.address_state,
+					.address_country {
+						// display: none;
+					}
+		
+					span {
+						label {
+							font-size: 14px !important;
+							font-weight: 700;
+							text-transform: uppercase;
+							letter-spacing: .0625rem !important;
+							margin: 16px 0 !important;
+						}
+	
+						&.address_city,
+						&.address_state {
+							label {
+								margin: 0 0 16px !important;
+							}
+						}
+					}
+				}
+		
+				.gfield_checkbox {
+					margin: 12px 0 0;
+
+					li {
+						display: flex;
+
+						label {
+							font-size: 15px !important;
+							font-weight: normal !important;
+							flex: 1 1 0%;
+							margin: 0 0 0 1rem;
+		
+							a {
+								color: #fff;
+								text-decoration: underline;
+			
+								&:hover {
+									text-decoration: none;
+								}
+							}
+						}
+		
+						input {
+							flex: 0 1 22px;
+							appearance: none;
+		
+							background-color: #fff;
+							margin: 0;
+							width: 22px;
+							height: 22px;
+							transform: translateY(-0.075em);
+		
+							&:checked {
+								background-size: 0.875rem 0.875rem;
+								background-position: 50%;
+								background-repeat: no-repeat;
+								background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABmJLR0QA/wD/AP+gvaeTAAABPUlEQVRIie3VPygGcRgH8I8/bxEGSjaLgUnJQmZGGdiQLDaLbLJaWcRqMSmLxSQpmUzKJAsh6U1vyZ/XazhXb+fn5X3du/nWb7l7nudz3f3ujv9UmLoqzp7BAepxWC1kCnkUPtdSNZAJvBUhBTykjYziJYG8YjxNZBhPCSSPyTSRIeQSyDvm0kQG8JhAClj4rqG5AqQf2QCyGCquwbpop8yWgfTiPoAsf9ewVlT05nc7pAe3AWSlVNNNovgZIyXqu3AVQFZ/uroxX1+wHAYDtZ24DCCbokfwY6ZF27G4OYu+opoOnAeQLdT+BokzHxhyh2604yxwfkf00Sw7K4Fh17gIHN9FphKE6D5vBIYm1z4aKkXi1GK7BHKEpr8icTLYCyDHaEkLidMo+jPGyCla00bitOLkc7VVC/lPyXwAo1eKaN8F05IAAAAASUVORK5CYII=');
+							}
+						}
+
+					}
+				}
+            }
+
+			.gfield_error {
+				background-color: initial !important;
+				margin-bottom: initial !important;
+				border: none !important;
+				padding-top: 0 !important;
+				padding-left: 0 !important;
+				padding-right: 0 !important;
+				padding-bottom: 0 !important;
+
+				input {
+					background-image: url('../../../images/form_error_icon.svg');
+					background-size: contain;
+					background-position: right center;
+					background-repeat: no-repeat;
+				}
+
+				select {
+					background-image: url('../../../images/form_error_icon.svg');
+					background-size: contain;
+					background-position: right center;
+					background-repeat: no-repeat;
+				}
+
+				.validation_message {
+					color: #fff;
+					padding-top: 6px;
+					margin: 0;
+				}
+
+				.gfield_label,
+				.ginput_container_address label {
+					color: #fff !important; 
+				}
+			}
+
+			.gfield_html {
+				margin-top: 12px !important;
+				font-size: 15px !important;
+
+				a {
+					color: #fff;
+					text-decoration: underline;
+
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+        }
+
+        .gform_footer {
+            input {
+                &[type=submit] {
+                    display: block;
+                    justify-content: center;
+                    align-items: center;
+                    text-decoration: none;
+                    text-transform: uppercase;
+					background-color: #c9bf79;
+					border-bottom: 6px solid #9d913f;
+                    padding: 1rem;
+                    border-radius: 3px;
+                    font-weight: normal;
+					color: #363636 !important;
+					font-size: 1rem;
+					line-height: 1.5rem;
+					text-align: center;
+                    outline: none;
+                    transition: all .2s ease-in-out;
+					width: 100%;
+					text-transform: capitalize;
+
+                    &:hover {
+                        background-color: #afa247;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Hide page title on /thank-you-campus page
+body.page-id-2189 {
+	.page-header {
+		&__title {
+			display: none;
+		}
+	}
+}
