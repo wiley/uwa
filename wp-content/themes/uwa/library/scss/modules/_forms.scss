@@ -222,6 +222,14 @@ STEP FORM STYLES
   }
 }
 
+.requestinfo {
+  .form-item-militaryAffiliated {
+    label {
+      margin-top: 3px;
+    }
+  }
+}
+
 #step-form {
   form {
     .form-item-militaryAffiliated {

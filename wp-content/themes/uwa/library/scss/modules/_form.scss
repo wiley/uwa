@@ -218,6 +218,14 @@ html.activeModal {
     color: #000;
 }
 
+.requestinfo {
+	.form-item-militaryAffiliated {
+		label {
+			margin-top: 3px;
+		}
+	}
+}
+
 #step-form {
 	form {
 		.form-item-militaryAffiliated {
